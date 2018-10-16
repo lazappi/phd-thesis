@@ -144,13 +144,13 @@ output:
         template: "style/template.tex"
         toc: true
         toc_depth: 3
-    # unimelbdown::thesis_gitbook: default
-    # unimelbdown::thesis_word:
-    #     reference_docx: "style/template.docx"
-    #     toc: true
-    #     toc_depth: 3
-    #     fig_caption: true
-    # unimelbdown::thesis_epub: default
+    unimelbdown::thesis_gitbook: default
+    unimelbdown::thesis_word:
+        reference_docx: "style/template.docx"
+        toc: true
+        toc_depth: 3
+        fig_caption: true
+    unimelbdown::thesis_epub: default
 ---
 
 ```{r install-package, include = FALSE}

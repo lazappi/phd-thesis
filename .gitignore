@@ -14,7 +14,6 @@
 
 # Packrat
 packrat/lib*/
-packrat/src/
 
 # Bookdown
 _bookdown_files/
