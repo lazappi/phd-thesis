@@ -1,6 +1,6 @@
 RMD := $(shell find . -type f -name '*.Rmd')
 
-all: pdf docx html output/wordcount.txt
+all: pdf docx html output/wordcount.pdf
 
 pdf: output/thesis.tex
 
@@ -19,3 +19,6 @@ output/index.html: $(RMD)
 
 output/wordcount.txt: output/thesis.tex
 	prettytc -c -l output/wordcount.txt output/thesis.tex
+
+output/wordcount.pdf: output/wordcount.txt
+	Rscript R/plot_wordcount.R
