@@ -2,17 +2,16 @@ book_filename: "thesis"
 chapter_name: "Chapter "
 rmd_files:
     - "index.Rmd"
-    - "00_frontmatter/00_00_frontmatter.Rmd"
-    - "01_chapters/01-01-introduction.Rmd"
-    - "01_chapters/01-02-chap1.Rmd"
-    - "01_chapters/01-03-chap2.Rmd"
-    - "01_chapters/01-04-chap3.Rmd"
-    - "01_chapters/01-05-conclusion.Rmd"
-    - "99_backmatter/99-00-references.Rmd"
-    - "99_backmatter/99-01-appendix.Rmd"
+    - "0-frontmatter/00-frontmatter.Rmd"
+    - "1-introduction/00-introduction.Rmd"
+    - "2-tools/00-tools.Rmd"
+    - "3-simulation/00-simulation.Rmd"
+    - "4-clustering-trees/00-clustering-trees.Rmd"
+    - "5-analysis/00-analysis.Rmd"
+    - "6-conclusion/00-conclusion.Rmd"
+    - "9-references/00-references.Rmd"
 download:
     - ["thesis.pdf", "PDF"]
-    - ["thesis.epub", "EPUB"]
     - ["thesis.docx", "Word"]
 delete_merged_file: true
-output_dir: "output"
+output_dir: "docs"

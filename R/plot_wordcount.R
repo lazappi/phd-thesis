@@ -4,7 +4,7 @@ suppressPackageStartupMessages({
 })
 
 message("Reading wordcount data...")
-words <- readr::read_tsv(here::here("output/wordcount.txt"),
+words <- readr::read_tsv(here::here("docs/wordcount.txt"),
                          col_types = readr::cols(
                              Date = readr::col_date(format = ""),
                              Time = readr::col_time(format = ""),
@@ -15,7 +15,8 @@ words <- readr::read_tsv(here::here("output/wordcount.txt"),
                              Captions = readr::col_integer(),
                              Total = readr::col_integer()
                          )) %>%
-    mutate(Datetime = lubridate::ymd_hms(paste(Date, Time)))
+    mutate(Datetime = lubridate::ymd_hms(paste(Date, Time))) %>%
+    mutate(Name = forcats::fct_inorder(Name))
 
 plots <- list()
 
@@ -40,7 +41,7 @@ plots$chapters <- words %>%
         theme(legend.position = "bottom")
 
 message("Saving wordcount.pdf...")
-pdf(here::here("output/wordcount.pdf"))
+pdf(here::here("docs/wordcount.pdf"))
 for (plot in plots) {
     print(plot)
 }

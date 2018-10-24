@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Tools and techniques for single-cell RNA-seq data</title>
+  <meta name="description" content="Tools and techniques for single-cell RNA-seq data">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Tools and techniques for single-cell RNA-seq data" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Tools and techniques for single-cell RNA-seq data" />
+  
+  
+  
+
+<meta name="author" content="Luke Zappia">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+
+<link rel="next" href="1-introduction.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"></a></li>
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Front matter</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#abstract"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#declaration"><i class="fa fa-check"></i>Declaration</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#preface"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="1-introduction.html"><a href="1-introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="2-the-scrna-seq-tools-landscape.html"><a href="2-the-scrna-seq-tools-landscape.html"><i class="fa fa-check"></i><b>2</b> The scRNA-seq tools landscape</a></li>
+<li class="chapter" data-level="3" data-path="3-simulating-scrna-seq-data.html"><a href="3-simulating-scrna-seq-data.html"><i class="fa fa-check"></i><b>3</b> Simulating scRNA-seq data</a></li>
+<li class="chapter" data-level="4" data-path="4-visualising-clustering-across-resolutions.html"><a href="4-visualising-clustering-across-resolutions.html"><i class="fa fa-check"></i><b>4</b> Visualising clustering across resolutions</a></li>
+<li class="chapter" data-level="5" data-path="5-analysis-of-kidney-organoid-scrna-seq-data.html"><a href="5-analysis-of-kidney-organoid-scrna-seq-data.html"><i class="fa fa-check"></i><b>5</b> Analysis of kidney organoid scRNA-seq data</a></li>
+<li class="chapter" data-level="6" data-path="6-conclusion.html"><a href="6-conclusion.html"><i class="fa fa-check"></i><b>6</b> Conclusion</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Tools and techniques for single-cell RNA-seq data</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Tools and techniques for single-cell RNA-seq data</h1>
+<h4 class="author"><em>Luke Zappia</em></h4>
+</div>
+<div id="front-matter" class="section level1 unnumbered">
+<h1>Front matter</h1>
+
+<!-- This document is used to add the front matter to formats other than LaTeX
+(mostly word). These sections can be removed if you don't want them or the whole
+file excluded from _bookdown.yml.--->
+<div id="abstract" class="section level2 unnumbered">
+<h2>Abstract</h2>
+The preface pretty much says it all.
+
+<p>Second paragraph of abstract starts here.</p>
+</div>
+<div id="declaration" class="section level2 unnumbered">
+<h2>Declaration</h2>
+<p>This is to certify that:</p>
+<ol style="list-style-type: lower-roman">
+<li>the thesis comprises only their original work towards the [name of
+the award] except where indicated in the preface;</li>
+<li>due acknowledgement has been made in the text to all other material
+used; and</li>
+<li>the thesis is fewer than the maximum word limit in length, exclusive of
+tables, maps, bibliographies and appendices or that the thesis is [number
+of words] as approved by the Research Higher Degrees Committee.</li>
+</ol>
+<p><!-- Signature line will be placed here --></p>
+</div>
+<div id="preface" class="section level2 unnumbered">
+<h2>Preface</h2>
+<p>This is an example of a thesis setup to use the reed thesis document class (for
+LaTeX) and the R bookdown package, in general.</p>
+</div>
+<div id="acknowledgements" class="section level2 unnumbered">
+<h2>Acknowledgements</h2>
+<p>This template is based on thesisdown (<a href="https://github.com/ismayc/thesisdown" class="uri">https://github.com/ismayc/thesisdown</a>) and
+makes use of RMarkdown (<a href="https://rmarkdown.rstudio.com/" class="uri">https://rmarkdown.rstudio.com/</a>) and bookdown
+<a href="https://bookdown.org/yihui/bookdown/" class="uri">https://bookdown.org/yihui/bookdown/</a>. The LaTeX template is based on John
+Papandriopoulos’ University of Melbourne thesis template
+(<a href="https://github.com/jpap/phd-thesis-template" class="uri">https://github.com/jpap/phd-thesis-template</a>). Inspriation also comes from
+similar projects including beaverdown (<a href="https://github.com/zkamvar/beaverdown" class="uri">https://github.com/zkamvar/beaverdown</a>),
+aggidown (<a href="https://github.com/ryanpeek/aggiedown" class="uri">https://github.com/ryanpeek/aggiedown</a>),
+huskydown (<a href="https://github.com/benmarwick/huskydown" class="uri">https://github.com/benmarwick/huskydown</a>) and jayhawkdown
+(<a href="https://github.com/wjakethompson/jayhawkdown" class="uri">https://github.com/wjakethompson/jayhawkdown</a>).</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="1-introduction.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": [["thesis.pdf", "PDF"], ["thesis.docx", "Word"]],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
