@@ -7,3 +7,13 @@ Date	Time	Name	Level	Text	Headers	Captions	Total
 2018-10-24	15:44:04	Analysis of kidney organoid scRNA-seq data	Chapter	0	6	0	6
 2018-10-24	15:44:04	Conclusion	Chapter	0	1	0	1
 2018-10-24	15:44:04	References	Chapter	0	1	0	1
+2018-10-30	15:10:16	docs/thesis.tex	Document	155	31	0	186
+2018-10-30	15:10:16	Introduction	Chapter	0	1	0	1
+2018-10-30	15:10:16	The scRNA-seq tools landscape	Chapter	0	4	0	4
+2018-10-30	15:10:16	Simulating scRNA-seq data	Chapter	0	6	0	6
+2018-10-30	15:10:16	Introduction	Section	0	1	0	1
+2018-10-30	15:10:16	Splatter publication	Section	0	2	0	2
+2018-10-30	15:10:16	Visualising clustering across resolutions	Chapter	0	4	0	4
+2018-10-30	15:10:16	Analysis of kidney organoid scRNA-seq data	Chapter	0	6	0	6
+2018-10-30	15:10:16	Conclusion	Chapter	0	1	0	1
+2018-10-30	15:10:16	References	Chapter	0	1	0	1

@@ -148,16 +148,6 @@ output:
     unimelbdown::thesis_epub: default
 ---
 
-```{r install-package, include = FALSE}
-# This chunk ensures that the unimelb package is installed and loaded. This
-# unimelb package includes the template files for the thesis.
-if(!require(devtools))
-  install.packages("devtools", repos = "http://cran.rstudio.com")
-if(!require(unimelbdown))
-  devtools::install_github("lazappi/unimelbdown")
-library(unimelbdown)
-```
-
 ```{r knitr-options, include = FALSE}
 knitr::opts_chunk$set(
   echo      = FALSE,
@@ -166,10 +156,25 @@ knitr::opts_chunk$set(
   error     = FALSE,
   cache     = FALSE,
   fig.ext   = "png",
-  fig.path  = "figure/",
+  fig.path  = "figures/",
   fig.align = "center",
   out.width = "80%"
 )
 ```
 
-`r if(knitr:::is_html_output()) '# Front matter {-}'`
+```{r doctype}
+tex  <- TRUE
+docx <- FALSE
+html <- FALSE
+
+if (!knitr:::is_latex_output()) {
+    tex <- FALSE
+    if (knitr:::is_html_output()) {
+        html <- TRUE
+    } else {
+        docx <- TRUE
+    }
+}
+```
+
+`r if(html) '# Front matter {-}'`

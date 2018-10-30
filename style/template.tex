@@ -32,7 +32,6 @@
 %  External packages used in the document
 % +----------------------------------------------------------------------------+
 
-\usepackage{graphicx}  % Extended graphics package.
 \usepackage{amsmath}   % American Mathematics Society standards
 \usepackage{amsxtra}   % Additional math symbols
 \usepackage{amssymb}   % Additional math symbols
@@ -45,6 +44,7 @@
 \usepackage{chemarr}   % Improved reaction arrows for chemists
 \usepackage{palatino}  % Use the palatino font family
 \usepackage{mathpazo}  % Use the palotino font family
+\usepackage{graphicx}  % Extended graphics package
 
 % +-----Parameters-------------------------------------------------------------+
 %  Set parameters for the document. To convert from YAML to LaTeX we need to add
@@ -141,9 +141,9 @@ $endif$
 % +-----List of copyright------------------------------------------------------+
 
 $if(copyrightlist)$
-\begin{copyrightlist}
-  $copyrightlist$
-\end{copyrightlist}
+  \begin{copyrightlist}
+    $copyrightlist$
+  \end{copyrightlist}
 $endif$
 
 \end{frontmatter}

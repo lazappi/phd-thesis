@@ -17,3 +17,6 @@ packrat/lib*/
 
 # Bookdown
 _bookdown_files/
+
+# VS Code
+.vscode
