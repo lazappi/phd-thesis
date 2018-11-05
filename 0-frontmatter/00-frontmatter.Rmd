@@ -1,0 +1,23 @@
+<!-- This document is used to add the front matter to formats other than LaTeX
+(mostly word). These sections can be removed if you don't want them or the whole
+file excluded from _bookdown.yml.--->
+
+`r if (html) '## Abstract {-}'`
+`r if (docx) '######### Abstract {-}'`
+
+`r if (!tex) paste(readLines("0-frontmatter/01-abstract.Rmd"), collapse = "\n  ")`
+
+`r if (html) '## Declaration {-}'`
+`r if (docx) '######### Declaration {-}'`
+
+`r if (!tex) paste(readLines("0-frontmatter/02-declaration.Rmd"), collapse = "\n  ")`
+
+`r if (html) '## Preface {-}'`
+`r if (docx) '######### Preface {-}'`
+
+`r if (!tex) paste(readLines("0-frontmatter/03-preface.Rmd"), collapse = "\n  ")`
+
+`r if (html) '## Acknowledgements {-}'`
+`r if (docx) '######### Acknowledgements {-}'`
+
+`r if (!tex) paste(readLines("0-frontmatter/04-acknowledgements.Rmd"), collapse = "\n  ")`

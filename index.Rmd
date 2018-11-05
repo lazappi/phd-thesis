@@ -6,11 +6,11 @@
 # +----------------------------------------------------------------------------+
 #  This bookdown template can be used to create a thesis for the University of
 #  Melbourne.
-#  
+#
 #  This document defines all the metadata associated with the thesis in a YAML
-#  (YAML Ain't Markup Language) header. Your text should be placed in other 
+#  (YAML Ain't Markup Language) header. Your text should be placed in other
 #  RMarkdown documents (usually one per chapter). Edit the `_bookdown.yml` file
-#  to change the order etc. of the other files. See 
+#  to change the order etc. of the other files. See
 #  https://bookdown.org/yihui/bookdown/ for more details on how to use bookdown.
 # +----------------------------------------------------------------------------+
 
@@ -27,11 +27,11 @@
 
 # +-----Title------------------------------------------------------------------+
 
-title: "My Thesis"
+title: "Tools and techniques for single-cell RNA-seq data"
 
 # +-----Author-----------------------------------------------------------------+
-author: "Your R. Name"
-orcid: "0000-0001-0000-0000"
+author: "Luke Zappia"
+orcid: "0000-0001-7744-8565"
 
 # +-----Degree-----------------------------------------------------------------+
 degree: "Doctor of Philosophy"
@@ -50,15 +50,14 @@ submissionyear: "`r format(Sys.Date(), '%Y')`"
 #  might need to adjust the format or consider how to include your information.
 # +----------------------------------------------------------------------------+
 
-department: "Department of Studies"
+department: "School of Biosciences"
 university: "The University of Melbourne"
 
 # +-----Statement--------------------------------------------------------------+
 
 statement: |
-  A statement of whether the thesis is being submitted in partial or total
-  fulfilment of the degree, and whether the degree is being completed under a
-  jointly awarded degree.
+  Submitted in Total Fulfillment of the Requirements of the Degree of Doctor of
+  Philosophy
 
 # *============================================================================*
 #  FRONT MATTER
@@ -73,22 +72,22 @@ statement: |
 # +-----Abstract---------------------------------------------------------------+
 
 abstract: |
-  `r if(knitr:::is_latex_output()) paste(readLines("00_frontmatter/00-01-abstract.Rmd"), collapse = "\n  ")`
+  `r if(knitr:::is_latex_output()) paste(readLines("0-frontmatter/01-abstract.Rmd"), collapse = "\n  ")`
 
 # +-----Declaration------------------------------------------------------------+
 
 declaration: |
-  `r if(knitr:::is_latex_output()) paste(readLines("00_frontmatter/00-02-declaration.Rmd"), collapse = "\n  ")`
+  `r if(knitr:::is_latex_output()) paste(readLines("0-frontmatter/02-declaration.Rmd"), collapse = "\n  ")`
 
 # +-----Preface----------------------------------------------------------------+
 
 preface: |
-  `r if(knitr:::is_latex_output()) paste(readLines("00_frontmatter/00-03-preface.Rmd"), collapse = "\n  ")`
+  `r if(knitr:::is_latex_output()) paste(readLines("0-frontmatter/03-preface.Rmd"), collapse = "\n  ")`
 
 # +-----Acknowledgements-------------------------------------------------------+
 
 acknowledgements: |
-  `r if(knitr:::is_latex_output()) paste(readLines("00_frontmatter/00-04-acknowledge.Rmd"), collapse = "\n  ")`
+  `r if(knitr:::is_latex_output()) paste(readLines("0-frontmatter/04-acknowledgements.Rmd"), collapse = "\n  ")`
 
 # +-----List of tables---------------------------------------------------------+
 #  Should only be included if you have at least 10 tables
@@ -102,15 +101,6 @@ lot: true
 
 lof: true
 
-# +-----List of copyright------------------------------------------------------+
-#  List of all third party copyright material included in the thesis and whether
-#  permissions have been obtained to include this content in the open access
-#  version of the thesis.
-# +----------------------------------------------------------------------------+
-
-copyrightlist: |
-  `r if(knitr:::is_latex_output()) paste(readLines("00_frontmatter/00-05-copyrightlist.Rmd"), collapse = "\n  ")`
-
 # *============================================================================*
 #  CITATIONS
 # *============================================================================*
@@ -119,10 +109,10 @@ copyrightlist: |
 #  Export your bibliography database as a bibtex file and refer to it here.
 # +----------------------------------------------------------------------------+
 
-bibliography: "bib/thesis.bib"
+bibliography: "bib/references.bib"
 
 # +-----Citation style---------------------------------------------------------+
-#  To change your citation style download a Citation Style Language file from 
+#  To change your citation style download a Citation Style Language file from
 #  https://www.zotero.org/styles and refer to it to change the appearance of
 #  your citations. See https://citationstyles.org/ for more details.
 # +----------------------------------------------------------------------------+
@@ -139,11 +129,16 @@ csl: "style/apa.csl"
 
 knit: "bookdown::render_book"
 site: "bookdown::bookdown_site"
-output: 
-    unimelbdown::thesis_pdf:
+output:
+    bookdown::pdf_book:
         template: "style/template.tex"
         toc: true
         toc_depth: 3
+        keep_tex: TRUE
+        pandoc_args: [ 
+            "--wrap", "none",
+            "--top-level-division", "chapter"
+        ]
     unimelbdown::thesis_gitbook: default
     unimelbdown::thesis_word:
         reference_docx: "style/template.docx"
@@ -153,16 +148,6 @@ output:
     unimelbdown::thesis_epub: default
 ---
 
-```{r install-package, include = FALSE}
-# This chunk ensures that the unimelb package is installed and loaded. This
-# unimelb package includes the template files for the thesis.
-if(!require(devtools))
-  install.packages("devtools", repos = "http://cran.rstudio.com")
-if(!require(unimelbdown))
-  devtools::install_github("lazappi/unimelbdown")
-library(unimelbdown)
-```
-
 ```{r knitr-options, include = FALSE}
 knitr::opts_chunk$set(
   echo      = FALSE,
@@ -171,10 +156,25 @@ knitr::opts_chunk$set(
   error     = FALSE,
   cache     = FALSE,
   fig.ext   = "png",
-  fig.path  = "figure/",
+  fig.path  = "figures/",
   fig.align = "center",
   out.width = "80%"
 )
 ```
 
-`r if(knitr:::is_html_output()) '# Front matter {-}'`
+```{r doctype}
+tex  <- TRUE
+docx <- FALSE
+html <- FALSE
+
+if (!knitr:::is_latex_output()) {
+    tex <- FALSE
+    if (knitr:::is_html_output()) {
+        html <- TRUE
+    } else {
+        docx <- TRUE
+    }
+}
+```
+
+`r if(html) '# Front matter {-}'`

@@ -1,24 +1,25 @@
 RMD := $(shell find . -type f -name '*.Rmd')
+OUT_DIR := docs
 
-all: pdf docx html output/wordcount.pdf
+all: pdf docx html $(OUT_DIR)/wordcount.pdf
 
-pdf: output/thesis.tex
+pdf: $(OUT_DIR)/thesis.tex
 
-docx: output/thesis.docx
+docx: $(OUT_DIR)/thesis.docx
 
-html: output/index.html
+html: $(OUT_DIR)/index.html
 
-output/thesis.tex: $(RMD)
-	Rscript -e "bookdown::render_book('index.Rmd', 'unimelbdown::thesis_pdf')"
+$(OUT_DIR)/thesis.tex: $(RMD)
+	Rscript -e "bookdown::render_book('index.Rmd', 'bookdown::pdf_book')"
 
-output/thesis.docx: $(RMD)
+$(OUT_DIR)/thesis.docx: $(RMD)
 	Rscript -e "bookdown::render_book('index.Rmd', 'unimelbdown::thesis_word')"
 
-output/index.html: $(RMD)
+$(OUT_DIR)/index.html: $(RMD)
 	Rscript -e "bookdown::render_book('index.Rmd', 'unimelbdown::thesis_gitbook')"
 
-output/wordcount.txt: output/thesis.tex
-	prettytc -c -l output/wordcount.txt output/thesis.tex
+$(OUT_DIR)/wordcount.txt: $(OUT_DIR)/thesis.tex
+	prettytc -c -l $(OUT_DIR)/wordcount.txt $(OUT_DIR)/thesis.tex
 
-output/wordcount.pdf: output/wordcount.txt
+$(OUT_DIR)/wordcount.pdf: $(OUT_DIR)/wordcount.txt R/plot_wordcount.R
 	Rscript R/plot_wordcount.R

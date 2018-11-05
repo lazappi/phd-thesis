@@ -1,0 +1,213 @@
+% *============================================================================*
+%                  UNIVERSITY OF MELBOURNE THESIS TEMPLATE
+% *============================================================================*
+
+% +----------------------------------------------------------------------------+
+%  This is a Pandoc/LaTeX template for a University of Melbourne thesis designed
+%  to be used as part of a bookdown project
+%  (https://bookdown.org/yihui/bookdown/).
+% +----------------------------------------------------------------------------+
+
+% +----------------------------------------------------------------------------+
+%  Changes:
+%
+%  2018-10-10 (Luke Zappia)
+%    * Create first draft template
+% +----------------------------------------------------------------------------+
+
+% *============================================================================*
+%  PREAMBLE
+%
+%  Set up the document, load packages, set parameters etc.
+% *============================================================================*
+
+% +-----Document class---------------------------------------------------------+
+%  Set the class associated with the document, options in square brackets are
+%  passed to the class
+% +----------------------------------------------------------------------------+
+
+\documentclass[11pt,a4paper,titlepage,twoside,openright]{style/unimelbthesis}
+
+% +-----Packages---------------------------------------------------------------+
+%  External packages used in the document
+% +----------------------------------------------------------------------------+
+
+\usepackage{amsmath}   % American Mathematics Society standards
+\usepackage{amsxtra}   % Additional math symbols
+\usepackage{amssymb}   % Additional math symbols
+\usepackage{amsthm}    % Additional math symbols
+\usepackage{latexsym}  % Additional math symbols
+\usepackage{booktabs}  % Table formatting
+\usepackage{longtable} % Table formatting
+\usepackage{hyperref}  % Hyperlinks
+\usepackage{setspace}  % Line spacing
+\usepackage{chemarr}   % Improved reaction arrows for chemists
+\usepackage{palatino}  % Use the palatino font family
+\usepackage{mathpazo}  % Use the palotino font family
+\usepackage{graphicx}  % Extended graphics package
+
+% +-----Parameters-------------------------------------------------------------+
+%  Set parameters for the document. To convert from YAML to LaTeX we need to add
+%  the dollar signs.
+% +----------------------------------------------------------------------------+
+
+\title{Tools and techniques for single-cell RNA-seq data}
+\author{Luke Zappia}
+\orcid{0000-0001-7744-8565}
+\degree{Doctor of Philosophy}
+\submissionmonth{October}
+\submissionyear{2018}
+\department{School of Biosciences}
+\university{The University of Melbourne}
+\statement{Submitted in Total Fulfillment of the Requirements of the Degree of Doctor of Philosophy}
+
+% +-----Syntax highlighting----------------------------------------------------+
+%  If code chunks are included in the document this allows Pandoc to insert the
+%  code highlighting macros.
+% +----------------------------------------------------------------------------+
+
+
+% *============================================================================*
+%  FRONT MATTER
+%
+%  Front section of the document, everything before the main text.
+% *============================================================================*
+
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\theoremstyle{definition}
+\newtheorem{example}{Example}[chapter]
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
+\begin{document}
+
+\begin{frontmatter}
+
+% +-----Title------------------------------------------------------------------+
+
+  \maketitle
+
+% +-----Abstract---------------------------------------------------------------+
+
+  \begin{abstract}
+    The preface pretty much says it all.
+    
+    \par
+    
+    Second paragraph of abstract starts here.
+  \end{abstract}
+
+% +-----Declaration------------------------------------------------------------+
+
+  \begin{declaration}
+    This is to certify that:
+    
+    \begin{enumerate}
+    \def\labelenumi{\roman{enumi}.}
+    \tightlist
+    \item
+      the thesis comprises only their original work towards the {[}name of the award{]} except where indicated in the preface;
+    \item
+      due acknowledgement has been made in the text to all other material used; and
+    \item
+      the thesis is fewer than the maximum word limit in length, exclusive of tables, maps, bibliographies and appendices or that the thesis is {[}number of words{]} as approved by the Research Higher Degrees Committee.
+    \end{enumerate}
+  \end{declaration}
+
+% +-----Preface----------------------------------------------------------------+
+
+  \begin{preface}
+    This is an example of a thesis setup to use the reed thesis document class (for LaTeX) and the R bookdown package, in general.
+  \end{preface}
+
+% +-----Acknowledgements-------------------------------------------------------+
+
+  \begin{acknowledgements}
+    This template is based on thesisdown (\url{https://github.com/ismayc/thesisdown}) and makes use of RMarkdown (\url{https://rmarkdown.rstudio.com/}) and bookdown \url{https://bookdown.org/yihui/bookdown/}. The LaTeX template is based on John Papandriopoulos' University of Melbourne thesis template (\url{https://github.com/jpap/phd-thesis-template}). Inspriation also comes from similar projects including beaverdown (\url{https://github.com/zkamvar/beaverdown}), aggidown (\url{https://github.com/ryanpeek/aggiedown}), huskydown (\url{https://github.com/benmarwick/huskydown}) and jayhawkdown (\url{https://github.com/wjakethompson/jayhawkdown}).
+  \end{acknowledgements}
+
+% +-----Table of contents------------------------------------------------------+
+
+  \hypersetup{linkcolor=black}
+  \setcounter{tocdepth}{2}
+  \tableofcontents
+
+% +-----List of tables---------------------------------------------------------+
+
+  \listoftables
+
+% +-----List of figures--------------------------------------------------------+
+
+  \listoffigures
+
+% +-----List of copyright------------------------------------------------------+
+
+
+\end{frontmatter}
+
+% *============================================================================*
+%  MAIN MATTER
+%
+%  Main part of the document. Includes all chapters and appendices.
+% *============================================================================*
+
+
+\begin{mainmatter}
+
+\hypertarget{introduction}{%
+\chapter{Introduction}\label{introduction}}
+
+\hypertarget{the-scrna-seq-tools-landscape}{%
+\chapter{The scRNA-seq tools landscape}\label{the-scrna-seq-tools-landscape}}
+
+\hypertarget{simulating-scrna-seq-data}{%
+\chapter{Simulating scRNA-seq data}\label{simulating-scrna-seq-data}}
+
+\hypertarget{introduction-1}{%
+\section{Introduction}\label{introduction-1}}
+
+\hypertarget{splatter-publication}{%
+\section{Splatter publication}\label{splatter-publication}}
+
+\frame{\includegraphics[page=1, width=\textwidth]{figures/splatter-paper-cropped}}
+\frame{\includegraphics[page=2, width=\textwidth]{figures/splatter-paper-cropped}}
+\frame{\includegraphics[page=3, width=\textwidth]{figures/splatter-paper-cropped}}
+\frame{\includegraphics[page=4, width=\textwidth]{figures/splatter-paper-cropped}}
+\frame{\includegraphics[page=5, width=\textwidth]{figures/splatter-paper-cropped}}
+\frame{\includegraphics[page=6, width=\textwidth]{figures/splatter-paper-cropped}}
+\frame{\includegraphics[page=7, width=\textwidth]{figures/splatter-paper-cropped}}
+\frame{\includegraphics[page=8, width=\textwidth]{figures/splatter-paper-cropped}}
+\frame{\includegraphics[page=9, width=\textwidth]{figures/splatter-paper-cropped}}
+\frame{\includegraphics[page=10, width=\textwidth]{figures/splatter-paper-cropped}}
+\frame{\includegraphics[page=11, width=\textwidth]{figures/splatter-paper-cropped}}
+\frame{\includegraphics[page=12, width=\textwidth]{figures/splatter-paper-cropped}}
+\frame{\includegraphics[page=13, width=\textwidth]{figures/splatter-paper-cropped}}
+\frame{\includegraphics[page=14, width=\textwidth]{figures/splatter-paper-cropped}}
+\frame{\includegraphics[page=15, width=\textwidth]{figures/splatter-paper-cropped}}
+
+\hypertarget{visualising-clustering-across-resolutions}{%
+\chapter{Visualising clustering across resolutions}\label{visualising-clustering-across-resolutions}}
+
+\hypertarget{analysis-of-kidney-organoid-scrna-seq-data}{%
+\chapter{Analysis of kidney organoid scRNA-seq data}\label{analysis-of-kidney-organoid-scrna-seq-data}}
+
+\hypertarget{conclusion}{%
+\chapter{Conclusion}\label{conclusion}}
+
+\hypertarget{references}{%
+\chapter*{References}\label{references}}
+\addcontentsline{toc}{chapter}{References}
+
+\hypertarget{refs}{}
+
+\end{mainmatter}
+
+\end{document}
