@@ -1,1 +1,114 @@
 # Introduction
+
+## RNA sequencing
+
+* Central dogma
+* Why RNA-seq?
+
+### Capture and reverse transcription
+
+* PolyA capture
+* Ribosomal depletion
+
+### High-throughput sequencing
+
+* Illumina sequencing
+    * Sequence by synthesis
+
+### Analysis of RNA-seq data
+
+* Experimental design
+* Negative binomial
+* Normalisation
+* Differential expression testing
+
+## Single-cell capture technologies
+
+* First protocol
+* Fluidigm
+
+### Droplet based cell capture
+
+* Drop-seq
+* Indrop
+* 10x Chromium
+
+### Unique Molecular Identifiers
+
+* Why?
+* How they work
+
+### Recent advances
+
+* New capture methods
+* CITE-seq
+* Cell hashing
+
+## Features of single-cell RNA-seq data
+
+* Why use single-cell?
+* Low counts
+    * Dropout
+    * Bursting
+    * Biology
+
+## Analysing scRNA-seq data
+
+### Pre-processing and quality control
+
+* Alignment
+* Droplet selection
+* UMIs
+* Doublet detection
+* Bad cells
+* Gene filtering
+* Cell ranger
+* scater
+
+### Integrating multiple datasets
+
+* Why?
+* Seurat CCA
+* New methods
+
+### Grouping cells
+
+* Clustering
+* Seurat
+* Other approaches
+
+### Ordering cells
+
+* Pseudotime
+* Monocle
+* Other approaches
+
+### Gene detection and interpretation
+
+* DE
+* Marker genes
+    * Alternatives - Gini, classifiers
+* Reviews
+* Classification
+
+## Kidney development
+
+### Structure and function
+
+* Kidney structure
+* Nephron structure
+* Important cell types
+
+### Stages of development
+
+* Lineage
+* Important genes
+
+### Growing kidney organoids
+
+* Why?
+    * Disease modelling
+* Protocol
+* Growth factors
+* Characterisation
+* Reproducibility
