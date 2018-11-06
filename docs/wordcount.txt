@@ -17,3 +17,32 @@ Date	Time	Name	Level	Text	Headers	Captions	Total
 2018-10-30	15:10:16	Analysis of kidney organoid scRNA-seq data	Chapter	0	6	0	6
 2018-10-30	15:10:16	Conclusion	Chapter	0	1	0	1
 2018-10-30	15:10:16	References	Chapter	0	1	0	1
+2018-11-07	09:42:37	docs/thesis.tex	Document	253	89	0	342
+2018-11-07	09:42:37	Introduction	Chapter	98	59	0	157
+2018-11-07	09:42:37	RNA sequencing	Section	21	12	0	33
+2018-11-07	09:42:37	Capture and reverse transcription	Subsection	4	4	0	8
+2018-11-07	09:42:37	High-throughput sequencing	Subsection	5	2	0	7
+2018-11-07	09:42:37	Analysis of RNA-seq data	Subsection	8	4	0	12
+2018-11-07	09:42:37	Single-cell capture technologies	Section	17	12	0	29
+2018-11-07	09:42:37	Droplet based cell capture	Subsection	4	4	0	8
+2018-11-07	09:42:37	Unique Molecular Identifiers	Subsection	4	3	0	7
+2018-11-07	09:42:37	Recent advances	Subsection	6	2	0	8
+2018-11-07	09:42:37	Features of single-cell RNA-seq data	Section	8	5	0	13
+2018-11-07	09:42:37	Analysing scRNA-seq data	Section	34	18	0	52
+2018-11-07	09:42:37	Pre-processing and quality control	Subsection	13	4	0	17
+2018-11-07	09:42:37	Integrating multiple datasets	Subsection	5	3	0	8
+2018-11-07	09:42:37	Grouping cells	Subsection	4	2	0	6
+2018-11-07	09:42:37	Ordering cells	Subsection	4	2	0	6
+2018-11-07	09:42:37	Gene detection and interpretation	Subsection	8	4	0	12
+2018-11-07	09:42:37	Kidney development	Section	18	11	0	29
+2018-11-07	09:42:37	Structure and function	Subsection	7	3	0	10
+2018-11-07	09:42:37	Stages of development	Subsection	3	3	0	6
+2018-11-07	09:42:37	Growing kidney organoids	Subsection	8	3	0	11
+2018-11-07	09:42:37	The scRNA-seq tools landscape	Chapter	0	4	0	4
+2018-11-07	09:42:37	Simulating scRNA-seq data	Chapter	0	6	0	6
+2018-11-07	09:42:37	Introduction	Section	0	1	0	1
+2018-11-07	09:42:37	Splatter publication	Section	0	2	0	2
+2018-11-07	09:42:37	Visualising clustering across resolutions	Chapter	0	4	0	4
+2018-11-07	09:42:37	Analysis of kidney organoid scRNA-seq data	Chapter	0	6	0	6
+2018-11-07	09:42:37	Conclusion	Chapter	0	1	0	1
+2018-11-07	09:42:37	References	Chapter	0	1	0	1

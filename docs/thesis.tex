@@ -55,7 +55,7 @@
 \author{Luke Zappia}
 \orcid{0000-0001-7744-8565}
 \degree{Doctor of Philosophy}
-\submissionmonth{October}
+\submissionmonth{November}
 \submissionyear{2018}
 \department{School of Biosciences}
 \university{The University of Melbourne}
@@ -164,6 +164,263 @@
 
 \hypertarget{introduction}{%
 \chapter{Introduction}\label{introduction}}
+
+\hypertarget{rna-sequencing}{%
+\section{RNA sequencing}\label{rna-sequencing}}
+
+\begin{itemize}
+\tightlist
+\item
+  Central dogma
+\item
+  Why RNA-seq?
+\end{itemize}
+
+\hypertarget{capture-and-reverse-transcription}{%
+\subsection{Capture and reverse transcription}\label{capture-and-reverse-transcription}}
+
+\begin{itemize}
+\tightlist
+\item
+  PolyA capture
+\item
+  Ribosomal depletion
+\end{itemize}
+
+\hypertarget{high-throughput-sequencing}{%
+\subsection{High-throughput sequencing}\label{high-throughput-sequencing}}
+
+\begin{itemize}
+\tightlist
+\item
+  Illumina sequencing
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Sequence by synthesis
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{analysis-of-rna-seq-data}{%
+\subsection{Analysis of RNA-seq data}\label{analysis-of-rna-seq-data}}
+
+\begin{itemize}
+\tightlist
+\item
+  Experimental design
+\item
+  Negative binomial
+\item
+  Normalisation
+\item
+  Differential expression testing
+\end{itemize}
+
+\hypertarget{single-cell-capture-technologies}{%
+\section{Single-cell capture technologies}\label{single-cell-capture-technologies}}
+
+\begin{itemize}
+\tightlist
+\item
+  First protocol
+\item
+  Fluidigm
+\end{itemize}
+
+\hypertarget{droplet-based-cell-capture}{%
+\subsection{Droplet based cell capture}\label{droplet-based-cell-capture}}
+
+\begin{itemize}
+\tightlist
+\item
+  Drop-seq
+\item
+  Indrop
+\item
+  10x Chromium
+\end{itemize}
+
+\hypertarget{unique-molecular-identifiers}{%
+\subsection{Unique Molecular Identifiers}\label{unique-molecular-identifiers}}
+
+\begin{itemize}
+\tightlist
+\item
+  Why?
+\item
+  How they work
+\end{itemize}
+
+\hypertarget{recent-advances}{%
+\subsection{Recent advances}\label{recent-advances}}
+
+\begin{itemize}
+\tightlist
+\item
+  New capture methods
+\item
+  CITE-seq
+\item
+  Cell hashing
+\end{itemize}
+
+\hypertarget{features-of-single-cell-rna-seq-data}{%
+\section{Features of single-cell RNA-seq data}\label{features-of-single-cell-rna-seq-data}}
+
+\begin{itemize}
+\tightlist
+\item
+  Why use single-cell?
+\item
+  Low counts
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Dropout
+  \item
+    Bursting
+  \item
+    Biology
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{analysing-scrna-seq-data}{%
+\section{Analysing scRNA-seq data}\label{analysing-scrna-seq-data}}
+
+\hypertarget{pre-processing-and-quality-control}{%
+\subsection{Pre-processing and quality control}\label{pre-processing-and-quality-control}}
+
+\begin{itemize}
+\tightlist
+\item
+  Alignment
+\item
+  Droplet selection
+\item
+  UMIs
+\item
+  Doublet detection
+\item
+  Bad cells
+\item
+  Gene filtering
+\item
+  Cell ranger
+\item
+  scater
+\end{itemize}
+
+\hypertarget{integrating-multiple-datasets}{%
+\subsection{Integrating multiple datasets}\label{integrating-multiple-datasets}}
+
+\begin{itemize}
+\tightlist
+\item
+  Why?
+\item
+  Seurat CCA
+\item
+  New methods
+\end{itemize}
+
+\hypertarget{grouping-cells}{%
+\subsection{Grouping cells}\label{grouping-cells}}
+
+\begin{itemize}
+\tightlist
+\item
+  Clustering
+\item
+  Seurat
+\item
+  Other approaches
+\end{itemize}
+
+\hypertarget{ordering-cells}{%
+\subsection{Ordering cells}\label{ordering-cells}}
+
+\begin{itemize}
+\tightlist
+\item
+  Pseudotime
+\item
+  Monocle
+\item
+  Other approaches
+\end{itemize}
+
+\hypertarget{gene-detection-and-interpretation}{%
+\subsection{Gene detection and interpretation}\label{gene-detection-and-interpretation}}
+
+\begin{itemize}
+\tightlist
+\item
+  DE
+\item
+  Marker genes
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Alternatives - Gini, classifiers
+  \end{itemize}
+\item
+  Reviews
+\item
+  Classification
+\end{itemize}
+
+\hypertarget{kidney-development}{%
+\section{Kidney development}\label{kidney-development}}
+
+\hypertarget{structure-and-function}{%
+\subsection{Structure and function}\label{structure-and-function}}
+
+\begin{itemize}
+\tightlist
+\item
+  Kidney structure
+\item
+  Nephron structure
+\item
+  Important cell types
+\end{itemize}
+
+\hypertarget{stages-of-development}{%
+\subsection{Stages of development}\label{stages-of-development}}
+
+\begin{itemize}
+\tightlist
+\item
+  Lineage
+\item
+  Important genes
+\end{itemize}
+
+\hypertarget{growing-kidney-organoids}{%
+\subsection{Growing kidney organoids}\label{growing-kidney-organoids}}
+
+\begin{itemize}
+\tightlist
+\item
+  Why?
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Disease modelling
+  \end{itemize}
+\item
+  Protocol
+\item
+  Growth factors
+\item
+  Characterisation
+\item
+  Reproducibility
+\end{itemize}
 
 \hypertarget{the-scrna-seq-tools-landscape}{%
 \chapter{The scRNA-seq tools landscape}\label{the-scrna-seq-tools-landscape}}

@@ -44,7 +44,7 @@ for (add in additions) {
                Headers = if_else(Name == add$section & Date >= add$added,
                                  Headers + add$counts["Headers"], Headers),
                Captions = if_else(Name == add$section & Date >= add$added,
-                                  Captions + counts["Captions"], Captions),
+                                  Captions + add$counts["Captions"], Captions),
                Total = if_else(Name == add$section & Date >= add$added,
                                Total + sum(add$counts), Total))
 }
