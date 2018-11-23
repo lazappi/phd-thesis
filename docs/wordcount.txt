@@ -134,3 +134,32 @@ Date	Time	Name	Level	Text	Headers	Captions	Total
 2018-11-23	19:16:54	Analysis of kidney organoid scRNA-seq data	Chapter	0	6	0	6
 2018-11-23	19:16:54	Conclusion	Chapter	0	1	0	1
 2018-11-23	19:16:54	References	Chapter	0	1	0	1
+2018-11-24	10:42:20	docs/thesis.tex	Document	2586	86	0	2672
+2018-11-24	10:42:20	Introduction	Chapter	2431	56	0	2487
+2018-11-24	10:42:20	RNA sequencing	Section	21	12	0	33
+2018-11-24	10:42:20	Capture and reverse transcription	Subsection	4	4	0	8
+2018-11-24	10:42:20	High-throughput sequencing	Subsection	5	2	0	7
+2018-11-24	10:42:20	Analysis of RNA-seq data	Subsection	8	4	0	12
+2018-11-24	10:42:20	Single-cell RNA-sequencing	Section	258	2	0	260
+2018-11-24	10:42:20	Single-cell capture technologies	Section	1390	12	0	1402
+2018-11-24	10:42:20	Droplet based cell capture	Subsection	311	4	0	315
+2018-11-24	10:42:20	Unique Molecular Identifiers	Subsection	346	3	0	349
+2018-11-24	10:42:20	Recent advances	Subsection	390	2	0	392
+2018-11-24	10:42:20	Analysing scRNA-seq data	Section	744	18	0	762
+2018-11-24	10:42:20	Pre-processing and quality control	Subsection	13	4	0	17
+2018-11-24	10:42:20	Integrating multiple datasets	Subsection	5	3	0	8
+2018-11-24	10:42:20	Grouping cells	Subsection	4	2	0	6
+2018-11-24	10:42:20	Ordering cells	Subsection	4	2	0	6
+2018-11-24	10:42:20	Gene detection and interpretation	Subsection	8	4	0	12
+2018-11-24	10:42:20	Kidney development	Section	18	11	0	29
+2018-11-24	10:42:20	Structure and function	Subsection	7	3	0	10
+2018-11-24	10:42:20	Stages of development	Subsection	3	3	0	6
+2018-11-24	10:42:20	Growing kidney organoids	Subsection	8	3	0	11
+2018-11-24	10:42:20	The scRNA-seq tools landscape	Chapter	0	4	0	4
+2018-11-24	10:42:20	Simulating scRNA-seq data	Chapter	0	6	0	6
+2018-11-24	10:42:20	Introduction	Section	0	1	0	1
+2018-11-24	10:42:20	Splatter publication	Section	0	2	0	2
+2018-11-24	10:42:20	Visualising clustering across resolutions	Chapter	0	4	0	4
+2018-11-24	10:42:20	Analysis of kidney organoid scRNA-seq data	Chapter	0	6	0	6
+2018-11-24	10:42:20	Conclusion	Chapter	0	1	0	1
+2018-11-24	10:42:20	References	Chapter	0	1	0	1

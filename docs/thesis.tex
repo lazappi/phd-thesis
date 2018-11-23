@@ -265,7 +265,7 @@ Droplet-based capture was popularised by the publication of the Drop-seq and InD
   How they work
 \end{itemize}
 
-In contrast to plate-based capture methods, which often provide reads along the length of transcripts, droplet-based capture methods typically employ protocols which include short random nucleotide sequences known as Unique Molecular Identifiers (UMIs). Individual cells contain very small amounts of RNA and to obtain enough cDNA a PCR amplification step is necessary. Depending on their nucleotide sequence different transcripts may be amplified at different rates which can distort their relative proportions within a library. UMIs attempt to improve the quantification of gene expression by allowing the removal of PCR duplicates produced during amplification. The nucleotide probes used in droplet-based capture protocols include a PolyT sequence which binds to mature mRNA molecules, a barcode sequence which is the same for every probe on a bead and 8-10 bases of UMI sequence which is unique to each probe. The UMI sequences are long enough that the probability of capturing two copies of a transcript on two probes with the same UMI is extremely low. After reverse-transcription, amplification, sequencing and alignment de-duplication can be performed by identifying reads with the same UMI that align to the same position and therefore should be PCR duplicates rather than truly expressed copies of a transcript. For this method to be effective each read must be associated with a UMI which means that only a small section at the 3' end of each transcript is sequenced. This has the side effect of reducing the amount of cDNA that needs to be sequenced and therefore increasing the number of cells that can be sequenced at a time. While the improvement in quantification of gene expression levels is useful for many downstream analyses it comes at the cost of coverage across the length of a gene which is required for applications such as variant detection and de-novo assembly. Statistical methods designed for full-length data may also be affected by the difference properties of a UMI dataset. Datasets with UMIs also need extra processing steps which can be complicated by the possibility of sequencing errors in the UMI itself.
+In contrast to plate-based capture methods, which often provide reads along the length of transcripts, droplet-based capture methods typically employ protocols which include short random nucleotide sequences known as Unique Molecular Identifiers (UMIs). Individual cells contain very small amounts of RNA and to obtain enough cDNA a PCR amplification step is necessary. Depending on their nucleotide sequence different transcripts may be amplified at different rates which can distort their relative proportions within a library. UMIs attempt to improve the quantification of gene expression by allowing the removal of PCR duplicates produced during amplification. The nucleotide probes used in droplet-based capture protocols include a PolyT sequence which binds to mature mRNA molecules, a barcode sequence which is the same for every probe on a bead and 8-10 bases of UMI sequence which is unique to each probe. The UMI sequences are long enough that the probability of capturing two copies of a transcript on two probes with the same UMI is extremely low. After reverse-transcription, amplification, sequencing and alignment de-duplication can be performed by identifying reads with the same UMI that align to the same position and therefore should be PCR duplicates rather than truly expressed copies of a transcript. For this method to be effective each read must be associated with a UMI which means that only a small section at the 3' end of each transcript is sequenced. This has the side effect of reducing the amount of cDNA that needs to be sequenced and therefore increasing the number of cells that can be sequenced at a time. While the improvement in quantification of gene expression levels is useful for many downstream analyses it comes at the cost of coverage across the length of a gene which is required for applications such as variant detection and de-novo assembly. \textbf{READS ALONG GENE} Statistical methods designed for full-length data may also be affected by the difference properties of a UMI dataset. Datasets with UMIs also need extra processing steps which can be complicated by the possibility of sequencing errors in the UMI itself.
 
 \hypertarget{recent-advances}{%
 \subsection{Recent advances}\label{recent-advances}}
@@ -292,13 +292,11 @@ CRISPR-Cas9 gene editing has also been developed as an extension to scRNA-seq pr
 
 Other approaches that allow multiple measurements from individual cells include\ldots{}
 
-\hypertarget{features-of-single-cell-rna-seq-data}{%
-\section{Features of single-cell RNA-seq data}\label{features-of-single-cell-rna-seq-data}}
+\hypertarget{analysing-scrna-seq-data}{%
+\section{Analysing scRNA-seq data}\label{analysing-scrna-seq-data}}
 
 \begin{itemize}
 \tightlist
-\item
-  Why use single-cell?
 \item
   Low counts
 
@@ -311,68 +309,13 @@ Other approaches that allow multiple measurements from individual cells include\
   \item
     Biology
   \end{itemize}
-\item
-  development
 \end{itemize}
 
-\hypertarget{analysing-scrna-seq-data}{%
-\section{Analysing scRNA-seq data}\label{analysing-scrna-seq-data}}
+Cell capture technologies and scRNA-seq protocols have developed rapidly but there are still a number of challenges with the data they produce. Existing approaches are inefficient, capturing around 10 percent of transcripts in a cell({\textbf{???}}). When combined with the low sequencing depth per cell this results in a limited sensitivity and an inability to detect lowly expressed transcripts. The small amount of starting material also contributes to high levels of technical noise, complicating downstream analysis and making it difficult to detect biological differences({\textbf{???}}). In order to capture cells they must first be dissociated into single-cell suspensions but this step can be non-trivial. Some tissues or cell types may be more difficult to separate than others and the treatments required to break them apart may effect the health of the cells and their transcriptional profiles. Other cell types may be too big or have other characteristics that prevent them being captured. In these cases related techniques that allow the sequencing of RNA from single nuclei may be more effective. Cells may be damaged during processing, multiple cells captured together or empty wells or droplets sequenced making quality control of datasets an important consideration.
 
-\begin{verbatim}
-Single-cell RNA-seq technologies have developed rapidly but there are still a
-number of challenges. Existing protocols are inefficient, capturing only around
-10 percent of transcripts in a cell[@Grun2014-zn]. Combined with the relatively
-low sequencing depth that is commonly used, this results in a limited
-sensitivity and an inability to reliably detect lowly expressed transcripts. The
-small amount of starting material also contributes to high levels of technical
-noise, complicating downstream analysis and making it difficult to detect
-biological differences[@Liu2016-wq]. All high-throughput scRNA-seq protocols and
-platforms require tissues to be dissociated into single-cell suspensions before
-capture. This step can be non-trivial. Some tissues or cell types may not
-readily separate and the treatments used to break them down may effect the
-health of the cells and therefore their transcriptional profiles. Additionally,
-some cell types may be too big or have other physical characteristics that
-prevent them being captured using currect methods. Cells may also be damaged
-during processing, or missing or multiple cells may have been sequenced, making
-quality control an important consideration.
+As well as increasing technical noise the small amounts of starting material and low sequencing depth mean there are many occasions where zero counts are recorded, indicating no measured expression for a particular gene in a particular cell. These zero counts often represent true biological signal we are interested as we expect different cell types to express different genes. However they can also be the result of confounding biological factors such as stage in the cell cycle, transcriptional bursting and environmental interactions which cause genuine changes in expression but that might not be of interest to a particular study. On top of this there are effects that are purely technical factors in particular sampling effects which mean result in ``dropout'' events where a transcript is truly expressed in a sample but is not observed in the sequencing data. In bulk experiments these effects are limited by averaging across the cells in a sample but for single-cell experiments they can present a significant challenge for analysis as methods must account for the missing information and they may cause the assumptions of existing methods to be violated. One approach to tackling the problem of too many zeros is to use zero-inflated versions of common distributions but it is debatable whether scRNA-seq datasets are truly zero-inflated or the the additional zeros are better modeled with standard distributions with lower means. Another approach is to impute some of the zeros, replacing them with estimates of how expressed those genes truly are based on their expression in similar cells. However imputation comes with the risk of introducing false structure that is not really present in the data.
 
-As well as introducing technical noise, the small amounts of starting material
-and low sequencing depth mean there are many occasions  where there is no
-measured expression for a particular gene in a particular cell. Some of these
-zero counts are due to the biology we wish to study, for example we expect
-different cell types to express different genes, but there are additional
-biological factors such as the cell cycle, transcriptional bursting and
-environmental interactions which cause genuine differences in expression between
-cells performing the same function. On top on this are the technical effects
-that have already been discussed including that  existing protocols may not
-reliably capture all the RNA present, resulting in "dropout" events where a gene
-is expressed in a sample but not observed in the sequencing data. These zeros
-can make analysis difficult as methods must account for the missing information
-and they may violate the assumptions of existing approaches. For example the
-DEseq2 package[@Love2014-tw] has proven successful for detecting differential
-expression in bulk RNA-seq but it relies on the presence of genes without any
-zero counts, and therefore typically fails on scRNA-seq data. Examples of
-scRNA-seq analysis packages that tackle this problem are Zero Inflated Factor
-Analysis (ZIFA)[@Pierson2015-qp], which explicitly models dropout as it affects
-dimensionality reduction, and Clustering through Imputation and Dimensionality
-Reduction (CIDR)[@Lin2016-yu], which implicitly imputes zeros as it clusters
-cells.
-
-Bulk RNA-seq experiments are usually conducted on predefined groups of samples,
-for example cancer cells and normal tissue, different tissue types or treated
-and control cells. Some scRNA-seq experiments are done in a similar way where
-cells are sorted into known types based on surface markers or selected at a
-series of time points, but often they are more exploratory. Many of the current
-studies have taken samples of developing or mature tissues and attempted to
-identify what cell types are present[@Zeisel2015-rd; @Patel2014-bl;
-@Treutlein2014-wd; @Usoskin2015-fz; @Buettner2015-rq; @Klein2015-iw;
-@Trapnell2014-he]. This requires a new set of analysis techniques to be
-developed which attempt to identify cell types. Success at this task is crucial
-to the reliability of results from more developed analysis methods such as gene
-testing. Additionally is it impossible to truly replicate an individual cell and
-therefore thought must be given as to what constitutes a replicate for the
-purposes of statistical analysis.
-\end{verbatim}
+Bulk RNA-seq experiments usually involve predefined groups of samples, for example cancer cells and normal tissue, different tissue types or treatment and control groups. It is possible to design scRNA-seq experiments in the same way for example by sorting cells into known groups based on surface markers, sampling them at a series of time points or comparing treatment groups but often they are more exploratory. Many of the single-cell studies to date have sampled developing or mature tissues and attempted to profile the cell types that are present{[}Zeisel2015-rd; Patel2014-bl; Treutlein2014-wd; Usoskin2015-fz; Buettner2015-rq; Klein2015-iw; Trapnell2014-he{]}. This approach is best exemplified by the Human Cell Atlas project which is attempting to produce a reference of the transcriptional profiles of all the cell types in the human body. Similar projects exist for other species and specific tissues. As scRNA-seq datasets have become more widely available a standard workflow has developed which can be applied to many experiments. This workflow can be divided into four phases: 1) Data acquisition, Pre-processing of samples to produce a cell by gene expression matrix, 2) Data cleaning, quality control to refine the dataset used for analysis, 3) Cell assignment, grouping or ordering of cells based on their transcriptional profile, and 4) Gene identification to find genes that represent particular groups and can be used to interpret them. Within each phase a range processes may be used and there are now many tools available for completing each of them.
 
 \hypertarget{pre-processing-and-quality-control}{%
 \subsection{Pre-processing and quality control}\label{pre-processing-and-quality-control}}
