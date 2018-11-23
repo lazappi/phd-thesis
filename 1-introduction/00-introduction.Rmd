@@ -22,6 +22,33 @@
 * Normalisation
 * Differential expression testing
 
+## Single-cell RNA-sequencing
+
+Traditional bulk RNA-seq experiments average the transcriptome across the many
+cells in a sample but recently it has become possible to perform single-cell
+RNA-sequencing (scRNA-seq) and investigate the transcriptome at the resolution
+of individual cell. There are many situations were it is important to
+understand how specific cell types react and where analyses may be affected by
+the unknown proportions of cell types in a sample. Studies into gene expression
+in specific cell types previously required a way to select and isolate the
+cells they were interested which removed them from the other cell types they
+are usually associated with and made it impossible to investigate how they
+interact. With scRNA-seq technologies it is now possible to look at the
+transcriptome of all the cell types in a tissue simultaneously which has lead
+to a better understanding of what makes cell types distinct and the discovery
+of previously unknown cell types.
+
+One area that has particularly benefitted from the rise of scRNA-seq is
+developmental biology. Although the genes involved in the development of
+many organs are now well understood arriving at this knowledge has required many
+painstaking experiments. During development cells are participating in a
+continuous dynamic process involving the maturation from one cell type to
+another and the creation of new cell types. Single-cell RNA-seq captures a
+snapshot of this process allow the transcriptome of intermediate and mature
+cells to be studied. This has revealed that some of the genes thought to be
+markers of specific cell types are more widely expressed or involved in other
+processes.
+
 ## Single-cell capture technologies
 
 * First protocol
@@ -177,6 +204,10 @@ include...
     * Dropout
     * Bursting
     * Biology
+
+
+
+- development
 
 ## Analysing scRNA-seq data
 
