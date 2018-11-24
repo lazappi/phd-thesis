@@ -152,15 +152,49 @@ computational analysis.
 * Differential expression testing
 * Proportions
 
-```
-It is possible to perform a wide variety of analysis on RNA-seq data, such
-as variant identification or novel isoform detection, but the most common
-approach is to look for differences in expression between groups. Reads are
-aligned to a reference genome and the number overlapping each gene is counted.
-Statistical methods can be used to compare gene expression between conditions
-and identify genes that are differently regulated, with further analysis able
-to examine pathways that have changed between groups.
-```
+Many types of analyses can be performed using RNA-seq data such as
+identification of variants in the genetic sequence or detection of previously
+unannotated transcripts but the most common kind of analysis is to look for
+differences in the expression level of genes between groups. To do this reads
+are first aligned to a reference and the number of reads overlapping each genes
+is counted. In contrast to aligners designed for DNA sequencing RNA-seq
+aligners such as STAR, HiSAT2 and subread must taken into account the splicing
+of mRNA transcripts which causes parts of some reads to align in different
+locations. The alignment step is computational intensive and can take a
+significant amount of time. More recently tools such as kallisto and Salmon
+have been developed which attempt to directly quantify expression by estimating
+the probability that a read comes from a particular annotated transcript. These
+approaches are orders of magnitude faster than true alignment and potentially
+produce more accurate quantification at the cost of having an exact genomic
+position for each read.
+
+At this stage the result is a matrix of counts known as an expression matrix
+where the rows are features (usually genes), the columns are samples and the
+values show the expression level of a particular feature in a sample. As these
+counts result from a sampling process that can be modeled using common
+statistical distributions. One option is the Poisson distribution, however this
+assumes that the mean and variance of each feature is equal. A better fit is the
+negative binomial (or Gamma-Poisson) distribution which includes an over-dispersion
+parameter allowing the variance to be larger than the mean. While each feature is
+quantified for each sample these values are not absolute measures of expression
+and are better understood as proportions of the total number of reads. Another
+complication of RNA-seq data is that the number of features (tens of thousands)
+is much larger than the number of samples (usually only a few per group).
+
+The most successful methods for testing differential expression between groups
+of RNA-seq samples overcome this challenge by sharing information between
+genes. Both the edgeR and DESeq (and later the DESeq2) packages model RNA-seq
+data using the negative binomial distribution while Before expression levels
+can be tested the differences between samples must be removed through
+normalisation. The edgeR packaged uses the Trimmed-Mean of M values (TMM)
+method where... DESeq has a similar method that... When an experiment has been
+conducted multiple batches and there are significant differences between them
+alternative normalisations such as Removel of Unwanted Variation (RUV) that ...
+may be required. The limma package uses an alternative approach where a method
+called voom transforms the data so that it is suitable for linear modelling
+methods originally designed for RNA microarray technology. Over the time the
+methods in these packages have been refined and new tests developed allowing
+for the routine analysis of RNA-seq experiments.
 
 ## Single-cell RNA-sequencing
 
@@ -618,6 +652,7 @@ dataset and see how they compare.
     * Alternatives - Gini, classifiers
 * Reviews
 * Classification
+* Logistic regression
 
 Once cells are assigned by clustering or ordering the problem is to interpret
 what these groups represent. For clustered datasets this is usually done by
