@@ -315,7 +315,7 @@ Cell capture technologies and scRNA-seq protocols have developed rapidly but the
 
 As well as increasing technical noise the small amounts of starting material and low sequencing depth mean there are many occasions where zero counts are recorded, indicating no measured expression for a particular gene in a particular cell. These zero counts often represent true biological signal we are interested as we expect different cell types to express different genes. However they can also be the result of confounding biological factors such as stage in the cell cycle, transcriptional bursting and environmental interactions which cause genuine changes in expression but that might not be of interest to a particular study. On top of this there are effects that are purely technical factors in particular sampling effects which mean result in ``dropout'' events where a transcript is truly expressed in a sample but is not observed in the sequencing data. In bulk experiments these effects are limited by averaging across the cells in a sample but for single-cell experiments they can present a significant challenge for analysis as methods must account for the missing information and they may cause the assumptions of existing methods to be violated. One approach to tackling the problem of too many zeros is to use zero-inflated versions of common distributions but it is debatable whether scRNA-seq datasets are truly zero-inflated or the the additional zeros are better modeled with standard distributions with lower means. Another approach is to impute some of the zeros, replacing them with estimates of how expressed those genes truly are based on their expression in similar cells. However imputation comes with the risk of introducing false structure that is not really present in the data.
 
-Bulk RNA-seq experiments usually involve predefined groups of samples, for example cancer cells and normal tissue, different tissue types or treatment and control groups. It is possible to design scRNA-seq experiments in the same way for example by sorting cells into known groups based on surface markers, sampling them at a series of time points or comparing treatment groups but often they are more exploratory. Many of the single-cell studies to date have sampled developing or mature tissues and attempted to profile the cell types that are present{[}Zeisel2015-rd; Patel2014-bl; Treutlein2014-wd; Usoskin2015-fz; Buettner2015-rq; Klein2015-iw; Trapnell2014-he{]}. This approach is best exemplified by the Human Cell Atlas project which is attempting to produce a reference of the transcriptional profiles of all the cell types in the human body. Similar projects exist for other species and specific tissues. As scRNA-seq datasets have become more widely available a standard workflow has developed which can be applied to many experiments. This workflow can be divided into four phases: 1) Data acquisition, Pre-processing of samples to produce a cell by gene expression matrix, 2) Data cleaning, quality control to refine the dataset used for analysis, 3) Cell assignment, grouping or ordering of cells based on their transcriptional profile, and 4) Gene identification to find genes that represent particular groups and can be used to interpret them. Within each phase a range processes may be used and there are now many tools available for completing each of them.
+Bulk RNA-seq experiments usually involve predefined groups of samples, for example cancer cells and normal tissue, different tissue types or treatment and control groups. It is possible to design scRNA-seq experiments in the same way for example by sorting cells into known groups based on surface markers, sampling them at a series of time points or comparing treatment groups but often they are more exploratory. Many of the single-cell studies to date have sampled developing or mature tissues and attempted to profile the cell types that are present{[}Zeisel2015-rd; Patel2014-bl; Treutlein2014-wd; Usoskin2015-fz; Buettner2015-rq; Klein2015-iw; Trapnell2014-he{]}. This approach is best exemplified by the Human Cell Atlas project which is attempting to produce a reference of the transcriptional profiles of all the cell types in the human body. Similar projects exist for other species and specific tissues. As scRNA-seq datasets have become more widely available a standard workflow has developed which can be applied to many experiments. This workflow can be divided into four phases: 1) Data acquisition, Pre-processing of samples to produce a cell by gene expression matrix, 2) Data cleaning, quality control to refine the dataset used for analysis, 3) Cell assignment, grouping or ordering of cells based on their transcriptional profile, and 4) Gene identification to find genes that represent particular groups and can be used to interpret them. Within each phase a range processes may be used and there are now many tools available for completing each of them, with over XXX tools currently available. An introduction to the phases of scRNA-seq analysis is provided here but the analysis tools landscape is more fully explored in Chapter X.
 
 \hypertarget{pre-processing-and-quality-control}{%
 \subsection{Pre-processing and quality control}\label{pre-processing-and-quality-control}}
@@ -338,48 +338,15 @@ Bulk RNA-seq experiments usually involve predefined groups of samples, for examp
   Cell ranger
 \item
   scater
+\item
+  cell free DNA
 \end{itemize}
 
-\begin{verbatim}
-As scRNA-seq data has become available there has been a rapid development of new
-bioinformatics tools attempting to unlock its potential. Currently there are at
-least 80 available software packages that have been designed specifically for
-the analysis of scRNA-seq data, the majority of which have been published in
-peer-reviewed journals or as preprints. A table of scRNA-seq software is
-available at [https://goo.gl/4wcVwn](). Prior to analysis the sequencing reads
-from an scRNA-seq experiment are processed in much the same way as a bulk
-experiment. Typically there is some quality control of the raw reads, reads are
-aligned to a reference genome and the number of reads overlapping annotated
-features (genes or transcripts) is counted. Alternatively, for full-length
-reads, probabilistic quantification methods such as kallisto[@Bray2016-tm] or
-Salmon[@Patro2015-kl] can be used. These approaches can greatly  improve
-processing time which is important when there may be tens of thousands of
-samples but they are currently incompatible with UMI protocols. When using
-conventional alignment UMI samples need extra processing with tools such as
-UMI-tools[@Smith2016-bt] or umis[@Svensson2016-eg]. The resulting gene by cell
-matrix of expression values is the starting point for most analysis.
+The result of a sequencing experiment is typically a set of image files from the sequencer or a FASTQ file containing nucleotide reads but for most analyses we use an expression matrix. To produce this matrix there is a series of pre-processing steps, typically beginning will some quality control of the raw reads. Reads are then aligned to a reference genome and the number of reads overlapping annotated features (genes or transcripts) is counted. In recent years probabilistic quantification methods such as kallisto{[}Bray2016-tm{]} or Salmon{[}Patro2015-kl{]} that estimate transcript expression directly without requiring complete alignment have become popular as they dramatically reduce processing time and potentially produce more accurate quantification. These can be applied to full-length scRNA-seq datasets but have required adaptations such as the Alevin method for UMI-based datasets. When using conventional alignment UMI samples need extra processing with tools like UMI-tools{[}Smith2016-bt{]} or umis{[}Svensson2016-eg{]} in order to assign cell barcodes and deduplicate UMIs. For datasets produced using the Chromium platform the Cell Ranger software is a complete preprocessing pipeline that also includes an automated downstream analysis. Other packages such as scPipe also aim to streamline this process with some such as XXX designed to work on scalable cloud based infrastructure which may be required as bigger datasets continue to be produced.
 
-Quality control of individual cells is important as most experiments will
-contain some low-quality cells that could be uninformative or misleading.
-Quality control can be performed on various levels: on the quality scores of the
-reads themselves, how or where the reads align or features of the expression
-matrix such as the total expression, expression of spike-ins or expression of
-particular genes. The Cellity package attempts to do this by inspecting a series
-of biological and technical features and using principal component analysis or
-machine learning methods to distinguish between high and low-quality
-cells[@Ilicic2016-wy]. However the authors found that many of the features were
-cell type specific and more work needs to be done to make this approach more
-generally applicable. Jiang, Thomson and Stewart take a different approach,
-assuming that expression outliers are associated with poor sequencing
-quality[@Jiang2016-ys]. The scater package[@McCarthy2016-cw] emphasises a more
-exploratory approach to quality control. While it cannot automatically detect
-low-quality cells, scater provides a convenient object for storing scRNA-seq
-data with functions for plotting associated features, making it easy for the
-user to define their own filtering thresholds. Plate-based platforms such as the
-Fluidigm C1 can have additional biases based on the location of individual
-wells. The OEFinder package attempts to identify and visualise these "ordering
-effects"[@Leng2016-it].
-\end{verbatim}
+Quality control of individual cells is important as experiments will contain low-quality cells that can be uninformative or lead to misleading results. Quality control can be performed on various levels, from the quality scores of the reads themselves, how or where reads align to features of the expression matrix. Particular types of cells that are commonly removed include damaged cells, doublets where multiple cells have been captured together and empty droplets or wells that have been sequenced but do not contain a cell. The Cellity package attempts to automate this process by inspecting a series of biological and technical features and using machine learning methods to distinguish between high and low-quality cells{[}Ilicic2016-wy{]}. However the authors found that many of the features were cell type specific and more work needs to be done to make this approach more generally applicable. The scater package{[}McCarthy2016-cw{]} emphasises a more exploratory approach to quality control at the expression matrix level but providing a series of functions for visualising various features of a dataset. These plots can then be used for selecting thresholds for removing cells. Plate-based capture platforms can produce additional biases based on the location of individual wells, a problem which is addressed by the OEFinder package which attempts to identify and visualise these ``ordering effects''{[}Leng2016-it{]}.
+
+Filtering and selection of features also deserves attention. Genes or transcripts that are lowly expressed are typically removed from datasets in order to reduce computational time and multiple-testing correction but it is unclear how many counts indicate that a gene is truly ``expressed''. Many downstream analysis operate on a selected set of genes which can have a dramatic effect on their results. These features are often selected based on how variable they are across the dataset but this may be a result of noise rather than biological importance. Alternative selection methods have been proposed such as M3Drop which\ldots{}
 
 \hypertarget{integrating-multiple-datasets}{%
 \subsection{Integrating multiple datasets}\label{integrating-multiple-datasets}}

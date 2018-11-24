@@ -163,3 +163,32 @@ Date	Time	Name	Level	Text	Headers	Captions	Total
 2018-11-24	10:42:20	Analysis of kidney organoid scRNA-seq data	Chapter	0	6	0	6
 2018-11-24	10:42:20	Conclusion	Chapter	0	1	0	1
 2018-11-24	10:42:20	References	Chapter	0	1	0	1
+2018-11-24	11:36:32	docs/thesis.tex	Document	3146	86	0	3232
+2018-11-24	11:36:32	Introduction	Chapter	2991	56	0	3047
+2018-11-24	11:36:32	RNA sequencing	Section	21	12	0	33
+2018-11-24	11:36:32	Capture and reverse transcription	Subsection	4	4	0	8
+2018-11-24	11:36:32	High-throughput sequencing	Subsection	5	2	0	7
+2018-11-24	11:36:32	Analysis of RNA-seq data	Subsection	8	4	0	12
+2018-11-24	11:36:32	Single-cell RNA-sequencing	Section	258	2	0	260
+2018-11-24	11:36:32	Single-cell capture technologies	Section	1390	12	0	1402
+2018-11-24	11:36:32	Droplet based cell capture	Subsection	311	4	0	315
+2018-11-24	11:36:32	Unique Molecular Identifiers	Subsection	346	3	0	349
+2018-11-24	11:36:32	Recent advances	Subsection	390	2	0	392
+2018-11-24	11:36:32	Analysing scRNA-seq data	Section	1304	18	0	1322
+2018-11-24	11:36:32	Pre-processing and quality control	Subsection	544	4	0	548
+2018-11-24	11:36:32	Integrating multiple datasets	Subsection	5	3	0	8
+2018-11-24	11:36:32	Grouping cells	Subsection	4	2	0	6
+2018-11-24	11:36:32	Ordering cells	Subsection	4	2	0	6
+2018-11-24	11:36:32	Gene detection and interpretation	Subsection	8	4	0	12
+2018-11-24	11:36:32	Kidney development	Section	18	11	0	29
+2018-11-24	11:36:32	Structure and function	Subsection	7	3	0	10
+2018-11-24	11:36:32	Stages of development	Subsection	3	3	0	6
+2018-11-24	11:36:32	Growing kidney organoids	Subsection	8	3	0	11
+2018-11-24	11:36:32	The scRNA-seq tools landscape	Chapter	0	4	0	4
+2018-11-24	11:36:32	Simulating scRNA-seq data	Chapter	0	6	0	6
+2018-11-24	11:36:32	Introduction	Section	0	1	0	1
+2018-11-24	11:36:32	Splatter publication	Section	0	2	0	2
+2018-11-24	11:36:32	Visualising clustering across resolutions	Chapter	0	4	0	4
+2018-11-24	11:36:32	Analysis of kidney organoid scRNA-seq data	Chapter	0	6	0	6
+2018-11-24	11:36:32	Conclusion	Chapter	0	1	0	1
+2018-11-24	11:36:32	References	Chapter	0	1	0	1
