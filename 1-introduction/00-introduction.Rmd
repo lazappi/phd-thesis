@@ -207,11 +207,11 @@ include...
 Cell capture technologies and scRNA-seq protocols have developed rapidly but
 there are still a number of challenges with the data they produce. Existing
 approaches are inefficient, capturing around 10 percent of transcripts in a
-cell[@Grun2014-zn]. When combined with the low sequencing depth per cell this
+cell[Grun2014-zn]. When combined with the low sequencing depth per cell this
 results in a limited sensitivity and an inability to detect lowly expressed
 transcripts. The small amount of starting material also contributes to high
 levels of technical noise, complicating downstream analysis and making it
-difficult to detect biological differences[@Liu2016-wq]. In order to capture
+difficult to detect biological differences[Liu2016-wq]. In order to capture
 cells they must first be dissociated into single-cell suspensions but this step
 can be non-trivial. Some tissues or cell types may be more difficult to
 separate than others and the treatments required to break them apart may effect
@@ -454,6 +454,17 @@ between them. The trajectory is then created by finding a path through the
 cells and ordering the cells along it. This review compares the performance on
 a range of datasets... They found that...
 
+An alternative continuous approach is the cell velocity method in the velocyto
+package. RNA-seq studies typically focus on the expression of complete mature
+mRNA molecules but a sample will also contain immature mRNA that are yet to be
+spliced. Examining these reads assigned to introns can indicate newly
+transcribed mRNA molecules and therefore which genes are currently active.
+Instead of assigning cells to discrete groups or along a continuous path
+velocyto uses reads from unspliced regions to place them in a space and create
+a vector indicating the direction in which the transcriptional profile is
+heading. This vector can show the a cell is differentiation in a particular way
+or that a specific transcriptional program has been activated.
+
 Deciding on which assignment approach to use depends on the source of the data,
 the goals of the study and the questions that are being asked. Both grouping
 and ordering can be informative and it is often useful to attempt both on a
@@ -514,10 +525,20 @@ following clustering.
 
 ### Alternative analyses
 
-* Cell velocity
 * Variant detection
 * Cancer
 * Immune cells
+
+Some uses of scRNA-seq data fall outside the most common workflow and methods
+have been developed for a range of other purposes. For example methods have
+been designed for assigning haplotypes to cells, detecting allele-specific
+expression, identifying alternative splicing or calling single nucleotide or
+complex genomic variants. Other methods have been designed for specific cell
+types or tissues such as XXX which can assign immune cell receptors and XXX
+which interrogate the development of cancer samples. Most future studies can be
+expected to continue to follow common practice but it also expected that
+researchers will continue to push the boundaries of what it is possible to
+study using scRNA-seq technologies.
 
 ## Kidney development
 

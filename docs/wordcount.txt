@@ -310,3 +310,33 @@ Date	Time	Name	Level	Text	Headers	Captions	Total
 2018-11-24	14:42:34	Analysis of kidney organoid scRNA-seq data	Chapter	0	6	0	6
 2018-11-24	14:42:34	Conclusion	Chapter	0	1	0	1
 2018-11-24	14:42:34	References	Chapter	0	1	0	1
+2018-11-24	15:11:29	docs/thesis.tex	Document	4982	88	0	5070
+2018-11-24	15:11:29	Introduction	Chapter	4827	58	0	4885
+2018-11-24	15:11:29	RNA sequencing	Section	21	12	0	33
+2018-11-24	15:11:29	Capture and reverse transcription	Subsection	4	4	0	8
+2018-11-24	15:11:29	High-throughput sequencing	Subsection	5	2	0	7
+2018-11-24	15:11:29	Analysis of RNA-seq data	Subsection	8	4	0	12
+2018-11-24	15:11:29	Single-cell RNA-sequencing	Section	258	2	0	260
+2018-11-24	15:11:29	Single-cell capture technologies	Section	1390	12	0	1402
+2018-11-24	15:11:29	Droplet based cell capture	Subsection	311	4	0	315
+2018-11-24	15:11:29	Unique Molecular Identifiers	Subsection	346	3	0	349
+2018-11-24	15:11:29	Recent advances	Subsection	390	2	0	392
+2018-11-24	15:11:29	Analysing scRNA-seq data	Section	3140	20	0	3160
+2018-11-24	15:11:29	Pre-processing and quality control	Subsection	544	4	0	548
+2018-11-24	15:11:29	Normalisation and integration	Subsection	509	3	0	512
+2018-11-24	15:11:29	Grouping cells	Subsection	388	2	0	390
+2018-11-24	15:11:29	Ordering cells	Subsection	349	2	0	351
+2018-11-24	15:11:29	Gene detection and interpretation	Subsection	494	4	0	498
+2018-11-24	15:11:29	Alternative analyses	Subsection	115	2	0	117
+2018-11-24	15:11:29	Kidney development	Section	18	11	0	29
+2018-11-24	15:11:29	Structure and function	Subsection	7	3	0	10
+2018-11-24	15:11:29	Stages of development	Subsection	3	3	0	6
+2018-11-24	15:11:29	Growing kidney organoids	Subsection	8	3	0	11
+2018-11-24	15:11:29	The scRNA-seq tools landscape	Chapter	0	4	0	4
+2018-11-24	15:11:29	Simulating scRNA-seq data	Chapter	0	6	0	6
+2018-11-24	15:11:29	Introduction	Section	0	1	0	1
+2018-11-24	15:11:29	Splatter publication	Section	0	2	0	2
+2018-11-24	15:11:29	Visualising clustering across resolutions	Chapter	0	4	0	4
+2018-11-24	15:11:29	Analysis of kidney organoid scRNA-seq data	Chapter	0	6	0	6
+2018-11-24	15:11:29	Conclusion	Chapter	0	1	0	1
+2018-11-24	15:11:29	References	Chapter	0	1	0	1
