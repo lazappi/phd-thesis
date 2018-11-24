@@ -394,27 +394,40 @@ that...Alternative integration methods such as...
 * Comparison
 * Classification
 
-```
-Once a set of high-quality cells has been established the true analysis can
-begin. Many of the current packages focus on the task of assigning cells to
-groups before applying more traditional differential expression testing. This
-approach makes sense for a sample with a defined set of mature cell types and is
-taken by tools such as SINgle CEll RNA-seq profiling Analysis
-(SINCERA)[@Guo2015-mf], Single-Cell Consensus Clustering (SC3)[@Kiselev2016-fa],
-Seurat[@Satija2015-or], single-cell latent variable model
-(scLVM)[@Buettner2015-rq] and Spanning-tree Progression Analysis of
-Density-normalised Events (SPADE)[@Anchang2016-vo], as well as BackSPIN which
-was used to identify nine cell types and 47 distinct subclasses in the mouse
-cortex and hippocampus[@Zeisel2015-rd]. These tools attempt to cluster similar
-cells together based on their expression profiles, forming groups of cells of
-the same type. Often a dimensionality reduction step is included which can help
-to remove some of the noise present in scRNA-seq data. Once groups of cells are
-identified many of these packages can test genes for changes in expression,
-identifying genes that are differentially expressed across the groups, or marker
-genes that are expressed in a single group. These genes can be used to identify
-which cell types each group represents, or alternatively known marker genes can
-be inspected.
-```
+Grouping similar cells is a key step in analysing scRNA-seq datasets that is
+not usually required for bulk experiment and as such it has been a key focus of
+methods development with over XXX tools released for clustering cells. Some of
+these methods include SINgle CEll RNA-seq profiling Analysis
+(SINCERA)[Guo2015-mf], Single-Cell Consensus Clustering (SC3)[Kiselev2016-fa],
+single-cell latent variable model (scLVM)[Buettner2015-rq] and Spanning-tree
+Progression Analysis of Density-normalised Events (SPADE)[Anchang2016-vo], as
+well as BackSPIN which was used to identify nine cell types and 47 distinct
+subclasses in the mouse cortex and hippocampus[Zeisel2015-rd]. All of these
+tools attempt to cluster similar cells together based on their expression
+profiles, forming groups of cells of the same type. One clustering method that
+has become popular is that included in the Seurat package. This method begins
+by selecting a set of highly variable genes then performing PCA on them.**NEW
+GENE SELECTION** A set of dimensions is then selected that contains most of the
+variation in the dataset. Alternatively if Seurat's alignment method has been
+used to integrate datasets the aligned CCA dimensions are used instead. Next an
+MNN graph is constructed by considering the distance between cells in this
+multidimensional space. In order to separate cells into clusters a community
+detection algorithm such as Louvain optimisation is run on the graph with a
+resolution parameter that controls the number of clusters that are produced.
+Seurat's clustering method has been shown too....
+
+For tissue types that are well understood or where comprehensive references are
+available an alternative is to directly classify cells. This can be done using
+a gating approach based on the expression of known marker genes similar to that
+commonly used for flow cytometry experiments. Alternatively machine learning
+algorithms can be used to perform classification based on the overall expression
+profile. Methods such as ... take this approach. For example... Classification
+has the advantage of making use of existing knowledge and avoids manual annotation
+and interpretation of clusters which can often be difficult and time consuming.
+However it is biased by what is present in the reference datasets used typically
+can not reveal previously unknown cell types or states. As projects like the
+Human Cell Atlas produce well-annotated references based on scRNA-seq data the
+viability of classification and other reference-based methods will improve.
 
 ### Ordering cells
 
@@ -457,6 +470,14 @@ comparing the performance of different methods for each approach.
     * Alternatives - Gini, classifiers
 * Reviews
 * Classification
+
+```
+Once groups of cells are identified many of these packages can test genes
+for changes in expression, identifying genes that are differentially expressed
+across the groups, or marker genes that are expressed in a single group. These
+genes can be used to identify which cell types each group represents, or
+alternatively known marker genes can be inspected.
+```
 
 ## Kidney development
 

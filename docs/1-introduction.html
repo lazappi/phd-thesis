@@ -485,21 +485,21 @@ which correct for the total number of reads per cell and gene length. For UMI
 data the gene length correction is not required as reads only come from the
 ends of transcripts. Normalisation methods designed for detecting differential
 expression between bulk samples such as Trimmed Mean of M-Values
-(TMM)<span class="citation">(<span class="citeproc-not-found" data-reference-id="Robinson2010-ll"><strong>???</strong></span>)</span> or the DESeq method<span class="citation">(<span class="citeproc-not-found" data-reference-id="Anders2010-pq"><strong>???</strong></span>)</span> can be applied, but
+(TMM)[Robinson2010-ll] or the DESeq method[Anders2010-pq] can be applied, but
 is is unclear how suitable they are for the single-cell context. Most of the
 early normalisation methods developed specifically for scRNA-seq data made use
 of spike-ins, synthetic RNA sequences added to cells in known quantities such
 as the ERCC…. Brennecke et al.[Brennecke2013-pt], Ding et al.[Ding2015-ht]
 and Grün, Kester and van Oudenaarden[Grun2014-zn] all propose methods for
 estimating technical variance using spike-ins, as does Bayesian Analysis of
-Single-Cell Sequencing data (BASiCS)<span class="citation">(<span class="citeproc-not-found" data-reference-id="Vallejos2015-ef"><strong>???</strong></span>)</span>. Using spike-ins for
+Single-Cell Sequencing data (BASiCS)[Vallejos2015-ef]. Using spike-ins for
 normalisation assumes that they properly capture the dynamics of the underlying
 dataset and even if this is the case it is restricted to protocols where they
 can be added which does not include droplet-based capture techniques. The scrna
 package implements a method that doesn’t rely on spike-ins, instead using a
 pooling approach to compensate for the large number of zero counts where
 expression levels are summed across similar cells before calculating size
-factors that are deconvolved back to the original cells<span class="citation">(<span class="citeproc-not-found" data-reference-id="Lun2016-mq"><strong>???</strong></span>)</span>. The
+factors that are deconvolved back to the original cells[Lun2016-mq]. The
 BASiCS method has also been adapted to experiments without spike-ins by…, but
 only for designed experiments where groups are known in advance.</p>
 <p>Early scRNA-seq studies often made use of only a single sample but as technologies
@@ -527,25 +527,39 @@ that…Alternative integration methods such as…</p>
 <li>Comparison</li>
 <li>Classification</li>
 </ul>
-<pre><code>Once a set of high-quality cells has been established the true analysis can
-begin. Many of the current packages focus on the task of assigning cells to
-groups before applying more traditional differential expression testing. This
-approach makes sense for a sample with a defined set of mature cell types and is
-taken by tools such as SINgle CEll RNA-seq profiling Analysis
-(SINCERA)[@Guo2015-mf], Single-Cell Consensus Clustering (SC3)[@Kiselev2016-fa],
-Seurat[@Satija2015-or], single-cell latent variable model
-(scLVM)[@Buettner2015-rq] and Spanning-tree Progression Analysis of
-Density-normalised Events (SPADE)[@Anchang2016-vo], as well as BackSPIN which
-was used to identify nine cell types and 47 distinct subclasses in the mouse
-cortex and hippocampus[@Zeisel2015-rd]. These tools attempt to cluster similar
-cells together based on their expression profiles, forming groups of cells of
-the same type. Often a dimensionality reduction step is included which can help
-to remove some of the noise present in scRNA-seq data. Once groups of cells are
-identified many of these packages can test genes for changes in expression,
-identifying genes that are differentially expressed across the groups, or marker
-genes that are expressed in a single group. These genes can be used to identify
-which cell types each group represents, or alternatively known marker genes can
-be inspected.</code></pre>
+<p>Grouping similar cells is a key step in analysing scRNA-seq datasets that is
+not usually required for bulk experiment and as such it has been a key focus of
+methods development with over XXX tools released for clustering cells. Some of
+these methods include SINgle CEll RNA-seq profiling Analysis
+(SINCERA)[Guo2015-mf], Single-Cell Consensus Clustering (SC3)[Kiselev2016-fa],
+single-cell latent variable model (scLVM)[Buettner2015-rq] and Spanning-tree
+Progression Analysis of Density-normalised Events (SPADE)[Anchang2016-vo], as
+well as BackSPIN which was used to identify nine cell types and 47 distinct
+subclasses in the mouse cortex and hippocampus[Zeisel2015-rd]. All of these
+tools attempt to cluster similar cells together based on their expression
+profiles, forming groups of cells of the same type. One clustering method that
+has become popular is that included in the Seurat package. This method begins
+by selecting a set of highly variable genes then performing PCA on them.<strong>NEW
+GENE SELECTION</strong> A set of dimensions is then selected that contains most of the
+variation in the dataset. Alternatively if Seurat’s alignment method has been
+used to integrate datasets the aligned CCA dimensions are used instead. Next an
+MNN graph is constructed by considering the distance between cells in this
+multidimensional space. In order to separate cells into clusters a community
+detection algorithm such as Louvain optimisation is run on the graph with a
+resolution parameter that controls the number of clusters that are produced.
+Seurat’s clustering method has been shown too….</p>
+<p>For tissue types that are well understood or where comprehensive references are
+available an alternative is to directly classify cells. This can be done using
+a gating approach based on the expression of known marker genes similar to that
+commonly used for flow cytometry experiments. Alternatively machine learning
+algorithms can be used to perform classification based on the overall expression
+profile. Methods such as … take this approach. For example… Classification
+has the advantage of making use of existing knowledge and avoids manual annotation
+and interpretation of clusters which can often be difficult and time consuming.
+However it is biased by what is present in the reference datasets used typically
+can not reveal previously unknown cell types or states. As projects like the
+Human Cell Atlas produce well-annotated references based on scRNA-seq data the
+viability of classification and other reference-based methods will improve.</p>
 </div>
 <div id="ordering-cells" class="section level3">
 <h3><span class="header-section-number">1.4.4</span> Ordering cells</h3>
@@ -591,6 +605,11 @@ comparing the performance of different methods for each approach.</code></pre>
 <li>Reviews</li>
 <li>Classification</li>
 </ul>
+<pre><code>Once groups of cells are identified many of these packages can test genes
+for changes in expression, identifying genes that are differentially expressed
+across the groups, or marker genes that are expressed in a single group. These
+genes can be used to identify which cell types each group represents, or
+alternatively known marker genes can be inspected.</code></pre>
 </div>
 </div>
 <div id="kidney-development" class="section level2">
