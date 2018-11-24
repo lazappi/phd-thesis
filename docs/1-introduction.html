@@ -125,18 +125,155 @@
             <section class="normal" id="section-">
 <div id="introduction" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
+<ul>
+<li>Central dogma
+<ul>
+<li>Flow of information in cell</li>
+<li>DNA - long term storage</li>
+<li>Transcription to RNA - working copy, amplification
+<ul>
+<li>Messenger RNA</li>
+</ul></li>
+<li>Translation to protein - functional</li>
+<li>Some RNA also functional</li>
+</ul></li>
+</ul>
+<p>The central dogma of biology describes the flow of information within a cell,
+from DNA to RNA to protein. Deoxyribonucleic acid (DNA) is the long term data
+storage of the cell. This molecule has a well known double strand structure.
+Each strand of the helix consists of a series of nucleic acid molecules linked
+by phosphate groups. These nucleic acids come in four species, adenosine,
+cytosine, tyrosine and guanine and the two strands are bound together through
+hydrogen bonds between matching nucleic acids known as basepairs. Guanine forms
+three hydrogen bonds with cytosine and adenosine forms two with tyrosine. In
+computing terms DNA is similar to a hard drive that provides stable, consistent
+storage of important information. When the cell wants to use some of this
+information it produces a copy of it in the form of a ribonucleic acid (RNA)
+molecule through a process known as transcription, similar to a computer
+loading information it wants to use into it’s random access memory. RNA is
+similar to a single strand of DNA except that the tyrosine base is replaced
+with another base called uracil. Because it is single-stranded RNA does not
+have a double helix structure but it can form complex shapes by binding to
+itself. There are several different types of RNA that serve different purposes.
+RNA molecules that are translated from genes are known as messenger RNA (mRNA).
+Other types of RNA include ribosomal RNA (that forms part of the ribosome),
+micro RNA which have a role in regulating gene expression and long-noncoding
+RNA. Genes are the sections of DNA that encode proteins and are made up of
+regions that code information (none as exons) with much larger non-coding
+regions between them (introns). When an mRNA molecule is transcribed it
+initially contains the intronic sequences but these are removed through a
+process known as splicing and a sequence of adenosine bases (a poly-A tail) is
+added to the end where transcription ends (the 3’ end) to mark a mature mRNA
+molecule. The process for producing a protein from an mRNA transcript occurs in
+a structure called the ribosome and is known as translation because the
+information encoded by nucleic acids in RNA is converted to information stored
+as amino acids in the protein. Proteins complete most of the work required to
+keep a cell functioning and can be compared to the programs running on a
+computer. These functions include tasks such as sensing things in the external
+environment, transport nutrients into the cell, regulating the expression of
+genes, constructing new proteins, recycling molecules and metabolism.
+Understanding the molecules involved in the central dogma is central to our
+understanding of how a cell functions.</p>
 <div id="rna-sequencing" class="section level2">
 <h2><span class="header-section-number">1.1</span> RNA sequencing</h2>
 <ul>
-<li>Central dogma</li>
-<li>Why RNA-seq?</li>
+<li>Why RNA-seq?
+<ul>
+<li>What is happening?</li>
+<li>High throughput</li>
+<li>Easy</li>
+<li>Unbiased</li>
+<li>Complete</li>
+<li>Different cell types</li>
+</ul></li>
 </ul>
+<p>By looking at DNA we can see what genes are present in a cell but we cannot tell
+which of them are active and what processes they might be involved in. To do
+that we need to inspect the parts of the system that change dynamically. Ideally
+we might want to interrogate which proteins are present as they provide most of
+the functionality. However, while it is possible to do this using technologies
+such as mass spectrometry the readout they produce is difficult to interpret
+and the encoding is much more complex as there are 20 types of amino acids
+compared to only four nucleotides. In contrast RNA molecules are much easier to
+measure. High-throughput RNA sequencing (RNA-seq) provides a reliable method
+for high-quality measurement of RNA expression levels. RNA is isolated from a
+biological sample, converted to complementary DNA (cDNA) and provided as input
+to a sequencing machine. The output of an RNA-seq experiment is millions of
+short nucleotide sequences originating from the RNA transcripts present in the
+sample. In contrast to older techniques for measuring RNA, such as probe-based
+microarrays, RNA-seq requires no prior knowledge of existing sequences in order
+to measure a sample and is effective over a much greater range of expression
+levels.</p>
 <div id="capture-and-reverse-transcription" class="section level3">
 <h3><span class="header-section-number">1.1.1</span> Capture and reverse transcription</h3>
 <ul>
 <li>PolyA capture</li>
 <li>Ribosomal depletion</li>
 </ul>
+<pre><code>RNA is less stable than DNA and can easily be degraded. RNA-seq depends on a
+pure and high quality sample, therefore it is important that care is taken
+during preparation steps. This includes use of a stabilizing agent, rapid
+freezing of samples and maintaining a clean working environment. The first step
+in sample preparation is to chemically lyse cells and perform mechanical
+homogenisation, disrupting cell structures and releasing the molecules inside.
+RNA can then be isolated, typically using phenol/chloroform extraction although
+solid-phase extraction using a silica column is also possible.
+
+The total RNA sample obtained in this way typically contains more than 80
+percent ribosomal RNA (rRNA)\cite{raz2011}. This is typically not of interest,
+so to increase the proportion of other RNA types in the sample an optional
+target enrichment step can be performed. Mature messenger RNA (mRNA) molecules
+have a poly-A tail, a sequence of repeated adenine bases, at the 3&#39; end which
+can be selected for by hybridisation to an appropriate oligonucleotide.
+However, this process ignores immature mRNA molecules and non-coding RNA.
+Alternatively, rRNA can be selectively removed, again by hybridising to
+specially designed oligonucleotides specific to the organism. It has been shown
+that the choice of selection method can influence the resulting sequencing
+data, potentially introducing biases that analysts should be aware
+of\cite{sultan2014}.
+
+RNA-seq platforms are generally only capable of producing relatively short
+(approximately 40-400 bp depending on the system and protocol) reads, therefore
+to enable complete coverage of the transcriptome the selected RNA molecules
+must first be fragmented. This can be done using enzyme, metal ion, heat or
+sonication methods to produce a population of fragments approximately equal in
+length. As with any lab process it is important to perform validation and
+quality assessment procedures after each stage using techniques such as
+fluorimetry\cite{arandaiv2009}, spectrophotometry, or the Agilent
+Bioanalyzer\cite{panaro2000} in order to ensure high-quality starting material.
+
+After obtaining an appropriate RNA sample it must be converted to double
+stranded complementary DNA (cDNA) in preparation for sequencing. A retroviral
+reverse transcriptase enzyme is used to produce a single strand of DNA from the
+RNA template. This requires a primer sequence to first be annealed to the
+template in order to initiate polymerisation. Several priming options exist,
+with each having its own advantages and disadvantages. For example, using an
+oligonucletide to bind to the poly-A tail is reliable but is specific to mRNA
+and has a bias towards the 3&#39; end. Alternatively, random primer sequences can
+be used, but preferred priming regions have been observed which may introduce
+an alternative source of bias to be accounted for\cite{roberts2011}. The second
+strand is then synthesised using a DNA polymerase, for example by using the
+SMART (Switching Mechanism At the 5&#39; end of the RNA Transcript) approach, which
+takes advantage of the template-switching ability of the Moloney murine
+leukemia virus reverse transcriptase\cite{zhu2001}. Some platforms require that
+fragmentation occurs after cDNA conversion rather than at the RNA stage.
+
+Current sequencing platforms require specific adaptor sequences to be present
+at the ends of cDNA fragments. These allow attachment to solid supports, clonal
+amplification and initiation of sequencing. Optionally, index or barcode
+sequences can also be added, which allow multiplexing of multiple samples in a
+single run. Paired-end sequencing can be achieved by the addition of a second
+sequencing primer that allows two reads to be produced from each fragment by
+reading from the 5&#39; end of each strand (\cref{fig:adaptors}). Information about
+a transcript&#39;s strand is lost during the standard process, however if this is
+required for the experiment it can be retained by the use of specific primers
+and polymerase enzymes\cite{levin2010}.
+
+Several procedures are available for adapter ligation depending on sequencing
+platform and library preparation kit. Prior to sequencing it is vital to
+perform a validation step to ensure library quality and accurately quantify the
+amount of sequencing-ready cDNA produced. Once a high-quality cDNA library has
+been produced it is loaded onto a sequencing machine.</code></pre>
 </div>
 <div id="high-throughput-sequencing" class="section level3">
 <h3><span class="header-section-number">1.1.2</span> High-throughput sequencing</h3>
@@ -144,17 +281,56 @@
 <li>Illumina sequencing
 <ul>
 <li>Sequence by synthesis</li>
+<li>Paired end</li>
 </ul></li>
 </ul>
+<pre><code>Sequencing is currently dominated by Illumina&#39;s platforms and their Sequence by
+Synthesis technology. In this process, fragments in the DNA library are
+denatured and one strand attached to a flow cell (a glass slide coated in two
+types of oligonucleotides) using the adaptor sequences. The other adaptor can
+hybridise to the second oligonucleotide, forming a bridge structure. By
+repeated synthesis and denaturation, clusters of copies of each original
+fragment are formed. One of the adaptor sequences is cleaved, leaving
+single-stranded DNA attached at one end to the flow cell.
+
+The Illumina Sequencing by Synthesis process. RNA is attached using adapter
+sequences and is amplified before fluorescently tagged nucleotides are added to
+the flow cell with DNA polymerase to extend the strands. The lanes of the flow
+cell are then scanned to produce an image. Fluorescent tags are cleaved and
+3&#39;-OH blocking groups are added, preparing the strands for another round of
+nucleotide incorporation. Image from Mardis, Next-Generation DNA Sequencing
+Methods\cite{mardis2008}. \label{fig:sequencing}
+
+The sequencing process can now begin. Primers are added to the sequencing
+primer regions and a single fluorescently tagged nucleotide is joined to the
+growing chain. A laser excites the tag and an image is taken. This process is
+repeated until the desired read length is reached. The four nucleotide types
+are tagged with different colours and compete for each position, thereby
+reducing the chance of an incorrect addition. A similar process is then used to
+read any index sequences, while barcodes are read as part of the main read. For
+paired-end sequencing, the second flow-cell oligonucleotide allows the DNA
+molecules to be flipped and sequencing repeated on the other strand. The output
+of a sequencing experiment is of millions of short nucleotide sequences, known
+as reads, that are the starting point for computational analysis.</code></pre>
 </div>
 <div id="analysis-of-rna-seq-data" class="section level3">
 <h3><span class="header-section-number">1.1.3</span> Analysis of RNA-seq data</h3>
 <ul>
 <li>Experimental design</li>
+<li>Alignment</li>
+<li>Quantification</li>
 <li>Negative binomial</li>
 <li>Normalisation</li>
 <li>Differential expression testing</li>
+<li>Proportions</li>
 </ul>
+<pre><code>It is possible to perform a wide variety of analysis on RNA-seq data, such
+as variant identification or novel isoform detection, but the most common
+approach is to look for differences in expression between groups. Reads are
+aligned to a reference genome and the number overlapping each gene is counted.
+Statistical methods can be used to compare gene expression between conditions
+and identify genes that are differently regulated, with further analysis able
+to examine pathways that have changed between groups.</code></pre>
 </div>
 </div>
 <div id="single-cell-rna-sequencing" class="section level2">
