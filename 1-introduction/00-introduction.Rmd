@@ -467,19 +467,50 @@ dataset and see how they compare.
 * Reviews
 * Classification
 
-```
-Once groups of cells are identified many of these packages can test genes
-for changes in expression, identifying genes that are differentially expressed
-across the groups, or marker genes that are expressed in a single group. These
-genes can be used to identify which cell types each group represents, or
-alternatively known marker genes can be inspected.
+Once cells are assigned by clustering or ordering the problem is to interpret
+what these groups represent. For clustered datasets this is usually done by
+identifying genes that are differentially expressed across the groups or marker
+genes that are expressed in a single cluster. Many methods have been suggested
+for testing differential expression some of which take in to account the unique
+features of scRNA-seq data. For example...The large number of cells in
+scRNA-seq datasets mean that some of the problems that made standard
+statistical tests unsuitable for bulk RNA-seq experiments do not apply and
+simple methods like the unpaired Wilcoxon rank-sum test (or Mann-Whitney U
+test) may give reasonable results in this setting. Methods originally developed
+for bulk experiments have have also been applied to scRNA-seq datasets. Some of
+these methods have well understood statistical frameworks and have been shown
+to perform well in multiple comparisons. However the assumptions they make may
+not be appropriate for single-cell data and methods such as ZiNB-WaVe may be
+required to transform the data that is appropriate for their use.
 
-Once a path has been inferred important genes can be identified by looking for
-those that change expression over the course of the path. These genes can be
-important in their own right as they describe the biology of the path, but that
-can also be used to identify cell types at the end points of the path or where
-the path branches.
-```
+Often the goal is not to find all the genes that are differentially expressed
+between groups but to identify genes which uniquely mark particular clusters.
+This goal is open to alternative approaches such as the Gini coefficient which
+measures unequal distribution across a population. Another approach is to
+construct machine learning classifiers for each genes to distinguish between
+one group and all other cells. Genes that give good classification performance
+should be good indicators of what is specific to that cluster.
+
+When cells have been ordered along a continuous trajectory the task is slightly
+different. Instead of testing for a difference in means between two groups the
+goal is to find genes that have a relationship between expression and
+pseudotime. This can be accomplished by fitting splines and testing the
+coefficients. For more complex trajectories it can also be useful to find genes
+that are differently expressed along each side of a branch points. Monocle's
+BEAM method does this by... Genes that are associated with a trajectory are
+important in their own right as they describe the biology along a path but they
+can also be used to identify cell types at end points.
+
+Interpreting the meaning of detected markers genes is a difficult task as is
+likely to remain so. Gene set testing to identify related categories such as
+Gene Ontology terms can help but often it is necessary to rely the results of
+previous functional studies. This can only be reliably done by working closely
+with experts who have significant domain knowledge in the cell types being
+studied. An additional concern for unsupervised scRNA-seq studies is that the
+same genes are used for clustering or ordering and determining what those
+clusters or trajectories mean. This is a problem addressed by XXX who suggest a
+differential expression test using a long-tailed distribution for testing genes
+following clustering.
 
 ### Alternative analyses
 
