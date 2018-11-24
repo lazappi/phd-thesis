@@ -71,7 +71,7 @@
 </ul></li>
 <li class="chapter" data-level="1" data-path="1-introduction.html"><a href="1-introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
 <li class="chapter" data-level="1.1" data-path="1-introduction.html"><a href="1-introduction.html#rna-sequencing"><i class="fa fa-check"></i><b>1.1</b> RNA sequencing</a><ul>
-<li class="chapter" data-level="1.1.1" data-path="1-introduction.html"><a href="1-introduction.html#capture-and-reverse-transcription"><i class="fa fa-check"></i><b>1.1.1</b> Capture and reverse transcription</a></li>
+<li class="chapter" data-level="1.1.1" data-path="1-introduction.html"><a href="1-introduction.html#library-preparation"><i class="fa fa-check"></i><b>1.1.1</b> Library preparation</a></li>
 <li class="chapter" data-level="1.1.2" data-path="1-introduction.html"><a href="1-introduction.html#high-throughput-sequencing"><i class="fa fa-check"></i><b>1.1.2</b> High-throughput sequencing</a></li>
 <li class="chapter" data-level="1.1.3" data-path="1-introduction.html"><a href="1-introduction.html#analysis-of-rna-seq-data"><i class="fa fa-check"></i><b>1.1.3</b> Analysis of RNA-seq data</a></li>
 </ul></li>
@@ -156,12 +156,12 @@ with another base called uracil. Because it is single-stranded RNA does not
 have a double helix structure but it can form complex shapes by binding to
 itself. There are several different types of RNA that serve different purposes.
 RNA molecules that are translated from genes are known as messenger RNA (mRNA).
-Other types of RNA include ribosomal RNA (that forms part of the ribosome),
-micro RNA which have a role in regulating gene expression and long-noncoding
-RNA. Genes are the sections of DNA that encode proteins and are made up of
-regions that code information (none as exons) with much larger non-coding
-regions between them (introns). When an mRNA molecule is transcribed it
-initially contains the intronic sequences but these are removed through a
+Other types of RNA include ribosomal RNA (rRNA) (that forms part of the
+ribosome), micro RNA which have a role in regulating gene expression and
+long-noncoding RNA. Genes are the sections of DNA that encode proteins and are
+made up of regions that code information (none as exons) with much larger
+non-coding regions between them (introns). When an mRNA molecule is transcribed
+it initially contains the intronic sequences but these are removed through a
 process known as splicing and a sequence of adenosine bases (a poly-A tail) is
 added to the end where transcription ends (the 3’ end) to mark a mature mRNA
 molecule. The process for producing a protein from an mRNA transcript occurs in
@@ -204,76 +204,45 @@ sample. In contrast to older techniques for measuring RNA, such as probe-based
 microarrays, RNA-seq requires no prior knowledge of existing sequences in order
 to measure a sample and is effective over a much greater range of expression
 levels.</p>
-<div id="capture-and-reverse-transcription" class="section level3">
-<h3><span class="header-section-number">1.1.1</span> Capture and reverse transcription</h3>
+<div id="library-preparation" class="section level3">
+<h3><span class="header-section-number">1.1.1</span> Library preparation</h3>
 <ul>
 <li>PolyA capture</li>
 <li>Ribosomal depletion</li>
 </ul>
-<pre><code>RNA is less stable than DNA and can easily be degraded. RNA-seq depends on a
-pure and high quality sample, therefore it is important that care is taken
-during preparation steps. This includes use of a stabilizing agent, rapid
-freezing of samples and maintaining a clean working environment. The first step
-in sample preparation is to chemically lyse cells and perform mechanical
-homogenisation, disrupting cell structures and releasing the molecules inside.
-RNA can then be isolated, typically using phenol/chloroform extraction although
-solid-phase extraction using a silica column is also possible.
-
-The total RNA sample obtained in this way typically contains more than 80
-percent ribosomal RNA (rRNA)\cite{raz2011}. This is typically not of interest,
-so to increase the proportion of other RNA types in the sample an optional
-target enrichment step can be performed. Mature messenger RNA (mRNA) molecules
-have a poly-A tail, a sequence of repeated adenine bases, at the 3&#39; end which
-can be selected for by hybridisation to an appropriate oligonucleotide.
-However, this process ignores immature mRNA molecules and non-coding RNA.
-Alternatively, rRNA can be selectively removed, again by hybridising to
-specially designed oligonucleotides specific to the organism. It has been shown
-that the choice of selection method can influence the resulting sequencing
-data, potentially introducing biases that analysts should be aware
-of\cite{sultan2014}.
-
-RNA-seq platforms are generally only capable of producing relatively short
-(approximately 40-400 bp depending on the system and protocol) reads, therefore
-to enable complete coverage of the transcriptome the selected RNA molecules
-must first be fragmented. This can be done using enzyme, metal ion, heat or
-sonication methods to produce a population of fragments approximately equal in
-length. As with any lab process it is important to perform validation and
-quality assessment procedures after each stage using techniques such as
-fluorimetry\cite{arandaiv2009}, spectrophotometry, or the Agilent
-Bioanalyzer\cite{panaro2000} in order to ensure high-quality starting material.
-
-After obtaining an appropriate RNA sample it must be converted to double
-stranded complementary DNA (cDNA) in preparation for sequencing. A retroviral
-reverse transcriptase enzyme is used to produce a single strand of DNA from the
-RNA template. This requires a primer sequence to first be annealed to the
-template in order to initiate polymerisation. Several priming options exist,
-with each having its own advantages and disadvantages. For example, using an
-oligonucletide to bind to the poly-A tail is reliable but is specific to mRNA
-and has a bias towards the 3&#39; end. Alternatively, random primer sequences can
-be used, but preferred priming regions have been observed which may introduce
-an alternative source of bias to be accounted for\cite{roberts2011}. The second
-strand is then synthesised using a DNA polymerase, for example by using the
-SMART (Switching Mechanism At the 5&#39; end of the RNA Transcript) approach, which
-takes advantage of the template-switching ability of the Moloney murine
-leukemia virus reverse transcriptase\cite{zhu2001}. Some platforms require that
-fragmentation occurs after cDNA conversion rather than at the RNA stage.
-
-Current sequencing platforms require specific adaptor sequences to be present
-at the ends of cDNA fragments. These allow attachment to solid supports, clonal
-amplification and initiation of sequencing. Optionally, index or barcode
-sequences can also be added, which allow multiplexing of multiple samples in a
-single run. Paired-end sequencing can be achieved by the addition of a second
-sequencing primer that allows two reads to be produced from each fragment by
-reading from the 5&#39; end of each strand (\cref{fig:adaptors}). Information about
-a transcript&#39;s strand is lost during the standard process, however if this is
-required for the experiment it can be retained by the use of specific primers
-and polymerase enzymes\cite{levin2010}.
-
-Several procedures are available for adapter ligation depending on sequencing
-platform and library preparation kit. Prior to sequencing it is vital to
-perform a validation step to ensure library quality and accurately quantify the
-amount of sequencing-ready cDNA produced. Once a high-quality cDNA library has
-been produced it is loaded onto a sequencing machine.</code></pre>
+<p>The first step in preparing a sample for RNA-seq is to chemically lyse the
+cells, disrupting the structure of the cell wall and releasing the molecules
+inside. RNA molecules can then be isolated, typically using a chemical process
+called phenol/chloroform extraction although this can also be done by
+physically separating different types of molecules by passing the sample
+through a silica column. The majority of the RNA in a cell is ribosomal RNA,
+usually more than 80 percent {raz2011}. Most of the time this type of RNA is
+not of interest and sequencing it would reduce the ability to detect less
+abundant species. To select mRNA oligonucleotide probes that bind to the poly-A
+tail can be used but a downside of this approach is that it won’t capture
+immature mRNA or other types of RNA molecules. An alternative method is to use
+a different kind of probe specific to each species that binds to the rRNA
+allowing it to be removed. The choice of selection method has been shown to
+introduce different biases into the resulting data {sultan2014}.</p>
+<p>The Illumina sequencing typically used for RNA-seq experiments can only read
+short sequences of nucleotide of approximately 40-400 basepairs. Most mRNA
+molecules are longer than this so to read the full length they must be
+fragmented into smaller parts. Most sequencing machines also only work with DNA
+not directly with RNA so the sample must first be reverse-transcribed using a
+retroviral enzyme to produce a single strand of cDNA. Many protocols have been
+designed for this step with each requiring a specific primer sequence to be
+joined to the RNA molecules {roberts2011?}. The complementary strand of cDNA is
+produced using a second enzyme that is usually involved in copying DNA for cell
+division. For some protocols fragmentation is performed after conversion to cDNA
+rather than at the RNA stage.</p>
+<p>Once the cDNA has been produced it is usually necessary to attach adaptor
+sequences that are used to bind the molecules and initiate sequencing. They may
+also contain barcodes for measuring multiple samples at once. It has become
+standard practice to perform paired-end sequencing where a section of sequence
+is read from one end of a molecule before it is flipped and the other end read
+and this process requires an additional set of adaptors. At each of the stages
+of library preparation there are quality control steps to be performed to make
+sure a high-quality cDNA sample is loaded on to the sequencing machine.</p>
 </div>
 <div id="high-throughput-sequencing" class="section level3">
 <h3><span class="header-section-number">1.1.2</span> High-throughput sequencing</h3>
@@ -516,6 +485,7 @@ include…</p>
 <li>Bursting</li>
 <li>Biology</li>
 </ul></li>
+<li>Ribosomal RNA</li>
 </ul>
 <p>Cell capture technologies and scRNA-seq protocols have developed rapidly but
 there are still a number of challenges with the data they produce. Existing
