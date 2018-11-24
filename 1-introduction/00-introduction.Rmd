@@ -120,36 +120,27 @@ sure a high-quality cDNA sample is loaded on to the sequencing machine.
     * Sequence by synthesis
     * Paired end
 
-```
-Sequencing is currently dominated by Illumina's platforms and their Sequence by
-Synthesis technology. In this process, fragments in the DNA library are
-denatured and one strand attached to a flow cell (a glass slide coated in two
-types of oligonucleotides) using the adaptor sequences. The other adaptor can
-hybridise to the second oligonucleotide, forming a bridge structure. By
-repeated synthesis and denaturation, clusters of copies of each original
-fragment are formed. One of the adaptor sequences is cleaved, leaving
-single-stranded DNA attached at one end to the flow cell.
+Most RNA-seq experiments are sequenced on an Illumina maching using their
+Sequence by Synthesis technology. In this process the strands of cDNA fragments
+are separated and the adaptors bind to oligonucleotides coating a flow cell. The
+other end of the fragment can bind to a second oligonucleotide forming a
+structure where an enzyme synthesises a complementary DNA strand. This process
+of separation of strands and synthesis of new complementary strands is repeated
+until clusters of DNA fragments with the same sequence are formed. Once the
+clusters are significantly large the adaptor at one end of each fragment is
+cleaved leaving single stranded DNA attached to the flow cell and one end.
 
-The Illumina Sequencing by Synthesis process. RNA is attached using adapter
-sequences and is amplified before fluorescently tagged nucleotides are added to
-the flow cell with DNA polymerase to extend the strands. The lanes of the flow
-cell are then scanned to produce an image. Fluorescent tags are cleaved and
-3'-OH blocking groups are added, preparing the strands for another round of
-nucleotide incorporation. Image from Mardis, Next-Generation DNA Sequencing
-Methods\cite{mardis2008}. \label{fig:sequencing}
-
-The sequencing process can now begin. Primers are added to the sequencing
-primer regions and a single fluorescently tagged nucleotide is joined to the
-growing chain. A laser excites the tag and an image is taken. This process is
-repeated until the desired read length is reached. The four nucleotide types
-are tagged with different colours and compete for each position, thereby
-reducing the chance of an incorrect addition. A similar process is then used to
-read any index sequences, while barcodes are read as part of the main read. For
-paired-end sequencing, the second flow-cell oligonucleotide allows the DNA
-molecules to be flipped and sequencing repeated on the other strand. The output
-of a sequencing experiment is of millions of short nucleotide sequences, known
-as reads, that are the starting point for computational analysis.
-```
+The sequencing process now begins. Nucleotides tagged with fluorescent markers
+are added and can bind to the next available position on a fragment if they are
+complementary. By adding all four nucleotides at once they compete for each
+position, reducing the chance of an incorrect match. Any unbound nucleotides
+are washed away before a laser excites the florescent tags and an image is
+taken. Each nucleotide is tagged with a different and the order of colours
+produced by a cluster shows the sequence of nucleotides in a fragment. For
+paired-end sequencing the fragments can be flipped and the sequencing process
+repeated at the other end. The images from the sequencing machine are processed
+to produce millions of short nucleotide reads that are the starting point for
+computational analysis.
 
 ### Analysis of RNA-seq data
 
