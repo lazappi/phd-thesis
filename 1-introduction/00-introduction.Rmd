@@ -333,45 +333,66 @@ how variable they are across the dataset but this may be a result of noise
 rather than biological importance. Alternative selection methods have been
 proposed such as M3Drop which...
 
-### Integrating multiple datasets
+### Normalisation and integration
 
 * Why?
 * Seurat CCA
 * New methods
+* Tung?
 
-```
-Technical variation is a known problem in high-throughput studies and Kim et al.
-predict that only 17.8 percent of allele-specific expression is due to
-biological variation with the rest being technical noise[@Kim2015-mo]. Effective
-normalisation has been shown to be a crucial aspect of analysis for bulk RNA-seq
-datasets, but how normalisation should be be applied to single-cell datasets is
-yet to be clearly established. Some studies use simple transformations like
-Reads (or Fragments) Per Kilobase per Million (RPKM/FPKM)[@Mortazavi2008-vu] or
-Transcripts Per Million (TPM)[@Wagner2012-qf] which correct for library size and
-gene length. Alternatively, normalisation methods designed for detecting
-differential expression in bulk samples such as the Trimmed Mean of M-Values
-(TMM)[@Robinson2010-ll] or the DESeq method[@Anders2010-pq] can be applied, but
-it is unclear how suitable they are for the single-cell context. Most of the
-methods that have been developed specifically for estimating technical variance
-in scRNA-seq data make use of spike-ins. Brennecke et al.[@Brennecke2013-pt],
-Ding et al.[@Ding2015-ht] and Grün, Kester and van Oudenaarden[@Grun2014-zn] all
-propose methods for estimating technical variance using spike-ins, as does
-Bayesian Analysis of Single-Cell Sequencing data (BASiCS)[@Vallejos2015-ef].
-However, using spike-ins for normalisation relys on the assumption that they
-properly capture the dynamics of the underlying datasets, and even if this is
-the case is it restrictive as they are not compatible with all current
-sequencing protocols. Lun, Bach and Marioni don't make use of spike-ins, instead
-using a pooling approach to compensate for the large number of zero counts,
-where expression levels are summed across similar cells before calculating
-normalisation factors that are deconvolved back to the individual cell
-level[@Lun2016-mq].
-```
+Technical variation is a known problem in high-throughput genomics studies, for
+example it has been estimated that only 17.8 percent of allele-specific
+expression is due to biological variation with the rest being technical
+noise[Kim2015-mo]. Effective normalisation has been shown to be a crucial
+aspect of analysis for bulk RNA-seq datasets and similarly this is true for
+single-cell experiments. Some full-length studies use simple transformations
+like Reads (or Fragments) Per Kilobase per Million
+(RPKM/FPKM)[Mortazavi2008-vu] or Transcripts Per Million (TPM)[Wagner2012-qf]
+which correct for the total number of reads per cell and gene length. For UMI
+data the gene length correction is not required as reads only come from the
+ends of transcripts. Normalisation methods designed for detecting differential
+expression between bulk samples such as Trimmed Mean of M-Values
+(TMM)[Robinson2010-ll] or the DESeq method[Anders2010-pq] can be applied, but
+is is unclear how suitable they are for the single-cell context. Most of the
+early normalisation methods developed specifically for scRNA-seq data made use
+of spike-ins, synthetic RNA sequences added to cells in known quantities such
+as the ERCC.... Brennecke et al.[Brennecke2013-pt], Ding et al.[Ding2015-ht]
+and Grün, Kester and van Oudenaarden[Grun2014-zn] all propose methods for
+estimating technical variance using spike-ins, as does Bayesian Analysis of
+Single-Cell Sequencing data (BASiCS)[Vallejos2015-ef]. Using spike-ins for
+normalisation assumes that they properly capture the dynamics of the underlying
+dataset and even if this is the case it is restricted to protocols where they
+can be added which does not include droplet-based capture techniques. The scrna
+package implements a method that doesn't rely on spike-ins, instead using a
+pooling approach to compensate for the large number of zero counts where
+expression levels are summed across similar cells before calculating size
+factors that are deconvolved back to the original cells[Lun2016-mq]. The
+BASiCS method has also been adapted to experiments without spike-ins by..., but
+only for designed experiments where groups are known in advance.
+
+Early scRNA-seq studies often made use of only a single sample but as technologies
+have become cheaper and more widely available it is common to see studies with
+multiple batches or making use of publicly available data produced by other groups.
+While this expands the potential insights to be gained it presents a problem as
+to how to integrate these datasets and a range of computational approaches for
+doing this have been developed. The alignment approach in the Seurat package
+uses Canonical Correlation Analysis (CCA) to identify a multi-dimensional
+subspace that is consistent between datasets. Dynamic Time Warping (DTW) is then
+used to stretch and align these dimensions so that the datasets are similarly
+spread along them. Clustering can then be performed using these aligned
+dimensions but as the original expression matrix is unchanged the integration
+is not used for other tasks such as differential expression testing. The authors
+of scran using a Mutual Nearest Neighbours (MNN) approach that... A recent
+update to the Seurat method combines these approaches by identifying "anchors"
+that...Alternative integration methods such as...
 
 ### Grouping cells
 
 * Clustering
 * Seurat
 * Other approaches
+* Comparison
+* Classification
 
 ```
 Once a set of high-quality cells has been established the true analysis can
@@ -400,6 +421,7 @@ be inspected.
 * Pseudotime
 * Monocle
 * Other approaches
+* Comparison
 
 ```
 In other situations, for example where stem cells are differentiating into
