@@ -724,6 +724,52 @@ study using scRNA-seq technologies.
 * Nephron structure
 * Important cell types
 
+In mammals the kidney is an organ responsible for filtering the blood in order
+to remove waste products. Kidneys grow as a pair with each being around the
+size of an adult fist and weighing about 150 g. with each being functional.
+Blood flows into the kidney via the renal artery and the blood vessels form a
+tree-like branching with ever smaller capillaries. At the end of these branches
+are nephrons, the functional filtration unit of the kidney. Humans can have
+around 1 million nephrons that are formed during development and just after
+birth, however they cannot be regenerated after around ... of age. A capillary
+loop is formed inside a structure at the end of the nephron called a
+glomerulous and surrounded by Bowman's capsule. Here specialised cells called
+podocytes create a structure called the slit diaphragm that allows water, metal
+ions and small molecules to be filtered while keeping blood cells and larger
+species such as proteins trapped within the bloodstream. The rest of the
+nephron is divided into segments that are responsible for balancing the
+concentration of these species in the filtrate. The lumen of the nephron is
+surrounded by capillaries which allows content to be transferred between the
+filtrate and blood as required. The first segment of the nephron is the
+proximal tubule. Here common biomolecules such as glucose, amino acids and
+bicarbonate are reabsorbed into the bloodstream, as is most of the water. Other
+molecules including urea and ammonium ions are secreted from the blood into the
+filtrate at his stage. This proximal tubule is followed by the Loop of Henle
+and the distal tubule where ions are reabsorbed including potassium, chlorine,
+magnesium and calcium. The final segment is the collecting duct that balances
+salt concentrations by exchanging sodium in the filtrate for potassium in the
+bloodstream using a process controlled by the hormone aldosterone. The
+remaining filtrate is then passed to the ureter where it is carried to the
+bladder and collected as urine while the blood leaves via the renal vein. In
+order to preform this complex series of reabsorption and and secretion each
+segment of the nephron is made up specialised cell types with there own set of
+signaling and transporter proteins. The filtration process is repeated about 12
+times every hour with around 200 litres of blood being filtered every day.
+Aside from removing waste and maintaining the balance of species in the
+bloodstream the kidneys also play a role in the activation of vitamin D and
+synthesises the hormones erythropoietin, which stimulates red blood cell
+production, and renin which is part of the pathway that controls fluid volume
+and the constriction of arteries to regulate blood pressure.
+
+Chronic kidney disease is a major health problem in Australia with XXX percent
+of the population to experience it during their lifetime. Early stages of the
+disease can be managed but once it becomes severe the only treatment options
+are dialysis, which is expensive, time consuming and unpleasant, or a kidney
+transplant. There are also a range of developmental kidney disorders that have
+limited treatment options and can profoundly affect quality of life.
+Understanding how the kidney grows and develops is key to developing new
+treatments that may improve kidney function or repair damage.
+
 ### Stages of development
 
 * Lineage
