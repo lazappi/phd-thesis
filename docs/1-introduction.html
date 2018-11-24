@@ -87,6 +87,7 @@
 <li class="chapter" data-level="1.4.3" data-path="1-introduction.html"><a href="1-introduction.html#grouping-cells"><i class="fa fa-check"></i><b>1.4.3</b> Grouping cells</a></li>
 <li class="chapter" data-level="1.4.4" data-path="1-introduction.html"><a href="1-introduction.html#ordering-cells"><i class="fa fa-check"></i><b>1.4.4</b> Ordering cells</a></li>
 <li class="chapter" data-level="1.4.5" data-path="1-introduction.html"><a href="1-introduction.html#gene-detection-and-interpretation"><i class="fa fa-check"></i><b>1.4.5</b> Gene detection and interpretation</a></li>
+<li class="chapter" data-level="1.4.6" data-path="1-introduction.html"><a href="1-introduction.html#alternative-analyses"><i class="fa fa-check"></i><b>1.4.6</b> Alternative analyses</a></li>
 </ul></li>
 <li class="chapter" data-level="1.5" data-path="1-introduction.html"><a href="1-introduction.html#kidney-development"><i class="fa fa-check"></i><b>1.5</b> Kidney development</a><ul>
 <li class="chapter" data-level="1.5.1" data-path="1-introduction.html"><a href="1-introduction.html#structure-and-function"><i class="fa fa-check"></i><b>1.5.1</b> Structure and function</a></li>
@@ -472,6 +473,7 @@ proposed such as M3Drop which…</p>
 <li>Seurat CCA</li>
 <li>New methods</li>
 <li>Tung?</li>
+<li>Different data types</li>
 </ul>
 <p>Technical variation is a known problem in high-throughput genomics studies, for
 example it has been estimated that only 17.8 percent of allele-specific
@@ -569,30 +571,26 @@ viability of classification and other reference-based methods will improve.</p>
 <li>Other approaches</li>
 <li>Comparison</li>
 </ul>
-<pre><code>In other situations, for example where stem cells are differentiating into
-mature cell types, it may be more appropriate to order cells along a continuous
-trajectory from one cell type to another. Trajectory analysis was pioneered by
-Monocle which used dimensionality reduction and computation of a minimum
-spanning tree to explore a model of skeletal muscle
-differentiation[@Trapnell2014-he]. Since then the Monocle algorithm has been
-updated and a range of others developed, including TSCAN[@Ji2016-ws],
-SLICER[@Welch2016-cw], CellTree[@DuVerle2016-ni], Sincell[@Julia2015-zc] and
-Mpath[@Chen2016-kx]. In their review of methods for trajectory inference,
-Cannoodt, Saelens and Saeys break the process into two parts, dimensionality
-reduction and then trajectory modelling (Figure
-\@ref(fig:trajectory-inference))[@Cannoodt2016-iv]. Dimensionality reduction
-consists of calculating similarities between cells, projecting onto lower
-dimensions using manifold learning techniques such as PCA or
-t-SNE[@Maaten2008-ne] then clustering cells or constructing a graph between
-then. The trajectory is then formed by finding a path between cells and ordering
-the cells along it. Once a path has been inferred important genes can be
-identified by looking for those that change expression over the course of the
-path. These genes can be important in their own right as they describe the
-biology of the path, but that can also be used to identify cell types at the end
-points of the path or where the path branches. Deciding which assignment
-approach is most appropriate depends on the source of that data and the
-questions you intend to ask. There are currently no studies comprehensively
-comparing the performance of different methods for each approach.</code></pre>
+<p>In some studies, for example in development where stem cells are
+differentiating into mature cell types, it may make sense to order cells along
+a continuous trajectory from one cell type to another instead of assigning them
+to distinct groups. Trajectory analysis was pioneered by the Monocle package
+which used dimensionality reduction and computation of a minimum spanning tree
+to explore a model of skeletal muscle differentiation[Trapnell2014-he]. Since
+then the Monocle algorithm has been updated and a range of other developed
+including TSCAN[Ji2016-ws], SLICER[Welch2016-cw], CellTree[DuVerle2016-ni],
+Sincell[Julia2015-zc] and Mpath[Chen2016-kx]. In their comprehensive review and
+comparison of trajectory inference methods Cannoodt, Saelens and Saeys break
+the process into two steps. In the first step dimensionality reduction
+techniques such as PCA or t-SNE[Maaten2008-ne] are used to project cells into
+lower<strong>[?]</strong> dimensions where the cells are clustered or a graph constructed
+between them. The trajectory is then created by finding a path through the
+cells and ordering the cells along it. This review compares the performance on
+a range of datasets… They found that…</p>
+<p>Deciding on which assignment approach to use depends on the source of the data,
+the goals of the study and the questions that are being asked. Both grouping
+and ordering can be informative and it is often useful to attempt both on a
+dataset and see how they compare.</p>
 </div>
 <div id="gene-detection-and-interpretation" class="section level3">
 <h3><span class="header-section-number">1.4.5</span> Gene detection and interpretation</h3>
@@ -609,7 +607,22 @@ comparing the performance of different methods for each approach.</code></pre>
 for changes in expression, identifying genes that are differentially expressed
 across the groups, or marker genes that are expressed in a single group. These
 genes can be used to identify which cell types each group represents, or
-alternatively known marker genes can be inspected.</code></pre>
+alternatively known marker genes can be inspected.
+
+Once a path has been inferred important genes can be identified by looking for
+those that change expression over the course of the path. These genes can be
+important in their own right as they describe the biology of the path, but that
+can also be used to identify cell types at the end points of the path or where
+the path branches.</code></pre>
+</div>
+<div id="alternative-analyses" class="section level3">
+<h3><span class="header-section-number">1.4.6</span> Alternative analyses</h3>
+<ul>
+<li>Cell velocity</li>
+<li>Variant detection</li>
+<li>Cancer</li>
+<li>Immune cells</li>
+</ul>
 </div>
 </div>
 <div id="kidney-development" class="section level2">

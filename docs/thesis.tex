@@ -361,6 +361,8 @@ Filtering and selection of features also deserves attention. Genes or transcript
   New methods
 \item
   Tung?
+\item
+  Different data types
 \end{itemize}
 
 Technical variation is a known problem in high-throughput genomics studies, for example it has been estimated that only 17.8 percent of allele-specific expression is due to biological variation with the rest being technical noise{[}Kim2015-mo{]}. Effective normalisation has been shown to be a crucial aspect of analysis for bulk RNA-seq datasets and similarly this is true for single-cell experiments. Some full-length studies use simple transformations like Reads (or Fragments) Per Kilobase per Million (RPKM/FPKM){[}Mortazavi2008-vu{]} or Transcripts Per Million (TPM){[}Wagner2012-qf{]} which correct for the total number of reads per cell and gene length. For UMI data the gene length correction is not required as reads only come from the ends of transcripts. Normalisation methods designed for detecting differential expression between bulk samples such as Trimmed Mean of M-Values (TMM){[}Robinson2010-ll{]} or the DESeq method{[}Anders2010-pq{]} can be applied, but is is unclear how suitable they are for the single-cell context. Most of the early normalisation methods developed specifically for scRNA-seq data made use of spike-ins, synthetic RNA sequences added to cells in known quantities such as the ERCC\ldots{}. Brennecke et al.{[}Brennecke2013-pt{]}, Ding et al.{[}Ding2015-ht{]} and Grün, Kester and van Oudenaarden{[}Grun2014-zn{]} all propose methods for estimating technical variance using spike-ins, as does Bayesian Analysis of Single-Cell Sequencing data (BASiCS){[}Vallejos2015-ef{]}. Using spike-ins for normalisation assumes that they properly capture the dynamics of the underlying dataset and even if this is the case it is restricted to protocols where they can be added which does not include droplet-based capture techniques. The scrna package implements a method that doesn't rely on spike-ins, instead using a pooling approach to compensate for the large number of zero counts where expression levels are summed across similar cells before calculating size factors that are deconvolved back to the original cells{[}Lun2016-mq{]}. The BASiCS method has also been adapted to experiments without spike-ins by\ldots{}, but only for designed experiments where groups are known in advance.
@@ -403,32 +405,9 @@ For tissue types that are well understood or where comprehensive references are 
   Comparison
 \end{itemize}
 
-\begin{verbatim}
-In other situations, for example where stem cells are differentiating into
-mature cell types, it may be more appropriate to order cells along a continuous
-trajectory from one cell type to another. Trajectory analysis was pioneered by
-Monocle which used dimensionality reduction and computation of a minimum
-spanning tree to explore a model of skeletal muscle
-differentiation[@Trapnell2014-he]. Since then the Monocle algorithm has been
-updated and a range of others developed, including TSCAN[@Ji2016-ws],
-SLICER[@Welch2016-cw], CellTree[@DuVerle2016-ni], Sincell[@Julia2015-zc] and
-Mpath[@Chen2016-kx]. In their review of methods for trajectory inference,
-Cannoodt, Saelens and Saeys break the process into two parts, dimensionality
-reduction and then trajectory modelling (Figure
-\\ref{fig:trajectory-inference})[@Cannoodt2016-iv]. Dimensionality reduction
-consists of calculating similarities between cells, projecting onto lower
-dimensions using manifold learning techniques such as PCA or
-t-SNE[@Maaten2008-ne] then clustering cells or constructing a graph between
-then. The trajectory is then formed by finding a path between cells and ordering
-the cells along it. Once a path has been inferred important genes can be
-identified by looking for those that change expression over the course of the
-path. These genes can be important in their own right as they describe the
-biology of the path, but that can also be used to identify cell types at the end
-points of the path or where the path branches. Deciding which assignment
-approach is most appropriate depends on the source of that data and the
-questions you intend to ask. There are currently no studies comprehensively
-comparing the performance of different methods for each approach.
-\end{verbatim}
+In some studies, for example in development where stem cells are differentiating into mature cell types, it may make sense to order cells along a continuous trajectory from one cell type to another instead of assigning them to distinct groups. Trajectory analysis was pioneered by the Monocle package which used dimensionality reduction and computation of a minimum spanning tree to explore a model of skeletal muscle differentiation{[}Trapnell2014-he{]}. Since then the Monocle algorithm has been updated and a range of other developed including TSCAN{[}Ji2016-ws{]}, SLICER{[}Welch2016-cw{]}, CellTree{[}DuVerle2016-ni{]}, Sincell{[}Julia2015-zc{]} and Mpath{[}Chen2016-kx{]}. In their comprehensive review and comparison of trajectory inference methods Cannoodt, Saelens and Saeys break the process into two steps. In the first step dimensionality reduction techniques such as PCA or t-SNE{[}Maaten2008-ne{]} are used to project cells into lower\textbf{{[}?{]}} dimensions where the cells are clustered or a graph constructed between them. The trajectory is then created by finding a path through the cells and ordering the cells along it. This review compares the performance on a range of datasets\ldots{} They found that\ldots{}
+
+Deciding on which assignment approach to use depends on the source of the data, the goals of the study and the questions that are being asked. Both grouping and ordering can be informative and it is often useful to attempt both on a dataset and see how they compare.
 
 \hypertarget{gene-detection-and-interpretation}{%
 \subsection{Gene detection and interpretation}\label{gene-detection-and-interpretation}}
@@ -457,7 +436,28 @@ for changes in expression, identifying genes that are differentially expressed
 across the groups, or marker genes that are expressed in a single group. These
 genes can be used to identify which cell types each group represents, or
 alternatively known marker genes can be inspected.
+
+Once a path has been inferred important genes can be identified by looking for
+those that change expression over the course of the path. These genes can be
+important in their own right as they describe the biology of the path, but that
+can also be used to identify cell types at the end points of the path or where
+the path branches.
 \end{verbatim}
+
+\hypertarget{alternative-analyses}{%
+\subsection{Alternative analyses}\label{alternative-analyses}}
+
+\begin{itemize}
+\tightlist
+\item
+  Cell velocity
+\item
+  Variant detection
+\item
+  Cancer
+\item
+  Immune cells
+\end{itemize}
 
 \hypertarget{kidney-development}{%
 \section{Kidney development}\label{kidney-development}}
