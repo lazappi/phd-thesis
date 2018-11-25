@@ -776,6 +776,42 @@ Clustering trees can be produced using the clustree R package which is built on 
 \hypertarget{conclusion}{%
 \chapter{Conclusion}\label{conclusion}}
 
+\begin{itemize}
+\tightlist
+\item
+  What is in this thesis?
+
+  \begin{itemize}
+  \tightlist
+  \item
+    tools
+  \item
+    simulation
+  \item
+    clustering trees
+  \item
+    organoid analysis
+  \item
+    tools etc.
+  \end{itemize}
+\item
+  Where is the field going?
+
+  \begin{itemize}
+  \tightlist
+  \item
+    more cells
+  \item
+    references
+  \item
+    new technologies
+  \end{itemize}
+\end{itemize}
+
+This thesis explores the tools and techniques used for analysing single-cell RNA sequencing data. This data has been made available by the recent development of technologies that allow individual cells to be captured, RNA from them isolated and processed and the expression levels of genes to be measured. This new source of data opens up a range of possibilities but it also presents a new set of challenges and the computational analyse of it is still a developing field. My contribution to this area consists of four discrete but related projects. In chapter X I present my work developing and maintaining a database of software tools for analysing scRNA-seq data. This database allows to identify focuses of methods development, features of how tools are developed and shared and display trends other time. This information is made available to the community via the scRNA-tools website. Chapter X describes Splatter a software package for generating synthetic scRNA-seq dataset. Simulations are an important of evaluating computational methods and Splatter provides a consistent, easy-to-use interface to several published simulation models as well as functions for assessing their similarity to real scRNA-seq datasets. Methods for clustering scRNA-seq datasets to form groups of cells with similar transcriptional profiles has been a particular focus of methods developers and most of these approaches have parameters than affect how many clusters are produced. The number of clusters can influence how the results are interpreted but it is difficult to choose these parameters. In chapter X I describe an algorithm that uses clusterings at multiple resolutions to produce a visualisation that can help with selecting clustering parameters. A software package for producing these visualisations is available and they can be used more generally from displaying information across the resolution dimension. The final project of my thesis applies analysis techniques to an scRNA-seq dataset from kidney organoids in order to identify and characterise the cell types present.
+
+Although scRNA-seq technologies have been only been available for a short time they continue to develop. New platforms and protocols are been continually developed which promise to create even larger and more detailed datasets. As these become available more computational challenges will emerge both in how to extract information from them and how to manage the computational workload. Other measurements from individual cells are also becoming available, such as measuring chromatin accessibility using single-cell ATAC-seq or spatial transcriptomics techniques. Learning how to properly integrate these different types of data will need to another area of significant research. Deciding which methods to use for various tasks will require significant effort at benchmarking and evaluation but is vital for making the most of this data. Even when scRNA-seq analysis methods are reliable and effective interpreting their results can be difficult. Large scale project such has the Human Cell Atlas aim to produce reference datasets to make this easier and allow different analysis approaches but this is an extremely difficult task that will take many years and a well-coordinated global effort. We are just at the start of this process and while it looks promising at this stage it will always be important to work closely with domain expert in the system that is being studied. Exploratory analyses have already been completed on most tissue types and many researchers will begin to turn their attention to more designed experiments that aim to answer specific questions. Over the next few years I expect the development of new technologies and computational methods continue at the same pace, hopefully converging on a set of tools that work well for standard analyses. Single-cell RNA sequencing is an exciting technology that has opened up a world of possibilities but we are still at the early stages of working out how best to use it.
+
 \hypertarget{references}{%
 \chapter*{References}\label{references}}
 \addcontentsline{toc}{chapter}{References}
