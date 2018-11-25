@@ -102,7 +102,9 @@
 <li class="chapter" data-level="3.1" data-path="3-simulating-scrna-seq-data.html"><a href="3-simulating-scrna-seq-data.html#introduction-2"><i class="fa fa-check"></i><b>3.1</b> Introduction</a></li>
 <li class="chapter" data-level="3.2" data-path="3-simulating-scrna-seq-data.html"><a href="3-simulating-scrna-seq-data.html#splatter-publication"><i class="fa fa-check"></i><b>3.2</b> Splatter publication</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="4-visualising-clustering-across-resolutions.html"><a href="4-visualising-clustering-across-resolutions.html"><i class="fa fa-check"></i><b>4</b> Visualising clustering across resolutions</a></li>
+<li class="chapter" data-level="4" data-path="4-visualising-clustering-across-resolutions.html"><a href="4-visualising-clustering-across-resolutions.html"><i class="fa fa-check"></i><b>4</b> Visualising clustering across resolutions</a><ul>
+<li class="chapter" data-level="4.1" data-path="4-visualising-clustering-across-resolutions.html"><a href="4-visualising-clustering-across-resolutions.html#introduction-3"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+</ul></li>
 <li class="chapter" data-level="5" data-path="5-analysis-of-kidney-organoid-scrna-seq-data.html"><a href="5-analysis-of-kidney-organoid-scrna-seq-data.html"><i class="fa fa-check"></i><b>5</b> Analysis of kidney organoid scRNA-seq data</a></li>
 <li class="chapter" data-level="6" data-path="6-conclusion.html"><a href="6-conclusion.html"><i class="fa fa-check"></i><b>6</b> Conclusion</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
@@ -127,7 +129,50 @@
             <section class="normal" id="section-">
 <div id="visualising-clustering-across-resolutions" class="section level1">
 <h1><span class="header-section-number">Chapter 4</span> Visualising clustering across resolutions</h1>
+<div id="introduction-3" class="section level2">
+<h2><span class="header-section-number">4.1</span> Introduction</h2>
+<p>Clustering of cells to form groups is a common task when analysing scRNA-seq
+data that is not required for bulk RNA-seq experiments and one that has
+received a lot of attention from analysis methods developers. The need to group
+samples is not unique to genomic data and clustering techniques are used in
+many other fields for a wide variety of purposes. Whatever kind of data you are
+interested in and whatever clustering method is being used a question that
+commonly comes up is how many clusters do we want to have? This can be
+controlled by setting an exact value, changing a parameter that indirectly
+controls the clustering resolution or affected by the values of other
+parameters and the number of clusters that are used can often have a profound
+affect on how the results are interpreted. Existing measures of clustering
+typically only consider a single clustering resolution at a time or require
+multiple rounds or permutations and clustering which can be infeasible for large
+datasets. In this chapter I propose an alternative visualisation-based aid for
+deciding which clustering resolution to use.</p>
+<p>Clusterings of the same dataset at different resolutions are often related and
+it is common for new clusters formed at higher resolutions to be formed by
+splitting existing clusters. However when comparing clusterings it is not
+always clear what those relationships are and how significant they might be.
+The method I describe here was published in <em>GigaScience</em> and suggests
+clustering datasets at multiple resolutions then considering the overlap in
+samples at neighbouring resolutions. By doing this we can build a graph
+structure we call a “clustering tree”. Visualising this tree allows us to see
+where new clusters form, how they are related and the stability of particular
+clustering resolutions. In the paper we demonstrate this approach using
+simulated datasets, a simple dataset commonly used as an example for machine
+learning techniques and a complex scRNA-seq dataset from blood.</p>
+<p>While the structure of clustering trees can help choose a clustering
+resolutions to use they are more generally a compact, information dense
+visualisation that can show information across clustering resolutions. This is
+something that is not possible with traditional visualisations used for
+clustering results such as t-SNE projections and is achieved by trading
+individual information about each sample for summarised information about
+clusters and adding a resolution dimension. Overlaying important domain
+knowledge (such as the expression of known marker genes) onto these
+visualisations can be particularly informative and we also demonstrate this in
+our paper.</p>
+<p>Clustering trees can be produced using the clustree R package which is built on
+the tidygraph and ggraph packages and is available from CRAN
+(<a href="https://cran.r-project.org/package=clustree" class="uri">https://cran.r-project.org/package=clustree</a>).</p>
 
+</div>
 </div>
             </section>
 

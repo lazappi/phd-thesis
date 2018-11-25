@@ -1,1 +1,4 @@
 # Visualising clustering across resolutions
+
+```{r clustering-trees-sections, child = c("4-clustering-trees/01-introduction.Rmd")}
+```
