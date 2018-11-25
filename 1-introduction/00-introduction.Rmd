@@ -775,6 +775,38 @@ treatments that may improve kidney function or repair damage.
 * Lineage
 * Important genes
 
+The kidney develops from a region of the early embryo called the intermediate
+mesoderm and occurs in three phases with a specific spatial and temporal order.
+The first phase results in the pronephros which consists of 6-10 pairs of
+tubules that forms the mature kidney in most primitive vertebrates such as
+hagfish. By about the fourth week of human embryonic development this structure
+dies off and is replaced by the mesonephros which is the form of kidney present
+in most fish and amphibians. The mesonephros is functional during weeks 4-8 of
+human embryonic development before degenerating although parts of it's duct
+system go on for form part of the male reproductive system. The final phase of
+human kidney development results in the metanephros which begins developing at
+around five weeks to become the permanent and functional kidney. Individual
+nephrons grow in a similar series of stages. Cells from the duct that will
+become the ureter begin to invade the surrounding metanephric mesenchyme
+forming a ureteric bud. Interactions between these cell types, including WNT
+signaling, cause mesenchymal cells to condense around the ureteric bud forming
+a stem cell population known as the cap mesenchyme that expresses genes such as
+Six2 and Cited1. Cells from the cap mesenchyme first form a renal vesicle, a
+primitive structure with a lumen, which extends to form an s-shaped body. By
+this stage the lumen has joined with the ureteric bud to form a continuous
+tubule. The s-shaped body continues to with podocytes beginning to develop and
+form a glomerulus at one end and other specialised cells arising along the
+length of the tubule to form the various nephron segments. Several signaling
+pathways and cell-cell interactions are involved in this process including
+Notch signaling.
+
+Most of our understanding of kidney development comes from studies using mouse
+models and other model species. While these have greatly added to our knowledge
+they do not completely replicate human kidney development and there are known
+to be significant differences in the developmental timeline, signaling pathways
+and gene expression between species. To better understand human kidney
+development we need models that reproduce the human version of this process.
+
 ### Growing kidney organoids
 
 * Why?
