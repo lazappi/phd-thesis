@@ -1,1 +1,4 @@
 # The scRNA-seq tools landscape
+
+```{r tools-sections, child = c("2-tools/01-introduction.Rmd")}
+```
