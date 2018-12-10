@@ -4,7 +4,7 @@ suppressPackageStartupMessages({
 })
 
 message("Reading wordcount data...")
-words <- readr::read_tsv(here::here("docs/wordcount.txt"),
+words <- readr::read_tsv(here::here("wordcount.txt"),
                          col_types = readr::cols(
                              Date = readr::col_date(format = ""),
                              Time = readr::col_time(format = ""),
@@ -72,7 +72,7 @@ plots$chapters <- words %>%
         theme(legend.position = "bottom")
 
 message("Saving wordcount.pdf...")
-pdf(here::here("docs/wordcount.pdf"))
+pdf(here::here("wordcount.pdf"))
 for (plot in plots) {
     print(plot)
 }

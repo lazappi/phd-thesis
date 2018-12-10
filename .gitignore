@@ -14,9 +14,13 @@
 
 # Packrat
 packrat/lib*/
+.Rbuildignore
 
 # Bookdown
 _bookdown_files/
+
+# Output
+docs/
 
 # VS Code
 .vscode

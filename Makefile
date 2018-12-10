@@ -1,7 +1,7 @@
 RMD := $(shell find . -type f -name '*.Rmd')
 OUT_DIR := docs
 
-all: pdf docx html $(OUT_DIR)/wordcount.pdf
+all: pdf docx html wordcount.pdf
 
 pdf: $(OUT_DIR)/thesis.tex
 
@@ -18,8 +18,8 @@ $(OUT_DIR)/thesis.docx: $(RMD)
 $(OUT_DIR)/index.html: $(RMD)
 	Rscript -e "bookdown::render_book('index.Rmd', 'unimelbdown::thesis_gitbook')"
 
-$(OUT_DIR)/wordcount.txt: $(OUT_DIR)/thesis.tex
+wordcount.txt: $(OUT_DIR)/thesis.tex
 	prettytc -c -l $(OUT_DIR)/wordcount.txt $(OUT_DIR)/thesis.tex
 
-$(OUT_DIR)/wordcount.pdf: $(OUT_DIR)/wordcount.txt R/plot_wordcount.R
+wordcount.pdf: wordcount.txt R/plot_wordcount.R
 	Rscript R/plot_wordcount.R
