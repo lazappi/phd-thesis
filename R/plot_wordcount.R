@@ -15,7 +15,8 @@ words <- readr::read_tsv(here::here("wordcount.txt"),
                              Captions = readr::col_integer(),
                              Total = readr::col_integer()
                          )) %>%
-    mutate(Datetime = lubridate::ymd_hms(paste(Date, Time))) %>%
+    mutate(Datetime = lubridate::ymd_hms(paste(Date, Time),
+                                         tz = Sys.timezone())) %>%
     mutate(Name = forcats::fct_inorder(Name))
 
 message("Adding additional word counts...")
@@ -54,7 +55,13 @@ plots <- list()
 message("Creating document plot...")
 plots$document <- words %>%
     filter(Level %in% c("Document")) %>%
-    select(Datetime, Text, Headers, Captions, Total) %>%
+    select(Date, Datetime, Text, Headers, Captions, Total) %>%
+    tidyr::complete(Date = seq.Date(min(Date), max(Date), by = "day")) %>%
+    mutate(Datetime = if_else(is.na(Datetime),
+                              lubridate::ymd(Date, tz = Sys.timezone()),
+                              Datetime)) %>%
+    tidyr::fill(Text, Headers, Captions, Total) %>%
+    select(-Date) %>%
     tidyr::gather(key = Type, value = Count, -Datetime) %>%
     ggplot(aes(x = Datetime, y = Count, colour = Type)) +
         geom_line() +
@@ -65,6 +72,12 @@ plots$document <- words %>%
 message("Creating chapter plot...")
 plots$chapters <- words %>%
     filter(Level %in% c("Chapter")) %>%
+    group_by(Name) %>%
+    tidyr::complete(Date = seq.Date(min(Date), max(Date), by = "day")) %>%
+    mutate(Datetime = if_else(is.na(Datetime),
+                              lubridate::ymd(Date, tz = Sys.timezone()),
+                              Datetime)) %>%
+    tidyr::fill(Text) %>%
     ggplot(aes(x = Datetime, y = Text, colour = Name)) +
         geom_line() +
         labs(y = "Word count", colour = "Chapter") +
@@ -72,7 +85,7 @@ plots$chapters <- words %>%
         theme(legend.position = "bottom")
 
 message("Saving wordcount.pdf...")
-pdf(here::here("wordcount.pdf"))
+pdf(here::here("wordcount.pdf"), width = 10, height = 8)
 for (plot in plots) {
     print(plot)
 }
