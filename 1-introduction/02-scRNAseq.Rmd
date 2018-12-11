@@ -1,0 +1,174 @@
+## Single-cell RNA-sequencing
+
+Traditional bulk RNA-seq experiments average the transcriptome across the many
+cells in a sample but recently it has become possible to perform single-cell
+RNA-sequencing (scRNA-seq) and investigate the transcriptome at the resolution
+of individual cell. There are many situations were it is important to
+understand how specific cell types react and where analyses may be affected by
+the unknown proportions of cell types in a sample. Studies into gene expression
+in specific cell types previously required a way to select and isolate the
+cells they were interested which removed them from the other cell types they
+are usually associated with and made it impossible to investigate how they
+interact. With scRNA-seq technologies it is now possible to look at the
+transcriptome of all the cell types in a tissue simultaneously which has lead
+to a better understanding of what makes cell types distinct and the discovery
+of previously unknown cell types.
+
+One area that has particularly benefitted from the rise of scRNA-seq is
+developmental biology. Although the genes involved in the development of
+many organs are now well understood arriving at this knowledge has required many
+painstaking experiments. During development cells are participating in a
+continuous dynamic process involving the maturation from one cell type to
+another and the creation of new cell types. Single-cell RNA-seq captures a
+snapshot of this process allow the transcriptome of intermediate and mature
+cells to be studied. This has revealed that some of the genes thought to be
+markers of specific cell types are more widely expressed or involved in other
+processes.
+
+## Single-cell capture technologies
+
+* First protocol
+* Fluidigm
+
+The first scRNA-seq protocol was published in 2009, just a year after the first
+bulk RNA-seq publication. While this approach allowed measurements of the
+transcriptome in individual cells it required manual manipulation and was
+restricted to inspecting a few precious cells. Further studies quickly showed
+that cell types could be identified without sorting cells and approaches were
+developed to allow unbiased capture of the whole transcriptome. Since then many
+scRNA-seq protocols have been developed including .... The first commercially
+available cell capture platform was the Fluidigm C1. This system uses
+microfluidics to passively separate cells into individual wells on a plate
+where they are lysed, reverse-transcribed and the collected cDNA is PCR
+amplified. After this stage the product is extracted from the plate and
+libraries prepared for Illumina sequencing. Most C1 data has been produced
+using a 96 well plate but more recently an 800 well plate has become available,
+greatly increasing the number of cells that can be captured at a time. One of
+the disadvantages of microfluidic cell capture technologies is that the chips
+have a fixed size window, meaning that only cells of a particular sizes can be
+captured in a single run. However, as cells are captured in individual wells
+they can be imaged before lysis, potentially identifying damaged or broken
+cells, empty wells or wells containing more than one cell. Capturing multiple
+cells is a known issue, with Macosko et al. finding that when preparing a
+mixture of mouse and human cells 30 percent of the resulting libraries
+contained transcripts from both species but only about a third of these
+doublets were visible in microscopy images[Macosko2015-rl]. The newer Polaris
+system from Fluidigm also uses microfluidics to capture cells but can select
+particular cells based on staining or fluorescent reporter expression and then
+hold them for up to 24 hours while introducing various stimuli. The cells can be
+imaged during this time before being lysed and prepared for RNA sequencing. This
+platform provides opportunities for a range of experiments that aren't possible
+using other capture technologies.
+
+### Droplet based cell capture
+
+* Drop-seq
+* Indrop
+* 10x Chromium
+
+An alternative to using microfludics to capture cells in wells is to capture
+them in nano-droplets. A dissociated cell mixture is fed into a microfluidic
+device while at another input beads coated in primers enter. The device is
+designed to form aqueous droplets within mineral and the inputs are arranged so
+that cells and beads can be simultaneously captured within a droplet. When this
+happens the reagents carried along with the bead lyse the cell and any PolyA
+tagged RNA molecules present can bind to the capture probes on the bead. Reverse
+transcription and PCR amplification then begins and an individual cDNA library
+is produced for each cell, tagged with the unique barcode sequence present on
+the bead. The main advantage of droplet-based capture technologies is the
+ability to capture many more cells at one time, up to tens of thousands. These
+approaches are also less selective about cell size and produce less doublets. As
+a result they are much cheaper per a cell, although as sequencing costs are
+fixed studies using droplet-based captures typically sequence individual cells
+at a much lower depth.
+
+Droplet-based capture was popularised by the publication of the Drop-seq and
+InDrop platforms in 2015. This are both DIY systems and although they differ in
+how the beads are produced, when the droplets are broken and some aspects of
+the chemistry they can both be constructed on a lab bench from syringes,
+automatic plungers, a micro scope and a small custom-made microfluidic chip. A
+similar commercially available platform is the 10x Genomics Chromium device
+which automates and streamlines much of the process. This device uses
+droplet-based technologies for a range of applications including capture of
+cells for scRNA-seq. More specialised captures, such as those aimed at
+profiling immune cell receptors are also possible and the company has recently
+announced kits for single-cell ATAC-seq capture.
+
+### Unique Molecular Identifiers
+
+* Why?
+* How they work
+
+In contrast to plate-based capture methods, which often provide reads along the
+length of transcripts, droplet-based capture methods typically employ protocols
+which include short random nucleotide sequences known as Unique Molecular
+Identifiers (UMIs). Individual cells contain very small amounts of RNA and to
+obtain enough cDNA a PCR amplification step is necessary. Depending on their
+nucleotide sequence different transcripts may be amplified at different rates
+which can distort their relative proportions within a library. UMIs attempt to
+improve the quantification of gene expression by allowing the removal of PCR
+duplicates produced during amplification. The nucleotide probes used in
+droplet-based capture protocols include a PolyT sequence which binds to mature
+mRNA molecules, a barcode sequence which is the same for every probe on a bead
+and 8-10 bases of UMI sequence which is unique to each probe. The UMI sequences
+are long enough that the probability of capturing two copies of a transcript on
+two probes with the same UMI is extremely low. After reverse-transcription,
+amplification, sequencing and alignment de-duplication can be performed by
+identifying reads with the same UMI that align to the same position and
+therefore should be PCR duplicates rather than truly expressed copies of a
+transcript. For this method to be effective each read must be associated with a
+UMI which means that only a small section at the 3' end of each transcript is
+sequenced. This has the side effect of reducing the amount of cDNA that needs
+to be sequenced and therefore increasing the number of cells that can be
+sequenced at a time. While the improvement in quantification of gene expression
+levels is useful for many downstream analyses it comes at the cost of coverage
+across the length of a gene which is required for applications such as variant
+detection and de-novo assembly. **READS ALONG GENE** Statistical methods
+designed for full-length data may also be affected by the difference properties
+of a UMI dataset. Datasets with UMIs also need extra processing steps which can
+be complicated by the possibility of sequencing errors in the UMI itself.
+
+### Recent advances
+
+* New capture methods
+* CITE-seq
+* Cell hashing
+* CRISPR
+* Multiple measurements, same cell
+
+Although droplet-based techniques are currently the most commonly used cell
+capture technologies other approaches have been proposed that promise to capture
+even more cells even more cheaply. These include approaches based around
+nanowells...
+
+Extensions to the standard protocols have also been proposed that allow extra
+measurements from the same cell. One such protocol is CITE-seq which enables
+measurement of the levels of selected proteins at the same time as the whole
+transcriptome. Antibodies for the proteins of interest are labelled with short
+nucleotide sequences. These antibodies can then be applied to the dissociated
+cells and any that remain unbound washed away before cell capture. The antibody
+labels are then captured along with mRNA transcripts and a size selection step
+is applied to separate them before library preparation. Similar antibodies can
+be used to allow multiplexing of samples through a process known as cell
+hashing. In a typical scRNA-seq experiment each batch corresponds to a single
+sample. This complicated analysis as it is impossible to tell what is noise due
+to cells being processed in the same way and what is true biological signal.
+Cell hashing uses an antibody to a ubiquitously expressed protein but with a
+different nucleotide sequence for each sample. The samples can then be mixed,
+processed in batches and then the cells computationally separated based on
+which sequence they are associated with. An added benefit of this approach is
+the simple detection of doublets containing cells from different samples.
+
+CRISPR-Cas9 gene editing has also been developed as an extension to scRNA-seq
+protocols. One possibility is to introduce a mutation at a known location that
+can then be used to demultiplex samples processed together. It is possible to
+do this with samples from different individuals or cell lines but the advantage
+of a gene editing based approach is that the genetic background remains similar
+between samples. It is also possible to investigate the effects of introducing a
+mutation. Protocols like Perturb-Seq introduce a range of guide RNA molecules to
+a cell culture, subject the cells to some stimulus then perform single-cell RNA
+sequencing. The introduced mutation can then be linked to the response of the
+cells to the stimulus and the associated broader changes in gene expression.
+
+Other approaches that allow multiple measurements from individual cells
+include...

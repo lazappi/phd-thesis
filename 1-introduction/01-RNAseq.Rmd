@@ -1,0 +1,150 @@
+## RNA sequencing
+
+* Why RNA-seq?
+    * What is happening?
+    * High throughput
+    * Easy
+    * Unbiased
+    * Complete
+    * Different cell types
+
+By looking at DNA we can see what genes are present in a cell but we cannot tell
+which of them are active and what processes they might be involved in. To do
+that we need to inspect the parts of the system that change dynamically. Ideally
+we might want to interrogate which proteins are present as they provide most of
+the functionality. However, while it is possible to do this using technologies
+such as mass spectrometry the readout they produce is difficult to interpret
+and the encoding is much more complex as there are 20 types of amino acids
+compared to only four nucleotides. In contrast RNA molecules are much easier to
+measure. High-throughput RNA sequencing (RNA-seq) provides a reliable method
+for high-quality measurement of RNA expression levels. RNA is isolated from a
+biological sample, converted to complementary DNA (cDNA) and provided as input
+to a sequencing machine. The output of an RNA-seq experiment is millions of
+short nucleotide sequences originating from the RNA transcripts present in the
+sample. In contrast to older techniques for measuring RNA, such as probe-based
+microarrays, RNA-seq requires no prior knowledge of existing sequences in order
+to measure a sample and is effective over a much greater range of expression
+levels.
+
+### Library preparation
+
+* PolyA capture
+* Ribosomal depletion
+
+The first step in preparing a sample for RNA-seq is to chemically lyse the
+cells, disrupting the structure of the cell wall and releasing the molecules
+inside. RNA molecules can then be isolated, typically using a chemical process
+called phenol/chloroform extraction although this can also be done by
+physically separating different types of molecules by passing the sample
+through a silica column. The majority of the RNA in a cell is ribosomal RNA,
+usually more than 80 percent {raz2011}. Most of the time this type of RNA is
+not of interest and sequencing it would reduce the ability to detect less
+abundant species. To select mRNA oligonucleotide probes that bind to the poly-A
+tail can be used but a downside of this approach is that it won't capture
+immature mRNA or other types of RNA molecules. An alternative method is to use
+a different kind of probe specific to each species that binds to the rRNA
+allowing it to be removed. The choice of selection method has been shown to
+introduce different biases into the resulting data {sultan2014}.
+
+The Illumina sequencing typically used for RNA-seq experiments can only read
+short sequences of nucleotide of approximately 40-400 basepairs. Most mRNA
+molecules are longer than this so to read the full length they must be
+fragmented into smaller parts. Most sequencing machines also only work with DNA
+not directly with RNA so the sample must first be reverse-transcribed using a
+retroviral enzyme to produce a single strand of cDNA. Many protocols have been
+designed for this step with each requiring a specific primer sequence to be
+joined to the RNA molecules {roberts2011?}. The complementary strand of cDNA is
+produced using a second enzyme that is usually involved in copying DNA for cell
+division. For some protocols fragmentation is performed after conversion to cDNA
+rather than at the RNA stage.
+
+Once the cDNA has been produced it is usually necessary to attach adaptor
+sequences that are used to bind the molecules and initiate sequencing. They may
+also contain barcodes for measuring multiple samples at once. It has become
+standard practice to perform paired-end sequencing where a section of sequence
+is read from one end of a molecule before it is flipped and the other end read
+and this process requires an additional set of adaptors. At each of the stages
+of library preparation there are quality control steps to be performed to make
+sure a high-quality cDNA sample is loaded on to the sequencing machine.
+
+### High-throughput sequencing
+
+* Illumina sequencing
+    * Sequence by synthesis
+    * Paired end
+
+Most RNA-seq experiments are sequenced on an Illumina maching using their
+Sequence by Synthesis technology. In this process the strands of cDNA fragments
+are separated and the adaptors bind to oligonucleotides coating a flow cell. The
+other end of the fragment can bind to a second oligonucleotide forming a
+structure where an enzyme synthesises a complementary DNA strand. This process
+of separation of strands and synthesis of new complementary strands is repeated
+until clusters of DNA fragments with the same sequence are formed. Once the
+clusters are significantly large the adaptor at one end of each fragment is
+cleaved leaving single stranded DNA attached to the flow cell and one end.
+
+The sequencing process now begins. Nucleotides tagged with fluorescent markers
+are added and can bind to the next available position on a fragment if they are
+complementary. By adding all four nucleotides at once they compete for each
+position, reducing the chance of an incorrect match. Any unbound nucleotides
+are washed away before a laser excites the florescent tags and an image is
+taken. Each nucleotide is tagged with a different and the order of colours
+produced by a cluster shows the sequence of nucleotides in a fragment. For
+paired-end sequencing the fragments can be flipped and the sequencing process
+repeated at the other end. The images from the sequencing machine are processed
+to produce millions of short nucleotide reads that are the starting point for
+computational analysis.
+
+### Analysis of RNA-seq data
+
+* Experimental design
+* Alignment
+* Quantification
+* Negative binomial
+* Normalisation
+* Differential expression testing
+* Proportions
+
+Many types of analyses can be performed using RNA-seq data such as
+identification of variants in the genetic sequence or detection of previously
+unannotated transcripts but the most common kind of analysis is to look for
+differences in the expression level of genes between groups. To do this reads
+are first aligned to a reference and the number of reads overlapping each genes
+is counted. In contrast to aligners designed for DNA sequencing RNA-seq
+aligners such as STAR, HiSAT2 and subread must taken into account the splicing
+of mRNA transcripts which causes parts of some reads to align in different
+locations. The alignment step is computational intensive and can take a
+significant amount of time. More recently tools such as kallisto and Salmon
+have been developed which attempt to directly quantify expression by estimating
+the probability that a read comes from a particular annotated transcript. These
+approaches are orders of magnitude faster than true alignment and potentially
+produce more accurate quantification at the cost of having an exact genomic
+position for each read.
+
+At this stage the result is a matrix of counts known as an expression matrix
+where the rows are features (usually genes), the columns are samples and the
+values show the expression level of a particular feature in a sample. As these
+counts result from a sampling process that can be modeled using common
+statistical distributions. One option is the Poisson distribution, however this
+assumes that the mean and variance of each feature is equal. A better fit is the
+negative binomial (or Gamma-Poisson) distribution which includes an over-dispersion
+parameter allowing the variance to be larger than the mean. While each feature is
+quantified for each sample these values are not absolute measures of expression
+and are better understood as proportions of the total number of reads. Another
+complication of RNA-seq data is that the number of features (tens of thousands)
+is much larger than the number of samples (usually only a few per group).
+
+The most successful methods for testing differential expression between groups
+of RNA-seq samples overcome this challenge by sharing information between
+genes. Both the edgeR and DESeq (and later the DESeq2) packages model RNA-seq
+data using the negative binomial distribution while Before expression levels
+can be tested the differences between samples must be removed through
+normalisation. The edgeR packaged uses the Trimmed-Mean of M values (TMM)
+method where... DESeq has a similar method that... When an experiment has been
+conducted multiple batches and there are significant differences between them
+alternative normalisations such as Removel of Unwanted Variation (RUV) that ...
+may be required. The limma package uses an alternative approach where a method
+called voom transforms the data so that it is suitable for linear modelling
+methods originally designed for RNA microarray technology. Over the time the
+methods in these packages have been refined and new tests developed allowing
+for the routine analysis of RNA-seq experiments.
