@@ -1,5 +1,16 @@
 ## Kidney development
 
+One area that has particularly benefitted from the rise of scRNA-seq is
+developmental biology. Although the genes involved in the development of
+many organs are now well understood arriving at this knowledge has required many
+painstaking experiments. During development cells are participating in a
+continuous dynamic process involving the maturation from one cell type to
+another and the creation of new cell types. Single-cell RNA-seq captures a
+snapshot of this process allow the transcriptome of intermediate and mature
+cells to be studied. This has revealed that some of the genes thought to be
+markers of specific cell types are more widely expressed or involved in other
+processes.
+
 ### Structure and function
 
 * Kidney structure
