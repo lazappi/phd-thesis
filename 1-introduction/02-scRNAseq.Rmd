@@ -23,29 +23,38 @@ restricted to inspecting a few precious cells. Further studies quickly showed
 that cell types could be identified without sorting cells and approaches were
 developed to allow unbiased capture of the whole transcriptome. Since then many
 scRNA-seq protocols have been developed including CEL-Seqm CEL-Seq2,
-Quartz-Seq, Quartz-Seq2 and Smart-seq2. The first commercially available cell
-capture platform was the Fluidigm C1. This system uses microfluidics to
-passively separate cells into individual wells on a plate where they are lysed,
-reverse-transcribed and the collected cDNA is PCR amplified. After this stage
-the product is extracted from the plate and libraries prepared for Illumina
-sequencing. Most C1 data has been produced using a 96 well plate but more
-recently an 800 well plate has become available, greatly increasing the number
-of cells that can be captured at a time. One of the disadvantages of
-microfluidic plate-based cell capture technologies is that the chips used have
-a fixed size window, meaning that only cells of a particular sizes can be
-captured in a single run. However, as cells are captured in individual wells
-they can be imaged before lysis, potentially identifying damaged or broken
-cells, empty wells or wells containing more than one cell. Capturing multiple
-cells is a known issue, with Macosko et al. finding that when preparing a
-mixture of mouse and human cells 30 percent of the resulting libraries
-contained transcripts from both species but only about a third of these
-doublets were visible in microscopy images[Macosko2015-rl]. The newer Polaris
-system from Fluidigm also uses microfluidics to capture cells but can select
-particular cells based on staining or fluorescent reporter expression and then
-hold them for up to 24 hours while introducing various stimuli. The cells can
-be imaged during this time before being lysed and prepared for RNA sequencing.
-This platform provides opportunities for a range of experiments that aren't
-possible using other capture technologies.
+Quartz-Seq, Quartz-Seq2 and Smart-seq2 and the number of cells in scRNA-seq
+experiments has scaled exponentially (Figure \@ref(fig:technologies)). The
+first commercially available cell capture platform was the Fluidigm C1. This
+system uses microfluidics to passively separate cells into individual wells on
+a plate where they are lysed, reverse-transcribed and the collected cDNA is PCR
+amplified. After this stage the product is extracted from the plate and
+libraries prepared for Illumina sequencing. Most C1 data has been produced
+using a 96 well plate but more recently an 800 well plate has become available,
+greatly increasing the number of cells that can be captured at a time. One of
+the disadvantages of microfluidic plate-based cell capture technologies is that
+the chips used have a fixed size window, meaning that only cells of a
+particular sizes can be captured in a single run. However, as cells are
+captured in individual wells they can be imaged before lysis, potentially
+identifying damaged or broken cells, empty wells or wells containing more than
+one cell. Capturing multiple cells is a known issue, with Macosko et al.
+finding that when preparing a mixture of mouse and human cells 30 percent of
+the resulting libraries contained transcripts from both species but only about
+a third of these doublets were visible in microscopy images[Macosko2015-rl].
+The newer Polaris system from Fluidigm also uses microfluidics to capture cells
+but can select particular cells based on staining or fluorescent reporter
+expression and then hold them for up to 24 hours while introducing various
+stimuli. The cells can be imaged during this time before being lysed and
+prepared for RNA sequencing. This platform provides opportunities for a range
+of experiments that aren't possible using other capture technologies.
+
+```{r technologies, fig.cap = "(ref:cap-technologies)", fig.scap = "(ref:scap-technologies)", out.width = "100%"}
+knitr::include_graphics(here::here("figures/technologies.jpg"))
+```
+
+(ref:scap-technologies) Exponential increase in the scale of scRNA-seq experiments.
+
+(ref:cap-technologies) Exponential increase in the scale of scRNA-seq experiments. (a) Key jumps in scRNA-seq capture technologies including manual handling, plate-based microfluidic capture and droplet-based capture (b) Cell numbers in representative studies using key technologies by publication date. Image from Svensson, Vento-Tormo and Teichmann _"Exponential scaling of single-cell RNA-seq in the past decade"_[Svensson2018].
 
 ### Droplet based cell capture
 
@@ -89,29 +98,39 @@ enough cDNA for sequencing a PCR amplification step is necessary. Depending on
 their nucleotide sequence different transcripts may be amplified at different
 rates which can distort their relative proportions within a library. UMIs
 attempt to improve the quantification of gene expression by allowing the
-removal of PCR duplicates produced during amplification. The nucleotide probes
-used in droplet-based capture protocols include a poly(T) sequence which binds
-to mature mRNA molecules, a barcode sequence which is the same for every probe
-on a bead and 8-10 bases of UMI sequence which is unique to each probe. The UMI
-sequences are long enough that the probability of capturing two copies of a
-transcript on two probes with the same UMI is extremely low. After
-reverse-transcription, amplification, sequencing and alignment de-duplication
-can be performed by identifying reads with the same UMI that align to the same
-position and therefore should be PCR duplicates rather than truly expressed
-copies of a transcript. For this method to be effective each read must be
-associated with a UMI which means that only a small section at the 3' end of
-each transcript is sequenced. This has the side effect of reducing the amount
-of cDNA that needs to be sequenced and therefore increasing the number of cells
-that can be sequenced at a time. While the improvement in quantification of
-gene expression levels is useful for many downstream analyses it comes at the
-cost of coverage across the length of a gene which is required for applications
-such as variant detection and de-novo assembly. However reads along the length
-off genes have been observed in UMI dataset and are believed to come from
-unannotated transcription start sites or regions that contain enough adenine
-nucleotides to bind to the capture probes. Datasets with UMIs need extra
-processing steps which can be complicated by the possibility of sequencing
-errors in the UMI itself. Statistical methods designed for full-length data may
-also be affected by the different properties of a UMI dataset.
+removal of PCR duplicates produced during amplification (Figure
+\@ref(fig:UMIs)). The nucleotide probes used in droplet-based capture protocols
+include a poly(T) sequence which binds to mature mRNA molecules, a barcode
+sequence which is the same for every probe on a bead and 8-10 bases of UMI
+sequence which is unique to each probe. The UMI sequences are long enough that
+the probability of capturing two copies of a transcript on two probes with the
+same UMI is extremely low. After reverse-transcription, amplification,
+sequencing and alignment de-duplication can be performed by identifying reads
+with the same UMI that align to the same position and therefore should be PCR
+duplicates rather than truly expressed copies of a transcript.
+
+```{r UMIs, fig.cap = "(ref:cap-UMIs)", fig.scap = "(ref:scap-UMIs)", out.width = "100%"}
+knitr::include_graphics(here::here("figures/UMIs.png"))
+```
+
+(ref:scap-UMIs) Unique Molecular Identifiers (UMIs) can improve scRNA-seq quantification.
+
+(ref:cap-UMIs) Unique Molecular Identifiers (UMIs) can improve scRNA-seq quantification. (A) UMIs are random 8-10 basepair sequences included as part of the mRNA capture probe along with the cell barcode (BC) and PCR handle. (B) The mRNA sequence can be aligned to a reference genome. (C) Each UMI is only counted once at each location, removing PCR duplicates and improving quantification.
+
+For this method to be effective each read must be associated with a UMI which
+means that only a small section at the 3' end of each transcript is sequenced.
+This has the side effect of reducing the amount of cDNA that needs to be
+sequenced and therefore increasing the number of cells that can be sequenced at
+a time. While the improvement in quantification of gene expression levels is
+useful for many downstream analyses it comes at the cost of coverage across the
+length of a gene which is required for applications such as variant detection
+and de-novo assembly. However reads along the length off genes have been
+observed in UMI dataset and are believed to come from unannotated transcription
+start sites or regions that contain enough adenine nucleotides to bind to the
+capture probes. Datasets with UMIs need extra processing steps which can be
+complicated by the possibility of sequencing errors in the UMI itself.
+Statistical methods designed for full-length data may also be affected by the
+different properties of a UMI dataset.
 
 ### Recent advances in scRNA-seq protocols
 

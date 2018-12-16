@@ -55,16 +55,25 @@ exemplified by the Human Cell Atlas project which is attempting to produce a
 reference of the transcriptional profiles of all the cell types in the human
 body. Similar projects exist for other species and specific tissues. As
 scRNA-seq datasets have become more widely available a standard workflow has
-developed which can be applied to many experiments. This workflow can be
-divided into four phases: 1) Data acquisition, pre-processing of samples to
-produce a cell by gene expression matrix, 2) Data cleaning, quality control to
-refine the dataset used for analysis, 3) Cell assignment, grouping or ordering
-of cells based on their transcriptional profile, and 4) Gene identification to
-find genes that represent particular groups and can be used to interpret them.
-Within each phase a range of processes may be used and there are now many tools
-available for completing each of them, with over XXX tools currently available.
-An introduction to the phases of scRNA-seq analysis is provided here but the
-analysis tools landscape is more fully explored in Chapter \@ref(tools).
+developed which can be applied to many experiments (Figure \@ref(fig:phases)).
+This workflow can be divided into four phases: 1) Data acquisition,
+pre-processing of samples to produce a cell by gene expression matrix, 2) Data
+cleaning, quality control to refine the dataset used for analysis, 3) Cell
+assignment, grouping or ordering of cells based on their transcriptional
+profile, and 4) Gene identification to find genes that represent particular
+groups and can be used to interpret them. Within each phase a range of
+processes may be used and there are now many tools available for completing
+each of them, with over XXX tools currently available. An introduction to the
+phases of scRNA-seq analysis is provided here but the analysis tools landscape
+is more fully explored in Chapter \@ref(tools).
+
+```{r phases, fig.cap = "(ref:cap-phases)", fig.scap = "(ref:scap-phases)", out.width = "100%"}
+knitr::include_graphics(here::here("figures/phases.png"))
+```
+
+(ref:scap-phases) Phases of a standard scRNA-seq analysis workflow.
+
+(ref:cap-phases) Phases of a standard scRNA-seq analysis workflow. In Phase 1 (Data acquisition) samples are pre-processed to produce an expression matrix that undergoes quality control and filtering in Phase 2 (Data cleaning). Phase 3 (Cell assignment) groups or orders cell according to their transcriptional profile and in Phase 4 (Gene identification) genes describing those groups are discovered and used to interpret them.
 
 ### Pre-processing and quality control
 
