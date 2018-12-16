@@ -141,7 +141,7 @@ labels are then captured along with mRNA transcripts and a size selection step
 is applied to separate them before library preparation. Similar antibodies can
 be used to allow multiplexing of samples through a process known as cell
 hashing. In a typical scRNA-seq experiment each batch corresponds to a single
-sample. This complicated analysis as it is impossible to tell what is noise due
+sample. This complicates analysis as it is impossible to tell what is noise due
 to cells being processed in the same way and what is true biological signal.
 Cell hashing uses an antibody to a ubiquitously expressed protein but with a
 different nucleotide sequence for each sample. The samples can then be mixed,
@@ -151,14 +151,24 @@ the simple detection of doublets containing cells from different samples.
 
 CRISPR-Cas9 gene editing has also been developed as an extension to scRNA-seq
 protocols. One possibility is to introduce a mutation at a known location that
-can then be used to demultiplex samples processed together. It is possible to
-do this with samples from different individuals or cell lines but the advantage
-of a gene editing based approach is that the genetic background remains similar
-between samples. It is also possible to investigate the effects of introducing a
-mutation. Protocols like Perturb-Seq introduce a range of guide RNA molecules to
-a cell culture, subject the cells to some stimulus then perform single-cell RNA
-sequencing. The introduced mutation can then be linked to the response of the
-cells to the stimulus and the associated broader changes in gene expression.
+can then be used to demultiplex samples processed together [spanjaard2018]. It
+is possible to do this with samples from different individuals or cell lines
+but the advantage of a gene editing based approach is that the genetic
+background remains similar between samples. It is also possible to investigate
+the effects of introducing a mutation. Protocols like Perturb-Seq introduce a
+range of guide RNA molecules to a cell culture, subject the cells to some
+stimulus then perform single-cell RNA sequencing. The introduced mutation can
+then be linked to the response of the cells to the stimulus and the associated
+broader changes in gene expression. More recently it has been proposed that
+CITE-seq can be combined with CRISPR-based approaches [mimitou2018]. Another
+approach is CellTagging which introduces a barcoded lentiviral construct into
+cells. A unique combination of barcodes is then based on to daughter cells and
+can be used to trace the lineage of a cell population.
 
-Other approaches that allow multiple measurements from individual cells
-include...
+Other approaches that allow multiple measurements from individual cells include
+G&T-seq and SIDR which measure RNA and genomic DNA, similar approaches which
+measure the exome, or protein-coding part of the genome, along with the
+transcriptome, scMT-seq which measures RNA and DNA methylation, Patch-seq which
+combines patch-clamp recording to measure the electrophysiology of neurons with
+scRNA-seq and scTrio-seq which is able to measure the genome, transcriptome and
+methylome simultaneously.
