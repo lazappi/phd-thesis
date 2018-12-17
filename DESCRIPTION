@@ -1,0 +1,20 @@
+Package: lazappi-phd-thesis
+Type: Book
+Title: Tools and techniques for single-cell RNA-seq data
+Version: 0.0.0.9000
+Authors@R: c(
+    person("Luke", "Zappia",
+           email = "lzappia@student.unimelb.edu.au",
+           role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0001-7744-8565"))
+    )
+Description: Tools and techniques for single-cell RNA-seq data
+License:
+URL:
+BugReports:
+Depends:
+    R (>= 3.5.0)
+Imports:
+    bookdown
+Encoding: UTF-8
+

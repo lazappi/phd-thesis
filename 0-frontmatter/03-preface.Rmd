@@ -1,2 +1,160 @@
-This is an example of a thesis setup to use the reed thesis document class (for 
-LaTeX) and the R bookdown package, in general.
+This preface provides a summary of the chapters in this thesis and describes my
+contribution to them as well as the contributions of my collaborators and
+supervisors. This is a thesis _with_ publication and where publications form
+part of a chapter they are listed here. The following publications are included
+as part of this thesis:
+
+**Zappia L**, Phipson B, Oshlack A. _"Exploring the single-cell RNA-seq
+analysis landscape with the scRNA-tools database."_ PLoS Computational
+Biology. 2018. DOI:
+[10.1371/journal.pcbi.1006245](https://doi.org/10.1371/journal.pcbi.1006245)
+
+**Zappia L**, Phipson B, Oshlack A. _"Splatter: simulation of single-cell RNA
+sequencing data."_ Genome Biology. 2017. DOI:
+[10.1186/s13059-017-1305-0](https://doi.org/10.1186/s13059-017-1305-0)
+
+**Zappia L**, Oshlack A. _"Clustering trees: a visualization for evaluating
+clusterings at multiple resolutions."_ Gigascience. 2018. DOI:
+[10.1093/gigascience/giy083](https://doi.org/10.1093/gigascience/giy083)
+
+These publications are included as they appear online and are designed to be
+read as stand-alone documents. Sections within these publications are not
+included in the table of contents and references are available at the end of
+each publication rather than the reference list for this thesis. The
+contributions of authors to these papers are explained below. I am the first
+author on these publications and contributed more than 50 percent of the work
+towards them including drafting, editing and revising the manuscripts. My
+co-authors have provided signed declarations acknowledging and supporting my
+contributions which have been submitted along with this thesis. Where publicly
+available datasets have been used these have been appropriately cited.
+
+**[Chapter 1: Introduction](#introduction)** is an original work providing a
+background and overview relevant to understanding my work in this thesis
+including an introduction to RNA sequencing, single-cell RNA sequencing and
+kidney function and development.
+
+**[Chapter 2: The scRNA-seq tools landscape](#tools)** is an original work
+describing a database of software tools for analysing single-cell RNA
+sequencing data which has been published in _PLoS Computational Biology_ as
+_"Exploring the single-cell RNA-seq analysis landscape with the scRNA-tools
+database"_. In addition to this publication I developed a website displaying
+the information in this database which is available at
+https://www.scRNA-tools.org. The database and code for building the website is
+available on GitHub at https://github.com/Oshlack/scRNA-tools under an MIT
+license.
+
+Contributions to the work in this chapter:
+
+* I complied and regularly updated the database of tools.
+
+* I designed and built the public website used to display the database. Breon
+  Schmidt provided assistance with implementing some of the website
+  functionality and code for processing the database was based on a script
+  written by Sean Davis.
+
+* I performed the analysis of the database presented in the publication.
+
+* I wrote the first draft of the manuscript and produced all the figures in the
+  publication.
+
+* Alicia Oshlack provided advice on planning the manuscript and edited draft
+  versions.
+
+* Belinda Phipson contributed to writing the manuscript.
+
+**[Chapter 3: Simulating scRNA-seq data](#simulation)** is an original work
+describing a software package for simulating single-cell RNA sequencing
+expression data. This work was published in _Genome Biology_ as _"Splatter:
+simulation of single-cell RNA sequencing data"_. The software package described
+in this publication is available through Bioconductor at
+https://bioconductor.org/packages/splatter and the code is shared on GitHub at
+https://github.com/Oshlack/splatter under a GPL-3.0 license.
+
+Contributions to the work in this chapter:
+
+* I designed and implemented the Splatter R package described in this chapter.
+
+* Belinda Phipson contributed to the design of the Splat simulation method
+  described in the publication and provided statistical advice.
+
+* I conducted the analysis presented in the publication and produced the figures
+  shown.
+
+* Belinda Phipson performed preprocessing for some of the public datasets used.
+
+* Alicia Oshlack helped to design and plan the analysis presented in the
+  publication.
+
+* I wrote the first draft of the manuscript and performed revisions.
+
+* Alicia Oshlack assisted with planning the manuscript and edited drafts.
+
+* Belinda Phipson helped write sections of the manuscript and edited drafts.
+
+* Jovana Maksimovic proofread a draft of the manuscript and provided comments.
+
+**[Chapter 4: Visualising clustering across resolutions](#clust-trees)** is an
+original work describing a visualisation for showing clustering results across
+multiple resolutions and helping to choose a clustering resolution to use. This
+work has been published in _GigaScience_ as _"Clustering trees: a visualization
+for evaluating clusterings at multiple resolutions"_ and a software package
+implementing the algorithm described is available from CRAN at
+https://cran.r-project.org/package=clustree. The source code for this package
+can be found on GitHub at https://github.com/lazappi/clustree under a GPL-3.0
+license.
+
+Contributions to work in this chapter:
+
+* I designed the clustering trees algorithm described in this chapter.
+
+* I designed and wrote the clustree R package that implements this algorithm.
+
+* I performed the analysis presented in the manuscript and designed and produced
+  the figures shown.
+
+* Alicia Oshlack provided advice on the design and planning of the analysis to
+  present.
+
+* I planned and wrote the first draft of the manscript.
+
+* Alicia Oshlack provided advice on the structure of the manuscript and edited
+  draft versions.
+
+* I performed revisions and drafted responses to reviewers.
+
+* Marek Cmero read and provided comments on a draft of the manuscript.
+
+**[Chapter 5: Analysis of kidney organoid scRNA-seq data](#organoids)** is an
+original work where I performed analysis of a single-cell RNA sequencing
+experiment from kidney organoids in order to identify and characterise the cell
+types present.
+
+Contributions to work in this chapter:
+
+* XXX performed the cell culture.
+
+* XXX performed cell capture and library preparation of the samples.
+
+* I performed preprocessing of the datasets
+
+* I designed and performed the analysis with input from Alicia Oshlack, Belinda
+  Phipson, Melissa Little and Alex Combes.
+
+* Alex Combes helped with interpreting gene lists describing cell types.
+
+* I designed and created the figures shown in this chapter.
+
+**[Chapter 6: Conclusion](#conclusion)** is an original work summarising the
+work in this thesis, placing it in the wider context of single-cell RNA
+sequencing analysis and outlining potential directions of the field.
+
+**Other publications I have contributed to during my candidature but are not
+presented in this thesis**
+
+Phipson B, **Zappia L**, Oshlack A. _"Gene length and detection bias in single
+cell RNA sequencing protocols."_ F1000 Research. DOI:
+[10.12688/f1000research.11290.1](https://doi.org/10.12688/f1000research.11290.1).
+
+* Organoid scRNA-seq paper
+* Swirler organoid paper
+* Reproducibility paper

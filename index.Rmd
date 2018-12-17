@@ -135,7 +135,7 @@ output:
         toc: true
         toc_depth: 3
         keep_tex: TRUE
-        pandoc_args: [ 
+        pandoc_args: [
             "--wrap", "none",
             "--top-level-division", "chapter"
         ]
@@ -149,6 +149,8 @@ output:
 ---
 
 ```{r knitr-options, include = FALSE}
+options(knitr.graphics.auto_pdf = TRUE)
+
 knitr::opts_chunk$set(
   echo      = FALSE,
   warning   = FALSE,
