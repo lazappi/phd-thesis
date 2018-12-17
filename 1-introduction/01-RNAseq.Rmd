@@ -105,18 +105,26 @@ starting point for computational analysis.
 Many types of analyses can be performed using RNA-seq data such as
 identification of variants in the genetic sequence or detection of previously
 unannotated transcripts but the most common kind of analysis is to look for
-differences in the expression level of genes between groups of samples. To do
-this reads are first aligned to a reference genome and the number of reads
-overlapping each gene is counted. In contrast to aligners designed for DNA
-sequencing RNA-seq aligners such as STAR, HiSAT2 and subread must taken into
-account the splicing structure of mRNA transcripts which causes parts of some
-reads to align in different locations. The alignment step is computationally
-intensive and can take a significant amount of time. More recently tools such
-as kallisto and Salmon have been developed which attempt to directly quantify
-expression by estimating the probability that a read comes from a particular
-annotated transcript. These approaches are orders of magnitude faster than true
-alignment and potentially produce more accurate quantification at the cost of
-having an exact genomic position for each read.
+differences in the expression level of genes between groups of samples (Figure
+\@ref(fig:RNA-seq)). To do this reads are first aligned to a reference genome
+and the number of reads overlapping each gene is counted. In contrast to
+aligners designed for DNA sequencing RNA-seq aligners such as STAR, HiSAT2 and
+subread must taken into account the splicing structure of mRNA transcripts
+which causes parts of some reads to align in different locations. The alignment
+step is computationally intensive and can take a significant amount of time.
+More recently tools such as kallisto and Salmon have been developed which
+attempt to directly quantify expression by estimating the probability that a
+read comes from a particular annotated transcript. These approaches are orders
+of magnitude faster than true alignment and potentially produce more accurate
+quantification at the cost of having an exact genomic position for each read.
+
+```{r RNA-seq, fig.cap = "(ref:cap-RNA-seq)", fig.scap = "(ref:scap-RNA-seq)", out.width = "100%"}
+knitr::include_graphics(here::here("figures/RNA-seq.png"))
+```
+
+(ref:scap-RNA-seq) A typical RNA-seq differential expression testing workflow.
+
+(ref:cap-RNA-seq) A typical RNA-seq differential expression testing workflow. An expression matrix is created from raw reads either by aligning them to a reference genome and counting those that overlap annotated genes or by alignment-free quantification (pink). Data analysis (blue) consists of several steps including quality control of samples and features, normalisation to remove technical differences between samples, testing for differential expression, gene set testing to identify enriched signatures and visualisation. Results must be carefully interpreted (green) to extract meaning.
 
 At this stage the result is a matrix of counts known as an expression matrix
 where the rows are features (usually genes), the columns are samples and the

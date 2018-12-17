@@ -13,6 +13,14 @@ known as basepairs. Guanine forms three hydrogen bonds with cytosine and
 adenine forms two with thymine. In computing terms DNA is similar to a hard
 drive in that it provides stable, consistent storage of important information.
 
+```{r central-dogma, fig.cap = "(ref:cap-central-dogma)", fig.scap = "(ref:scap-central-dogma)", out.width = "100%"}
+knitr::include_graphics(here::here("figures/central-dogma.png"))
+```
+
+(ref:scap-central-dogma) The central dogma of molecular biology.
+
+(ref:cap-central-dogma) The central dogma of molecular biology. Deoxyribonucleic acid (DNA) is the long term data storage of the cell. To use this information a ribonucleic acid (RNA) molecule is produced through a process called transcription. A mature messenger RNA (mRNA) requires splicing and addition of a ploy(A) tail. Proteins are created from mRNA through translation in the ribosome.
+
 When the cell wants to use some of this information it produces a copy of it in
 the form of a ribonucleic acid (RNA) molecule through a process known as
 transcription, similar to a computer loading information it wants to use into

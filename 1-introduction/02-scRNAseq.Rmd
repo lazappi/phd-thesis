@@ -81,11 +81,20 @@ droplets are broken and some aspects of the chemistry they can both be
 constructed on a lab bench from syringes, automatic plungers, a microscope and
 a small custom-made microfluidic chip. A similar commercially available
 platform is the 10x Genomics Chromium device which automates and streamlines
-much of the process. This device uses droplet-based technologies for a range of
-applications including capture of cells for scRNA-seq. More specialised
-captures, such as those aimed at profiling immune cell receptors, are also
-possible and the company has recently announced kits for single-cell Assay for
-Transposase-Accessible Chromatin using sequencing (scATAC-seq) capture.
+much of the process (Figure \@ref(fig:UMIs)). This device uses droplet-based
+technologies for a range of applications including capture of cells for
+scRNA-seq. More specialised captures, such as those aimed at profiling immune
+cell receptors, are also possible and the company has recently announced kits
+for single-cell Assay for Transposase-Accessible Chromatin using sequencing
+(scATAC-seq) capture.
+
+```{r 10xChromium, fig.cap = "(ref:cap-10xChromium)", fig.scap = "(ref:scap-10xChromium)", out.width = "100%"}
+knitr::include_graphics(here::here("figures/10xChromium.png"))
+```
+
+(ref:scap-10xChromium) Diagram of the 10x Genomics Chromium cell capture process.
+
+(ref:cap-10xChromium) Diagram of the 10x Genomics Chromium cell capture process. (A) Steps in the cell capture process. Barcoded gel beads are passed into a microfluidic device along with dissociated cells where they in droplets in a oil solution. Cells are lysed within the droplet and mRNA is reverse-transcribed to produced barcoded cDNA. Droplets are then broken and the cDNA collected for sequencing. (B) Structure of the gel bead capture probe including adaptor, cell barcode, UMI and poly(T) tail. Adapted using images from 10x Genomics.
 
 ### Unique Molecular Identifiers
 
@@ -153,20 +162,29 @@ are required during analysis.
 Extensions to the standard protocols have also been proposed that allow extra
 measurements from the same cell. One such protocol is CITE-seq which enables
 measurement of the levels of selected proteins at the same time as the whole
-transcriptome. Antibodies for the proteins of interest are labelled with short
-nucleotide sequences. These antibodies can then be applied to the dissociated
-cells and any that remain unbound washed away before cell capture. The antibody
-labels are then captured along with mRNA transcripts and a size selection step
-is applied to separate them before library preparation. Similar antibodies can
-be used to allow multiplexing of samples through a process known as cell
-hashing. In a typical scRNA-seq experiment each batch corresponds to a single
-sample. This complicates analysis as it is impossible to tell what is noise due
-to cells being processed in the same way and what is true biological signal.
-Cell hashing uses an antibody to a ubiquitously expressed protein but with a
+transcriptome (Figure \@ref(fig:CITE-seq)A). Antibodies for the proteins of
+interest are labelled with short nucleotide sequences. These antibodies can
+then be applied to the dissociated cells and any that remain unbound washed
+away before cell capture. The antibody labels are then captured along with mRNA
+transcripts and a size selection step is applied to separate them before
+library preparation. Similar antibodies can be used to allow multiplexing of
+samples through a process known as cell hashing (Figure \@ref(fig:CITE-seq)B).
+In a typical scRNA-seq experiment each batch corresponds to a single sample.
+This complicates analysis as it is impossible to tell what is noise due to
+cells being processed in the same way and what is true biological signal. Cell
+hashing uses an antibody to a ubiquitously expressed protein but with a
 different nucleotide sequence for each sample. The samples can then be mixed,
 processed in batches and then the cells computationally separated based on
 which sequence they are associated with. An added benefit of this approach is
 the simple detection of doublets containing cells from different samples.
+
+```{r CITE-seq, fig.cap = "(ref:cap-CITE-seq)", fig.scap = "(ref:scap-CITE-seq)", out.width = "100%"}
+knitr::include_graphics(here::here("figures/CITE-seq.png"))
+```
+
+(ref:scap-CITE-seq) Extensions to droplet-based capture protocols using nucleotide tagged antibodies.
+
+(ref:cap-CITE-seq) Extensions to droplet-based capture protocols using nucleotide tagged antibodies. (A) CITE-seq allows measurement of selected cell surface markers along with the transcriptome. Nucleotide tagged antibodies are applied to cells before droplet-based capture and processing. A size selection step is used to separate antibody nucleotides before library preparation. (B) Cell hashing allows multiplexing of samples. Ubiquitous antibodies are used to tag cells in each sample with a hashtag oligonucleotide. The cells are then mixed for cell capture and processing and the hashtags used to computationally identify the origin of each cell. Images from https://cite-seq.com.
 
 CRISPR-Cas9 gene editing has also been developed as an extension to scRNA-seq
 protocols. One possibility is to introduce a mutation at a known location that

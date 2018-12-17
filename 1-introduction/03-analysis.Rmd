@@ -236,18 +236,27 @@ which used dimensionality reduction and computation of a minimum spanning tree
 to explore a model of skeletal muscle differentiation[Trapnell2014-he]. Since
 then the Monocle algorithm has been updated and a range of other developed
 including TSCAN[Ji2016-ws], SLICER[Welch2016-cw], CellTree[DuVerle2016-ni],
-Sincell[Julia2015-zc] and Mpath[Chen2016-kx]. In their comprehensive review and
-comparison of trajectory inference methods Cannoodt, Saelens and Saeys break
-the process into two steps. In the first step dimensionality reduction
-techniques such as PCA or t-SNE[Maaten2008-ne] are used to project cells into
-lower dimensions where the cells are clustered or a graph constructed between
-them. The trajectory is then created by finding a path through the cells and
-ordering the cells along it. This review compares the performance on a range of
-real and synthetic datasets. To do so the authors had to develop metrics for
-comparing trajectories from different methods and built a comprehensive
-infrastructure for running and evaluating software tools. They found that
-Slingshot, Monocle and TSCAN performed well in many situations but that other
-methods could be effective in specific cases.
+Sincell[Julia2015-zc] and Mpath[Chen2016-kx]. In their review of trajectory
+inference methods Cannoodt, Saelens and Saeys break the process into two steps
+(Figure \@ref(fig:trajectory-inference)). In the first step dimensionality
+reduction techniques such as PCA or t-SNE[Maaten2008-ne] are used to project
+cells into lower dimensions where the cells are clustered or a graph
+constructed between them. The trajectory is then created by finding a path
+through the cells and ordering the cells along it. The same group has conducted
+a comprehensive comparison of ordering methods evaluating their performance on
+a range of real and synthetic datasets. To do so the authors had to develop
+metrics for comparing trajectories from different methods and built a
+comprehensive infrastructure for running and evaluating software tools. They
+found that Slingshot, Monocle and TSCAN performed well in many situations but
+that other methods could be effective in specific cases.
+
+```{r trajectory-inference, fig.cap = "(ref:cap-trajectory-inference)", fig.scap = "(ref:scap-trajectory-inference)", out.width = "100%"}
+knitr::include_graphics(here::here("figures/trajectory-inference.jpg"))
+```
+
+(ref:scap-trajectory-inference) Trajectory inference framework as described by Cannoodt, Saelens and Saeys.
+
+(ref:cap-trajectory-inference) Trajectory inference framework as described by Cannoodt, Saelens and Saeys. In the first stage dimensionality reduction is used to convert the data to a simpler representation. In the second stage a trajectory is identified and the cells ordered. Image from Cannoodt, Saelens and Saeys _"Computational methods for trajectory inference from single‐-cell transcriptomics"_.
 
 An alternative continuous approach is the cell velocity method in the velocyto
 package. RNA-seq studies typically focus on the expression of complete mature

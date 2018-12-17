@@ -931,3 +931,35 @@ Date	Time	Name	Level	Text	Headers	Captions	Total
 2018-12-16	21:47:07	Analysis of kidney organoid scRNA-seq data	Chapter	0	6	0	6
 2018-12-16	21:47:07	Conclusion	Chapter	645	1	0	646
 2018-12-16	21:47:07	References	Chapter	0	1	0	1
+2018-12-17	16:52:01	docs/thesis.tex	Document	12053	92	847	12992
+2018-12-17	16:52:01	Introduction	Chapter	9024	60	847	9931
+2018-12-17	16:52:01	RNA sequencing	Section	1567	10	220	1797
+2018-12-17	16:52:01	Library preparation	Subsection	438	2	66	506
+2018-12-17	16:52:01	High-throughput sequencing	Subsection	246	2	76	324
+2018-12-17	16:52:01	Analysis of RNA-seq data	Subsection	673	4	78	755
+2018-12-17	16:52:01	Single-cell RNA-sequencing	Section	1850	18	288	2156
+2018-12-17	16:52:01	Early single-cell capture technologies	Subsection	360	4	52	416
+2018-12-17	16:52:01	Droplet based cell capture	Subsection	321	4	84	409
+2018-12-17	16:52:01	Unique Molecular Identifiers	Subsection	390	3	59	452
+2018-12-17	16:52:01	Recent advances in scRNA-seq protocols	Subsection	631	5	93	729
+2018-12-17	16:52:01	Analysing scRNA-seq data	Section	3413	20	114	3547
+2018-12-17	16:52:01	Pre-processing and quality control	Subsection	565	4	0	569
+2018-12-17	16:52:01	Normalisation and integration	Subsection	579	3	0	582
+2018-12-17	16:52:01	Grouping cells	Subsection	413	2	0	415
+2018-12-17	16:52:01	Ordering cells	Subsection	399	2	53	454
+2018-12-17	16:52:01	Gene detection and interpretation	Subsection	606	4	0	610
+2018-12-17	16:52:01	Alternative analyses	Subsection	117	2	0	119
+2018-12-17	16:52:01	Kidney development	Section	1642	11	167	1820
+2018-12-17	16:52:01	Structure and function	Subsection	552	3	81	636
+2018-12-17	16:52:01	Stages of development	Subsection	358	3	0	361
+2018-12-17	16:52:01	Growing kidney organoids	Subsection	607	3	86	696
+2018-12-17	16:52:01	The scRNA-seq tools landscape	Chapter	360	5	0	365
+2018-12-17	16:52:01	Introduction	Section	360	1	0	361
+2018-12-17	16:52:01	Simulating scRNA-seq data	Chapter	474	6	0	480
+2018-12-17	16:52:01	Introduction	Section	474	1	0	475
+2018-12-17	16:52:01	Splatter publication	Section	0	2	0	2
+2018-12-17	16:52:01	Visualising clustering across resolutions	Chapter	440	5	0	445
+2018-12-17	16:52:01	Introduction	Section	440	1	0	441
+2018-12-17	16:52:01	Analysis of kidney organoid scRNA-seq data	Chapter	0	6	0	6
+2018-12-17	16:52:01	Conclusion	Chapter	645	1	0	646
+2018-12-17	16:52:01	References	Chapter	0	1	0	1

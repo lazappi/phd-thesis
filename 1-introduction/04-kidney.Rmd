@@ -15,42 +15,51 @@ expressed or involved in other processes.
 ### Structure and function
 
 The kidney is the organ responsible for filtering the blood in order to remove
-waste products. In humans Kidneys grow as a pair of functional organs with each
+waste products. In humans kidneys grow as a pair of functional organs with each
 being around the size of an adult fist and weighing about 150 grams. Blood
 flows into the kidney via the renal artery and the blood vessels form a
-tree-like branching structure with ever smaller capillaries. At the end of
-these branches are nephrons, the functional filtration unit of the kidney.
-Humans can have around 1 million nephrons that are formed during development
-and just after birth, however they cannot be regenerated during adulthood. A
-capillary loop is formed inside a structure at the end of the nephron called a
-glomerulous and surrounded by Bowman's capsule. Here specialised cells called
-podocytes create a structure called the slit diaphragm that allows water, metal
-ions and small molecules to be filtered while keeping blood cells and larger
-species such as proteins trapped within the bloodstream. The rest of the
-nephron is divided into segments that are responsible for different processes
-involved in balancing the concentration of these species in the filtrate. The
-lumen of the nephron is surrounded by capillaries which allows content to be
-transferred between the filtrate and blood as required. The first segment of
-the nephron is the proximal tubule. Here common biomolecules such as glucose,
-amino acids and bicarbonate are reabsorbed into the bloodstream, as is most of
-the water present. Other molecules including urea and ammonium ions are
-secreted from the blood into the filtrate at his stage. The proximal tubule is
-followed by the loop of Henle and the distal tubule where ions are reabsorbed
-including potassium, chlorine, magnesium and calcium. The final segment is the
-collecting duct where salt concentrations are balanced by exchanging sodium in
-the filtrate for potassium in the bloodstream using a process controlled by the
-hormone aldosterone. The remaining filtrate is then passed to the ureter where
-it is carried to the bladder and collected as urine while the blood leaves via
-the renal vein. In order to perform this complex series of reabsorption and and
-secretion each segment of the nephron is made up specialised cell types with
-their own set of signaling and transporter proteins. The filtration process is
-repeated about 12 times every hour with around 200 litres of blood being
-filtered during a day. Aside from removing waste and maintaining the balance of
-molecular species in the bloodstream the kidneys also play a role in the
-activation of vitamin D and synthesises the hormones erythropoietin, which
-stimulates red blood cell production, and renin which is part of the pathway
-that controls fluid volume and the constriction of arteries to regulate blood
-pressure.
+tree-like branching structure with ever smaller capillaries (Figure
+\@ref(fig:kidney)A). At the end of these branches are nephrons, the functional
+filtration unit of the kidney (Figure \@ref(fig:kidney)B). Humans can have
+around 1 million nephrons that are formed during development and just after
+birth, however they cannot be regenerated during adulthood. A capillary loop is
+formed inside a structure at the end of the nephron called a glomerulous and
+surrounded by Bowman's capsule. Here specialised cells called podocytes create
+a structure called the slit diaphragm that allows water, metal ions and small
+molecules to be filtered while keeping blood cells and larger species such as
+proteins trapped within the bloodstream. The rest of the nephron is divided
+into segments that are responsible for different processes involved in
+balancing the concentration of these species in the filtrate (Figure
+\@ref(fig:kidney)C). The lumen of the nephron is surrounded by capillaries
+which allows content to be transferred between the filtrate and blood as
+required. The first segment of the nephron is the proximal tubule. Here common
+biomolecules such as glucose, amino acids and bicarbonate are reabsorbed into
+the bloodstream, as is most of the water present. Other molecules including
+urea and ammonium ions are secreted from the blood into the filtrate at his
+stage. The proximal tubule is followed by the loop of Henle and the distal
+tubule where ions are reabsorbed including potassium, chlorine, magnesium and
+calcium. The final segment is the collecting duct where salt concentrations are
+balanced by exchanging sodium in the filtrate for potassium in the bloodstream
+using a process controlled by the hormone aldosterone. The remaining filtrate
+is then passed to the ureter where it is carried to the bladder and collected
+as urine while the blood leaves via the renal vein. In order to perform this
+complex series of reabsorption and and secretion each segment of the nephron is
+made up specialised cell types with their own set of signaling and transporter
+proteins. The filtration process is repeated about 12 times every hour with
+around 200 litres of blood being filtered during a day. Aside from removing
+waste and maintaining the balance of molecular species in the bloodstream the
+kidneys also play a role in the activation of vitamin D and synthesises the
+hormones erythropoietin, which stimulates red blood cell production, and renin
+which is part of the pathway that controls fluid volume and the constriction of
+arteries to regulate blood pressure.
+
+```{r kidney, fig.cap = "(ref:cap-kidney)", fig.scap = "(ref:scap-kidney)", out.width = "100%"}
+knitr::include_graphics(here::here("figures/kidney.png"))
+```
+
+(ref:scap-kidney) Structure of the kidney and nephron.
+
+(ref:cap-kidney) Structure of the kidney and nephron. (A) Blood flows into the kidney via the renal artery which branches into every smaller capillaries. (B) At the end of these capillaries is the nephron, the functional filtration unit of the kidney, which is surrounded by a capillary network. (C) Different segments of the kidney are responsible for transferring specific molecular species between the bloodstream and the filtrate. Figure adapted using images from OpenStax College via Wikimedia Commons under a CC BY 3.0 license.
 
 Chronic kidney disease is a major health problem in Australia with hundreds of
 thousands of Australians experiencing it during their lifetime. Early stages of
@@ -109,7 +118,16 @@ cell type and are known as induced pluripotent stem cells (iPSCs). By culturing
 iPSCs under the right conditions the course of differentiation can be directed
 and protocols for growing a range of tissues have been developed including
 stomach, intestine, liver, lung and brain. The first protocol first protocol
-for growing kidney organoids was published in 2015 by Takasato et al.
+for growing kidney organoids was published in 2015 by Takasato et al. (Figure
+\@ref(fig:organoids)).
+
+```{r organoids, fig.cap = "(ref:cap-organoids)", fig.scap = "(ref:scap-organoids)", out.width = "100%"}
+knitr::include_graphics(here::here("figures/organoids.png"))
+```
+
+(ref:scap-organoids) Diagram of the Takasato et al. kidney organoids protocol.
+
+(ref:cap-organoids) Diagram of the Takasato et al. kidney organoids protocol. iPSCs are cultured on a plate in the presence of CHIR followed by FGF9. After about a week cells are formed into three-dimensional pellets and a short CHIR pulse is applied. The pellets continue to be cultured in FGF9 for a further 10 days before all growth factors are removed. The organoids now contain tubular structures replicating human nephrons. Adapted from Takasato et al. _"Kidney organoids from human iPS cells contain multiple lineages and model human nephrogenesis"_.
 
 Using this protocol iPSCs are first grown on a plate where Wnt signaling is
 induced by the presence of CHIR, an inhibitor of glycogen kinase synthase 3.
