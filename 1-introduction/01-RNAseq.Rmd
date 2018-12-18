@@ -26,7 +26,7 @@ inside. RNA molecules can then be isolated, typically using a chemical process
 called phenol/chloroform extraction although this can also be done by
 physically separating different types of molecules by passing the sample
 through a silica column. The majority of the RNA in a cell is ribosomal RNA,
-usually more than 80 percent {raz2011}. Most of the time this type of RNA is
+usually more than 80 percent [@Raz2011-kn]. Most of the time this type of RNA is
 not of interest and sequencing it would reduce the ability to detect less
 abundant species. To select mature mRNA transcripts oligonucleotide probes that
 bind to the poly(A) tail can be used but a downside of this approach is that it
@@ -34,7 +34,7 @@ won't capture immature mRNA or other types of RNA molecules. An alternative
 method is ribosomal RNA depletion where a different kind of probe specific to
 each species is used that binds to the rRNA allowing it to be removed. The
 choice of selection method has been shown to introduce different biases into
-the resulting data {sultan2014}.
+the resulting data [@Sultan2014-xh].
 
 The Illumina sequencing typically used for RNA-seq experiments can only read
 short sequences of nucleotides of approximately 40-400 basepairs. Most mRNA
@@ -43,10 +43,10 @@ must first be fragmented into smaller parts. Most sequencing machines also only
 work with DNA not directly with RNA so the sample must first be
 reverse-transcribed using a retroviral enzyme to produce a single strand of
 cDNA. Many protocols have been designed for this step with each requiring a
-specific primer sequence to be joined to the RNA molecules {roberts2011?}. The
-complementary strand of cDNA is produced using a second enzyme that is usually
-involved in copying DNA for cell division. For some protocols fragmentation is
-performed after conversion to cDNA rather than at the RNA stage.
+specific primer sequence to be joined to the RNA molecules. The complementary
+strand of cDNA is produced using a second enzyme that is usually involved in
+copying DNA for cell division. For some protocols fragmentation is performed
+after conversion to cDNA rather than at the RNA stage.
 
 Once the cDNA has been produced it is usually necessary to attach adaptor
 sequences that are used to bind the molecules and initiate sequencing (Figure
@@ -65,7 +65,7 @@ knitr::include_graphics(here::here("figures/adaptors.png"))
 
 (ref:scap-adaptors) Illustration of adapter arrangements for the Illumina platform.
 
-(ref:cap-adaptors) Illustration of adapter arrangements for the Illumina platform ((A) minimal adapter components, (B) “in-line” barcode configuration for paired-end sequencing, (C) index configuration for paired-end sequencing). Sequencing primers SP1 (primary) and SP2 (paired- end) allow initiation of synthesis of the insert sequence. Index or barcode sequences allow multiplexing of multiple samples with the index being sequenced from a separate index primer (IP). (Image adapted from RNA-seqlopedia, http://rnaseq.uoregon.edu).
+(ref:cap-adaptors) Illustration of adapter arrangements for the Illumina platform ((A) minimal adapter components, (B) “in-line” barcode configuration for paired-end sequencing, (C) index configuration for paired-end sequencing). Sequencing primers SP1 (primary) and SP2 (paired- end) allow initiation of synthesis of the insert sequence. Index or barcode sequences allow multiplexing of multiple samples with the index being sequenced from a separate index primer (IP). (Image adapted from RNA-seqlopedia, http://rnaseq.uoregon.edu [@Voelker_undated-ze]).
 
 ### High-throughput sequencing
 
@@ -86,7 +86,7 @@ knitr::include_graphics(here::here("figures/sequencing.png"))
 
 (ref:scap-sequencing) The Illumina Sequencing by Synthesis process.
 
-(ref:cap-sequencing) The Illumina Sequencing by Synthesis process. Nucleotide fragments bind to a flow cell and clusters are formed through bridge amplification. Strands are primed and fluorescently tagged nucleotides added to the flow cell with DNA polymerase. The lanes of the flow cell are then scanned to produce an image. Fluorescent tags are cleaved and 3’-OH blocking groups are added, preparing the strands for another round of nucleotide incorporation. Image from Mardis, _"Next-Generation DNA Sequencing Methods"_[Mardis].
+(ref:cap-sequencing) The Illumina Sequencing by Synthesis process. Nucleotide fragments bind to a flow cell and clusters are formed through bridge amplification. Strands are primed and fluorescently tagged nucleotides added to the flow cell with DNA polymerase. The lanes of the flow cell are then scanned to produce an image. Fluorescent tags are cleaved and 3’-OH blocking groups are added, preparing the strands for another round of nucleotide incorporation. Image adapted from Mardis, _"Next-Generation DNA Sequencing Methods"_ [@Mardis2008-ju].
 
 The sequencing process now begins. Nucleotides tagged with fluorescent markers
 are added and can bind to the next available position on a fragment if they are
@@ -100,23 +100,24 @@ repeated at the other end. The images from the sequencing machine are processed
 to produce millions of short nucleotide sequences known as reads that are the
 starting point for computational analysis.
 
-### Analysis of RNA-seq data
+### Analysis of RNA-seq data Many types of analyses can be performed using
 
-Many types of analyses can be performed using RNA-seq data such as
-identification of variants in the genetic sequence or detection of previously
-unannotated transcripts but the most common kind of analysis is to look for
-differences in the expression level of genes between groups of samples (Figure
-\@ref(fig:RNA-seq)). To do this reads are first aligned to a reference genome
-and the number of reads overlapping each gene is counted. In contrast to
-aligners designed for DNA sequencing RNA-seq aligners such as STAR, HiSAT2 and
-subread must taken into account the splicing structure of mRNA transcripts
-which causes parts of some reads to align in different locations. The alignment
-step is computationally intensive and can take a significant amount of time.
-More recently tools such as kallisto and Salmon have been developed which
-attempt to directly quantify expression by estimating the probability that a
-read comes from a particular annotated transcript. These approaches are orders
-of magnitude faster than true alignment and potentially produce more accurate
-quantification at the cost of having an exact genomic position for each read.
+RNA-seq data such as identification of variants in the genetic sequence or
+detection of previously unannotated transcripts but the most common kind of
+analysis is to look for differences in the expression level of genes between
+groups of samples (Figure \@ref(fig:RNA-seq)). To do this reads are first
+aligned to a reference genome and the number of reads overlapping each gene is
+counted. In contrast to aligners designed for DNA sequencing RNA-seq aligners
+such as STAR [@Dobin2013-gx], HISAT2 [@Kim2015-ys] and subread [@Liao2013-id]
+must take into account the splicing structure of mRNA transcripts which causes
+parts of some reads to align in different locations. The alignment step is
+computationally intensive and can take a significant amount of time. More
+recently tools such as kallisto [@Bray2016-tm] and Salmon [@Patro2017-ka] have
+been developed which attempt to directly quantify expression by estimating the
+probability that a read comes from a particular annotated transcript. These
+approaches are orders of magnitude faster than true alignment and potentially
+produce more accurate quantification at the cost of having an exact genomic
+position for each read.
 
 ```{r RNA-seq, fig.cap = "(ref:cap-RNA-seq)", fig.scap = "(ref:scap-RNA-seq)", out.width = "100%"}
 knitr::include_graphics(here::here("figures/RNA-seq.png"))
@@ -129,42 +130,46 @@ knitr::include_graphics(here::here("figures/RNA-seq.png"))
 At this stage the result is a matrix of counts known as an expression matrix
 where the rows are features (usually genes), the columns are samples and the
 values show the expression level of a particular feature in a sample. As these
-counts result from a sampling process they can be modeled using common
+counts result from a sampling process they can be modelled using common
 statistical distributions. One option is the Poisson distribution which
 describes the probability of a given number of events happening in a fixed
 amount of time, however this distribution assumes that the mean and variance of
 each feature is equal. This can be true for replicates of the same RNA-seq
 sample but does not represent the extra biological variability between
-different samples. A better fit is the negative binomial (or Gamma-Poisson)
-distribution which includes an over-dispersion parameter, allowing the variance
-in expression to be larger than the mean. While each feature is quantified for
-each sample the observed expression levels are related to the total number of
-reads and the expression level of other features. For example if a gene is
-highly expressed in a particular sample it will soak up a large proportion of
-the available reads while in another sample where it is less expressed those
-reads are more likely to be sampled from other genes. Another complication of
-RNA-seq data is that the number of features (tens of thousands) is much larger
-than the number of samples (usually only a few per group) which violates the
-assumptions of many traditional statistical techniques.
+different samples [@Robinson2010-ll]. A better fit is the negative binomial (or
+Gamma-Poisson) distribution which includes an over-dispersion parameter,
+allowing the variance in expression to be larger than the mean. While each
+feature is quantified for each sample the observed expression levels are
+related to the total number of reads and the expression level of other
+features. For example if a gene is highly expressed in a particular sample it
+will soak up a large proportion of the available reads while in another sample
+where it is less expressed those reads are more likely to be sampled from other
+genes. Another complication of RNA-seq data is that the number of features
+(tens of thousands) is much larger than the number of samples (usually only a
+few per group) which violates the assumptions of many traditional statistical
+techniques.
 
 The most successful methods for testing differential expression between groups
 of RNA-seq samples overcome this challenge by sharing information between
-genes. Both the edgeR and DESeq (and later the DESeq2) packages model RNA-seq
+genes. Both the edgeR [@Robinson2010-pt; @McCarthy2012-gc] and DESeq
+[@Anders2010-pq] (and later the DESeq2 [@Love2014-tw]) packages model RNA-seq
 data using the negative binomial distribution but before differences in
 expression levels can be tested the differences between samples must be removed
 through normalisation. The edgeR packaged uses the Trimmed-Mean of M values
 (TMM) method where a scaling factor for each sample is produced using the
 weighted mean of log ratios between samples for each gene after excluding the
-highest expressed genes and those with the largest log ratio. DESeq has a
-similar method that uses the median of the ratio of the expression of each gene
-to the geometric mean expression across all samples. The limma package uses an
-alternative approach where a method called voom transforms the data so that it
-is suitable for linear modelling methods originally designed for RNA microarray
-technology. When an experiment has been conducted in multiple batches and there
-are significant differences between them alternative normalisation methods such
-as Remove Unwanted Variation (RUV) that may be required. RUV estimates unknown
-factors of unwanted variation using negative control genes (genes that are
-expected to be consistent between samples). These factors can then be included
-in the generalised linear modelling frameworks used for testing differential
-expression. Over time the methods in these packages have been refined and new
-tests developed allowing for the routine analysis of many RNA-seq experiments.
+highest expressed genes and those with the largest log ratio
+[@Robinson2010-ll]. DESeq has a similar method that uses the median of the
+ratio of the expression of each gene to the geometric mean expression across
+all samples. The limma package [@Ritchie2015-te] uses an alternative approach
+where a method called voom transforms the data so that it is suitable for
+linear modelling methods originally designed for RNA microarray technology
+[@Law2014-nq]. When an experiment has been conducted in multiple batches and
+there are significant differences between them alternative normalisation
+methods such as Remove Unwanted Variation (RUV) that may be required
+[@Risso2014-zw]. RUV estimates unknown factors of unwanted variation using
+negative control genes (genes that are expected to be consistent between
+samples). These factors can then be included in the generalised linear
+modelling frameworks used for testing differential expression. Over time the
+methods in these packages have been refined and new tests developed allowing
+for the routine analysis of many RNA-seq experiments.

@@ -117,7 +117,7 @@ bibliography: "bib/references.bib"
 #  your citations. See https://citationstyles.org/ for more details.
 # +----------------------------------------------------------------------------+
 
-csl: "style/apa.csl"
+csl: "style/genome-biology.csl"
 
 # *============================================================================*
 #  OUTPUT FORMATS

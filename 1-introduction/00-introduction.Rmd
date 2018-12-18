@@ -2,16 +2,17 @@
 
 The central dogma of molecular biology describes the flow of information within
 a cell, from DNA to RNA to protein. Deoxyribonucleic acid (DNA) is the long
-term data storage of the cell and has a well known double helix structure. Each
-strand of the double helix consists of a series of nucleotide molecules linked
-by phosphate groups. These nucleotides are made of three subunits a nitrogenous
-base, a deoxyribose sugar and a phosphate group. Depending on the base subunit
-DNA nucleotides come in four species, adenine, cytosine, thymine and guanine.
-The sugar and phosphate groups form the backbone of each DNA strand and the two
-strands are bound together through hydrogen bonds between matching nucleotides
-known as basepairs. Guanine forms three hydrogen bonds with cytosine and
-adenine forms two with thymine. In computing terms DNA is similar to a hard
-drive in that it provides stable, consistent storage of important information.
+term data storage of the cell and has a well known double helix structure
+[@Watson1953-fx; @Wilkins1953-ik; @Franklin1953-pe]. Each strand of the double
+helix consists of a series of nucleotide molecules linked by phosphate groups.
+These nucleotides are made of three subunits a nitrogenous base, a deoxyribose
+sugar and a phosphate group. Depending on the base subunit DNA nucleotides come
+in four species, adenine, cytosine, thymine and guanine. The sugar and
+phosphate groups form the backbone of each DNA strand and the two strands are
+bound together through hydrogen bonds between matching nucleotides known as
+basepairs. Guanine forms three hydrogen bonds with cytosine and adenine forms
+two with thymine. In computing terms DNA is similar to a hard drive in that it
+provides stable, consistent storage of important information.
 
 ```{r central-dogma, fig.cap = "(ref:cap-central-dogma)", fig.scap = "(ref:scap-central-dogma)", out.width = "100%"}
 knitr::include_graphics(here::here("figures/central-dogma.png"))
