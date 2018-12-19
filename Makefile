@@ -20,8 +20,9 @@ $(OUT_DIR)/index.html: $(RMD) bib/references.bib
 
 wordcount.txt: $(OUT_DIR)/thesis.tex
 	# Replace environment aliases for counting
-	sed -i 's|\\Begin{|\\begin{|g' $(OUT_DIR)/thesis.tex
-	sed -i 's|\\End{|\\end{|g' $(OUT_DIR)/thesis.tex
+	sed -i.bak 's|\\Begin{|\\begin{|g' $(OUT_DIR)/thesis.tex
+	sed -i.bak 's|\\End{|\\end{|g' $(OUT_DIR)/thesis.tex
+	rm $(OUT_DIR)/thesis.tex.bak
 	prettytc -c -l wordcount.txt $(OUT_DIR)/thesis.tex
 
 wordcount.pdf: wordcount.txt R/plot_wordcount.R

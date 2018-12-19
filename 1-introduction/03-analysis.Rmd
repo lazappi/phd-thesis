@@ -222,7 +222,11 @@ to separate cells into clusters a community detection algorithm such as Louvain
 optimisation [@Blondel2008-ym] is run on the graph with a resolution parameter
 that controls the number of clusters that are produced. Seurat's clustering
 method has been shown to perform well, particularly on UMI datasets
-[@Duo2018-qb; Freytag2018-ic].
+[@Duo2018-qb; Freytag2018-ic]. Each clustering method has a set of parameters
+that can affect the number of clusters produced but choosing which clustering
+resolution to use is difficult and can affect the interpretation of results. I
+address this problem with a visualisation-based approach in Chapter
+\@ref(clust-trees).
 
 For tissue types that are well understood or where comprehensive references are
 available an alternative is to directly classify cells. This can be done using
