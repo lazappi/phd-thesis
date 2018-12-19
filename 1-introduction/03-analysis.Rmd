@@ -13,9 +13,11 @@ can be non-trivial. Some tissues or cell types may be more difficult to
 separate than others and the treatments required to break them apart may effect
 the health of the cells and their transcriptional profiles. Other cell types
 may be too big or have other characteristics that prevent them being captured.
-Cells may also be damaged during processing, multiple cells captured together
-or empty wells or droplets sequenced making quality control of datasets an
-important consideration.
+The dissociation process can also damage cells and it has been suggested that
+this damage can be minimised by using a cold-active protease to separate cells
+[@Adam2017-zl]. Cells may also be damaged during processing, multiple cells
+captured together or empty wells or droplets sequenced making quality control
+of datasets an important consideration.
 
 As well as increasing technical noise the small amounts of starting material
 and low sequencing depth mean there are many occasions where zero counts are

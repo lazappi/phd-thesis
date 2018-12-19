@@ -170,3 +170,23 @@ organoids or directing them more towards particular segments. Overall kidney
 organoids open up many possibilities for studies to better help use understand
 kidney development and potentially help develop new treatments for kidney
 disease.
+
+### Kidney scRNA-seq studies
+
+Several analyses of scRNA-seq from kidney tissues have already been performed
+including of developing and adult organs from human and mouse as well as kidney
+organoids and specific kidney cell types. Park et al. analysed almost
+58\thinspace000 cells from mouse kidney and found that disease-causing genetic
+mutations with similar phenotypes arise in the same cell types and identified a
+new transitional cell type in the collecting duct [@Park2018-ub]. Young et al.
+compared human foetal, paediatric and adult kidney cells to cells from renal
+cancers and identified links to specific cells types included that Wilms
+tumours are similar to specific foetal cell types and that adult renal cell
+carcinoma is related to a little-known proximal tubule cell type
+[@Young2018-qd]. Lindström et al. focused on the developing mouse and human
+kidney [@Lindstrom2018-mo] while Wu et al. examine kidney organoids
+[@Wu2018-qi]. They found that organoid protocols produced a range of cell types
+but that those cells were immature and 10-20 percent of cells came from
+non-kidney lineages. Many of these were neuronal and their formation could be
+limited by inhibiting the BDNF/NTRK2 pathway. In Chapter \@ref(organoids) I
+analyse another organoid dataset.
