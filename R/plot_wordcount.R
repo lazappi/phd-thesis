@@ -17,7 +17,8 @@ words <- readr::read_tsv(here::here("wordcount.txt"),
                          )) %>%
     mutate(Datetime = lubridate::ymd_hms(paste(Date, Time),
                                          tz = Sys.timezone())) %>%
-    mutate(Name = forcats::fct_inorder(Name))
+    mutate(Name = forcats::fct_inorder(Name)) %>%
+    filter(Name != "References")
 
 message("Adding additional word counts...")
 additions <- list(

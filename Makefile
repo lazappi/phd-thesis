@@ -19,6 +19,9 @@ $(OUT_DIR)/index.html: $(RMD) bib/references.bib
 	Rscript -e "bookdown::render_book('index.Rmd', 'unimelbdown::thesis_gitbook')"
 
 wordcount.txt: $(OUT_DIR)/thesis.tex
+	# Replace environment aliases for counting
+	sed -i 's|\\Begin{|\\begin{|g' $(OUT_DIR)/thesis.tex
+	sed -i 's|\\End{|\\end{|g' $(OUT_DIR)/thesis.tex
 	prettytc -c -l wordcount.txt $(OUT_DIR)/thesis.tex
 
 wordcount.pdf: wordcount.txt R/plot_wordcount.R
