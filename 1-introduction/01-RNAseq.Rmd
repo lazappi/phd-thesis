@@ -100,24 +100,24 @@ repeated at the other end. The images from the sequencing machine are processed
 to produce millions of short nucleotide sequences known as reads that are the
 starting point for computational analysis.
 
-### Analysis of RNA-seq data Many types of analyses can be performed using
+### Analysis of RNA-seq data
 
-RNA-seq data such as identification of variants in the genetic sequence or
-detection of previously unannotated transcripts but the most common kind of
-analysis is to look for differences in the expression level of genes between
-groups of samples (Figure \@ref(fig:RNA-seq)). To do this reads are first
-aligned to a reference genome and the number of reads overlapping each gene is
-counted. In contrast to aligners designed for DNA sequencing RNA-seq aligners
-such as STAR [@Dobin2013-gx], HISAT2 [@Kim2015-ys] and subread [@Liao2013-id]
-must take into account the splicing structure of mRNA transcripts which causes
-parts of some reads to align in different locations. The alignment step is
-computationally intensive and can take a significant amount of time. More
-recently tools such as kallisto [@Bray2016-tm] and Salmon [@Patro2017-ka] have
-been developed which attempt to directly quantify expression by estimating the
-probability that a read comes from a particular annotated transcript. These
-approaches are orders of magnitude faster than true alignment and potentially
-produce more accurate quantification at the cost of having an exact genomic
-position for each read.
+Many types of analyses can be performed using RNA-seq data such as
+identification of variants in the genetic sequence or detection of previously
+unannotated transcripts but the most common kind of analysis is to look for
+differences in the expression level of genes between groups of samples (Figure
+\@ref(fig:RNA-seq)). To do this reads are first aligned to a reference genome
+and the number of reads overlapping each gene is counted. In contrast to
+aligners designed for DNA sequencing RNA-seq aligners such as STAR
+[@Dobin2013-gx], HISAT2 [@Kim2015-ys] and subread [@Liao2013-id] must take into
+account the splicing structure of mRNA transcripts which causes parts of some
+reads to align in different locations. The alignment step is computationally
+intensive and can take a significant amount of time. More recently tools such
+as kallisto [@Bray2016-tm] and Salmon [@Patro2017-ka] have been developed which
+attempt to directly quantify expression by estimating the probability that a
+read comes from a particular annotated transcript. These approaches are orders
+of magnitude faster than true alignment and potentially produce more accurate
+quantification at the cost of having an exact genomic position for each read.
 
 ```{r RNA-seq, fig.cap = "(ref:cap-RNA-seq)", fig.scap = "(ref:scap-RNA-seq)", out.width = "100%"}
 knitr::include_graphics(here::here("figures/RNA-seq.png"))
