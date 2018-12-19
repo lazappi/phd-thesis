@@ -31,7 +31,7 @@ proteins trapped within the bloodstream. The rest of the nephron is divided
 into segments that are responsible for different processes involved in
 balancing the concentration of these species in the filtrate (Figure
 \@ref(fig:kidney)C). The lumen of the nephron is surrounded by capillaries
-which allows content to be transferred between the filtrate and blood as
+which allows molecules to be transferred between the filtrate and blood as
 required. The first segment of the nephron is the proximal tubule. Here common
 biomolecules such as glucose, amino acids and bicarbonate are reabsorbed into
 the bloodstream, as is most of the water present. Other molecules including
@@ -44,7 +44,7 @@ using a process controlled by the hormone aldosterone. The remaining filtrate
 is then passed to the ureter where it is carried to the bladder and collected
 as urine while the blood leaves via the renal vein. In order to perform this
 complex series of reabsorption and and secretion each segment of the nephron is
-made up specialised cell types with their own set of signaling and transporter
+made up specialised cell types with their own set of signalling and transporter
 proteins. The filtration process is repeated about 12 times every hour with
 around 200 litres of blood being filtered during a day. Aside from removing
 waste and maintaining the balance of molecular species in the bloodstream the
@@ -73,34 +73,34 @@ new treatments that may improve kidney function or repair damage.
 ### Stages of development
 
 The kidney develops from a region of the early embryo called the intermediate
-mesoderm and occurs in three phases with a specific spatial and temporal order.
-The first phase results in the pronephros which consists of 6-10 pairs of
-tubules that forms the mature kidney in most primitive vertebrates such as
-hagfish. By about the fourth week of human embryonic development this structure
-dies off and is replaced by the mesonephros which is the form of kidney present
-in most fish and amphibians. The mesonephros is functional during weeks 4-8 of
-human embryonic development before degenerating, although parts of it's duct
-system go on to form part of the male reproductive system. The final phase of
-human kidney development results in the metanephros which begins developing at
-around five weeks to become the permanent and functional kidney. Individual
-nephrons grow in a similar series of stages. Cells from the duct that will
-become the ureter begin to invade the surrounding metanephric mesenchyme
-forming a ureteric bud. Interactions between these cell types, including Wnt
-signaling, cause mesenchymal cells to condense around the ureteric bud forming
-a stem cell population known as the cap mesenchyme that expresses genes such as
-Six2 and Cited1. Cells from the cap mesenchyme first form a renal vesicle, a
-primitive structure with a lumen, which extends to form an s-shaped body. By
-this stage the lumen has joined with the ureteric bud to form a continuous
-tubule. The s-shaped body continues to elongate with podocytes beginning to
-develop and form a glomerulus at one end and other specialised cells arising
-along the length of the tubule to form the various nephron segments. Several
-signaling pathways and cell-cell interactions are involved in this process
-including Notch signaling.
+mesoderm and occurs in three phases with a specific spatial and temporal order
+[@Patel2013-vh]. The first phase results in the pronephros which consists of
+6-10 pairs of tubules that forms the mature kidney in most primitive
+vertebrates such as hagfish. By about the fourth week of human embryonic
+development this structure dies off and is replaced by the mesonephros which is
+the form of kidney present in most fish and amphibians. The mesonephros is
+functional during weeks 4-8 of human embryonic development before degenerating,
+although parts of it's duct system go on to form part of the male reproductive
+system. The final phase of human kidney development results in the metanephros
+which begins developing at around five weeks to become the permanent and
+functional kidney. Individual nephrons grow in a similar series of stages.
+Cells from the duct that will become the ureter begin to invade the surrounding
+metanephric mesenchyme forming a ureteric bud. Interactions between these cell
+types, including Wnt signalling, cause mesenchymal cells to condense around the
+ureteric bud forming a stem cell population known as the cap mesenchyme that
+expresses genes such as Six2 and Cited1. Cells from the cap mesenchyme first
+form a renal vesicle, a primitive structure with a lumen, which extends to form
+an s-shaped body. By this stage the lumen has joined with the ureteric bud to
+form a continuous tubule. The s-shaped body continues to elongate with
+podocytes beginning to develop and form a glomerulus at one end and other
+specialised cells arising along the length of the tubule to form the various
+nephron segments. Several signalling pathways and cell-cell interactions are
+involved in this process including Notch signalling.
 
 Most of our understanding of kidney development comes from studies using mouse
 models and other model species. While these have greatly added to our knowledge
 they do not completely replicate human kidney development and there are known
-to be significant differences in the developmental timeline, signaling pathways
+to be significant differences in the developmental timeline, signalling pathways
 and gene expression between species. To better understand human kidney
 development we need models that reproduce the human version of this process.
 
@@ -111,15 +111,16 @@ if a lab. Known as organoids these tissues are grown from stem cells provided
 with the right sequence of conditions and growth factors. Naturally occurring
 embryonic stem cells can be used but a more feasible approach is to reprogram
 mature cell types (typically fibroblasts from skin samples) using a method
-discovered by Takahashi and Yamanaka. Under this protocol cells are supplied
-with the transcription factors Oct3/4, Sox2 and Klf4 using retroviral
-transduction. The resulting cells have the ability to differentiate into any
-cell type and are known as induced pluripotent stem cells (iPSCs). By culturing
-iPSCs under the right conditions the course of differentiation can be directed
-and protocols for growing a range of tissues have been developed including
-stomach, intestine, liver, lung and brain. The first protocol first protocol
-for growing kidney organoids was published in 2015 by Takasato et al. (Figure
-\@ref(fig:organoids)).
+discovered by Takahashi and Yamanaka [@Takahashi2006-ho; Nakagawa2008-bx].
+Under this protocol cells are supplied with the transcription factors Oct3/4,
+Sox2 and Klf4 using retroviral transduction. The resulting cells have the
+ability to differentiate into any cell type and are known as induced
+pluripotent stem cells (iPSCs). By culturing iPSCs under the right conditions
+the course of differentiation can be directed and protocols for growing a range
+of tissues have been developed including stomach, intestine, liver, lung and
+brain [@Fatehullah2016-qw]. The first protocol first protocol for growing
+kidney organoids was published in 2015 by Takasato et al. (Figure
+\@ref(fig:organoids)) [@Takasato2015-zn].
 
 ```{r organoids, fig.cap = "(ref:cap-organoids)", fig.scap = "(ref:scap-organoids)", out.width = "100%"}
 knitr::include_graphics(here::here("figures/organoids.png"))
@@ -127,7 +128,7 @@ knitr::include_graphics(here::here("figures/organoids.png"))
 
 (ref:scap-organoids) Diagram of the Takasato et al. kidney organoids protocol.
 
-(ref:cap-organoids) Diagram of the Takasato et al. kidney organoids protocol. iPSCs are cultured on a plate in the presence of CHIR followed by FGF9. After about a week cells are formed into three-dimensional pellets and a short CHIR pulse is applied. The pellets continue to be cultured in FGF9 for a further 10 days before all growth factors are removed. The organoids now contain tubular structures replicating human nephrons. Adapted from Takasato et al. _"Kidney organoids from human iPS cells contain multiple lineages and model human nephrogenesis"_.
+(ref:cap-organoids) Diagram of the Takasato et al. kidney organoids protocol. iPSCs are cultured on a plate in the presence of CHIR followed by FGF9. After about a week cells are formed into three-dimensional pellets and a short CHIR pulse is applied. The pellets continue to be cultured in FGF9 for a further 10 days before all growth factors are removed. The organoids now contain tubular structures replicating human nephrons. Adapted from Takasato et al. _"Kidney organoids from human iPS cells contain multiple lineages and model human nephrogenesis"_ [@Takasato2015-zn].
 
 Using this protocol iPSCs are first grown on a plate where Wnt signaling is
 induced by the presence of CHIR, an inhibitor of glycogen kinase synthase 3.
@@ -155,16 +156,37 @@ they develop.
 
 While they are not a perfect model of a developing human kidney organoids have
 several advantages over other models. In particular they have great potential
-for uses in the modeling of developmental kidney diseases. Cells from a patient
-with a particular mutation can be reprogrammed and used to grow organoids that
-can then be used for functional studies or drug screening. Alternatively, gene
-editing techniques can be used to insert the mutation into an existing cell
-line or correct the mutation in the patient line, allowing comparisons on the
-same genetic background. Modified versions of the protocol that can produce
-much larger numbers of organoids, for example by growing them in swirler
-cultures, could potentially be used to produce cells in sufficient numbers for
-cellular therapies. Extensive work is been done to improve the protocol in
-other ways as well such as improving the maturation of the organoids or
-directing them more towards particular segments. Overall kidney organoids open
-up many possibilities for studies to better help use understand kidney
-development and potentially help develop new treatments for kidney disease.
+for uses in the modelling of developmental kidney diseases [@Bartfeld2017-uo].
+Cells from a patient with a particular mutation can be reprogrammed and used to
+grow organoids that can then be used for functional studies or drug screening.
+Alternatively, gene editing techniques can be used to insert the mutation into
+an existing cell line or correct the mutation in the patient line, allowing
+comparisons on the same genetic background. Modified versions of the protocol
+that can produce much larger numbers of organoids, for example by growing them
+in swirler cultures, could potentially be used to produce cells in sufficient
+numbers for cellular therapies. Extensive work is been done to improve the
+protocol in other ways as well such as improving the maturation of the
+organoids or directing them more towards particular segments. Overall kidney
+organoids open up many possibilities for studies to better help use understand
+kidney development and potentially help develop new treatments for kidney
+disease.
+
+### Kidney scRNA-seq studies
+
+Several analyses of scRNA-seq from kidney tissues have already been performed
+including of developing and adult organs from human and mouse as well as kidney
+organoids and specific kidney cell types. Park et al. analysed almost
+58\thinspace000 cells from mouse kidney and found that disease-causing genetic
+mutations with similar phenotypes arise in the same cell types and identified a
+new transitional cell type in the collecting duct [@Park2018-ub]. Young et al.
+compared human foetal, paediatric and adult kidney cells to cells from renal
+cancers and identified links to specific cells types included that Wilms
+tumours are similar to specific foetal cell types and that adult renal cell
+carcinoma is related to a little-known proximal tubule cell type
+[@Young2018-qd]. Lindström et al. focused on the developing mouse and human
+kidney [@Lindstrom2018-mo] while Wu et al. examine kidney organoids
+[@Wu2018-qi]. They found that organoid protocols produced a range of cell types
+but that those cells were immature and 10-20 percent of cells came from
+non-kidney lineages. Many of these were neuronal and their formation could be
+limited by inhibiting the BDNF/NTRK2 pathway. In Chapter \@ref(organoids) I
+analyse another organoid dataset.

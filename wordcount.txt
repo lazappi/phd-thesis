@@ -963,3 +963,69 @@ Date	Time	Name	Level	Text	Headers	Captions	Total
 2018-12-17	16:52:01	Analysis of kidney organoid scRNA-seq data	Chapter	0	6	0	6
 2018-12-17	16:52:01	Conclusion	Chapter	645	1	0	646
 2018-12-17	16:52:01	References	Chapter	0	1	0	1
+2018-12-19	16:22:32	docs/thesis.tex	Document	12195	100	5941	18236
+2018-12-19	16:22:32	Introduction	Chapter	9166	68	852	10086
+2018-12-19	16:22:32	RNA sequencing	Section	1572	18	222	1812
+2018-12-19	16:22:32	Library preparation	Subsection	437	2	67	506
+2018-12-19	16:22:32	High-throughput sequencing	Subsection	246	2	77	325
+2018-12-19	16:22:32	Analysis of RNA-seq data Many types of analyses can be performed using	Subsection	679	12	78	769
+2018-12-19	16:22:32	Single-cell RNA-sequencing	Section	1890	18	289	2197
+2018-12-19	16:22:32	Early single-cell capture technologies	Subsection	368	4	52	424
+2018-12-19	16:22:32	Droplet based cell capture	Subsection	328	4	84	416
+2018-12-19	16:22:32	Unique Molecular Identifiers	Subsection	392	3	59	454
+2018-12-19	16:22:32	Recent advances in scRNA-seq protocols	Subsection	654	5	94	753
+2018-12-19	16:22:32	Analysing scRNA-seq data	Section	3502	20	115	3637
+2018-12-19	16:22:32	Pre-processing and quality control	Subsection	554	4	0	558
+2018-12-19	16:22:32	Normalisation and integration	Subsection	593	3	0	596
+2018-12-19	16:22:32	Grouping cells	Subsection	434	2	0	436
+2018-12-19	16:22:32	Ordering cells	Subsection	414	2	54	470
+2018-12-19	16:22:32	Gene detection and interpretation	Subsection	641	4	0	645
+2018-12-19	16:22:32	Alternative analyses	Subsection	130	2	0	132
+2018-12-19	16:22:32	Kidney development	Section	1648	11	168	1827
+2018-12-19	16:22:32	Structure and function	Subsection	552	3	81	636
+2018-12-19	16:22:32	Stages of development	Subsection	359	3	0	362
+2018-12-19	16:22:32	Growing kidney organoids	Subsection	612	3	87	702
+2018-12-19	16:22:32	The scRNA-seq tools landscape	Chapter	360	5	0	365
+2018-12-19	16:22:32	Introduction	Section	360	1	0	361
+2018-12-19	16:22:32	Simulating scRNA-seq data	Chapter	474	6	0	480
+2018-12-19	16:22:32	Introduction	Section	474	1	0	475
+2018-12-19	16:22:32	Splatter publication	Section	0	2	0	2
+2018-12-19	16:22:32	Visualising clustering across resolutions	Chapter	440	5	0	445
+2018-12-19	16:22:32	Introduction	Section	440	1	0	441
+2018-12-19	16:22:32	Analysis of kidney organoid scRNA-seq data	Chapter	0	6	0	6
+2018-12-19	16:22:32	Conclusion	Chapter	645	1	0	646
+2018-12-19	16:22:32	References	Chapter	0	1	5089	5090
+2018-12-19	18:51:12	docs/thesis.tex	Document	12672	108	6122	18902
+2018-12-19	18:51:12	Introduction	Chapter	9643	76	852	10571
+2018-12-19	18:51:12	RNA sequencing	Section	1572	18	222	1812
+2018-12-19	18:51:12	Library preparation	Subsection	437	2	67	506
+2018-12-19	18:51:12	High-throughput sequencing	Subsection	246	2	77	325
+2018-12-19	18:51:12	Analysis of RNA-seq data Many types of analyses can be performed using	Subsection	679	12	78	769
+2018-12-19	18:51:12	Single-cell RNA-sequencing	Section	1890	18	289	2197
+2018-12-19	18:51:12	Early single-cell capture technologies	Subsection	368	4	52	424
+2018-12-19	18:51:12	Droplet based cell capture	Subsection	328	4	84	416
+2018-12-19	18:51:12	Unique Molecular Identifiers	Subsection	392	3	59	454
+2018-12-19	18:51:12	Recent advances in scRNA-seq protocols	Subsection	654	5	94	753
+2018-12-19	18:51:12	Analysing scRNA-seq data	Section	3790	25	115	3930
+2018-12-19	18:51:12	Pre-processing and quality control	Subsection	554	4	0	558
+2018-12-19	18:51:12	Normalisation and integration	Subsection	593	3	0	596
+2018-12-19	18:51:12	Grouping cells	Subsection	434	2	0	436
+2018-12-19	18:51:12	Ordering cells	Subsection	414	2	54	470
+2018-12-19	18:51:12	Gene detection and interpretation	Subsection	641	4	0	645
+2018-12-19	18:51:12	Alternative analyses	Subsection	130	2	0	132
+2018-12-19	18:51:12	Evaluation of scRNA-seq analysis methods	Subsection	261	5	0	266
+2018-12-19	18:51:12	Kidney development	Section	1837	14	168	2019
+2018-12-19	18:51:12	Structure and function	Subsection	552	3	81	636
+2018-12-19	18:51:12	Stages of development	Subsection	359	3	0	362
+2018-12-19	18:51:12	Growing kidney organoids	Subsection	612	3	87	702
+2018-12-19	18:51:12	Kidney scRNA-seq studies	Subsection	189	3	0	192
+2018-12-19	18:51:12	The scRNA-seq tools landscape	Chapter	360	5	0	365
+2018-12-19	18:51:12	Introduction	Section	360	1	0	361
+2018-12-19	18:51:12	Simulating scRNA-seq data	Chapter	474	6	0	480
+2018-12-19	18:51:12	Introduction	Section	474	1	0	475
+2018-12-19	18:51:12	Splatter publication	Section	0	2	0	2
+2018-12-19	18:51:12	Visualising clustering across resolutions	Chapter	440	5	0	445
+2018-12-19	18:51:12	Introduction	Section	440	1	0	441
+2018-12-19	18:51:12	Analysis of kidney organoid scRNA-seq data	Chapter	0	6	0	6
+2018-12-19	18:51:12	Conclusion	Chapter	645	1	0	646
+2018-12-19	18:51:12	References	Chapter	0	1	5270	5271

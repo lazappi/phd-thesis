@@ -71,6 +71,18 @@ $if(highlighting-macros)$
   $highlighting-macros$
 $endif$
 
+% +-----TeXCount---------------------------------------------------------------+
+%  Improve word counting using TeXCount.
+% +----------------------------------------------------------------------------+
+
+% Environment aliases to trick Pandoc
+\let\Begin\begin
+\let\End\end
+
+% Environment for counting text as other
+%TC:envir tcother [] other
+\newenvironment*{tcother}{}{}
+
 % *============================================================================*
 %  FRONT MATTER
 %
