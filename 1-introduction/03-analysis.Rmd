@@ -368,3 +368,30 @@ cell types or tissues such as reconstructing immune cell receptors on B-cells
 continue to follow common practice but it also expected that researchers will
 continue to push the boundaries of what it is possible to study using scRNA-seq
 technologies.
+
+### Evaluation of scRNA-seq analysis methods
+
+Although the analysis for many scRNA-seq studies follow a standard workflow
+there is much more variation in the tools that are used. We are now at the
+stage where there are multiple software packages for completing every stage of
+analysis. Deciding which tools is to use can be difficult and depends on a
+number of factors including effectiveness, robustness, scalability,
+availability, ease of use and quality of documentation. In terms of
+effectiveness publications describing analysis methods should demonstrate two
+things: 1) they can perform the task they are designed for (at least as well as
+existing methods) and 2) performing that task leads to biological insights.
+Answering the first question is difficult using real datasets as the underlying
+truth is not known. For this reason simulation techniques are often used to
+produce synthetic datasets in order to evaluate methods. I present a software
+package for simulating scRNA-seq data in Chapter \@ref(simulation). Simulation
+is an efficient and flexible approach for producing gold standard datasets but
+synthetic data can never fully reproduce a real dataset. An alternative
+approach is to carefully construct a gold standard biological dataset by
+combining where the true differences are known. These datasets can be extremely
+useful but are difficult, time-consuming and expensive to produce and can only
+reproduce a limited set of scenarios. Comprehensive evaluations of methods have
+already been conducted for some aspects of scRNA-seq analysis including
+clustering [@Duo2018-qb; Freytag2018-ic], trajectory inference
+[@Saelens2018-sf] and differential expression testing [@Soneson2018-fb] but
+these will need to continue to be performed and updated as the field matures
+and new methods are developed.
