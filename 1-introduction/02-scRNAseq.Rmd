@@ -6,10 +6,10 @@ single-cell RNA-sequencing (scRNA-seq) and investigate the transcriptome at the
 resolution of individual cells. There are many situations were it is important
 to understand how specific cell types react and where analyses may be affected
 by the unknown proportions of cell types in a sample. Studies into gene
-expression in specific cell types previously selecting and isolating the cells
-they were interested which removed them from the other cell types they are
-usually associated with and made it impossible to investigate how they
-interact. With scRNA-seq technologies it is now possible to look at the
+expression in specific cell types previously required selecting and isolating
+the cells of interest which removed them from the other cell types they are
+usually associated with and made it impossible to investigate interactions
+between them. With scRNA-seq technologies it is now possible to look at the
 transcriptome of all the cell types in a tissue simultaneously which has lead
 to a better understanding of what makes cell types distinct and the discovery
 of previously unknown cell types.
@@ -42,7 +42,7 @@ identifying damaged or broken cells, empty wells or wells containing more than
 one cell. Capturing multiple cells is a known issue, with Macosko et al.
 finding that when preparing a mixture of mouse and human cells 30 percent of
 the resulting libraries contained transcripts from both species but only about
-a third of these doublets were visible in microscopy images[@Macosko2015-rl].
+a third of these doublets were visible in microscopy images [@Macosko2015-rl].
 The newer Polaris system from Fluidigm also uses microfluidics to capture cells
 but can select particular cells based on staining or fluorescent reporter
 expression and then hold them for up to 24 hours while introducing various
@@ -56,7 +56,7 @@ knitr::include_graphics(here::here("figures/technologies.jpg"))
 
 (ref:scap-technologies) Exponential increase in the scale of scRNA-seq experiments.
 
-(ref:cap-technologies) Exponential increase in the scale of scRNA-seq experiments. (a) Key jumps in scRNA-seq capture technologies including manual handling, plate-based microfluidic capture and droplet-based capture (b) Cell numbers in representative studies using key technologies by publication date. Image from Svensson, Vento-Tormo and Teichmann _"Exponential scaling of single-cell RNA-seq in the past decade"_ [@Svensson2018-dx].
+(ref:cap-technologies) Exponential increase in the scale of scRNA-seq experiments. (a) Key jumps in scRNA-seq capture technologies including manual handling, plate-based microfluidic capture and droplet-based capture. (b) Cell numbers in representative studies using key technologies by publication date. Image from Svensson, Vento-Tormo and Teichmann _"Exponential scaling of single-cell RNA-seq in the past decade"_ [@Svensson2018-dx].
 
 ### Droplet based cell capture
 
@@ -138,7 +138,7 @@ a time. While the improvement in quantification of gene expression levels is
 useful for many downstream analyses it comes at the cost of coverage across the
 length of a gene which is required for applications such as variant detection
 and de-novo assembly. However reads along the length of genes have been
-observed in UMI dataset and are believed to come from unannotated transcription
+observed in UMI datasets and are believed to come from unannotated transcription
 start sites or regions that contain enough adenine nucleotides to bind to the
 capture probes. Datasets with UMIs need extra processing steps which can be
 complicated by the possibility of sequencing errors in the UMI itself.
