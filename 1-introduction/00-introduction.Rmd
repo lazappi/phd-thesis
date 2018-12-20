@@ -57,5 +57,5 @@ the cell, regulating the expression of genes, constructing new proteins,
 recycling molecules and metabolism. Understanding the molecules involved in the
 central dogma is central to our understanding of how a cell functions.
 
-```{r introduction-sections, child = c("1-introduction/01-RNAseq.Rmd", "1-introduction/02-scRNAseq.Rmd", "1-introduction/03-analysis.Rmd", "1-introduction/04-kidney.Rmd")}
+```{r introduction-sections, child = c("1-introduction/01-RNAseq.Rmd", "1-introduction/02-scRNAseq.Rmd", "1-introduction/03-analysis.Rmd", "1-introduction/04-kidney.Rmd", "1-introduction/05-overview.Rmd")}
 ```
