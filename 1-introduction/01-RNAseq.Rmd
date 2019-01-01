@@ -7,7 +7,7 @@ dynamically. Ideally we might want to interrogate the proteins that are present
 as they provide most of the functionality. However, while it is possible to do
 this using technologies such as mass spectrometry the readout they produce is
 difficult to interpret and the encoding is much more complex as there are 20
-types of amino acids compared to only four nucleotides. In contrast, RNA
+different amino acids compared to only four nucleotides. In contrast, RNA
 molecules are much easier to measure. High-throughput RNA sequencing (RNA-seq)
 provides a reliable method for high-quality measurement of RNA expression
 levels. RNA is isolated from a biological sample, converted to complementary
@@ -51,9 +51,9 @@ after conversion to cDNA rather than at the RNA stage.
 Once the cDNA has been produced it is usually necessary to attach adaptor
 sequences that are used to bind the molecules and initiate sequencing (Figure
 \@ref(fig:adaptors)). These adaptors may also contain multiplexing barcodes
-that tag all the molecules in a samples and allow multiple samples to be
+that tag all the molecules in a sample and allow multiple samples to be
 sequenced at once. It has become standard practice to perform paired-end
-sequencing where a section of sequence is read from one end of a molecule
+sequencing where a section of sequence is read from one end of a fragment
 before it is flipped and the other end read and this process requires an
 additional set of adaptors. At each of the stages of library preparation there
 are quality control steps to be performed to make sure a high-quality cDNA
@@ -78,7 +78,7 @@ synthesises the complementary DNA strand. This process of separation of strands
 and synthesis of new complementary strands is repeated until clusters of DNA
 fragments with the same sequence are formed. Once the clusters are
 significantly large the adaptor at one end of each fragment is cleaved leaving
-single stranded DNA attached to the flow cell and one end.
+single stranded DNA attached to the flow cell at one end.
 
 ```{r sequencing, fig.cap = "(ref:cap-sequencing)", fig.scap = "(ref:scap-sequencing)"}
 knitr::include_graphics(here::here("figures/sequencing.png"))
@@ -93,12 +93,12 @@ are added and can bind to the next available position on a fragment if they are
 complementary. By adding all four nucleotides at once they compete for each
 position, reducing the chance of an incorrect match. Any unbound nucleotides
 are washed away before a laser excites the florescent tags and an image is
-taken. Each nucleotide is tagged with a different and the order of colours
-produced by a cluster shows the sequence of nucleotides in a fragment. For
-paired-end sequencing the fragments can be flipped and the sequencing process
-repeated at the other end. The images from the sequencing machine are processed
-to produce millions of short nucleotide sequences known as reads that are the
-starting point for computational analysis.
+taken. Each nucleotide is tagged with a different colour and the order of
+colours produced by a cluster shows the sequence of nucleotides in a fragment.
+For paired-end sequencing the fragments can be flipped and the sequencing
+process repeated at the other end. The images from the sequencing machine are
+processed to produce millions of short nucleotide sequences known as reads that
+are the starting point for computational analysis.
 
 ### Analysis of RNA-seq data
 
@@ -108,7 +108,7 @@ unannotated transcripts but the most common kind of analysis is to look for
 differences in the expression level of genes between groups of samples (Figure
 \@ref(fig:RNA-seq)). To do this reads are first aligned to a reference genome
 and the number of reads overlapping each gene is counted. In contrast to
-aligners designed for DNA sequencing RNA-seq aligners such as STAR
+aligners designed for DNA sequencing, RNA-seq aligners such as STAR
 [@Dobin2013-gx], HISAT2 [@Kim2015-ys] and subread [@Liao2013-id] must take into
 account the splicing structure of mRNA transcripts which causes parts of some
 reads to align in different locations. The alignment step is computationally
@@ -147,26 +147,30 @@ where it is less expressed those reads are more likely to be sampled from other
 genes. Another complication of RNA-seq data is that the number of features
 (tens of thousands) is much larger than the number of samples (usually only a
 few per group) which violates the assumptions of many traditional statistical
-techniques.
+techniques. Technical variation is a another well-known problem in
+high-throughput genomics studies, for example it has been estimated that only
+17.8 percent of allele-specific expression is due to biological variation with
+the rest being technical noise [@Kim2015-mo].
 
-The most successful methods for testing differential expression between groups
-of RNA-seq samples overcome this challenge by sharing information between
-genes. Both the edgeR [@Robinson2010-pt; @McCarthy2012-gc] and DESeq
-[@Anders2010-pq] (and later the DESeq2 [@Love2014-tw]) packages model RNA-seq
-data using the negative binomial distribution but before differences in
-expression levels can be tested the differences between samples must be removed
-through normalisation. The edgeR packaged uses the Trimmed-Mean of M values
-(TMM) method where a scaling factor for each sample is produced using the
-weighted mean of log ratios between samples for each gene after excluding the
-highest expressed genes and those with the largest log ratio
-[@Robinson2010-ll]. DESeq has a similar method that uses the median of the
-ratio of the expression of each gene to the geometric mean expression across
-all samples. The limma package [@Ritchie2015-te] uses an alternative approach
-where a method called voom transforms the data so that it is suitable for
-linear modelling methods originally designed for RNA microarray technology
+Both the edgeR [@Robinson2010-pt; @McCarthy2012-gc] and DESeq [@Anders2010-pq]
+(and later the DESeq2 [@Love2014-tw]) packages model RNA-seq data using the
+negative binomial distribution but before differences in expression levels can
+be tested the differences between samples must be removed through
+normalisation. Early approaches include simple transformations like Reads (or
+Fragments) Per Kilobase per Million (RPKM/FPKM) [@Mortazavi2008-vu] or
+Transcripts Per Million (TPM) [@Wagner2012-qf] which correct for the total
+number of reads per cell and gene length. The edgeR package uses the
+Trimmed-Mean of M values (TMM) method where a scaling factor for each sample is
+produced using the weighted mean of log ratios between samples for each gene
+after excluding the highest expressed genes and those with the largest log
+ratio [@Robinson2010-ll]. DESeq has a similar method that uses the median of
+the ratio of the expression of each gene to the geometric mean expression
+across all samples. The limma package [@Ritchie2015-te] uses an alternative
+approach where a method called voom transforms the data so that it is suitable
+for linear modelling methods originally designed for RNA microarray technology
 [@Law2014-nq]. When an experiment has been conducted in multiple batches and
 there are significant differences between them alternative normalisation
-methods such as Remove Unwanted Variation (RUV) that may be required
+methods such as Remove Unwanted Variation (RUV) may be required
 [@Risso2014-zw]. RUV estimates unknown factors of unwanted variation using
 negative control genes (genes that are expected to be consistent between
 samples). These factors can then be included in the generalised linear

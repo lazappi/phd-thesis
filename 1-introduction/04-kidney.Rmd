@@ -107,28 +107,28 @@ development we need models that reproduce the human version of this process.
 ### Growing kidney organoids
 
 One alternative model of human kidney development is to grow miniature organs
-if a lab. Known as organoids these tissues are grown from stem cells provided
+in a lab. Known as organoids these tissues are grown from stem cells provided
 with the right sequence of conditions and growth factors. Naturally occurring
 embryonic stem cells can be used but a more feasible approach is to reprogram
 mature cell types (typically fibroblasts from skin samples) using a method
-discovered by Takahashi and Yamanaka [@Takahashi2006-ho; Nakagawa2008-bx].
+discovered by Takahashi and Yamanaka [@Takahashi2006-ho; @Nakagawa2008-bx].
 Under this protocol cells are supplied with the transcription factors Oct3/4,
 Sox2 and Klf4 using retroviral transduction. The resulting cells have the
 ability to differentiate into any cell type and are known as induced
 pluripotent stem cells (iPSCs). By culturing iPSCs under the right conditions
 the course of differentiation can be directed and protocols for growing a range
 of tissues have been developed including stomach, intestine, liver, lung and
-brain [@Fatehullah2016-qw]. The first protocol first protocol for growing
-kidney organoids was published in 2015 by Takasato et al. (Figure
-\@ref(fig:organoids)) [@Takasato2015-zn].
+brain [@Fatehullah2016-qw]. The first protocol for growing kidney organoids was
+published in 2015 by Takasato et al. (Figure \@ref(fig:organoids))
+[@Takasato2015-zn].
 
 ```{r organoids, fig.cap = "(ref:cap-organoids)", fig.scap = "(ref:scap-organoids)", out.width = "100%"}
 knitr::include_graphics(here::here("figures/organoids.png"))
 ```
 
-(ref:scap-organoids) Diagram of the Takasato et al. kidney organoids protocol.
+(ref:scap-organoids) Diagram of the Takasato et al. kidney organoid protocol.
 
-(ref:cap-organoids) Diagram of the Takasato et al. kidney organoids protocol. iPSCs are cultured on a plate in the presence of CHIR followed by FGF9. After about a week cells are formed into three-dimensional pellets and a short CHIR pulse is applied. The pellets continue to be cultured in FGF9 for a further 10 days before all growth factors are removed. The organoids now contain tubular structures replicating human nephrons. Adapted from Takasato et al. _"Kidney organoids from human iPS cells contain multiple lineages and model human nephrogenesis"_ [@Takasato2015-zn].
+(ref:cap-organoids) Diagram of the Takasato et al. kidney organoid protocol. iPSCs are cultured on a plate in the presence of CHIR followed by FGF9. After about a week cells are formed into three-dimensional pellets and a short CHIR pulse is applied. The pellets continue to be cultured in FGF9 for a further 10 days before all growth factors are removed. The organoids now contain tubular structures replicating human nephrons. Adapted from Takasato et al. _"Kidney organoids from human iPS cells contain multiple lineages and model human nephrogenesis"_ [@Takasato2015-zn].
 
 Using this protocol iPSCs are first grown on a plate where Wnt signaling is
 induced by the presence of CHIR, an inhibitor of glycogen kinase synthase 3.

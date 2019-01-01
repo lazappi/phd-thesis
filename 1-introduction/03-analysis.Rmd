@@ -11,13 +11,12 @@ difficult to detect biological differences [@Liu2016-wq]. In order to capture
 cells they must first be dissociated into single-cell suspensions but this step
 can be non-trivial. Some tissues or cell types may be more difficult to
 separate than others and the treatments required to break them apart may effect
-the health of the cells and their transcriptional profiles. Other cell types
-may be too big or have other characteristics that prevent them being captured.
-The dissociation process can also damage cells and it has been suggested that
-this damage can be minimised by using a cold-active protease to separate cells
-[@Adam2017-zl]. Cells may also be damaged during processing, multiple cells
-captured together or empty wells or droplets sequenced making quality control
-of datasets an important consideration.
+the health of the cells and their transcriptional profiles. It has been
+suggested that damage caused by dissociated can be minimised by using a
+cold-active protease to separate cells [@Adam2017-zl]. Other cell types may be
+too big or have other characteristics that prevent them being captured.
+Multiple cells may be captured together or empty wells or droplets sequenced
+making quality control of datasets an important consideration.
 
 As well as increasing technical noise the small amounts of starting material
 and low sequencing depth mean there are many occasions where zero counts are
@@ -89,20 +88,19 @@ we use an expression matrix where each column is a cell, each row is a feature
 and the values indicate expression levels. To produce this matrix there is a
 series of pre-processing steps, typically beginning will some quality control
 of the raw reads. Reads are then aligned to a reference genome and the number
-of reads overlapping annotated features (genes or transcripts) is counted. In
-recent years probabilistic quantification methods such as kallisto
-[@Bray2016-tm] and Salmon [@Patro2017-ka] can be applied to full-length
-scRNA-seq datasets but have required adaptations such as the Alevin method for
-UMI-based datasets [@Srivastava2018-fy]. When using conventional alignment UMI
-samples need extra processing with tools like UMI-tools [@Smith2017-nz], umis
-[@Svensson2017-zo] or zUMIs [@Parekh2018-ug] in order to assign cell barcodes
-and deduplicate UMIs. For datasets produced using the 10x Chromium platform the
-company provides the Cell Ranger software which is a complete pre-processing
-pipeline that also includes an automated downstream analysis. Other packages
-such as scPipe [@Tian2018-ub] also aim to streamline this process with some
-such as Falco [@Yang2017-yz] designed to work on scalable cloud based
-infrastructure which may be required as bigger datasets continue to be
-produced.
+of reads overlapping annotated features (genes or transcripts) is counted.
+Probabilistic quantification methods can be applied to full-length scRNA-seq
+datasets but have required adaptations such as the Alevin method for UMI-based
+datasets [@Srivastava2018-fy] in the Salmon package. When using conventional
+alignment UMI samples need extra processing with tools like UMI-tools
+[@Smith2017-nz], umis [@Svensson2017-zo] or zUMIs [@Parekh2018-ug] in order to
+assign cell barcodes and deduplicate UMIs. For datasets produced using the 10x
+Chromium platform the company provides the Cell Ranger software which is a
+complete pre-processing pipeline that also includes an automated downstream
+analysis. Other packages such as scPipe [@Tian2018-ub] also aim to streamline
+this process with some such as Falco [@Yang2017-yz] designed to work on
+scalable cloud based infrastructure which may be required as bigger datasets
+continue to be produced.
 
 Quality control of individual cells is important as experiments will contain
 low-quality cells that can be uninformative or lead to misleading results.
@@ -138,62 +136,54 @@ zeros than would be expected based on their mean expression [@Andrews2018-pq].
 
 ### Normalisation and integration
 
-Technical variation is a known problem in high-throughput genomics studies, for
-example it has been estimated that only 17.8 percent of allele-specific
-expression is due to biological variation with the rest being technical noise
-[@Kim2015-mo]. Effective normalisation has been shown to be a crucial aspect of
-analysis for bulk RNA-seq datasets and similarly this is true for single-cell
-experiments. Some full-length studies use simple transformations like Reads (or
-Fragments) Per Kilobase per Million (RPKM/FPKM) [@Mortazavi2008-vu] or
-Transcripts Per Million (TPM) [@Wagner2012-qf] which correct for the total
-number of reads per cell and gene length. For UMI data the gene length
-correction is not required as reads only come from the ends of transcripts
-[@Phipson2017-qt]. Normalisation methods designed for detecting differential
-expression between bulk samples such as TMM or the DESeq method can be applied,
-but is is unclear how suitable they are for the single-cell context. Many of
-the early normalisation methods developed specifically for scRNA-seq data made
-use of spike-ins, synthetic RNA sequences added to cells in known quantities
-such as the External RNA Controls Consortium (ERCC) control mixes, a set of 92
-transcripts from 250 to 2000 basepairs long based on bacterial plasmids.
-Brennecke et al. [@Brennecke2013-pt], Ding et al. [@Ding2015-ht] and Grün,
-Kester and van Oudenaarden [@Grun2014-zn] all propose methods for estimating
-technical variance using spike-ins, as does Bayesian Analysis of Single-Cell
-Sequencing data (BASiCS) [@Vallejos2015-ef]. Using spike-ins for normalisation
-assumes that they properly capture the dynamics of the underlying dataset and
-even if this is the case it is restricted to protocols where they can be added
-which does not include droplet-based capture techniques. The scran package
-implements a method that doesn't rely on spike-ins, instead using a pooling
-approach to compensate for the large number of zero counts where expression
-levels are summed across similar cells before calculating size factors that are
-deconvolved back to the original cells [@Lun2016-mq]. The BASiCS method has
-also been adapted to experiments without spike-ins by integrating data
-replicated across batches [@Eling2018-lp], but only for designed experiments
-where groups are known in advance.
+Effective normalisation is just as crucial for single-cell experiments as it is
+for bulk RNA-seq dataset. FPKM or TPM transformations can be used but for UMI
+data the gene length correction is not required as reads only come from the
+ends of transcripts [@Phipson2017-qt]. Normalisation methods designed for
+detecting differential expression between bulk samples such as TMM or the DESeq
+method can be applied, but is is unclear how suitable they are for the
+single-cell context. Many of the early normalisation methods developed
+specifically for scRNA-seq data made use of spike-ins, synthetic RNA sequences
+added to cells in known quantities such as the External RNA Controls Consortium
+(ERCC) control mixes, a set of 92 transcripts from 250 to 2000 basepairs long
+based on bacterial plasmids. Brennecke et al. [@Brennecke2013-pt], Ding et al.
+[@Ding2015-ht] and Grün, Kester and van Oudenaarden [@Grun2014-zn] all propose
+methods for estimating technical variance using spike-ins, as does Bayesian
+Analysis of Single-Cell Sequencing data (BASiCS) [@Vallejos2015-ef]. Using
+spike-ins for normalisation assumes that they properly capture the dynamics of
+the underlying dataset and even if this is the case it is restricted to
+protocols where they can be added which does not include droplet-based capture
+techniques. The scran package implements a method that doesn't rely on
+spike-ins, instead using a pooling approach to compensate for the large number
+of zero counts where expression levels are summed across similar cells before
+calculating size factors that are deconvolved back to the original cells
+[@Lun2016-mq]. The BASiCS method has also been adapted to experiments without
+spike-ins by integrating data replicated across batches [@Eling2018-lp], but
+only for designed experiments where groups are known in advance.
 
 Early scRNA-seq studies often made use of only a single sample but as
 technologies have become cheaper and more widely available it is common to see
 studies with multiple batches or making use of publicly available data produced
 by other groups. While this expands the potential insights to be gained it
 presents a problem as to how to integrate these datasets and a range of
-computational approaches for doing this have been developed. The alignment
-approach in the Seurat package [@Butler2018-js] uses Canonical Correlation
-Analysis (CCA) [@Hotelling1936-ni, @Hardoon2004-ev] to identify a
-multi-dimensional subspace that is consistent between datasets. Dynamic Time
-Warping (DTW) [@Berndt1994-lh] is then used to stretch and align these
-dimensions so that the datasets are similarly spread along them. Some tasks can
-be performed using these aligned dimensions but as the original expression
-matrix is unchanged the integration is not used for other tasks such as
-differential expression testing. The authors of scran use a Mutual Nearest
-Neighbours (MNN) approach that calculates a cosine distance between cells in
-different datasets then identifies those that share a neighbourhood
-[@Haghverdi2018-bd]. Batch correction vectors can then be calculated and
-subtracted from one dataset to overlay them. A recent update to the Seurat
-method combines these approaches by applying CCA before using the MNN approach
-to identify "anchor" cells that have common features in the different datasets
-[@Stuart2018-ra]. Alternative integration methods that have recently been
-developed include bbknn [@Park2018-ri], ClusterMap [@Gao2018-ij], kBET
-[@Buttner2017-rg], LIGER [@Welch2018-gb], matchSCore [@Mereu2018-bx], Scanorama
-[@Hie2018-cf] and scMerge [@Lin2018-ln].
+computational approaches for doing this have been developed including bbknn
+[@Park2018-ri], ClusterMap [@Gao2018-ij], kBET [@Buttner2017-rg], LIGER
+[@Welch2018-gb], matchSCore [@Mereu2018-bx], Scanorama [@Hie2018-cf] and
+scMerge [@Lin2018-ln]. The alignment approach in the Seurat package
+[@Butler2018-js] uses Canonical Correlation Analysis (CCA) [@Hotelling1936-ni,
+@Hardoon2004-ev] to identify a multi-dimensional subspace that is consistent
+between datasets. Dynamic Time Warping (DTW) [@Berndt1994-lh] is then used to
+stretch and align these dimensions so that the datasets are similarly spread
+along them. Some tasks can be performed using these aligned dimensions but as
+the original expression matrix is unchanged the integration is not used for
+other tasks such as differential expression testing. The authors of scran use a
+Mutual Nearest Neighbours (MNN) approach that calculates a cosine distance
+between cells in different datasets then identifies those that share a
+neighbourhood [@Haghverdi2018-bd]. Batch correction vectors can then be
+calculated and subtracted from one dataset to overlay them. A recent update to
+the Seurat method combines these approaches by applying CCA before using the
+MNN approach to identify "anchor" cells that have common features in the
+different datasets [@Stuart2018-ra].
 
 ### Grouping cells
 
@@ -208,30 +198,29 @@ well as BackSPIN which was used to identify nine cell types and 47 distinct
 subclasses in the mouse cortex and hippocampus in one of the earliest studies
 to demonstrate the possibilities of scRNA-seq [@Zeisel2015-rd]. All of these
 tools attempt to cluster similar cells together based on their expression
-profiles, forming groups of cells of the same type. One clustering method that
-has become popular is that included in the Seurat package [@Satija2015-or].
-This method begins by selecting a set of highly variable genes then performing
-PCA on them. A set of dimensions is then selected that contains most of the
-variation in the dataset. Alternatively if Seurat's alignment method has been
-used to integrate datasets the aligned CCA dimensions are used instead. Next a
-Shared Nearest Neighbours (SNN) graph is constructed by considering the
-distance between cells in this multidimensional space and the overlap between
-shared neighbourhoods. Seurat uses a euclidean distance but is has been
-suggested that correlations can provide better results [@Kim2018-xn]. In order
-to separate cells into clusters a community detection algorithm such as Louvain
-optimisation [@Blondel2008-ym] is run on the graph with a resolution parameter
-that controls the number of clusters that are produced. Seurat's clustering
-method has been shown to perform well, particularly on UMI datasets
-[@Duo2018-qb; Freytag2018-ic]. Each clustering method has a set of parameters
-that can affect the number of clusters produced but choosing which clustering
-resolution to use is difficult and can affect the interpretation of results. I
-address this problem with a visualisation-based approach in Chapter
+profiles, forming groups of cells of the same type. The clustering method in
+the Seurat package [@Satija2015-or] has become particularly popular and has
+been shown to perform well, particularly on UMI datasets [@Duo2018-qb;
+Freytag2018-ic]. This method begins by selecting a set of highly variable genes
+then performing PCA on them. A set of dimensions is then selected that contains
+most of the variation in the dataset. Alternatively if Seurat's alignment
+method has been used to integrate datasets the aligned CCA dimensions are used
+instead. Next a Shared Nearest Neighbours (SNN) graph is constructed by
+considering the distance between cells in this multidimensional space and the
+overlap between shared neighbourhoods. Seurat uses a euclidean distance but is
+has been suggested that correlations can provide better results [@Kim2018-xn].
+In order to separate cells into clusters a community detection algorithm such
+as Louvain optimisation [@Blondel2008-ym] is run on the graph with a resolution
+parameter that controls the number of clusters that are produced. Selecting
+this parameter and similar parameters in other methods is difficult but
+important as the number of clusters selected can affect the interpretation of
+results. I address this problem with a visualisation-based approach in Chapter
 \@ref(clust-trees).
 
 For tissue types that are well understood or where comprehensive references are
 available an alternative is to directly classify cells. This can be done using
 a gating approach based on the expression of known marker genes similar to that
-commonly used for flow cytometry experiments. Alternatively machine learning
+commonly used for flow cytometry experiments. Alternatively, machine learning
 algorithms can be used to perform classification based on the overall
 expression profile. Methods such as scmap [@Kiselev2018-nu], scPred
 [@Alquicira-Hernandez2018-xu], CaSTLe [@Lieberman2018-zg] and Moana
@@ -286,7 +275,7 @@ indicate newly transcribed mRNA molecules and therefore which genes are
 currently active. Instead of assigning cells to discrete groups or along a
 continuous path velocyto uses reads from unspliced regions to place them in a
 space and create a vector indicating the direction in which the transcriptional
-profile is heading. This vector can show the a cell is differentiation in a
+profile is heading. This vector can show that a cell is differentiating in a
 particular way or that a specific transcriptional program has been activated.
 
 Deciding on which assignment approach to use depends on the source of the data,
@@ -308,27 +297,24 @@ some of the problems that made standard statistical tests unsuitable for bulk
 RNA-seq experiments do not apply and simple methods like the unpaired Wilcoxon
 rank-sum test (or Mann-Whitney U test), Student's t-test or logistic regression
 may give reasonable results in this setting. Methods originally developed for
-bulk experiments have have also been applied to scRNA-seq datasets. Some of
-these methods have well understood statistical frameworks and have been shown
-to perform well in multiple comparisons. However the assumptions they make may
-not be appropriate for single-cell data and methods such as ZiNB-WaVe
-[@Van_den_Berge2018-ip] may be required to transform the data that is
-appropriate for their use. A comprehensive evaluation of 36 approaches found
-that methods developed for bulk RNA-seq did not perform worse that scRNA-seq
-specific methods, however they did depend on how lowly-expressed genes were
-filtered [@Soneson2018-fb]. The authors also observed that some methods were
-biased in the types of they tended to detect as differentially expressed. It is
-also possible to identify genes that might have the same mean between groups
-but differ in variance or other characteristics of their expression
-distribution.
-
-Often the goal is not to find all the genes that are differentially expressed
-between groups but to identify genes which uniquely mark particular clusters.
-This goal is open to alternative approaches such as the Gini coefficient which
-measures unequal distribution across a population. Another approach is to
-construct machine learning classifiers for each genes to distinguish between
-one group and all other cells. Genes that give good classification performance
-should be good indicators of what is specific to that cluster.
+bulk experiments have have also been applied to scRNA-seq datasets but the
+assumptions they make may not be appropriate for single-cell data and methods
+such as ZiNB-WaVe [@Van_den_Berge2018-ip] may be required to transform the data
+so that it is appropriate for their use. A comprehensive evaluation of 36
+approaches found that methods developed for bulk RNA-seq did not perform worse
+that scRNA-seq specific methods, however they did depend on how lowly-expressed
+genes were filtered [@Soneson2018-fb]. The authors also observed that some
+methods were biased in the types of features they tended to detect as
+differentially expressed. Often the goal is not to find all the genes that are
+differentially expressed between groups but to identify genes which uniquely
+mark particular clusters. This goal is open to alternative approaches such as
+the Gini coefficient which measures unequal distribution across a population.
+Another approach is to construct machine learning classifiers for each genes to
+distinguish between one group and all other cells. Genes that give good
+classification performance should be good indicators of what is specific to
+that cluster. It is also possible to identify genes that might have the same
+mean between groups but differ in variance or other characteristics of their
+expression distribution.
 
 When cells have been ordered along a continuous trajectory the task is slightly
 different. Instead of testing for a difference in means between two groups the
@@ -348,8 +334,8 @@ likely to remain so. Some methods have been developed for this task such as
 celaref which suggests cluster labels based on similarity of marker genes to an
 already characterised reference dataset. Gene set testing to identify related
 categories such as Gene Ontology terms can also help but often it is necessary
-to rely the results of previous functional studies. Ultimately this can only be
-reliably done by working closely with experts who have significant domain
+to rely on the results of previous functional studies. Ultimately this can only
+be reliably done by working closely with experts who have significant domain
 knowledge in the cell types being studied. An additional concern for
 unsupervised scRNA-seq studies is that the same genes are used for clustering
 or ordering and determining what those clusters or trajectories mean. This is a
@@ -393,11 +379,11 @@ package for simulating scRNA-seq data in Chapter \@ref(simulation). Simulation
 is an efficient and flexible approach for producing gold standard datasets but
 synthetic data can never fully reproduce a real dataset. An alternative
 approach is to carefully construct a gold standard biological dataset by
-combining where the true differences are known. These datasets can be extremely
-useful but are difficult, time-consuming and expensive to produce and can only
-reproduce a limited set of scenarios. Comprehensive evaluations of methods have
-already been conducted for some aspects of scRNA-seq analysis including
-clustering [@Duo2018-qb; Freytag2018-ic], trajectory inference
-[@Saelens2018-sf] and differential expression testing [@Soneson2018-fb] but
-these will need to continue to be performed and updated as the field matures
-and new methods are developed.
+combining samples where the true differences are known [@Tian2018-ok]. These
+datasets can be extremely useful but are difficult, time-consuming and
+expensive to produce and can only reproduce a limited set of scenarios.
+Comprehensive evaluations of methods have already been conducted for some
+aspects of scRNA-seq analysis including clustering [@Duo2018-qb;
+@Freytag2018-ic], trajectory inference [@Saelens2018-sf] and differential
+expression testing [@Soneson2018-fb] but these will need to continue to be
+performed and updated as the field matures and new methods are developed.
