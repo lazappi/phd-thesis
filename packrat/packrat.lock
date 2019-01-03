@@ -111,6 +111,12 @@ Version: 1.0.0
 Hash: 0213971c7bebbf8be771cf90d0f9049c
 Requires: V8, dplyr, jsonlite, magrittr, sf
 
+Package: cowplot
+Source: CRAN
+Version: 0.9.3
+Hash: c9b93ad25628bdaf66e7a53b4ebe5510
+Requires: ggplot2, gtable, plyr, scales
+
 Package: crayon
 Source: CRAN
 Version: 1.3.4

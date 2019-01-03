@@ -1,0 +1,35 @@
+## The current scRNA-tools database
+
+```{r tools-plot, fig.cap = "(ref:cap-tools)", fig.scap = "(ref:scap-tools)", out.width = "100%"}
+number    <- plotToolsNumber(tools_date_counts, pal)
+pub       <- plotPublication(tools, pal)
+licenses  <- plotLicenses(tools, pal)
+platforms <- plotPlatforms(tools, pal)
+cats      <- plotCategories(cat_counts, phase_pal)
+
+p1 <- plot_grid(number, pub, licenses, platforms,
+                labels = c("A - Database size over time",
+                           "B - Publication status",
+                           "C - Software licenses",
+                           "D - Software platforms"),
+                ncol = 2, hjust = 0)
+panel <- plot_grid(p1, cats,
+                   labels = c("", "E - Analysis categories"),
+                   ncol = 1, rel_heights = c(1, 0.6), hjust = 0)
+
+ggsave(here("figures/tools.pdf"), panel, height = 10, width = 8)
+ggsave(here("figures/tools.png"), panel, height = 10, width = 8)
+
+knitr::include_graphics(here::here("figures/tools.png"))
+```
+
+(ref:scap-tools) State of the scRNA-tools database.
+
+(ref:cap-tools) State of the scRNA-tools database. (A) Size of the database
+over time. (B) Publication status of tools in the database, most tools are
+published as either peer-reviewed publications or preprints. (C) Associated
+software licenses, most tools are covered by open-source licenses but around
+a quarter of tools still have no license. (D) Software platforms used by tools,
+R is the most common programming language followed by Python. (E) Number of
+tools that complete each analysis task. Tasks associated with multiple analysis
+phases are the most common along with those that assign cells.
