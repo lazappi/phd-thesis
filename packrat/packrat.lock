@@ -210,6 +210,19 @@ Source: CRAN
 Version: 1.3.0
 Hash: 1fbde6dec830370be696eee8ef31c9e4
 
+Package: googleAnalyticsR
+Source: CRAN
+Version: 0.6.0
+Hash: bf5a62c877447e1ea902f5a9a8af5206
+Requires: assertthat, dplyr, googleAuthR, httr, jsonlite, magrittr,
+    memoise, purrr, rlang, tidyr
+
+Package: googleAuthR
+Source: CRAN
+Version: 0.7.0
+Hash: 4ae3b89f1e007d175e677afeafc3ae44
+Requires: R6, assertthat, digest, httr, jsonlite, memoise
+
 Package: gtable
 Source: CRAN
 Version: 0.2.0

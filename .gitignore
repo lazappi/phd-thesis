@@ -24,3 +24,6 @@ docs/
 
 # VS Code
 .vscode
+
+# OAuth
+googleAnalyticsR.httr-oauth
