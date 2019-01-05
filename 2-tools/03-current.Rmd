@@ -33,3 +33,118 @@ a quarter of tools still have no license. (D) Software platforms used by tools,
 R is the most common programming language followed by Python. (E) Number of
 tools that complete each analysis task. Tasks associated with multiple analysis
 phases are the most common along with those that assign cells.
+
+```{r tools-analytics-plot, fig.cap = "(ref:cap-analytics)", fig.scap = "(ref:scap-analytics)", out.width = "100%"}
+users <- tools_users %>%
+    gather(key = Type, value = Users, -Date) %>%
+    mutate(Type = factor(Type,
+                         levels = c("Users1Day", "Users7Day", "Users30Day"),
+                         labels = c("1 Day", "7 Days", "30 Days"))) %>%
+    ggplot(aes(x = Date, y = Users, colour = Type)) +
+    geom_line(size = 2) +
+    scale_color_manual(values = unname(pal)) +
+    scale_x_date(breaks = scales::pretty_breaks(n = 10),
+                 date_labels = "%b %Y") +
+    ggtitle("") +
+    theme_minimal() +
+    theme(axis.title.x = element_blank(),
+          legend.title = element_blank(),)
+
+world <- map_data("world")
+plot_data <- left_join(world, tools_countries, by = c(region = "Country"))
+map <- ggplot(plot_data, aes(x = long, y = lat, group = group, fill = Users)) +
+    geom_polygon() +
+    scale_fill_viridis_c(na.value = "grey80") +
+    ggtitle("") +
+    theme_minimal() +
+    theme(axis.title = element_blank(),
+          axis.text = element_blank(),
+          panel.grid = element_blank(),
+          legend.position = "bottom")
+
+plot_data <- tools_countries %>%
+    group_by(Country) %>%
+    tally(Users, sort = TRUE) %>%
+    mutate(Country = factor(c(Country[1:10], rep("Other", n() - 10)),
+                            levels = c(Country[1:10], "Other"))) %>%
+    group_by(Country) %>%
+    tally(n) %>%
+    rename(Users = nn) %>%
+    mutate(Country = forcats::fct_rev(Country)) %>%
+    mutate(Label = paste0(Country, " ",
+                          chrRound(Users / sum(Users) * 100, 1), "%")) %>%
+    mutate(TooLow = if_else((Users - 0.3 * max(Users)) < 0,
+                             TRUE, FALSE)) %>%
+    mutate(Colour = if_else(TooLow, "grey40", "white")) %>%
+    mutate(hjust = if_else(TooLow, -0.1, 1.1))
+    
+countries <- ggplot(plot_data, aes(x = Country, y = Users, fill = Country)) +
+    geom_col() +
+    geom_text(aes(label = Label, colour = Colour, hjust = hjust),
+                  size = 4) +
+    scale_fill_manual(values = unname(c(pal["grey"],
+                                        rep(pal["purple"], 10)))) +
+    scale_colour_identity() +
+    coord_flip() +
+    ggtitle("") +
+    theme_minimal() +
+    theme(axis.title.y = element_blank(),
+          axis.text.y = element_blank(),
+          panel.grid = element_blank(),
+          legend.position = "none")
+
+plot_data <- tools_countries %>%
+    group_by(Continent) %>%
+    summarise(Users = sum(Users)) %>%
+    arrange(-Users) %>%
+    mutate(Continent = factor(Continent, levels = Continent)) %>%
+    mutate(Continent = forcats::fct_relevel(Continent,
+                                            "(not set)", after = Inf),
+           Continent = forcats::fct_recode(Continent,
+                                           Unknown = "(not set)"),
+           Continent = forcats::fct_rev(Continent)) %>%
+    mutate(Label = paste0(Continent, " ",
+                          chrRound(Users / sum(Users) * 100, 1), "%")) %>%
+    mutate(TooLow = if_else((Users - 0.3 * max(Users)) < 0,
+                             TRUE, FALSE)) %>%
+    mutate(Colour = if_else(TooLow, "grey40", "white")) %>%
+    mutate(hjust = if_else(TooLow, -0.1, 1.1))
+
+continents <- ggplot(plot_data,
+                     aes(x = Continent, y = Users, fill = Continent)) +
+    geom_col() +
+    geom_text(aes(label = Label, colour = Colour, hjust = hjust),
+                  size = 4) +
+    scale_fill_manual(values = unname(c(pal["grey"],
+                                        rep(pal["purple"], 5)))) +
+    scale_colour_identity() +
+    coord_flip() +
+    ggtitle("") +
+    theme_minimal() +
+    theme(axis.title.y = element_blank(),
+          axis.text.y = element_blank(),
+          panel.grid = element_blank(),
+          legend.position = "none")
+
+p1 <- plot_grid(map, countries, continents,
+                nrow = 1, rel_widths = c(1, 0.7, 0.7), hjust = 0,
+                labels = c("B - Users by country",
+                           "C - Top 10 countries",
+                           "D - Users by continent"))
+panel <- plot_grid(users, p1,
+                   ncol = 1, rel_heights = c(0.9, 1), hjust = 0,
+                   labels = c("A - Users over time", ""))
+
+ggsave(here("figures/analytics.pdf"), panel, height = 6, width = 8)
+ggsave(here("figures/analytics.png"), panel, height = 6, width = 8)
+
+knitr::include_graphics(here::here("figures/analytics.png"))
+```
+
+(ref:scap-analytics) Usage of the scRNA-tools website.
+
+(ref:cap-analytics) Usage of the scRNA-tools website. (A) Usage over time showing
+the number of users per day (pink), week (blue) or 30 days (green). (B) World
+map coloured according to number of users from low (blue) to high (yellow). (C)
+Number of users from the top 10 most common countries. (D) Number of users by
+continent.

@@ -179,6 +179,9 @@ library("jsonlite")
 # Strings
 library("stringr")
 
+# File IO
+library("readr")
+
 # Manipulation
 library("dplyr")
 library("tidyr")
@@ -244,6 +247,27 @@ cat_counts <- tools %>%
     mutate(Category = str_trim(Category)) %>%
     mutate(Category = ifelse(Category == "U M Is", "UMIs", Category)) %>%
     mutate(Category = factor(Category, levels = Category))
+```
+
+```{r load-tools-analytics}
+tools_users <- read_tsv(here("data/tools-users.tsv"),
+                        col_types = cols(
+                            .default = col_double(),
+                            Date = col_date(format = "")
+                        ))
+
+tools_countries <- read_tsv(here("data/tools-countries.tsv"),
+                            col_types = cols(
+                                .default = col_character(),
+                                Users = col_double()
+                            )) %>%
+    mutate(Country = case_when(
+        Country == "Czechia"           ~ "Czech Republic",
+        Country == "Macedonia (FYROM)" ~ "Macedonia",
+        Country == "United Kingdom"    ~ "UK",
+        Country == "United States"     ~ "USA",
+        TRUE                           ~ Country
+    ))
 ```
 
 `r if(html) '# Front matter {-}'`

@@ -21,6 +21,7 @@ users <- lapply(c("1dayUsers", "7dayUsers", "30dayUsers"), function(metric) {
 })
 
 users <- purrr::reduce(users, dplyr::left_join, by = "date")
+colnames(users) <- c("Date", "Users1Day", "Users7Day", "Users30Day")
 
 message("Getting country data...")
 countries <- google_analytics(ga_id,
@@ -29,6 +30,8 @@ countries <- google_analytics(ga_id,
                               metrics = "users",
                               dimensions = c("country", "continent",
                                              "subcontinent"))
+
+colnames(countries) <- c("Country", "Continent", "Subcontinent", "Users")
 
 message("Writing user data...")
 readr::write_tsv(users, here::here("data/tools-users.tsv"))
