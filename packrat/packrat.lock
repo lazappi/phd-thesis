@@ -8,6 +8,11 @@ Source: CRAN
 Version: 1.66.0-1
 Hash: 4cc8883584b955ed01f38f68bc03af6d
 
+Package: DBI
+Source: CRAN
+Version: 1.0.0
+Hash: 6abedd7919c4457604c0aa44529a6683
+
 Package: R6
 Source: CRAN
 Version: 2.3.0
@@ -20,8 +25,20 @@ Hash: c0d56cd15034f395874c870141870c25
 
 Package: Rcpp
 Source: CRAN
-Version: 0.12.19
-Hash: fdff9c3aa69adac28cd5c45cd250c9da
+Version: 1.0.0
+Hash: c7273c0f0bc9f5e41f4c52a8cf571f0f
+
+Package: RcppEigen
+Source: CRAN
+Version: 0.3.3.5.0
+Hash: de01edcbabf4da130ba2b91d9fd3d11c
+Requires: Rcpp
+
+Package: V8
+Source: CRAN
+Version: 1.5
+Hash: 2e02ac86780b9b9c40759ee3ad21ba55
+Requires: Rcpp, curl, jsonlite
 
 Package: assertthat
 Source: CRAN
@@ -46,14 +63,31 @@ Hash: 76578c5f543a6ecbc1365d6445f9ebf7
 Package: bindrcpp
 Source: CRAN
 Version: 0.2.2
-Hash: c2e0893c9a11a24c90a1a9f0114ca30f
+Hash: 8ce499301f0dc5c7ff69f0b42e33f5c1
 Requires: Rcpp, bindr, plogr
+
+Package: bitops
+Source: CRAN
+Version: 1.0-6
+Hash: 67d0775189fd0041d95abca618c5c07e
 
 Package: bookdown
 Source: CRAN
 Version: 0.7
 Hash: e5916615038d3cedf27b78814803877c
 Requires: htmltools, knitr, rmarkdown, tinytex, xfun, yaml
+
+Package: caTools
+Source: CRAN
+Version: 1.17.1.1
+Hash: 1764f9cb70825aa7a1c461e7514ffb73
+Requires: bitops
+
+Package: classInt
+Source: CRAN
+Version: 0.3-1
+Hash: 4bd35fbd3fd8471463d4dbd54672a933
+Requires: e1071
 
 Package: cli
 Source: CRAN
@@ -71,6 +105,18 @@ Source: CRAN
 Version: 1.3-2
 Hash: 0bf8618b585fa98eb23414cd3ab95118
 
+Package: concaveman
+Source: CRAN
+Version: 1.0.0
+Hash: 0213971c7bebbf8be771cf90d0f9049c
+Requires: V8, dplyr, jsonlite, magrittr, sf
+
+Package: cowplot
+Source: CRAN
+Version: 0.9.3
+Hash: c9b93ad25628bdaf66e7a53b4ebe5510
+Requires: ggplot2, gtable, plyr, scales
+
 Package: crayon
 Source: CRAN
 Version: 1.3.4
@@ -80,6 +126,11 @@ Package: curl
 Source: CRAN
 Version: 3.2
 Hash: e3318ec2d42d15a38485bab047d114ba
+
+Package: deldir
+Source: CRAN
+Version: 0.1-15
+Hash: 8e0969b0a43c15318b8c877c3982aa3b
 
 Package: devtools
 Source: CRAN
@@ -95,10 +146,15 @@ Hash: 65f62365ec69ddd17230d2ffe891a6ab
 
 Package: dplyr
 Source: CRAN
-Version: 0.7.6
-Hash: 573a83f1ea22db0d4378ce312b2203b6
+Version: 0.7.8
+Hash: d6e576944199cba782a471015a822848
 Requires: BH, R6, Rcpp, assertthat, bindrcpp, glue, magrittr,
     pkgconfig, plogr, rlang, tibble, tidyselect
+
+Package: e1071
+Source: CRAN
+Version: 1.7-0
+Hash: 54c6b974d385e3c0961eb4cefc9ea0c5
 
 Package: evaluate
 Source: CRAN
@@ -110,16 +166,37 @@ Source: CRAN
 Version: 0.4.0
 Hash: f147621f72b561485bfffcae78c4f5d5
 
+Package: farver
+Source: CRAN
+Version: 1.1.0
+Hash: e6ad3c3fc3e423a9605476da05b06e42
+Requires: Rcpp
+
 Package: forcats
 Source: CRAN
 Version: 0.3.0
 Hash: 770f3834b97a2c429bdecb7a5f27eb25
 Requires: magrittr, rlang, tibble
 
+Package: ggforce
+Source: github
+Version: 0.1.1
+Hash: 909bef04e36a6e4915ccaae297489ed3
+Requires: Rcpp, RcppEigen, concaveman, deldir, dplyr, ggplot2, gtable,
+    lazyeval, plyr, polyclip, scales, tweenr
+GithubRepo: ggforce
+GithubUsername: thomasp85
+GithubRef: master
+GithubSha1: 9ce6079d906e5810c91b71ccfe7a4aad8909e0b5
+RemoteHost: https://api.github.com
+RemoteRepo: ggforce
+RemoteUsername: thomasp85
+RemoteSha: 9ce6079d906e5810c91b71ccfe7a4aad8909e0b5
+
 Package: ggplot2
 Source: CRAN
-Version: 3.0.0
-Hash: 8332448b76ff31472a1bf6dd31fcddb1
+Version: 3.1.0
+Hash: ef541b05dda10b209d509b5bbaf46ea3
 Requires: digest, gtable, lazyeval, plyr, reshape2, rlang, scales,
     tibble, viridisLite, withr
 
@@ -132,6 +209,19 @@ Package: glue
 Source: CRAN
 Version: 1.3.0
 Hash: 1fbde6dec830370be696eee8ef31c9e4
+
+Package: googleAnalyticsR
+Source: CRAN
+Version: 0.6.0
+Hash: bf5a62c877447e1ea902f5a9a8af5206
+Requires: assertthat, dplyr, googleAuthR, httr, jsonlite, magrittr,
+    memoise, purrr, rlang, tidyr
+
+Package: googleAuthR
+Source: CRAN
+Version: 0.7.0
+Hash: 4ae3b89f1e007d175e677afeafc3ae44
+Requires: R6, assertthat, digest, httr, jsonlite, memoise
 
 Package: gtable
 Source: CRAN
@@ -158,7 +248,7 @@ Requires: pkgconfig, rlang
 Package: htmltools
 Source: CRAN
 Version: 0.3.6
-Hash: bd3273390b4c6499014589c2920f3152
+Hash: 9707abea0a9b7406e98fb1242e97e1f6
 Requires: Rcpp, digest
 
 Package: httr
@@ -169,8 +259,8 @@ Requires: R6, curl, jsonlite, mime, openssl
 
 Package: jsonlite
 Source: CRAN
-Version: 1.5
-Hash: 9c51936d8dd00b2f1d4fe9d10499694c
+Version: 1.6
+Hash: 5f969e213e966135393e3e304abf3f49
 
 Package: knitr
 Source: CRAN
@@ -191,13 +281,18 @@ Hash: 88926ad9c43581fd0822a37c8ed09f05
 Package: lubridate
 Source: CRAN
 Version: 1.7.4
-Hash: c02a71ca5738d52e086613b4c48ab9d6
+Hash: c89e55131b9769f1aa0751195210cd8f
 Requires: Rcpp, stringr
 
 Package: magrittr
 Source: CRAN
 Version: 1.5
 Hash: bdc4d48c3135e8f3b399536ddf160df4
+
+Package: maps
+Source: CRAN
+Version: 3.3.0
+Hash: 0815ed94aca05c7aeb177ebddd4ee23b
 
 Package: markdown
 Source: CRAN
@@ -251,8 +346,13 @@ Hash: 81a8008a5e7858552503935f1abe48aa
 Package: plyr
 Source: CRAN
 Version: 1.8.4
-Hash: d1f100e0dbbf8d3f55aa701b07c62e35
+Hash: 1ca393a9f51341b8fa034f743adf1f53
 Requires: Rcpp
+
+Package: polyclip
+Source: CRAN
+Version: 1.9-1
+Hash: cbee22021ae850ccb711572cf168247b
 
 Package: purrr
 Source: CRAN
@@ -262,9 +362,9 @@ Requires: magrittr, rlang, tibble
 
 Package: readr
 Source: CRAN
-Version: 1.3.0
-Hash: 25b861b6f5f568446d7c8a9c60e325e0
-Requires: BH, R6, Rcpp, clipr, hms, tibble
+Version: 1.3.1
+Hash: 105059a72311eb4683f91af44f6f892e
+Requires: BH, R6, Rcpp, clipr, crayon, hms, tibble
 
 Package: remotes
 Source: CRAN
@@ -274,13 +374,13 @@ Hash: 096623b97b500584300eb80d293c69ca
 Package: reshape2
 Source: CRAN
 Version: 1.4.3
-Hash: f50582f9059ab381cd38dd02697d8a88
+Hash: c950c8ac85b81209635acb3ce21b4cce
 Requires: Rcpp, plyr, stringr
 
 Package: rlang
 Source: CRAN
-Version: 0.2.2
-Hash: 49b735b7b1d14f561d21cce12c6703df
+Version: 0.3.0.1
+Hash: 35fb7a51d5d756c56f793ed9c381fb84
 
 Package: rmarkdown
 Source: CRAN
@@ -303,8 +403,14 @@ Hash: 9ba7fe76dcaf96966c449527ca04bb78
 Package: scales
 Source: CRAN
 Version: 1.0.0
-Hash: dd78d3c916916877f6d319b27534795e
+Hash: 7d9b717abcec656ae7c5c982d72b75e5
 Requires: R6, RColorBrewer, Rcpp, labeling, munsell, viridisLite
+
+Package: sf
+Source: CRAN
+Version: 0.7-2
+Hash: 0040835300d452ec4a78d826c4563d6a
+Requires: DBI, Rcpp, classInt, magrittr, units
 
 Package: stringi
 Source: CRAN
@@ -326,14 +432,14 @@ Requires: cli, crayon, pillar, rlang
 Package: tidyr
 Source: CRAN
 Version: 0.8.2
-Hash: 6620dc3d1459df12881193f6b81b305b
+Hash: 9ff92b9b3c11dfcd94d179b75b85c668
 Requires: Rcpp, dplyr, glue, magrittr, purrr, rlang, stringi, tibble,
     tidyselect
 
 Package: tidyselect
 Source: CRAN
 Version: 0.2.5
-Hash: e8f4a27878a2753b69376c7121c4bb0a
+Hash: fad1cf10c5c4996fca6ca68e0716d2e6
 Requires: Rcpp, glue, purrr, rlang
 
 Package: tinytex
@@ -342,15 +448,31 @@ Version: 0.8
 Hash: bf76759350cd2bfec401d8861a61ad66
 Requires: xfun
 
+Package: tweenr
+Source: CRAN
+Version: 1.0.1
+Hash: 9daf7355f92318e55c3648f3144479b7
+Requires: Rcpp, farver, magrittr, rlang
+
 Package: unimelbdown
 Source: github
-Version: 0.0.0.9000
-Hash: 37a2cf207dc677895c1acd7bf4f0e5bc
+Version: 0.0.0.9002
+Hash: af4bf070089dd15c69f3c42f0d168010
 Requires: bookdown, devtools, dplyr, ggplot2, knitr
 GithubRepo: unimelbdown
 GithubUsername: lazappi
 GithubRef: master
-GithubSha1: ab81fcc26808c4049962a35adcd29c3f8bbcfa40
+GithubSha1: 911d04789fa5c8eebc77e7207d66e389e192b7fc
+RemoteHost: https://api.github.com
+RemoteRepo: unimelbdown
+RemoteUsername: lazappi
+RemoteSha: 911d04789fa5c8eebc77e7207d66e389e192b7fc
+
+Package: units
+Source: CRAN
+Version: 0.6-2
+Hash: b28570948f456e10ee358d5b4d514ef4
+Requires: Rcpp
 
 Package: utf8
 Source: CRAN
