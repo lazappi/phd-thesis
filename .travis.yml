@@ -10,6 +10,11 @@ cache:
 r_packages:
     - bookdown
 
+addons:
+    apt:
+        packages:
+            - libudunits2-dev
+
 before_script:
     - chmod +x ./_cibuild.sh
 
