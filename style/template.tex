@@ -43,8 +43,9 @@
 \usepackage{setspace}  % Line spacing
 \usepackage{chemarr}   % Improved reaction arrows for chemists
 \usepackage{palatino}  % Use the palatino font family
-\usepackage{mathpazo}  % Use the palotino font family
+\usepackage{mathpazo}  % Use the palatino font family
 \usepackage{graphicx}  % Extended graphics package
+\usepackage{parskip}   % Space between paragraphs
 
 % +-----Parameters-------------------------------------------------------------+
 %  Set parameters for the document. To convert from YAML to LaTeX we need to add
@@ -70,6 +71,18 @@ $if(highlighting-macros)$
   $highlighting-macros$
 $endif$
 
+% +-----TeXCount---------------------------------------------------------------+
+%  Improve word counting using TeXCount.
+% +----------------------------------------------------------------------------+
+
+% Environment aliases to trick Pandoc
+\let\Begin\begin
+\let\End\end
+
+% Environment for counting text as other
+%TC:envir tcother [] other
+\newenvironment*{tcother}{}{}
+
 % *============================================================================*
 %  FRONT MATTER
 %
@@ -77,6 +90,8 @@ $endif$
 % *============================================================================*
 
 \begin{document}
+
+\urlstyle{same}
 
 \begin{frontmatter}
 

@@ -1,0 +1,24 @@
+## Thesis overview and aims
+
+The tools and techniques for analysing scRNA-seq data have developed rapidly
+along with the technology. My thesis aims to chart the progress of these
+methods over the last few years, contribute to the development in the field and
+apply those methods to a scRNA-seq dataset to better understand the cellular
+composition of kidney organoids. I have completed these aims in the following
+ways:
+
+1. Construction and maintenance of a database recording the development of
+   scRNA-seq analysis methods and analysis of it's contents
+   (Chapter \@ref(tools)).
+
+2. Development of a software package and method for easily simulating realistic
+   scRNA-seq datasets that can be used for the evaluation and development of
+   analysis methods (Chapter \@ref(simulation)).
+
+3. Development of an algorithm for visualising clustering results at multiple
+   resolutions that can be used to select clustering parameters and a software
+   package that implements it (Chapter \@ref(clust-trees)).
+
+4. Application of scRNA-seq analysis methods to a kidney organoid dataset in
+   order to uncover and better understand the cells types that are present and
+   demonstrate differences between approaches (Chapter \@ref(organoids)).
