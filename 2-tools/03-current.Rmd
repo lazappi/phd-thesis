@@ -1,9 +1,9 @@
 ## The current scRNA-tools database
 
 Since the paper was published in June 2018 XXX tools have been added to the
-scRNA-tools database taking the total to XXX. Figure \@ref(fig:tools) shows an
-overview to the current database as of XXX. Overall the analysis landscape has
-not changed significantly over the last few months.
+scRNA-tools database taking the total to XXX. Figure \@ref(fig:tools-plot)
+shows an overview to the current database as of XXX. Overall the analysis
+landscape has not changed significantly over the last few months.
 
 ```{r tools-plot, fig.cap = "(ref:cap-tools)", fig.scap = "(ref:scap-tools)", out.width = "100%"}
 number    <- plotToolsNumber(tools_date_counts, pal)
@@ -86,6 +86,20 @@ effective and developing robust, easy to use and well documented software tools
 that implement them. The availability of reliable and complete reference
 datasets should lead to the development of more tools implementing methods that
 make use of them such as the classification of cells
+
+## Usage of the scRNA-tools website
+
+Since it was launched in July 2017 the scRNA-tools website has been used from
+people around the world (Figure \@ref(fig:tools-analytics-plot)). Usage has
+increased since release of the publication and the website now receives an
+average of around 750 visitor per month (Figure
+\@ref(fig:tools-analytics-plot)A). These users come from over XXX countries
+around the world (Figure \@ref(fig:tools-analytics-plot)B) with the USA being by
+far the most common location followed by China, Australia, the United Kingdom
+and countries in Western Europe (Figure \@ref(fig:tools-analytics-plot)C).
+Aggregating by continent (Figure \@ref(fig:tools-analytics-plot)D) better
+reflects population and the size of academic communities with the Americas
+responsible for the majority of traffic followed by Europe and Asia.
 
 ```{r tools-analytics-plot, fig.cap = "(ref:cap-analytics)", fig.scap = "(ref:scap-analytics)", out.width = "100%"}
 users <- tools_users %>%
@@ -196,8 +210,16 @@ knitr::include_graphics(here::here("figures/analytics.png"))
 
 (ref:scap-analytics) Usage of the scRNA-tools website.
 
-(ref:cap-analytics) Usage of the scRNA-tools website. (A) Usage over time showing
-the number of users per day (pink), week (blue) or 30 days (green). (B) World
-map coloured according to number of users from low (blue) to high (yellow). (C)
-Number of users from the top 10 most common countries. (D) Number of users by
-continent.
+(ref:cap-analytics) Usage of the scRNA-tools website. (A) Usage over time
+showing the number of users per day (pink), week (blue) or 30 days (green). (B)
+World map coloured according to number of users from low (blue) to high
+(yellow). (C) Number of users from the top 10 most common countries. (D) Number
+of users by continent.
+
+Although these figures may not seem large when compared to an average website
+they represent a significant part of the scRNA-seq community. Seeing usage of
+the website from so many countries sustained over this period of time suggests
+that the database is a useful resource. I intend to continue maintain and grow
+the resource by adding new tools and updating those in the database. I hope to
+encourage contributions from the community who can easily submit changes via a
+form on the website.
