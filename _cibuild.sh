@@ -7,7 +7,7 @@ make docx
 echo "Making HTML..."
 make html
 
-echo "Proofing HTML..."
-htmlproofer ./docs
+#echo "Proofing HTML..."
+#htmlproofer ./docs
 
 echo "Done!"

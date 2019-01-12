@@ -10,13 +10,20 @@ cache:
 r_packages:
     - bookdown
 
+addons:
+    apt:
+        packages:
+            - libudunits2-dev
+            - libv8-3.14-dev
+            - libgdal-dev
+
 before_script:
     - chmod +x ./_cibuild.sh
 
-before_install: # Install Ruby and html-proofer
-    - rvm get stable --auto-dotfiles
-    - rvm install 2.3.3
-    - gem install html-proofer
+#before_install: # Install Ruby and html-proofer
+#    - rvm get stable --auto-dotfiles
+#    - rvm install 2.3.3
+#    - gem install html-proofer
 
 install:
     - R -e "0" --args --bootstrap-packrat
