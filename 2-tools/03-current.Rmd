@@ -1,5 +1,10 @@
 ## The current scRNA-tools database
 
+Since the paper was published in June 2018 XXX tools have been added to the
+scRNA-tools database taking the total to XXX. Figure \@ref(fig:tools) shows an
+overview to the current database as of XXX. Overall the analysis landscape has
+not changed significantly over the last few months.
+
 ```{r tools-plot, fig.cap = "(ref:cap-tools)", fig.scap = "(ref:scap-tools)", out.width = "100%"}
 number    <- plotToolsNumber(tools_date_counts, pal)
 pub       <- plotPublication(tools, pal)
@@ -34,6 +39,54 @@ R is the most common programming language followed by Python. (E) Number of
 tools that complete each analysis task. Tasks associated with multiple analysis
 phases are the most common along with those that assign cells.
 
+Over half of tools are still associated with a peer-publication with another
+third described in preprints (Figure \@ref(fig:tools-plot)B). Versions of the
+GNU Public License (GPL) continue to be the most common license for scRNA-seq
+software tools followed by the more permissive MIT license (Figure
+\@ref(fig:tools-plot)C). The use of preprints to quickly share methods and
+observations and open-source licenses which allow code to be reused and adapted
+reflect the willingness to share and help out that I have observed in the
+scRNA-seq community during my PhD. Unfortunately around a quarter of tools do
+not have associated licenses which can limit their usefulness for other
+developers. I believe that in most cases this is not an attempt by authors to
+restrict how their work is used but a lack of understanding about the
+importance of clear licensing. By displaying licenses on the scRNA-tools
+website I hope to encourage developers to consider how they license their work
+in the future.
+
+R continues to be the most popular programming platform and is used in some way
+by around two thirds of scRNA-seq analysis tools. (Figure
+\@ref(fig:tools-plot)D). Around a third are built using Python which is next
+most common programming language followed by C++ and MATLAB which are each used
+by just under 10 percent of tools. The dominance of R reflects the statistical
+nature of many of the tasks involved in analysing scRNA-seq data as well as the
+historical usage of the platform for bulk RNA-seq and other genomic data types
+as well as the success of projects such as Bioconductor. However, as the size
+of scRNA-seq datasets continues to increase and how we analyse them changes to
+include more machine learning methods I expect this to change in particular to
+make use of the deep learning packages available in languages like Python and
+the improved performance in compiled languages like C++, Swift, Julia and Go.
+MATLAB is commonly used within a small section of the academic community but it
+is proprietary software that requires a paid license meaning that tools
+developed in MATLAB cannot be used by the majority of the scRNA-seq community.
+
+The analysis tasks that tools perform reflect the advantages and uses of
+scRNA-seq data (Figure \@ref(fig:tools-plot)E). The most common categories
+include those that are associated with multiple phases of analysis,
+particularly visualisation, for displaying results and checking distributions,
+and dimensionality reduction. The dimensionality reduction category includes
+tools that make use of a lower dimensional space as part of their analysis
+approach as well as several techniques that have been specifically developed
+for projecting scRNA-seq data. Other common analysis categories include those
+specific to scRNA-seq analysis including clustering and ordering. I expect
+these tasks to continue to be included in new analysis tools as they are
+important steps in analysis however I hope that the focus turns from developing
+new clustering and ordering methods to identifying those are consistently
+effective and developing robust, easy to use and well documented software tools
+that implement them. The availability of reliable and complete reference
+datasets should lead to the development of more tools implementing methods that
+make use of them such as the classification of cells
+
 ```{r tools-analytics-plot, fig.cap = "(ref:cap-analytics)", fig.scap = "(ref:scap-analytics)", out.width = "100%"}
 users <- tools_users %>%
     gather(key = Type, value = Users, -Date) %>%
@@ -48,7 +101,7 @@ users <- tools_users %>%
     ggtitle("") +
     theme_minimal() +
     theme(axis.title.x = element_blank(),
-          legend.title = element_blank(),)
+          legend.title = element_blank())
 
 world <- map_data("world")
 plot_data <- left_join(world, tools_countries, by = c(region = "Country"))
