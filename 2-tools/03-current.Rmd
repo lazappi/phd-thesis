@@ -30,14 +30,7 @@ knitr::include_graphics(here::here("figures/tools.png"))
 
 (ref:scap-tools) State of the scRNA-tools database.
 
-(ref:cap-tools) State of the scRNA-tools database. (A) Size of the database
-over time. (B) Publication status of tools in the database, most tools are
-published as either peer-reviewed publications or preprints. (C) Associated
-software licenses, most tools are covered by open-source licenses but around
-a quarter of tools still have no license. (D) Software platforms used by tools,
-R is the most common programming language followed by Python. (E) Number of
-tools that complete each analysis task. Tasks associated with multiple analysis
-phases are the most common along with those that assign cells.
+(ref:cap-tools) State of the scRNA-tools database. (A) Size of the database over time. (B) Publication status of tools in the database, most tools are published as either peer-reviewed publications or preprints. (C) Associated software licenses, most tools are covered by open-source licenses but around a quarter of tools still have no license. (D) Software platforms used by tools, R is the most common programming language followed by Python. (E) Number of tools that complete each analysis task. Tasks associated with multiple analysis phases are the most common along with those that assign cells.
 
 Over half of tools are still associated with a peer-publication with another
 third described in preprints (Figure \@ref(fig:tools-plot)B). Versions of the
@@ -210,11 +203,7 @@ knitr::include_graphics(here::here("figures/analytics.png"))
 
 (ref:scap-analytics) Usage of the scRNA-tools website.
 
-(ref:cap-analytics) Usage of the scRNA-tools website. (A) Usage over time
-showing the number of users per day (pink), week (blue) or 30 days (green). (B)
-World map coloured according to number of users from low (blue) to high
-(yellow). (C) Number of users from the top 10 most common countries. (D) Number
-of users by continent.
+(ref:cap-analytics) Usage of the scRNA-tools website. (A) Usage over time showing the number of users per day (pink), week (blue) or 30 days (green). (B) World map coloured according to number of users from low (blue) to high (yellow). (C) Number of users from the top 10 most common countries. (D) Number of users by continent.
 
 Although these figures may not seem large when compared to an average website
 they represent a significant part of the scRNA-seq community. Seeing usage of
