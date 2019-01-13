@@ -165,7 +165,7 @@
           "DOI": "10.1038/nature19348",
           "PubDate": "2016-08-31",
           "Preprint": false,
-          "Citations": 101
+          "Citations": 103
         }
       ],
       "Preprints": [
@@ -177,7 +177,7 @@
         }
       ]
     },
-    "Citations": 101,
+    "Citations": 103,
     "Publications": 1,
     "Preprints": 1,
     "Github": "nsalomonis/altanalyze",
@@ -233,12 +233,12 @@
           "DOI": "10.1016/j.molcel.2017.06.003",
           "PubDate": "2017-06-29",
           "Preprint": false,
-          "Citations": 15
+          "Citations": 17
         }
       ],
       "Preprints": []
     },
-    "Citations": 15,
+    "Citations": 17,
     "Publications": 1,
     "Preprints": 0,
     "Github": "yeolab/anchor",
@@ -420,7 +420,7 @@
           "DOI": "10.1038/nmeth.4463",
           "PubDate": "2017-10-09",
           "Preprint": false,
-          "Citations": 38
+          "Citations": 40
         }
       ],
       "Preprints": [
@@ -432,7 +432,7 @@
         }
       ]
     },
-    "Citations": 39,
+    "Citations": 41,
     "Publications": 1,
     "Preprints": 1,
     "Github": "aertslab/AUCell",
@@ -548,12 +548,12 @@
           "DOI": "10.1126/science.aaa1934",
           "PubDate": "2015-03-06",
           "Preprint": false,
-          "Citations": 700
+          "Citations": 710
         }
       ],
       "Preprints": []
     },
-    "Citations": 700,
+    "Citations": 710,
     "Publications": 1,
     "Preprints": 0,
     "Github": "linnarsson-lab/BackSPIN",
@@ -838,7 +838,7 @@
           "DOI": "10.1186/s13059-016-0930-3",
           "PubDate": "2016-04-15",
           "Preprint": false,
-          "Citations": 32
+          "Citations": 33
         },
         {
           "Title": "Correcting the Mean-Variance Dependency for Differential Variability Testing Using Single-Cell RNA Sequencing Data",
@@ -857,7 +857,7 @@
         }
       ]
     },
-    "Citations": 95,
+    "Citations": 96,
     "Publications": 3,
     "Preprints": 1,
     "Github": "catavallejos/BASiCS",
@@ -1267,12 +1267,12 @@
           "DOI": "10.1016/j.molcel.2017.06.003",
           "PubDate": "2017-06-29",
           "Preprint": false,
-          "Citations": 15
+          "Citations": 17
         }
       ],
       "Preprints": []
     },
-    "Citations": 15,
+    "Citations": 17,
     "Publications": 1,
     "Preprints": 0,
     "Github": "yeolab/bonvoyage",
@@ -1581,7 +1581,7 @@
           "DOI": "10.1186/s13059-017-1248-5",
           "PubDate": "2017-06-27",
           "Preprint": false,
-          "Citations": 7
+          "Citations": 8
         }
       ],
       "Preprints": [
@@ -1593,7 +1593,7 @@
         }
       ]
     },
-    "Citations": 7,
+    "Citations": 8,
     "Publications": 1,
     "Preprints": 1,
     "Github": "huangyh09/brie",
@@ -1649,12 +1649,12 @@
           "DOI": "10.1016/j.cels.2016.08.011",
           "PubDate": "2016-10-26",
           "Preprint": false,
-          "Citations": 75
+          "Citations": 78
         }
       ],
       "Preprints": []
     },
-    "Citations": 75,
+    "Citations": 78,
     "Publications": 1,
     "Preprints": 0,
     "Github": "shenorrLab/bseqsc",
@@ -2298,6 +2298,53 @@
     "Categories": ["Normalisation", "Ordering", "ExpressionPatterns", "Visualisation"]
   },
   {
+    "Name": "cellassign",
+    "Platform": "R",
+    "Code": "https://github.com/irrationone/cellassign",
+    "Description": "cellassign automatically assigns single-cell RNA-seq data to known cell types across thousands of cells accounting for patient and batch specific effects.",
+    "License": "Apache-2.0",
+    "Assembly": false,
+    "Alignment": false,
+    "UMIs": false,
+    "Quantification": false,
+    "QualityControl": false,
+    "Normalisation": false,
+    "Imputation": false,
+    "Integration": false,
+    "GeneFiltering": false,
+    "Clustering": false,
+    "Classification": true,
+    "Ordering": false,
+    "DifferentialExpression": false,
+    "MarkerGenes": false,
+    "ExpressionPatterns": false,
+    "VariableGenes": false,
+    "GeneSets": false,
+    "GeneNetworks": false,
+    "CellCycle": false,
+    "DimensionalityReduction": false,
+    "Transformation": false,
+    "Modality": false,
+    "AlternativeSplicing": false,
+    "RareCells": false,
+    "StemCells": false,
+    "Immune": false,
+    "Variants": false,
+    "Haplotypes": false,
+    "AlleleSpecific": false,
+    "Visualisation": false,
+    "Interactive": false,
+    "Simulation": true,
+    "Added": "2019-01-11",
+    "Updated": "2019-01-11",
+    "Refs": {
+      "Publications": [null],
+      "Preprints": [null]
+    },
+    "Github": "irrationone/cellassign",
+    "Categories": ["Classification", "Simulation"]
+  },
+  {
     "Name": "CellBIC",
     "Platform": "MATLAB",
     "DOIs": "10.1093/nar/gky698",
@@ -2453,11 +2500,11 @@
           "Title": "CellFishing.jl: an ultrafast and scalable cell search method for single-cell RNA-sequencing",
           "DOI": "10.1101/374462",
           "Preprint": true,
-          "Citations": 0
+          "Citations": 1
         }
       ]
     },
-    "Citations": 0,
+    "Citations": 1,
     "Publications": 0,
     "Preprints": 1,
     "Github": "bicycle1885/CellFishing.jl",
@@ -2512,12 +2559,12 @@
           "DOI": "10.1186/s13059-016-0888-1",
           "PubDate": "2016-02-17",
           "Preprint": false,
-          "Citations": 67
+          "Citations": 68
         }
       ],
       "Preprints": []
     },
-    "Citations": 67,
+    "Citations": 68,
     "Publications": 1,
     "Preprints": 0,
     "Github": "teichlab/cellity",
@@ -2573,12 +2620,12 @@
           "DOI": "10.1038/s41586-018-0698-6",
           "PubDate": "2018-11-14",
           "Preprint": false,
-          "Citations": 1
+          "Citations": 2
         }
       ],
       "Preprints": []
     },
-    "Citations": 1,
+    "Citations": 2,
     "Publications": 1,
     "Preprints": 0,
     "Github": "Teichlab/cellphonedb",
@@ -2633,12 +2680,12 @@
           "DOI": "10.1038/ncomms14049",
           "PubDate": "2017-01-16",
           "Preprint": false,
-          "Citations": 248
+          "Citations": 253
         }
       ],
       "Preprints": []
     },
-    "Citations": 248,
+    "Citations": 253,
     "Publications": 1,
     "Preprints": 0,
     "Github": "10XGenomics/cellranger",
@@ -2883,6 +2930,54 @@
     "Categories": ["Visualisation", "Interactive"]
   },
   {
+    "Name": "cellxgene",
+    "Platform": "Python/Javascript",
+    "Code": "https://github.com/chanzuckerberg/cellxgene",
+    "Description": "cellxgene is an interactive data explorer for single-cell transcriptomics datasets, such as those coming from the Human Cell Atlas",
+    "License": "MIT",
+    "Assembly": false,
+    "Alignment": false,
+    "UMIs": false,
+    "Quantification": false,
+    "QualityControl": false,
+    "Normalisation": false,
+    "Imputation": false,
+    "Integration": false,
+    "GeneFiltering": false,
+    "Clustering": false,
+    "Classification": false,
+    "Ordering": false,
+    "DifferentialExpression": false,
+    "MarkerGenes": false,
+    "ExpressionPatterns": false,
+    "VariableGenes": false,
+    "GeneSets": false,
+    "GeneNetworks": false,
+    "CellCycle": false,
+    "DimensionalityReduction": false,
+    "Transformation": false,
+    "Modality": false,
+    "AlternativeSplicing": false,
+    "RareCells": false,
+    "StemCells": false,
+    "Immune": false,
+    "Variants": false,
+    "Haplotypes": false,
+    "AlleleSpecific": false,
+    "Visualisation": true,
+    "Interactive": true,
+    "Simulation": false,
+    "Added": "2019-01-11",
+    "Updated": "2019-01-11",
+    "Refs": {
+      "Publications": [null],
+      "Preprints": [null]
+    },
+    "Github": "chanzuckerberg/cellxgene",
+    "PyPI": "cellxgene",
+    "Categories": ["Visualisation", "Interactive"]
+  },
+  {
     "Name": "CIDR",
     "Platform": "R",
     "DOIs": "10.1101/068775;10.1186/s13059-017-1188-0",
@@ -2931,7 +3026,7 @@
           "DOI": "10.1186/s13059-017-1188-0",
           "PubDate": "2017-03-28",
           "Preprint": false,
-          "Citations": 42
+          "Citations": 44
         }
       ],
       "Preprints": [
@@ -2943,7 +3038,7 @@
         }
       ]
     },
-    "Citations": 42,
+    "Citations": 44,
     "Publications": 1,
     "Preprints": 1,
     "Github": "VCCRI/CIDR",
@@ -3762,6 +3857,66 @@
     "Categories": ["DimensionalityReduction"]
   },
   {
+    "Name": "ddSeeker",
+    "Platform": "Python/R",
+    "DOIs": "10.1186/s12864-018-5249-x",
+    "PubDates": "2018-12-24",
+    "Code": "https://github.com/cgplab/ddSeeker",
+    "Description": "A tool for processing Bio-Rad ddSEQ single cell RNA-seq data",
+    "License": "GPL-3",
+    "Assembly": false,
+    "Alignment": false,
+    "UMIs": true,
+    "Quantification": false,
+    "QualityControl": true,
+    "Normalisation": false,
+    "Imputation": false,
+    "Integration": false,
+    "GeneFiltering": false,
+    "Clustering": false,
+    "Classification": false,
+    "Ordering": false,
+    "DifferentialExpression": false,
+    "MarkerGenes": false,
+    "ExpressionPatterns": false,
+    "VariableGenes": false,
+    "GeneSets": false,
+    "GeneNetworks": false,
+    "CellCycle": false,
+    "DimensionalityReduction": false,
+    "Transformation": false,
+    "Modality": false,
+    "AlternativeSplicing": false,
+    "RareCells": false,
+    "StemCells": false,
+    "Immune": false,
+    "Variants": false,
+    "Haplotypes": false,
+    "AlleleSpecific": false,
+    "Visualisation": false,
+    "Interactive": false,
+    "Simulation": false,
+    "Added": "2019-01-06",
+    "Updated": "2019-01-06",
+    "Refs": {
+      "Publications": [
+        {
+          "Title": "ddSeeker: a tool for processing Bio-Rad ddSEQ single cell RNA-seq data",
+          "DOI": "10.1186/s12864-018-5249-x",
+          "PubDate": "2018-12-24",
+          "Preprint": false,
+          "Citations": 0
+        }
+      ],
+      "Preprints": []
+    },
+    "Citations": 0,
+    "Publications": 1,
+    "Preprints": 0,
+    "Github": "cgplab/ddSeeker",
+    "Categories": ["UMIs", "QualityControl"]
+  },
+  {
     "Name": "DECENT",
     "Platform": "R",
     "DOIs": "10.1101/225177",
@@ -4047,7 +4202,7 @@
           "DOI": "10.1038/nbt.4042",
           "PubDate": "2017-12-11",
           "Preprint": false,
-          "Citations": 26
+          "Citations": 27
         }
       ],
       "Preprints": [
@@ -4059,7 +4214,7 @@
         }
       ]
     },
-    "Citations": 26,
+    "Citations": 27,
     "Publications": 1,
     "Preprints": 1,
     "Github": "statgen/demuxlet",
@@ -4544,12 +4699,12 @@
           "DOI": "10.1093/bioinformatics/btv715",
           "PubDate": "2016-04-15",
           "Preprint": false,
-          "Citations": 66
+          "Citations": 67
         }
       ],
       "Preprints": []
     },
-    "Citations": 66,
+    "Citations": 67,
     "Publications": 1,
     "Preprints": 0,
     "BioC": "destiny",
@@ -4663,7 +4818,7 @@
           "DOI": "10.1093/bioinformatics/btx490",
           "PubDate": "2017-09-02",
           "Preprint": false,
-          "Citations": 2
+          "Citations": 3
         }
       ],
       "Preprints": [
@@ -4832,11 +4987,11 @@
           "Title": "DoubletDecon: Cell-State Aware Removal of Single-Cell RNA-Seq Doublets",
           "DOI": "10.1101/364810",
           "Preprint": true,
-          "Citations": 2
+          "Citations": 3
         }
       ]
     },
-    "Citations": 2,
+    "Citations": 3,
     "Publications": 0,
     "Preprints": 1,
     "Github": "EDePasquale/DoubletDecon",
@@ -4938,11 +5093,11 @@
           "Title": "DoubletFinder: Doublet detection in single-cell RNA sequencing data using artificial nearest neighbors",
           "DOI": "10.1101/352484",
           "Preprint": true,
-          "Citations": 1
+          "Citations": 2
         }
       ]
     },
-    "Citations": 1,
+    "Citations": 2,
     "Publications": 0,
     "Preprints": 1,
     "Github": "chris-mcginnis-ucsf/DoubletFinder",
@@ -4997,12 +5152,12 @@
           "DOI": "10.1038/nmeth.3971",
           "PubDate": "2016-08-29",
           "Preprint": false,
-          "Citations": 107
+          "Citations": 108
         }
       ],
       "Preprints": []
     },
-    "Citations": 107,
+    "Citations": 108,
     "Publications": 1,
     "Preprints": 0,
     "Categories": ["Ordering", "ExpressionPatterns", "Visualisation"]
@@ -5242,7 +5397,7 @@
           "DOI": "10.1186/s13059-018-1449-6",
           "PubDate": "2018-06-19",
           "Preprint": false,
-          "Citations": 4
+          "Citations": 6
         }
       ],
       "Preprints": [
@@ -5254,7 +5409,7 @@
         }
       ]
     },
-    "Citations": 5,
+    "Citations": 7,
     "Publications": 1,
     "Preprints": 1,
     "Github": "hms-dbmi/dropEst",
@@ -5600,6 +5755,65 @@
     "Categories": ["Ordering", "DifferentialExpression", "VariableGenes"]
   },
   {
+    "Name": "DUSC",
+    "Platform": "Python",
+    "DOIs": "10.1101/511626",
+    "PubDates": "PREPRINT",
+    "Code": "https://github.com/KorkinLab/DUSC",
+    "Description": "Deep Unsupervised Single-cell Clustering (DUSC) is a hybrid approach for cell type discovery in scRNA-seq data.",
+    "License": "Apache-2.0",
+    "Assembly": false,
+    "Alignment": false,
+    "UMIs": false,
+    "Quantification": false,
+    "QualityControl": false,
+    "Normalisation": false,
+    "Imputation": false,
+    "Integration": false,
+    "GeneFiltering": false,
+    "Clustering": true,
+    "Classification": false,
+    "Ordering": false,
+    "DifferentialExpression": false,
+    "MarkerGenes": false,
+    "ExpressionPatterns": false,
+    "VariableGenes": false,
+    "GeneSets": false,
+    "GeneNetworks": false,
+    "CellCycle": false,
+    "DimensionalityReduction": false,
+    "Transformation": false,
+    "Modality": false,
+    "AlternativeSplicing": false,
+    "RareCells": false,
+    "StemCells": false,
+    "Immune": false,
+    "Variants": false,
+    "Haplotypes": false,
+    "AlleleSpecific": false,
+    "Visualisation": false,
+    "Interactive": false,
+    "Simulation": false,
+    "Added": "2018-01-11",
+    "Updated": "2018-01-11",
+    "Refs": {
+      "Publications": [],
+      "Preprints": [
+        {
+          "Title": "A Hybrid Deep Clustering Approach for Robust Cell Type Profiling Using Single-cell RNA-seq Data: Supplementary Figures and Tables",
+          "DOI": "10.1101/511626",
+          "Preprint": true,
+          "Citations": 0
+        }
+      ]
+    },
+    "Citations": 0,
+    "Publications": 0,
+    "Preprints": 1,
+    "Github": "KorkinLab/DUSC",
+    "Categories": ["Clustering"]
+  },
+  {
     "Name": "dynverse",
     "Platform": "R",
     "DOIs": "10.1101/276907",
@@ -5648,11 +5862,11 @@
           "Title": "A comparison of single-cell trajectory inference methods: towards more accurate and robust tools",
           "DOI": "10.1101/276907",
           "Preprint": true,
-          "Citations": 8
+          "Citations": 9
         }
       ]
     },
-    "Citations": 8,
+    "Citations": 9,
     "Publications": 0,
     "Preprints": 1,
     "Github": "dynverse/dynverse",
@@ -5776,6 +5990,65 @@
     "Preprints": 1,
     "Github": "kieranrcampbell/embeddr",
     "Categories": ["Ordering"]
+  },
+  {
+    "Name": "EMEP",
+    "Platform": "MATLAB",
+    "DOIs": "10.1093/bioinformatics/bty1056",
+    "PubDates": "2018-12-28",
+    "Code": "https://github.com/lixt314/EMEP",
+    "Description": "Single-Cell RNA-seq Data using Evolutionary Multiobjective Ensemble Pruning",
+    "Assembly": false,
+    "Alignment": false,
+    "UMIs": false,
+    "Quantification": false,
+    "QualityControl": false,
+    "Normalisation": false,
+    "Imputation": false,
+    "Integration": false,
+    "GeneFiltering": false,
+    "Clustering": true,
+    "Classification": false,
+    "Ordering": false,
+    "DifferentialExpression": false,
+    "MarkerGenes": false,
+    "ExpressionPatterns": false,
+    "VariableGenes": false,
+    "GeneSets": false,
+    "GeneNetworks": false,
+    "CellCycle": false,
+    "DimensionalityReduction": true,
+    "Transformation": false,
+    "Modality": false,
+    "AlternativeSplicing": false,
+    "RareCells": false,
+    "StemCells": false,
+    "Immune": false,
+    "Variants": false,
+    "Haplotypes": false,
+    "AlleleSpecific": false,
+    "Visualisation": false,
+    "Interactive": false,
+    "Simulation": false,
+    "Added": "2019-01-06",
+    "Updated": "2019-01-06",
+    "Refs": {
+      "Publications": [
+        {
+          "Title": "Single-cell RNA-seq Interpretations using Evolutionary Multiobjective Ensemble Pruning",
+          "DOI": "10.1093/bioinformatics/bty1056",
+          "PubDate": "2018-12-28",
+          "Preprint": false,
+          "Citations": 0
+        }
+      ],
+      "Preprints": []
+    },
+    "Citations": 0,
+    "Publications": 1,
+    "Preprints": 0,
+    "Github": "lixt314/EMEP",
+    "Categories": ["Clustering", "DimensionalityReduction"]
   },
   {
     "Name": "ESAT",
@@ -6082,6 +6355,7 @@
     "Publications": 1,
     "Preprints": 0,
     "Github": "princethewinner/FiRE",
+    "CRAN": "FiRE",
     "Categories": ["VariableGenes", "DimensionalityReduction", "RareCells", "Visualisation"]
   },
   {
@@ -6427,7 +6701,7 @@
           "DOI": "10.1126/sciimmunol.aal2192",
           "PubDate": "2017-03-03",
           "Preprint": false,
-          "Citations": 49
+          "Citations": 51
         }
       ],
       "Preprints": [
@@ -6439,7 +6713,7 @@
         }
       ]
     },
-    "Citations": 51,
+    "Citations": 53,
     "Publications": 1,
     "Preprints": 1,
     "Github": "Teichlab/GPfates",
@@ -6793,12 +7067,12 @@
           "DOI": "10.1093/bioinformatics/btv122",
           "PubDate": "2015-07-01",
           "Preprint": false,
-          "Citations": 32
+          "Citations": 33
         }
       ],
       "Preprints": []
     },
-    "Citations": 32,
+    "Citations": 33,
     "Publications": 1,
     "Preprints": 0,
     "Categories": ["Normalisation"]
@@ -7016,12 +7290,12 @@
           "DOI": "10.1101/gr.228080.117",
           "PubDate": "2018-06-13",
           "Preprint": false,
-          "Citations": 0
+          "Citations": 1
         }
       ],
       "Preprints": []
     },
-    "Citations": 0,
+    "Citations": 1,
     "Publications": 1,
     "Preprints": 0,
     "Github": "JEFworks/HoneyBADGER",
@@ -7370,12 +7644,12 @@
           "DOI": "10.1126/science.1254257",
           "PubDate": "2014-06-20",
           "Preprint": false,
-          "Citations": 832
+          "Citations": 844
         }
       ],
       "Preprints": []
     },
-    "Citations": 832,
+    "Citations": 844,
     "Publications": 1,
     "Preprints": 0,
     "Github": "broadinstitute/inferCNV",
@@ -7617,6 +7891,65 @@
     "Categories": ["DifferentialExpression", "ExpressionPatterns"]
   },
   {
+    "Name": "iTALK",
+    "Platform": "R",
+    "DOIs": "10.1101/507871",
+    "PubDates": "PREPRINT",
+    "Code": "https://github.com/Coolgenome/iTALK",
+    "Description": "iTALK is an R toolkit for characterizing and illustrating intercellular communication",
+    "License": "GPL-3",
+    "Assembly": false,
+    "Alignment": false,
+    "UMIs": false,
+    "Quantification": false,
+    "QualityControl": false,
+    "Normalisation": false,
+    "Imputation": false,
+    "Integration": false,
+    "GeneFiltering": false,
+    "Clustering": false,
+    "Classification": false,
+    "Ordering": false,
+    "DifferentialExpression": true,
+    "MarkerGenes": false,
+    "ExpressionPatterns": false,
+    "VariableGenes": false,
+    "GeneSets": false,
+    "GeneNetworks": true,
+    "CellCycle": false,
+    "DimensionalityReduction": false,
+    "Transformation": false,
+    "Modality": false,
+    "AlternativeSplicing": false,
+    "RareCells": false,
+    "StemCells": false,
+    "Immune": false,
+    "Variants": false,
+    "Haplotypes": false,
+    "AlleleSpecific": false,
+    "Visualisation": true,
+    "Interactive": false,
+    "Simulation": false,
+    "Added": "2019-01-11",
+    "Updated": "2019-11-01",
+    "Refs": {
+      "Publications": [],
+      "Preprints": [
+        {
+          "Title": "iTALK: an R Package to Characterize and Illustrate Intercellular Communication",
+          "DOI": "10.1101/507871",
+          "Preprint": true,
+          "Citations": 0
+        }
+      ]
+    },
+    "Citations": 0,
+    "Publications": 0,
+    "Preprints": 1,
+    "Github": "Coolgenome/iTALK",
+    "Categories": ["DifferentialExpression", "GeneNetworks", "Visualisation"]
+  },
+  {
     "Name": "iterClust",
     "Platform": "R",
     "DOIs": "10.1093/bioinformatics/bty176",
@@ -7853,7 +8186,7 @@
           "DOI": "10.1038/nbt.3519",
           "PubDate": "2016-04-04",
           "Preprint": false,
-          "Citations": 617
+          "Citations": 645
         }
       ],
       "Preprints": [
@@ -7878,8 +8211,8 @@
   {
     "Name": "kBET",
     "Platform": "R",
-    "DOIs": "10.1101/200345",
-    "PubDates": "PREPRINT",
+    "DOIs": "10.1101/200345;10.1038/s41592-018-0254-1",
+    "PubDates": "PREPRINT;2018-12-20",
     "Code": "https://github.com/theislab/kBET",
     "Description": "An R package to provide a test for batch effects in high-dimensional single-cell RNA sequencing data.",
     "License": "GPL-3",
@@ -7916,20 +8249,28 @@
     "Interactive": false,
     "Simulation": false,
     "Added": "2017-10-10",
-    "Updated": "2017-10-10",
+    "Updated": "2019-01-06",
     "Refs": {
-      "Publications": [],
+      "Publications": [
+        {
+          "Title": "A test metric for assessing single-cell RNA-seq batch correction",
+          "DOI": "10.1038/s41592-018-0254-1",
+          "PubDate": "2018-12-20",
+          "Preprint": false,
+          "Citations": 0
+        }
+      ],
       "Preprints": [
         {
           "Title": "Assessment of batch-correction methods for scRNA-seq data with a new test metric",
           "DOI": "10.1101/200345",
           "Preprint": true,
-          "Citations": 3
+          "Citations": 4
         }
       ]
     },
-    "Citations": 3,
-    "Publications": 0,
+    "Citations": 4,
+    "Publications": 1,
     "Preprints": 1,
     "Github": "theislab/kBET",
     "Categories": ["Integration"]
@@ -8210,8 +8551,8 @@
   {
     "Name": "M3Drop",
     "Platform": "R",
-    "DOIs": "10.1101/065094",
-    "PubDates": "PREPRINT",
+    "DOIs": "10.1101/065094;10.1093/bioinformatics/bty1044",
+    "PubDates": "PREPRINT;2018-12-24",
     "Code": "https://github.com/tallulandrews/M3Drop",
     "Description": "R package providing functions for fitting a modified Michaelis-Menten (MM) equation to the pattern of dropouts observed in a single-cell sequencing experiment.",
     "License": "GPL (>= 2)",
@@ -8246,26 +8587,34 @@
     "AlleleSpecific": false,
     "Visualisation": true,
     "Interactive": false,
-    "Simulation": false,
+    "Simulation": true,
     "Added": "2016-10-10",
-    "Updated": "2016-10-10",
+    "Updated": "2019-01-06",
     "Refs": {
-      "Publications": [],
+      "Publications": [
+        {
+          "Title": "M3Drop: Dropout-based feature selection for scRNASeq",
+          "DOI": "10.1093/bioinformatics/bty1044",
+          "PubDate": "2018-12-24",
+          "Preprint": false,
+          "Citations": 0
+        }
+      ],
       "Preprints": [
         {
           "Title": "Modelling dropouts for feature selection in scRNASeq experiments",
           "DOI": "10.1101/065094",
           "Preprint": true,
-          "Citations": 7
+          "Citations": 8
         }
       ]
     },
-    "Citations": 7,
-    "Publications": 0,
+    "Citations": 8,
+    "Publications": 1,
     "Preprints": 1,
     "Github": "tallulandrews/M3Drop",
     "BioC": "M3Drop",
-    "Categories": ["DifferentialExpression", "MarkerGenes", "Visualisation"]
+    "Categories": ["DifferentialExpression", "MarkerGenes", "Visualisation", "Simulation"]
   },
   {
     "Name": "MAGIC",
@@ -8316,7 +8665,7 @@
           "DOI": "10.1016/j.cell.2018.05.061",
           "PubDate": "2018-06-28",
           "Preprint": false,
-          "Citations": 14
+          "Citations": 18
         }
       ],
       "Preprints": [
@@ -8328,7 +8677,7 @@
         }
       ]
     },
-    "Citations": 26,
+    "Citations": 30,
     "Publications": 1,
     "Preprints": 1,
     "Github": "KrishnaswamyLab/MAGIC",
@@ -8383,12 +8732,12 @@
           "DOI": "10.1186/s13059-015-0844-5",
           "PubDate": "2015-12-10",
           "Preprint": false,
-          "Citations": 132
+          "Citations": 134
         }
       ],
       "Preprints": []
     },
-    "Citations": 132,
+    "Citations": 134,
     "Publications": 1,
     "Preprints": 0,
     "Github": "RGLab/MAST",
@@ -8503,11 +8852,11 @@
           "Title": "matchSCore: Matching Single-Cell Phenotypes Across Tools and Experiments",
           "DOI": "10.1101/314831",
           "Preprint": true,
-          "Citations": 0
+          "Citations": 1
         }
       ]
     },
-    "Citations": 0,
+    "Citations": 1,
     "Publications": 0,
     "Preprints": 1,
     "Github": "elimereu/matchSCore",
@@ -8783,19 +9132,17 @@
           "DOI": "10.1038/s41467-018-03282-0",
           "PubDate": "2018-02-02",
           "Preprint": false,
-          "Citations": 9
+          "Citations": 11
         }
       ],
       "Preprints": [
         {
           "Title": "Addressing the looming identity crisis in single cell RNA-seq",
           "DOI": "10.1101/150524",
-          "Preprint": true,
-          "Citations": 0
+          "Preprint": true
         }
       ]
     },
-    "Citations": 9,
     "Publications": 1,
     "Preprints": 1,
     "Github": "maggiecrow/MetaNeighbor",
@@ -8911,12 +9258,12 @@
           "DOI": "10.1016/j.cell.2016.11.038",
           "PubDate": "2016-12-15",
           "Preprint": false,
-          "Citations": 147
+          "Citations": 152
         }
       ],
       "Preprints": []
     },
-    "Citations": 147,
+    "Citations": 152,
     "Publications": 1,
     "Preprints": 0,
     "Github": "asncd/MIMOSCA",
@@ -9089,21 +9436,21 @@
           "DOI": "10.1038/nbt.2859",
           "PubDate": "2014-04-01",
           "Preprint": false,
-          "Citations": 526
+          "Citations": 538
         },
         {
           "Title": "Single-cell mRNA quantification and differential analysis with Census",
           "DOI": "10.1038/nmeth.4150",
           "PubDate": "2017-01-23",
           "Preprint": false,
-          "Citations": 73
+          "Citations": 75
         },
         {
           "Title": "Reversed graph embedding resolves complex single-cell trajectories",
           "DOI": "10.1038/nmeth.4402",
           "PubDate": "2017-08-21",
           "Preprint": false,
-          "Citations": 89
+          "Citations": 92
         }
       ],
       "Preprints": [
@@ -9115,7 +9462,7 @@
         }
       ]
     },
-    "Citations": 695,
+    "Citations": 712,
     "Publications": 3,
     "Preprints": 1,
     "Github": "cole-trapnell-lab/monocle-release",
@@ -9453,12 +9800,12 @@
           "DOI": "10.1101/gr.239202.118",
           "PubDate": "2018-10-24",
           "Preprint": false,
-          "Citations": 0
+          "Citations": 1
         }
       ],
       "Preprints": []
     },
-    "Citations": 0,
+    "Citations": 1,
     "Publications": 1,
     "Preprints": 0,
     "Github": "Gregor-Mendel-Institute/NanoPARE",
@@ -10116,12 +10463,12 @@
           "DOI": "10.1016/j.molcel.2017.06.003",
           "PubDate": "2017-06-29",
           "Preprint": false,
-          "Citations": 15
+          "Citations": 17
         }
       ],
       "Preprints": []
     },
-    "Citations": 15,
+    "Citations": 17,
     "Publications": 1,
     "Preprints": 0,
     "Github": "YeoLab/outrigger",
@@ -10405,12 +10752,12 @@
           "DOI": "10.1186/s12859-016-0984-y",
           "PubDate": "2016-03-22",
           "Preprint": false,
-          "Citations": 33
+          "Citations": 34
         }
       ],
       "Preprints": []
     },
-    "Citations": 33,
+    "Citations": 34,
     "Publications": 1,
     "Preprints": 0,
     "Github": "JustinaZ/pcaReduce",
@@ -10523,12 +10870,12 @@
           "DOI": "10.1016/j.cels.2017.10.012",
           "PubDate": "2017-11-15",
           "Preprint": false,
-          "Citations": 14
+          "Citations": 15
         }
       ],
       "Preprints": []
     },
-    "Citations": 14,
+    "Citations": 15,
     "Publications": 1,
     "Preprints": 0,
     "Github": "KenLauLab/pCreode",
@@ -11070,12 +11417,12 @@
           "DOI": "10.1093/bioinformatics/bty950",
           "PubDate": "2018-11-16",
           "Preprint": false,
-          "Citations": 0
+          "Citations": 1
         }
       ],
       "Preprints": []
     },
-    "Citations": 0,
+    "Citations": 1,
     "Publications": 1,
     "Preprints": 0,
     "Github": "KenLauLab/NVR",
@@ -11129,12 +11476,12 @@
           "DOI": "10.1016/j.stem.2016.05.010",
           "PubDate": "2016-06-21",
           "Preprint": false,
-          "Citations": 88
+          "Citations": 90
         }
       ],
       "Preprints": []
     },
-    "Citations": 88,
+    "Citations": 90,
     "Publications": 1,
     "Preprints": 0,
     "Github": "dgrun/StemID",
@@ -11312,12 +11659,12 @@
           "DOI": "10.1038/ng.3818",
           "PubDate": "2017-03-20",
           "Preprint": false,
-          "Citations": 73
+          "Citations": 76
         }
       ],
       "Preprints": []
     },
-    "Citations": 73,
+    "Citations": 76,
     "Publications": 1,
     "Preprints": 0,
     "Github": "GIS-SP-Group/RCA",
@@ -11430,12 +11777,12 @@
           "DOI": "10.1038/s41467-017-00039-z",
           "PubDate": "2017-06-19",
           "Preprint": false,
-          "Citations": 4
+          "Citations": 5
         }
       ],
       "Preprints": []
     },
-    "Citations": 4,
+    "Citations": 5,
     "Publications": 1,
     "Preprints": 0,
     "Github": "tinglab/reCAT",
@@ -11547,7 +11894,7 @@
           "DOI": "10.1093/bioinformatics/bty793",
           "PubDate": "2018-09-08",
           "Preprint": false,
-          "Citations": 0
+          "Citations": 1
         }
       ],
       "Preprints": [
@@ -11559,7 +11906,7 @@
         }
       ]
     },
-    "Citations": 2,
+    "Citations": 3,
     "Publications": 1,
     "Preprints": 1,
     "Github": "yycunc/SAFEclustering",
@@ -11721,7 +12068,7 @@
           "DOI": "10.1038/nmeth.4197",
           "PubDate": "2017-03-06",
           "Preprint": false,
-          "Citations": 271
+          "Citations": 289
         }
       ],
       "Preprints": [
@@ -11739,7 +12086,7 @@
         }
       ]
     },
-    "Citations": 310,
+    "Citations": 328,
     "Publications": 1,
     "Preprints": 2,
     "Github": "COMBINE-lab/salmon",
@@ -11912,7 +12259,7 @@
           "DOI": "10.1038/s41592-018-0033-z",
           "PubDate": "2018-06-25",
           "Preprint": false,
-          "Citations": 5
+          "Citations": 6
         }
       ],
       "Preprints": [
@@ -11924,7 +12271,7 @@
         }
       ]
     },
-    "Citations": 9,
+    "Citations": 10,
     "Publications": 1,
     "Preprints": 1,
     "Github": "mohuangx/SAVER",
@@ -12096,7 +12443,7 @@
           "DOI": "10.1038/nmeth.4236",
           "PubDate": "2017-03-27",
           "Preprint": false,
-          "Citations": 114
+          "Citations": 119
         }
       ],
       "Preprints": [
@@ -12108,7 +12455,7 @@
         }
       ]
     },
-    "Citations": 116,
+    "Citations": 121,
     "Publications": 1,
     "Preprints": 1,
     "Github": "hemberg-lab/sc3",
@@ -12164,7 +12511,7 @@
           "DOI": "10.1186/s13059-017-1200-8",
           "PubDate": "2017-04-26",
           "Preprint": false,
-          "Citations": 6
+          "Citations": 8
         }
       ],
       "Preprints": [
@@ -12176,7 +12523,7 @@
         }
       ]
     },
-    "Citations": 6,
+    "Citations": 8,
     "Publications": 1,
     "Preprints": 1,
     "Github": "yuchaojiang/SCALE",
@@ -12291,7 +12638,7 @@
           "DOI": "10.1186/s13059-017-1382-0",
           "PubDate": "2018-02-06",
           "Preprint": false,
-          "Citations": 17
+          "Citations": 20
         }
       ],
       "Preprints": [
@@ -12305,11 +12652,11 @@
           "Title": "Graph abstraction reconciles clustering with trajectory inference through a topology preserving map of single cells",
           "DOI": "10.1101/208819",
           "Preprint": true,
-          "Citations": 1
+          "Citations": 2
         }
       ]
     },
-    "Citations": 19,
+    "Citations": 23,
     "Publications": 1,
     "Preprints": 2,
     "Github": "theislab/scanpy",
@@ -12365,7 +12712,7 @@
           "DOI": "10.1093/bioinformatics/btw777",
           "PubDate": "2017-01-14",
           "Preprint": false,
-          "Citations": 24
+          "Citations": 25
         }
       ],
       "Preprints": [
@@ -12377,7 +12724,7 @@
         }
       ]
     },
-    "Citations": 27,
+    "Citations": 28,
     "Publications": 1,
     "Preprints": 1,
     "Github": "davismcc/scater",
@@ -12679,12 +13026,12 @@
           "DOI": "10.1038/nmeth.2967",
           "PubDate": "2014-07-01",
           "Preprint": false,
-          "Citations": 255
+          "Citations": 264
         }
       ],
       "Preprints": []
     },
-    "Citations": 255,
+    "Citations": 264,
     "Publications": 1,
     "Preprints": 0,
     "Github": "hms-dbmi/scde",
@@ -12751,6 +13098,65 @@
     "Github": "phoenixding/scdiff",
     "PyPI": "scdiff",
     "Categories": ["Ordering", "GeneNetworks", "Visualisation", "Interactive"]
+  },
+  {
+    "Name": "scdNet",
+    "Platform": "MATLAB",
+    "DOIs": "10.1186/s12918-018-0652-0",
+    "PubDates": "2018-12-21",
+    "Code": "https://github.com/ChenLabGCCRI/scdNet",
+    "Description": "scdNet: a computational tool for single-cell differential network analysis",
+    "Assembly": false,
+    "Alignment": false,
+    "UMIs": false,
+    "Quantification": false,
+    "QualityControl": false,
+    "Normalisation": false,
+    "Imputation": false,
+    "Integration": false,
+    "GeneFiltering": false,
+    "Clustering": false,
+    "Classification": false,
+    "Ordering": false,
+    "DifferentialExpression": false,
+    "MarkerGenes": false,
+    "ExpressionPatterns": false,
+    "VariableGenes": false,
+    "GeneSets": true,
+    "GeneNetworks": true,
+    "CellCycle": false,
+    "DimensionalityReduction": false,
+    "Transformation": false,
+    "Modality": false,
+    "AlternativeSplicing": false,
+    "RareCells": false,
+    "StemCells": false,
+    "Immune": false,
+    "Variants": false,
+    "Haplotypes": false,
+    "AlleleSpecific": false,
+    "Visualisation": false,
+    "Interactive": false,
+    "Simulation": false,
+    "Added": "2019-01-06",
+    "Updated": "2019-01-06",
+    "Refs": {
+      "Publications": [
+        {
+          "Title": "scdNet: a computational tool for single-cell differential network analysis",
+          "DOI": "10.1186/s12918-018-0652-0",
+          "PubDate": "2018-12-21",
+          "Preprint": false,
+          "Citations": 1
+        }
+      ],
+      "Preprints": []
+    },
+    "Citations": 1,
+    "Publications": 1,
+    "Preprints": 0,
+    "Github": "ChenLabGCCRI/scdNet",
+    "Categories": ["GeneSets", "GeneNetworks"]
   },
   {
     "Name": "sceb",
@@ -12980,7 +13386,7 @@
           "DOI": "10.1038/nmeth.4463",
           "PubDate": "2017-10-09",
           "Preprint": false,
-          "Citations": 38
+          "Citations": 40
         }
       ],
       "Preprints": [
@@ -12992,7 +13398,7 @@
         }
       ]
     },
-    "Citations": 39,
+    "Citations": 41,
     "Publications": 1,
     "Preprints": 1,
     "Github": "aertslab/SCENIC",
@@ -13048,7 +13454,7 @@
           "DOI": "10.1038/ncomms15599",
           "PubDate": "2017-06-01",
           "Preprint": false,
-          "Citations": 16
+          "Citations": 17
         }
       ],
       "Preprints": [
@@ -13060,7 +13466,7 @@
         }
       ]
     },
-    "Citations": 17,
+    "Citations": 18,
     "Publications": 1,
     "Preprints": 1,
     "Github": "aet21/SCENT",
@@ -13682,7 +14088,7 @@
           "DOI": "10.1038/s41467-018-03405-7",
           "PubDate": "2018-03-08",
           "Preprint": false,
-          "Citations": 15
+          "Citations": 17
         }
       ],
       "Preprints": [
@@ -13694,7 +14100,7 @@
         }
       ]
     },
-    "Citations": 22,
+    "Citations": 24,
     "Publications": 1,
     "Preprints": 1,
     "Github": "Vivianstats/scImpute",
@@ -13795,12 +14201,12 @@
           "DOI": "10.1038/nbt.3102",
           "PubDate": "2015-02-01",
           "Preprint": false,
-          "Citations": 335
+          "Citations": 340
         }
       ],
       "Preprints": []
     },
-    "Citations": 335,
+    "Citations": 340,
     "Publications": 1,
     "Preprints": 0,
     "Github": "PMBio/scLVM",
@@ -13856,7 +14262,7 @@
           "DOI": "10.1038/nmeth.4644",
           "PubDate": "2018-04-02",
           "Preprint": false,
-          "Citations": 15
+          "Citations": 18
         }
       ],
       "Preprints": [
@@ -13868,7 +14274,7 @@
         }
       ]
     },
-    "Citations": 18,
+    "Citations": 21,
     "Publications": 1,
     "Preprints": 1,
     "Github": "hemberg-lab/scmap",
@@ -13983,12 +14389,12 @@
           "DOI": "10.1016/j.cell.2018.02.001",
           "PubDate": "2018-02-22",
           "Preprint": false,
-          "Citations": 55
+          "Citations": 59
         }
       ],
       "Preprints": []
     },
-    "Citations": 55,
+    "Citations": 59,
     "Publications": 1,
     "Preprints": 0,
     "Github": "ggjlab/scMCA",
@@ -14160,7 +14566,7 @@
           "DOI": "10.1038/nmeth.4263",
           "PubDate": "2017-04-17",
           "Preprint": false,
-          "Citations": 29
+          "Citations": 30
         }
       ],
       "Preprints": [
@@ -14172,7 +14578,7 @@
         }
       ]
     },
-    "Citations": 29,
+    "Citations": 30,
     "Publications": 1,
     "Preprints": 1,
     "Github": "rhondabacher/SCnorm",
@@ -14347,11 +14753,11 @@
           "Title": "Performance Assessment and Selection of Normalization Procedures for Single-Cell RNA-Seq",
           "DOI": "10.1101/235382",
           "Preprint": true,
-          "Citations": 0
+          "Citations": 1
         }
       ]
     },
-    "Citations": 0,
+    "Citations": 1,
     "Publications": 0,
     "Preprints": 1,
     "Github": "YosefLab/scone",
@@ -14407,7 +14813,7 @@
           "DOI": "10.1016/j.cell.2018.05.057",
           "PubDate": "2018-06-14",
           "Preprint": false,
-          "Citations": 11
+          "Citations": 13
         }
       ],
       "Preprints": [
@@ -14419,7 +14825,7 @@
         }
       ]
     },
-    "Citations": 13,
+    "Citations": 15,
     "Publications": 1,
     "Preprints": 1,
     "Github": "aertslab/SCope",
@@ -14700,7 +15106,7 @@
           "DOI": "10.1371/journal.pcbi.1006361",
           "PubDate": "2018-08-10",
           "Preprint": false,
-          "Citations": 2
+          "Citations": 3
         }
       ],
       "Preprints": [
@@ -14712,7 +15118,7 @@
         }
       ]
     },
-    "Citations": 4,
+    "Citations": 5,
     "Publications": 1,
     "Preprints": 1,
     "Github": "LuyiTian/scPipe",
@@ -14887,14 +15293,14 @@
           "DOI": "10.1186/s13059-016-0947-7",
           "PubDate": "2016-04-27",
           "Preprint": false,
-          "Citations": 91
+          "Citations": 94
         },
         {
           "Title": "Batch effects in single-cell RNA-sequencing data are corrected by matching mutual nearest neighbors",
           "DOI": "10.1038/nbt.4091",
           "PubDate": "2018-04-02",
           "Preprint": false,
-          "Citations": 29
+          "Citations": 31
         }
       ],
       "Preprints": [
@@ -14906,7 +15312,7 @@
         }
       ]
     },
-    "Citations": 123,
+    "Citations": 128,
     "Publications": 2,
     "Preprints": 1,
     "Github": "MarioniLab/scran",
@@ -15126,11 +15532,11 @@
           "Title": "Scrublet: computational identification of cell doublets in single-cell transcriptomic data",
           "DOI": "10.1101/357368",
           "Preprint": true,
-          "Citations": 1
+          "Citations": 2
         }
       ]
     },
-    "Citations": 1,
+    "Citations": 2,
     "Publications": 0,
     "Preprints": 1,
     "Github": "AllonKleinLab/scrublet",
@@ -15720,12 +16126,12 @@
           "DOI": "10.1186/s12864-016-2897-6",
           "PubDate": "2016-08-22",
           "Preprint": false,
-          "Citations": 3
+          "Citations": 4
         }
       ],
       "Preprints": []
     },
-    "Citations": 3,
+    "Citations": 4,
     "Publications": 1,
     "Preprints": 0,
     "Github": "hillas/scVEGs",
@@ -15905,12 +16311,12 @@
           "DOI": "10.1093/bib/bbx074",
           "PubDate": "2017-07-07",
           "Preprint": false,
-          "Citations": 2
+          "Citations": 1
         }
       ],
       "Preprints": []
     },
-    "Citations": 2,
+    "Citations": 1,
     "Publications": 1,
     "Preprints": 0,
     "Categories": ["GeneFiltering", "MarkerGenes"]
@@ -16012,14 +16418,14 @@
           "DOI": "10.1038/nbt.3192",
           "PubDate": "2015-04-13",
           "Preprint": false,
-          "Citations": 381
+          "Citations": 388
         },
         {
           "Title": "Integrating single-cell transcriptomic data across different conditions, technologies, and species",
           "DOI": "10.1038/nbt.4096",
           "PubDate": "2018-04-02",
           "Preprint": false,
-          "Citations": 86
+          "Citations": 99
         }
       ],
       "Preprints": [
@@ -16037,7 +16443,7 @@
         }
       ]
     },
-    "Citations": 475,
+    "Citations": 495,
     "Publications": 2,
     "Preprints": 2,
     "Github": "satijalab/seurat",
@@ -16329,7 +16735,7 @@
           "DOI": "10.1038/nmeth.4207",
           "PubDate": "2017-03-06",
           "Preprint": false,
-          "Citations": 46
+          "Citations": 49
         },
         {
           "Title": "SIMLR: A Tool for Large-Scale Genomic Analyses by Multi-Kernel Learning",
@@ -16348,7 +16754,7 @@
         }
       ]
     },
-    "Citations": 51,
+    "Citations": 54,
     "Publications": 2,
     "Preprints": 1,
     "Github": "BatzoglouLabSU/SIMLR",
@@ -16471,7 +16877,7 @@
           "DOI": "10.1371/journal.pcbi.1004575",
           "PubDate": "2015-11-04",
           "Preprint": false,
-          "Citations": 61
+          "Citations": 62
         },
         {
           "Title": "Single-Cell Transcriptome Analysis Using SINCERA Pipeline",
@@ -16483,7 +16889,7 @@
       ],
       "Preprints": []
     },
-    "Citations": 61,
+    "Citations": 62,
     "Publications": 2,
     "Preprints": 0,
     "Github": "xu-lab/SINCERA",
@@ -17179,12 +17585,12 @@
           "DOI": "10.1186/s13059-016-0975-3",
           "PubDate": "2016-05-23",
           "Preprint": false,
-          "Citations": 34
+          "Citations": 35
         }
       ],
       "Preprints": []
     },
-    "Citations": 34,
+    "Citations": 35,
     "Publications": 1,
     "Preprints": 0,
     "Github": "jw156605/SLICER",
@@ -17194,8 +17600,8 @@
   {
     "Name": "slingshot",
     "Platform": "R",
-    "DOIs": "10.1101/128843",
-    "PubDates": "PREPRINT",
+    "DOIs": "10.1101/128843;10.1186/s12864-018-4772-0",
+    "PubDates": "PREPRINT;2018-06-19",
     "Code": "https://github.com/kstreet13/slingshot",
     "Description": "Functions for identifying and characterizing continuous developmental trajectories in single-cell sequencing data.",
     "License": "Artistic-2.0",
@@ -17218,7 +17624,7 @@
     "GeneSets": false,
     "GeneNetworks": false,
     "CellCycle": false,
-    "DimensionalityReduction": false,
+    "DimensionalityReduction": true,
     "Transformation": false,
     "Modality": false,
     "AlternativeSplicing": false,
@@ -17228,13 +17634,21 @@
     "Variants": false,
     "Haplotypes": false,
     "AlleleSpecific": false,
-    "Visualisation": false,
+    "Visualisation": true,
     "Interactive": false,
     "Simulation": false,
     "Added": "2016-09-09",
-    "Updated": "2018-01-19",
+    "Updated": "2019-01-06",
     "Refs": {
-      "Publications": [],
+      "Publications": [
+        {
+          "Title": "Slingshot: cell lineage and pseudotime inference for single-cell transcriptomics",
+          "DOI": "10.1186/s12864-018-4772-0",
+          "PubDate": "2018-06-19",
+          "Preprint": false,
+          "Citations": 7
+        }
+      ],
       "Preprints": [
         {
           "Title": "Slingshot: Cell lineage and pseudotime inference for single-cell transcriptomics",
@@ -17244,12 +17658,12 @@
         }
       ]
     },
-    "Citations": 5,
-    "Publications": 0,
+    "Citations": 12,
+    "Publications": 1,
     "Preprints": 1,
     "Github": "kstreet13/slingshot",
     "BioC": "slingshot",
-    "Categories": ["Ordering"]
+    "Categories": ["Ordering", "DimensionalityReduction", "Visualisation"]
   },
   {
     "Name": "SNN-Cliq",
@@ -17299,12 +17713,12 @@
           "DOI": "10.1093/bioinformatics/btv088",
           "PubDate": "2015-02-11",
           "Preprint": false,
-          "Citations": 84
+          "Citations": 86
         }
       ],
       "Preprints": []
     },
-    "Citations": 84,
+    "Citations": 86,
     "Publications": 1,
     "Preprints": 0,
     "Categories": ["Clustering"]
@@ -17367,6 +17781,66 @@
     "Preprints": 1,
     "Github": "WangShuxiong/SoptSC",
     "Categories": ["Clustering", "Ordering", "DimensionalityReduction", "Visualisation"]
+  },
+  {
+    "Name": "SOUP",
+    "Platform": "R",
+    "DOIs": "10.1073/pnas.1817715116",
+    "PubDates": "2018-12-26",
+    "Code": "https://github.com/lingxuez/SOUPR",
+    "Description": "SOUP, for Semi-sOft clUstering with Pure cells, is a clustering method for single cell data.",
+    "License": "GPL (>=2)",
+    "Assembly": false,
+    "Alignment": false,
+    "UMIs": false,
+    "Quantification": false,
+    "QualityControl": false,
+    "Normalisation": false,
+    "Imputation": false,
+    "Integration": false,
+    "GeneFiltering": false,
+    "Clustering": true,
+    "Classification": false,
+    "Ordering": true,
+    "DifferentialExpression": false,
+    "MarkerGenes": false,
+    "ExpressionPatterns": false,
+    "VariableGenes": true,
+    "GeneSets": false,
+    "GeneNetworks": false,
+    "CellCycle": false,
+    "DimensionalityReduction": false,
+    "Transformation": false,
+    "Modality": false,
+    "AlternativeSplicing": false,
+    "RareCells": false,
+    "StemCells": false,
+    "Immune": false,
+    "Variants": false,
+    "Haplotypes": false,
+    "AlleleSpecific": false,
+    "Visualisation": true,
+    "Interactive": false,
+    "Simulation": false,
+    "Added": "2019-01-11",
+    "Updated": "2019-01-11",
+    "Refs": {
+      "Publications": [
+        {
+          "Title": "Semisoft clustering of single-cell data",
+          "DOI": "10.1073/pnas.1817715116",
+          "PubDate": "2018-12-26",
+          "Preprint": false,
+          "Citations": 0
+        }
+      ],
+      "Preprints": []
+    },
+    "Citations": 0,
+    "Publications": 1,
+    "Preprints": 0,
+    "Github": "lingxuez/SOUPR",
+    "Categories": ["Clustering", "Ordering", "VariableGenes", "Visualisation"]
   },
   {
     "Name": "SoupX",
@@ -17476,7 +17950,7 @@
           "DOI": "10.1038/nbt.1991",
           "PubDate": "2011-11-02",
           "Preprint": false,
-          "Citations": 374
+          "Citations": 377
         },
         {
           "Title": "Visualization and cellular hierarchy inference of single-cell data using SPADE",
@@ -17488,7 +17962,7 @@
       ],
       "Preprints": []
     },
-    "Citations": 407,
+    "Citations": 410,
     "Publications": 2,
     "Preprints": 0,
     "Github": "nolanlab/spade",
@@ -17543,12 +18017,12 @@
           "DOI": "10.1093/nar/gkx1113",
           "PubDate": "2017-11-13",
           "Preprint": false,
-          "Citations": 1
+          "Citations": 2
         }
       ],
       "Preprints": []
     },
-    "Citations": 1,
+    "Citations": 2,
     "Publications": 1,
     "Preprints": 0,
     "Github": "cran/SparseDC",
@@ -17604,7 +18078,7 @@
           "DOI": "10.1186/s13059-017-1305-0",
           "PubDate": "2017-09-12",
           "Preprint": false,
-          "Citations": 19
+          "Citations": 21
         }
       ],
       "Preprints": [
@@ -17616,7 +18090,7 @@
         }
       ]
     },
-    "Citations": 21,
+    "Citations": 23,
     "Publications": 1,
     "Preprints": 1,
     "Github": "Oshlack/splatter",
@@ -17855,12 +18329,12 @@
           "DOI": "10.1016/j.stem.2016.05.010",
           "PubDate": "2016-06-21",
           "Preprint": false,
-          "Citations": 88
+          "Citations": 90
         }
       ],
       "Preprints": []
     },
-    "Citations": 88,
+    "Citations": 90,
     "Publications": 1,
     "Preprints": 0,
     "Github": "dgrun/StemID",
@@ -18048,8 +18522,8 @@
   {
     "Name": "SWNE",
     "Platform": "R/C++",
-    "DOIs": "10.1101/276261",
-    "PubDates": "PREPRINT",
+    "DOIs": "10.1101/276261;10.1016/j.cels.2018.10.015",
+    "PubDates": "PREPRINT;2018-12-05",
     "Code": "https://github.com/yanwu2014/swne",
     "Description": "Similarity Weighted Nonnegative Embedding (SWNE), is a method for visualizing high dimensional datasets.",
     "License": "GPL-2",
@@ -18086,9 +18560,17 @@
     "Interactive": false,
     "Simulation": false,
     "Added": "2018-03-08",
-    "Updated": "2018-03-08",
+    "Updated": "2019-01-06",
     "Refs": {
-      "Publications": [],
+      "Publications": [
+        {
+          "Title": "Visualizing and Interpreting Single-Cell Gene Expression Datasets with Similarity Weighted Nonnegative Embedding",
+          "DOI": "10.1016/j.cels.2018.10.015",
+          "PubDate": "2018-12-05",
+          "Preprint": false,
+          "Citations": 1
+        }
+      ],
       "Preprints": [
         {
           "Title": "Visualizing single-cell RNA-seq datasets with Similarity Weighted Nonnegative Embedding",
@@ -18098,8 +18580,8 @@
         }
       ]
     },
-    "Citations": 0,
-    "Publications": 0,
+    "Citations": 1,
+    "Publications": 1,
     "Preprints": 1,
     "Github": "yanwu2014/swne",
     "Categories": ["Normalisation", "DimensionalityReduction", "Visualisation"]
@@ -18573,12 +19055,12 @@
           "DOI": "10.1038/nmeth.3800",
           "PubDate": "2016-03-07",
           "Preprint": false,
-          "Citations": 102
+          "Citations": 103
         }
       ],
       "Preprints": []
     },
-    "Citations": 102,
+    "Citations": 103,
     "Publications": 1,
     "Preprints": 0,
     "Github": "teichlab/tracer",
@@ -18694,12 +19176,12 @@
           "DOI": "10.1038/nmeth.4634",
           "PubDate": "2018-03-19",
           "Preprint": false,
-          "Citations": 3
+          "Citations": 5
         }
       ],
       "Preprints": []
     },
-    "Citations": 3,
+    "Citations": 5,
     "Publications": 1,
     "Preprints": 0,
     "Github": "edsgard/trendsceek",
@@ -18821,17 +19303,76 @@
           "DOI": "10.1093/nar/gkw430",
           "PubDate": "2016-05-13",
           "Preprint": false,
-          "Citations": 73
+          "Citations": 75
         }
       ],
       "Preprints": []
     },
-    "Citations": 73,
+    "Citations": 75,
     "Publications": 1,
     "Preprints": 0,
     "Github": "zji90/TSCAN",
     "BioC": "TSCAN",
     "Categories": ["Clustering", "Ordering", "MarkerGenes", "Visualisation", "Interactive"]
+  },
+  {
+    "Name": "txburst",
+    "Platform": "Python",
+    "DOIs": "10.1038/s41586-018-0836-1",
+    "PubDates": "2019-01-02",
+    "Code": "https://github.com/sandberg-lab/txburst",
+    "Description": "Transcriptional burst kinetics inference and analysis from allelic single-cell RNA-seq",
+    "Assembly": false,
+    "Alignment": false,
+    "UMIs": false,
+    "Quantification": false,
+    "QualityControl": false,
+    "Normalisation": false,
+    "Imputation": false,
+    "Integration": false,
+    "GeneFiltering": false,
+    "Clustering": false,
+    "Classification": false,
+    "Ordering": false,
+    "DifferentialExpression": false,
+    "MarkerGenes": false,
+    "ExpressionPatterns": false,
+    "VariableGenes": false,
+    "GeneSets": false,
+    "GeneNetworks": false,
+    "CellCycle": false,
+    "DimensionalityReduction": false,
+    "Transformation": false,
+    "Modality": false,
+    "AlternativeSplicing": false,
+    "RareCells": false,
+    "StemCells": false,
+    "Immune": false,
+    "Variants": false,
+    "Haplotypes": false,
+    "AlleleSpecific": true,
+    "Visualisation": false,
+    "Interactive": false,
+    "Simulation": false,
+    "Added": "2019-01-11",
+    "Updated": "2019-01-11",
+    "Refs": {
+      "Publications": [
+        {
+          "Title": "Genomic encoding of transcriptional burst kinetics",
+          "DOI": "10.1038/s41586-018-0836-1",
+          "PubDate": "2019-01-02",
+          "Preprint": false,
+          "Citations": 0
+        }
+      ],
+      "Preprints": []
+    },
+    "Citations": 0,
+    "Publications": 1,
+    "Preprints": 0,
+    "Github": "sandberg-lab/txburst",
+    "Categories": ["AlleleSpecific"]
   },
   {
     "Name": "UMI_analysis",
@@ -18996,7 +19537,7 @@
           "DOI": "10.1038/nmeth.4220",
           "PubDate": "2017-03-06",
           "Preprint": false,
-          "Citations": 91
+          "Citations": 94
         }
       ],
       "Preprints": [
@@ -19008,7 +19549,7 @@
         }
       ]
     },
-    "Citations": 91,
+    "Citations": 94,
     "Publications": 1,
     "Preprints": 1,
     "Github": "vals/umis",
@@ -19132,12 +19673,12 @@
           "DOI": "10.1126/science.aar3131",
           "PubDate": "2018-04-26",
           "Preprint": false,
-          "Citations": 25
+          "Citations": 28
         }
       ],
       "Preprints": []
     },
-    "Citations": 25,
+    "Citations": 28,
     "Publications": 1,
     "Preprints": 0,
     "Github": "farrellja/URD",
@@ -19300,8 +19841,8 @@
   {
     "Name": "VASC",
     "Platform": "Python",
-    "DOIs": "10.1101/199315",
-    "PubDates": "PREPRINT",
+    "DOIs": "10.1101/199315;10.1016/j.gpb.2018.08.003",
+    "PubDates": "PREPRINT;2018-12-18",
     "Code": "https://github.com/wang-research/VASC",
     "Description": "Variational autoencoder for single cell RNA-seq datasets",
     "Assembly": false,
@@ -19337,9 +19878,17 @@
     "Interactive": false,
     "Simulation": false,
     "Added": "2017-12-20",
-    "Updated": "2017-12-20",
+    "Updated": "2019-01-06",
     "Refs": {
-      "Publications": [],
+      "Publications": [
+        {
+          "Title": "VASC: Dimension Reduction and Visualization of Single-cell RNA-seq Data by Deep Variational Autoencoder",
+          "DOI": "10.1016/j.gpb.2018.08.003",
+          "PubDate": "2018-12-18",
+          "Preprint": false,
+          "Citations": 0
+        }
+      ],
       "Preprints": [
         {
           "Title": "VASC: dimension reduction and visualization of single cell RNA sequencing data by deep variational autoencoder",
@@ -19350,7 +19899,7 @@
       ]
     },
     "Citations": 0,
-    "Publications": 0,
+    "Publications": 1,
     "Preprints": 1,
     "Github": "wang-research/VASC",
     "Categories": ["DimensionalityReduction", "Visualisation"]
@@ -19776,12 +20325,12 @@
           "DOI": "10.1038/nbt.3569",
           "PubDate": "2016-05-02",
           "Preprint": false,
-          "Citations": 136
+          "Citations": 138
         }
       ],
       "Preprints": []
     },
-    "Citations": 136,
+    "Citations": 138,
     "Publications": 1,
     "Preprints": 0,
     "Github": "ManuSetty/wishbone",
@@ -19836,12 +20385,12 @@
           "DOI": "10.1186/s13059-015-0805-z",
           "PubDate": "2015-11-02",
           "Preprint": false,
-          "Citations": 103
+          "Citations": 104
         }
       ],
       "Preprints": []
     },
-    "Citations": 103,
+    "Citations": 104,
     "Publications": 1,
     "Preprints": 0,
     "Github": "epierson9/ZIFA",
@@ -20033,7 +20582,7 @@
           "DOI": "10.1093/gigascience/giy059",
           "PubDate": "2018-05-26",
           "Preprint": false,
-          "Citations": 6
+          "Citations": 7
         }
       ],
       "Preprints": [
@@ -20045,7 +20594,7 @@
         }
       ]
     },
-    "Citations": 8,
+    "Citations": 9,
     "Publications": 1,
     "Preprints": 1,
     "Github": "sdparekh/zUMIs",

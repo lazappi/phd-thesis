@@ -21,6 +21,7 @@ _bookdown_files/
 
 # Output
 docs/
+figures/
 
 # VS Code
 .vscode

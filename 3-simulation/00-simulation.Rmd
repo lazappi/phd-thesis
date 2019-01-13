@@ -1,4 +1,4 @@
 # Simulating scRNA-seq data {#simulation}
 
-```{r simulation-sections, child = c("3-simulation/01-introduction.Rmd", "3-simulation/02-publication.Rmd")}
+```{r simulation-sections, child = c("3-simulation/01-introduction.Rmd", "3-simulation/02-publication.Rmd", "3-simulation/03-update.Rmd")}
 ```

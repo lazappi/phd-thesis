@@ -36,18 +36,33 @@ additions <- list(
         section = "docs/thesis.tex",
         added = "2018-10-30",
         counts = c(Text = 8848L, Headers = 69L, Captions = 600L)
+    ),
+    list(
+        section = "scRNA-tools publication",
+        added = lubridate::ymd_hm("2019-01-12 17:00", tz = Sys.timezone()),
+        counts = c(Text = 4883L, Headers = 49L, Captions = 1305L)
+    ),
+    list(
+        section = "The scRNA-seq tools landscape",
+        added = lubridate::ymd_hm("2019-01-12 17:00", tz = Sys.timezone()),
+        counts = c(Text = 4883L, Headers = 49L, Captions = 1305L)
+    ),
+    list(
+        section = "docs/thesis.tex",
+        added = lubridate::ymd_hm("2019-01-12 17:00", tz = Sys.timezone()),
+        counts = c(Text = 4883L, Headers = 49L, Captions = 1305L)
     )
 )
 
 for (add in additions) {
     words <- words %>%
-        mutate(Text = if_else(Name == add$section & Date >= add$added,
+        mutate(Text = if_else(Name == add$section & Datetime >= add$added,
                               Text + add$counts["Text"], Text),
-               Headers = if_else(Name == add$section & Date >= add$added,
+               Headers = if_else(Name == add$section & Datetime >= add$added,
                                  Headers + add$counts["Headers"], Headers),
-               Captions = if_else(Name == add$section & Date >= add$added,
+               Captions = if_else(Name == add$section & Datetime >= add$added,
                                   Captions + add$counts["Captions"], Captions),
-               Total = if_else(Name == add$section & Date >= add$added,
+               Total = if_else(Name == add$section & Datetime >= add$added,
                                Total + sum(add$counts), Total))
 }
 
@@ -84,7 +99,8 @@ milestones <- tribble(
     ~From,              ~To,                ~Text,
     "2018-10-16 10:56",                 NA, "Initial commit",
     "2018-10-30 15:10",                 NA, "Add Splatter publication",
-    "2018-11-23 15:00", "2018-11-25 19:30", "Thesis bootcamp"
+    "2018-11-23 15:00", "2018-11-25 19:30", "Thesis bootcamp",
+    "2019-01-12 17:20",                 NA, "Add scRNA-tools publication"
 ) %>%
     mutate(From = lubridate::ymd_hm(From, tz = Sys.timezone()),
            To   = lubridate::ymd_hm(To, tz = Sys.timezone()))
