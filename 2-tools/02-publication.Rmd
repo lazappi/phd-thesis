@@ -7,8 +7,8 @@ pages <- 1:14
 link <- "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006245"
 
 if (tex) {
-    glue::glue("\\frame{\\includegraphics[page=<pages>, width=\\textwidth]{<pdf>}}",
-           .open = "<", .close = ">")
+    glue::glue("\\frame{\\includegraphics[page=<pages>, width=\\textwidth]{<pdf>}}\\clearpage",
+               .open = "<", .close = ">")
 } else {
     glue::glue("You can read the {name} paper [here]({link}).")
 }
