@@ -1,5 +1,19 @@
 ## Overlaying clustering trees
 
+In the clustering trees publication we focused on the use of the visualisation
+as a tool for selecting a clustering resolution but more generally it can be
+used to display information across the resolution dimension. The visualisation
+that is most commonly used to display scRNA-seq data is the dimensionality
+reduction plot produced using method such as PCA, t-SNE or UMAP. Here each point
+is a cell placed in a two-dimensional space and coloured using factors such as
+the assigned cluster or the expression level of a gene. If you compare the two
+visualisation the dimensionality reduction plot shows information about each
+individual sample while the clustering tree trades that cell level resolution
+for a summarised view of each cluster and adds a new resolution dimension. It
+is possible to combine these two approaches by overlaying a clustering tree on
+to a dimensionality reduction plot. Figure \@ref(fig:clustree-overlay) shows an
+example of this using the iris dataset.
+
 ```{r clustree-overlay, fig.cap = "(ref:cap-clustree-overlay)", fig.scap = "(ref:clustree-overlay)", out.width = "100%"}
 overlay_list <- clustree_overlay(iris_clusts, prefix = "K",
                                  x_value = "PC1", y_value = "PC2",
@@ -14,7 +28,8 @@ overlay <- overlay_list$overlay +
                title.hjust    = 0.5,
                label.position = "top",
                label.hjust    = 0.5,
-               order          = 1),
+               order          = 1
+            ),
            fill = guide_legend(
                title          = "Cluster K",
                title.position = "top",
@@ -32,7 +47,8 @@ overlay <- overlay_list$overlay +
                label.hjust    = 0.5,
                keywidth       = 2,
                override.aes   = list(size = 2),
-               order          = 3),
+               order          = 3
+            ),
            colour = guide_legend(
                title          = "Sample K5 cluster",
                title.position = "top",
@@ -40,8 +56,8 @@ overlay <- overlay_list$overlay +
                label.position = "top",
                label.hjust    = 0.5,
                override.aes   = list(size = 8),
-               order          = 4)
-            ) +
+               order          = 4
+            )) +
     theme(legend.position = "bottom")
 
 legend  <- get_legend(overlay)
@@ -69,3 +85,19 @@ knitr::include_graphics(here::here("figures/clustree_overlay.png"))
 (ref:scap-clustree-overlay) Clustering tree of the iris dataset overlaid on a PCA plot.
 
 (ref:cap-clustree-overlay) Clustering tree of the iris dataset overlaid on a PCA plot. (A) A PCA plot of the samples in the iris dataset coloured by cluster at $k = 5$ overlaid with a clustering tree showing clustering resolutions from $k = 1$ to $k = 5$. (B) The same plot show from the direction of the x-axis (PC1), the y-axis now shows the clustering resolution and samples are jittered along the x-axis. (C) Same as (B) but from the direction of PC2.
+
+Here instead of using a tree layout algorithm to decide where the cluster nodes
+are placed we place them at the mean position of the samples in each cluster.
+The easiest way to view this overlaid plot (Figure \@ref(fig:clustree-overlay)A)
+is to imagine looking down on a landscape from above. On the ground we have the
+individual sample points (coloured by their highest resolution cluster) and
+rising up from that we have the clustering tree with the highest resolutions
+placed closest to the ground and the lowest resolution at the top. As we step
+down the clustering tree we can see where in this space new clusters are
+forming. Figures \@ref(fig:clustree-overlay) B and C show this same view but
+from a different perspective. Here imaging standing on the ground at the same
+level as the samples and looking towards the clustering tree. Now the x-axis
+shows one of the reduced dimensions (PC1 or PC2) and the y-axis show the
+resolution dimension. Looking at a clustering tree in this way shows an
+alternative view where the focus is less on the structure of the tree itself and
+more on how it fits into a space that researchers are more familiar with. 
