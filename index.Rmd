@@ -173,6 +173,9 @@ library("ggplot2")
 library("cowplot")
 library("RColorBrewer")
 
+# Clustering trees
+library("clustree")
+
 # JSON
 library("jsonlite")
 

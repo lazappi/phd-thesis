@@ -1,0 +1,71 @@
+## Overlaying clustering trees
+
+```{r clustree-overlay, fig.cap = "(ref:cap-clustree-overlay)", fig.scap = "(ref:clustree-overlay)", out.width = "100%"}
+overlay_list <- clustree_overlay(iris_clusts, prefix = "K",
+                                 x_value = "PC1", y_value = "PC2",
+                                 use_colour = "points", point_alpha = 0.4,
+                                 plot_sides = TRUE)
+
+
+overlay <- overlay_list$overlay +
+    guides(size = guide_legend(
+               title          = "Cluster size",
+               title.position = "top",
+               title.hjust    = 0.5,
+               label.position = "top",
+               label.hjust    = 0.5,
+               order          = 1),
+           fill = guide_legend(
+               title          = "Cluster K",
+               title.position = "top",
+               title.hjust    = 0.5,
+               label.position = "top",
+               label.hjust    = 0.5,
+               override.aes   = list(size = 8),
+               order          = 2
+           ),
+           alpha = guide_legend(
+               title          = "In-proportion",
+               title.position = "top",
+               title.hjust    = 0.5,
+               label.position = "top",
+               label.hjust    = 0.5,
+               keywidth       = 2,
+               override.aes   = list(size = 2),
+               order          = 3),
+           colour = guide_legend(
+               title          = "Sample K5 cluster",
+               title.position = "top",
+               title.hjust    = 0.5,
+               label.position = "top",
+               label.hjust    = 0.5,
+               override.aes   = list(size = 8),
+               order          = 4)
+            ) +
+    theme(legend.position = "bottom")
+
+legend  <- get_legend(overlay)
+overlay <- overlay_list$overlay + theme(legend.position = "none")
+x_side  <- overlay_list$x_side  + theme(legend.position = "none")
+y_side  <- overlay_list$y_side  + theme(legend.position = "none")
+
+p1 <- plot_grid(x_side, y_side, ncol = 1,
+                hjust = 0, labels = c("B", "C"))
+
+p2 <- plot_grid(overlay, p1, nrow = 1,
+                hjust = 0, labels = c("A", ""))
+
+panel <- plot_grid(p2, legend, ncol = 1, rel_heights = c(1, 0.1))
+
+
+ggsave(here("figures/clustree_overlay.pdf"), panel,
+       height = 6, width = 8, scale = 2)
+ggsave(here("figures/clustree_overlay.png"), panel,
+       height = 6, width = 8, scale = 2)
+
+knitr::include_graphics(here::here("figures/clustree_overlay.png"))
+```
+
+(ref:scap-clustree-overlay) Clustering tree of the iris dataset overlaid on a PCA plot.
+
+(ref:cap-clustree-overlay) Clustering tree of the iris dataset overlaid on a PCA plot. (A) A PCA plot of the samples in the iris dataset coloured by cluster at $k = 5$ overlaid with a clustering tree showing clustering resolutions from $k = 1$ to $k = 5$. (B) The same plot show from the direction of the x-axis (PC1), the y-axis now shows the clustering resolution and samples are jittered along the x-axis. (C) Same as (B) but from the direction of PC2.
