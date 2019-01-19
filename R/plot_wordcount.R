@@ -51,6 +51,21 @@ additions <- list(
         section = "docs/thesis.tex",
         added = lubridate::ymd_hm("2019-01-12 17:00", tz = Sys.timezone()),
         counts = c(Text = 4883L, Headers = 49L, Captions = 1305L)
+    ),
+        list(
+        section = "Clustering trees publication",
+        added = lubridate::ymd_hm("2019-01-19 14:30", tz = Sys.timezone()),
+        counts = c(Text = 3904L, Headers = 37L, Captions = 804L)
+    ),
+    list(
+        section = "Visualising clustering across resolutions",
+        added = lubridate::ymd_hm("2019-01-19 14:30", tz = Sys.timezone()),
+        counts = c(Text = 3904L, Headers = 37L, Captions = 804L)
+    ),
+    list(
+        section = "docs/thesis.tex",
+        added = lubridate::ymd_hm("2019-01-19 14:30", tz = Sys.timezone()),
+        counts = c(Text = 3904L, Headers = 37L, Captions = 804L)
     )
 )
 
@@ -101,7 +116,8 @@ milestones <- tribble(
     "2018-10-30 15:10",                 NA, "Add Splatter publication",
     "2018-11-23 15:00", "2018-11-25 19:30", "Thesis bootcamp",
     "2019-01-12 17:20",                 NA, "Add scRNA-tools publication",
-    "2019-01-16 10:55",                 NA, "Fix frontmatter count"
+    "2019-01-16 10:55",                 NA, "Fix frontmatter count",
+    "2019-01-19 14:41",                 NA, "Add clustering trees publication"
 ) %>%
     mutate(From = lubridate::ymd_hm(From, tz = Sys.timezone()),
            To   = lubridate::ymd_hm(To, tz = Sys.timezone()))
