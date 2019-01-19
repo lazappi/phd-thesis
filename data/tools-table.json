@@ -9372,7 +9372,7 @@
     "Refs": {
       "Publications": [
         {
-          "Title": "Multi‐Omics Factor Analysis—a framework for unsupervised integration of multi‐omics data sets",
+          "Title": "Multi-Omics Factor Analysis—a framework for unsupervised integration of multi-omics data sets",
           "DOI": "10.15252/msb.20178124",
           "PubDate": "2018-06-20",
           "Preprint": false,
@@ -19542,7 +19542,7 @@
       ],
       "Preprints": [
         {
-          "Title": "Power Analysis of Single Cell RNA‐Sequencing Experiments",
+          "Title": "Power Analysis of Single Cell RNA-Sequencing Experiments",
           "DOI": "10.1101/073692",
           "Preprint": true,
           "Citations": 0
