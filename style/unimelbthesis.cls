@@ -161,6 +161,40 @@
 }
 
 % *============================================================================*
+%  PAGE FORMATTING
+%
+%  Control how figures are text are placed on the page
+% *============================================================================*
+
+% +-----Floats-----------------------------------------------------------------+
+%  See https://robjhyndman.com/hyndsight/latex-floats/ for info
+% +----------------------------------------------------------------------------+
+
+% Percentage of page that can be a float
+\renewcommand{\topfraction}{0.9}    % From top
+\renewcommand{\bottomfraction}{0.6} % From bottom
+
+% Number of floats per page
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{1}
+\setcounter{totalnumber}{3}
+
+% Minimum fraction of float page that should have floats
+\renewcommand{\floatpagefraction}{0.7}
+\renewcommand{\dblfloatpagefraction}{0.7}
+
+% +-----Text-----------------------------------------------------------------+
+
+% Minimum percentage of page for text
+\renewcommand{\textfraction}{0.07}
+
+% Penalise widow lines
+\widowpenalty=10000
+
+% Allow space at bottom of page
+\raggedbottom
+
+% *============================================================================*
 %  BLANK PAGES
 %
 %  Make blank pages blank, without a header. Originally taken from the fancyhdr

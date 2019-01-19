@@ -100,7 +100,8 @@ milestones <- tribble(
     "2018-10-16 10:56",                 NA, "Initial commit",
     "2018-10-30 15:10",                 NA, "Add Splatter publication",
     "2018-11-23 15:00", "2018-11-25 19:30", "Thesis bootcamp",
-    "2019-01-12 17:20",                 NA, "Add scRNA-tools publication"
+    "2019-01-12 17:20",                 NA, "Add scRNA-tools publication",
+    "2019-01-16 10:55",                 NA, "Fix frontmatter count"
 ) %>%
     mutate(From = lubridate::ymd_hm(From, tz = Sys.timezone()),
            To   = lubridate::ymd_hm(To, tz = Sys.timezone()))
