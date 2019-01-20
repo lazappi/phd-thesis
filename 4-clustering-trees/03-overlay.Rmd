@@ -16,7 +16,7 @@ approaches by overlaying a clustering tree on to a dimensionality reduction
 plot. Figure \@ref(fig:clustree-overlay) shows an example of this using the
 iris dataset [@Anderson1935-mt; Fisher1936-wt].
 
-```{r clustree-overlay, fig.cap = "(ref:cap-clustree-overlay)", fig.scap = "(ref:clustree-overlay)", out.width = "100%"}
+```{r clustree-overlay, fig.cap = "(ref:cap-clustree-overlay)", fig.scap = "(ref:scap-clustree-overlay)", out.width = "100%"}
 overlay_list <- clustree_overlay(iris_clusts, prefix = "K",
                                  x_value = "PC1", y_value = "PC2",
                                  use_colour = "points", point_alpha = 0.4,

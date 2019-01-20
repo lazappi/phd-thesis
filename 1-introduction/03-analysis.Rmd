@@ -10,7 +10,7 @@ levels of technical noise, complicating downstream analysis and making it
 difficult to detect biological differences [@Liu2016-wq]. In order to capture
 cells they must first be dissociated into single-cell suspensions but this step
 can be non-trivial. Some tissues or cell types may be more difficult to
-separate than others and the treatments required to break them apart may effect
+separate than others and the treatments required to break them apart may affect
 the health of the cells and their transcriptional profiles. It has been
 suggested that damage caused by dissociated can be minimised by using a
 cold-active protease to separate cells [@Adam2017-zl]. Other cell types may be
@@ -21,46 +21,51 @@ making quality control of datasets an important consideration.
 As well as increasing technical noise the small amounts of starting material
 and low sequencing depth mean there are many occasions where zero counts are
 recorded, indicating no measured expression for a particular gene in a
-particular cell. These zero counts often represent the true biological signal
-we are interested in as we expect different cell types to express different
-genes. However, they can also be the result of confounding biological factors
-such as stage in the cell cycle, transcriptional bursting and environmental
-interactions which cause genuine changes in expression but that might not be of
-interest to a particular study. On top of this there are effects that are
-purely technical factors, in particular sampling effects which can result in
-"dropout" events where a transcript is truly expressed in a sample but is not
-observed in the sequencing data [@Hicks2017-ut]. In bulk experiments these
-effects are limited by averaging across the cells in a sample but for
-single-cell experiments they can present a significant challenge for analysis
-as methods must account for the missing information and they may cause the
-assumptions of existing methods to be violated. One approach to tackling the
-problem of too many zeros is to use zero-inflated versions of common
-distributions [@Pierson2015-qp; @Risso2018-dg; @Van_den_Berge2018-ip;
-@Miao2018-ft] but it is debatable whether scRNA-seq datasets are truly
-zero-inflated or the additional zeros are better modeled with standard
-distributions with lower means. Another approach is to impute some of the
-zeros, replacing them with estimates of how expressed those genes truly are
-based on their expression in similar cells using methods such as MAGIC
-[@Van_Dijk2018-dk], SAVER [@Huang2018-ef; @Wang2018-av] or scImpute
-[@Li2018-gx]. However imputation comes with the risk of introducing false
-structure that is not really present in the data [@Andrews2018-li].
+particular cell. These zero counts often represent the true biological state we
+are interested in as we that different genes will be expressed by different
+cell types. However, zeros can also be the result of confounding biological
+factors such as stage in the cell cycle, transcriptional bursting and
+environmental interactions which cause genuine changes in expression but that
+might not be of interest to a particular study. On top of this there are
+effects that are purely technical factors. In particular sampling effects which
+can result in "dropout" events where a transcript is truly expressed in a
+sample but is not observed in the sequencing data [@Hicks2017-ut]. In bulk
+experiments these effects are limited by averaging across the cells in a sample
+and the greater sequencing depth but for single-cell experiments they can
+present a significant challenge for analysis as methods must account for the
+missing information and the large number of zeros may cause the assumptions of
+existing methods to be violated.
+
+One approach to tackling the problem of too many zeros is to use zero-inflated
+versions of common distributions [@Pierson2015-qp; @Risso2018-dg;
+@Van_den_Berge2018-ip; @Miao2018-ft]. However, it is still debatable whether
+scRNA-seq datasets are truly zero-inflated or the additional zeros are better
+modeled with standard distributions with lower means. Another approach to
+analysis is to impute some of the zeros, replacing them with estimates of how
+expressed those genes truly are based on their expression in similar cells
+using methods such as MAGIC [@Van_Dijk2018-dk], SAVER [@Huang2018-ef;
+@Wang2018-av] or scImpute [@Li2018-gx]. However imputation comes with the risk
+of introducing false structure that is not actually present in the samples
+[@Andrews2018-li].
 
 Bulk RNA-seq experiments usually involve predefined groups of samples, for
 example cancer cells and normal tissue, different tissue types or treatment and
 control groups. It is possible to design scRNA-seq experiments in the same way
 by sorting cells into known groups based on surface markers, sampling them at a
-series of time points or comparing treatment groups, but often they are more
-exploratory. Many of the single-cell studies to date have sampled developing or
-mature tissues and attempted to profile the cell types that are present
-[@Zeisel2015-rd; @Patel2014-bl; @Treutlein2014-wd; @Usoskin2015-fz;
-@Buettner2015-rq; @Klein2015-iw; @Trapnell2014-he]. This approach is best
-exemplified by the Human Cell Atlas project which is attempting to produce a
-reference of the transcriptional profiles of all the cell types in the human
-body [@Regev2017-wg]. Similar projects exist for other species and specific
-tissues [@Cao2017-ig; @The_Tabula_Muris_Consortium2017-rm; @Wu2018-xd;
-@Han2018-kp; @Saunders2018-ut; @Plass2018-sa; @Bhaduri2018-nt; @Yuan2018-qu].
-As scRNA-seq datasets have become more widely available a standard workflow has
-developed which can be applied to many experiments [@Lun2016-lp;
+series of time points or comparing treatment groups, but often single-cell
+experiments are more exploratory. Many of the single-cell studies to date have
+sampled developing or mature tissues and attempted to profile the cell types
+that are present [@Zeisel2015-rd; @Patel2014-bl; @Treutlein2014-wd;
+@Usoskin2015-fz; @Buettner2015-rq; @Klein2015-iw; @Trapnell2014-he]. This
+approach is best exemplified by the Human Cell Atlas project which is
+attempting to produce a reference of the transcriptional profiles of all the
+cell types in the human body [@Regev2017-wg]. Similar projects exist for other
+species and specific tissues [@Cao2017-ig; @The_Tabula_Muris_Consortium2017-rm;
+@Wu2018-xd; @Han2018-kp; @Saunders2018-ut; @Plass2018-sa; @Bhaduri2018-nt;
+@Yuan2018-qu].
+
+As scRNA-seq datasets have become more widely available a standard analysis
+workflow has developed which can be applied to many experiments [@Lun2016-lp;
 @Perraudeau2017-ii]. This workflow can be divided into four phases shown in
 Figure \@ref(fig:phases): 1) Data acquisition, pre-processing of samples to
 produce a cell by gene expression matrix, 2) Data cleaning, quality control to
@@ -68,9 +73,10 @@ refine the dataset used for analysis, 3) Cell assignment, grouping or ordering
 of cells based on their transcriptional profile, and 4) Gene identification to
 find genes that represent particular groups and can be used to interpret them.
 Within each phase a range of processes may be used and there are now many tools
-available for completing each of them, with over XXX tools currently available.
-An introduction to the phases of scRNA-seq analysis is provided here but the
-analysis tools landscape is more fully explored in Chapter \@ref(tools).
+available for completing each of them, with over `r 10 * floor(n_tools / 10)`
+tools currently available. An introduction to the phases of scRNA-seq analysis
+is provided here but the analysis tools landscape is more fully explored in
+Chapter \@ref(tools).
 
 ```{r phases, fig.cap = "(ref:cap-phases)", fig.scap = "(ref:scap-phases)", out.width = "100%"}
 knitr::include_graphics(here::here("figures/phases.png"))
@@ -104,47 +110,48 @@ continue to be produced.
 
 Quality control of individual cells is important as experiments will contain
 low-quality cells that can be uninformative or lead to misleading results.
-Quality control can be performed on various levels, from the quality scores of
-the reads themselves and how or where they align to features of the expression
-matrix. Particular types of cells that are commonly removed include damaged
-cells, doublets where multiple cells have been captured together
-[@DePasquale2018-ct; @McGinnis2018-ec] and empty droplets or wells that have
-been sequenced but do not contain a cell [@Lun2018-lb]. The Cellity package
-attempts to automate this process by inspecting a series of biological and
-technical features and using machine learning methods to distinguish between
-high and low-quality cells [@Ilicic2016-wy]. However the authors found that
-many of the features were cell type specific and more work needs to be done to
-make this approach more generally applicable. The scater package
-[@McCarthy2017-ql] emphasises a more exploratory approach to quality control at
-the expression matrix level but providing a series of functions for visualising
-various features of a dataset. These plots can then be used for selecting
-thresholds for removing cells. Plate-based capture platforms can produce
-additional biases based on the location of individual wells, a problem which is
-addressed by the OEFinder package which attempts to identify and visualise
-these "ordering effects"[@Leng2016-it].
+Particular types of cells that are commonly removed include damaged cells,
+doublets where multiple cells have been captured together [@DePasquale2018-ct;
+@McGinnis2018-ec] and empty droplets or wells that have been sequenced but do
+not contain a cell [@Lun2018-lb]. Quality control can be performed on various
+levels including the quality scores of the reads themselves and how or where
+they align to features of the expression matrix. The Cellity package attempts
+to automate this process by inspecting a series of biological and technical
+features and using machine learning methods to distinguish between high and
+low-quality cells [@Ilicic2016-wy]. However the authors found that many of the
+features were cell type specific and more work needs to be done to make this
+approach more generally applicable. The scater package [@McCarthy2017-ql]
+emphasises a more exploratory approach to quality control at the expression
+matrix level but providing a series of functions for visualising various
+features of a dataset. These plots can then be used for selecting thresholds
+for removing cells. Plate-based capture platforms can produce additional biases
+based on the location of individual wells, a problem which is addressed by the
+OEFinder package which attempts to identify and visualise these "ordering
+effects"[@Leng2016-it].
 
 Filtering and selection of features also deserves attention. Genes or
 transcripts that are lowly expressed are typically removed from datasets in
 order to reduce computational time and the effect of multiple-testing
 correction but it is unclear how many counts indicate that a gene is truly
-"expressed". Many downstream analyses operate on a selected set of genes which
-can have a dramatic effect on their results [@Chen2018-ug]. These features are
-often selected based on how variable they are across the dataset but this may
-be a result of noise rather than biological importance. Alternative selection
-methods have been proposed such as M3Drop which identifies genes that have more
-zeros than would be expected based on their mean expression [@Andrews2018-pq].
+"expressed". Many downstream analyses operate on a selected subset of genes and
+how they are selected can have a dramatic effect on their results
+[@Chen2018-ug]. These features are often selected based on how variable they
+are across the dataset but this may be a result of noise rather than biological
+importance. Alternative selection methods have been proposed such as M3Drop
+which identifies genes that have more zeros than would be expected based on
+their mean expression [@Andrews2018-pq].
 
 ### Normalisation and integration
 
 Effective normalisation is just as crucial for single-cell experiments as it is
-for bulk RNA-seq dataset. FPKM or TPM transformations can be used but for UMI
+for bulk RNA-seq datasets. FPKM or TPM transformations can be used, but for UMI
 data the gene length correction is not required as reads only come from the
 ends of transcripts [@Phipson2017-qt]. Normalisation methods designed for
 detecting differential expression between bulk samples such as TMM or the DESeq
-method can be applied, but is is unclear how suitable they are for the
-single-cell context. Many of the early normalisation methods developed
-specifically for scRNA-seq data made use of spike-ins, synthetic RNA sequences
-added to cells in known quantities such as the External RNA Controls Consortium
+method can be applied, but it is unclear how suitable they in the single-cell
+context. Many of the early normalisation methods developed specifically for
+scRNA-seq data made use of spike-ins. These are synthetic RNA sequences added
+to cells in known quantities such as the External RNA Controls Consortium
 (ERCC) control mixes, a set of 92 transcripts from 250 to 2000 basepairs long
 based on bacterial plasmids. Brennecke et al. [@Brennecke2013-pt], Ding et al.
 [@Ding2015-ht] and Grün, Kester and van Oudenaarden [@Grun2014-zn] all propose
@@ -166,24 +173,24 @@ technologies have become cheaper and more widely available it is common to see
 studies with multiple batches or making use of publicly available data produced
 by other groups. While this expands the potential insights to be gained it
 presents a problem as to how to integrate these datasets and a range of
-computational approaches for doing this have been developed including bbknn
-[@Park2018-ri], ClusterMap [@Gao2018-ij], kBET [@Buttner2017-rg], LIGER
-[@Welch2018-gb], matchSCore [@Mereu2018-bx], Scanorama [@Hie2018-cf] and
-scMerge [@Lin2018-ln]. The alignment approach in the Seurat package
-[@Butler2018-js] uses Canonical Correlation Analysis (CCA) [@Hotelling1936-ni,
-@Hardoon2004-ev] to identify a multi-dimensional subspace that is consistent
-between datasets. Dynamic Time Warping (DTW) [@Berndt1994-lh] is then used to
-stretch and align these dimensions so that the datasets are similarly spread
-along them. Some tasks can be performed using these aligned dimensions but as
-the original expression matrix is unchanged the integration is not used for
-other tasks such as differential expression testing. The authors of scran use a
-Mutual Nearest Neighbours (MNN) approach that calculates a cosine distance
-between cells in different datasets then identifies those that share a
-neighbourhood [@Haghverdi2018-bd]. Batch correction vectors can then be
-calculated and subtracted from one dataset to overlay them. A recent update to
-the Seurat method combines these approaches by applying CCA before using the
-MNN approach to identify "anchor" cells that have common features in the
-different datasets [@Stuart2018-ra].
+computational approaches for performing integration have been developed
+including bbknn [@Park2018-ri], ClusterMap [@Gao2018-ij], kBET
+[@Buttner2017-rg], LIGER [@Welch2018-gb], matchSCore [@Mereu2018-bx], Scanorama
+[@Hie2018-cf] and scMerge [@Lin2018-ln]. The alignment approach in the Seurat
+package [@Butler2018-js] uses Canonical Correlation Analysis (CCA)
+[@Hotelling1936-ni, @Hardoon2004-ev] to identify a multi-dimensional subspace
+that is consistent between datasets. Dynamic Time Warping (DTW)
+[@Berndt1994-lh] is then used to stretch and align these dimensions so that the
+datasets are similarly spread along them. Some tasks can be performed using
+these aligned dimensions but as the original expression matrix is unchanged the
+integration is not used for other tasks such as differential expression
+testing. The authors of scran use a Mutual Nearest Neighbours (MNN) approach
+that calculates a cosine distance between cells in different datasets then
+identifies those that share a neighbourhood [@Haghverdi2018-bd]. Batch
+correction vectors can then be calculated and subtracted from one dataset to
+overlay them. A recent update to the Seurat method combines these approaches by
+applying CCA before using the MNN approach to identify "anchor" cells that have
+common features in the different datasets [@Stuart2018-ra].
 
 ### Grouping cells
 
@@ -218,19 +225,20 @@ results. I address this problem with a visualisation-based approach in Chapter
 \@ref(clust-trees).
 
 For tissue types that are well understood or where comprehensive references are
-available an alternative is to directly classify cells. This can be done using
-a gating approach based on the expression of known marker genes similar to that
-commonly used for flow cytometry experiments. Alternatively, machine learning
-algorithms can be used to perform classification based on the overall
-expression profile. Methods such as scmap [@Kiselev2018-nu], scPred
-[@Alquicira-Hernandez2018-xu], CaSTLe [@Lieberman2018-zg] and Moana
-[@Wagner2018-xl] take this approach. Classification has the advantage of making
-use of existing knowledge and avoids manual annotation and interpretation of
-clusters which can often be difficult and time consuming. However it is biased
-by what is present in the reference datasets used and typically cannot reveal
-previously unknown cell types or states. As projects like the Human Cell Atlas
-produce well-annotated references based on scRNA-seq data the viability of
-classification and other reference-based methods will improve.
+available an alternative to unsupervised clustering is to directly classify
+cells. This can be done using a gating approach based on the expression of
+known marker genes similar to that commonly used for flow cytometry
+experiments. Alternatively, machine learning algorithms can be used to perform
+classification based on the overall expression profile. Methods such as scmap
+[@Kiselev2018-nu], scPred [@Alquicira-Hernandez2018-xu], CaSTLe
+[@Lieberman2018-zg] and Moana [@Wagner2018-xl] take this approach.
+Classification has the advantage of making use of existing knowledge and avoids
+manual annotation and interpretation of clusters which can often be difficult
+and time consuming. However it is biased by what is present in the reference
+datasets used and typically cannot reveal previously unknown cell types or
+states. As projects like the Human Cell Atlas produce well-annotated references
+based on scRNA-seq data the viability of classification and other
+reference-based methods will improve.
 
 ### Ordering cells
 
@@ -266,22 +274,22 @@ knitr::include_graphics(here::here("figures/trajectory-inference.jpg"))
 
 (ref:cap-trajectory-inference) Trajectory inference framework as described by Cannoodt, Saelens and Saeys. In the first stage dimensionality reduction is used to convert the data to a simpler representation. In the second stage a trajectory is identified and the cells ordered. Image from Cannoodt, Saelens and Saeys _"Computational methods for trajectory inference from single-cell transcriptomics"_ [@Cannoodt2016-iv].
 
-An alternative continuous approach is the cell velocity approach
+An alternative continuous approach is the cell velocity technique
 [@Svensson2018-lu] introduced for scRNA-seq data in the velocyto package
-[@La_Manno2018-tv]. RNA-seq studies typically focus on the expression of
-complete mature mRNA molecules but a sample will also contain immature mRNA
-that are yet to be spliced. Examining these reads assigned to introns can
-indicate newly transcribed mRNA molecules and therefore which genes are
-currently active. Instead of assigning cells to discrete groups or along a
-continuous path velocyto uses reads from unspliced regions to place them in a
-space and create a vector indicating the direction in which the transcriptional
-profile is heading. This vector can show that a cell is differentiating in a
-particular way or that a specific transcriptional program has been activated.
+[@La_Manno2018-tv]. RNA-seq studies typically focus on the expression of mature
+mRNA molecules but a sample will also contain immature mRNA that are yet to be
+spliced. Examining the reads assigned to introns can indicate newly transcribed
+mRNA molecules and therefore which genes are currently active. Instead of
+assigning cells to discrete groups or along a continuous path velocyto uses
+reads from unspliced regions to place them in a space and create a vector
+indicating the direction in which the transcriptional profile is heading. This
+vector can show that a cell is differentiating in a particular way or that a
+specific transcriptional program has been activated.
 
-Deciding on which assignment approach to use depends on the source of the data,
-the goals of the study and the questions that are being asked. Both grouping
-and ordering can be informative and it is often useful to attempt both on a
-dataset and see how they compare.
+Deciding on which cell assignment approach to use depends on the source of the
+data, the goals of the study and the questions that are being asked. Both
+grouping and ordering can be informative and it is often useful to attempt both
+on a dataset and see how they compare.
 
 ### Gene detection and interpretation
 
@@ -297,24 +305,24 @@ some of the problems that made standard statistical tests unsuitable for bulk
 RNA-seq experiments do not apply and simple methods like the unpaired Wilcoxon
 rank-sum test (or Mann-Whitney U test), Student's t-test or logistic regression
 may give reasonable results in this setting. Methods originally developed for
-bulk experiments have have also been applied to scRNA-seq datasets but the
-assumptions they make may not be appropriate for single-cell data and methods
-such as ZiNB-WaVe [@Van_den_Berge2018-ip] may be required to transform the data
-so that it is appropriate for their use. A comprehensive evaluation of 36
-approaches found that methods developed for bulk RNA-seq did not perform worse
-that scRNA-seq specific methods, however they did depend on how lowly-expressed
-genes were filtered [@Soneson2018-fb]. The authors also observed that some
-methods were biased in the types of features they tended to detect as
-differentially expressed. Often the goal is not to find all the genes that are
-differentially expressed between groups but to identify genes which uniquely
-mark particular clusters. This goal is open to alternative approaches such as
-the Gini coefficient which measures unequal distribution across a population.
-Another approach is to construct machine learning classifiers for each genes to
-distinguish between one group and all other cells. Genes that give good
-classification performance should be good indicators of what is specific to
-that cluster. It is also possible to identify genes that might have the same
-mean between groups but differ in variance or other characteristics of their
-expression distribution.
+bulk experiments have also been applied to scRNA-seq datasets but the
+assumptions they make may not be appropriate for single-cell data. Methods such
+as ZINB-WaVe [@Van_den_Berge2018-ip] may be required to transform the data so
+that bulk testing methods are appropriate. A comprehensive evaluation of 36
+differential expression testing approaches found that methods developed for
+bulk RNA-seq did not perform worse than scRNA-seq specific methods, however
+bulk methods depend on how lowly-expressed genes were filtered
+[@Soneson2018-fb]. The authors also observed that some methods were biased in
+the types of features they tended to detect as differentially expressed. Often
+the goal is not to find all the genes that are differentially expressed between
+groups but to identify genes which uniquely mark particular clusters. This goal
+is open to alternative approaches such as the Gini coefficient which measures
+unequal distribution across a population. Another approach is to construct
+machine learning classifiers for each gene to distinguish between one group and
+all other cells. Genes that give good classification performance should be good
+indicators of what is specific to that cluster. It is also possible to identify
+genes that might have the same mean between groups but differ in variance or
+other characteristics of their expression distribution.
 
 When cells have been ordered along a continuous trajectory the task is slightly
 different. Instead of testing for a difference in means between two groups the
@@ -364,19 +372,19 @@ technologies.
 ### Evaluation of scRNA-seq analysis methods
 
 Although the analysis for many scRNA-seq studies follow a standard workflow
-there is much more variation in the tools that are used. We are now at the
+there is wide more variation in the tools that are used. We are now at the
 stage where there are multiple software packages for completing every stage of
-analysis. Deciding which tools is to use can be difficult and depends on a
-number of factors including effectiveness, robustness, scalability,
-availability, ease of use and quality of documentation. In terms of
-effectiveness publications describing analysis methods should demonstrate two
-things: 1) they can perform the task they are designed for (at least as well as
-existing methods) and 2) performing that task leads to biological insights.
-Answering the first question is difficult using real datasets as the underlying
-truth is not known. For this reason simulation techniques are often used to
-produce synthetic datasets in order to evaluate methods. I present a software
-package for simulating scRNA-seq data in Chapter \@ref(simulation). Simulation
-is an efficient and flexible approach for producing gold standard datasets but
+analysis. Deciding which tools to use can be difficult and depends on a number
+of factors including effectiveness, robustness, scalability, availability, ease
+of use and quality of documentation. In terms of effectiveness publications
+describing analysis methods should demonstrate two things: 1) they can perform
+the task they are designed for (at least as well as existing methods) and 2)
+performing that task leads to biological insights. Answering the first question
+is difficult using real datasets as often the underlying truth is not known.
+For this reason simulation techniques are commonly used to produce synthetic
+datasets in order to evaluate methods. I present a software package for
+simulating scRNA-seq data in Chapter \@ref(simulation). Simulation is an
+efficient and flexible approach for producing gold standard datasets but
 synthetic data can never fully reproduce a real dataset. An alternative
 approach is to carefully construct a gold standard biological dataset by
 combining samples where the true differences are known [@Tian2018-ok]. These

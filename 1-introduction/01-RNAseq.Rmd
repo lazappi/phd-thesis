@@ -111,13 +111,14 @@ and the number of reads overlapping each gene is counted. In contrast to
 aligners designed for DNA sequencing, RNA-seq aligners such as STAR
 [@Dobin2013-gx], HISAT2 [@Kim2015-ys] and subread [@Liao2013-id] must take into
 account the splicing structure of mRNA transcripts which causes parts of some
-reads to align in different locations. The alignment step is computationally
-intensive and can take a significant amount of time. More recently tools such
-as kallisto [@Bray2016-tm] and Salmon [@Patro2017-ka] have been developed which
-attempt to directly quantify expression by estimating the probability that a
-read comes from a particular annotated transcript. These approaches are orders
-of magnitude faster than true alignment and potentially produce more accurate
-quantification at the cost of having an exact genomic position for each read.
+reads to align in different locations in the geneome. The alignment step is
+computationally intensive and can take a significant amount of time. More
+recently tools such as kallisto [@Bray2016-tm] and Salmon [@Patro2017-ka] have
+been developed which attempt to directly quantify expression by estimating the
+probability that a read comes from a particular annotated transcript. These
+approaches are orders of magnitude faster than true genome alignment and
+potentially produce more accurate quantification at the cost of having an exact
+genomic position for each read.
 
 ```{r RNA-seq, fig.cap = "(ref:cap-RNA-seq)", fig.scap = "(ref:scap-RNA-seq)", out.width = "100%"}
 knitr::include_graphics(here::here("figures/RNA-seq.png"))
@@ -154,8 +155,7 @@ the rest being technical noise [@Kim2015-mo].
 
 Both the edgeR [@Robinson2010-pt; @McCarthy2012-gc] and DESeq [@Anders2010-pq]
 (and later the DESeq2 [@Love2014-tw]) packages model RNA-seq data using the
-negative binomial distribution but before differences in expression levels can
-be tested the differences between samples must be removed through
+negative binomial distribution but before differences in expression levels are tested the technical differences between samples should be removed through
 normalisation. Early approaches include simple transformations like Reads (or
 Fragments) Per Kilobase per Million (RPKM/FPKM) [@Mortazavi2008-vu] or
 Transcripts Per Million (TPM) [@Wagner2012-qf] which correct for the total

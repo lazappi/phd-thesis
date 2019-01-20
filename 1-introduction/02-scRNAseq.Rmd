@@ -4,15 +4,16 @@ Traditional bulk RNA-seq experiments average the transcriptome across the
 millions of cells in a sample but recently it has become possible to perform
 single-cell RNA-sequencing (scRNA-seq) and investigate the transcriptome at the
 resolution of individual cells. There are many situations were it is important
-to understand how specific cell types react and where analyses may be affected
-by the unknown proportions of cell types in a sample. Studies into gene
-expression in specific cell types previously required selecting and isolating
-the cells of interest which removed them from the other cell types they are
-usually associated with and made it impossible to investigate interactions
-between them. With scRNA-seq technologies it is now possible to look at the
-transcriptome of all the cell types in a tissue simultaneously which has lead
-to a better understanding of what makes cell types distinct and the discovery
-of previously unknown cell types.
+to understand how specific cell types react to development or perturbations.
+This is often hindered in bulk analyses which may be affected by the unknown
+proportions of cell types in a sample. Studies into gene expression in specific
+cell types previously required selecting and isolating the cells of interest
+which separates them from the other cell types they are usually associated with
+and makes it impossible to investigate interactions between them. With
+scRNA-seq technologies it is now possible to look at the transcriptome of all
+the cell types in a tissue simultaneously which has lead to a better
+understanding of what makes cell types distinct and the discovery of previously
+unknown cell types.
 
 ### Early single-cell capture technologies
 
@@ -136,14 +137,14 @@ This has the side effect of reducing the amount of cDNA that needs to be
 sequenced and therefore increasing the number of cells that can be sequenced at
 a time. While the improvement in quantification of gene expression levels is
 useful for many downstream analyses it comes at the cost of coverage across the
-length of a gene which is required for applications such as variant detection
-and de-novo assembly. However reads along the length of genes have been
-observed in UMI datasets and are believed to come from unannotated transcription
-start sites or regions that contain enough adenine nucleotides to bind to the
-capture probes. Datasets with UMIs need extra processing steps which can be
-complicated by the possibility of sequencing errors in the UMI itself.
-Statistical methods designed for full-length data may also be affected by the
-different properties of a UMI dataset.
+length of a transcripts which is required for applications such as variant
+detection and de-novo assembly. However reads along the length of genes have
+been observed in UMI datasets and are believed to come from unannotated
+transcription start sites or regions that contain enough adenine nucleotides to
+bind to the capture probes. Datasets with UMIs need extra processing steps
+which can be complicated by the possibility of sequencing errors in the UMI
+itself. Statistical methods designed for full-length data may also be affected
+by the different properties of a UMI dataset.
 
 ### Recent advances in scRNA-seq protocols
 
@@ -210,11 +211,11 @@ lentiviral construct into cells [@Biddy2018-uz]. A unique combination of
 barcodes is then based on to daughter cells and can be used to trace the
 lineage of a cell population.
 
-Other approaches that allow multiple measurements from individual cells include
-G&T-seq [@Macaulay2015-dp] and SIDR [@Han2017-sc] which measure RNA and genomic
-DNA, similar approaches which measure the exome, or protein-coding part of the
-genome, along with the transcriptome [@Wang2018-xp], scMT-seq which measures
-RNA and DNA methylation [@Hu2016-il], Patch-seq which combines patch-clamp
-recording to measure the electrophysiology of neurons with scRNA-seq
-[@Cadwell2017-wu] and scTrio-seq which is able to measure the genome,
+Other approaches that allow multiple measurements from the same individual
+cells include G&T-seq [@Macaulay2015-dp] and SIDR [@Han2017-sc] which measure
+RNA and genomic DNA, similar approaches which measure the exome, or
+protein-coding part of the genome, along with the transcriptome [@Wang2018-xp],
+scMT-seq which measures RNA and DNA methylation [@Hu2016-il], Patch-seq which
+combines patch-clamp recording to measure the electrophysiology of neurons with
+scRNA-seq [@Cadwell2017-wu] and scTrio-seq which is able to measure the genome,
 transcriptome and methylome simultaneously [@Bian2018-rt].
