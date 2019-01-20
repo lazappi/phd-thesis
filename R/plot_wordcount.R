@@ -143,6 +143,9 @@ plot_data <- words %>%
     select(-Date) %>%
     tidyr::gather(key = Type, value = Count, -Datetime)
 
+last_date <- plot_data %>%
+    filter(Datetime == last(Datetime))
+
 plots$document <- ggplot(plot_data) +
     geom_rect(data = filter(milestones, !is.na(To)),
               aes(xmin = From, xmax = To, ymin = -Inf, ymax = Inf),
@@ -158,6 +161,9 @@ plots$document <- ggplot(plot_data) +
               y = Inf, angle = 90, hjust = 1.1, vjust = -1,
               size = 3, colour = "grey60") +
     geom_line(aes(x = Datetime, y = Count, colour = Type)) +
+    geom_text(data = last_date,
+              aes(x = Datetime, label = Count, y = Count, color = Type),
+              hjust = 0) +
     labs(y = "Word count", colour = "Type") +
     theme_minimal() +
     theme(legend.position = "bottom")
