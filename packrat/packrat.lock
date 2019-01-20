@@ -1,6 +1,6 @@
 PackratFormat: 1.4
 PackratVersion: 0.4.9.3
-RVersion: 3.5.1
+RVersion: 3.5.2
 Repos: CRAN=https://cran.rstudio.com/
 
 Package: BH
@@ -83,6 +83,12 @@ Version: 1.17.1.1
 Hash: 1764f9cb70825aa7a1c461e7514ffb73
 Requires: bitops
 
+Package: checkmate
+Source: CRAN
+Version: 1.9.1
+Hash: 186aeac71d17a663047ece5d7ab3154f
+Requires: backports
+
 Package: classInt
 Source: CRAN
 Version: 0.3-1
@@ -99,6 +105,13 @@ Package: clipr
 Source: CRAN
 Version: 0.4.1
 Hash: caf20ae357bfa2ed50e0e7db267f69ce
+
+Package: clustree
+Source: CRAN
+Version: 0.2.2
+Hash: 0f3ca09dcc2c20231b525b6b1310e1b9
+Requires: checkmate, dplyr, ggplot2, ggraph, ggrepel, igraph, rlang,
+    tidygraph, viridis
 
 Package: colorspace
 Source: CRAN
@@ -188,10 +201,6 @@ GithubRepo: ggforce
 GithubUsername: thomasp85
 GithubRef: master
 GithubSha1: 9ce6079d906e5810c91b71ccfe7a4aad8909e0b5
-RemoteHost: https://api.github.com
-RemoteRepo: ggforce
-RemoteUsername: thomasp85
-RemoteSha: 9ce6079d906e5810c91b71ccfe7a4aad8909e0b5
 
 Package: ggplot2
 Source: CRAN
@@ -199,6 +208,19 @@ Version: 3.1.0
 Hash: ef541b05dda10b209d509b5bbaf46ea3
 Requires: digest, gtable, lazyeval, plyr, reshape2, rlang, scales,
     tibble, viridisLite, withr
+
+Package: ggraph
+Source: CRAN
+Version: 1.0.2
+Hash: 949ce83d4170fc876c0eea6b7a8fc40c
+Requires: Rcpp, digest, dplyr, ggforce, ggplot2, ggrepel, gtable,
+    igraph, plyr, scales, viridis
+
+Package: ggrepel
+Source: CRAN
+Version: 0.8.0
+Hash: 20096a5e9c34eaf14728206fb326f8d9
+Requires: Rcpp, ggplot2, scales
 
 Package: git2r
 Source: CRAN
@@ -222,6 +244,12 @@ Source: CRAN
 Version: 0.7.0
 Hash: 4ae3b89f1e007d175e677afeafc3ae44
 Requires: R6, assertthat, digest, httr, jsonlite, memoise
+
+Package: gridExtra
+Source: CRAN
+Version: 2.3
+Hash: fa977bc1aab5588a08123b10ceb1ad3d
+Requires: gtable
 
 Package: gtable
 Source: CRAN
@@ -256,6 +284,12 @@ Source: CRAN
 Version: 1.3.1
 Hash: 2d32e01e53d532c812052e27a1021441
 Requires: R6, curl, jsonlite, mime, openssl
+
+Package: igraph
+Source: CRAN
+Version: 1.2.2
+Hash: 1e95612a0034372c6a387fbeff90992f
+Requires: magrittr, pkgconfig
 
 Package: jsonlite
 Source: CRAN
@@ -429,6 +463,13 @@ Version: 1.4.2
 Hash: 83895360ce4f8d2ce92eee00526b5b0b
 Requires: cli, crayon, pillar, rlang
 
+Package: tidygraph
+Source: CRAN
+Version: 1.1.1
+Hash: 75ab8ae4a392f3149a1d24eccd21fc7c
+Requires: R6, Rcpp, dplyr, igraph, magrittr, pillar, rlang, tibble,
+    tidyr
+
 Package: tidyr
 Source: CRAN
 Version: 0.8.2
@@ -463,10 +504,6 @@ GithubRepo: unimelbdown
 GithubUsername: lazappi
 GithubRef: master
 GithubSha1: 911d04789fa5c8eebc77e7207d66e389e192b7fc
-RemoteHost: https://api.github.com
-RemoteRepo: unimelbdown
-RemoteUsername: lazappi
-RemoteSha: 911d04789fa5c8eebc77e7207d66e389e192b7fc
 
 Package: units
 Source: CRAN
@@ -478,6 +515,12 @@ Package: utf8
 Source: CRAN
 Version: 1.1.4
 Hash: f3f97ce59092abc8ed3fd098a59e236c
+
+Package: viridis
+Source: CRAN
+Version: 0.5.1
+Hash: 39edaec2078b4fc928afb73cc1ce6625
+Requires: ggplot2, gridExtra, viridisLite
 
 Package: viridisLite
 Source: CRAN

@@ -1,9 +1,10 @@
-## The current scRNA-tools database
+## The current scRNA-tools database {#tools-current}
 
-Since the paper was published in June 2018 XXX tools have been added to the
-scRNA-tools database taking the total to XXX. Figure \@ref(fig:tools-plot)
-shows an overview to the current database as of XXX. Overall the analysis
-landscape has not changed significantly over the last few months.
+Since the paper was published in June 2018 `r n_tools_new` tools have been
+added to the scRNA-tools database taking the total to `r n_tools`. Figure
+\@ref(fig:tools-plot) shows an overview to the current database as of
+`r tools_date`. Overall the analysis landscape has not changed significantly 
+over the last few months.
 
 ```{r tools-plot, fig.cap = "(ref:cap-tools)", fig.scap = "(ref:scap-tools)", out.width = "100%"}
 number    <- plotToolsNumber(tools_date_counts, pal)
@@ -32,31 +33,31 @@ knitr::include_graphics(here::here("figures/tools.png"))
 
 (ref:cap-tools) State of the scRNA-tools database. (A) Size of the database over time. (B) Publication status of tools in the database, most tools are published as either peer-reviewed publications or preprints. (C) Associated software licenses, most tools are covered by open-source licenses but around a quarter of tools still have no license. (D) Software platforms used by tools, R is the most common programming language followed by Python. (E) Number of tools that complete each analysis task. Tasks associated with multiple analysis phases are the most common along with those that assign cells.
 
-Over half of tools are still associated with a peer-publication with another
-third described in preprints (Figure \@ref(fig:tools-plot)B). Versions of the
-GNU Public License (GPL) continue to be the most common license for scRNA-seq
-software tools followed by the more permissive MIT license (Figure
+Over half of tools are still associated with a peer-reviewed publication with
+another third described in preprints (Figure \@ref(fig:tools-plot)B). Versions
+of the GNU Public License (GPL) continue to be the most common license for
+scRNA-seq software tools followed by the more permissive MIT license (Figure
 \@ref(fig:tools-plot)C). The use of preprints to quickly share methods and
 observations and open-source licenses which allow code to be reused and adapted
-reflect the willingness to share and help out that I have observed in the
-scRNA-seq community during my PhD. Unfortunately around a quarter of tools do
+reflects the willingness to share and help out that I have observed in the
+scRNA-seq community during my PhD. Unfortunately, around a quarter of tools do
 not have associated licenses which can limit their usefulness for other
 developers. I believe that in most cases this is not an attempt by authors to
-restrict how their work is used but a lack of understanding about the
-importance of clear licensing. By displaying licenses on the scRNA-tools
-website I hope to encourage developers to consider how they license their work
-in the future.
+restrict how their work is used but a lack of awareness about the importance of
+clear licensing. By displaying licenses on the scRNA-tools website I hope to
+encourage developers to consider how they license their work in the future.
 
 R continues to be the most popular programming platform and is used in some way
-by around two thirds of scRNA-seq analysis tools. (Figure
-\@ref(fig:tools-plot)D). Around a third are built using Python which is next
-most common programming language followed by C++ and MATLAB which are each used
-by just under 10 percent of tools. The dominance of R reflects the statistical
-nature of many of the tasks involved in analysing scRNA-seq data as well as the
-historical usage of the platform for bulk RNA-seq and other genomic data types
-as well as the success of projects such as Bioconductor. However, as the size
-of scRNA-seq datasets continues to increase and how we analyse them changes to
-include more machine learning methods I expect this to change in particular to
+by around two thirds of scRNA-seq analysis tools (Figure
+\@ref(fig:tools-plot)D). Around a third of tools are built using Python which
+is the next most common programming language followed by C++ and MATLAB which
+are each used by just under 10 percent of tools. The dominance of R reflects
+the statistical nature of many of the tasks involved in analysing scRNA-seq
+data as well as the historical usage of the platform for bulk RNA-seq and other
+genomic data types and the success of projects such as Bioconductor
+[@Huber2015-lz]. However, as the size of scRNA-seq datasets continues to
+increase and how we analyse them changes to include more machine learning
+methods I expect the platforms used to change to some degree, in particular to
 make use of the deep learning packages available in languages like Python and
 the improved performance in compiled languages like C++, Swift, Julia and Go.
 MATLAB is commonly used within a small section of the academic community but it
@@ -72,143 +73,12 @@ tools that make use of a lower dimensional space as part of their analysis
 approach as well as several techniques that have been specifically developed
 for projecting scRNA-seq data. Other common analysis categories include those
 specific to scRNA-seq analysis including clustering and ordering. I expect
-these tasks to continue to be included in new analysis tools as they are
-important steps in analysis however I hope that the focus turns from developing
-new clustering and ordering methods to identifying those are consistently
-effective and developing robust, easy to use and well documented software tools
-that implement them. The availability of reliable and complete reference
-datasets should lead to the development of more tools implementing methods that
-make use of them such as the classification of cells
-
-## Usage of the scRNA-tools website
-
-Since it was launched in July 2017 the scRNA-tools website has been used from
-people around the world (Figure \@ref(fig:tools-analytics-plot)). Usage has
-increased since release of the publication and the website now receives an
-average of around 750 visitor per month (Figure
-\@ref(fig:tools-analytics-plot)A). These users come from over XXX countries
-around the world (Figure \@ref(fig:tools-analytics-plot)B) with the USA being by
-far the most common location followed by China, Australia, the United Kingdom
-and countries in Western Europe (Figure \@ref(fig:tools-analytics-plot)C).
-Aggregating by continent (Figure \@ref(fig:tools-analytics-plot)D) better
-reflects population and the size of academic communities with the Americas
-responsible for the majority of traffic followed by Europe and Asia.
-
-```{r tools-analytics-plot, fig.cap = "(ref:cap-analytics)", fig.scap = "(ref:scap-analytics)", out.width = "100%"}
-users <- tools_users %>%
-    gather(key = Type, value = Users, -Date) %>%
-    mutate(Type = factor(Type,
-                         levels = c("Users1Day", "Users7Day", "Users30Day"),
-                         labels = c("1 Day", "7 Days", "30 Days"))) %>%
-    ggplot(aes(x = Date, y = Users, colour = Type)) +
-    geom_line(size = 2) +
-    scale_color_manual(values = unname(pal)) +
-    scale_x_date(breaks = scales::pretty_breaks(n = 10),
-                 date_labels = "%b %Y") +
-    ggtitle("") +
-    theme_minimal() +
-    theme(axis.title.x = element_blank(),
-          legend.title = element_blank())
-
-world <- map_data("world")
-plot_data <- left_join(world, tools_countries, by = c(region = "Country"))
-map <- ggplot(plot_data, aes(x = long, y = lat, group = group, fill = Users)) +
-    geom_polygon() +
-    scale_fill_viridis_c(na.value = "grey80") +
-    ggtitle("") +
-    theme_minimal() +
-    theme(axis.title = element_blank(),
-          axis.text = element_blank(),
-          panel.grid = element_blank(),
-          legend.position = "bottom")
-
-plot_data <- tools_countries %>%
-    group_by(Country) %>%
-    tally(Users, sort = TRUE) %>%
-    mutate(Country = factor(c(Country[1:10], rep("Other", n() - 10)),
-                            levels = c(Country[1:10], "Other"))) %>%
-    group_by(Country) %>%
-    tally(n) %>%
-    rename(Users = nn) %>%
-    mutate(Country = forcats::fct_rev(Country)) %>%
-    mutate(Label = paste0(Country, " ",
-                          chrRound(Users / sum(Users) * 100, 1), "%")) %>%
-    mutate(TooLow = if_else((Users - 0.3 * max(Users)) < 0,
-                             TRUE, FALSE)) %>%
-    mutate(Colour = if_else(TooLow, "grey40", "white")) %>%
-    mutate(hjust = if_else(TooLow, -0.1, 1.1))
-    
-countries <- ggplot(plot_data, aes(x = Country, y = Users, fill = Country)) +
-    geom_col() +
-    geom_text(aes(label = Label, colour = Colour, hjust = hjust),
-                  size = 4) +
-    scale_fill_manual(values = unname(c(pal["grey"],
-                                        rep(pal["purple"], 10)))) +
-    scale_colour_identity() +
-    coord_flip() +
-    ggtitle("") +
-    theme_minimal() +
-    theme(axis.title.y = element_blank(),
-          axis.text.y = element_blank(),
-          panel.grid = element_blank(),
-          legend.position = "none")
-
-plot_data <- tools_countries %>%
-    group_by(Continent) %>%
-    summarise(Users = sum(Users)) %>%
-    arrange(-Users) %>%
-    mutate(Continent = factor(Continent, levels = Continent)) %>%
-    mutate(Continent = forcats::fct_relevel(Continent,
-                                            "(not set)", after = Inf),
-           Continent = forcats::fct_recode(Continent,
-                                           Unknown = "(not set)"),
-           Continent = forcats::fct_rev(Continent)) %>%
-    mutate(Label = paste0(Continent, " ",
-                          chrRound(Users / sum(Users) * 100, 1), "%")) %>%
-    mutate(TooLow = if_else((Users - 0.3 * max(Users)) < 0,
-                             TRUE, FALSE)) %>%
-    mutate(Colour = if_else(TooLow, "grey40", "white")) %>%
-    mutate(hjust = if_else(TooLow, -0.1, 1.1))
-
-continents <- ggplot(plot_data,
-                     aes(x = Continent, y = Users, fill = Continent)) +
-    geom_col() +
-    geom_text(aes(label = Label, colour = Colour, hjust = hjust),
-                  size = 4) +
-    scale_fill_manual(values = unname(c(pal["grey"],
-                                        rep(pal["purple"], 5)))) +
-    scale_colour_identity() +
-    coord_flip() +
-    ggtitle("") +
-    theme_minimal() +
-    theme(axis.title.y = element_blank(),
-          axis.text.y = element_blank(),
-          panel.grid = element_blank(),
-          legend.position = "none")
-
-p1 <- plot_grid(map, countries, continents,
-                nrow = 1, rel_widths = c(1, 0.7, 0.7), hjust = 0,
-                labels = c("B - Users by country",
-                           "C - Top 10 countries",
-                           "D - Users by continent"))
-panel <- plot_grid(users, p1,
-                   ncol = 1, rel_heights = c(0.9, 1), hjust = 0,
-                   labels = c("A - Users over time", ""))
-
-ggsave(here("figures/analytics.pdf"), panel, height = 6, width = 8)
-ggsave(here("figures/analytics.png"), panel, height = 6, width = 8)
-
-knitr::include_graphics(here::here("figures/analytics.png"))
-```
-
-(ref:scap-analytics) Usage of the scRNA-tools website.
-
-(ref:cap-analytics) Usage of the scRNA-tools website. (A) Usage over time showing the number of users per day (pink), week (blue) or 30 days (green). (B) World map coloured according to number of users from low (blue) to high (yellow). (C) Number of users from the top 10 most common countries. (D) Number of users by continent.
-
-Although these figures may not seem large when compared to an average website
-they represent a significant part of the scRNA-seq community. Seeing usage of
-the website from so many countries sustained over this period of time suggests
-that the database is a useful resource. I intend to continue maintain and grow
-the resource by adding new tools and updating those in the database. I hope to
-encourage contributions from the community who can easily submit changes via a
-form on the website.
+these tasks to continue to be included in new software tools as they are
+important steps in scRNA-seq analysis however I hope that the focus turns from
+developing new clustering and ordering methods to identifying those are
+consistently effective and developing robust, easy to use and well documented
+software tools that implement them. The availability of reliable and complete
+reference datasets should lead to the development of more tools implementing
+methods that make use of them such as the classification of cells and
+developers will continue to push the boundaries of what is possible using
+scRNA-seq data.

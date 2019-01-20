@@ -173,6 +173,9 @@ library("ggplot2")
 library("cowplot")
 library("RColorBrewer")
 
+# Clustering trees
+library("clustree")
+
 # JSON
 library("jsonlite")
 
@@ -220,7 +223,9 @@ phase_pal <- c(brewer.pal(5, "Set1"), "#999999")
 ```
 
 ```{r load-tools}
-tools <- read_json("data/tools-table.json", simplifyVector = TRUE) %>%
+tools_path <- here("data/tools-table.json")
+
+tools <- read_json(tools_path, simplifyVector = TRUE) %>%
     select(-Refs) %>%
     mutate(Added = as.Date(Added),
            Updated = as.Date(Updated))
@@ -247,6 +252,10 @@ cat_counts <- tools %>%
     mutate(Category = str_trim(Category)) %>%
     mutate(Category = ifelse(Category == "U M Is", "UMIs", Category)) %>%
     mutate(Category = factor(Category, levels = Category))
+
+tools_date <- "19 January 2019"
+n_tools <- nrow(tools)
+n_tools_new <- n_tools - 232
 ```
 
 ```{r load-tools-analytics}
@@ -268,6 +277,8 @@ tools_countries <- read_tsv(here("data/tools-countries.tsv"),
         Country == "United States"     ~ "USA",
         TRUE                           ~ Country
     ))
+
+n_countries <- length(unique(tools_countries$Country))
 ```
 
 `r if(html) '# Front matter {-}'`

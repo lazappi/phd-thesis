@@ -264,7 +264,7 @@ knitr::include_graphics(here::here("figures/trajectory-inference.jpg"))
 
 (ref:scap-trajectory-inference) Trajectory inference framework as described by Cannoodt, Saelens and Saeys.
 
-(ref:cap-trajectory-inference) Trajectory inference framework as described by Cannoodt, Saelens and Saeys. In the first stage dimensionality reduction is used to convert the data to a simpler representation. In the second stage a trajectory is identified and the cells ordered. Image from Cannoodt, Saelens and Saeys _"Computational methods for trajectory inference from single‐-cell transcriptomics"_ [@Cannoodt2016-iv].
+(ref:cap-trajectory-inference) Trajectory inference framework as described by Cannoodt, Saelens and Saeys. In the first stage dimensionality reduction is used to convert the data to a simpler representation. In the second stage a trajectory is identified and the cells ordered. Image from Cannoodt, Saelens and Saeys _"Computational methods for trajectory inference from single-cell transcriptomics"_ [@Cannoodt2016-iv].
 
 An alternative continuous approach is the cell velocity approach
 [@Svensson2018-lu] introduced for scRNA-seq data in the velocyto package

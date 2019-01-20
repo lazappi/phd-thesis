@@ -51,6 +51,21 @@ additions <- list(
         section = "docs/thesis.tex",
         added = lubridate::ymd_hm("2019-01-12 17:00", tz = Sys.timezone()),
         counts = c(Text = 4883L, Headers = 49L, Captions = 1305L)
+    ),
+        list(
+        section = "Clustering trees publication",
+        added = lubridate::ymd_hm("2019-01-19 14:30", tz = Sys.timezone()),
+        counts = c(Text = 3904L, Headers = 37L, Captions = 804L)
+    ),
+    list(
+        section = "Visualising clustering across resolutions",
+        added = lubridate::ymd_hm("2019-01-19 14:30", tz = Sys.timezone()),
+        counts = c(Text = 3904L, Headers = 37L, Captions = 804L)
+    ),
+    list(
+        section = "docs/thesis.tex",
+        added = lubridate::ymd_hm("2019-01-19 14:30", tz = Sys.timezone()),
+        counts = c(Text = 3904L, Headers = 37L, Captions = 804L)
     )
 )
 
@@ -101,7 +116,8 @@ milestones <- tribble(
     "2018-10-30 15:10",                 NA, "Add Splatter publication",
     "2018-11-23 15:00", "2018-11-25 19:30", "Thesis bootcamp",
     "2019-01-12 17:20",                 NA, "Add scRNA-tools publication",
-    "2019-01-16 10:55",                 NA, "Fix frontmatter count"
+    "2019-01-16 10:55",                 NA, "Fix frontmatter count",
+    "2019-01-19 14:41",                 NA, "Add clustering trees publication"
 ) %>%
     mutate(From = lubridate::ymd_hm(From, tz = Sys.timezone()),
            To   = lubridate::ymd_hm(To, tz = Sys.timezone()))
@@ -127,6 +143,9 @@ plot_data <- words %>%
     select(-Date) %>%
     tidyr::gather(key = Type, value = Count, -Datetime)
 
+last_date <- plot_data %>%
+    filter(Datetime == last(Datetime))
+
 plots$document <- ggplot(plot_data) +
     geom_rect(data = filter(milestones, !is.na(To)),
               aes(xmin = From, xmax = To, ymin = -Inf, ymax = Inf),
@@ -142,6 +161,9 @@ plots$document <- ggplot(plot_data) +
               y = Inf, angle = 90, hjust = 1.1, vjust = -1,
               size = 3, colour = "grey60") +
     geom_line(aes(x = Datetime, y = Count, colour = Type)) +
+    geom_text(data = last_date,
+              aes(x = Datetime, label = Count, y = Count, color = Type),
+              hjust = 0) +
     labs(y = "Word count", colour = "Type") +
     theme_minimal() +
     theme(legend.position = "bottom")

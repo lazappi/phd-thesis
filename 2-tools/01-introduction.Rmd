@@ -2,35 +2,36 @@
 
 When I began my PhD in early 2016 single-cell RNA-sequencing technologies were
 just beginning to become widely available. Since then there has been a rapid
-uptake and there are now many studies using this approach. Along with the
-growth in the adoption of scRNA-seq technologies there has been an explosion in
-the number of software tools for analysing these datasets. This chapter charts
-the growth in the scRNA-seq analysis landscape over time.
+uptake of the technologies and there are now many studies using this approach.
+Along with the growth in the adoption of scRNA-seq technologies there has been
+an explosion in the number of software tools for analysing these datasets. This
+chapter charts the growth in the scRNA-seq analysis landscape over time.
 
 In 2016 there were relatively few analysis methods available and to answer
-questions like how many tools perform a particular task or which areas were
-developers focusing on or was there a tool for doing this I began to record
-details about them. Inspired by similar projects such as Sean Davis' Awesome
-Single Cell page I decided to make this collection public. This turned out to be
-useful to other researchers and over time a simple spreadsheet became the
-scRNA-tools database and website (https://scRNA-tools.org). A paper published
-in _PLoS Computational Biology_ describing this resource forms the main part of
-this chapter.
+questions like how many tools perform a particular task, which areas developers
+were focusing on or was there a tool for doing a particular task I began to
+record details about them. Inspired by similar projects such as Sean Davis'
+Awesome Single Cell page [@Davis_undated-gy] I decided to make this collection
+public. This turned out to be useful to other researchers and over time a
+simple spreadsheet became the scRNA-tools database and website
+(https://scRNA-tools.org). A paper published in _PLoS Computational Biology_
+describing this resource forms the main part of this chapter [@Zappia2018-ph].
 
 By having access to details about existing analysis tools we were able to
 explore how the field has developed. We found that computational researchers
 had focused their efforts on analysis tasks specific to scRNA-seq data such as
-clustering and ordering of cells or handling the larger numbers of zeros. We
-also saw that many of the tools performed tasks common to several stages of
-analysis including dimensionality reduction of various kinds and visualisation.
-Developers of scRNA-seq analysis tools tend to embrace a open-source and
-open-science approach. Most tools are developed on GitHub were others can ask
-questions and submit improvements. The majority are also available under
-open-source licenses allowing their code to be reused for other purposes,
-although there is also a significant proportion that do not have any associated
-license. Tools are commonly made public by releasing a preprint publication,
-making them available to the community much more quickly and giving early
-adopters a chance to contribute to their development.
+clustering and ordering of cells or handling the larger numbers of zero counts.
+We also saw that many of the tools performed tasks common to several stages of
+analysis including various approaches to dimensionality reduction and
+visualisation of data and results. Developers of scRNA-seq analysis tools tend
+to embrace a open-source and open-science approach. Most tools are developed on
+GitHub were others can ask questions and submit improvements. The majority are
+also available under open-source licenses allowing their code to be reused for
+other purposes, although there is also a significant proportion that do not
+have any associated license. Tools are commonly made public by releasing a
+preprint publication, making them available to the community much more quickly
+and giving early adopters a chance to contribute to their development.
 
-A section at the end of this chapter presents an updated version of some of this
-analysis based on the most recent version of the database.
+A section at the end of this chapter (Section \@ref(tools-current)) presents an
+updated version of some of this analysis based on the most recent version of
+the database and details about the usage of the scRNA-tools website.
