@@ -8,7 +8,7 @@ composition of kidney organoids. I have completed these aims in the following
 ways:
 
 1. Construction and maintenance of a database recording the development of
-   scRNA-seq analysis methods and analysis of it's contents
+   scRNA-seq analysis methods and analysis of its contents
    (Chapter \@ref(tools)).
 
 2. Development of a software package and method for easily simulating realistic

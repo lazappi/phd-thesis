@@ -43,20 +43,20 @@ alternate with much larger non-coding regions (introns).
 
 When an mRNA molecule is transcribed it initially contains the intronic
 sequences but these are removed through a process known as RNA splicing and a
-sequence of adenine nucleotides (a poly(A) tail) is added to the end where
-transcription ends (the 3' end) to mark a mature mRNA molecule. This splicing
-process allows multiple forms of a protein to be produced from a single gene by
-selecting which exons are retained or removed. A mature mRNA transcript is
-converted to a protein in a complex structure called the ribosome which is made
-up of specialised RNA and proteins. The conversion process is known as
-translation because the information encoded by nucleic acids in RNA is
-translated to information stored as amino acids in the protein. Proteins
-complete most of the work required to keep a cell functioning and can be
-compared to the programs running on a computer. These functions include tasks
-such as sensing things in the external environment, transporting nutrients into
-the cell, regulating the expression of genes, constructing new proteins,
-recycling molecules and metabolism. Understanding the molecules involved in the
-central dogma is central to our understanding of how a cell functions.
+sequence of adenine nucleotides (a poly(A) tail) where transcription ends (the
+3' end) to mark a mature mRNA molecule. This splicing process allows multiple
+forms of a protein to be produced from a single gene by selecting which exons
+are retained or removed. A mature mRNA transcript is converted to a protein in
+a complex structure called the ribosome which is made up of specialised RNA and
+proteins. The conversion process is known as translation because the
+information encoded by nucleic acids in RNA is translated to information stored
+as amino acids in the protein. Proteins complete most of the work required to
+keep a cell functioning and can be compared to the programs running on a
+computer. These functions include tasks such as sensing things in the external
+environment, transporting nutrients into the cell, regulating the expression of
+genes, constructing new proteins, recycling molecules and metabolism.
+Understanding the molecules involved in the central dogma is central to our
+understanding of how a cell functions.
 
 ```{r introduction-sections, child = c("1-introduction/01-RNAseq.Rmd", "1-introduction/02-scRNAseq.Rmd", "1-introduction/03-analysis.Rmd", "1-introduction/04-kidney.Rmd", "1-introduction/05-overview.Rmd")}
 ```
