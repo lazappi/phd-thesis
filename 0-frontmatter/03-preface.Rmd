@@ -80,7 +80,7 @@ Contributions to the work in this chapter:
 * I conducted the analysis presented in the publication and produced the figures
   shown.
 
-* Belinda Phipson performed preprocessing for some of the public datasets used.
+* Belinda Phipson performed pre-processing for some of the public datasets used.
 
 * Alicia Oshlack helped to design and plan the analysis presented in the
   publication.
@@ -91,7 +91,8 @@ Contributions to the work in this chapter:
 
 * Belinda Phipson helped write sections of the manuscript and edited drafts.
 
-* Jovana Maksimovic proofread a draft of the manuscript and provided comments.
+* Jovana Maksimovic and Sarah Blood proofread a draft of the manuscript and
+  provided comments.
 
 **[Chapter 4: Visualising clustering across resolutions](#clust-trees)** is an
 original work describing a visualisation for showing clustering results across
@@ -115,7 +116,7 @@ Contributions to work in this chapter:
 * Alicia Oshlack provided advice on the design and planning of the analysis to
   present.
 
-* I planned and wrote the first draft of the manscript.
+* I planned and wrote the first draft of the manuscript.
 
 * Alicia Oshlack provided advice on the structure of the manuscript and edited
   draft versions.
@@ -135,7 +136,7 @@ Contributions to work in this chapter:
 
 * XXX performed cell capture and library preparation of the samples.
 
-* I performed preprocessing of the datasets
+* I performed pre-processing of the datasets
 
 * I designed and performed the analysis with input from Alicia Oshlack, Belinda
   Phipson, Melissa Little and Alex Combes.
@@ -148,13 +149,14 @@ Contributions to work in this chapter:
 work in this thesis, placing it in the wider context of single-cell RNA
 sequencing analysis and outlining potential directions of the field.
 
-**Other publications I have contributed to during my candidature but are not
-presented in this thesis**
+**Other publications that I have contributed to during my candidature but are
+not presented in this thesis**
 
 Phipson B, **Zappia L**, Oshlack A. _"Gene length and detection bias in single
 cell RNA sequencing protocols."_ F1000 Research. DOI:
 [10.12688/f1000research.11290.1](https://doi.org/10.12688/f1000research.11290.1).
 
-* Organoid scRNA-seq paper
-* Swirler organoid paper
-* Reproducibility paper
+Phipson B, Er PX, Combes AN, Forbes TA, Howden SE, **Zappia L**, Yen HJ, Lawlor
+KT, Hale LJ, Sun J, Wolvetang E, Takasato M, Oshlack A, Little MH. _"Evaluation
+of variability in human kidney organoids."_ Nature Methods. 2019. DOI:
+[10.1038/s41592-018-0253-2](http://dx.doi.org/10.1038/s41592-018-0253-2).
