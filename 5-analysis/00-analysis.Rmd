@@ -1,1 +1,1 @@
-# Analysis of kidney organoid scRNA-seq data {#organoids}
+# Analysis of kidney organoid scRNA-seq data {#analysis}

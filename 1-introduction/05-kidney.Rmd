@@ -1,4 +1,4 @@
-## Kidney development
+## Kidney development {#intro-kidney}
 
 One area that has particularly benefitted from the possibilities created by
 scRNA-seq technology is developmental biology. Although the genes involved in
@@ -188,5 +188,5 @@ kidney [@Lindstrom2018-mo] while Wu et al. examine kidney organoids
 [@Wu2018-qi]. They found that organoid protocols produced a range of cell types
 but that those cells were immature and 10-20 percent of cells came from
 non-kidney lineages. Many of these were neuronal and their formation could be
-limited by inhibiting the BDNF/NTRK2 pathway. In Chapter \@ref(organoids) I
+limited by inhibiting the BDNF/NTRK2 pathway. In Chapter \@ref(analysis) I
 analyse another organoid dataset.

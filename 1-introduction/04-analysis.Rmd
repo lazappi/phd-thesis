@@ -1,4 +1,4 @@
-## Analysing scRNA-seq data
+## Analysing scRNA-seq data {#intro-analysis}
 
 Cell capture technologies and scRNA-seq protocols have developed rapidly but
 the data they produce still presents a number of challenges. Existing

@@ -1,4 +1,4 @@
-## Single-cell RNA-sequencing
+## Single-cell RNA-sequencing {#intro-scRNAseq}
 
 Traditional bulk RNA-seq experiments average the transcriptome across the
 millions of cells in a sample but recently it has become possible to perform

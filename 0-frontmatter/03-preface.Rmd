@@ -125,7 +125,7 @@ Contributions to work in this chapter:
 
 * Marek Cmero read and provided comments on a draft of the manuscript.
 
-**[Chapter 5: Analysis of kidney organoid scRNA-seq data](#organoids)** is an
+**[Chapter 5: Analysis of kidney organoid scRNA-seq data](#analysis)** is an
 original work where I performed analysis of a single-cell RNA sequencing
 experiment from kidney organoids in order to identify and characterise the cell
 types present.

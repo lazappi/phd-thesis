@@ -1,4 +1,4 @@
-## RNA sequencing
+## RNA-sequencing {#intro-RNAseq}
 
 By looking at DNA we can see what versions of genes are present in a cell but
 we cannot tell which of them are active and what processes they might be
