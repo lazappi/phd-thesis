@@ -93,13 +93,22 @@ acknowledgements: |
 #  Should only be included if you have at least 10 tables
 # +----------------------------------------------------------------------------+
 
-lot: true
+lot: false
 
 # +-----List of figures--------------------------------------------------------+
 #  Should only be included if you have at least 10 figures
 # +----------------------------------------------------------------------------+
 
 lof: true
+
+# +-----List of copyright------------------------------------------------------+
+#  List of all third party copyright material included in the thesis and whether
+#  permissions have been obtained to include this content in the open access
+#  version of the thesis.
+# +----------------------------------------------------------------------------+
+
+copyrightlist: |
+  `r if(knitr:::is_latex_output()) paste(readLines("0-frontmatter/05-copyrightlist.Rmd"), collapse = "\n  ")`
 
 # *============================================================================*
 #  CITATIONS

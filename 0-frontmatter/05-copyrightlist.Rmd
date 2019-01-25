@@ -1,0 +1,16 @@
+The copyright of the publication _"Exploring the single-cell RNA-seq analysis
+landscape with the scRNA-tools database"_ included in **[Chapter 2](#tools)**
+is held by the authors including myself under a Creative Commons Attribution
+License (CC BY 4.0) (https://creativecommons.org/licenses/by/4.0/). This
+license permits unrestricted use, distribution, and reproduction in any medium,
+provided the original authors and source are credited.
+
+The copyright of the publication _"Splatter: simulation of single-cell RNA
+sequencing data"_ included in **[Chapter 3](#simulation)** is held by the
+authors including myself under a Creative Commons Attribution License (CC BY
+4.0).
+
+The copyright of the publication _"Clustering trees: a visualization for
+evaluating clusterings at multiple resolutions"_ included in
+**[Chapter 4](#clust-trees)** is held by the authors including myself under a
+Creative Commons Attribution License (CC BY 4.0).

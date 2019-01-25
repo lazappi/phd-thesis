@@ -1,62 +1,26 @@
 # Introduction {#introduction}
 
-The central dogma of molecular biology describes the flow of information within
-a cell, from DNA to RNA to protein (Figure \@ref(fig:central-dogma)).
-Deoxyribonucleic acid (DNA) is the long term data storage of the cell and has a
-well known double helix structure [@Watson1953-fx; @Wilkins1953-ik;
-@Franklin1953-pe]. Each strand of the double helix consists of a series of
-nucleotide molecules linked by phosphate groups. These nucleotides are made of
-three subunits: a nitrogenous base, a deoxyribose sugar and a phosphate group.
-DNA nucleotides come in four species, adenine, cytosine, thymine and guanine,
-which have different base subunits. The sugar and phosphate groups form the
-backbone of each DNA strand and the two strands are bound together through
-hydrogen bonds between matching nucleotides known as basepairs. Guanine forms
-three hydrogen bonds with cytosine and adenine forms two with thymine. In
-computing terms DNA is similar to a hard drive in that it provides stable,
-consistent storage of important information.
+This introduction chapter provides the background and overview necessary for
+understanding my work in this thesis including an introduction to basic cell
+biology and kidney development, the technologies we use to measure those
+process in the cell and the computational methods we use to analyse the data
+these technologies produce. **Section \@ref(intro-dogma) - [The central
+dogma]** describes how information flows within a cell and the molecules
+involved in these process. **Section \@ref(intro-RNAseq) - [RNA-sequencing]**
+covers the technologies used to measure the dynamic changes in some of these
+molecules and the established computational methods that are commonly used to
+extract meaning from this kind of data. In **Section \@ref(intro-scRNAseq) -
+[Single-cell RNA-sequencing]** I discuss new technologies that have enabled
+measurements on the level of individual cells while **Section
+\@ref(intro-analysis) - [Analysing scRNA-seq data]** outlines the types of
+analysis that can be performed on this data and the tools and methods that
+perform them. **Section \@ref(intro-kidney) - [Kidney development]** provides a
+brief introduction to kidney structure and development and how it can be
+studied using stem cell technologies. This section provides background for
+**Chapter \@ref(analysis)** where I describe an analysis of a dataset from
+developing kidney organoids. My introduction ends with **Section
+\@ref(intro-overview) - [Thesis overview and aims]** which presents an overview
+of my thesis aims and how I have completed them in the following chapters.
 
-```{r central-dogma, fig.cap = "(ref:cap-central-dogma)", fig.scap = "(ref:scap-central-dogma)", out.width = "100%"}
-knitr::include_graphics(here::here("figures/central-dogma.png"))
-```
-
-(ref:scap-central-dogma) The central dogma of molecular biology.
-
-(ref:cap-central-dogma) The central dogma of molecular biology. Deoxyribonucleic acid (DNA) is the long term data storage of the cell. To use this information a ribonucleic acid (RNA) molecule is produced through a process called transcription. A mature messenger RNA (mRNA) requires splicing and addition of a ploy(A) tail. Proteins are created from mRNA through translation in the ribosome.
-
-When the cell wants to use some of this information it produces a copy of it in
-the form of a ribonucleic acid (RNA) molecule through a process known as
-transcription, similar to a computer loading information it wants to use into
-it's random access memory. Sections of DNA that encode functional information
-are called genes. RNA is similar to a single strand of DNA except that the
-deoxyribose sugar is replaced with ribose and the thymine nucleotide is
-replaced with another nucleotide called uracil. Because it is single-stranded
-RNA does not have a double helix structure but it can form complex shapes by
-binding to itself. There are several different types of RNA that serve
-different purposes. RNA molecules that are transcribed from protein-coding
-genes are known as messenger RNA (mRNA). Other types of RNA include ribosomal
-RNA (rRNA) (that forms part of the ribosome, the molecular machinery that
-manufactures proteins), transfer RNA (tRNA) which carry amino acids to the
-ribosome, micro RNA which have a role in regulating gene expression and long
-non-coding RNA which are also involved in regulation among other processes.
-Genes are made up of regions that encode information (known as exons) that
-alternate with much larger non-coding regions (introns).
-
-When an mRNA molecule is transcribed it initially contains the intronic
-sequences but these are removed through a process known as RNA splicing and a
-sequence of adenine nucleotides (a poly(A) tail) where transcription ends (the
-3' end) to mark a mature mRNA molecule. This splicing process allows multiple
-forms of a protein to be produced from a single gene by selecting which exons
-are retained or removed. A mature mRNA transcript is converted to a protein in
-a complex structure called the ribosome which is made up of specialised RNA and
-proteins. The conversion process is known as translation because the
-information encoded by nucleic acids in RNA is translated to information stored
-as amino acids in the protein. Proteins complete most of the work required to
-keep a cell functioning and can be compared to the programs running on a
-computer. These functions include tasks such as sensing things in the external
-environment, transporting nutrients into the cell, regulating the expression of
-genes, constructing new proteins, recycling molecules and metabolism.
-Understanding the molecules involved in the central dogma is central to our
-understanding of how a cell functions.
-
-```{r introduction-sections, child = c("1-introduction/01-RNAseq.Rmd", "1-introduction/02-scRNAseq.Rmd", "1-introduction/03-analysis.Rmd", "1-introduction/04-kidney.Rmd", "1-introduction/05-overview.Rmd")}
+```{r introduction-sections, child = c("1-introduction/01-central-dogma.Rmd", "1-introduction/02-RNAseq.Rmd", "1-introduction/03-scRNAseq.Rmd", "1-introduction/04-analysis.Rmd", "1-introduction/05-kidney.Rmd", "1-introduction/06-overview.Rmd")}
 ```

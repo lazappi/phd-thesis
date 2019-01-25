@@ -21,3 +21,8 @@ file excluded from _bookdown.yml.--->
 `r if (docx) '######### Acknowledgements {-}'`
 
 `r if (!tex) paste(readLines("0-frontmatter/04-acknowledgements.Rmd"), collapse = "\n  ")`
+
+`r if (html) '## List of copyright {-}'`
+`r if (docx) '######### List of copyright {-}'`
+
+`r if (!tex) paste(readLines("0-frontmatter/05-copyrightlist.Rmd"), collapse = "\n  ")`

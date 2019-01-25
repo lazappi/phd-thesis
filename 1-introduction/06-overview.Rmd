@@ -1,4 +1,4 @@
-## Thesis overview and aims
+## Thesis overview and aims {#intro-overview}
 
 The tools and techniques for analysing scRNA-seq data have developed rapidly
 along with the technology. My thesis aims to chart the progress of these
@@ -21,4 +21,4 @@ ways:
 
 4. Application of scRNA-seq analysis methods to a kidney organoid dataset in
    order to uncover and better understand the cells types that are present and
-   demonstrate differences between approaches (Chapter \@ref(organoids)).
+   demonstrate differences between approaches (Chapter \@ref(analysis)).
