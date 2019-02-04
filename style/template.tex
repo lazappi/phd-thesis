@@ -52,9 +52,53 @@
 \usepackage[T1]{fontenc}          % Use 8-bit fonts
 \usepackage[hidelinks]{hyperref}  % Hyperlinks
 
+\usepackage[explicit]{titlesec}
+\usepackage{xcolor}
+
 % +-----Package options--------------------------------------------------------+
 
-\captionsetup{labelfont=bf,font=small,margin=10pt}
+% Chapter headings
+\titleformat{\chapter}[display]
+  {
+    \normalfont
+    \Large
+    \rmfamily
+  }
+  {
+    \vskip150pt
+    \sffamily
+    \flushright
+    \fontsize{150}{0}
+    \textbf{
+      \textcolor{black!20}{
+        ~\thechapter\vskip0pt
+      }
+    }
+  }
+  {0pt}
+  {
+    \sffamily
+    \flushright
+    \fontsize{40}{0}
+    \textbf{
+      \textcolor{black!20}{
+        #1
+      }
+    }
+  }
+
+% Unnumbered chapter headings
+\titleformat{name=\chapter,numberless}[display]
+  {\normalfont\LARGE\bfseries}
+  {}
+  {0pt}
+  {#1}
+
+% No numbers on chapter pages
+%\assignpagestyle{\chapter}{empty}
+
+% Figure captions
+\captionsetup{labelfont=bf, font=small, margin=10pt}
 
 % +-----Parameters-------------------------------------------------------------+
 %  Set parameters for the document. To convert from YAML to LaTeX we need to add
