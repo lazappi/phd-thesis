@@ -251,6 +251,25 @@
 %}
 
 % *============================================================================*
+%  QUOTATIONS
+%
+%  Modified from https://tex.stackexchange.com/questions/191914/chapter-heading-design/191918
+% *============================================================================*
+
+\renewenvironment{quote}{
+	\list{}{
+		\rightmargin\leftmargin
+	}
+	\raggedleft
+	\color{black!50}
+	\item
+	\relax
+}{
+	\endlist
+	\vspace{\fill}
+}
+
+% *============================================================================*
 %  BIBLIOGRAPHY
 %
 %  Modified from book.cls.

@@ -47,13 +47,14 @@
 \usepackage{parskip}   % Space between paragraphs
 \usepackage{microtype} % Microtypography for better spacing, kerning, etc...
 \usepackage{caption}   % Caption formatting
+\usepackage{xcolor}    % Coloured text
 
 \usepackage[utf8]{inputenc}       % UTF-8 input encoding
 \usepackage[T1]{fontenc}          % Use 8-bit fonts
 \usepackage[hidelinks]{hyperref}  % Hyperlinks
+\usepackage[explicit]{titlesec}   % Fancy section headings
 
-\usepackage[explicit]{titlesec}
-\usepackage{xcolor}
+\usepackage{csquotes}
 
 % +-----Package options--------------------------------------------------------+
 
@@ -78,6 +79,7 @@
   {0pt}
   {
     \sffamily
+    \noindent
     \flushright
     \fontsize{40}{0}
     \textbf{
@@ -85,6 +87,7 @@
         #1
       }
     }
+    \vspace{40pt}
   }
 
 % Unnumbered chapter headings
