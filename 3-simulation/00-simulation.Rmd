@@ -1,4 +1,10 @@
 # Simulating scRNA-seq data {#simulation}
 
+> **"Essentially, all models are wrong, but some are useful."**
+>
+> --- George E. P. Box and Norman R. Draper
+>
+> _Empirical Model-Building and Response Surfaces_, 1987
+
 ```{r simulation-sections, child = c("3-simulation/01-introduction.Rmd", "3-simulation/02-publication.Rmd", "3-simulation/03-update.Rmd")}
 ```

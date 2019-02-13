@@ -121,7 +121,7 @@
 \pagestyle{fancy}
 
 % Override the chapter and section header markings
-\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter~~#1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection~~#1}}
 
 % +-----Front matter-----------------------------------------------------------+
@@ -155,7 +155,7 @@
 		\fancyhead{}
 		% Add in the page number to the footer on this page only
 		\fancyfoot{}
-		\fancyfoot[CF]{\thepage}
+		%\fancyfoot[CF]{\thepage}
 		\renewcommand{\headrulewidth}{0pt}
 	}
 }
@@ -224,30 +224,49 @@
 %  Modified from book.cls.
 % *============================================================================*
 
-\def\@makechapterhead#1{
-  \vspace*{25\p@}
-  {\parindent \z@ \raggedright \normalfont \singlespacing
-    \ifnum \c@secnumdepth >\m@ne
-      \if@mainmatter
-        \huge\centering \@chapapp\space \thechapter
-        \par\nobreak
-        \vskip 10\p@
-      \fi
-    \fi
-    \interlinepenalty\@M
-    \Huge #1\par\nobreak
-    \vskip 40\p@
-  }
-}
+%\def\@makechapterhead#1{
+%  \vspace*{25\p@}
+%  {\parindent \z@ \raggedright \normalfont \singlespacing
+%    \ifnum \c@secnumdepth >\m@ne
+%      \if@mainmatter
+%        \huge\centering \@chapapp\space \thechapter
+%        \par\nobreak
+%        \vskip 10\p@
+%      \fi
+%    \fi
+%    \interlinepenalty\@M
+%    \Huge #1\par\nobreak
+%    \vskip 40\p@
+%  }
+%}
 
-\def\@makeschapterhead#1{
-  \vspace*{50\p@}
-  {\parindent \z@ \raggedright
-    \normalfont
-    \interlinepenalty\@M
-    \Huge\centering #1\par\nobreak
-    \vskip 40\p@
-  }
+%\def\@makeschapterhead#1{
+%  \vspace*{50\p@}
+%  {\parindent \z@ \raggedright
+%    \normalfont
+%    \interlinepenalty\@M
+%    \Huge\centering #1\par\nobreak
+%    \vskip 40\p@
+%  }
+%}
+
+% *============================================================================*
+%  QUOTATIONS
+%
+%  Modified from https://tex.stackexchange.com/questions/191914/chapter-heading-design/191918
+% *============================================================================*
+
+\renewenvironment{quote}{
+	\list{}{
+		\rightmargin\leftmargin
+	}
+	\raggedleft
+	\color{black!50}
+	\item
+	\relax
+}{
+	\endlist
+	\vspace{\fill}
 }
 
 % *============================================================================*

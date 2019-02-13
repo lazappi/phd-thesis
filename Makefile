@@ -19,11 +19,17 @@ $(OUT_DIR)/index.html: $(RMD) bib/references.bib
 	Rscript -e "bookdown::render_book('index.Rmd', 'unimelbdown::thesis_gitbook')"
 
 wordcount.txt: $(OUT_DIR)/thesis.tex
+	# Copy .tex file for counting
+	cp $(OUT_DIR)/thesis.tex $(OUT_DIR)/thesis_count.tex
 	# Replace environment aliases for counting
-	sed -i.bak 's|\\Begin{|\\begin{|g' $(OUT_DIR)/thesis.tex
-	sed -i.bak 's|\\End{|\\end{|g' $(OUT_DIR)/thesis.tex
-	rm $(OUT_DIR)/thesis.tex.bak
-	prettytc -c -l wordcount.txt $(OUT_DIR)/thesis.tex
+	sed -i '' 's|\\Begin{|\\begin{|g' $(OUT_DIR)/thesis_count.tex
+	sed -i '' 's|\\End{|\\end{|g' $(OUT_DIR)/thesis_count.tex
+	# Replace chapter heading definition
+	sed -i '' 's|\\titleformat{\\chapter|\\titleformat{\\Chapter|g' $(OUT_DIR)/thesis_count.tex
+	sed -i '' 's|\\titleformat{name=\\chapter|\\titleformat{name=\\Chapter|g' $(OUT_DIR)/thesis_count.tex
+	prettytc -c -l wordcount.txt $(OUT_DIR)/thesis_count.tex
+	# Remove count .tex file
+	rm $(OUT_DIR)/thesis_count.tex
 
 wordcount.pdf: wordcount.txt R/plot_wordcount.R
 	Rscript R/plot_wordcount.R
