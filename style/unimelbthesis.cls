@@ -121,7 +121,7 @@
 \pagestyle{fancy}
 
 % Override the chapter and section header markings
-\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter~~#1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection~~#1}}
 
 % +-----Front matter-----------------------------------------------------------+
@@ -155,7 +155,7 @@
 		\fancyhead{}
 		% Add in the page number to the footer on this page only
 		\fancyfoot{}
-		\fancyfoot[CF]{\thepage}
+		%\fancyfoot[CF]{\thepage}
 		\renewcommand{\headrulewidth}{0pt}
 	}
 }
