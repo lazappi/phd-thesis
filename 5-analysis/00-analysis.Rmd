@@ -1,1 +1,4 @@
 # Analysis of kidney organoid scRNA-seq data {#analysis}
+
+```{r analysis-sections, child = c("5-analysis/01-introduction.Rmd")}
+```
