@@ -1,0 +1,82 @@
+## Preprocessing
+
+The first stage in any analysis of sequencing data is to convert the files
+returned by the sequencing machine to a format suitable for analysis. For
+scRNA-seq data produced using the 10x Genomics Chromium platform the standard
+tool for accomplishing this task is the Cell Ranger software produced by the
+company. This pipeline performs a number of tasks including demultiplexing the
+BCL base call files returned by Illumina sequencers and converting them to more
+common FASTQ sequence files, aligning reads to a reference genome, counting
+reads overlapping annotated genes, separating cells by barcode and
+deduplicating UMIs. Some of these stages are performed by other tools such as
+Illumina's bcl2fastq and the STAR splice-aware aligner but with wrappers
+designed to handle specific features of 10x libraries. For the analysis
+presented here I have performed preprocessing of the first batch of three
+organoid samples using Cell Ranger (v3.0.1) with the GRCh38 reference genome
+provided by 10x Genomics (v3.0.0) based on the ENSEMBL gene annotation (v93).
+Each sample was processed separately to produce an expression matrix and then
+these were aggregated without any normalisation to form a single dataset.
+
+### Droplet selection
+
+One of the final steps in preprocessing a dataset from a droplet-based cell
+capture method is to select droplets that contain cells. Many droplets are
+produced the cell capture process but most of these will not contain cells and
+any reads associated with them will be the result of ambient RNA present in
+solution. The original Cell Ranger selection algorithm (used in our previous
+publications) required an expected number of cells for each sample ($N$). The
+99th percentile of the total number of UMI counts in the top $N$ cells was then
+taken as a robust estimate of the maximum number of counts in a cell and any
+droplets with at least 10 percent of this maximum was selected as a cell
+[Zheng] (Figure \@ref(fig:droplet-selection)A). A similar approach to select
+droplets that fall above the knee point of the cumulative fraction of reads
+with respect to increasing total count [Macosko]. While these methods
+effectively select most cells they risk overlooking cells that have a lower RNA
+content than most cells in the sample. The emptyDrops method in the
+DropletUtils package provides an alternative approach (Figure
+\@ref(fig:droplet-selection)B). A threshold on total counts is selected below
+which droplets are assumed to be empty and these empty droplets are used to
+produce a profile of the ambient RNA in the sample. A Monte Carlo sampling
+approach is then used to calculate a p-value indicating whether a particular
+droplet is likely to have come from the ambient distribution. A traditional
+threshold is also used to select cells with more total counts than the knee
+point when droplets are ordered by total counts. Cell Ranger v3 uses a modified
+version of the emptyDrops procedure where the original selection is substituted
+for the knee point threshold (Figure \@ref(fig:droplet-selection)C).
+
+```{r droplet-selection, fig.cap = "(ref:cap-droplet-selection)", fig.scap = "(ref:scap-droplet-selection)", out.width = "100%"}
+knitr::include_graphics(here::here("figures/droplet-selection.png"))
+```
+
+(ref:scap-droplet-selection) Droplet selection methods applied to the kidney organoid dataset.
+
+(ref:cap-droplet-selection) Droplet selection methods applied to the kidney organoid dataset. (A) The traditional Cell Ranger approach which applies a threshold to the total counts per a droplet based on an expected number of cells in a sample. (B) The emptyDrops approach which tests whether droplets are significantly different from the ambient RNA profile. (C) Cell Ranger v3 uses a method that combines aspects of both approaches.
+
+As we would expect the original Cell Ranger algorithm is the most conservative,
+selecting only XXX cells (Figure \@ref(fig:selection-comparison)). The
+emptyDrops and Cell Ranger v3 methods, which use a testing procedure rather
+than a strict threshold, identify many more cell-containing droplets. Many of
+these cells are identified by both methods but there are also a large number
+that are identified only by emptyDrops. This is surprising as the two software
+package provide different implementations of what is largely the same approach.
+Some of these differences may be due to the parameters I have chosen for
+emptyDrops but it is difficult to say if these are different to those that are
+used by Cell Ranger. This highlights some of the tradeoffs inherent is using a
+pre-designed pipeline for processing any dataset. While it is convenient to
+have a single tools that automates a series of tasks this often comes at the
+cost of less control over each stage than would be possible if using a series
+of individual tools.
+
+```{r selection-comparison, fig.cap = "(ref:cap-selection-comparison)", fig.scap = "(ref:scap-selection-comparison)", out.width = "100%"}
+knitr::include_graphics(here::here("figures/selection-comparison.png"))
+```
+
+(ref:scap-selection-comparison) UpSet plot comparing droplet selection methods.
+
+(ref:cap-selection-comparison) UpSet plot comparing droplet selection methods. Cell Ranger v3 and emptyDrops identify significantly more cells than the traditional Cell Ranger approach. My use of emptyDrops also identifies a set of cells that are overlooked by the automated Cell Ranger v3 procedure.
+
+It is possible that my usage of emptyDrops has been too permissive and
+identified cells in droplets that are actually empty but it is difficult to
+tell at this stage. In the following section I will perform further quality
+control of cells anyway so for now I will keep any cells that were identified
+by either the emptyDrops or Cell Ranger methods.

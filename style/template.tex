@@ -41,20 +41,69 @@
 \usepackage{longtable} % Table formatting
 \usepackage{setspace}  % Line spacing
 \usepackage{chemarr}   % Improved reaction arrows for chemists
-\usepackage{palatino}  % Use the palatino font family
-\usepackage{mathpazo}  % Use the palatino font family
+%\usepackage{palatino}  % Use the palatino font family
+%\usepackage{mathpazo}  % Use the palatino font family
+%\usepackage{utopia}    % Use the Utopia font
+%\usepackage{charter}   % Use the Bitstream Charter font
+\usepackage{libertine}  % Use the Libertine font family
 \usepackage{graphicx}  % Extended graphics package
 \usepackage{parskip}   % Space between paragraphs
 \usepackage{microtype} % Microtypography for better spacing, kerning, etc...
 \usepackage{caption}   % Caption formatting
+\usepackage{xcolor}    % Coloured text
 
 \usepackage[utf8]{inputenc}       % UTF-8 input encoding
 \usepackage[T1]{fontenc}          % Use 8-bit fonts
 \usepackage[hidelinks]{hyperref}  % Hyperlinks
+\usepackage[explicit]{titlesec}   % Fancy section headings
+
+\usepackage{csquotes}
 
 % +-----Package options--------------------------------------------------------+
 
-\captionsetup{labelfont=bf,font=small,margin=10pt}
+% Chapter headings
+\titleformat{\chapter}[display]
+  {
+    \normalfont
+    \Large
+    \rmfamily
+  }
+  {
+    \vskip150pt
+    \sffamily
+    \flushright
+    \fontsize{150}{0}
+    \textbf{
+      \textcolor{black!20}{
+        ~\thechapter\vskip0pt
+      }
+    }
+  }
+  {0pt}
+  {
+    \sffamily
+    \flushright
+    \fontsize{40}{0}
+    \textbf{
+      \textcolor{black!20}{
+        #1
+      }
+    }
+    \vspace{40pt}
+  }
+
+% Unnumbered chapter headings
+\titleformat{name=\chapter,numberless}[display]
+  {\normalfont\LARGE\bfseries}
+  {}
+  {0pt}
+  {#1}
+
+% No numbers on chapter pages
+%\assignpagestyle{\chapter}{empty}
+
+% Figure captions
+\captionsetup{labelfont=bf, font=small, margin=10pt}
 
 % +-----Parameters-------------------------------------------------------------+
 %  Set parameters for the document. To convert from YAML to LaTeX we need to add
@@ -100,6 +149,7 @@ $endif$
 %TC:group copyrightlist 1 3
 %TC:group longtable 1 3
 %TC:group appendix 1 3
+%TC:group quote 1 3
 
 % *============================================================================*
 %  FRONT MATTER
@@ -112,6 +162,8 @@ $endif$
 \urlstyle{same}
 
 \begin{frontmatter}
+
+\frontmatterheadings
 
 % +-----Title------------------------------------------------------------------+
 
@@ -189,6 +241,8 @@ $endif$
 
 
 \begin{mainmatter}
+
+\mainmatterheadings
 
 $body$
 
