@@ -80,3 +80,87 @@ identified cells in droplets that are actually empty but it is difficult to
 tell at this stage. In the following section I will perform further quality
 control of cells anyway so for now I will keep any cells that were identified
 by either the emptyDrops or Cell Ranger methods.
+
+### Alevin comparison
+
+Cell Ranger is based on the traditional workflow for processing RNA-seq reads
+which is to align them to a reference genome then count how many overlap
+annotated genes. In recent years it has become common to use methods such as
+Salmon and Kallisto that directly estimate transcript expression without
+alignment. While these approaches do not produce an exact location for each
+read they can be much faster which is appealing for scRNA-seq data as there are
+many more cells to quantify. Factors such as cell barcodes, UMIs and different
+model assumptions mean that this tools have had to be adapted for scRNA-seq
+data. Alevin is the scRNA-seq mode available in Salmon.
+
+Alevin has it's own method for identifying which droplets contain cells. First
+the knee point in cumulative distribution of barcode frequencies is identified
+and any droplets above this are assumed to contain cells. The Levenshtein
+distance is calculated to the barcodes of all the other droplets is calculated
+and if they are not sufficiently close they are considered to be noise and the
+reads discarded. Alevin performs a second round of cell whitelisting following
+quantification. Droplets are divided into three zones, high-quality (top half
+above the knee point), ambiguous (bottom half above the knee point) and
+low-quality (well below the knee point). A naïve Bayes classifier based on a
+set of features including the fraction of reads mapped, the fraction of
+mitochondrial reads and the duplication rate is then used to classify droplets
+as either high or low-quality. This is very different to the emptyDrops
+approach using a machine learning technique rather than a statistical test and
+technical features rather than the overall expression profile and is more
+similar to approaches that have been suggested for quality control of cells.
+Figure \@ref(fig:alevin-comparison)A shows a comparison of this approach to the
+two methods I used to select cells in the previous section. Most of the cells
+are identified by all three methods but just like emptyDrops, Alevin finds a
+large number of cells that are overlooked by Cell Ranger v3. What is
+particularly striking is that there is very little overlap in the extra cells
+identified by Alevin and emptyDrops suggesting that the differences between the
+two approaches may be important. However I should note that the Alevin uses
+it's own quantification as input for classification while I provided the counts
+from Cell Ranger to emptyDrops so some of the differences may be due to the
+data they were given rather than the methods themselves. Alevin (and Cell
+Ranger v3) also processes the three samples separately while I performed
+emptyDrops on the whole dataset.
+
+```{r alevin-comparison, fig.cap = "(ref:cap-alevin-comparison)", fig.scap = "(ref:scap-alevin-comparison)", out.width = "100%"}
+knitr::include_graphics(here::here("figures/alevin-comparison.png"))
+```
+
+(ref:scap-alevin-comparison) Comparison to quantification using Alevin.
+
+(ref:cap-alevin-comparison) Comparison to quantification using Alevin. (A) UpSet plot comparing the droplets identified as cells by the Alevin, Cell Ranger v3 and emptyDrops methods. (B) Scatter plot comparing total counts per cell as estimated by Alevin and the alignment based Cell Ranger pipeline. Points are coloured according to the method that identified them as cells (Alevin only (green), alignment based only (blue), both (pink). Thin purple line shows $y = x$, thick blue line shows a linear fit for cells identified by both methods. (C) Scatter plot comparing mean counts gene as estimated by the two pipelines, points colours and lines as in (B). (D) Relationship between the total counts per gene and the percentage of cells with a zero count for each pipeline.
+
+Similar to Cell Ranger the quantification stage of Alevin involves several
+steps including mapping reads and deduplicating UMIs. Alevin maps reads to the
+transcriptome and groups them by cell barcode and UMI. To deduplicate UMIs
+Alevin considers the mapping location and the UMI sequence (to account for
+sequencing errors). Because reads have been mapped to the transcriptome rather
+than the genome there is an additional layer of information that can be useful
+for identifying if reads with the same UMI map to the same location that avoids
+over collapsing UMIs. Following these steps the transcriptome level expression
+estimates are aggregated to the gene level for analysis. Figure
+\@ref(fig:alevin-comparison)B shows a comparison of the total counts per cell
+between Alevin and the alignment based approach using Cell Ranger. For cells
+that were identified by both pipelines (pink) the total counts are very
+similar. Cells identified just by the alignment based approach (blue) tend to
+have fewer counts than those identified only by Alevin. There are more
+difference if we look at the mean counts per gene (Figure
+\@ref(fig:alevin-comparison)C). Most of the variability is at low expression
+levels but there are some genes that are lowly expressed by one method but have
+relatively high expression in the other. One reason for this could be either
+method missing (or incorrectly assigning) counts altogether. Figure
+\@ref(fig:alevin-comparison)D shows the relationship between the total counts
+per gene and the percentage of cells with zero counts. This relationship is
+noisier for the Alevin quantification, particularly below the trend line, and
+also show more genes with a very low percentage of zeros.
+
+While there are differences between the results from the two approaches there
+is nothing in this comparison to suggest that either is inaccurate. Genes that
+are found to be expressed by only one of the methods could possibly lead to
+differences in downstream interpretation but it is very difficult to say which
+is a better representation of true expression and it is unlikely that all genes
+providing similar evidence (for example markers of a cell type) would be
+affected in the same way. On this evidence Alevin presents a viable alternative
+to alignment based quantification for scRNA-seq data, particularly for large
+datasets where computational time is a concern. However, when alignment is
+required anyway it is simpler and avoids repetition to use that to produce an
+expression matrix for further analysis.

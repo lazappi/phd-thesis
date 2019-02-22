@@ -22,11 +22,11 @@ wordcount.txt: $(OUT_DIR)/thesis.tex Makefile
 	# Backup .tex file
 	cp $(OUT_DIR)/thesis.tex $(OUT_DIR)/thesis.tex.bak
 	# Replace environment aliases for counting
-	sed -i '' 's|\\Begin{|\\begin{|g' $(OUT_DIR)/thesis.tex
-	sed -i '' 's|\\End{|\\end{|g' $(OUT_DIR)/thesis.tex
+	sed -i'' 's|\\Begin{|\\begin{|g' $(OUT_DIR)/thesis.tex
+	sed -i'' 's|\\End{|\\end{|g' $(OUT_DIR)/thesis.tex
 	# Replace chapter heading definition
-	sed -i '' 's|\\titleformat{\\chapter|\\titleformat{\\Chapter|g' $(OUT_DIR)/thesis.tex
-	sed -i '' 's|\\titleformat{name=\\chapter|\\titleformat{name=\\Chapter|g' $(OUT_DIR)/thesis.tex
+	sed -i'' 's|\\titleformat{\\chapter|\\titleformat{\\Chapter|g' $(OUT_DIR)/thesis.tex
+	sed -i'' 's|\\titleformat{name=\\chapter|\\titleformat{name=\\Chapter|g' $(OUT_DIR)/thesis.tex
 	prettytc -c -l wordcount.txt $(OUT_DIR)/thesis.tex
 	# Copy and remove backup
 	cp $(OUT_DIR)/thesis.tex.bak $(OUT_DIR)/thesis.tex
