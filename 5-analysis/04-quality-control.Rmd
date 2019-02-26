@@ -58,10 +58,6 @@ knitr::include_graphics(here::here("figures/qc-thresholds.png"))
 
 (ref:cap-qc-thresholds) Thresholds used for quality control. (A) Scatter plot of total counts per cell against number of features expressed. Thresholds for selecting high-quality cells show by purple(features) and green (counts) dotted lines. Points are coloured according to whether cells were kept (blue) or removed (pink). (B) Histogram of percentage counts assigned to mitochondrial genes with threshold shown in pink. (C) Histogram of doublet score genes with threshold shown in pink. (D) PCA plot based on technical factors. Cells are coloured according to whether they were removed by both the PCA outlier method and manual filtering (orange) or just manual filtering (blue).
 
-```{r qc-validation, fig.cap = "(ref:cap-qc-validation)", fig.scap = "(ref:scap-qc-validation)", out.width = "100%"}
-knitr::include_graphics(here::here("figures/qc-validation.png"))
-```
-
 An alternative approach is to rely purely on the quality control metrics
 themselves rather than manually selecting thresholds. PCA can be performed
 using the technical metrics rather than gene expression levels and then
@@ -93,6 +89,10 @@ foldchanges in the removed cells that would suggest less stringent thresholds
 would be more appropriate but that is not the case here as can be seen the the
 15 genes with greatest foldchange shown in Figure \@ref(fig:qc-validation)B.
 
+```{r qc-validation, fig.cap = "(ref:cap-qc-validation)", fig.scap = "(ref:scap-qc-validation)", out.width = "100%"}
+knitr::include_graphics(here::here("figures/qc-validation.png"))
+```
+
 (ref:scap-qc-validation) Validation of quality control.
 
 (ref:cap-qc-validation) Validation of quality control. (A) Scatter plot of genes showing average expression against predicted foldchange for removed cells compared to kept cells. Points are coloured according to the difference in proportion of cells that express each gene between removed and kept cells. (B) Top 15 genes with sorted by positive foldchange in removed cells. (C) t-SNE plots of cells coloured by various technical factors including sample, droplet selection method, assigned cell cycle stage, total counts, total features and percentage mitochondrial counts.
@@ -111,4 +111,4 @@ been selected using the emptyDrops method. However, this population is not
 clearly separated and may represent some intermediate cell type. At this stage
 I will retain those cells but following clustering it may be appropriate to
 revisit that decision if they do not appear to represent a logical biological
-population.
+population.`

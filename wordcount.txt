@@ -1907,3 +1907,57 @@ Date	Time	Name	Level	Text	Headers	Captions	Total
 2019-02-24	13:58:25	Quality control	Section	1088	2	182	1272
 2019-02-24	13:58:25	Conclusion	Chapter	662	1	0	663
 2019-02-24	13:58:25	References	Chapter	0	1	5790	5791
+2019-02-26	17:42:47	docs/thesis.tex	Document	20002	153	9118	29273
+2019-02-26	17:42:47	Introduction	Chapter	10096	74	851	11021
+2019-02-26	17:42:47	The central dogma	Section	550	3	58	611
+2019-02-26	17:42:47	RNA-sequencing	Section	1633	9	222	1864
+2019-02-26	17:42:47	Library preparation	Subsection	437	2	67	506
+2019-02-26	17:42:47	High-throughput sequencing	Subsection	247	2	77	326
+2019-02-26	17:42:47	Analysis of RNA-seq data	Subsection	740	4	78	822
+2019-02-26	17:42:47	Single-cell RNA-sequencing	Section	1901	18	289	2208
+2019-02-26	17:42:47	Early single-cell capture technologies	Subsection	368	4	52	424
+2019-02-26	17:42:47	Droplet based cell capture	Subsection	328	4	84	416
+2019-02-26	17:42:47	Unique Molecular Identifiers	Subsection	392	3	59	454
+2019-02-26	17:42:47	Recent advances in scRNA-seq protocols	Subsection	656	5	94	755
+2019-02-26	17:42:47	Analysing scRNA-seq data	Section	3735	25	114	3874
+2019-02-26	17:42:47	Pre-processing and quality control	Subsection	552	4	0	556
+2019-02-26	17:42:47	Normalisation and integration	Subsection	515	3	0	518
+2019-02-26	17:42:47	Grouping cells	Subsection	467	2	0	469
+2019-02-26	17:42:47	Ordering cells	Subsection	414	2	53	469
+2019-02-26	17:42:47	Gene detection and interpretation	Subsection	626	4	0	630
+2019-02-26	17:42:47	Alternative analyses	Subsection	130	2	0	132
+2019-02-26	17:42:47	Evaluation of scRNA-seq analysis methods	Subsection	263	5	0	268
+2019-02-26	17:42:47	Kidney development	Section	1902	14	168	2084
+2019-02-26	17:42:47	Structure and function	Subsection	572	3	81	656
+2019-02-26	17:42:47	Stages of development	Subsection	360	3	0	363
+2019-02-26	17:42:47	Growing kidney organoids	Subsection	612	3	87	702
+2019-02-26	17:42:47	Kidney scRNA-seq studies	Subsection	233	3	0	236
+2019-02-26	17:42:47	Thesis overview and aims	Section	164	4	0	168
+2019-02-26	17:42:47	The scRNA-seq tools landscape	Chapter	1165	16	147	1328
+2019-02-26	17:42:47	Introduction	Section	381	1	0	382
+2019-02-26	17:42:47	scRNA-tools publication	Section	0	2	0	2
+2019-02-26	17:42:47	The current scRNA-tools database	Section	594	4	92	690
+2019-02-26	17:42:47	Usage of the scRNA-tools website	Section	190	5	55	250
+2019-02-26	17:42:47	Simulating scRNA-seq data	Chapter	1537	13	86	1636
+2019-02-26	17:42:47	Introduction	Section	477	1	0	478
+2019-02-26	17:42:47	Splatter publication	Section	0	2	0	2
+2019-02-26	17:42:47	Updates to Splatter	Section	1060	7	72	1139
+2019-02-26	17:42:47	Performance of current simulations	Subsection	490	4	72	566
+2019-02-26	17:42:47	Visualising clustering across resolutions	Chapter	816	11	72	899
+2019-02-26	17:42:47	Introduction	Section	446	1	0	447
+2019-02-26	17:42:47	Clustering trees publication	Section	0	3	0	3
+2019-02-26	17:42:47	Overlaying clustering trees	Section	370	3	72	445
+2019-02-26	17:42:47	Analysis of kidney organoid scRNA-seq data	Chapter	5726	29	710	6465
+2019-02-26	17:42:47	Introduction	Section	786	1	0	787
+2019-02-26	17:42:47	Summary of published work	Section	1027	4	0	1031
+2019-02-26	17:42:47	Preprocessing	Section	1534	5	226	1765
+2019-02-26	17:42:47	Droplet selection	Subsection	519	2	106	627
+2019-02-26	17:42:47	Alevin comparison	Subsection	829	2	120	951
+2019-02-26	17:42:47	Quality control	Section	1088	2	182	1272
+2019-02-26	17:42:47	Clustering	Section	1291	11	302	1604
+2019-02-26	17:42:47	Gene selection	Subsection	364	2	85	451
+2019-02-26	17:42:47	Resolution selection	Subsection	303	2	41	346
+2019-02-26	17:42:47	Cluster validation	Subsection	255	2	114	371
+2019-02-26	17:42:47	Comparison to published clusters	Subsection	266	4	62	332
+2019-02-26	17:42:47	Conclusion	Chapter	662	1	0	663
+2019-02-26	17:42:47	References	Chapter	0	1	5790	5791
