@@ -1,0 +1,63 @@
+## Connecting clusters
+
+Clustering analysis can be used to group cells and identify the cell types that
+are present in a dataset but by itself doesn't tell us anything about how those
+groups relate to each other. In the developmental context where there are
+multiple differentiating cell types this is obviously something of interest.
+Some aspects of these relationships can be inferred from the proximity of
+clusters in reduced dimensional space or known biology of the assigned cell
+types, but this is largely based on intuition rather than information in the
+data. Computational methods to calculate developmental trajectories in
+scRNA-seq data have been a big focus of early scRNA-seq bioinformatics
+research. In our published analysis we used the Monocle package to create a
+psuedotime ordering for cells in the nephron lineage. However, methods like
+this do not perform as well on larger datasets with many cell types from
+possibly unconnected lineages such as we have in the full organoid dataset.
+Here I will demonstrate two alternative approaches for connecting clusters and
+adding context to the current analysis.
+
+### Partition-based graph abstraction
+
+Partition-based graph abstraction (PAGA) is a method for reducing the
+complexity of a dataset by estimating the connectivity between clusters. The
+result is a reduced representation of the dataset where each node is a cluster
+and the edges show how connected they are (Figure \@ref(fig:paga-results)A).
+PAGA is available as part of the scanpy package and starts with the same kind
+of shared nearest neighbour graph that is used by the kind of graph-based
+clustering done by Seurat. The number of edges between cells in different
+clusters is compared to what would be expected if edges were assigned randomly
+and used to calculate a connectivity between clusters that can be interpreted
+as the confidence in the presence of an actual connection between clusters.
+
+The results for the organoid dataset show high connectivity between the various
+stromal clusters that make up the majority of cells. Connectivity between some
+of the other clusters also confirm what we would expect, for example the
+podocyte cluster is strongly connected to the epithelial cluster and two
+off-target neural clusters (glial and neural progenitor) are strongly
+connected. The position of the two clusters containing emptyDrops cells is less
+clear with connections seen between them but not as clearly with the other
+clusters they would be expected to be related two, particularly between the two
+endothelial clusters.
+
+```{r paga-results, fig.cap = "(ref:cap-paga-results)", fig.scap = "(ref:scap-paga-results)", out.width = "100%"}
+knitr::include_graphics(here::here("figures/paga-results.png"))
+```
+
+(ref:scap-paga-results) Results of partition-based graph abstraction (PAGA).
+
+(ref:cap-paga-results) Results of partition-based graph abstraction (PAGA). (A) The cluster connectivity graph produced by PAGA. Each node represents a cluster and edges show the connectivity between clusters. The size of nodes indicates the number of cells in each cluster and the edge colour and transparency shows the connectivity from low (blue) to high (yellow). (B). The underlying cell shared nearest neighbour graph. Nodes are cells coloured by cluster and edges are coloured by connectivity.
+
+In some ways the graph produced by PAGA is similar but complementary to a
+clustering tree in it considers connectivity between clusters at the same
+resolution rather than overlaps between clusters from neighbouring resolutions.
+In fact the authors of the method emphasise the ability to explore a dataset at
+different resolutions by producing PAGA graphs from different sets of clusters.
+The development of two independent methods based on building graphs of clusters
+suggests to me that this is an approach that could have more general
+applications. The edges produced by PAGA can show which clusters are related
+but they don't provide any directionality to that relationship. One way to add
+some directionality to the dataset is to perform a random walk on the graph to
+calculate a diffusion psuedotime. However this approach requires manually
+defining a root node to use. An alternative approach for assigning
+directionality to cells involves looking at the splicing information available
+in the reads themselves.
