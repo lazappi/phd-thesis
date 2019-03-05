@@ -53,19 +53,19 @@ knitr::include_graphics(here::here("figures/droplet-selection.png"))
 (ref:cap-droplet-selection) Droplet selection methods applied to the kidney organoid dataset. (A) The traditional Cell Ranger approach which applies a threshold to the total counts per a droplet based on an expected number of cells in a sample. (B) The emptyDrops approach which tests whether droplets are significantly different from the ambient RNA profile. (C) Cell Ranger v3 uses a method that combines aspects of both approaches.
 
 As we would expect the original Cell Ranger algorithm is the most conservative,
-selecting only XXX cells (Figure \@ref(fig:selection-comparison)). The
-emptyDrops and Cell Ranger v3 methods, which use a testing procedure rather
-than a strict threshold, identify many more cell-containing droplets. Many of
-these cells are identified by both methods but there are also a large number
-that are identified only by emptyDrops. This is surprising as the two software
-package provide different implementations of what is largely the same approach.
-Some of these differences may be due to the parameters I have chosen for
-emptyDrops but it is difficult to say if these are different to those that are
-used by Cell Ranger. This highlights some of the tradeoffs inherent is using a
-pre-designed pipeline for processing any dataset. While it is convenient to
-have a single tools that automates a series of tasks this often comes at the
-cost of less control over each stage than would be possible if using a series
-of individual tools.
+selecting only `r params$pre$n_default` cells (Figure
+\@ref(fig:selection-comparison)A). The emptyDrops and Cell Ranger v3 methods,
+which use a testing procedure rather than a strict threshold, identify many
+more cell-containing droplets. Many of these cells are identified by both
+methods but there are also a large number that are identified only by
+emptyDrops. This is surprising as the two software package provide different
+implementations of what is largely the same approach. Some of these differences
+may be due to the parameters I have chosen for emptyDrops but it is difficult
+to say if these are different to those that are used by Cell Ranger. This
+highlights some of the tradeoffs inherent is using a pre-designed pipeline for
+processing any dataset. While it is convenient to have a single tools that
+automates a series of tasks this often comes at the cost of less control over
+each stage than would be possible if using a series of individual tools.
 
 ```{r selection-comparison, fig.cap = "(ref:cap-selection-comparison)", fig.scap = "(ref:scap-selection-comparison)", out.width = "100%"}
 knitr::include_graphics(here::here("figures/selection-comparison.png"))
