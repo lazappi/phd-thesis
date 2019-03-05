@@ -290,4 +290,10 @@ tools_countries <- read_tsv(here("data/tools-countries.tsv"),
 n_countries <- length(unique(tools_countries$Country))
 ```
 
+```{r load-params}
+params_path <- here("data/analysis-parameters.json")
+
+params <- read_json(params_path, simplifyVector = TRUE)
+```
+
 `r if(html) '# Front matter {-}'`

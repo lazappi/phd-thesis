@@ -1,0 +1,57 @@
+{
+  "alevin": {
+    "n_cells": [10423],
+    "n_genes": [37247]
+  },
+  "pre": {
+    "n_droplets": [945038],
+    "empty_thresh": [100],
+    "emp_iters": [30000],
+    "emp_fdr": [0.01],
+    "n_default": [7006],
+    "n_cellranger": [8291],
+    "n_empdrops": [9858],
+    "n_cells": [10002]
+  },
+  "qc": {
+    "counts_thresh": [2.309],
+    "features_thresh": [2.3659],
+    "mt_thresh": [8.2411],
+    "doublet_thresh": [1.5572],
+    "counts_mads": [4],
+    "features_mads": [4],
+    "mt_mads": [4],
+    "min_count": [1],
+    "min_cells": [2],
+    "n_cells": [8059],
+    "n_genes": [22739],
+    "median_genes": [2506],
+    "median_counts": [7838]
+  },
+  "clust": {
+    "seurat_thresh": [0.0125, 3.5, 1, "Inf"],
+    "sel_seurat": [2457],
+    "m3drop_thresh": [0.01],
+    "sel_m3drop": [1952],
+    "sel_genes": [1952],
+    "n_pcs": [15],
+    "knn": [30],
+    "resolutions": [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
+    "res": [0.4],
+    "n_clusts": [13]
+  },
+  "markers": {
+    "maxmean_thresh": [-1.3505],
+    "maxmean_mads": [0.5],
+    "fdr_thresh": [0.05],
+    "logFC_thresh": [1]
+  },
+  "paga": {
+    "con_thresh": [0.7]
+  },
+  "velocyto": {
+    "spliced_minmax": [0.2],
+    "unspliced_minmax": [0.05]
+  },
+  "methods": []
+}
