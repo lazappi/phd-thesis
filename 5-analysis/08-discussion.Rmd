@@ -9,8 +9,8 @@ profiled the cell types that are present in these organoids. I chose to use
 just the first batch of data we analysed previously, which contains cells from
 three organoids, and ignore a second batch which contains a fourth organoid in
 order to avoid the problem of integrating datasets. Solving this problem is an
-important area or research that has resulted in a range of methods produced
-recently but it is still unclear which approaches are most effective and it can
+important area of research that has resulted in a range of methods produced
+recently  but it is still unclear which approaches are most effective and it can
 be difficult to transfer the results of integration between analysis tools. As
 I wanted to demonstrate a range of tools here I have chosen to stick to a
 single dataset but how best to combine datasets is worthy of further
@@ -25,7 +25,7 @@ the method in the more recent Cell Ranger v3 which combines the two approaches.
 The testing based methods found significantly more cells than the thresholding
 approach with many of those only being identified by emptyDrops. However, many
 of these additional cells had relatively low total counts, suggesting they may
-have been incorrectly selected. At these stage I chose to keep any droplet that
+have been incorrectly selected. At this stage I chose to keep any droplet that
 was identified by either the Cell Ranger v3 or emptyDrops methods giving a
 dataset of `r params$pre$n_cells` cells. To remove any low-quality cells I next
 performed quality control of the dataset. I used a data-driven approach to
@@ -64,7 +64,7 @@ overlap of cells between these clusters and the clusters we published
 previously shows that many of them correspond with a previously described cell
 type. Most of the additional cells identified by emptyDrops belong to two
 clusters but because these cells weren't present in the published analysis
-there is no clear signal to associate them with a published cell type. To
+there is no clear overlap to associate them with a published cell type. To
 better interpret all the clusters I performed differential expression testing
 using edgeR, testing the cells in each cluster against the other cells in the
 dataset and looking for marker genes that are more highly expressed in a single
@@ -92,7 +92,7 @@ showing how they are related and reducing the dataset to a graph of clusters.
 When applied here I saw a high amount of connectivity amongst stromal clusters
 and some of the expected developmental trajectories where also highly
 connected. Other clusters that we would expect to be similar, such as the two
-endothelial clusters, were not so related. Another approach which provides
+endothelial clusters, were not so related. Another approach which gives
 additional context is calculating cell velocity which provides a
 transcriptional direction for each cell. Averaged across the dataset it can
 reveal where populations are headed or which are transcriptionally stable. The
@@ -120,6 +120,6 @@ experiment comparing a patient and corrected cell line, I would expect these
 decisions to be more important and to have a bigger impact on how the results
 are interpreted. New methods that can extract additional information from an
 scRNA-seq dataset and provide additional context help interpretation by adding
-evidence and I expect they will become a standard part of this kinds of analyses
-with multiple methods that approach a dataset in different ways being used to
-confirm hypotheses.
+evidence and I expect they will become a standard part of these kinds of
+analyses with multiple methods that approach a dataset in different ways being
+used to identify cell types and confirm hypotheses.

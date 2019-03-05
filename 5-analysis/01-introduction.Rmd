@@ -4,42 +4,42 @@ The kidney has a branching structure where incoming blood arteries are split
 into smaller and smaller vessels. At the end of the smallest capillaries are
 nephrons, the functional unit of the kidney. Blood is filtered in the
 glomerulus and the filtrate passes through the proximal tubule, loop of Henle,
-distal tubule and into the collecting duct. Each section of the the nephron is
-made up of specialised cell types responsible for balancing concentrations of
-particular species between the filtrate and blood. To do this they produce a
-range of specific transporter molecules that secrete or extract molecules
-including metal ions, small organic molecules and water. Disruptions to these
-important cell types can have a profound effect on the body as the delicate
-balance between concentrations of molecular species is lost. Kidney disease can
-be developed through a lifetime as the results of a range of factors and when
-the condition becomes chronic the only reliable treatments currently available
-are dialysis, which is time consuming and unpleasant, or a kidney transplant.
-Some kidney conditions are purely genetic and are caused by defects in kidney
-development or structure rather than damage from external factors. Understanding
-kidney development and structure is key to understanding these diseases and
-developing treatments for them.
+distal tubule and into the collecting duct. Each section of the nephron is made
+up of specialised cell types responsible for balancing concentrations of
+particular molecular species between the filtrate and blood. To do this they
+produce a range of specific transporter molecules that secrete or extract
+molecules including metal ions, small organic molecules and water. Disruptions
+to these important cell types can have a profound effect on the body as the
+delicate balance between concentrations of molecular species is lost. Kidney
+disease can develop through a lifetime as the results of a range of factors and
+when the condition becomes chronic the only reliable treatments currently
+available are dialysis, which is time consuming and unpleasant, or a kidney
+transplant. Some kidney conditions are purely genetic and are caused by defects
+in kidney development or structure rather than damage from external factors.
+Understanding kidney development and structure is key to understanding these
+diseases and developing treatments for them.
 
-One way to investigate kidney development is grow kidney tissue from stem cells.
-By providing the correct growth factors and conditions stem cells which could
-become any cell type can be directed to differentiate into kidney tissue. Part
-of this process involves transferring the cells from growing in a flat,
+One way to investigate kidney development is to grow kidney tissue from stem
+cells. By providing the correct growth factors and conditions stem cells which
+could become any cell type can be directed to differentiate into kidney tissue.
+Part of this process involves transferring the cells from growing in a flat,
 two-dimensional layer on a plate to a three-dimensional environment where
 different types of cells can interact with each other and form structures that
-replicate a nephron. These tissues are known as kidney organoids and can be used
-to model various aspects of kidney development but how useful organoids are
-depends on how well they replicate real kidney cell types.
+replicate a nephron. These tissues are known as kidney organoids and can be
+used to model various aspects of kidney development but how useful organoids
+are depends on how well they replicate real kidney cell types.
 
 Organoids have typically been characterised by immunofluorescence imaging using
 antibodies for known markers of nephron segments and cell types. This approach
 makes it easy to see what structures are present in an organoid and if their
 morphology resembles real tissues but it relies on prior knowledge about which
 proteins are important and antibodies for those proteins being available.
-Immunofluorescence imaging is also limited in the number of proteins that can be
-viewed at a time with typically only around four or five colour channels being
-available at a time. Bulk RNA-sequencing has also been used to characterise
-kidney organoids. While this approach is less biased and measures expression
-across the transcriptome it only provides a global average of expression across
-an organoid and cannot show exactly which cell types are present or which genes
+Typically only four or five colour channels are available for
+immunofluorescence imaging, limiting the number of proteins that can be shown
+at once. Bulk RNA-sequencing has also been used to characterise kidney
+organoids. While this approach is less biased and measures expression across
+the transcriptome it only provides a global average of expression across an
+organoid and cannot show exactly which cell types are present or which genes
 are expressed in the same cells. Single-cell RNA-seq addresses some of these
 limitations by measuring expression in individual cells, allowing cells with
 similar expression profiles to be identified and investigated.
@@ -48,25 +48,13 @@ As in many other areas scRNA-seq has been rapidly embraced as a useful tool in
 studying kidney development and there have already been several studies
 investigating the cell types present in adult kidney, developing kidney and
 kidney organoids. During my PhD I have contributed to this aspect of several
-studies. The work I have been most closely involved with, and performed all the
-computational analysis for, was recently published in Genome Medicine as.... In
-this work we reanalysed a dataset that was introduced in a previous publication
-looking at the reproducibility of a kidney organoid protocol. In the original
-publication the dataset was used to demonstrate that... but in this work we
-looked in more depth at the cell types that were present in these organoids. We
-found that organoids contain many of the cell types in a developing kidney but
-also identified off target populations of neural and muscle cells that have
-formed from other lineages during differentiation. To confirm that the cell
-populations in the organoids were truly similar to those in human tissue we
-combined this dataset with scRNA-seq from human foetal kidney. This combined
-analysis showed us that most of the cell types had similar expression profiles,
-however there were some populations that were specific to each dataset and we
-identified a global stress signature in the foetal kidney dataset.
-
-The analysis we presented in this publication followed a standard scRNA-seq
-workflow, pre-processing, quality control, clustering and ordering of cells, and
-detection of marker genes, but there were still many decisions we had to make.
-Which tools should be used for each step and which parameters should we use for
-these tools? Should we have used any alternative analysis approaches? In this
-chapter I revisit some of those decisions, demonstrate some alternative methods
-and discuss what difference they might have made.
+studies [@Phipson2019-er; @Combes2019-uv; @Lawlor2019-iw]. The work I was most
+closely involved in profiled a set of kidney organoid scRNA-seq samples to
+identify the cell types that were present. The analysis we presented in this
+publication followed a standard scRNA-seq workflow, pre-processing, quality
+control, clustering and ordering of cells, and detection of marker genes, but
+there were still many decisions we had to make. Which tools should be used for
+each step and which parameters should we use for these tools? Should we have
+used any alternative analysis approaches? In this chapter I revisit some of
+those decisions, demonstrate some alternative methods and discuss what
+difference they might have made.

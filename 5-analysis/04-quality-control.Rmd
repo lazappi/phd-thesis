@@ -2,7 +2,7 @@
 
 In the previous section I discussed methods for selecting droplets that contain
 cells but there are further steps that are required in order to select
-high-quality cells. There are a a variety of reasons that we may want to remove
+high-quality cells. There are a variety of reasons that we may want to remove
 cells before further analysis. Cells can become damaged during processing, may
 not contain sufficient counts for analysis or may be the result of doublets
 where two cells are captured in the same droplet. Because these factors are not
@@ -10,21 +10,23 @@ related just to the number of reads per cells they will not have been detected
 by the methods used previously and require different approaches.
 
 Two tools that are useful for quality control of scRNA-seq data are the scater
-and scran packages. The scater package provides functions for quality commonly
-used quality control metrics, adding annotations and visualisations while scran
-can be used for various other calculations. After selecting cell-containing
-droplets I used these two packages to add extra information to the dataset.
-Additional feature annotation was retrieved from BioMart using the biomaRt
-package via functions in scater. Before calculating scater's quality control
-metrics I added mitochondrial genes as a feature control set as the amount of
-counts assigned to these genes can be an indicator of the health of a cell. I
-also used the cyclone function in scran to assign score cell cycle activity and
-assign cell cycle phases to each cell. This method uses the relative expression
-of pairs of genes from previous studies of the cell cycle in order to score
-cell cycle activity. Thresholds can then be applied to these scores in order to
-assign a phase to each cell. Pre-computing a range of metrics is a valuable
-feature of scater as they are immediately available for exploration and
-filtering.
+[@McCarthy2017-ql] and scran [@Lun2016-mq] packages. The scater package
+provides functions for calculating commonly used quality control metrics,
+adding annotations and visualisations while scran can be used for various other
+calculations such as assigning cell cycle phase and doublet scoring. After
+selecting cell-containing droplets I used these two packages to add extra
+information to the dataset. Additional feature annotation was retrieved from
+BioMart [@Smedley2015-an] using the biomaRt package [@Durinck2005-zb] via
+functions in scater. Before calculating scater's quality control metrics I
+added mitochondrial genes as a feature control set as the amount of counts
+assigned to these genes can be an indicator of the health of a cell. I also
+used the cyclone function [@Scialdone2015-rp] in scran to score cell cycle
+activity and assign cell cycle phases to each cell. This method uses the
+relative expression of pairs of genes from previous studies of the cell cycle
+in order to score cell cycle activity. Thresholds can then be applied to these
+scores in order to assign a phase to each cell. Pre-computing a range of
+metrics is a valuable feature of scater as they are immediately available for
+exploration and filtering.
 
 The simplest approach to quality control is to select thresholds for various
 metrics and to remove cells that fall outside these values. This is the
@@ -32,9 +34,9 @@ approach I have taken here and in the previously published analysis. While
 previously these thresholds were selected by visually inspecting distributions
 here I have used a more data driven approach selecting thresholds that are a
 certain number of median absolute deviations (MADs) from the median value. This
-is made easy by the isOutlier function in scran. The first thing I filter on is
-the number of counts per cell applying thresholds to the total number of counts
-per cell and the total number of features that are expressed (Figure
+is made easy by the isOutlier function in scater. The first thing I filter on
+is the number of counts per cell applying thresholds to the total number of
+counts per cell and the total number of features that are expressed (Figure
 \@ref(fig:qc-thresholds)A). These filters are important as cells that fall
 below these thresholds do not contain enough information to be useful for
 analysis. A similar threshold is applied to the percentage of counts assigned
@@ -43,12 +45,12 @@ mitochondrial expression is a sign of distress and can indicate that cells have
 become damaged during processing. Once most of the low-quality cells have been
 removed it becomes possible to check for doublets. Here I have used a
 simulation based approach implemented in scran. This method simulates doublets
-by combining cells. The density of simulated doublets in the neighbourhood of
-each cell in PCA space is then used to calculate a doublet score to which a
-threshold can be applied (Figure \@ref(fig:qc-thresholds)C). For this threshold
-I have chosen a value that gives a number of doublets roughly equal to the
-expected number of the cell capture technology (around one percent for 10x
-Chromium).
+by combining randomly selected cells. The density of simulated doublets in the
+neighbourhood of each cell in PCA space is then used to calculate a doublet
+score to which a threshold can be applied (Figure \@ref(fig:qc-thresholds)C).
+For this threshold I have chosen a value that gives a number of doublets
+roughly equal to the expected number of the cell capture technology (around one
+percent for 10x Chromium).
 
 ```{r qc-thresholds, fig.cap = "(ref:cap-qc-thresholds)", fig.scap = "(ref:scap-qc-thresholds)", out.width = "100%"}
 knitr::include_graphics(here::here("figures/qc-thresholds.png"))
@@ -56,7 +58,7 @@ knitr::include_graphics(here::here("figures/qc-thresholds.png"))
 
 (ref:scap-qc-thresholds) Thresholds used for quality control.
 
-(ref:cap-qc-thresholds) Thresholds used for quality control. (A) Scatter plot of total counts per cell against number of features expressed. Thresholds for selecting high-quality cells show by purple(features) and green (counts) dotted lines. Points are coloured according to whether cells were kept (blue) or removed (pink). (B) Histogram of percentage counts assigned to mitochondrial genes with threshold shown in pink. (C) Histogram of doublet score genes with threshold shown in pink. (D) PCA plot based on technical factors. Cells are coloured according to whether they were removed by both the PCA outlier method and manual filtering (orange) or just manual filtering (blue).
+(ref:cap-qc-thresholds) Thresholds used for quality control. (A) Scatter plot of total counts per cell against number of features expressed. Thresholds for selecting high-quality cells show by purple (features) and green (counts) dotted lines. Points are coloured according to whether cells were kept (blue) or removed (pink). (B) Histogram of percentage of counts assigned to mitochondrial genes with threshold shown in pink. (C) Histogram of doublet score genes with threshold shown in pink. (D) PCA plot based on technical factors. Cells are coloured according to whether they were removed by both the PCA outlier method and manual filtering (orange) or just manual filtering (blue).
 
 An alternative approach is to rely purely on the quality control metrics
 themselves rather than manually selecting thresholds. PCA can be performed
@@ -73,7 +75,10 @@ always be more difficult to interpret than clear manual thresholds. For these
 reasons I have used the dataset produced by filtering using the manual
 thresholds for the rest of this analysis. I have also performed a minimal
 filtering of genes, selecting those that have at least one count in at least
-two high-quality cells.
+two high-quality cells. After quality control the dataset had
+`r params$qc$n_cells` cells and `r params$qc$n_genes` genes with median of
+`r params$qc$median_counts` counts per cell and a median of
+`r params$qc$median_genes` expressed.
 
 After removing low-quality cells it is important to inspect the data again to
 check that the quality control has been successful. If the selected thresholds
@@ -86,7 +91,7 @@ the predFC function in the edgeR package and plotted it against the average
 expression for each gene (Figure \@ref(fig:qc-validation)A). If we saw a set of
 interesting genes (in this case known kidney marker genes) with positive
 foldchanges in the removed cells that would suggest less stringent thresholds
-would be more appropriate but that is not the case here as can be seen the the
+would be more appropriate. That is not the case here as can be seen from the
 15 genes with greatest foldchange shown in Figure \@ref(fig:qc-validation)B.
 
 ```{r qc-validation, fig.cap = "(ref:cap-qc-validation)", fig.scap = "(ref:scap-qc-validation)", out.width = "100%"}
@@ -95,7 +100,7 @@ knitr::include_graphics(here::here("figures/qc-validation.png"))
 
 (ref:scap-qc-validation) Validation of quality control.
 
-(ref:cap-qc-validation) Validation of quality control. (A) Scatter plot of genes showing average expression against predicted foldchange for removed cells compared to kept cells. Points are coloured according to the difference in proportion of cells that express each gene between removed and kept cells. (B) Top 15 genes with sorted by positive foldchange in removed cells. (C) t-SNE plots of cells coloured by various technical factors including sample, droplet selection method, assigned cell cycle stage, total counts, total features and percentage mitochondrial counts.
+(ref:cap-qc-validation) Validation of quality control. (A) Scatter plot of genes showing average expression against predicted foldchange for removed cells compared to kept cells. Points are coloured according to the difference in proportion of cells that express each gene between removed and kept cells. (B) Top 15 genes when sorted by positive foldchange in removed cells. (C) t-SNE plots of cells coloured by various technical factors including sample, droplet selection method, assigned cell cycle stage, total counts, total features and percentage mitochondrial counts.
 
 On the other hand if the selected thresholds are not strict enough we will have
 retained a set of low-quality cells. One way to identify these is to look at
