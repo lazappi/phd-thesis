@@ -18,7 +18,7 @@ genes that will be useful for separating cells. An intuitive approach is filter
 based on the mean expression level, to remove lowly expressed genes, and the
 gene variability to select those explain differences between cells. This is the
 default approach used in Seurat (Figure \@ref(fig:gene-selection)A). The
-thresholds I have chosen here select XXX genes.
+thresholds I have chosen here select `r params$clust$sel_seurat` genes.
 
 ```{r gene-selection, fig.cap = "(ref:cap-gene-selection)", fig.scap = "(ref:scap-gene-selection)", out.width = "100%"}
 knitr::include_graphics(here::here("figures/gene-selection.png"))
@@ -40,7 +40,7 @@ size adjusted negative binomial model. A binomial test is then used to identify
 genes that have significantly more zeros than would be expected from the fitted
 model (Figure \@ref(fig:gene-selection)B). By using a statistical test this
 method removes the need to set multiple thresholds. Here M3Drop has selected
-XXX genes with excess zeros.
+`r params$clust$sel_m3drop` genes with excess zeros.
 
 If we compare the sets of genes selected by these two methods we see that a
 relatively small subset are identified by both of them (Figure
@@ -88,7 +88,8 @@ adds extra information to the structure of the tree Figure
 \@ref(fig:resolution-selection)B. Here I look to identify at which resolution
 we see clear, high-intensity signals for these genes. That is a single or few
 clusters where they are highly expressed. Based on these trees I have selected
-a resolution of XXX which produces XXX clusters.
+a resolution of `r params$clust$res` which produces `r params$clust$n_clusts`
+clusters.
 
 ### Cluster validation
 
