@@ -27,7 +27,7 @@ knitr::include_graphics(here::here("figures/gene-selection.png"))
 
 (ref:scap-gene-selection) Selecting genes for clustering.
 
-(ref:cap-gene-selection) Selecting genes for clustering. (A) Scatter plot of mean gene expression level against dispersion. The default Seurat selection method sets thresholds on these axes. Purple lines indicate thresholds and selected genes are coloured blue. (B) The M3Drop method fits the relationship (purple line) between average expression (x-axis) and dropout rate (y-axis). Genes that have significantly more zeros than expected are selected (pink). (C) Bar plot of the number of genes selected by each method and the intersection. Most genes are identified by only one approach.
+(ref:cap-gene-selection) Selecting genes for clustering. (A) Scatter plot of mean gene expression level against dispersion. The default Seurat selection method sets thresholds on these axes. Purple lines indicate thresholds and selected genes are coloured blue. (B) The M3Drop method fits the relationship (purple line) between average expression (x-axis) and dropout rate (y-axis). Genes that have significantly more zeros than expected are selected (pink). (C) Comparison of gene selection methods. The dropout rate calculated by M3Drop is plotted against the dispersion calculated by Seruat. Points are coloured according to whether they were selected by Seurat (blue), M3Drop (pink) or both (green). (D) Bar plot of the number of genes selected by each method and the intersection. Most genes are identified by only one approach.
 
 The M3Drop package suggests an alternative approach that considers the
 proportion of zero counts per gene rather than the variability
@@ -46,14 +46,15 @@ the need to set multiple thresholds. Here M3Drop has selected
 
 If we compare the sets of genes selected by these two methods we see that a
 relatively small subset are identified by both of them (Figure
-\@ref(fig:gene-selection)C). These differences can be explained by the
-differences between variability and zero counts. For example it is possible for
-a gene to vary a lot between different cells but within an expression range
-that doesn't result in more zeros. Alternatively a gene with relatively low
-dispersion may still have excess zeros if the underlying expression is low
-enough. For the previously published analysis we used the Seurat selection
-method so here I am going to use the genes identified by M3Drop and see what
-effect that has on the clustering results.
+\@ref(fig:gene-selection)D). These differences can be explained by the
+differences between variability and zero counts (Figure
+\@ref(fig:gene-selection)C). For example it is possible for a gene to vary a
+lot between different cells but within an expression range that doesn't result
+in more zeros. Alternatively a gene with relatively low dispersion may still
+have excess zeros if the underlying expression is low enough. For the
+previously published analysis we used the Seurat selection method so here I am
+going to use the genes identified by M3Drop and see what effect that has on the
+clustering results.
 
 ### Resolution selection
 
@@ -113,7 +114,7 @@ knitr::include_graphics(here::here("figures/cluster-validation.png"))
 
 (ref:scap-cluster-validation) Validation of identified clusters.
 
-(ref:cap-cluster-validation) Validation of identified clusters. (A) Scatter plot of cells in UMAP space coloured by assigned cluster. (B) Bar chart of the number of cells in each cluster. (C) Stacked bar chart showing the proportion of cells in each cluster identified by each droplet selection method, Cell Ranger v3 only (orange), emptyDrops only (pink) or both (blue). (D) Stacked bar chart showing the proportion of cells in each cluster assigned to the G1 (pink), G2M (blue) or S (green) phases of the cell cycle. (E) SinaPlot showing the total number of counts per cell in each cluster. (F) SinaPlot showing the percentage of counts assigned to mitochondrial genes per cell in each cluster.
+(ref:cap-cluster-validation) Validation of identified clusters. (A) Scatter plot of cells in UMAP space coloured by assigned cluster. (B) Bar chart of the number of cells in each cluster. (C) Stacked bar chart showing the proportion of cells in each cluster identified by each droplet selection method, Cell Ranger v3 only (blue), emptyDrops only (green) or both (pink). (D) Stacked bar chart showing the proportion of cells in each cluster assigned to the G1 (pink), G2M (blue) or S (green) phases of the cell cycle. (E) SinaPlot showing the total number of counts per cell in each cluster. (F) SinaPlot showing the percentage of counts assigned to mitochondrial genes per cell in each cluster.
 
 Figure \@ref(fig:cluster-validation)C shows the proportion of cells in each
 cluster that were identified by the two droplet selection methods I used, Cell

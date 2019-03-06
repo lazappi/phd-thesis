@@ -194,6 +194,9 @@ library("stringr")
 # File IO
 library("readr")
 
+# Presentation
+library("knitr")
+
 # Manipulation
 library("dplyr")
 library("tidyr")

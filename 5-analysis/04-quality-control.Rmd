@@ -58,7 +58,7 @@ knitr::include_graphics(here::here("figures/qc-thresholds.png"))
 
 (ref:scap-qc-thresholds) Thresholds used for quality control.
 
-(ref:cap-qc-thresholds) Thresholds used for quality control. (A) Scatter plot of total counts per cell against number of features expressed. Thresholds for selecting high-quality cells show by purple (features) and green (counts) dotted lines. Points are coloured according to whether cells were kept (blue) or removed (pink). (B) Histogram of percentage of counts assigned to mitochondrial genes with threshold shown in pink. (C) Histogram of doublet score genes with threshold shown in pink. (D) PCA plot based on technical factors. Cells are coloured according to whether they were removed by both the PCA outlier method and manual filtering (orange) or just manual filtering (blue).
+(ref:cap-qc-thresholds) Thresholds used for quality control. (A) Scatter plot of total counts per cell against number of features expressed. Thresholds for selecting high-quality cells show by purple (features) and green (counts) dotted lines. Points are coloured according to whether cells were kept (blue) or removed (pink). (B) Histogram of percentage of counts assigned to mitochondrial genes with threshold shown in pink. (C) Histogram of doublet score genes with threshold shown in pink. (D) PCA plot based on technical factors. Cells are coloured according to whether they were removed by both the PCA outlier method and manual filtering (orange) or just manual filtering (pink).
 
 An alternative approach is to rely purely on the quality control metrics
 themselves rather than manually selecting thresholds. PCA can be performed

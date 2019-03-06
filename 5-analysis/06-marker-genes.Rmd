@@ -81,4 +81,18 @@ that these kidney organoids are differentiated towards but we did see some
 organoid cells that clustered with immune cells in human foetal kidney in our
 previous analysis and there is a plausible pathway by which they could develop.
 Further lab-based experiments would be required to confirm whether these cells
-exist in kidney organoids.
+exist in kidney organoids. Based on the detected markers I have assigned cell
+types to clusters as shown in Table \@ref(tab:assignments).
+
+```{r assignments}
+assignments <- read_tsv(here("data/assignments.tsv"),
+                        col_types = cols(
+                            .default = col_character()
+                        ))
+
+kable(assignments, booktabs = TRUE,
+      caption = paste(
+          #"(\\#tab:assignments)",
+          "Cluster assignments based on detected marker genes"
+      ))
+```

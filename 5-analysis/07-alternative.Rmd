@@ -79,21 +79,20 @@ unspliced reads for each gene. These two matrixes are then combined to estimate
 a velocity for each cell by solving a set of differential equations. The
 velocities can then be projected onto a reduced dimensional space by looking at
 a correlation-based transition matrix on a nearest-neighbour graph in that
-space (Figure \@ref(fig:cell-velocity)A). When there are more than a few
-hundred cells it is difficult to look at the velocity for each individual cell
-so it can be useful to summarise them in some way. Velocyto calculates a
-velocity field across the whole dataset by forming a regular grid of points and
-using gaussian smoothing to calculate an average of the nearby cells, providing
-an indication of the overall velocity of an area (Figure
-\@ref(fig:cell-velocity)B).
+space. When there are more than a few hundred cells it is difficult to look at
+the velocity for each individual cell so it can be useful to summarise them in
+some way. Velocyto calculates a velocity field across the whole dataset by
+forming a regular grid of points and using gaussian smoothing to calculate an
+average of the nearby cells, providing an indication of the overall velocity of
+an area (Figure \@ref(fig:cell-velocity)).
 
 ```{r cell-velocity, fig.cap = "(ref:cap-cell-velocity)", fig.scap = "(ref:scap-cell-velocity)", out.width = "100%"}
 knitr::include_graphics(here::here("figures/cell-velocity.png"))
 ```
 
-(ref:scap-cell-velocity) Results of cell velocity analysis using velocyto.
+(ref:scap-cell-velocity) Cell velocity field calculated by velocyto.
 
-(ref:cap-cell-velocity) Results of cell velocity analysis using velocyto. (A) Cell velocity estimates for individual cells. Points show cells in UMAP space coloured according to cluster. Arrows show the cell velocity of each cell with direction indicating the transcriptional profile the cell is headed towards and length giving the rate of change. (B) Cell velocity field across the whole dataset. Arrows show the average velocity for cells in each region of a grid.
+(ref:cap-cell-velocity) Cell velocity field calculated by velocyto. Points show cells in UMAP space coloured according to cluster. Arrows show the average velocity for cells in each region of a grid with direction indicating the transcriptional profile cells are headed towards and length giving the rate of change.
 
 Looking at the velocity field we see some of the expected developmental
 trajectories. For example cells in the epithelial cluster are headed towards

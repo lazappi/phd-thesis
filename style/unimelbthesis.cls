@@ -80,6 +80,7 @@
 
 % +-----Header height----------------------------------------------------------+
 \headheight 14pt
+\voffset -2cm
 
 % +-----Paragraph margins------------------------------------------------------+
 \marginparwidth 0pt
@@ -101,7 +102,7 @@
 	\addtolength{\textheight}{-\headheight}
 	\addtolength{\textheight}{-\topmargin}
 	\addtolength{\textheight}{-\voffset}
-	\addtolength{\textheight}{-2.5cm}
+	\addtolength{\textheight}{-0.5cm}
 
 % +-----Set margins------------------------------------------------------------+
 \evensidemargin \paperwidth

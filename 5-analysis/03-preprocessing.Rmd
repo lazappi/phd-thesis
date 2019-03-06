@@ -28,30 +28,31 @@ previous publications) required an expected number of cells for each sample
 ($N$). The 99th percentile of the total number of UMI counts in the top $N$
 cells was then taken as a robust estimate of the maximum number of counts in a
 cell and any droplet with at least 10 percent of this maximum was selected as a
-cell [@Zheng2017-mm] (Figure \@ref(fig:droplet-selection)A). A similar approach
-to select droplets that fall above the knee point of the cumulative fraction of
-reads with respect to increasing total count [@Macosko2015-rl]. While these
-methods effectively select most cells they risk overlooking cells that have a
-lower RNA content than most cells in the sample. The emptyDrops method
-[@Lun2018-lb] in the DropletUtils package provides an alternative approach
-(Figure \@ref(fig:droplet-selection)B). A threshold on total counts is selected
-below which droplets are assumed to be empty and these empty droplets are used
-to produce a profile of the ambient RNA in the sample. Here I have set that
-threshold to `r params$pre$empty_thresh` counts. A Monte Carlo sampling
-approach is then used to calculate a p-value indicating whether a particular
-droplet is likely to have come from the ambient distribution. A traditional
-threshold is also used to select cells with more total counts than the knee
-point when droplets are ordered by total counts. Cell Ranger v3 uses a modified
-version of the emptyDrops procedure where the original selection is substituted
-method for the knee point threshold (Figure \@ref(fig:droplet-selection)C).
+cell [@Zheng2017-mm]. A similar approach to select droplets that fall above the
+knee point of the cumulative fraction of reads with respect to increasing total
+count [@Macosko2015-rl]. While these methods effectively select most cells they
+risk overlooking cells that have a lower RNA content than most cells in the
+sample. The emptyDrops method [@Lun2018-lb] in the DropletUtils package
+provides an alternative approach (Figure \@ref(fig:droplet-selection)). A
+threshold on total counts is selected below which droplets are assumed to be
+empty and these empty droplets are used to produce a profile of the ambient RNA
+in the sample. Here I have set that threshold to `r params$pre$empty_thresh`
+counts. A Monte Carlo sampling approach is then used to calculate a p-value
+indicating whether a particular droplet is likely to have come from the ambient
+distribution. A traditional threshold is also used to select cells with more
+total counts than the knee point when droplets are ordered by total counts.
+Cell Ranger v3 uses a modified version of the emptyDrops procedure where the
+original selection is substituted method for the knee point threshold.
 
 ```{r droplet-selection, fig.cap = "(ref:cap-droplet-selection)", fig.scap = "(ref:scap-droplet-selection)", out.width = "100%"}
 knitr::include_graphics(here::here("figures/droplet-selection.png"))
 ```
 
-(ref:scap-droplet-selection) Droplet selection methods applied to the kidney organoid dataset.
+(ref:scap-droplet-selection) Droplet selection using emptyDrops.
 
-(ref:cap-droplet-selection) Droplet selection methods applied to the kidney organoid dataset. Ordered plots of the total counts per cell coloured by selection method. (A) The traditional Cell Ranger approach which applies a threshold to the total counts per a droplet based on an expected number of cells in a sample. (B) The emptyDrops approach which tests whether droplets are significantly different from the ambient RNA profile. (C) Cell Ranger v3 uses a method that combines aspects of both approaches.
+(ref:cap-droplet-selection) Droplet selection using emptyDrops. Scatter plot of ordered total counts per droplet. Points are coloured by whether they
+were identified as cells (pink) or empty (black). Horizontal dotted lines show the knee point (blue), inflection point (green) and the threshold for
+droplets assumed to be empty (purple).
 
 As we would expect the original Cell Ranger algorithm is the most conservative,
 selecting only `r params$pre$n_default` cells (Figure
