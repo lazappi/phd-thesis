@@ -27,7 +27,7 @@
 
 # +-----Title------------------------------------------------------------------+
 
-title: "Tools and techniques for single-cell RNA-seq data"
+title: "Tools and techniques for single-cell RNA sequencing data"
 
 # +-----Author-----------------------------------------------------------------+
 author: "Luke Zappia"

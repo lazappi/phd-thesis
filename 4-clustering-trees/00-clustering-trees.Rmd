@@ -1,4 +1,11 @@
 # Visualising clustering across resolutions {#clust-trees}
 
+> **"Don't do what you can't undo, until you've considered what you can't do
+> once you've done it."**
+>
+> --- Robin Hobb
+>
+> _Assassin's Apprentice_, 1995
+
 ```{r clustering-trees-sections, child = c("4-clustering-trees/01-introduction.Rmd", "4-clustering-trees/02-publication.Rmd", "4-clustering-trees/03-overlay.Rmd")}
 ```

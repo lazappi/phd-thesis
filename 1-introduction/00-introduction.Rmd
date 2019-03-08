@@ -1,5 +1,17 @@
 # Introduction {#introduction}
 
+> **See, people they don't understand**
+>
+> **No, girlfriends, they can't understand**
+>
+> **Your grandsons, they won't understand**
+>
+> **On top of this, I ain't ever gonna understand...**
+>
+> --- The Strokes
+>
+> _Last Nite_, 2001
+
 This introduction chapter provides the background and overview necessary for
 understanding my work in this thesis including an introduction to basic cell
 biology and kidney development, the technologies we use to measure those

@@ -1,4 +1,24 @@
 # The scRNA-seq tools landscape {#tools}
 
+> **Have you ever seen a sound**
+>
+> **Have you listened to an image**
+>
+> **Have you ever touched a thought**
+>
+> **Have you ever tasted nothing**
+>
+> **Have you ever told a lie**
+>
+> **That was true more than truth**
+>
+> **Because truth it had lied**
+>
+> **All its life when it spoke to you?**
+>
+> --- The Cat Empire
+>
+> _Misere_, 2005
+
 ```{r tools-sections, child = c("2-tools/01-introduction.Rmd", "2-tools/02-publication.Rmd", "2-tools/03-current.Rmd", "2-tools/04-usage.Rmd")}
 ```

@@ -1,5 +1,13 @@
 # Conclusion {#conclusion}
 
+> **"Once you've decided that something's absolutely true, you've closed your
+> mind on it, and a closed mind doesn't go anywhere. Question everything. That's
+> what education's all about."**
+>
+> --- David and Leigh Eddings
+>
+> _Belgarath the sorcerer_, 1995
+
 This thesis explores the tools and techniques used for analysing single-cell
 RNA sequencing data. This data has been made possible by the recent development
 of technologies that allow individual cells to be captured, RNA from them

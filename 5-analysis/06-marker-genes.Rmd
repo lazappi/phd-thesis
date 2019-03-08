@@ -92,7 +92,6 @@ assignments <- read_tsv(here("data/assignments.tsv"),
 
 kable(assignments, booktabs = TRUE,
       caption = paste(
-          #"(\\#tab:assignments)",
           "Cluster assignments based on detected marker genes"
       ))
 ```
