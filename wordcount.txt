@@ -2308,3 +2308,62 @@ Date	Time	Name	Level	Text	Headers	Captions	Total
 2019-03-06	15:30:51	Discussion	Section	1361	1	0	1362
 2019-03-06	15:30:51	Conclusion	Chapter	662	1	0	663
 2019-03-06	15:30:51	References	Chapter	0	1	6139	6140
+2019-03-13	15:27:56	docs/thesis.tex	Document	24320	165	9883	34368
+2019-03-13	15:27:56	Introduction	Chapter	10096	74	875	11045
+2019-03-13	15:27:56	The central dogma	Section	550	3	58	611
+2019-03-13	15:27:56	RNA-sequencing	Section	1633	9	222	1864
+2019-03-13	15:27:56	Library preparation	Subsection	437	2	67	506
+2019-03-13	15:27:56	High-throughput sequencing	Subsection	247	2	77	326
+2019-03-13	15:27:56	Analysis of RNA-seq data	Subsection	740	4	78	822
+2019-03-13	15:27:56	Single-cell RNA-sequencing	Section	1901	18	289	2208
+2019-03-13	15:27:56	Early single-cell capture technologies	Subsection	368	4	52	424
+2019-03-13	15:27:56	Droplet based cell capture	Subsection	328	4	84	416
+2019-03-13	15:27:56	Unique Molecular Identifiers	Subsection	392	3	59	454
+2019-03-13	15:27:56	Recent advances in scRNA-seq protocols	Subsection	656	5	94	755
+2019-03-13	15:27:56	Analysing scRNA-seq data	Section	3735	25	114	3874
+2019-03-13	15:27:56	Pre-processing and quality control	Subsection	552	4	0	556
+2019-03-13	15:27:56	Normalisation and integration	Subsection	515	3	0	518
+2019-03-13	15:27:56	Grouping cells	Subsection	467	2	0	469
+2019-03-13	15:27:56	Ordering cells	Subsection	414	2	53	469
+2019-03-13	15:27:56	Gene detection and interpretation	Subsection	626	4	0	630
+2019-03-13	15:27:56	Alternative analyses	Subsection	130	2	0	132
+2019-03-13	15:27:56	Evaluation of scRNA-seq analysis methods	Subsection	263	5	0	268
+2019-03-13	15:27:56	Kidney development	Section	1902	14	168	2084
+2019-03-13	15:27:56	Structure and function	Subsection	572	3	81	656
+2019-03-13	15:27:56	Stages of development	Subsection	360	3	0	363
+2019-03-13	15:27:56	Growing kidney organoids	Subsection	612	3	87	702
+2019-03-13	15:27:56	Kidney scRNA-seq studies	Subsection	233	3	0	236
+2019-03-13	15:27:56	Thesis overview and aims	Section	164	4	0	168
+2019-03-13	15:27:56	The scRNA-seq tools landscape	Chapter	1165	16	194	1375
+2019-03-13	15:27:56	Introduction	Section	381	1	0	382
+2019-03-13	15:27:56	scRNA-tools publication	Section	0	2	0	2
+2019-03-13	15:27:56	The current scRNA-tools database	Section	594	4	92	690
+2019-03-13	15:27:56	Usage of the scRNA-tools website	Section	190	5	55	250
+2019-03-13	15:27:56	Simulating scRNA-seq data	Chapter	1537	13	86	1636
+2019-03-13	15:27:56	Introduction	Section	477	1	0	478
+2019-03-13	15:27:56	Splatter publication	Section	0	2	0	2
+2019-03-13	15:27:56	Updates to Splatter	Section	1060	7	72	1139
+2019-03-13	15:27:56	Performance of current simulations	Subsection	490	4	72	566
+2019-03-13	15:27:56	Visualising clustering across resolutions	Chapter	816	11	77	904
+2019-03-13	15:27:56	Introduction	Section	446	1	0	447
+2019-03-13	15:27:56	Clustering trees publication	Section	0	3	0	3
+2019-03-13	15:27:56	Overlaying clustering trees	Section	370	3	72	445
+2019-03-13	15:27:56	Analysis of kidney organoid scRNA-seq data	Chapter	8884	40	1042	9966
+2019-03-13	15:27:56	Introduction	Section	630	1	0	631
+2019-03-13	15:27:56	Summary of published work	Section	1043	4	0	1047
+2019-03-13	15:27:56	Preprocessing	Section	1588	5	209	1802
+2019-03-13	15:27:56	Droplet selection	Subsection	551	2	88	641
+2019-03-13	15:27:56	Alevin comparison	Subsection	849	2	121	972
+2019-03-13	15:27:56	Quality control	Section	1125	2	183	1310
+2019-03-13	15:27:56	Clustering	Section	1312	11	337	1660
+2019-03-13	15:27:56	Gene selection	Subsection	385	2	122	509
+2019-03-13	15:27:56	Resolution selection	Subsection	308	2	41	351
+2019-03-13	15:27:56	Cluster validation	Subsection	256	2	112	370
+2019-03-13	15:27:56	Comparison to published clusters	Subsection	260	4	62	326
+2019-03-13	15:27:56	Marker gene detection	Section	859	3	190	1052
+2019-03-13	15:27:56	Connecting clusters	Section	966	7	119	1092
+2019-03-13	15:27:56	Partition-based graph abstraction	Subsection	377	3	73	453
+2019-03-13	15:27:56	Cell velocity	Subsection	416	2	46	464
+2019-03-13	15:27:56	Discussion	Section	1361	1	0	1362
+2019-03-13	15:27:56	Conclusion	Chapter	1822	1	8	1831
+2019-03-13	15:27:56	References	Chapter	0	1	6139	6140
