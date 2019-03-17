@@ -43,4 +43,6 @@ was a good match for some of these datasets across a range of methods, however
 it was also clear that some models more faithfully reproduced different aspects
 of the data, particularly for datasets from different sources. The Splatter R
 package is available for download from Bioconductor
-(https://bioconductor.org/packages/splatter).
+(https://bioconductor.org/packages/splatter). A vignette describing the use of
+the package is included as Appendix \@ref(splatter-vignette) and the full
+manual in Appendix \@ref(splatter-manual).

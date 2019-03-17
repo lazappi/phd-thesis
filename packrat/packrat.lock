@@ -108,8 +108,8 @@ Hash: caf20ae357bfa2ed50e0e7db267f69ce
 
 Package: clustree
 Source: CRAN
-Version: 0.2.2
-Hash: 0f3ca09dcc2c20231b525b6b1310e1b9
+Version: 0.3.0
+Hash: 7b423233b4b757cb0e9b232b62ee770a
 Requires: checkmate, dplyr, ggplot2, ggraph, ggrepel, igraph, rlang,
     tidygraph, viridis
 
