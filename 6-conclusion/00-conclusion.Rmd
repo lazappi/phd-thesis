@@ -8,6 +8,12 @@
 >
 > _Belgarath the sorcerer_, 1995
 
+```{r conclusion-sketch, out.width = "100%", results = "asis"}
+knitr::include_graphics(here::here("figures/06-conclusion.png"))
+
+if (tex) {cat("\\clearpage")}
+```
+
 * Summarise
     * What I researched
     * How

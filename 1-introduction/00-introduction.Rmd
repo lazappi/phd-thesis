@@ -12,6 +12,12 @@
 >
 > _Last Nite_, 2001
 
+```{r introduction-sketch, out.width = "100%", results = "asis"}
+knitr::include_graphics(here::here("figures/01-introduction.png"))
+
+if (tex) {cat("\\clearpage")}
+```
+
 This introduction chapter provides the background and overview necessary for
 understanding my work in this thesis including an introduction to basic cell
 biology and kidney development, the technologies we use to measure those

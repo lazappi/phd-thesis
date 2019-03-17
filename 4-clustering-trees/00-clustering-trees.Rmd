@@ -7,5 +7,11 @@
 >
 > _Assassin's Apprentice_, 1995
 
+```{r clust-trees-sketch, out.width = "100%", results = "asis"}
+knitr::include_graphics(here::here("figures/04-clustering-trees.png"))
+
+if (tex) {cat("\\clearpage")}
+```
+
 ```{r clustering-trees-sections, child = c("4-clustering-trees/01-introduction.Rmd", "4-clustering-trees/02-publication.Rmd", "4-clustering-trees/03-overlay.Rmd")}
 ```

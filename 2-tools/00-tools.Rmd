@@ -20,5 +20,11 @@
 >
 > _Misere_, 2005
 
+```{r tools-sketch, out.width = "100%", results = "asis"}
+knitr::include_graphics(here::here("figures/02-tools-sketch.png"))
+
+if (tex) {cat("\\clearpage")}
+```
+
 ```{r tools-sections, child = c("2-tools/01-introduction.Rmd", "2-tools/02-publication.Rmd", "2-tools/03-current.Rmd", "2-tools/04-usage.Rmd")}
 ```

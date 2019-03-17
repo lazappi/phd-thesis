@@ -8,5 +8,11 @@
 >
 > _Dune_, 1965
 
+```{r analysis-sketch, out.width = "100%", results = "asis"}
+knitr::include_graphics(here::here("figures/05-analysis.png"))
+
+if (tex) {cat("\\clearpage")}
+```
+
 ```{r analysis-sections, child = c("5-analysis/01-introduction.Rmd", "5-analysis/02-summary.Rmd", "5-analysis/03-preprocessing.Rmd", "5-analysis/04-quality-control.Rmd", "5-analysis/05-clustering.Rmd", "5-analysis/06-marker-genes.Rmd", "5-analysis/07-alternative.Rmd", "5-analysis/08-discussion.Rmd")}
 ```
