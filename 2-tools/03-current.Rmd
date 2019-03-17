@@ -3,7 +3,7 @@
 Since the paper was published in June 2018 `r n_tools_new` tools have been
 added to the scRNA-tools database taking the total to `r n_tools`. Figure
 \@ref(fig:tools-plot) shows an overview to the current database as of
-`r tools_date`. Overall the analysis landscape has not changed significantly 
+`r tools_date`. Overall the analysis landscape has not changed significantly
 over the last few months.
 
 ```{r tools-plot, fig.cap = "(ref:cap-tools)", fig.scap = "(ref:scap-tools)", out.width = "100%"}
@@ -23,10 +23,10 @@ panel <- plot_grid(p1, cats,
                    labels = c("", "E - Analysis categories"),
                    ncol = 1, rel_heights = c(1, 0.6), hjust = 0)
 
-ggsave(here("figures/tools.pdf"), panel, height = 10, width = 8)
-ggsave(here("figures/tools.png"), panel, height = 10, width = 8)
+ggsave(here("figures/02-tools.pdf"), panel, height = 10, width = 8)
+ggsave(here("figures/02-tools.png"), panel, height = 10, width = 8)
 
-knitr::include_graphics(here::here("figures/tools.png"))
+knitr::include_graphics(here::here("figures/02-tools.png"))
 ```
 
 (ref:scap-tools) State of the scRNA-tools database.

@@ -22,7 +22,7 @@ explain differences between cells. This is the default approach used in Seurat
 `r params$clust$sel_seurat` highly variable genes.
 
 ```{r gene-selection, fig.cap = "(ref:cap-gene-selection)", fig.scap = "(ref:scap-gene-selection)", out.width = "100%"}
-knitr::include_graphics(here::here("figures/gene-selection.png"))
+knitr::include_graphics(here::here("figures/05-gene-selection.png"))
 ```
 
 (ref:scap-gene-selection) Selecting genes for clustering.
@@ -76,7 +76,7 @@ making this decision. Figure \@ref(fig:resolution-selection)A shows a
 clustering tree for this dataset with resolutions between zero and one.
 
 ```{r resolution-selection, fig.cap = "(ref:cap-resolution-selection)", fig.scap = "(ref:scap-resolution-selection)", out.width = "100%"}
-knitr::include_graphics(here::here("figures/resolution-selection.png"))
+knitr::include_graphics(here::here("figures/05-resolution-selection.png"))
 ```
 
 (ref:scap-resolution-selection) Selecting a clustering resolution.
@@ -109,7 +109,7 @@ clusters we can check to see if they are the result of technical rather than
 biological factors.
 
 ```{r cluster-validation, fig.cap = "(ref:cap-cluster-validation)", fig.scap = "(ref:scap-cluster-validation)", out.width = "100%"}
-knitr::include_graphics(here::here("figures/cluster-validation.png"))
+knitr::include_graphics(here::here("figures/05-cluster-validation.png"))
 ```
 
 (ref:scap-cluster-validation) Validation of identified clusters.
@@ -147,7 +147,7 @@ two clusters that contain the cells only identified by emptyDrops stand out as
 having a very low proportion of cells from the previous analysis.
 
 ```{r cluster-comparison, fig.cap = "(ref:cap-cluster-comparison)", fig.scap = "(ref:scap-cluster-comparison)", out.width = "100%"}
-knitr::include_graphics(here::here("figures/cluster-comparison.png"))
+knitr::include_graphics(here::here("figures/05-cluster-comparison.png"))
 ```
 
 (ref:scap-cluster-comparison) Comparison to previously published clusters.

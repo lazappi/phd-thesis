@@ -52,7 +52,7 @@ prepared for RNA sequencing. This platform provides opportunities for a range
 of experiments that aren't possible using other capture technologies.
 
 ```{r technologies, fig.cap = "(ref:cap-technologies)", fig.scap = "(ref:scap-technologies)", out.width = "100%"}
-knitr::include_graphics(here::here("figures/technologies.jpg"))
+knitr::include_graphics(here::here("figures/01-technologies.jpg"))
 ```
 
 (ref:scap-technologies) Exponential increase in the scale of scRNA-seq experiments.
@@ -93,7 +93,7 @@ for single-cell Assay for Transposase-Accessible Chromatin using sequencing
 (scATAC-seq) capture.
 
 ```{r 10xChromium, fig.cap = "(ref:cap-10xChromium)", fig.scap = "(ref:scap-10xChromium)", out.width = "100%"}
-knitr::include_graphics(here::here("figures/10xChromium.png"))
+knitr::include_graphics(here::here("figures/01-10xChromium.png"))
 ```
 
 (ref:scap-10xChromium) Diagram of the 10x Genomics Chromium cell capture process.
@@ -124,7 +124,7 @@ therefore should be PCR duplicates rather than truly expressed copies of a
 transcript.
 
 ```{r UMIs, fig.cap = "(ref:cap-UMIs)", fig.scap = "(ref:scap-UMIs)", out.width = "100%"}
-knitr::include_graphics(here::here("figures/UMIs.png"))
+knitr::include_graphics(here::here("figures/01-UMIs.png"))
 ```
 
 (ref:scap-UMIs) Unique Molecular Identifiers (UMIs) can improve scRNA-seq quantification.
@@ -187,7 +187,7 @@ with. An added benefit of this approach is the simple detection of doublets
 containing cells from different samples.
 
 ```{r CITE-seq, fig.cap = "(ref:cap-CITE-seq)", fig.scap = "(ref:scap-CITE-seq)", out.width = "100%"}
-knitr::include_graphics(here::here("figures/CITE-seq.png"))
+knitr::include_graphics(here::here("figures/01-CITE-seq.png"))
 ```
 
 (ref:scap-CITE-seq) Extensions to droplet-based capture protocols using nucleotide tagged antibodies.

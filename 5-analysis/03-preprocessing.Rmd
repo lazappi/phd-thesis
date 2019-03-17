@@ -45,7 +45,7 @@ Cell Ranger v3 uses a modified version of the emptyDrops procedure where the
 original selection is substituted method for the knee point threshold.
 
 ```{r droplet-selection, fig.cap = "(ref:cap-droplet-selection)", fig.scap = "(ref:scap-droplet-selection)", out.width = "100%"}
-knitr::include_graphics(here::here("figures/droplet-selection.png"))
+knitr::include_graphics(here::here("figures/05-droplet-selection.png"))
 ```
 
 (ref:scap-droplet-selection) Droplet selection using emptyDrops.
@@ -70,7 +70,7 @@ automates a series of tasks this often comes at the cost of less control over
 each stage than would be possible if using a series of individual tools.
 
 ```{r selection-comparison, fig.cap = "(ref:cap-selection-comparison)", fig.scap = "(ref:scap-selection-comparison)", out.width = "100%"}
-knitr::include_graphics(here::here("figures/selection-comparison.png"))
+knitr::include_graphics(here::here("figures/05-selection-comparison.png"))
 ```
 
 (ref:scap-selection-comparison) UpSet plot comparing droplet selection methods.
@@ -127,7 +127,7 @@ methods themselves. Alevin (and Cell Ranger v3) also processes the three
 samples separately while I performed emptyDrops on the whole dataset.
 
 ```{r alevin-comparison, fig.cap = "(ref:cap-alevin-comparison)", fig.scap = "(ref:scap-alevin-comparison)", out.width = "100%"}
-knitr::include_graphics(here::here("figures/alevin-comparison.png"))
+knitr::include_graphics(here::here("figures/05-alevin-comparison.png"))
 ```
 
 (ref:scap-alevin-comparison) Comparison to quantification using Alevin.

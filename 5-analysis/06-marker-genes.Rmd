@@ -35,7 +35,7 @@ calculate weights that can be added to the edgeR model to correct for zero
 inflation [@Van_den_Berge2018-ip].
 
 ```{r de-results, fig.cap = "(ref:cap-de-results)", fig.scap = "(ref:scap-de-results)", out.width = "100%"}
-knitr::include_graphics(here::here("figures/de-results.png"))
+knitr::include_graphics(here::here("figures/05-de-results.png"))
 ```
 
 (ref:scap-de-results) Results of edgeR differential expression analysis.

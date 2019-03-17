@@ -60,7 +60,7 @@ are quality control steps to be performed to make sure a high-quality cDNA
 sample is loaded on to the sequencing machine.
 
 ```{r adaptors, fig.cap = "(ref:cap-adaptors)", fig.scap = "(ref:scap-adaptors)", out.width = "100%"}
-knitr::include_graphics(here::here("figures/adaptors.png"))
+knitr::include_graphics(here::here("figures/01-adaptors.png"))
 ```
 
 (ref:scap-adaptors) Illustration of adapter arrangements for the Illumina platform.
@@ -81,7 +81,7 @@ significantly large the adaptor at one end of each fragment is cleaved leaving
 single stranded DNA attached to the flow cell at one end.
 
 ```{r sequencing, fig.cap = "(ref:cap-sequencing)", fig.scap = "(ref:scap-sequencing)"}
-knitr::include_graphics(here::here("figures/sequencing.png"))
+knitr::include_graphics(here::here("figures/01-sequencing.png"))
 ```
 
 (ref:scap-sequencing) The Illumina Sequencing by Synthesis process.
@@ -121,7 +121,7 @@ potentially produce more accurate quantification at the cost of having an exact
 genomic position for each read.
 
 ```{r RNA-seq, fig.cap = "(ref:cap-RNA-seq)", fig.scap = "(ref:scap-RNA-seq)", out.width = "100%"}
-knitr::include_graphics(here::here("figures/RNA-seq.png"))
+knitr::include_graphics(here::here("figures/01-RNA-seq.png"))
 ```
 
 (ref:scap-RNA-seq) A typical RNA-seq differential expression testing workflow.

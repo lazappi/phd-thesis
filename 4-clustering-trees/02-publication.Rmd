@@ -2,7 +2,7 @@
 
 ```{r clustree-paper, results = "asis"}
 name <- "clustering trees"
-pdf <- "figures/clustering-trees-paper-cropped"
+pdf <- "figures/04-clustering-trees-paper-cropped"
 pages <- 1:9
 link <- "https://academic.oup.com/gigascience/article/7/7/giy083/5052205"
 

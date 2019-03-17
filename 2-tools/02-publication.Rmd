@@ -2,7 +2,7 @@
 
 ```{r scRNAtools-paper, results = "asis"}
 name <- "scRNA-tools"
-pdf <- "figures/scRNAtools-paper-cropped"
+pdf <- "figures/02-scRNAtools-paper-cropped"
 pages <- 1:14
 link <- "https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006245"
 

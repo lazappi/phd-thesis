@@ -76,12 +76,12 @@ p2 <- plot_grid(overlay, p1, nrow = 1,
 panel <- plot_grid(p2, legend, ncol = 1, rel_heights = c(1, 0.1))
 
 
-ggsave(here("figures/clustree_overlay.pdf"), panel,
+ggsave(here("figures/04-clustree-overlay.pdf"), panel,
        height = 6, width = 8, scale = 2)
-ggsave(here("figures/clustree_overlay.png"), panel,
+ggsave(here("figures/04-clustree-overlay.png"), panel,
        height = 6, width = 8, scale = 2)
 
-knitr::include_graphics(here::here("figures/clustree_overlay.png"))
+knitr::include_graphics(here::here("figures/04-clustree-overlay.png"))
 ```
 
 (ref:scap-clustree-overlay) Clustering tree of the iris dataset overlaid on a PCA plot.

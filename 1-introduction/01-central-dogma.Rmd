@@ -16,7 +16,7 @@ computing terms DNA is similar to a hard drive in that it provides stable,
 consistent storage of important information.
 
 ```{r central-dogma, fig.cap = "(ref:cap-central-dogma)", fig.scap = "(ref:scap-central-dogma)", out.width = "100%"}
-knitr::include_graphics(here::here("figures/central-dogma.png"))
+knitr::include_graphics(here::here("figures/01-central-dogma.png"))
 ```
 
 (ref:scap-central-dogma) The central dogma of molecular biology.

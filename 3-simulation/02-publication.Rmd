@@ -2,7 +2,7 @@
 
 ```{r splatter-paper, results = "asis"}
 name <- "Splatter"
-pdf <- "figures/splatter-paper-cropped"
+pdf <- "figures/03-splatter-paper-cropped"
 pages <- 1:15
 link <- "https://genomebiology.biomedcentral.com/articles/10.1186/s13059-017-1305-0"
 

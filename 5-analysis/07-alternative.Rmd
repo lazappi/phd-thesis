@@ -41,7 +41,7 @@ clusters they would be expected to be related to, particularly between the two
 endothelial clusters.
 
 ```{r paga-results, fig.cap = "(ref:cap-paga-results)", fig.scap = "(ref:scap-paga-results)", out.width = "100%"}
-knitr::include_graphics(here::here("figures/paga-results.png"))
+knitr::include_graphics(here::here("figures/05-paga-results.png"))
 ```
 
 (ref:scap-paga-results) Results of partition-based graph abstraction (PAGA).
@@ -87,7 +87,7 @@ average of the nearby cells, providing an indication of the overall velocity of
 an area (Figure \@ref(fig:cell-velocity)).
 
 ```{r cell-velocity, fig.cap = "(ref:cap-cell-velocity)", fig.scap = "(ref:scap-cell-velocity)", out.width = "100%"}
-knitr::include_graphics(here::here("figures/cell-velocity.png"))
+knitr::include_graphics(here::here("figures/05-cell-velocity.png"))
 ```
 
 (ref:scap-cell-velocity) Cell velocity field calculated by velocyto.

@@ -55,7 +55,7 @@ pathway that controls fluid volume and the constriction of arteries to regulate
 blood pressure.
 
 ```{r kidney, fig.cap = "(ref:cap-kidney)", fig.scap = "(ref:scap-kidney)", out.width = "100%"}
-knitr::include_graphics(here::here("figures/kidney.png"))
+knitr::include_graphics(here::here("figures/01-kidney.png"))
 ```
 
 (ref:scap-kidney) Structure of the kidney and nephron.
@@ -128,7 +128,7 @@ protocol for growing kidney organoids was published in 2015 by Takasato et al.
 (Figure \@ref(fig:organoids)) [@Takasato2015-zn].
 
 ```{r organoids, fig.cap = "(ref:cap-organoids)", fig.scap = "(ref:scap-organoids)", out.width = "100%"}
-knitr::include_graphics(here::here("figures/organoids.png"))
+knitr::include_graphics(here::here("figures/01-organoids.png"))
 ```
 
 (ref:scap-organoids) Diagram of the Takasato et al. kidney organoid protocol.
