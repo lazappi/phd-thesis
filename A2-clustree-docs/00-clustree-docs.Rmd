@@ -1,0 +1,33 @@
+# clustree documentation
+
+## clustree vignette {#clustree-vignette}
+
+```{r clustree-vignette, results = "asis"}
+name <- "clustree vignette"
+pdf <- "figures/clustree-vignette-cropped"
+pages <- 1:21
+link <- "https://CRAN.R-project.org/package=clustree"
+
+if (tex) {
+    glue::glue("\\frame{\\includegraphics[page=<pages>, width=\\textwidth]{<pdf>}}\\clearpage",
+               .open = "<", .close = ">")
+} else {
+    glue::glue("You can read the {name} [here]({link}).")
+}
+```
+
+## clustree manual {#clustree-manual}
+
+```{r clustree-manual, results = "asis"}
+name <- "clustree manual"
+pdf <- "figures/clustree-manual-cropped"
+pages <- 1:20
+link <- "https://CRAN.R-project.org/package=clustree"
+
+if (tex) {
+    glue::glue("\\frame{\\includegraphics[page=<pages>, width=\\textwidth]{<pdf>}}\\clearpage",
+               .open = "<", .close = ">")
+} else {
+    glue::glue("You can read the {name} [here]({link}).")
+}
+```
