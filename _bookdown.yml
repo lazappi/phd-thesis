@@ -12,6 +12,7 @@ rmd_files:
     - "9-references/00-references.Rmd"
     - "A1-splatter-docs/00-splatter-docs.Rmd"
     - "A2-clustree-docs/00-clustree-docs.Rmd"
+    - "A3-simulation-comparison/00-simulation-comparison.Rmd"
 download:
     - ["thesis.pdf", "PDF"]
     - ["thesis.docx", "Word"]

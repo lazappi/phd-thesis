@@ -1,0 +1,16 @@
+Package                 Version
+---------------------  --------
+BASiCS                    1.4.1
+DESeq2                   1.22.2
+edgeR                    3.22.3
+ggplot2                   3.0.0
+limma                    3.36.2
+mfa                       1.4.1
+phenopath                 1.6.0
+scater                   1.10.1
+scDD                      1.6.1
+scran                    1.10.2
+SingleCellExperiment      1.4.1
+SparseDC                 0.1.17
+splatter                  1.6.1
+zinbwave                  1.4.1
