@@ -14,3 +14,8 @@ The copyright of the publication _"Clustering trees: a visualization for
 evaluating clusterings at multiple resolutions"_ included in
 **[Chapter 4](#clust-trees)** is held by the authors including myself under a
 Creative Commons Attribution License (CC BY 4.0).
+
+The copyright of the publication _"Single-cell analysis reveals congruence
+between kidney organoids and human fetal kidney"_ included in **Appendix
+\@ref(organoid-paper)** is held by the authors including myself under a
+Creative Commons Attribution License (CC BY 4.0).

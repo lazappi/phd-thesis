@@ -42,22 +42,23 @@ present in these organoids and detectable using scRNA-seq we performed a
 reanalysis of this data that was published as _"Single-cell analysis reveals
 congruence between kidney organoids and human fetal kidney"_ [@Combes2019-uv].
 This study was lead by Alex Combes who performed much of the lab work and
-interpretation of results while I performed all the computational analysis.
-Using a similar workflow based around the Seurat package we identified 13
-clusters that were labelled as covering kidney stroma, podocytes, epithelium
-and endothelium based on the expression of known kidney marker genes. Other
-clusters were associated with active phases of the cell cycle as well as off
-target muscle progenitor, neural progenitor and glial cells types.
-Re-clustering of the podocyte and epithelial clusters revealed more detail of
-the nephron lineage with five clusters covering nephron progenitors, podocyte
-precursors, mature podocytes, proximal tubule precursors and distal tubule
-precursors. We used Monocle [@Trapnell2014-he; @Qiu2017-mq] to order the cells
-along pseudotime trajectory which showed two branches with nephron progenitors
-heading towards either a podocyte or tubular fate. Characterising the samples
-in this way allowed us to identify many of the cell types we would expect to be
-present in a developing human kidney but it cannot show exactly how similar to
-real tissue they are. We found podocytes in these organoids but are organoid
-podocytes the same as normal kidney podocytes?
+interpretation of results while I performed all the computational analysis. The
+full text of this publication is included in Appendix \@ref(organoid-paper) but
+I will summarise the results here. Using a similar workflow based around the
+Seurat package we identified 13 clusters that were labelled as covering kidney
+stroma, podocytes, epithelium and endothelium based on the expression of known
+kidney marker genes. Other clusters were associated with active phases of the
+cell cycle as well as off target muscle progenitor, neural progenitor and glial
+cells types. Re-clustering of the podocyte and epithelial clusters revealed
+more detail of the nephron lineage with five clusters covering nephron
+progenitors, podocyte precursors, mature podocytes, proximal tubule precursors
+and distal tubule precursors. We used Monocle [@Trapnell2014-he; @Qiu2017-mq]
+to order the cells along pseudotime trajectory which showed two branches with
+nephron progenitors heading towards either a podocyte or tubular fate.
+Characterising the samples in this way allowed us to identify many of the cell
+types we would expect to be present in a developing human kidney but it cannot
+show exactly how similar to real tissue they are. We found podocytes in these
+organoids but are organoid podocytes the same as normal kidney podocytes?
 
 To answer this question we integrated our kidney organoid datasets with a human
 foetal kidney previously published by Lindström et al. [@Lindstrom2018-mo]. Clustering of the
