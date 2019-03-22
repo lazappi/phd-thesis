@@ -14,6 +14,7 @@ rmd_files:
     - "A2-clustree-docs/00-clustree-docs.Rmd"
     - "A3-simulation-comparison/00-simulation-comparison.Rmd"
     - "A4-organoid-publication/00-organoid-publication.Rmd"
+    - "A5-analysis-methods/00-analysis-methods.Rmd"
 download:
     - ["thesis.pdf", "PDF"]
     - ["thesis.docx", "Word"]

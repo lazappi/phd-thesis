@@ -5,8 +5,6 @@
 <!-- This line tells Pandoc to put the references here -->
 <div id="refs"></div>
 
-\End{tcother}
-
 <!-- These lines tell the templates that we are about to start the appendices.
 They should appear before the start of your first appendix.-->
 `r if(knitr:::is_latex_output()) '\\appendix'`

@@ -61,31 +61,32 @@ show exactly how similar to real tissue they are. We found podocytes in these
 organoids but are organoid podocytes the same as normal kidney podocytes?
 
 To answer this question we integrated our kidney organoid datasets with a human
-foetal kidney previously published by Lindström et al. [@Lindstrom2018-mo]. Clustering of the
-combined dataset produced 16 clusters, most of which contained cells from both
-datasets and covered similar cell types to what we saw in the organoid only
-analysis. Some clusters were only present in one dataset including the off
-target muscle and neural cell types in the organoids and blood cells in the
-foetal kidney data. We also found a new population of immune cells. Most of
-these came of from the foetal kidney dataset but a few were from the organoids.
-There were insufficient cells to truly say that immune cells are present in
-these organoids but it is possible they could arise somewhere during the
-differentiation process. As with the organoid data we looked more closely at
-the nephron lineage in the combined dataset. We saw evidence of similar
-developmental trajectories with more mature podocytes in the organoid samples
-and fewer distal tubule cells. At this resolution we also found two clusters
-unique to the human foetal kidney data, a stromal population that may be more
-stem-like in nature and originally clustered with the nephron progenitors and a
-separate podocyte cluster. Some of the differences between the datasets can be
-explained by the differences between the samples, for example the human foetal
-kidney dataset comes from a section of the the outer cortex rather than a whole
-organ. For this reason it is important to look for differences between the
-datasets within cells that have been labelled as the same cell type. Doing this revealed
-an overall stress or heatshock signature in the foetal kidney data that is most
-likely the result of the tissue being exposed to suboptimal conditions and made
-it difficult to see smaller differences. However, we were able to identify some
-differences including in signalling that may suggest further avenues for
-directing kidney organoid differentiation.
+foetal kidney previously published by Lindström et al. [@Lindstrom2018-mo].
+Clustering of the combined dataset produced 16 clusters, most of which
+contained cells from both datasets and covered similar cell types to what we
+saw in the organoid only analysis. Some clusters were only present in one
+dataset including the off target muscle and neural cell types in the organoids
+and blood cells in the foetal kidney data. We also found a new population of
+immune cells. Most of these came of from the foetal kidney dataset but a few
+were from the organoids. There were insufficient cells to truly say that immune
+cells are present in these organoids but it is possible they could arise
+somewhere during the differentiation process. As with the organoid data we
+looked more closely at the nephron lineage in the combined dataset. We saw
+evidence of similar developmental trajectories with more mature podocytes in
+the organoid samples and fewer distal tubule cells. At this resolution we also
+found two clusters unique to the human foetal kidney data, a stromal population
+that may be more stem-like in nature and originally clustered with the nephron
+progenitors and a separate podocyte cluster. Some of the differences between
+the datasets can be explained by the differences between the samples, for
+example the human foetal kidney dataset comes from a section of the the outer
+cortex rather than a whole organ. For this reason it is important to look for
+differences between the datasets within cells that have been labelled as the
+same cell type. Doing this revealed an overall stress or heatshock signature in
+the foetal kidney data that is most likely the result of the tissue being
+exposed to suboptimal conditions and made it difficult to see smaller
+differences. However, we were able to identify some differences including in
+signalling that may suggest further avenues for directing kidney organoid
+differentiation.
 
 Overall our analyses of this dataset supports the presence of important kidney
 cell types in kidney organoids and builds confidence for their usefulness for
@@ -94,4 +95,5 @@ established workflow in producing these results there were still many decisions
 we had to make about which tools and parameters to use. For the remainder of
 this chapter I will explore some of the alternative choices we could have made
 and approaches we could have used and what difference they may have made to our
-interpretation of this data.
+interpretation of this data. Details of the methods used in this section are
+provided in Appendix \@ref(analysis-methods).
