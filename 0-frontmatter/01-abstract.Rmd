@@ -4,18 +4,18 @@ technology has developed over the last few years it has been rapidly adopted by
 researchers in areas such as developmental biology and many single-cell RNA-seq
 datasets are now available. Along with the development of protocols for
 producing this data has been a simultaneous burst in the development of
-computational methods for analysing it. This thesis explores the tools and
-techniques for analysing single-cell RNA-sequencing data that are now
-available. In this thesis I present a database that charts the release of
-analysis software, where it has been published and what it can be used for as
-well as a website that makes available this information publicly available. I
-also present two of my own tools and techniques including Splatter, a software
-package for easily simulating single-cell datasets from multiple models and
-clustering trees, a visualisation approach for inspecting clustering at
-multiple resolutions. In the final part of my thesis I use an analysis of a
-dataset from kidney organoids to demonstrate and compare some of the current
-analysis methods. Taken together this thesis cover many aspects of the tools
-and techniques for single-cell RNA-sequencing by describing the approaches that
-are available, presenting software that can help in developing and evaluating
-methods and an approach for aiding one of the most common analysis tasks an,
-and by how tools can be used to extract meaning from a real dataset.
+computational methods for analysing it. My thesis explores the computational
+tools and techniques for analysing single-cell RNA-sequencing data. I present a
+database that charts the release of analysis software, where it has been
+published and what it can be used for as well as a website that makes this
+information publicly available. I also present two of my own tools and
+techniques including Splatter, a software package for easily simulating
+single-cell datasets from multiple models and clustering trees, a visualisation
+approach for inspecting clustering at multiple resolutions. In the final part
+of my thesis I use an analysis of a dataset from kidney organoids to
+demonstrate and compare some current analysis methods. Taken together my thesis
+cover many aspects of the tools and techniques for single-cell RNA-sequencing
+by describing the approaches that are available, presenting software that can
+help in developing and evaluating methods, an approach for aiding one of the
+most common analysis tasks, and by showing how tools can be used to extract
+meaning from a real dataset.
