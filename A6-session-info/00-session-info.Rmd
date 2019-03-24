@@ -1,0 +1,9 @@
+# Session information
+
+\clearpage
+
+Packages used in building this document.
+
+```{r session-info}
+devtools::session_info()
+```

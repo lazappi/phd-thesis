@@ -15,6 +15,7 @@ rmd_files:
     - "A3-simulation-comparison/00-simulation-comparison.Rmd"
     - "A4-organoid-publication/00-organoid-publication.Rmd"
     - "A5-analysis-methods/00-analysis-methods.Rmd"
+    - "A6-session-info/00-session-info.Rmd"
 download:
     - ["thesis.pdf", "PDF"]
     - ["thesis.docx", "Word"]
