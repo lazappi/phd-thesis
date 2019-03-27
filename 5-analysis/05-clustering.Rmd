@@ -7,7 +7,7 @@ of cell types an unsupervised approach is a good fit. Clustering allows us to
 group cells based purely on their expression profiles without making any
 assumptions about what those groups should be. Here I am going to use the
 graph-based clustering method available in the Seurat package. The first step in
-this approach is to select a set of genes to use.
+this approach is to select a subset of genes to use.
 
 ### Gene selection
 
@@ -50,7 +50,7 @@ relatively small subset are identified by both of them (Figure
 differences between variability and zero counts (Figure
 \@ref(fig:gene-selection)C). For example it is possible for a gene to vary a
 lot between different cells but within an expression range that doesn't result
-in more zeros. Alternatively a gene with relatively low dispersion may still
+in more zeros. Alternatively, a gene with relatively low dispersion may still
 have excess zeros if the underlying expression is low enough. For the
 previously published analysis we used the Seurat selection method so here I am
 going to use the genes identified by M3Drop and see what effect that has on the
@@ -60,20 +60,20 @@ clustering results.
 
 There are several more steps in the Seurat clustering procedure. Once a set of
 genes is selected they are used to perform a PCA and a set of principal
-components is selected. Distances are then calculatged between cells in this
-PCA space and the nearest neighbours for each cell are identified. By comparing
-the sets of neighbours for two cells and computing the Jaccard index a shared
+components is selected. Distances are then calculated between cells in this PCA
+space and the nearest neighbours for each cell are identified. By comparing the
+sets of neighbours for two cells and computing the Jaccard index a shared
 nearest-neighbour graph can be constructed where each node is a cell and the
 edges are the overlap in their neighbourhoods. A graph modularity optimisation
 algorithm such as Louvain modularity optimisation [@Blondel2008-ym] can then be
 used to partition the graph and form clusters of cells. This graph-based
 clustering approach has been shown to be effective in comparisons of scRNA-seq
 clustering methods [@Duo2018-qb; @Freytag2018-ic]. One of the decisions that
-needs to be made during this procedure is the resolution parameter to use which
-affects the number of clusters that are produced. As I have discussed in
-Chapter \@ref(simulation) clustering trees are one tool that can be helpful in
-making this decision. Figure \@ref(fig:resolution-selection)A shows a
-clustering tree for this dataset with resolutions between zero and one.
+needs to be made during this procedure is the value of the resolution parameter
+to use which affects the number of clusters that are produced. As I have
+discussed in Chapter \@ref(simulation) clustering trees are one tool that can
+be helpful in making this decision. Figure \@ref(fig:resolution-selection)A
+shows a clustering tree for this dataset with resolutions between zero and one.
 
 ```{r resolution-selection, fig.cap = "(ref:cap-resolution-selection)", fig.scap = "(ref:scap-resolution-selection)", out.width = "100%"}
 knitr::include_graphics(here::here("figures/05-resolution-selection.png"))
@@ -86,7 +86,7 @@ knitr::include_graphics(here::here("figures/05-resolution-selection.png"))
 The structure of this tree can tell us about how clusters are forming in this
 dataset. My general approach is to select a resolution where most of the
 branches have formed but before there are many low in-proportion edges crossing
-over between clusters that can indicate that clusters are unstable. Displaying
+over between branches that can indicate that clusters are unstable. Displaying
 expression levels of genes that are expected to be important in the dataset
 adds extra information to the structure of the tree (Figure
 \@ref(fig:resolution-selection)B). Here I look to identify at which resolution
@@ -98,15 +98,15 @@ clusters.
 ### Cluster validation
 
 The cluster assignments of the individual cells can be displayed in a reduced
-dimensional space such as that produced by UMAP [@McInnes2018-ul,
+dimensional space such as that produced by UMAP [@McInnes2018-ul;
 @Becht2018-zh] (Figure \@ref(fig:cluster-validation)A). The dimensions shown in
 this visualisation and the cluster labels that are used to colour it are
-produced using different algorithms so by combining them we can confirm that
+produced using different algorithms. By combining them we can confirm that
 the two approaches produce similar results. Clusters can have different
 densities in these plots so it is also useful to know how many cells they
 contain (Figure \@ref(fig:cluster-validation)B). Now that we have a set of
-clusters we can check to see if they are the result of technical rather than
-biological factors.
+clusters we can check to see if they are associated with technical artifacts
+rather than biological factors.
 
 ```{r cluster-validation, fig.cap = "(ref:cap-cluster-validation)", fig.scap = "(ref:scap-cluster-validation)", out.width = "100%"}
 knitr::include_graphics(here::here("figures/05-cluster-validation.png"))
@@ -128,17 +128,17 @@ from the dataset. However, a large proportion of the cells in those clusters
 were also identified by Cell Ranger v3 and an alternative hypothesis is that
 these additional cells belong to a cell type that is smaller or contains less
 RNA for some other reason. Looking at the marker genes associated with those
-clusters could help to answer that question.
+clusters can help to answer that question (Section \@ref(marker-genes)).
 
 ### Comparison to published clusters
 
-Because we previously analysed and interpreted this dataset I can compare these
-clusters to the previously published clusters. It is important to remember the
-differences between the two analyses. The published analysis included a fourth
-organoid from a separate batch that I have omitted here and was analysed using
-the standard Cell Ranger (v1.3.1) and Seurat workflows without emptyDrops
-droplet selection or M3Drop gene selection. I also used different quality
-control thresholds and parameters at some stages. Figure
+Because we have previously analysed and interpreted this dataset I can compare
+these clusters to the previously published clusters. It is important to
+remember the differences between the two analyses. The published analysis
+included a fourth organoid from a separate batch that I have omitted here and
+was analysed using the standard Cell Ranger (v1.3.1) and Seurat workflows
+without emptyDrops droplet selection or M3Drop gene selection. I also used
+different quality control thresholds and parameters at some stages. Figure
 \@ref(fig:cluster-comparison)A shows the proportion of cells in each cluster
 that were present in the published analysis. All of the clusters have some
 additional cells which is to be expected given that the use of the newer
@@ -161,6 +161,8 @@ clusters very clearly match up with a published cluster while others have
 overlaps with multiple similar clusters, particularly for less well defined
 cell types such as the stroma. The two emptyDrops clusters do not show obvious
 signals but they do have some overlap with the published endothelial clusters
-which suggests that that may be a previously overlooked endothelial population.
-To confirm if this is the case we need to check that they express known
-endothelial markers.
+which suggests that that they may be a previously overlooked endothelial
+population. To confirm if this is the case we need to check that they express
+known endothelial markers. Identifying marker genes for each cluster through
+differential expression testing can show us which genes are unique to each
+cluster.

@@ -1,38 +1,37 @@
-## Marker gene detection
+## Marker gene detection {#marker-genes}
 
-To try and identify which types a cluster represents we need to look more
-closely at what genes it expresses. Ideally we want to identify genes that are
+To try and identify which cell types a cluster represents we need to look more
+closely at what genes are expressed. Ideally we want to identify genes that are
 expressed in a single cluster at a relatively high level and whose function is
-well known enough to interpret what that expression might mean. These are the
-same type of genes that are useful for techniques like immunofluorescence
-imaging. The most common way of identifying marker genes is to test for
-differential expression between the cells in a cluster and and all other cells
-in the dataset, then to inspect the significantly highly up-regulated genes.
-Many approaches have been suggested for this task, including a range of methods
-designed specifically for scRNA-seq data. Comparisons of these methods have
-found that the scRNA-seq specific methods do not show significantly better
-results than those designed for bulk RNA-seq or standard statistically tests
-[@Soneson2018-fb, @Jaakkola2016-ko]. For this analysis I have chosen to use the
-edgeR package as it performs well in these comparisons and allows for more
-complex designs such as including the proportion of genes that are expressed
-per cell (detection rate).
+well-known enough to interpret. These are often the same genes that are useful
+for techniques like immunofluorescence imaging. The most common way of
+identifying marker genes is to test for differential expression between the
+cells in a cluster and all other cells in the dataset, then to inspect the
+significantly highly up-regulated genes. Many approaches have been suggested
+for this task, including a range of methods designed specifically for scRNA-seq
+data. Comparisons of these methods have found that the scRNA-seq specific
+methods do not show significantly better results than those designed for bulk
+RNA-seq or standard statistical tests [@Soneson2018-fb; @Jaakkola2016-ko].
+For this analysis I have chosen to use the edgeR package as it performs well in
+these comparisons and allows for more complex designs such as including the
+proportion of genes that are expressed per cell (detection rate).
 
 The edgeR method is based on the negative binomial distribution. After
 calculating normalisation factors to capture differences between cells and
 estimating common and gene-wise dispersions a negative binomial is fitted to
-the dataset. Using some of the information calculated by this fit we can
-compare the gene means (Figure \@ref(fig:de-results)A) and proportion of zeros
-per gene (Figure \@ref(fig:de-results)B) estimated by the edgeR model to what
-we see in the dataset to evaluate the fit. When looking at the comparison of
-means we see that at high expression levels the edgeR estimates become larger
-than what is observed. For the proportion of zeros we see more observed zeros
-than expected when the proportion of zeros is low. Checking these fits can help
-us to decide if the dataset fits an ordinary negative-binomial model or whether
-a zero-inflated negative model would be more appropriate as has often been
-suggested for scRNA-seq data. In this case the fits are sufficiently good but
-if they weren't we would consider method such as ZINB-WaVE that can be used to
-calculate weights that can be added to the edgeR model to correct for zero
-inflation [@Van_den_Berge2018-ip].
+the dataset. We can evaluate this fit using some of the information calculated
+by the edgeR model such as the gene means (Figure \@ref(fig:de-results)A) and
+proportion of zeros per gene (Figure \@ref(fig:de-results)B) and comparing it
+to what we observe in the dataset. When looking at the comparison of means we
+see that at high expression levels the edgeR estimates become larger than what
+is observed. We also observed more zeros than expected when the proportion of
+zeros is low. Checking these fits can help us to decide if the dataset fits an
+ordinary negative binomial model or whether a zero-inflated negative model
+would be more appropriate as has often been suggested for scRNA-seq data. For
+example a method such as ZINB-WaVE can be used to calculate weights that can be
+added to the edgeR model to correct for zero inflation [@Van_den_Berge2018-ip].
+In this case I decided the edgeR fit was sufficiently good and these kinds of
+corrections were unnecessary.
 
 ```{r de-results, fig.cap = "(ref:cap-de-results)", fig.scap = "(ref:scap-de-results)", out.width = "100%"}
 knitr::include_graphics(here::here("figures/05-de-results.png"))
@@ -45,16 +44,16 @@ knitr::include_graphics(here::here("figures/05-de-results.png"))
 Another important quantity that is calculated by the edgeR model is the
 biological coefficient of variation (BCV). BCV is the component of variability
 that captures the true underlying biological differences between replicates of
-the same RNA sample and estimating it correctly can be particularly important
-for highly expressed genes. The BCV plot (Figure \@ref(fig:de-results)C) shows
-the common dispersion across all genes (pink), the dispersion for each gene
-(points) and a trend across the dataset (blue). The empirical bayes approach of
-edgeR borrows information between genes in order to shrink the dispersion
-towards the trended value to achieve more robust estimates. The shape of the
-trend line can be used to check how well the BCV has been fit and we expect
-lowly expressed genes to be more variable than those that are highly expressed.
-One we have a fitted negative binomial model we can test for differences
-between the groups we are interested in.
+the same RNA sample. Estimating BCV correctly can be particularly important for
+highly expressed genes. The BCV plot (Figure \@ref(fig:de-results)C) shows the
+common dispersion across all genes (pink line), the dispersion for each
+individual gene (points) and a trend across the dataset (blue line). The
+empirical bayes approach of edgeR borrows information between genes in order to
+shrink the dispersion towards the trended value to achieve more robust
+estimates. The shape of the trend line can be used to check how well the BCV
+has been fit and we expect lowly expressed genes to be more variable than those
+that are highly expressed. One we have a fitted negative binomial model we can
+test for differences between the groups we are interested in.
 
 There are multiple testing procedures available in edgeR but the currently
 recommended approach is to fit a generalised linear model and test genes using
@@ -64,25 +63,27 @@ approach and the log foldchange for individual genes. For most clusters we see
 a large number of positive marker genes but for the two clusters that contain
 most of the emptyDrops cells many fewer markers have been identified. This
 could be a result of the lower counts in these clusters or a clue that these
-are not pure populations with clear markers. It is important to look at the
-gene lists for each cluster in detail in order to interpret them but as we have
-previously analysed this dataset and can be relatively confident of what it
-contains I have plotted the edgeR results for a few of the genes that were
-previously identified to be important markers (Figure \@ref(fig:de-results)E).
-For most of the clusters we see that only markers for one particular cell type
-are significant with large foldchanges and these are consistent with the
-overlaps between the published clusters I presented in the previous section.
-For the clusters that had little overlap with the published analysis these
-results help to assign them. Cluster XXX clearly shows up-regulation of
-endothelial markers confirming this lineage as a possible identity for these
-cells. The other new cluster (Cluster XXX) is more ambiguous but does show
-up-regulation of immune related genes. Immune cells are not part of the lineage
-that these kidney organoids are differentiated towards but we did see some
-organoid cells that clustered with immune cells in human foetal kidney in our
-previous analysis and there is a plausible pathway by which they could develop.
-Further lab-based experiments would be required to confirm whether these cells
-exist in kidney organoids. Based on the detected markers I have assigned cell
-types to clusters as shown in Table \@ref(tab:assignments).
+are not pure populations with clear markers.
+
+It is important to look at the gene lists for each cluster in detail in order
+to interpret and assign cell types but as we have previously analysed this
+dataset, and can be relatively confident of what it contains, I have plotted
+the edgeR results for a few of the genes that were previously identified to be
+important markers (Figure \@ref(fig:de-results)E). For most of the clusters we
+see that only markers for one particular cell type are significant with large
+foldchanges and these are consistent with the overlaps between the published
+clusters presented in the previous section. For the clusters that had little
+overlap with the published analysis these results help to assign them. Cluster
+4 clearly shows up-regulation of endothelial markers confirming this lineage as
+a possible identity for these cells. The other new cluster (Cluster 6) is more
+ambiguous with significant results for markers of several cell types but does
+show up-regulation of immune related genes. Immune cells are not part of the
+lineage that these kidney organoids are differentiated towards but we did see
+some organoid cells that clustered with immune cells in human foetal kidney in
+our previous analysis and there is a plausible pathway by which they could
+develop. Further lab-based experiments would be required to confirm whether
+these cells exist in kidney organoids. Based on the detected markers I have
+assigned cell types to clusters as shown in Table \@ref(tab:assignments).
 
 ```{r assignments}
 assignments <- read_tsv(here("data/assignments.tsv"),

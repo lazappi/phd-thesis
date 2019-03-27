@@ -15,26 +15,26 @@ kidney organoids"_ [@Phipson2019-er]. This study investigated the robustness
 and repeatability of the organoid differentiation protocol by comparing RNA-seq
 data from multiple batches, cell lines and time points. We found that organoids
 from the same batch had highly correlated expression profiles but that there
-could be significant differences between batches. By comparing the genes that
-were differentially expressed between batches with a time course of organoids
-taken at different stages in the protocol we saw that many of the differences
-between batches were in genes involved in organoid maturation, suggesting that
-some batches grow faster than others. This is an important consideration for
-experiments that want to make comparisons between organoids, for example
-between disease and gene-corrected cell lines. To confirm this result at the
-single-cell level we compared the organoid dataset described above with a
-second batch containing a single organoid. Integration and clustering with
-Seurat [@Satija2015-or; @Butler2018-js] produced 13 clusters that showed
-expression of markers for important kidney cell types as well as some off
-target populations. These clusters contained cells from all four organoids but
-the proportions were different, particularly between the batches with the
-fourth organoid being depleted for stromal populations and showing lower
-expression of mature podocyte genes. While this result reinforces the finding
-from the bulk RNA-seq data it is difficult to say what might be the effect of
-different patterning, dissociation and cell capture rather than organoid
-maturation. The computational and statistical analysis for this study was
-performed by Belinda Phipson. I performed preprocessing of the single-cell data
-using Cell Ranger and some of the early analysis.
+could be significant differences between batches. The genes that were
+differentially expressed between batches were compared with a time course of
+organoids taken at different stages in the protocol. We saw that many of the
+differences between batches were in genes involved in organoid maturation,
+suggesting that some batches grow faster than others. This is an important
+consideration for experiments that want to make comparisons between organoids,
+for example between disease and gene-corrected cell lines. To confirm this
+result at the single-cell level we compared the organoid dataset described
+above with a second batch containing a single organoid. Integration and
+clustering with Seurat [@Satija2015-or; @Butler2018-js] produced 13 clusters
+that showed expression of markers for important kidney cell types as well as
+some off-target populations. These clusters contained cells from all four
+organoids but the proportions were different, particularly between the batches
+with the fourth organoid being depleted for stromal populations and showing
+lower expression of mature podocyte genes. While this result reinforces the
+finding from the bulk RNA-seq data it is difficult to say what might be the
+effect of different patterning, dissociation and cell capture rather than
+organoid maturation. The computational and statistical analysis for this study
+was performed by Belinda Phipson. I performed preprocessing of the single-cell
+data using Cell Ranger and some of the early analysis.
 
 While this study made use of kidney organoid scRNA-seq data it didn't fully
 profile the cell types present. To better understand what cell populations are
@@ -42,58 +42,71 @@ present in these organoids and detectable using scRNA-seq we performed a
 reanalysis of this data that was published as _"Single-cell analysis reveals
 congruence between kidney organoids and human fetal kidney"_ [@Combes2019-uv].
 This study was lead by Alex Combes who performed much of the lab work and
-interpretation of results while I performed all the computational analysis. The
-full text of this publication is included in Appendix \@ref(organoid-paper) but
-I will summarise the results here. Using a similar workflow based around the
-Seurat package we identified 13 clusters that were labelled as covering kidney
-stroma, podocytes, epithelium and endothelium based on the expression of known
-kidney marker genes. Other clusters were associated with active phases of the
-cell cycle as well as off target muscle progenitor, neural progenitor and glial
+interpretation of results while I performed all the computational analysis.
+Details of this analysis are presented online at
+http://oshlacklab.com/combes-organoid-paper/ [@Zappia2019-dy]. The full text of
+this publication is included in Appendix \@ref(organoid-paper) but I will
+summarise the results here. Using a similar workflow based around the Seurat
+package we identified 13 clusters that were labelled as covering kidney stroma,
+podocytes, epithelium and endothelium based on the expression of known kidney
+marker genes. Other clusters were associated with active phases of the cell
+cycle as well as off-target muscle progenitor, neural progenitor and glial
 cells types. Re-clustering of the podocyte and epithelial clusters revealed
 more detail of the nephron lineage with five clusters covering nephron
 progenitors, podocyte precursors, mature podocytes, proximal tubule precursors
 and distal tubule precursors. We used Monocle [@Trapnell2014-he; @Qiu2017-mq]
-to order the cells along pseudotime trajectory which showed two branches with
+to order the cells along a pseudotime trajectory which showed two branches, with
 nephron progenitors heading towards either a podocyte or tubular fate.
 Characterising the samples in this way allowed us to identify many of the cell
 types we would expect to be present in a developing human kidney but it cannot
 show exactly how similar to real tissue they are. We found podocytes in these
 organoids but are organoid podocytes the same as normal kidney podocytes?
 
-To answer this question we integrated our kidney organoid datasets with a human
-foetal kidney previously published by Lindström et al. [@Lindstrom2018-mo].
-Clustering of the combined dataset produced 16 clusters, most of which
-contained cells from both datasets and covered similar cell types to what we
-saw in the organoid only analysis. Some clusters were only present in one
-dataset including the off target muscle and neural cell types in the organoids
-and blood cells in the foetal kidney data. We also found a new population of
-immune cells. Most of these came of from the foetal kidney dataset but a few
-were from the organoids. There were insufficient cells to truly say that immune
-cells are present in these organoids but it is possible they could arise
-somewhere during the differentiation process. As with the organoid data we
-looked more closely at the nephron lineage in the combined dataset. We saw
-evidence of similar developmental trajectories with more mature podocytes in
-the organoid samples and fewer distal tubule cells. At this resolution we also
-found two clusters unique to the human foetal kidney data, a stromal population
-that may be more stem-like in nature and originally clustered with the nephron
-progenitors and a separate podocyte cluster. Some of the differences between
-the datasets can be explained by the differences between the samples, for
-example the human foetal kidney dataset comes from a section of the the outer
-cortex rather than a whole organ. For this reason it is important to look for
-differences between the datasets within cells that have been labelled as the
-same cell type. Doing this revealed an overall stress or heatshock signature in
-the foetal kidney data that is most likely the result of the tissue being
-exposed to suboptimal conditions and made it difficult to see smaller
-differences. However, we were able to identify some differences including in
-signalling that may suggest further avenues for directing kidney organoid
-differentiation.
+To answer this question we integrated our kidney organoid datasets with an
+scRNA-seq dataset from human foetal kidney previously published by Lindström et
+al. [@Lindstrom2018-mo] using the Seurat method based on canonical correlation
+analysis [@Hotelling1936-ni; @Hardoon2004-ev]. Clustering of the combined
+dataset produced 16 clusters, most of which contained cells from both datasets
+and covered similar cell types to what we saw in the organoid only analysis.
+Some clusters were only present in one dataset including the off-target muscle
+and neural cell types in the organoids and blood cells in the foetal kidney
+data. One of the new clusters represented a population of immune cells. Most of
+these came from the foetal kidney dataset but a few originated from the
+organoids. While there were insufficient cells to truly say that immune cells
+are present in these organoids it is possible they could arise somewhere during
+the differentiation process. As with the organoid data we looked more closely
+at the nephron lineage in the combined dataset. We saw evidence of similar
+developmental trajectories with more mature podocytes in the organoid samples
+and fewer distal tubule cells. At this resolution we also found two clusters
+unique to the human foetal kidney data, a stromal population that may be more
+stem-like in nature and originally clustered with the nephron progenitors and a
+separate podocyte cluster. Some of the differences between the datasets can be
+explained by the differences between the samples, for example the human foetal
+kidney dataset comes from a section of the outer cortex rather than a whole
+organ. For this reason it is important to look for differences between the
+datasets within cells that have been labelled as the same cell type. Doing this
+revealed an overall stress or heatshock signature in the foetal kidney data
+that is most likely the result of the tissue being exposed to suboptimal
+conditions and made it difficult to see smaller differences. However, we were
+able to identify some differences, including in signaling pathways, that may
+suggest further avenues for directing kidney organoid differentiation.
 
 Overall our analyses of this dataset supports the presence of important kidney
 cell types in kidney organoids and builds confidence for their usefulness for
-disease modelling and drug screening studies. While we have followed a well
+disease modeling and drug screening studies. While we have followed a well
 established workflow in producing these results there were still many decisions
-we had to make about which tools and parameters to use. For the remainder of
-this chapter I will explore some of the alternative choices we could have made
-and approaches we could have used and what difference they may have made to our
-interpretation of this data. Details of the methods used in this section are
-provided in Appendix \@ref(analysis-methods).
+we had to make about which analysis tools and parameters to use. For the
+remainder of this chapter I will explore some of the alternative analytical
+choices we could have made and approaches we could have used and what
+difference they may have made to our interpretation of this data. An outline of
+the analysis I have performed and where it will be discussed in this chapter is
+shown in Figure \@ref(fig:workflow). Details of the methods used for this
+analysis are provided in Appendix \@ref(analysis-methods).
+
+```{r workflow, fig.cap = "(ref:cap-workflow)", fig.scap = "(ref:scap-workflow)", out.width = "100%"}
+knitr::include_graphics(here::here("figures/05-workflow.png"))
+```
+
+(ref:scap-workflow) Outline of analysis of the kidney organoid dataset.
+
+(ref:cap-workflow) Outline of analysis of the kidney organoid dataset. Filled coloured boxes indicate stages of the analysis. Purple stages contribute to the final results shown here while blue stages were performed as a comparison. Grey stages were performed in the published analysis but are not shown here. The main analysis workflow is indicated with black arrows and comparison stages with pointed grey arrows. The published workflow is shown using smaller open grey arrows with dotted lines. Green shaded boxes show the software tools used and pink shaded boxes indicate sections of this chapter that discuss the results of those stages.

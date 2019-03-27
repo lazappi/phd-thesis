@@ -26,20 +26,20 @@ Part of this process involves transferring the cells from growing in a flat,
 two-dimensional layer on a plate to a three-dimensional environment where
 different types of cells can interact with each other and form structures that
 replicate a nephron. These tissues are known as kidney organoids and can be
-used to model various aspects of kidney development but how useful organoids
-are depends on how well they replicate real kidney cell types.
+used to model various aspects of kidney development but the extent to which
+organoids are useful depends on how well they replicate real kidney cell types.
 
 Organoids have typically been characterised by immunofluorescence imaging using
 antibodies for known markers of nephron segments and cell types. This approach
 makes it easy to see what structures are present in an organoid and if their
-morphology resembles real tissues but it relies on prior knowledge about which
-proteins are important and antibodies for those proteins being available.
-Typically only four or five colour channels are available for
-immunofluorescence imaging, limiting the number of proteins that can be shown
-at once. Bulk RNA-sequencing has also been used to characterise kidney
-organoids. While this approach is less biased and measures expression across
-the transcriptome it only provides a global average of expression across an
-organoid and cannot show exactly which cell types are present or which genes
+morphology resembles real tissues. However using immunofluorescence relies on
+prior knowledge about which proteins are important and antibodies for those
+proteins being available. Typically only four or five colour channels are
+available for immunofluorescence imaging, limiting the number of proteins that
+can be shown at once. Bulk RNA-sequencing has also been used to characterise
+kidney organoids. While this approach is less biased and measures expression
+across the transcriptome it only provides a global average of expression across
+an organoid and cannot show exactly which cell types are present or which genes
 are expressed in the same cells. Single-cell RNA-seq addresses some of these
 limitations by measuring expression in individual cells, allowing cells with
 similar expression profiles to be identified and investigated.
@@ -48,13 +48,14 @@ As in many other areas scRNA-seq has been rapidly embraced as a useful tool in
 studying kidney development and there have already been several studies
 investigating the cell types present in adult kidney, developing kidney and
 kidney organoids. During my PhD I have contributed to this aspect of several
-studies [@Phipson2019-er; @Combes2019-uv; @Lawlor2019-iw]. The work I was most
-closely involved in profiled a set of kidney organoid scRNA-seq samples to
-identify the cell types that were present. The analysis we presented in this
-publication followed a standard scRNA-seq workflow, pre-processing, quality
-control, clustering and ordering of cells, and detection of marker genes, but
-there were still many decisions we had to make. Which tools should be used for
-each step and which parameters should we use for these tools? Should we have
-used any alternative analysis approaches? In this chapter I revisit some of
-those decisions, demonstrate some alternative methods and discuss what
-difference they might have made.
+studies [@Phipson2019-er; @Combes2019-uv; @Lawlor2019-iw; @Kumar2019-tz]. The
+work I was most closely involved in profiled a set of kidney organoid scRNA-seq
+samples to identify the cell types that were present. The analysis we presented
+in this publication followed a standard scRNA-seq workflow including
+pre-processing, quality control, clustering and ordering of cells, and
+detection of marker genes. But there were still many decisions we had to make
+during the analysis. Which tools should be used for each step and which
+parameters should we use for these tools? Should we have used any alternative
+analysis approaches? In this chapter I revisit some of those decisions,
+demonstrate some alternative methods and discuss what difference they might
+have made to the results.
