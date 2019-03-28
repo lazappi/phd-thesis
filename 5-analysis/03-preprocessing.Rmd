@@ -32,7 +32,7 @@ cell [@Zheng2017-mm]. A similar approach is to select droplets that fall above
 the knee point of the cumulative fraction of counts with respect to increasing
 total count [@Macosko2015-rl]. While these methods effectively select most real
 cells they risk overlooking cells that have a lower RNA content than the
-majority of cells in the sample. The emptyDrops method [@Lun2018-lb] in the
+majority of cells in the sample. The emptyDrops method [@Lun2019-wp] in the
 DropletUtils package provides an alternative approach (Figure
 \@ref(fig:droplet-selection)). A threshold on total counts is selected below
 which droplets are assumed to be empty and these empty droplets are used to
@@ -96,7 +96,7 @@ transcript expression without alignment. While these approaches do not produce
 an exact location for each read they can be much faster which is appealing for
 scRNA-seq data as there are many more cells to quantify. However, factors such
 as cell barcodes, UMIs and different model assumptions mean that these tools
-have had to be adapted for scRNA-seq data. Alevin [@Srivastava2018-fy] is the
+have had to be adapted for scRNA-seq data. Alevin [@Srivastava2019-ce] is the
 scRNA-seq mode available in Salmon.
 
 Alevin has it's own method for identifying which droplets contain cells. First

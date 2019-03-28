@@ -26,7 +26,7 @@ without sorting cells and approaches were developed to allow unbiased capture
 of the whole transcriptome. Since then, many scRNA-seq protocols have been
 developed (including CEL-Seq [@Hashimshony2012-dh], CEL-Seq2
 [@Hashimshony2016-yi], Quartz-Seq [@Sasagawa2013-uc], Quartz-Seq2
-[@Sasagawa2017-zf] and Smart-seq2 [@Picelli2013-or]) and the number of cells in
+[@Sasagawa2018-ox] and Smart-seq2 [@Picelli2013-or]) and the number of cells in
 scRNA-seq experiments has scaled exponentially (Figure \@ref(fig:technologies))
 [@Svensson2018-dx]. The first commercially available cell capture platform was
 the Fluidigm C1. This system uses microfluidics to passively separate cells
@@ -163,7 +163,7 @@ retrieved and processed in a similar way to droplet-based capture
 [@Bose2015-vn]. Some cell types are difficult to capture due to their size,
 shape or other properties, and in some cases, particularly in tissues such as
 the brain, it has been suggested that single-nucleus rather than single-cell
-RNA-seq may be more effective [@Hu2017-jm; @Gao2017-tq; @Habib2017-jo;
+RNA-seq may be more effective [@Hu2017-jm; @Gao2017-tq; @Habib2017-uh;
 @Wu2018-xf]. In these protocols Nuclei are captured and processed in a similar
 way to cells, however the RNA within them is immature and unspliced so
 different reference annotations are required during analysis.
@@ -179,7 +179,7 @@ away before cell capture. The antibody labels are then captured along with mRNA
 transcripts and a size selection step is applied to separate them before
 library preparation. Similar antibodies can be used to allow multiplexing of
 samples through a process known as cell hashing (Figure \@ref(fig:CITE-seq)B)
-[@Stoeckius2017-rl]. In a typical scRNA-seq experiment each batch corresponds
+[@Stoeckius2018-ij]. In a typical scRNA-seq experiment each batch corresponds
 to a single sample. This complicates analysis as it is impossible to tell what
 is noise due to cells being processed in the same way and what is true
 biological signal. Cell hashing uses an antibody to a ubiquitously expressed

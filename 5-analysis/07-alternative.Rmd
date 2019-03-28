@@ -20,7 +20,7 @@ context to the current analysis.
 
 Partition-based graph abstraction (PAGA) is a method for reducing the
 complexity of a dataset by estimating the connectivity between clusters
-[@Wolf2017-vq]. The result is a reduced graph representation of the dataset
+[@Wolf2019-fo]. The result is a reduced graph representation of the dataset
 where each node is a cluster and the edges show how connected they are (Figure
 \@ref(fig:paga-results)A). PAGA is available as part of the Scanpy package
 [@Wolf2018-na] and starts with the same kind of shared nearest neighbour cell
