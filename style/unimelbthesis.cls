@@ -225,7 +225,7 @@
 %  Modified from book.cls.
 % *============================================================================*
 
-%\def\@makechapterhead#1{
+% \def\@makechapterhead#1{
 %  \vspace*{25\p@}
 %  {\parindent \z@ \raggedright \normalfont \singlespacing
 %    \ifnum \c@secnumdepth >\m@ne
@@ -239,9 +239,9 @@
 %    \Huge #1\par\nobreak
 %    \vskip 40\p@
 %  }
-%}
+% }
 
-%\def\@makeschapterhead#1{
+% \def\@makeschapterhead#1{
 %  \vspace*{50\p@}
 %  {\parindent \z@ \raggedright
 %    \normalfont
@@ -249,7 +249,7 @@
 %    \Huge\centering #1\par\nobreak
 %    \vskip 40\p@
 %  }
-%}
+% }
 
 % *============================================================================*
 %  QUOTATIONS

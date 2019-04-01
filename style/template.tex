@@ -61,6 +61,8 @@
 
 % +-----Package options--------------------------------------------------------+
 
+\setlength{\parindent}{0pt}
+
 % Chapter headings
 \titleformat{\chapter}[display]
   {
@@ -91,10 +93,12 @@
 
 % Unnumbered chapter headings
 \titleformat{name=\chapter,numberless}[display]
-  {\normalfont\LARGE\bfseries}
+  {\normalfont\LARGE\bfseries\center}
   {}
   {0pt}
   {#1}
+
+%\titlespacing*{\chapter}{0pt}{-50pt}{40pt}
 
 % No numbers on chapter pages
 %\assignpagestyle{\chapter}{empty}

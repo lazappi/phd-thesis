@@ -129,7 +129,7 @@ bibliography:
 #  your citations. See https://citationstyles.org/ for more details.
 # +----------------------------------------------------------------------------+
 
-csl: "style/genome-biology.csl"
+csl: "style/my-brackets-style.csl"
 
 # *============================================================================*
 #  OUTPUT FORMATS
