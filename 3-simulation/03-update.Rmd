@@ -1,18 +1,18 @@
-## Updates to Splatter
+## Updates to Splatter {#splatter-update}
 
-I have continued to develop the Splatter package, improving the package
-infrastructure and implementing additional simulation models. This section
-briefly describes changes to the software since the publication and provides an
-up-to-date comparison of the current simulation models.
+I have continued to develop the Splatter package since publication, improving
+the package infrastructure and implementing additional simulation models. This
+section briefly describes changes to the software since the publication and
+provides an up-to-date comparison of the current simulation models.
 
 The most significant change to the infrastructure of Splatter is switching from
 using the SCESet object provided by early version of the scater package as the
 output of simulation functions to using the SingleCellExperiment object
-[@Lun2017-jj]. This object has been available as of mid 2017 and is intended to
+[@Lun2017-jj]. This object has been available since mid 2017 and is intended to
 be the core object for all Bioconductor packages working with scRNA-seq data.
 It is based on Bioconductor's SummarizedExperiment object which consists of
 feature by sample matrices linked to annotation data frames for both features
-and samples. The SingleCellExperiment adds feature specifically useful
+and samples. The SingleCellExperiment adds features specifically useful
 scRNA-seq data including slots for storing the results of dimensionality
 reduction techniques and normalisation size factors as well as conveniently
 named accessors for information commonly used in analyses. In practical terms
@@ -27,14 +27,14 @@ of users we have modified the parameters controlling additional dropout to
 allow them to be specified by whole experiment (the previous method), sample
 batch, cell group or by individual cell. This allows users investigating the
 effects of dropout to simulate datasets where different cell types or batches
-are differently effected by the dropout phenomenon. Many of the other
+are differently affected by the dropout phenomenon. Many of the other
 parameters could already be specified at different levels but extending this to
 the dropout parameters provides extra flexibility to the Splat model. In the
 original model the total number of reads in each cell was sampled from a
 log-normal distribution however some users have come across datasets where the
 normal distribution was a better fit which caused the Splat estimation
-procedure to fail. We now allow both the log-normal and normal distributions to
-be used for this part of the model and the estimation procedure attempts to
+procedure to fail. We now allow either the log-normal or normal distributions
+to be used for this part of the model and the estimation procedure attempts to
 identify which is more appropriate for each input dataset.
 
 Another model that has seen changes is that from the BASiCS package. The
@@ -46,7 +46,8 @@ used as part of the default estimation procedure for the BASiCS model within
 Splatter, resulting is simulations that are a much better match for the
 original dataset.
 
-I have also added four new simulation models to Splatter, these are:
+I have also added four new simulation models to Splatter, bringing the number of
+models to 10. These new models are:
 
 * mfa - Simulation of a bifurcating pseudotime trajectory. This simulation can
   optionally include genes with changes in expression along the trajectory and
@@ -145,19 +146,19 @@ normalisation and differential expression testing [@Van_den_Berge2018-ip]. In
 contrast to the previously published analysis the BASiCS model is also a very
 good match with the improvement in performance coming from the new
 regression-based estimation method. Unfortunately the BASiCS normalisation
-method relies on knowing predefined groups of cells which limits it's
-usefulness for exploratory experiments. The Splat method cannot match the
-performance of ZINB-WaVE and BASiCS but it still does a reasonable job of
-reproducing this dataset despite having a much simpler (and quicker) estimation
-procedure. While producing realistic datasets is extremely important the real
-strength of the Splat model lies in it's flexibility to simulate many kinds of
-experiment and reporting of intermediate values that can be used to evaluate
-methods. As observed in the publication we again see that the zero-inflated
-versions of the Splat and Lun2 models perform worse than the regular versions
-on this UMI dataset. However, this is in contrast to the extremely good
-performance of ZINB-WaVE which also uses a zero-inflated model. Taken together
-these results suggests that both regular and zero-inflated models can be
-effective for this type of data if the parameters are estimated correctly.
+method relies on knowing predefined groups of cells which limits its usefulness
+for exploratory experiments. The Splat method does not match the performance of
+ZINB-WaVE and BASiCS but still does a reasonable job of reproducing this
+dataset, despite having a much simpler (and quicker) estimation procedure.
+While producing realistic datasets is extremely important, the real strength of
+the Splat model lies in it's flexibility to simulate many kinds of experiment
+and reporting of intermediate values that can be used to evaluate methods. As
+observed in the publication we again see that the zero-inflated versions of the
+Splat and Lun2 models perform worse than the regular versions on this UMI
+dataset. However, this is in contrast to the extremely good performance of
+ZINB-WaVE which also uses a zero-inflated model. Taken together these results
+suggests that both regular and zero-inflated models can be effective for this
+type of data if the parameters are estimated correctly.
 
 The other three new simulation models (mfa, PhenoPath and SparseDC) do not do a
 particularly good job of reproducing this dataset and in particular mfa
@@ -170,4 +171,8 @@ but in choosing good parameters for that model. As we describe in the
 publication there are caveats around the estimation procedures for some of the
 other models, specifically the Lun model, which only estimates the number of
 genes and cells, and the scDD model which is designed for a high-quality
-filtered dataset unlike the raw dataset used here.
+filtered dataset unlike the raw dataset used here. Another important
+consideration is that the comparison shown here is based on a single dataset.
+As we showed in the publication different datasets have different biological
+and technical features which may be reproduced more accurately by alternative
+simulation models.

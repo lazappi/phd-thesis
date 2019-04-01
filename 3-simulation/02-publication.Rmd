@@ -1,4 +1,4 @@
-## Splatter publication
+## Splatter publication {#splatter-publication}
 
 ```{r splatter-paper, results = "asis"}
 name <- "Splatter"
