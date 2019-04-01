@@ -27,7 +27,7 @@
 
 # +-----Title------------------------------------------------------------------+
 
-title: "Tools and techniques for single-cell RNA-seq data"
+title: "Tools and techniques for single-cell RNA sequencing data"
 
 # +-----Author-----------------------------------------------------------------+
 author: "Luke Zappia"
@@ -118,7 +118,10 @@ copyrightlist: |
 #  Export your bibliography database as a bibtex file and refer to it here.
 # +----------------------------------------------------------------------------+
 
-bibliography: "bib/references.bib"
+bibliography:
+  - "bib/references.bib"
+  - "bib/analysis-references.bib"
+  - "bib/analysis-packages.bib"
 
 # +-----Citation style---------------------------------------------------------+
 #  To change your citation style download a Citation Style Language file from
@@ -126,7 +129,7 @@ bibliography: "bib/references.bib"
 #  your citations. See https://citationstyles.org/ for more details.
 # +----------------------------------------------------------------------------+
 
-csl: "style/genome-biology.csl"
+csl: "style/my-brackets-style.csl"
 
 # *============================================================================*
 #  OUTPUT FORMATS
@@ -193,6 +196,9 @@ library("stringr")
 
 # File IO
 library("readr")
+
+# Presentation
+library("knitr")
 
 # Manipulation
 library("dplyr")
@@ -262,9 +268,10 @@ cat_counts <- tools %>%
     mutate(Category = ifelse(Category == "U M Is", "UMIs", Category)) %>%
     mutate(Category = factor(Category, levels = Category))
 
-tools_date <- "25 January 2019"
-n_tools <- nrow(tools)
-n_tools_new <- n_tools - 232
+tools_date    <- "06 March 2019"
+n_tools       <- nrow(tools)
+n_tools_new   <- n_tools - 232
+n_tools_floor <- floor(n_tools / 10) * 10
 ```
 
 ```{r load-tools-analytics}
@@ -290,10 +297,12 @@ tools_countries <- read_tsv(here("data/tools-countries.tsv"),
 n_countries <- length(unique(tools_countries$Country))
 ```
 
-```{r load-params}
+```{r load-analysis-data}
 params_path <- here("data/analysis-parameters.json")
+versions_path <- here("data/analysis-versions.json")
 
 params <- read_json(params_path, simplifyVector = TRUE)
+versions <- read_json(versions_path, simplifyVector = TRUE)
 ```
 
 `r if(html) '# Front matter {-}'`

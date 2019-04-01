@@ -6,5 +6,11 @@
 >
 > _Empirical Model-Building and Response Surfaces_, 1987
 
+```{r simulation-sketch, out.width = "100%", results = "asis"}
+knitr::include_graphics(here::here("figures/03-simulation.png"))
+
+if (tex) {cat("\\clearpage")}
+```
+
 ```{r simulation-sections, child = c("3-simulation/01-introduction.Rmd", "3-simulation/02-publication.Rmd", "3-simulation/03-update.Rmd")}
 ```

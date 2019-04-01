@@ -96,7 +96,7 @@ Contributions to the work in this chapter:
 
 **[Chapter 4: Visualising clustering across resolutions](#clust-trees)** is an
 original work describing a visualisation for showing clustering results across
-multiple resolutions and helping to choose a clustering resolution to use. This
+multiple resolutions and helping to select a clustering resolution to use. This
 work has been published in _GigaScience_ as _"Clustering trees: a visualization
 for evaluating clusterings at multiple resolutions"_ and a software package
 implementing the algorithm described is available from CRAN at
@@ -126,17 +126,16 @@ Contributions to work in this chapter:
 * Marek Cmero read and provided comments on a draft of the manuscript.
 
 **[Chapter 5: Analysis of kidney organoid scRNA-seq data](#analysis)** is an
-original work where I performed analysis of a single-cell RNA sequencing
-experiment from kidney organoids in order to identify and characterise the cell
-types present.
+original work where I performed re-analysis of a previously published
+single-cell RNA sequencing experiment from kidney organoids in order to
+demonstrate a range of analysis tools and decisions during analysis.
 
 Contributions to work in this chapter:
 
-* XXX performed the cell culture.
+* The dataset is publicly available from the Gene Expression Omnibus under
+  accession GSE114802.
 
-* XXX performed cell capture and library preparation of the samples.
-
-* I performed pre-processing of the datasets
+* I performed pre-processing of the dataset
 
 * I designed and performed the analysis with input from Alicia Oshlack, Belinda
   Phipson, Melissa Little and Alex Combes.
@@ -159,4 +158,17 @@ cell RNA sequencing protocols."_ F1000 Research. DOI:
 Phipson B, Er PX, Combes AN, Forbes TA, Howden SE, **Zappia L**, Yen HJ, Lawlor
 KT, Hale LJ, Sun J, Wolvetang E, Takasato M, Oshlack A, Little MH. _"Evaluation
 of variability in human kidney organoids."_ Nature Methods. 2019. DOI:
-[10.1038/s41592-018-0253-2](http://dx.doi.org/10.1038/s41592-018-0253-2).
+[10.1038/s41592-018-0253-2](http://doi.org/10.1038/s41592-018-0253-2).
+
+Combes AN^+^, **Zappia L^+^**, Er PX, Oshlack A, Little MH. _"Single-cell
+analysis reveals congruence between kidney organoids and human fetal kidney."_
+Genome Medicine. 2019. DOI:
+[10.1186/s13073-019-0615-0](https://doi.org/10.1186/s13073-019-0615-0)
+
+Kumar SV, Er PX, Lawlor KT, Motazedian A, Scurr M, Ghobrial I, Combes AN,
+**Zappia L**, Oshlack A, Stanley EG, Little MH. _"Kidney micro-organoids in
+suspension culture as a scalable source of human pluripotent stem cell-derived
+kidney cells."_ Development. 2019. DOI:
+[10.1242/dev.172361](http://doi.org/10.1242/dev.172361)
+
+^+^ _Authors contributed equally._

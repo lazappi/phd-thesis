@@ -68,7 +68,9 @@ To demonstrate the performance of the current simulation models I have repeated
 some of the analysis from the publication using the Tung dataset
 [@Tung2017-ry]. Parameters for each of the models were estimated from a sample
 of 500 cells from the Tung data and synthetic datasets were produced for each
-model using these parameters. The comparison functions within Splatter were
+model using these parameters. The time taken for the estimation and simulation
+steps is shown in Appendix \@ref(sim-timings) and versions of the packages used
+in Appendix \@ref(sim-packages). The comparison functions within Splatter were
 then used to evaluate the differences between the simulated datasets and the
 real data they were based on. Figure \@ref(fig:simulation-summary) summarises
 this evaluation by showing the ranking of the median absolute deviation (MAD)
@@ -124,10 +126,10 @@ p1 <- ggplot(sim_summary, aes(x = Dataset, y = Statistic, fill = Rank)) +
           legend.key.size = unit(25, "points"),
           legend.position = "right")
 
-ggsave(here("figures/sim-summary.pdf"), p1, height = 6, width = 8)
-ggsave(here("figures/sim-summary.png"), p1, height = 6, width = 8)
+ggsave(here("figures/03-sim-summary.pdf"), p1, height = 6, width = 8)
+ggsave(here("figures/03-sim-summary.png"), p1, height = 6, width = 8)
 
-knitr::include_graphics(here::here("figures/sim-summary.png"))
+knitr::include_graphics(here::here("figures/03-sim-summary.png"))
 ```
 
 (ref:scap-sim-summary) Performance of current Splatter simulations.

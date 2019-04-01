@@ -1,9 +1,29 @@
-I would like to acknowledge...
+Thank you to my supervisors Alicia Oshlack and Melissa Little, it has been a
+pleasure and a privilege to work with you over the last few years. You both
+provide supportive environments that let people get the most out of themselves
+and I am fortunate to have had you to guide me through my PhD.
 
-* Supervisors
-* Lab members
-* COMBINE
-* Friends
-* Tool developers
-* Community
-* Templates
+That support extends to the other members of the Oshlack lab. It's easy to come
+into work every day when you get on with your colleagues and enjoy spending
+time with them. A special thanks to Belinda Phipson who as being an amazing
+source of advice about statistics and analysis but also just life in general.
+The Little kidney development lab has also been extremely welcoming. Thank you
+to all of them for making me feel a part of their group and sharing their
+knowledge, particularly Alex Combes who it has been fantastic to work closely
+with.
+
+Outside my work a big part of my PhD has been involvement with COMBINE. Thank
+you to everyone who has contributed to building and continuing to develop the
+organisation, particularly Leah Roberts who has guided me through everything.
+The Australian bioinformatics student community is extremely fortunate to have
+such as an organisation and I hope students and supervisors continue to support
+COMBINE and make it even better.
+
+Thank you to my friends and family for the support you have provided outside my
+PhD, it's important to have other things going on in the rest of my life. The
+biggest thanks to my partner Sarah for her continued love and care (and
+proofreading expertise).
+
+Lastly I want to thank the wider scientific and programming communities.
+Everyone who makes their code, software, data and analysis available makes this
+kind of research possible, easier and more fun.

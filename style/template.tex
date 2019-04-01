@@ -51,27 +51,28 @@
 \usepackage{microtype} % Microtypography for better spacing, kerning, etc...
 \usepackage{caption}   % Caption formatting
 \usepackage{xcolor}    % Coloured text
+\usepackage{csquotes}  % Fancy quotes
 
 \usepackage[utf8]{inputenc}       % UTF-8 input encoding
 \usepackage[T1]{fontenc}          % Use 8-bit fonts
 \usepackage[hidelinks]{hyperref}  % Hyperlinks
 \usepackage[explicit]{titlesec}   % Fancy section headings
-
-\usepackage{csquotes}
+\usepackage[section]{placeins}    % Restrict floats to sections
 
 % +-----Package options--------------------------------------------------------+
+
+\setlength{\parindent}{0pt}
 
 % Chapter headings
 \titleformat{\chapter}[display]
   {
     \normalfont
     \Large
-    \rmfamily
+    \filleft
+    \sffamily
   }
   {
     \vskip150pt
-    \sffamily
-    \flushright
     \fontsize{150}{0}
     \textbf{
       \textcolor{black!20}{
@@ -81,8 +82,6 @@
   }
   {0pt}
   {
-    \sffamily
-    \flushright
     \fontsize{40}{0}
     \textbf{
       \textcolor{black!20}{
@@ -94,10 +93,12 @@
 
 % Unnumbered chapter headings
 \titleformat{name=\chapter,numberless}[display]
-  {\normalfont\LARGE\bfseries}
+  {\normalfont\LARGE\bfseries\center}
   {}
   {0pt}
   {#1}
+
+%\titlespacing*{\chapter}{0pt}{-50pt}{40pt}
 
 % No numbers on chapter pages
 %\assignpagestyle{\chapter}{empty}
@@ -246,6 +247,7 @@ $endif$
 
 $body$
 
+\End{tcother}
 \end{mainmatter}
 
 \end{document}

@@ -56,7 +56,7 @@ plot_data <- tools_countries %>%
                              TRUE, FALSE)) %>%
     mutate(Colour = if_else(TooLow, "grey40", "white")) %>%
     mutate(hjust = if_else(TooLow, -0.1, 1.1))
-    
+
 countries <- ggplot(plot_data, aes(x = Country, y = Users, fill = Country)) +
     geom_col() +
     geom_text(aes(label = Label, colour = Colour, hjust = hjust),
@@ -114,10 +114,10 @@ panel <- plot_grid(users, p1,
                    ncol = 1, rel_heights = c(0.9, 1), hjust = 0,
                    labels = c("A - Users over time", ""))
 
-ggsave(here("figures/analytics.pdf"), panel, height = 6, width = 8)
-ggsave(here("figures/analytics.png"), panel, height = 6, width = 8)
+ggsave(here("figures/02-analytics.pdf"), panel, height = 6, width = 8)
+ggsave(here("figures/02-analytics.png"), panel, height = 6, width = 8)
 
-knitr::include_graphics(here::here("figures/analytics.png"))
+knitr::include_graphics(here::here("figures/02-analytics.png"))
 ```
 
 (ref:scap-analytics) Usage of the scRNA-tools website.

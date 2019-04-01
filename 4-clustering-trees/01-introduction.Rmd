@@ -44,4 +44,6 @@ our paper.
 Clustering trees can be produced using the clustree R package which is built on
 the tidygraph [@Pedersen2018-ly], igraph [@Csardi2006-ce] and ggraph
 [@Pedersen2018-ie] packages and is available from CRAN
-(https://cran.r-project.org/package=clustree).
+(https://cran.r-project.org/package=clustree). The clustree vignette is
+included as Appendix \@ref(clustree-manual) and the manual as Appendix
+\@ref(clustree-manual).

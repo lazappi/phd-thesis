@@ -80,6 +80,7 @@
 
 % +-----Header height----------------------------------------------------------+
 \headheight 14pt
+\voffset -2cm
 
 % +-----Paragraph margins------------------------------------------------------+
 \marginparwidth 0pt
@@ -101,7 +102,7 @@
 	\addtolength{\textheight}{-\headheight}
 	\addtolength{\textheight}{-\topmargin}
 	\addtolength{\textheight}{-\voffset}
-	\addtolength{\textheight}{-2.5cm}
+	\addtolength{\textheight}{-0.5cm}
 
 % +-----Set margins------------------------------------------------------------+
 \evensidemargin \paperwidth
@@ -224,7 +225,7 @@
 %  Modified from book.cls.
 % *============================================================================*
 
-%\def\@makechapterhead#1{
+% \def\@makechapterhead#1{
 %  \vspace*{25\p@}
 %  {\parindent \z@ \raggedright \normalfont \singlespacing
 %    \ifnum \c@secnumdepth >\m@ne
@@ -238,9 +239,9 @@
 %    \Huge #1\par\nobreak
 %    \vskip 40\p@
 %  }
-%}
+% }
 
-%\def\@makeschapterhead#1{
+% \def\@makeschapterhead#1{
 %  \vspace*{50\p@}
 %  {\parindent \z@ \raggedright
 %    \normalfont
@@ -248,7 +249,7 @@
 %    \Huge\centering #1\par\nobreak
 %    \vskip 40\p@
 %  }
-%}
+% }
 
 % *============================================================================*
 %  QUOTATIONS
@@ -266,7 +267,7 @@
 	\relax
 }{
 	\endlist
-	\vspace{\fill}
+	\clearpage
 }
 
 % *============================================================================*
