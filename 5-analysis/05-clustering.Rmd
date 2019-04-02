@@ -1,9 +1,9 @@
 ## Clustering
 
-Now that we have a dataset containing high-quality cells the next step in my
+Now that we have a dataset containing high-quality cells, the next step in my
 analysis is to perform clustering. It is necessary to use some technique to
-group and label cells. For this kind of dataset that contains an unknown number
-of cell types an unsupervised approach is a good fit. Clustering allows us to
+group and label cells. For this kind of dataset that contains an unknown set
+of cell types, an unsupervised approach is a good fit. Clustering allows us to
 group cells based purely on their expression profiles without making any
 assumptions about what those groups should be. Here I am going to use the
 graph-based clustering method available in the Seurat package. The first step in
@@ -15,7 +15,7 @@ Most genes will either be expressed at a consistent level across all cells in a
 dataset or have too few counts to provide enough information about differences
 between cells. To reduce the noise in the dataset and the computational cost of
 analysis we want to select a set of genes that will be useful for separating
-cells. An intuitive approach is to filter based on the mean expression level,
+cells. An intuitive approach is to filter based on the mean expression level
 to remove lowly expressed genes, and the gene variability to select those that
 explain differences between cells. This is the default approach used in Seurat
 (Figure \@ref(fig:gene-selection)A). The thresholds I have chosen here select
@@ -27,32 +27,32 @@ knitr::include_graphics(here::here("figures/05-gene-selection.png"))
 
 (ref:scap-gene-selection) Selecting genes for clustering.
 
-(ref:cap-gene-selection) Selecting genes for clustering. (A) Scatter plot of mean gene expression level against dispersion. The default Seurat selection method sets thresholds on these axes. Purple lines indicate thresholds and selected genes are coloured blue. (B) The M3Drop method fits the relationship (purple line) between average expression (x-axis) and dropout rate (y-axis). Genes that have significantly more zeros than expected are selected (pink). (C) Comparison of gene selection methods. The dropout rate calculated by M3Drop is plotted against the dispersion calculated by Seruat. Points are coloured according to whether they were selected by Seurat (blue), M3Drop (pink) or both (green). (D) Bar plot of the number of genes selected by each method and the intersection. Most genes are identified by only one approach.
+(ref:cap-gene-selection) Selecting genes for clustering. (A) Scatter plot of mean gene expression level against dispersion. The default Seurat selection method sets thresholds on these axes. Purple lines indicate thresholds and selected genes are coloured blue. (B) The M3Drop method fits the relationship (purple line) between average expression (x-axis) and dropout rate (y-axis). Genes that have significantly more zeros than expected are selected (pink). (C) Comparison of gene selection methods. The dropout rate calculated by M3Drop is plotted against the dispersion calculated by Seurat. Points are coloured according to whether they were selected by Seurat (blue), M3Drop (pink) or both (green). (D) Bar plot of the number of genes selected by each method and the intersection. Most genes are identified by only one approach.
 
 The M3Drop package suggests an alternative approach that considers the
 proportion of zero counts per gene rather than the variability
 [@Andrews2018-xa]. Here the idea is that if a gene is important for identifying
-a cell type then it's expression will be concentrated in a subset of cells and
+a cell type then its expression will be concentrated in a subset of cells and
 there will be more zero counts than would be expected based on the overall mean
 expression. The original M3Drop method fits a Michaelis-Menten function to the
 relationships between mean expression and dropout rate (proportion of zeros)
 but for UMI datasets that have not been sequenced to saturation the authors
-suggest their NBDrop method instead which fits a library size adjusted negative
-binomial model. A binomial test is then used to identify genes that have
-significantly more zeros than would be expected from the fitted model (Figure
-\@ref(fig:gene-selection)B). By using a statistical test this method removes
-the need to set multiple thresholds. Here M3Drop has selected
+suggest their NBDrop method instead, which fits a library size adjusted
+negative binomial model. A binomial test is then used to identify genes that
+have significantly more zeros than would be expected from the fitted model
+(Figure \@ref(fig:gene-selection)B). By using a statistical test this method
+removes the need to set multiple thresholds. Here M3Drop has selected
 `r params$clust$sel_m3drop` genes with excess zeros.
 
 If we compare the sets of genes selected by these two methods we see that a
 relatively small subset are identified by both of them (Figure
 \@ref(fig:gene-selection)D). These differences can be explained by the
 differences between variability and zero counts (Figure
-\@ref(fig:gene-selection)C). For example it is possible for a gene to vary a
+\@ref(fig:gene-selection)C). For example, it is possible for a gene to vary a
 lot between different cells but within an expression range that doesn't result
 in more zeros. Alternatively, a gene with relatively low dispersion may still
 have excess zeros if the underlying expression is low enough. For the
-previously published analysis we used the Seurat selection method so here I am
+previously published analysis we used the Seurat selection method, so here I am
 going to use the genes identified by M3Drop and see what effect that has on the
 clustering results.
 
@@ -62,7 +62,7 @@ There are several more steps in the Seurat clustering procedure. Once a set of
 genes is selected they are used to perform a PCA and a set of principal
 components is selected. Distances are then calculated between cells in this PCA
 space and the nearest neighbours for each cell are identified. By comparing the
-sets of neighbours for two cells and computing the Jaccard index a shared
+sets of neighbours for two cells and computing the Jaccard index, a shared
 nearest-neighbour graph can be constructed where each node is a cell and the
 edges are the overlap in their neighbourhoods. A graph modularity optimisation
 algorithm such as Louvain modularity optimisation [@Blondel2008-ym] can then be
@@ -70,8 +70,8 @@ used to partition the graph and form clusters of cells. This graph-based
 clustering approach has been shown to be effective in comparisons of scRNA-seq
 clustering methods [@Duo2018-qb; @Freytag2018-ic]. One of the decisions that
 needs to be made during this procedure is the value of the resolution parameter
-to use which affects the number of clusters that are produced. As I have
-discussed in Chapter \@ref(simulation) clustering trees are one tool that can
+to use, which affects the number of clusters that are produced. As I have
+discussed in Chapter \@ref(simulation), clustering trees are one tool that can
 be helpful in making this decision. Figure \@ref(fig:resolution-selection)A
 shows a clustering tree for this dataset with resolutions between zero and one.
 
@@ -90,7 +90,7 @@ over between branches that can indicate that clusters are unstable. Displaying
 expression levels of genes that are expected to be important in the dataset
 adds extra information to the structure of the tree (Figure
 \@ref(fig:resolution-selection)B). Here I look to identify at which resolution
-we see clear, high-intensity signals for these genes. That is a single or few
+we see clear, high-intensity signals for these genes. That is, a single or few
 clusters where they are highly expressed. Based on these trees I have selected
 a resolution of `r params$clust$res` which produces `r params$clust$n_clusts`
 clusters.
@@ -158,11 +158,11 @@ To compare the two sets of clusters I have calculated the Jaccard index between
 each cluster from the previously published analysis and each cluster from the
 analysis presented here (Figure \@ref(fig:cluster-comparison)B). Some of the
 clusters very clearly match up with a published cluster while others have
-overlaps with multiple similar clusters, particularly for less well defined
+overlaps with multiple similar clusters, particularly for less-well-defined
 cell types such as the stroma. The two emptyDrops clusters do not show obvious
 signals but they do have some overlap with the published endothelial clusters
 which suggests that that they may be a previously overlooked endothelial
-population. To confirm if this is the case we need to check that they express
-known endothelial markers. Identifying marker genes for each cluster through
-differential expression testing can show us which genes are unique to each
-cluster.
+population. To confirm if this is the case we need to check whether they
+express known endothelial markers. Identifying marker genes for each cluster
+through differential expression testing can show us which genes are unique to
+each cluster.

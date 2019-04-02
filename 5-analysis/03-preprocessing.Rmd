@@ -7,7 +7,7 @@ tool for accomplishing this task is 10x's Cell Ranger software. This pipeline
 performs a number of tasks including demultiplexing the BCL base call files
 returned by Illumina sequencers and converting them to more common FASTQ
 sequence files, aligning reads to a reference genome, counting reads
-overlapping annotated genes, separating cells by barcode and deduplicating
+overlapping annotated genes, separating cells by barcode, and deduplicating
 UMIs. Some of these stages are performed by other tools such as Illumina's
 bcl2fastq software and the STAR splice-aware aligner [@Dobin2013-gx] but with
 wrappers designed to handle specific features of 10x libraries. For the
@@ -29,20 +29,20 @@ previous publications) required an expected number of cells for each sample
 cells was then taken as a robust estimate of the maximum number of counts in a
 cell and any droplet with at least 10 percent of this maximum was selected as a
 cell [@Zheng2017-mm]. A similar approach is to select droplets that fall above
-the knee point of the cumulative fraction of counts with respect to increasing
-total count [@Macosko2015-rl]. While these methods effectively select most real
-cells they risk overlooking cells that have a lower RNA content than the
-majority of cells in the sample. The emptyDrops method [@Lun2019-wp] in the
-DropletUtils package provides an alternative approach (Figure
-\@ref(fig:droplet-selection)). A threshold on total counts is selected below
-which droplets are assumed to be empty and these empty droplets are used to
-produce a profile of the ambient RNA in the sample. A Monte Carlo sampling
-approach is then used to calculate a p-value indicating whether a particular
-droplet is likely to have come from the ambient distribution. A traditional
-threshold is also used to select cells with more total counts than the knee
-point when droplets are ordered by total counts. Cell Ranger v3 uses a modified
-version of the emptyDrops procedure where the original selection method is
-substituted for the knee point threshold.
+the knee point (where curvature is minimised) of the cumulative fraction of
+counts with respect to increasing total count [@Macosko2015-rl]. While these
+methods effectively select most real cells, they risk overlooking cells that
+have a lower RNA content than the majority of cells in the sample. The
+emptyDrops method [@Lun2019-wp] in the DropletUtils package provides an
+alternative approach (Figure \@ref(fig:droplet-selection)). A threshold on
+total counts is selected, below which droplets are assumed to be empty, and
+these empty droplets are used to produce a profile of the ambient RNA in the
+sample. A Monte Carlo sampling approach is then used to calculate a p-value
+indicating whether a particular droplet is likely to have come from the ambient
+distribution. A traditional threshold is also used to select cells with more
+total counts than the knee point when droplets are ordered by total counts.
+Cell Ranger v3 uses a modified version of the emptyDrops procedure where the
+original selection method is substituted for the knee point threshold.
 
 ```{r droplet-selection, fig.cap = "(ref:cap-droplet-selection)", fig.scap = "(ref:scap-droplet-selection)", out.width = "100%"}
 knitr::include_graphics(here::here("figures/05-droplet-selection.png"))
@@ -53,19 +53,19 @@ knitr::include_graphics(here::here("figures/05-droplet-selection.png"))
 (ref:cap-droplet-selection) Droplet selection using emptyDrops. Scatter plot of ordered total counts per droplet. Points are coloured by whether they were identified as cells (pink) or empty (black). Horizontal dotted lines show the knee point (blue), inflection point (green) and the threshold for droplets assumed to be empty (purple).
 
 I compared the newer emptyDrops and Cell Ranger v3 droplet selection methods
-with the older Cell Ranger thresholding approach. As we would expect the
+with the older Cell Ranger thresholding approach. As we would expect, the
 original Cell Ranger algorithm is the most conservative, selecting only
 `r params$pre$n_default` cells (Figure \@ref(fig:selection-comparison)A). The
 emptyDrops and Cell Ranger v3 methods, which use a testing procedure rather
 than a strict threshold, select many more cell-containing droplets. Many of
 these cells are identified by both methods but there are also a large number
 that are identified only by emptyDrops. This is surprising as the two software
-package provide different implementations of what is largely the same
+packages provide different implementations of what is largely the same
 algorithm. Some of these differences may be due to the parameters I have chosen
 for emptyDrops but it is difficult to say if these are different to those that
 are used by Cell Ranger. This highlights some of the trade-offs inherent in
 using a pre-designed pipeline for processing any dataset. While it is
-convenient to have a single tool that automates a series of tasks this often
+convenient to have a single tool that automates a series of tasks, this often
 comes at the cost of less control over each stage than would be possible if
 using a series of individual tools.
 
@@ -78,39 +78,39 @@ knitr::include_graphics(here::here("figures/05-selection-comparison.png"))
 (ref:cap-selection-comparison) UpSet plot comparing droplet selection methods. Cell Ranger v3 and emptyDrops identify significantly more cells than the traditional Cell Ranger approach. My use of emptyDrops also identifies a set of cells that are overlooked by the automated Cell Ranger v3 procedure.
 
 It is difficult to evaluate if the extra cells identified by emptyDrops are
-real cells or the algorithm has been too permissive and selected droplets that
-are actually empty. In the following section I will perform further quality
-control to remove low quality cells so at this stage I chose to keep cells
-identified by either the emptyDrops or Cell Ranger methods. Of the
+real cells, or if the algorithm has been too permissive and selected droplets
+that are actually empty. In the following section I will perform further
+quality control to remove low-quality cells so at this stage I chose to keep
+cells identified by either the emptyDrops or Cell Ranger methods. Of the
 `r params$pre$n_droplets` droplets with at least one count present in the raw
-dataset `r params$pre$n_cells` were selected as cells by at least one of these
+dataset, `r params$pre$n_cells` were selected as cells by at least one of these
 methods.
 
 ### Alevin comparison
 
-Cell Ranger is based on the traditional workflow for processing RNA-seq reads
+Cell Ranger is based on the traditional workflow for processing RNA-seq reads,
 which is to align them to a reference genome then count how many reads overlap
 annotated genes. In recent years it has become common to use methods such as
 Salmon [@Patro2017-ka] and Kallisto [@Bray2016-tm] that directly estimate
 transcript expression without alignment. While these approaches do not produce
-an exact location for each read they can be much faster which is appealing for
-scRNA-seq data as there are many more cells to quantify. However, factors such
-as cell barcodes, UMIs and different model assumptions mean that these tools
-have had to be adapted for scRNA-seq data. Alevin [@Srivastava2019-ce] is the
-scRNA-seq mode available in Salmon.
+an exact genomic location for each read they can be much faster, which is
+appealing for scRNA-seq data as there are many more cells to quantify. However,
+factors such as cell barcodes, UMIs and different model assumptions mean that
+these tools have had to be adapted for scRNA-seq data. Alevin
+[@Srivastava2019-ce] is the scRNA-seq mode available in Salmon.
 
-Alevin has it's own method for identifying which droplets contain cells. First
+Alevin has its own method for identifying which droplets contain cells. First,
 the knee point in the cumulative distribution of barcode frequencies is
 identified and any droplets above this are assumed to contain cells. The
 Levenshtein distance [@Levenshtein1966-fq] between the barcodes of all droplets
 is calculated and if they are not sufficiently close to other barcodes they are
 considered to be noise and the associated reads discarded. Alevin performs a
 second round of cell whitelisting following quantification. Droplets are
-divided into three zones, high-quality (top half above the knee point),
+divided into three zones: high-quality (top half above the knee point),
 ambiguous (bottom half above the knee point) and low-quality (well below the
-knee point). A naïve Bayes classifier based on a set of features including the
+knee point). A naïve Bayes classifier based on a set of features, including the
 fraction of reads mapped, the fraction of mitochondrial reads and the
-duplication rate is then used to classify droplets as either high or
+duplication rate, is then used to classify droplets as either high or
 low-quality. This is very different to the emptyDrops approach, using a machine
 learning technique rather than a statistical test and technical features rather
 than the overall expression profile, and is more similar to approaches that
@@ -122,11 +122,11 @@ cells are identified by all three methods but just like emptyDrops, Alevin
 finds a large number of cells that are overlooked by Cell Ranger v3. What is
 particularly striking is that there is very little overlap in the extra cells
 identified by Alevin and emptyDrops suggesting that the differences between the
-two approaches may be important. However I should note that the Alevin uses
-it's own quantification as input for classification while I provided the counts
-from Cell Ranger to emptyDrops so some of the differences may be due to the
-data they were given rather than the selection methods themselves. Alevin (and
-Cell Ranger v3) also processes the three samples separately while I performed
+two approaches may be important. However, I should note that Alevin uses its
+own quantification as input for classification while I provided the counts from
+Cell Ranger to emptyDrops, so some of the differences may be due to the data
+they were given rather than the selection methods themselves. Alevin (and Cell
+Ranger v3) also processes the three samples separately while I performed
 emptyDrops on the whole dataset.
 
 ```{r alevin-comparison, fig.cap = "(ref:cap-alevin-comparison)", fig.scap = "(ref:scap-alevin-comparison)", out.width = "100%"}
@@ -135,27 +135,27 @@ knitr::include_graphics(here::here("figures/05-alevin-comparison.png"))
 
 (ref:scap-alevin-comparison) Comparison to quantification using Alevin.
 
-(ref:cap-alevin-comparison) Comparison to quantification using Alevin. (A) UpSet plot comparing the droplets identified as cells by the Alevin, Cell Ranger v3 and emptyDrops methods. (B) Scatter plot comparing total counts per cell as estimated by Alevin and the alignment based Cell Ranger pipeline. Points are coloured according to the method that identified them as cells (Alevin only (green), alignment based only (blue), both (pink)). Thin purple line shows $y = x$, thick blue line shows a linear fit for cells identified by both methods. (C) Scatter plot comparing mean counts per gene as estimated by the two pipelines, point colours and lines as in (B). (D) Relationship between the total counts per gene and the percentage of cells with a zero count for each pipeline.
+(ref:cap-alevin-comparison) Comparison to quantification using Alevin. (A) UpSet plot comparing the droplets identified as cells by the Alevin, Cell Ranger v3 and emptyDrops methods. (B) Scatter plot comparing total counts per cell as estimated by Alevin and the alignment-based Cell Ranger pipeline. Points are coloured according to the method that identified them as cells (Alevin only (green), alignment-based only (blue), both (pink)). Thin purple line shows $y = x$, thick blue line shows a linear fit for cells identified by both methods. (C) Scatter plot comparing mean counts per gene as estimated by the two pipelines, point colours and lines as in (B). (D) Relationship between the total counts per gene and the percentage of cells with a zero count for each pipeline.
 
-Similar to Cell Ranger the quantification stage of Alevin involves several
+Similar to Cell Ranger, the quantification stage of Alevin involves several
 steps including mapping reads and deduplicating UMIs. Alevin maps reads to the
-transcriptome and groups them by cell barcode and UMI. To deduplicate UMIs
+transcriptome and groups them by cell barcode and UMI. To deduplicate UMIs,
 Alevin considers the mapping location and the UMI sequence (to account for
 sequencing errors). Because reads have been mapped to the transcriptome rather
-than the genome there is an additional layer of information that can be useful
+than the genome, there is an additional layer of information that can be useful
 for identifying if reads with the same UMI map to the same location. This
-should avoid over collapsing UMIs. Following these steps the transcriptome
+should avoid over collapsing UMIs. Following these steps, the transcriptome
 level expression estimates are aggregated to the gene level for analysis.
 Figure \@ref(fig:alevin-comparison)B shows a comparison of the total counts per
-cell between Alevin and the alignment based approach using Cell Ranger. For
+cell between Alevin and the alignment-based approach using Cell Ranger. For
 cells that were identified by both pipelines (pink) the total counts are very
-similar. Cells identified just by the alignment based approach (blue) tend to
+similar. Cells identified just by the alignment-based approach (blue) tend to
 have fewer counts than those identified only by Alevin (green). There are more
-difference if we look at the mean counts per gene (Figure
+differences if we look at the mean counts per gene (Figure
 \@ref(fig:alevin-comparison)C). Most of the variability is at low expression
-levels but there are some genes that are lowly expressed by one method but have
-relatively high expression in the other. One reason for this could be either
-method missing (or incorrectly assigning) counts altogether. Figure
+levels, but there are some genes that are lowly expressed by one method but
+have relatively high expression in the other. One reason for this could be
+either method missing (or incorrectly assigning) counts altogether. Figure
 \@ref(fig:alevin-comparison)D shows the relationship between the total counts
 per gene and the percentage of cells with zero counts. This relationship is
 noisier for the Alevin quantification, particularly below the trend line, and
@@ -168,8 +168,8 @@ differences in downstream interpretation but it is very difficult to say which
 is a better representation of true expression and it is unlikely that all genes
 providing similar evidence (for example markers of a cell type) would be
 affected in the same way. On this evidence Alevin presents a viable alternative
-to alignment based quantification for scRNA-seq data, particularly for large
+to alignment-based quantification for scRNA-seq data, particularly for large
 datasets where computational time is a concern. However, when alignment is
-required anyway it is simpler and avoids repetition to use those alignments to
+required anyway, it is simpler and avoids repetition to use those alignments to
 produce an expression matrix for further analysis. For the remainder of the
-analysis I have used the alignment based quantification of this dataset.
+analysis I have used the alignment-based quantification of this dataset.

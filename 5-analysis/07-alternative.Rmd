@@ -1,20 +1,20 @@
 ## Connecting clusters
 
 Clustering analysis is used to group cells and identify the cell types that are
-present in a dataset but by itself doesn't tell us anything about how those
-groups relate to each other. In the developmental context where there are
-multiple differentiating cell types these relationships are of interest. Some
-aspects of these relationships can be inferred from the proximity of clusters
-in reduced dimensional space or known biology of the assigned cell types, but
-this is largely based on intuition rather than information in the data.
-Computational methods to calculate developmental trajectories in scRNA-seq data
-have been a big focus of early scRNA-seq bioinformatics research. In our
-published analysis we used the Monocle package to create a psuedotime ordering
-for cells in the nephron lineage. However, methods like this do not perform as
-well on larger datasets with many cell types from possibly unconnected lineages
-such as we have in the full organoid dataset. Here I will demonstrate two
-recently developed alternative approaches for connecting clusters and adding
-context to the current analysis.
+present in a dataset, but by itself clustering doesn't tell us anything about
+how those groups relate to each other. In the developmental context where there
+are multiple differentiating cell types these relationships are of interest.
+Some aspects of these relationships can be inferred from the proximity of
+clusters in reduced dimensional space or from the known biology of the assigned
+cell types, but this is largely based on intuition rather than information in
+the data. Computational methods to calculate developmental trajectories in
+scRNA-seq data have been a big focus of early scRNA-seq bioinformatics
+research. In our published analysis we used the Monocle package to create a
+pseudotime ordering for cells in the nephron lineage. However, methods like
+this do not perform as well on larger datasets with many cell types from
+possibly unconnected lineages, such as we have in the full organoid dataset.
+Here I will demonstrate two recently developed alternative approaches for
+connecting clusters and adding context to the current analysis.
 
 ### Partition-based graph abstraction
 
@@ -27,7 +27,7 @@ where each node is a cluster and the edges show how connected they are (Figure
 graph that is used by Seurat's graph-based clustering. Connectivity between
 clusters is calculated by comparing the number of edges between cells in
 different clusters to the number that would be expected if edges were assigned
-randomly. This connectivity that can be interpreted as the confidence in the
+randomly. This connectivity can be interpreted as the confidence in the
 presence of an actual connection between clusters.
 
 The results for the organoid dataset show high connectivity between the various
@@ -36,9 +36,11 @@ of the other clusters also confirms what we would expect. For example the
 podocyte cluster is strongly connected to the epithelial cluster and the two
 off-target neural clusters (glial and neural progenitor) are strongly connected
 to each other. The position of the two clusters containing the additional
-emptyDrops cells is less clear with connections seen between them but not as
+emptyDrops cells is less clear with connections seen between them, but not as
 strongly with the other clusters they would be expected to be related to,
-particularly between the two endothelial clusters.
+particularly between the two endothelial clusters. A possible explanation for
+this are technical features shared by these two clusters but not the clusters
+they are biologically similar to.
 
 ```{r paga-results, fig.cap = "(ref:cap-paga-results)", fig.scap = "(ref:scap-paga-results)", out.width = "100%"}
 knitr::include_graphics(here::here("figures/05-paga-results.png"))
@@ -46,12 +48,12 @@ knitr::include_graphics(here::here("figures/05-paga-results.png"))
 
 (ref:scap-paga-results) Results of partition-based graph abstraction (PAGA).
 
-(ref:cap-paga-results) Results of partition-based graph abstraction (PAGA). (A) The cluster connectivity graph produced by PAGA. Each node represents a cluster and edges show the connectivity between clusters. The size of nodes indicates the number of cells in each cluster and the edge colour and transparency shows the connectivity from low (blue) to high (yellow). (B). The underlying cell shared nearest neighbour graph. Nodes are cells coloured by cluster and edge weight indicates connectivity.
+(ref:cap-paga-results) Results of partition-based graph abstraction (PAGA). (A) The cluster connectivity graph produced by PAGA. Each node represents a cluster and edges show the connectivity between clusters. The size of nodes indicates the number of cells in each cluster and the edge colour and transparency show the connectivity from low (blue) to high (yellow). (B). The underlying cell shared nearest neighbour graph. Nodes are cells coloured by cluster and edge weight indicates connectivity.
 
 In some ways the graph produced by PAGA is similar but complementary to a
 clustering tree. The PAGA graph considers connectivity between clusters at the
 same resolution while clustering trees use the overlap between clusters from
-neighbouring resolutions to build a graph. Interestingly the authors of PAGA
+neighbouring resolutions to build a graph. Interestingly, the authors of PAGA
 emphasise the ability to explore a dataset at different resolutions by creating
 PAGA graphs from different sets of clusters produced using different clustering
 parameters. The development of two independent methods based on building graphs
@@ -60,7 +62,7 @@ applications. The edges produced by PAGA can show which clusters are related
 but they don't provide any directionality to that relationship. One way to add
 some directionality to the cluster graph suggested by the PAGA authors is to
 perform a random walk on the cell graph to calculate a diffusion pseudotime
-across the dataset. However this approach requires manually defining a root
+across the dataset. However, this approach requires manually defining a root
 cell to use. An alternative approach for assigning directionality to cells
 involves looking at the splicing information available in the reads themselves.
 
@@ -73,19 +75,19 @@ The concept of cell velocity looks at these unspliced reads to determine which
 genes are being actively transcribed. By looking at which cellular processes
 are being switched on or off it is possible to infer an overall transcriptional
 direction for each cell. This approach was popularised for scRNA-seq data by
-the velocyto package [@La_Manno2018-tv]. Velocyto works in two steps. First it
-inspects the aligned reads for each cell but instead of only counting those
-that are inside an annotated exon it also generates a counts matrix of
-unspliced reads for each gene. These two matrices are then combined to estimate
-a velocity for each cell by solving a set of differential equations. The
-velocities can be projected onto a reduced dimensional space by looking at
-a correlation-based transition matrix on a nearest-neighbour graph in that
-space. When there are more than a few hundred cells it is difficult to look at
-the velocity for each individual cell so it can be useful to summarise them in
-some way. Velocyto calculates a velocity field across the whole dataset by
-forming a regular grid of points and using gaussian smoothing to calculate an
-average of the nearby cells, providing an indication of the overall velocity of
-an area (Figure \@ref(fig:cell-velocity)).
+the velocyto package [@La_Manno2018-tv]. Two steps are required for cell
+velocity analysis. First, velocyto inspects the aligned reads for each cell,
+but instead of only counting those that are inside an annotated exon it also
+generates a counts matrix of unspliced reads for each gene. These two matrices
+are then combined to estimate a velocity for each cell by solving a set of
+differential equations. The velocities can be projected onto a reduced
+dimensional space by looking at a correlation-based transition matrix on a
+nearest-neighbour graph in that space. When there are more than a few hundred
+cells it is difficult to look at the velocity for each individual cell, so it
+can be useful to summarise them in some way. By forming a regular grid of
+points and using gaussian smoothing to calculate an average of the nearby cells
+velocyto calculates a velocity field across the whole dataset, indicating the
+overall velocity of an area (Figure \@ref(fig:cell-velocity)).
 
 ```{r cell-velocity, fig.cap = "(ref:cap-cell-velocity)", fig.scap = "(ref:scap-cell-velocity)", out.width = "100%"}
 knitr::include_graphics(here::here("figures/05-cell-velocity.png"))
@@ -93,7 +95,7 @@ knitr::include_graphics(here::here("figures/05-cell-velocity.png"))
 
 (ref:scap-cell-velocity) Cell velocity field calculated by velocyto.
 
-(ref:cap-cell-velocity) Cell velocity field calculated by velocyto. Points show cells in UMAP space coloured according to cluster. Arrows show the average velocity for cells in each region of a grid with direction indicating the transcriptional profile cells are headed towards and length giving the rate of change.
+(ref:cap-cell-velocity) Cell velocity field calculated by velocyto. Points show cells in UMAP space coloured according to cluster. Arrows show the average velocity for cells in each region of a grid, with direction indicating the transcriptional profile cells are headed towards and length giving the rate of change.
 
 Looking at the velocity field for this dataset we see some of the expected
 developmental trajectories. For example, cells in the epithelial cluster are
@@ -105,8 +107,8 @@ and stromal clusters. This suggests that if there are immune cells present they
 may only be a subset of this population. We see little evidence of any clear
 directionality in the stromal clusters, likely because these cell types are
 more mature and are not actively changing their transcription profiles. There
-is an important caveat when looking at these velocyto results which is that the
-velocity arrows depend on the space they are projected into and viewing them in
-different embeddings may give different views. Finding a more robust way to
-visualise cell velocity would be a useful area of further research that would
-improve the ability to interpret these results.
+is an important caveat when looking at these velocyto results, which is that
+the velocity arrows depend on the space they are projected into and viewing
+them in different embeddings may give different views. Finding a more robust
+way to visualise cell velocity would be a useful area of further research that
+would improve the ability to interpret these results.

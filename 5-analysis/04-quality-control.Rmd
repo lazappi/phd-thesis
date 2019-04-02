@@ -6,19 +6,19 @@ high-quality cells. There are a variety of reasons that we may want to remove
 cells before further analysis. Cells can become damaged during processing, may
 not contain sufficient counts for analysis or may be the result of doublets
 where two cells are captured in the same droplet. Because these factors are not
-related just to the number of reads per cells they may not have been detected
+related just to the number of reads per cell they may not have been detected
 by the methods used previously and require different approaches.
 
 Two tools that are useful for quality control of scRNA-seq data are the scater
 [@McCarthy2017-ql] and scran [@Lun2016-mq] packages. The scater package
 provides functions for calculating commonly used quality control metrics,
-adding annotations and visualisation while scran can be used for various
+adding annotations and visualisation, while scran can be used for various
 calculations such as assigning cell cycle phase and doublet scoring. After
 selecting cell-containing droplets I used these two packages to add extra
 information to the dataset. Additional feature annotation was retrieved from
 BioMart [@Smedley2015-an] using the biomaRt package [@Durinck2005-zb] via
 functions in scater. Before calculating scater's quality control metrics I
-added mitochondrial genes as a feature control set as the amount of counts
+added mitochondrial genes as a feature control set, as the proportion of counts
 assigned to these genes can be an indicator of the health of a cell. I also
 used the cyclone function [@Scialdone2015-rp] in scran to score cell cycle
 activity and assign cell cycle phases to each cell. This method uses the
@@ -31,8 +31,8 @@ and filtering.
 The simplest approach to quality control is to select thresholds for various
 metrics and to remove cells that fall outside these values. This is the
 approach I have taken here and in the previously published analysis. While
-previously these thresholds were selected by visually inspecting distributions
-here I have used a more data driven approach by selecting thresholds that are a
+previously these thresholds were selected by visually inspecting distributions,
+here I have used a more data-driven approach by selecting thresholds that are a
 specified number of median absolute deviations (MADs) from the median value.
 This is made easy by the isOutlier function in scater. The first filter I have
 applied is to the number of counts per cell, with thresholds on both the total
@@ -44,7 +44,7 @@ to mitochondrial genes (Figure \@ref(fig:qc-thresholds)B). A high proportion of
 mitochondrial expression is a sign of distress and can indicate that cells have
 become damaged during processing. Once most of the low-quality cells have been
 removed it becomes possible to check for doublets. Here I have used a
-simulation based approach implemented in scran. This method create synthetic
+simulation-based approach implemented in scran. This method creates synthetic
 doublets by combining counts from randomly selected cells. The density of
 simulated doublets in the neighbourhood of each cell in PCA space is then used
 to calculate a doublet score to which a cutoff can be applied (Figure
@@ -62,16 +62,16 @@ knitr::include_graphics(here::here("figures/05-qc-thresholds.png"))
 
 An alternative approach is to rely purely on the quality control metrics
 themselves rather than manually selecting thresholds. PCA can be performed
-using the technical metrics such as total counts per cells rather than gene
-expression levels and then outliers can be detected in PCA space (Figure
+using the technical metrics such as total counts per cell rather than gene
+expression levels, and then outliers can be detected in PCA space (Figure
 \@ref(fig:qc-thresholds)D). This approach relies on the assumption that most
 cells will be high-quality and that the values that have been calculated will
 be sufficient to separate them from the low-quality cells. On this dataset the
-PCA based approach identified a subset of the cells that were removed by my
-manual thresholds as low-quality . While I believe the idea of an automated
-quality control method is valuable it will required more work to identify which
+PCA-based approach identified a subset of the cells that were removed by my
+manual thresholds as low-quality. While I believe the idea of an automated
+quality control method is valuable, it will require more work to identify which
 features are most useful and it is likely that they will differ between
-technologies and tissue types. Additionally any automated approach will always
+technologies and tissue types. Additionally, any automated approach will always
 be more difficult to interpret than clear manual thresholds. For these reasons
 I have used the dataset produced by filtering cells using the manual thresholds
 for the rest of this analysis. I have also performed a minimal filtering of
@@ -84,7 +84,7 @@ cells and `r params$qc$n_genes` genes with a median of
 After removing low-quality cells it is important to inspect the data again to
 check that the quality control has been successful. If the selected thresholds
 are too severe it is possible to remove interesting populations of cells that
-differ from the majority of the dataset such as a rare cell type that is
+differ from the majority of the dataset, such as a rare cell type that is
 smaller and therefore has less RNA. One way to do this is to look at
 differences in expression between the cells that have been removed and those
 that have been kept. Here I have calculated the predicted log foldchange using

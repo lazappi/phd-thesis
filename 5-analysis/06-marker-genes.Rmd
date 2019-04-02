@@ -6,19 +6,19 @@ expressed in a single cluster at a relatively high level and whose function is
 well-known enough to interpret. These are often the same genes that are useful
 for techniques like immunofluorescence imaging. The most common way of
 identifying marker genes is to test for differential expression between the
-cells in a cluster and all other cells in the dataset, then to inspect the
+cells in a cluster and all other cells in the dataset, then inspect the
 significantly highly up-regulated genes. Many approaches have been suggested
 for this task, including a range of methods designed specifically for scRNA-seq
 data. Comparisons of these methods have found that the scRNA-seq specific
 methods do not show significantly better results than those designed for bulk
-RNA-seq or standard statistical tests [@Soneson2018-fb; @Jaakkola2016-ko].
-For this analysis I have chosen to use the edgeR package as it performs well in
+RNA-seq or standard statistical tests [@Soneson2018-fb; @Jaakkola2016-ko]. For
+this analysis I have chosen to use the edgeR package as it performs well in
 these comparisons and allows for more complex designs such as including the
 proportion of genes that are expressed per cell (detection rate).
 
 The edgeR method is based on the negative binomial distribution. After
 calculating normalisation factors to capture differences between cells and
-estimating common and gene-wise dispersions a negative binomial is fitted to
+estimating common and gene-wise dispersions, a negative binomial is fitted to
 the dataset. We can evaluate this fit using some of the information calculated
 by the edgeR model such as the gene means (Figure \@ref(fig:de-results)A) and
 proportion of zeros per gene (Figure \@ref(fig:de-results)B) and comparing it
@@ -27,11 +27,11 @@ see that at high expression levels the edgeR estimates become larger than what
 is observed. We also observed more zeros than expected when the proportion of
 zeros is low. Checking these fits can help us to decide if the dataset fits an
 ordinary negative binomial model or whether a zero-inflated negative model
-would be more appropriate as has often been suggested for scRNA-seq data. For
-example a method such as ZINB-WaVE can be used to calculate weights that can be
-added to the edgeR model to correct for zero inflation [@Van_den_Berge2018-ip].
-In this case I decided the edgeR fit was sufficiently good and these kinds of
-corrections were unnecessary.
+would be more appropriate, as has often been suggested for scRNA-seq data. For
+example, a method such as ZINB-WaVE can be used to calculate weights that can
+be added to the edgeR model to correct for zero inflation
+[@Van_den_Berge2018-ip]. In this case I decided the edgeR fit was sufficiently
+good and these kinds of corrections were unnecessary.
 
 ```{r de-results, fig.cap = "(ref:cap-de-results)", fig.scap = "(ref:scap-de-results)", out.width = "100%"}
 knitr::include_graphics(here::here("figures/05-de-results.png"))
@@ -39,7 +39,7 @@ knitr::include_graphics(here::here("figures/05-de-results.png"))
 
 (ref:scap-de-results) Results of edgeR differential expression analysis.
 
-(ref:cap-de-results) Results of edgeR differential expression analysis. (A) Scatter plot showing the edgeR fit of gene means. The x-axis shows the average of the observed gene mean and the expected gene mean from the edgeR fit and the y-axis shows the difference between the observed and expected means. The pink line lies at zero and the blue line is a LOESS fit. (B) Scatter plot showing the edgeR fit of gene proportion of zeros. Similar to (A) but showing the observed and expected proportion of zeros. (C) Plot of the biological coefficient as calculated by edgeR against the average log counts per million for each gene. (D) Bar chart of the number of significantly differentially expressed genes for each cluster with positive fold changes. Points show individual genes coloured by their log foldchange. Position of each point on the y-axis also shows the log foldchange but scaled to the height of each bar. (E) Differential expression results for some genes identified as important markers in the previously published analysis. Size of points indicates the positive log foldchange and transparency the negative false discovery rate.
+(ref:cap-de-results) Results of edgeR differential expression analysis. (A) Scatter plot showing the edgeR fit of gene means. The x-axis shows the average of the observed gene mean and the expected gene mean from the edgeR fit and the y-axis shows the difference between the observed and expected means. The pink line lies at zero and the blue line is a LOESS fit. (B) Scatter plot showing the edgeR fit of gene proportion of zeros. Similar to (A) but showing the observed and expected proportion of zeros. (C) Plot of the biological coefficient as calculated by edgeR against the average log counts per million for each gene. (D) Bar chart of the number of significantly differentially expressed genes for each cluster with positive fold changes. Points show individual genes coloured by their log foldchange. Position of each point on the y-axis also shows the log foldchange but scaled to the height of each bar. (E) Differential expression results for some genes identified as important markers in the previously published analysis. Size of points indicates the positive log foldchange and transparency indicates the negative false discovery rate.
 
 Another important quantity that is calculated by the edgeR model is the
 biological coefficient of variation (BCV). BCV is the component of variability
@@ -48,11 +48,11 @@ the same RNA sample. Estimating BCV correctly can be particularly important for
 highly expressed genes. The BCV plot (Figure \@ref(fig:de-results)C) shows the
 common dispersion across all genes (pink line), the dispersion for each
 individual gene (points) and a trend across the dataset (blue line). The
-empirical bayes approach of edgeR borrows information between genes in order to
+empirical Bayes approach of edgeR borrows information between genes in order to
 shrink the dispersion towards the trended value to achieve more robust
 estimates. The shape of the trend line can be used to check how well the BCV
 has been fit and we expect lowly expressed genes to be more variable than those
-that are highly expressed. One we have a fitted negative binomial model we can
+that are highly expressed. Once we have a fitted negative binomial model we can
 test for differences between the groups we are interested in.
 
 There are multiple testing procedures available in edgeR but the currently
@@ -66,7 +66,7 @@ could be a result of the lower counts in these clusters or a clue that these
 are not pure populations with clear markers.
 
 It is important to look at the gene lists for each cluster in detail in order
-to interpret and assign cell types but as we have previously analysed this
+to interpret and assign cell types, but as we have previously analysed this
 dataset, and can be relatively confident of what it contains, I have plotted
 the edgeR results for a few of the genes that were previously identified to be
 important markers (Figure \@ref(fig:de-results)E). For most of the clusters we
@@ -77,10 +77,10 @@ overlap with the published analysis these results help to assign them. Cluster
 4 clearly shows up-regulation of endothelial markers confirming this lineage as
 a possible identity for these cells. The other new cluster (Cluster 6) is more
 ambiguous with significant results for markers of several cell types but does
-show up-regulation of immune related genes. Immune cells are not part of the
-lineage that these kidney organoids are differentiated towards but we did see
-some organoid cells that clustered with immune cells in human foetal kidney in
-our previous analysis and there is a plausible pathway by which they could
+show up-regulation of immune-related genes. Immune cells are not part of the
+lineage that these kidney organoids are differentiated towards, but we did see
+some organoid cells that clustered with immune cells from human foetal kidney
+in our previous analysis and there is a plausible pathway by which they could
 develop. Further lab-based experiments would be required to confirm whether
 these cells exist in kidney organoids. Based on the detected markers I have
 assigned cell types to clusters as shown in Table \@ref(tab:assignments).
@@ -92,7 +92,5 @@ assignments <- read_tsv(here("data/assignments.tsv"),
                         ))
 
 kable(assignments, booktabs = TRUE,
-      caption = paste(
-          "Cluster assignments based on detected marker genes"
-      ))
+      caption = "Cluster assignments based on detected marker genes")
 ```
