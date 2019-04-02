@@ -4,6 +4,6 @@
 
 Packages used in building this document.
 
-```{r session-info}
+```{r session-info, message = TRUE}
 devtools::session_info()
 ```

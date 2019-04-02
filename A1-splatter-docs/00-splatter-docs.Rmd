@@ -4,12 +4,12 @@
 
 ```{r splatter-vignette, results = "asis"}
 name <- "Splatter vignette"
-pdf <- "figures/splatter-vignette-cropped"
+pdf <- "figures/A1-splatter-vignette-cropped"
 pages <- 1:26
 link <- "http://bioconductor.org/packages/splatter/"
 
 if (tex) {
-    glue::glue("\\frame{\\includegraphics[page=<pages>, width=0.85\\textwidth]{<pdf>}}\\clearpage",
+    glue::glue("\\frame{\\includegraphics[page=<pages>, width=\\textwidth]{<pdf>}}\\clearpage",
                .open = "<", .close = ">")
 } else {
     glue::glue("You can read the {name} [here]({link}).")
@@ -20,7 +20,7 @@ if (tex) {
 
 ```{r splatter-manual, results = "asis"}
 name <- "Splatter manual"
-pdf <- "figures/splatter-manual-cropped"
+pdf <- "figures/A1-splatter-manual-cropped"
 pages <- 1:57
 link <- "http://bioconductor.org/packages/splatter/"
 
