@@ -1,16 +1,17 @@
 ## Introduction
 
 Clustering of cells to form groups is a common task when analysing scRNA-seq
-data that is not required for analysing bulk RNA-seq experiments and one that
-has received a lot of attention from methods developers. The need to group
-samples is not unique to genomic data and clustering techniques are used in
-many other fields for a wide variety of purposes. Whatever kind of data you are
-interested in and whatever clustering method is being used a question that
-commonly comes up is how many clusters do we want to have? This can be
-controlled by setting an exact value, changing a parameter that controls the
-clustering resolution or affected by the values of other parameters. The number
-of clusters that are used in an analysis can often have a profound affect on
-how the results are interpreted. Existing measures of clustering typically only
+data. Because clustering is not required for analysing bulk RNA-seq data it has
+received a lot of attention from scRNA-seq methods developers. The need to
+group samples is not unique to genomic data and clustering techniques are used
+in many other fields for a wide variety of purposes. Whatever kind of data is
+of interest, and whatever clustering method is being used, a question that
+commonly comes up is how many clusters do we want to have? Depending on the
+clustering method the number of clusters can be controlled by setting an exact
+value, changing a parameter that controls the clustering resolution or
+indirectly affected by the values of related parameters. The number of clusters
+that are used in an analysis can often have a profound affect on how the
+results are interpreted. Existing measures of clustering typically only
 consider a single clustering resolution at a time or require multiple rounds of
 permutations and clustering which can be infeasible for large datasets. In this
 chapter I propose an alternative visualisation-based aid for deciding which
@@ -20,26 +21,28 @@ Clusterings of the same dataset at different resolutions are often related and
 it is common for new clusters formed at higher resolutions to be formed by
 splitting existing clusters. However, when comparing clusterings it is not
 always clear what those relationships are and how significant they might be.
-The method I describe here was published in _GigaScience_ and suggests
-clustering datasets at multiple resolutions then considering the overlap in
-samples at neighbouring resolutions [@Zappia2018-lz]. By doing this we can
-build a graph structure we call a "clustering tree". Visualising this tree
-allows us to see where new clusters form, how they are related and the
-stability of particular clustering resolutions. In the paper we demonstrate
-this approach using simulated datasets, a simple dataset commonly used as an
-example for machine learning techniques and a complex scRNA-seq dataset from
-blood.
+The method I describe here was published in _GigaScience_ and proposes
+clustering datasets at multiple resolutions and considering the overlap in
+samples at between clusters at neighbouring resolutions [@Zappia2018-lz]. By
+doing this we can build a graph structure we call a "clustering tree".
+Visualising this tree allows us to see where new clusters form, how they are
+related and the stability of particular clustering resolutions. In the paper we
+demonstrate this approach using simulated datasets, a simple dataset commonly
+used as an example for machine learning techniques and a complex scRNA-seq
+dataset from blood.
 
 While the structure of clustering trees can help choose a clustering
-resolutions to use they are more generally a compact, information dense
-visualisation that can show information across clustering resolutions. This is
-something that is not possible with traditional visualisations used for
-clustering results such as t-SNE projections and is achieved by trading
-individual information about each sample for summarised information about
-clusters and adding a resolution dimension. Overlaying important domain
-knowledge (such as the expression of known marker genes) onto these
-visualisations can be particularly informative and we also demonstrate this in
-our paper.
+resolutions to use for an analysis, clustering trees are more generally a
+compact, information dense visualisation that can show information across
+clustering resolutions. This is something that is not possible with traditional
+visualisations used for clustering results such as t-SNE projections and is
+achieved by trading individual information about each sample for summarised
+information about clusters and adding a resolution dimension. Overlaying
+important domain knowledge (such as the expression of known marker genes) onto
+these visualisations can be particularly informative and we also demonstrate
+this in our paper (Section \@ref(clustree-publication)). Section
+\@ref(clustree-overlay) demonstrates how clustering trees can be combined with
+other visualisations of scRNA-seq data.
 
 Clustering trees can be produced using the clustree R package which is built on
 the tidygraph [@Pedersen2018-ly], igraph [@Csardi2006-ce] and ggraph

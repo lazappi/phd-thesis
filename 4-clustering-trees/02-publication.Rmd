@@ -1,4 +1,4 @@
-## Clustering trees publication
+## Clustering trees publication {#clustree-publication}
 
 ```{r clustree-paper, results = "asis"}
 name <- "clustering trees"

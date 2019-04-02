@@ -20,31 +20,31 @@ technologies that have been developed over the last few years. It is now
 possible to capture individual cells, extract and isolate RNA from them and
 quantify the expression levels of genes in each cell. These new technologies
 allow us to inspect cells in a new way and open up a range of possibilities for
-biological studies but their usefulness relies on our ability to interpret the
-data they produce. My PhD has coincided with a surge in the development of
-methods that attempt to make sense of this data and my thesis aims to chart
-this development and contribute to it. My contributions revolve around how we
-make decisions during an scRNA-seq analysis, which tools so we use, how do we
-know that they work and what parameters should we use?
+biological studies but usefulness of these technologies relies on our ability
+to interpret the data they produce. My PhD has coincided with a surge in the
+development of methods that attempt to make sense of this data and my thesis
+aims to chart this development and contribute to it. My contributions revolve
+around how we make decisions during an scRNA-seq analysis, which tools do we
+use, how do we know that they work and what parameters should we use?
 
 My thesis contains four discrete but related projects that explore scRNA-seq
 analysis methods and decisions made during the analysis process.
 
 In **Chapter \@ref(tools) - [The scRNA-seq tools landscape]** I present my work
 developing and maintaining the scRNA-tools database, a database of software
-tools for analysing scRNA-seq data. I have recorded the details of over
-`r n_tools_floor` tools including where they have been published, where the code
+tools for analysing scRNA-seq data. I have recorded the details of over `r
+n_tools_floor` tools including where they have been published, where the code
 is available, associated software licenses and the types of analysis they can
-perform. The scRNA-tools database allows researchers to identify focuses of
+perform. The scRNA-tools database allows researchers to identify focus areas of
 methods development, captures features of how tools are developed and shared
 and displays trends in tool development over time. I have also designed a
 website interface to the database that makes this resource easily available to
 the research community. This website has been visited by hundreds of
 researchers from around the world. Over time new kinds of analysis have emerged
 and these could be integrated into the scRNA-tools database as categories to
-better organise the tools that are present. The performance of the website could
-also be improved, particularly to handle the larger number of tools that it now
-displays.
+better organise the tools that are present. In the future the performance of
+the website could also be improved, particularly to better handle the large
+number of tools that it now displays.
 
 **Chapter \@ref(simulation) - [Simulating scRNA-seq data]** describes Splatter,
 a software package for generating synthetic scRNA-seq datasets. Developers of
@@ -71,10 +71,10 @@ and tissue types. When comparing the models currently available in Splatter I
 saw that those with sophisticated estimation procedures including BASiCS and
 ZINB-WaVE performed extremely well. The performance of these newer models
 suggests that the Splat estimation procedure could be improved and doing so
-would improve it's usefulness for developers. The simulation model could also
-be extended in various ways, for example by including an underlying gene network
-or by making it possible to use the same set of intermediate values for multiple
-simulations.
+would improve its usefulness for developers. The simulation model could also be
+extended in various ways, for example by including an underlying gene network
+or by making it possible to use the same set of intermediate values for
+multiple simulations.
 
 One of the analysis steps that has received a large amount of attention from
 scRNA-seq methods developers is using unsupervised clustering to form groups of
@@ -89,14 +89,15 @@ number. For this approach a dataset is clustered multiple times at different
 resolutions and the overlap of samples between clusters at neighbouring
 resolutions is used to create a graph structure that is displayed as a tree.
 The structure of this tree can provide clues as to which resolution is most
-appropriate to use and more generally this visualisation can be used to display
-information across resolutions. How useful the clustering tree visualisation is
-depends somewhat on the clustering methods used and it can become cluttered
-when there are many clusters present. Further work could look at improving
-these aspects of the algorithm and adapting it for fuzzy clustering methods. I
-also believe that the general idea of forming a graph of clusters may have
-other uses. The clustering trees algorithm is implemented in a software package
-that is publicly available from the CRAN repository.
+appropriate for an analysis and more generally this visualisation can be used
+to display information across resolutions. How useful the clustering tree
+visualisation is depends somewhat on the clustering methods used and it can
+become cluttered when there are many clusters present. Further work could look
+at improving these aspects of the algorithm and adapting it for fuzzy
+clustering methods. I also believe that the general idea of forming a graph of
+clusters may have other uses in a variety of applications. The clustering trees
+algorithm is implemented in a software package that is publicly available from
+the CRAN repository.
 
 The final project of my PhD was to analyse a kidney organoid scRNA-seq dataset.
 This dataset was introduced in a publication investigating variability in the
@@ -104,19 +105,22 @@ organoid differentiation protocol where it was used to confirm that much of the
 variability is due to differences between batches rather than between organoids
 from the same batch. In a second publication, for which I performed the
 computational analysis, this dataset was profiled more thoroughly and the cell
-types present were identified, including many of the cells types expected in the
-developing kidney as well as some off-target populations. To confirm these cell
-types we integrated the organoid data with a human fetal kidney dataset and
-found that many of the cell types were consistent. In **Chapter \@ref(analysis)
-- [Analysis of kidney organoid scRNA-seq data]** I re-analysed this dataset to
-demonstrate some alternative tools that we could have used and focus on how
-the decisions made at different stages affect the results. My main finding here
-was that using alternative droplet selection methods resulting in many more
-cells being included in the analysis and that many of these were from a
-population with an immune-like signature. While immune cells are not expected
-in kidney organoids and they would need to be validated experimentally there is
-a plausible pathway by which they could emerge and we did see hints of their
-presence in the published analysis.
+types present were identified. These included many of the cell types expected
+in the developing kidney as well as some off-target populations. To confirm
+these cell types we integrated the organoid data with a human fetal kidney
+dataset and found that many of the cell types were consistent. In **Chapter
+\@ref(analysis) - [Analysis of kidney organoid scRNA-seq data]** I re-analysed
+this dataset to demonstrate some alternative tools that we could have used in
+the analysis and focused on how the decisions made at different stages affect
+the results. My main finding here was that using alternative droplet selection
+methods resulted in many more cells being included in the analysis. Continuing
+the analysis with these additional cells showed and that many of them were from
+a population which showed some evident of an immune-like signature. While
+immune cells are not expected in kidney organoids, and their presence would
+need to be validated experimentally, there is a plausible pathway by which they
+could emerge and we did see hints of their presence in the published analysis.
+My re-analysis also showed robustness of the clustering methods used to how
+genes were selected and the presence of the additional cells.
 
 The rise of single-cell technologies has been staggering and over the course of
 my PhD the field has moved from exploratory studies with a few hundred cells to
@@ -136,23 +140,24 @@ building on the significant work that has already been done. As bigger datasets
 become more common tools will need to be carefully engineered to handle the
 computational workload. Bigger studies will also require methods to integrate
 multiple samples and different types of data. This has already become a
-significant area of research but it is a very difficult problem and I expect it
-will take some time for the robustness and effectiveness of these methods to be
+significant area of research but it is a difficult problem and I expect it will
+take some time for the robustness and effectiveness of these methods to be
 established.
 
 As I have discussed throughout my thesis deciding which methods to use for
-various tasks is a crucial part of scRNA-seq analysis. Currently these decisions
-are largely made based on the analysts experience and intuition, what is common
-practice and how easy tools are to install and use. Benchmarking and comparison
-studies are vital for helping to understand which tools are effective but they
-can be difficult and time consuming to perform. For some analysis tasks such as
-differential expression testing there are established evaluation metrics that
-can be used but for others such as ordering of cells or integration of datasets
-it is less clear how to measure performance and developing new metrics is vital
-for informative comparisons. As more benchmarking studies are performed I hope
-the field crystallises around an established set of methods for common tasks and
-energy can be redirected towards alternative approaches, performing complex
-analyses and improving existing tools.
+various tasks is a crucial part of scRNA-seq analysis. Currently these
+decisions are largely made based on the analysts experience and intuition, what
+is common practice and how easy tools are to install and use. Benchmarking and
+comparison studies are vital for helping to understand which tools are
+effective but they can be difficult and time consuming to perform. For some
+analysis tasks such as differential expression testing there are established
+evaluation metrics that can be used but for others such as ordering of cells or
+integration of datasets it is less clear how to measure performance and
+developing new metrics is vital for informative comparisons. As more
+benchmarking studies are performed I hope the field crystallises around an
+established set of methods for common tasks and energy can be redirected
+towards alternative approaches, performing complex and novel analyses and
+improving the quality, usability and efficiency of existing tools.
 
 Even when scRNA-seq analysis methods are reliable and effective interpreting
 their results can be difficult and requires the input of a domain expert. Often
@@ -167,7 +172,7 @@ identities to cells it will become more practical to perform designed
 experiments such as studies that investigate the effect of a drug in a target
 cell type in a particular tissue. This has already begun to happen as
 exploratory analyses have been completed on many tissues. However, building
-these references atlases is an extremely difficult task that will take many
+these reference atlases is an extremely difficult task that will take many
 years and a well-coordinated global effort. Developing methods that best make
 use of these references will also require significant research but that is an
 effort that is already underway.
@@ -177,11 +182,11 @@ of possibilities but we are still at the early stages of working out how best
 to use it. My contribution to this effort is in building a database that tracks
 the analysis tools that are available and developing simulation software that
 can be used to evaluate methods. As well as deciding which tool to use analysts
-need to choose parameters for those and I have developed a visualisation that
-can help choose parameters that effect clustering resolution. I have also
-contributed to the biological literature by performing the computational
-analysis in a study that profiled the cell types present in kidney organoids
-and exploring how the decisions made during this analysis could affect the
-results and how they are interpreted. Overall I believe I have made a
-significant contribution to the emerging field of single-cell RNA sequencing
-data analysis during my PhD.
+need to choose parameters for those they select and I have developed a
+visualisation that can help choose parameters that effect clustering
+resolution. I have also contributed to the biological literature by performing
+the computational analysis in a study that profiled the cell types present in
+kidney organoids and exploring how the decisions made during this analysis
+could affect the results and how they are interpreted. Overall I believe I have
+made a significant contribution to the emerging field of single-cell RNA
+sequencing data analysis during my PhD.
