@@ -114,16 +114,16 @@ knitr::include_graphics(here::here("figures/05-cluster-validation.png"))
 
 (ref:scap-cluster-validation) Validation of identified clusters.
 
-(ref:cap-cluster-validation) Validation of identified clusters. (A) Scatter plot of cells in UMAP space coloured by assigned cluster. (B) Bar chart of the number of cells in each cluster. (C) Stacked bar chart showing the proportion of cells in each cluster identified by each droplet selection method, Cell Ranger v3 only (blue), emptyDrops only (green) or both (pink). (D) Stacked bar chart showing the proportion of cells in each cluster assigned to the G1 (pink), G2M (blue) or S (green) phases of the cell cycle. (E) SinaPlot showing the total number of counts per cell in each cluster. (F) SinaPlot showing the percentage of counts assigned to mitochondrial genes per cell in each cluster.
+(ref:cap-cluster-validation) Validation of identified clusters. (A) Scatter plot of cells in UMAP space coloured by assigned cluster. (B) Bar chart of the number of cells in each cluster. (C) Stacked bar chart showing the proportion of cells in each cluster identified by each droplet selection method, Cell Ranger v3 only (blue), EmptyDrops only (green) or both (pink). (D) Stacked bar chart showing the proportion of cells in each cluster assigned to the G1 (pink), G2M (blue) or S (green) phases of the cell cycle. (E) SinaPlot showing the total number of counts per cell in each cluster. (F) SinaPlot showing the percentage of counts assigned to mitochondrial genes per cell in each cluster.
 
 Figure \@ref(fig:cluster-validation)C shows the proportion of cells in each
 cluster that were identified by the two droplet selection methods I used, Cell
-Ranger v3 and emptyDrops. Most of the additional cells identified by emptyDrops
+Ranger v3 and EmptyDrops. Most of the additional cells identified by EmptyDrops
 have been placed in two of the clusters. The cells in these clusters also have
 fewer total counts (Figure \@ref(fig:cluster-validation)E) and a lower
 percentage of mitochondrial counts (Figure \@ref(fig:cluster-validation)F).
 This suggests that those clusters are at least in part a result of the lower
-count cells identified by emptyDrops and it may be appropriate to remove them
+count cells identified by EmptyDrops and it may be appropriate to remove them
 from the dataset. However, a large proportion of the cells in those clusters
 were also identified by Cell Ranger v3 and an alternative hypothesis is that
 these additional cells belong to a cell type that is smaller or contains less
@@ -137,13 +137,13 @@ these clusters to the previously published clusters. It is important to
 remember the differences between the two analyses. The published analysis
 included a fourth organoid from a separate batch that I have omitted here and
 was analysed using the standard Cell Ranger (v1.3.1) and Seurat workflows
-without emptyDrops droplet selection or M3Drop gene selection. I also used
+without EmptyDrops droplet selection or M3Drop gene selection. I also used
 different quality control thresholds and parameters at some stages. Figure
 \@ref(fig:cluster-comparison)A shows the proportion of cells in each cluster
 that were present in the published analysis. All of the clusters have some
 additional cells which is to be expected given that the use of the newer
 droplet selection methods produced a dataset with around 1000 more cells. The
-two clusters that contain the cells only identified by emptyDrops stand out as
+two clusters that contain the cells only identified by EmptyDrops stand out as
 having a very low proportion of cells from the previous analysis.
 
 ```{r cluster-comparison, fig.cap = "(ref:cap-cluster-comparison)", fig.scap = "(ref:scap-cluster-comparison)", out.width = "100%"}
@@ -159,7 +159,7 @@ each cluster from the previously published analysis and each cluster from the
 analysis presented here (Figure \@ref(fig:cluster-comparison)B). Some of the
 clusters very clearly match up with a published cluster while others have
 overlaps with multiple similar clusters, particularly for less-well-defined
-cell types such as the stroma. The two emptyDrops clusters do not show obvious
+cell types such as the stroma. The two EmptyDrops clusters do not show obvious
 signals but they do have some overlap with the published endothelial clusters
 which suggests that that they may be a previously overlooked endothelial
 population. To confirm if this is the case we need to check whether they

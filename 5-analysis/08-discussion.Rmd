@@ -20,13 +20,13 @@ My investigation of different methods started at the preprocessing stage,
 particularly looking at how to separate empty droplets captured by the 10x
 Genomics Chromium platform from those that contain cells. I compared the
 threshold-based approach traditionally used by the Cell Ranger pipeline to the
-emptyDrops method, which tests for differences from the ambient RNA profile,
+EmptyDrops method, which tests for differences from the ambient RNA profile,
 and the method in the more recent Cell Ranger v3, which combines the two
 approaches. The testing-based methods found significantly more cells than the
-thresholding approach, with many of those only being identified by emptyDrops.
+thresholding approach, with many of those only being identified by EmptyDrops.
 However, many of these additional cells had relatively low total counts,
 suggesting they may have been incorrectly selected. At this stage I chose to
-keep any droplet that was identified by either the Cell Ranger v3 or emptyDrops
+keep any droplet that was identified by either the Cell Ranger v3 or EmptyDrops
 methods, giving a dataset of `r params$pre$n_cells` cells. To remove any
 low-quality cells I next performed quality control of the dataset. I used a
 data-driven approach to select filtering thresholds for the total counts per
@@ -62,7 +62,7 @@ expression of previously identified marker genes and chose a value of
 This resolution produced `r params$clust$n_clusts` clusters. Looking at the
 overlap of cells between these clusters and the clusters we published
 previously shows that many of them correspond with a previously described cell
-type. Most of the additional cells identified by emptyDrops belong to two
+type. Most of the additional cells identified by EmptyDrops belong to two
 clusters, but because these cells weren't present in the published analysis
 there is no clear overlap to associate them with a published cell type. To
 better interpret all the clusters I performed differential gene expression
@@ -73,8 +73,8 @@ overlap with the published analysis. I assigned clusters to several kidney cell
 types, including several types of stroma, epithelium, mature podocytes and
 endothelium. I also observed several small off-target populations that were
 described previously, including neural progenitors, glial cells and muscle
-progenitors. One of the clusters containing cells identified only by emptyDrops
-showed up-regulation of endothelial markers, while the other emptyDrops cluster
+progenitors. One of the clusters containing cells identified only by EmptyDrops
+showed up-regulation of endothelial markers, while the other EmptyDrops cluster
 had significant results for markers from various cell types including several
 genes associated with immune cells. Although not an expected part of the kidney
 organoid differentiation process, there is a plausible pathway by which immune
@@ -110,7 +110,7 @@ decisions about how to set parameters and thresholds. The main differences
 between the two analyses are the result of the droplet selection step, with the
 test-based methods identifying many more cells. Including these cells in the
 analysis resulted in cluster containing a large number of cells only identified
-by emptyDrops and showing a potential immune-like expression profile we hadn't
+by EmptyDrops and showing a potential immune-like expression profile we hadn't
 observed before. A small change in parameters at this early stage could have
 hidden this population or introduced more low-quality cells, either of which
 would have had a large impact of the rest of the analysis. This emphasises the

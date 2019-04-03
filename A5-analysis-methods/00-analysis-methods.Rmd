@@ -22,21 +22,22 @@ Count data  was read  into R and used to construct a SingleCellExperiment object
 The droplet selection method in this version of Cell Ranger identified
 `r params$pre$n_cellranger` cell containing droplets. This is more than the
 traditional Cell Ranger approach based on a simple threshold on total counts
-which identified `r params$pre$n_default` cells. The emptyDrops method
-[@Lun2019-wp] available in the DropletUtils package (v`r versions$DropletUtils`)
-was also applied. Droplets with less than `r params$pre$empty_thresh` total
-counts were used to construct the ambient RNA profile and an FDR threshold of
-less than `r params$pre$emp_fdr` was used to select `r params$pre$n_empdrops`
-droplets. The droplets selected by either the Cell Ranger v3 method or emptyDrops
-were kept giving a dataset with `r params$pre$n_cells` cells. Gene annotation
-information was added from BioMart [@Smedley2015-an] using the biomaRt package
-(v`r versions$biomaRt`) [@Durinck2005-zb] and cells were assigned cell cycle
-scores using the cyclone [@Scialdone2015-rp] function in the scran package
-(v`r versions$scran`) [@Lun2016-mq].
+which identified `r params$pre$n_default` cells. The EmptyDrops method
+[@Lun2019-wp] available in the DropletUtils package (v`r
+versions$DropletUtils`) was also applied. Droplets with less than
+`r params$pre$empty_thresh` total counts were used to construct the ambient RNA
+profile and an FDR threshold of less than `r params$pre$emp_fdr` was used to
+select `r params$pre$n_empdrops` droplets. The droplets selected by either the
+Cell Ranger v3 method or EmptyDrops were kept giving a dataset with
+`r params$pre$n_cells` cells. Gene annotation information was added from BioMart
+[@Smedley2015-an] using the biomaRt package (v`r versions$biomaRt`)
+[@Durinck2005-zb] and cells were assigned cell cycle scores using the cyclone
+[@Scialdone2015-rp] function in the scran package (v`r versions$scran`)
+[@Lun2016-mq].
 
 ### Alevin
 
-An alternative quantification was performed using the Alevin method
+An alternative quantification was performed using the alevin method
 [@Srivastava2019-ce] available as part of the salmon software package
 (v`r versions$salmon`) [@Patro2017-ka]. This produced a dataset with
 `r params$alevin$n_cells` cells and `r params$alevin$n_genes` genes.
@@ -73,7 +74,7 @@ and `r params$clust$seurat_thresh[2]`) and dispersion (greater than
 genes. The M3Drop (v`r versions$M3Drop`) [@Andrews2018-xa] method was also used
 to test for genes with significantly more zero counts than expected and
 `r params$clust$sel_m3drop` genes with an adjusted p-value less than
-`r params$clust$m3drop_thresh` were selected. Following comparisions between
+`r params$clust$m3drop_thresh` were selected. Following comparisons between
 these two methods the genes identified by M3Drop were used for clustering.
 
 ### Graph-based clustering

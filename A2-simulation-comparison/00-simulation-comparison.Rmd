@@ -35,10 +35,10 @@ p1 <- ggplot(plot_data, aes(x = Model, y = Time, colour = Model)) +
           axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5),
           legend.position = "none")
 
-ggsave(here("figures/sim-timings.pdf"), p1, height = 6, width = 8)
-ggsave(here("figures/sim-timings.png"), p1, height = 6, width = 8)
+ggsave(here("figures/A2-sim-timings.pdf"), p1, height = 6, width = 8)
+ggsave(here("figures/A2-sim-timings.png"), p1, height = 6, width = 8)
 
-knitr::include_graphics(here::here("figures/sim-timings.png"))
+knitr::include_graphics(here::here("figures/A2-sim-timings.png"))
 ```
 
 ## Package versions {#sim-packages}

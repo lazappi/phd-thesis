@@ -36,7 +36,7 @@ of the other clusters also confirms what we would expect. For example the
 podocyte cluster is strongly connected to the epithelial cluster and the two
 off-target neural clusters (glial and neural progenitor) are strongly connected
 to each other. The position of the two clusters containing the additional
-emptyDrops cells is less clear with connections seen between them, but not as
+EmptyDrops cells is less clear with connections seen between them, but not as
 strongly with the other clusters they would be expected to be related to,
 particularly between the two endothelial clusters. A possible explanation for
 this are technical features shared by these two clusters but not the clusters
@@ -101,7 +101,7 @@ Looking at the velocity field for this dataset we see some of the expected
 developmental trajectories. For example, cells in the epithelial cluster are
 headed towards the more mature podocyte population. Despite having a limited
 connectivity in the PAGA results we see the endothelial-like cluster containing
-emptyDrops cells (Cluster 4) trending towards the other endothelial cluster.
+EmptyDrops cells (Cluster 4) trending towards the other endothelial cluster.
 Cluster 6 is again more ambiguous, showing velocity towards both endothelial
 and stromal clusters. This suggests that if there are immune cells present they
 may only be a subset of this population. We see little evidence of any clear

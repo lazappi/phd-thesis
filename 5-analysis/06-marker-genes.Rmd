@@ -61,7 +61,7 @@ a quasi-likelihood F-test. Figure \@ref(fig:de-results)D shows the number of
 significantly up-regulated genes for each cluster identified using this
 approach and the log foldchange for individual genes. For most clusters we see
 a large number of positive marker genes but for the two clusters that contain
-most of the emptyDrops cells many fewer markers have been identified. This
+most of the EmptyDrops cells many fewer markers have been identified. This
 could be a result of the lower counts in these clusters or a clue that these
 are not pure populations with clear markers.
 

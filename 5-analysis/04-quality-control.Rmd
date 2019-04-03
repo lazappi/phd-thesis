@@ -113,7 +113,7 @@ separate from the other cells. This approach is taken in Figure
 sample, the droplet selection method, assigned cell cycle stage, total counts,
 total features and percentage of counts assigned to mitochondrial genes. These
 plots show a small population of cells that have fewer counts and have mostly
-been selected using the emptyDrops method. However, this population is not
+been selected using the EmptyDrops method. However, this population is not
 clearly separated and may represent some intermediate cell type. At this stage
 I will retain those cells but following clustering it may be appropriate to
 revisit that decision if they do not appear to represent a logical biological

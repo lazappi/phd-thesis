@@ -103,8 +103,10 @@ the remainder of this chapter I will explore some of the alternative analytical
 choices we could have made and approaches we could have used, and what
 difference they may have made to our interpretation of this data. An outline of
 the analysis I have performed and where it will be discussed in this chapter is
-shown in Figure \@ref(fig:workflow). Details of the methods used for this
-analysis are provided in Appendix \@ref(analysis-methods).
+shown in Figure \@ref(fig:workflow). Details of the analysis including the code
+used and exploratory visualisations are displayed on a website at
+https://lazappi.github.io/phd-thesis-analysis/ [@Zappia2019-kh] and the
+analysis methods used are provided in Appendix \@ref(analysis-methods).
 
 ```{r workflow, fig.cap = "(ref:cap-workflow)", fig.scap = "(ref:scap-workflow)", out.width = "100%"}
 knitr::include_graphics(here::here("figures/05-workflow.png"))

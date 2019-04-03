@@ -96,7 +96,7 @@ series of pre-processing steps, typically beginning will some quality control
 of the raw reads. Reads are then aligned to a reference genome and the number
 of reads overlapping annotated features (genes or transcripts) is counted.
 Probabilistic quantification methods can be applied to full-length scRNA-seq
-datasets but have required adaptations such as the Alevin method for UMI-based
+datasets but have required adaptations such as the alevin method for UMI-based
 datasets [@Srivastava2019-ce] in the Salmon package. When using conventional
 alignment, UMI samples need extra processing with tools like UMI-tools
 [@Smith2017-nz], umis [@Svensson2017-zo] or zUMIs [@Parekh2018-ug] in order to
