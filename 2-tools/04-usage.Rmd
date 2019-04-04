@@ -1,17 +1,17 @@
-## Usage of the scRNA-tools website
+## Usage of the scRNA-tools website {#tools-usage}
 
-Since it was launched in July 2017 the scRNA-tools website has been used from
-people around the world (Figure \@ref(fig:tools-analytics-plot)). Usage has
-increased since release of the publication and the website now receives an
-average of around 750 visitor per month (Figure
+Since it was launched in July 2017 the scRNA-tools website has been used by
+people from around the world (Figure \@ref(fig:tools-analytics-plot)). Usage
+has increased since release of the publication and the website now receives an
+average of around 750 visitors per month (Figure
 \@ref(fig:tools-analytics-plot)A). These users come from over
 `r 10 * floor(n_countries / 10)` countries around the world (Figure
 \@ref(fig:tools-analytics-plot)B) with the USA being by far the most common
-location followed by China, Australia, the United Kingdom and countries in
+location, followed by China, Australia, the United Kingdom and countries in
 Western Europe (Figure \@ref(fig:tools-analytics-plot)C). Aggregating by
 continent (Figure \@ref(fig:tools-analytics-plot)D) better reflects population
-size and the size of academic communities with the Americas responsible for the
-majority of traffic followed by Europe and Asia.
+size and the size of academic communities, with the Americas responsible for
+the majority of traffic followed by Europe and Asia.
 
 ```{r tools-analytics-plot, fig.cap = "(ref:cap-analytics)", fig.scap = "(ref:scap-analytics)", out.width = "100%"}
 users <- tools_users %>%
@@ -124,7 +124,7 @@ knitr::include_graphics(here::here("figures/02-analytics.png"))
 
 (ref:cap-analytics) Usage of the scRNA-tools website. (A) Usage over time showing the number of users per day (pink), week (blue) or 30 days (green). (B) World map coloured according to number of users from low (blue) to high (yellow). (C) Number of users from the top 10 most common countries. (D) Number of users by continent.
 
-Although these figures may not seem large when compared to an average website
+Although these figures may not seem large when compared to an average website,
 they represent a significant part of the scRNA-seq community. Seeing usage of
 the website from so many countries sustained over this period of time suggests
 that the database is a useful resource. I intend to continue maintain and grow

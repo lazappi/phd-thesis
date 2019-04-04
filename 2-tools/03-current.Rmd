@@ -1,7 +1,7 @@
 ## The current scRNA-tools database {#tools-current}
 
-Since the paper was published in June 2018 `r n_tools_new` tools have been
-added to the scRNA-tools database taking the total to `r n_tools`. Figure
+Since the paper was published in June 2018, `r n_tools_new` tools have been
+added to the scRNA-tools database, taking the total to `r n_tools`. Figure
 \@ref(fig:tools-plot) shows an overview of the current database as of
 `r tools_date`. Overall the analysis landscape has not changed significantly
 over the last few months.
@@ -29,21 +29,21 @@ ggsave(here("figures/02-tools.png"), panel, height = 10, width = 8)
 knitr::include_graphics(here::here("figures/02-tools.png"))
 ```
 
-(ref:scap-tools) State of the scRNA-tools database.
+(ref:scap-tools) Current state of the scRNA-tools database.
 
-(ref:cap-tools) State of the scRNA-tools database. (A) Size of the database over time. (B) Publication status of tools in the database, most tools are published as either peer-reviewed publications or preprints. (C) Associated software licenses, most tools are covered by open-source licenses but around a quarter of tools still have no license. (D) Software platforms used by tools, R is the most common programming language followed by Python. (E) Number of tools that complete each analysis task. Tasks associated with multiple analysis phases are the most common along with those that assign cells.
+(ref:cap-tools) Current state of the scRNA-tools database. (A) Size of the database over time. (B) Publication status of tools in the database. Most tools are published as either peer-reviewed publications or preprints. (C) Associated software licenses. Most tools are covered by open-source licenses but around a quarter of tools still have no license. (D) Software platforms used by tools, some tools use more than one language. R is the most common programming language followed by Python. (E) Number of tools that complete each analysis task. Tasks associated with multiple analysis phases are the most common, along with those that assign cells.
 
 Over half of tools are still associated with a peer-reviewed publication with
 another third described in preprints (Figure \@ref(fig:tools-plot)B). Versions
 of the GNU Public License (GPL) continue to be the most common license for
-scRNA-seq software tools followed by the more permissive MIT license (Figure
+scRNA-seq software tools, followed by the more permissive MIT license (Figure
 \@ref(fig:tools-plot)C). The use of preprints to quickly share methods and
 observations and open-source licenses which allow code to be reused and adapted
 reflects the general willingness to share that I have observed in the scRNA-seq
 bioinformatics community during my PhD. Unfortunately, around a quarter of
-tools do not have associated licenses which can limit their usefulness for
+tools do not have associated licenses, which can limit their usefulness for
 other developers. I believe that in most cases this is not an attempt by
-authors to restrict how their work is used but a lack of awareness about the
+authors to restrict how their work is used, but a lack of awareness about the
 importance of clear licensing. By displaying licenses on the scRNA-tools
 website I hope to encourage developers to consider how they license their work
 in the future.
@@ -51,20 +51,20 @@ in the future.
 R continues to be the most popular programming platform and is used in some way
 by around two thirds of scRNA-seq analysis tools (Figure
 \@ref(fig:tools-plot)D). Around a third of tools are built using Python which
-is the next most common programming language followed by C++ and MATLAB which
+is the next most common programming language, followed by C++ and MATLAB which
 are each used by just under 10 percent of tools. The dominance of R reflects
 the statistical nature of many of the tasks involved in analysing scRNA-seq
 data as well as the historical usage of the platform for bulk RNA-seq and other
 genomic data types. The Bioconductor project [@Huber2015-lz] has been integral
 to promoting the use of R for analysing genomic data and already includes a
-range of tools for analysis scRNA-seq [@Amezquita2019-id]. However, as the size
-of scRNA-seq datasets continues to increase and approach to analysis changes to
-include more machine learning methods I expect the platforms used to change to
-some degree. In particular we will see more use of compiled languages like C++,
-Swift, Julia and Go used for their improved performance. While MATLAB is
-commonly used within a small section of the academic community but it is
-proprietary software that requires a paid license which means that tools
-developed in MATLAB cannot be used by the majority of scRNA-seq analysts.
+range of tools for scRNA-seq analysis [@Amezquita2019-id]. However, as the size
+of scRNA-seq datasets continues to increase and approaches to analysis change
+to include more machine learning methods I expect the platforms used to change
+to some degree. In particular we will see more use of compiled languages like
+C++, Swift, Julia and Go used for their improved performance. While MATLAB is
+commonly used within a small section of the academic community, it is
+proprietary software that requires a paid license and tools developed in MATLAB
+cannot be used by the majority of scRNA-seq analysts.
 
 The analysis tasks that tools perform reflect the advantages and uses of
 scRNA-seq data (Figure \@ref(fig:tools-plot)E). The most common categories
@@ -72,14 +72,14 @@ include those that are associated with multiple phases of analysis,
 particularly visualisation, for displaying results and checking distributions,
 and dimensionality reduction. The dimensionality reduction category includes
 tools that make use of a lower dimensional space as part of their analysis
-approach as well as several techniques that have been specifically developed
-for projecting scRNA-seq data. Other common analysis categories include those
-specific to scRNA-seq analysis including clustering and ordering of cells. I
-expect these tasks to continue to be included in new software tools as they are
-important steps in scRNA-seq analysis however I hope that the focus turns from
+approach, as well as several techniques that have been specifically developed
+for projecting scRNA-seq data. Clustering and ordering of cells, which are
+tasks specific to scRNA-seq analysis, are also common categories. I expect
+these tasks to continue to be included in new software tools as they are
+important steps in scRNA-seq analysis, however I hope that the focus turns from
 developing new clustering and ordering methods to identifying those that are
 consistently effective and developing robust, easy to use and well-documented
 software tools that implement them. The availability of reliable and complete
 reference datasets should lead to the development of more that make use of
-references such as the classification of cells and developers will continue to
+references such as the classification of cells, and developers will continue to
 push the boundaries of what is possible using scRNA-seq data.

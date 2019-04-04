@@ -4,23 +4,23 @@ supervisors. This is a thesis _with_ publication and where publications form
 part of a chapter they are listed here. The following publications are included
 as part of this thesis:
 
-**Zappia L**, Phipson B, Oshlack A. _"Exploring the single-cell RNA-seq
-analysis landscape with the scRNA-tools database."_ PLoS Computational
-Biology. 2018. DOI:
+**Zappia L**, Phipson B, Oshlack A. "Exploring the single-cell RNA-seq
+analysis landscape with the scRNA-tools database." _PLoS Computational
+Biology._ 2018. DOI:
 [10.1371/journal.pcbi.1006245](https://doi.org/10.1371/journal.pcbi.1006245)
 
-**Zappia L**, Phipson B, Oshlack A. _"Splatter: simulation of single-cell RNA
-sequencing data."_ Genome Biology. 2017. DOI:
+**Zappia L**, Phipson B, Oshlack A. "Splatter: simulation of single-cell RNA
+sequencing data." _Genome Biology._ 2017. DOI:
 [10.1186/s13059-017-1305-0](https://doi.org/10.1186/s13059-017-1305-0)
 
-**Zappia L**, Oshlack A. _"Clustering trees: a visualization for evaluating
-clusterings at multiple resolutions."_ Gigascience. 2018. DOI:
+**Zappia L**, Oshlack A. "Clustering trees: a visualization for evaluating
+clusterings at multiple resolutions." _Gigascience._ 2018. DOI:
 [10.1093/gigascience/giy083](https://doi.org/10.1093/gigascience/giy083)
 
 These publications are included as they appear online and are designed to be
 read as stand-alone documents. Sections within these publications are not
-included in the table of contents and references are available at the end of
-each publication rather than the reference list for this thesis. The
+included in the table of contents, and references are available at the end of
+each publication rather than in the reference list for this thesis. The
 contributions of authors to these papers are explained below. I am the first
 author on these publications and contributed more than 50 percent of the work
 towards them including drafting, editing and revising the manuscripts. My
@@ -36,8 +36,8 @@ kidney function and development.
 **[Chapter 2: The scRNA-seq tools landscape](#tools)** is an original work
 describing a database of software tools for analysing single-cell RNA
 sequencing data which has been published in _PLoS Computational Biology_ as
-_"Exploring the single-cell RNA-seq analysis landscape with the scRNA-tools
-database"_. In addition to this publication I developed a website displaying
+"Exploring the single-cell RNA-seq analysis landscape with the scRNA-tools
+database". In addition to this publication I developed a website displaying
 the information in this database which is available at
 https://www.scRNA-tools.org. The database and code for building the website is
 available on GitHub at https://github.com/Oshlack/scRNA-tools under an MIT
@@ -45,12 +45,12 @@ license.
 
 Contributions to the work in this chapter:
 
-* I complied and regularly updated the database of tools.
+* I compiled and regularly updated the database of tools.
 
 * I designed and built the public website used to display the database. Breon
   Schmidt provided assistance with implementing some of the website
-  functionality and code for processing the database was based on a script
-  written by Sean Davis.
+  functionality. Some of the code for processing the database was based on a
+  script written by Sean Davis.
 
 * I performed the analysis of the database presented in the publication.
 
@@ -64,8 +64,8 @@ Contributions to the work in this chapter:
 
 **[Chapter 3: Simulating scRNA-seq data](#simulation)** is an original work
 describing a software package for simulating single-cell RNA sequencing
-expression data. This work was published in _Genome Biology_ as _"Splatter:
-simulation of single-cell RNA sequencing data"_. The software package described
+expression data. This work was published in _Genome Biology_ as "Splatter:
+simulation of single-cell RNA sequencing data". The software package described
 in this publication is available through Bioconductor at
 https://bioconductor.org/packages/splatter and the code is shared on GitHub at
 https://github.com/Oshlack/splatter under a GPL-3.0 license.
@@ -97,21 +97,21 @@ Contributions to the work in this chapter:
 **[Chapter 4: Visualising clustering across resolutions](#clust-trees)** is an
 original work describing a visualisation for showing clustering results across
 multiple resolutions and helping to select a clustering resolution to use. This
-work has been published in _GigaScience_ as _"Clustering trees: a visualization
-for evaluating clusterings at multiple resolutions"_ and a software package
+work has been published in _GigaScience_ as "Clustering trees: a visualization
+for evaluating clusterings at multiple resolutions" and a software package
 implementing the algorithm described is available from CRAN at
 https://cran.r-project.org/package=clustree. The source code for this package
 can be found on GitHub at https://github.com/lazappi/clustree under a GPL-3.0
 license.
 
-Contributions to work in this chapter:
+Contributions to the work in this chapter:
 
 * I designed the clustering trees algorithm described in this chapter.
 
-* I designed and wrote the clustree R package that implements this algorithm.
+* I designed and built the clustree R package that implements this algorithm.
 
-* I performed the analysis presented in the manuscript and designed and produced
-  the figures shown.
+* I performed the analysis presented in the publication and designed and
+  produced the figures shown.
 
 * Alicia Oshlack provided advice on the design and planning of the analysis to
   present.
@@ -130,7 +130,7 @@ original work where I performed re-analysis of a previously published
 single-cell RNA sequencing experiment from kidney organoids in order to
 demonstrate a range of analysis tools and decisions during analysis.
 
-Contributions to work in this chapter:
+Contributions to the work in this chapter:
 
 * The dataset is publicly available from the Gene Expression Omnibus under
   accession GSE114802.
@@ -151,24 +151,24 @@ sequencing analysis and outlining potential directions of the field.
 **Other publications that I have contributed to during my candidature but are
 not presented in this thesis**
 
-Phipson B, **Zappia L**, Oshlack A. _"Gene length and detection bias in single
-cell RNA sequencing protocols."_ F1000 Research. DOI:
+Phipson B, **Zappia L**, Oshlack A. "Gene length and detection bias in single
+cell RNA sequencing protocols." _F1000 Research._ DOI:
 [10.12688/f1000research.11290.1](https://doi.org/10.12688/f1000research.11290.1).
 
 Phipson B, Er PX, Combes AN, Forbes TA, Howden SE, **Zappia L**, Yen HJ, Lawlor
-KT, Hale LJ, Sun J, Wolvetang E, Takasato M, Oshlack A, Little MH. _"Evaluation
-of variability in human kidney organoids."_ Nature Methods. 2019. DOI:
+KT, Hale LJ, Sun J, Wolvetang E, Takasato M, Oshlack A, Little MH. "Evaluation
+of variability in human kidney organoids." _Nature Methods._ 2019. DOI:
 [10.1038/s41592-018-0253-2](http://doi.org/10.1038/s41592-018-0253-2).
 
-Combes AN^+^, **Zappia L^+^**, Er PX, Oshlack A, Little MH. _"Single-cell
-analysis reveals congruence between kidney organoids and human fetal kidney."_
-Genome Medicine. 2019. DOI:
+Combes AN^+^, **Zappia L^+^**, Er PX, Oshlack A, Little MH. "Single-cell
+analysis reveals congruence between kidney organoids and human fetal kidney."
+_Genome Medicine._ 2019. DOI:
 [10.1186/s13073-019-0615-0](https://doi.org/10.1186/s13073-019-0615-0)
 
 Kumar SV, Er PX, Lawlor KT, Motazedian A, Scurr M, Ghobrial I, Combes AN,
-**Zappia L**, Oshlack A, Stanley EG, Little MH. _"Kidney micro-organoids in
+**Zappia L**, Oshlack A, Stanley EG, Little MH. "Kidney micro-organoids in
 suspension culture as a scalable source of human pluripotent stem cell-derived
-kidney cells."_ Development. 2019. DOI:
+kidney cells." _Development._ 2019. DOI:
 [10.1242/dev.172361](http://doi.org/10.1242/dev.172361)
 
 ^+^ _Authors contributed equally._

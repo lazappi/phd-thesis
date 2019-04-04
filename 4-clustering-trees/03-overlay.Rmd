@@ -1,7 +1,7 @@
 ## Overlaying clustering trees {#clustree-overlay}
 
 In the clustering trees publication we focused on the use of the visualisation
-as a tool for selecting a clustering resolution but more generally the
+as a tool for selecting a clustering resolution, but more generally the
 clustering tree structure can be used to display information across the
 resolution dimension. The visualisation that is most commonly used to display
 scRNA-seq data is the dimensionality reduction plot produced using methods such
@@ -9,11 +9,11 @@ as PCA, t-SNE [@Maaten2008-ne] or UMAP [@McInnes2018-ul]. In this visualisation
 each point is a cell placed in a two-dimensional space and coloured using
 factors such as the assigned cluster or the expression level of a gene. The two
 visualisations display complementary information. The dimensionality reduction
-plot shows the location of each individual sample in a low-dimensional space
+plot shows the location of each individual sample in a low-dimensional space,
 while the clustering tree trades that sample level resolution for a summarised
 view of each cluster and swaps the spatial information for a new resolution
 dimension. It is possible to combine these two approaches by overlaying a
-clustering tree on to a dimensionality reduction plot. Figure
+clustering tree onto a dimensionality reduction plot. Figure
 \@ref(fig:clustree-overlay) shows an example of this using the iris dataset
 [@Anderson1935-mt; @Fisher1936-wt].
 
@@ -87,10 +87,10 @@ knitr::include_graphics(here::here("figures/04-clustree-overlay.png"))
 
 (ref:scap-clustree-overlay) Clustering tree of the iris dataset overlaid on a PCA plot.
 
-(ref:cap-clustree-overlay) Clustering tree of the iris dataset overlaid on a PCA plot. (A) A PCA plot of the samples in the iris dataset coloured by cluster at $k = 5$ overlaid with a clustering tree showing clustering resolutions from $k = 1$ to $k = 5$. (B) The same plot show from the direction of the x-axis (PC1), the y-axis now shows the clustering resolution and samples are jittered along the x-axis. (C) Same as (B) but from the direction of PC2.
+(ref:cap-clustree-overlay) Clustering tree of the iris dataset overlaid on a PCA plot. (A) A PCA plot of the samples in the iris dataset coloured by cluster at $k = 5$ overlaid with a clustering tree showing clustering resolutions from $k = 1$ to $k = 5$. (B) The same plot shown from the direction of the x-axis (PC1), the y-axis now shows the clustering resolution and samples are jittered along the x-axis. (C) Same as (B) but from the direction of PC2.
 
 Here instead of using a tree layout algorithm to decide where the cluster nodes
-are placed we place them in the low-dimensional space at the mean position of
+are placed, we place them in the low-dimensional space at the mean position of
 the samples in each cluster. The easiest way to view this overlaid plot (Figure
 \@ref(fig:clustree-overlay)A) is to imagine looking down on a landscape from
 above. On the ground we have the individual sample points (here coloured by
@@ -99,7 +99,7 @@ clustering tree with the highest resolutions placed closest to the ground and
 the lowest resolution at the top. As we step down the clustering tree we can
 see where in this space new clusters are formed. Figures
 \@ref(fig:clustree-overlay) B and C show this same view but from a different
-perspective. Here imaging standing on the ground at the same level as the
+perspective. Here imagine standing on the ground at the same level as the
 samples and looking towards the clustering tree. Now the x-axis shows one of
 the reduced dimensions (PC1 or PC2) and the y-axis show the resolution
 dimension. Looking at a clustering tree in this way provides an alternative
