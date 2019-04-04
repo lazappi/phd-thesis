@@ -1,4 +1,4 @@
-# Splatter documentation
+# Splatter documentation {#splatter-docs}
 
 ## Splatter vignette {#splatter-vignette}
 

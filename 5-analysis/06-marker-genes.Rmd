@@ -39,7 +39,7 @@ knitr::include_graphics(here::here("figures/05-de-results.png"))
 
 (ref:scap-de-results) Results of edgeR differential expression analysis.
 
-(ref:cap-de-results) Results of edgeR differential expression analysis. (A) Scatter plot showing the edgeR fit of gene means. The x-axis shows the average of the observed gene mean and the expected gene mean from the edgeR fit and the y-axis shows the difference between the observed and expected means. The pink line lies at zero and the blue line is a LOESS fit. (B) Scatter plot showing the edgeR fit of gene proportion of zeros. Similar to (A) but showing the observed and expected proportion of zeros. (C) Plot of the biological coefficient as calculated by edgeR against the average log counts per million for each gene. (D) Bar chart of the number of significantly differentially expressed genes for each cluster with positive fold changes. Points show individual genes coloured by their log foldchange. Position of each point on the y-axis also shows the log foldchange but scaled to the height of each bar. (E) Differential expression results for some genes identified as important markers in the previously published analysis. Size of points indicates the positive log foldchange and transparency indicates the negative false discovery rate.
+(ref:cap-de-results) Results of edgeR differential expression analysis. (A) Scatter plot showing the edgeR fit of gene means. The x-axis shows the average of the observed gene mean and the expected gene mean from the edgeR fit and the y-axis shows the difference between the observed and expected means. The pink line lies at zero and the blue line is a LOESS fit. (B) Scatter plot showing the edgeR fit of gene proportion of zeros. Similar to (A) but showing the observed and expected proportion of zeros. (C) Plot of the biological coefficient as calculated by edgeR against the average log counts per million for each gene. (D) Bar chart of the number of significantly differentially expressed genes for each cluster with positive fold changes. Points show individual genes coloured by their log fold change. Position of each point on the y-axis also shows the log fold change but scaled to the height of each bar. (E) Differential expression results for some genes identified as important markers in the previously published analysis. Size of points indicates the positive log fold change and transparency indicates the negative false discovery rate.
 
 Another important quantity that is calculated by the edgeR model is the
 biological coefficient of variation (BCV). BCV is the component of variability
@@ -59,7 +59,7 @@ There are multiple testing procedures available in edgeR but the currently
 recommended approach is to fit a generalised linear model and test genes using
 a quasi-likelihood F-test. Figure \@ref(fig:de-results)D shows the number of
 significantly up-regulated genes for each cluster identified using this
-approach and the log foldchange for individual genes. For most clusters we see
+approach and the log fold change for individual genes. For most clusters we see
 a large number of positive marker genes but for the two clusters that contain
 most of the EmptyDrops cells many fewer markers have been identified. This
 could be a result of the lower counts in these clusters or a clue that these
@@ -71,7 +71,7 @@ dataset, and can be relatively confident of what it contains, I have plotted
 the edgeR results for a few of the genes that were previously identified to be
 important markers (Figure \@ref(fig:de-results)E). For most of the clusters we
 see that only markers for one particular cell type are significant with large
-foldchanges and these are consistent with the overlaps between the published
+fold changes and these are consistent with the overlaps between the published
 clusters presented in the previous section. For the clusters that had little
 overlap with the published analysis these results help to assign them. Cluster
 4 clearly shows up-regulation of endothelial markers confirming this lineage as

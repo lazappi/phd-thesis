@@ -45,11 +45,11 @@ remaining filtrate is then passed to the ureter where it is carried to the
 bladder and collected as urine while the blood leaves via the renal vein. In
 order to perform this complex series of reabsorption and secretion steps, each
 segment of the nephron is made up specialised cell types with their own sets of
-signaling and transporter proteins. The filtration process is repeated about 12
-times every hour with around 200 litres of blood being filtered during a day.
-Aside from removing waste and maintaining the balance of molecular species in
-the bloodstream, the kidneys also play a role in the activation of vitamin D.
-Other important functions include synthesising the hormones erythropoietin,
+signalling and transporter proteins. The filtration process is repeated about
+12 times every hour with around 200 litres of blood being filtered during a
+day. Aside from removing waste and maintaining the balance of molecular species
+in the bloodstream, the kidneys also play a role in the activation of vitamin
+D. Other important functions include synthesising the hormones erythropoietin,
 which stimulates red blood cell production, and renin, which is part of the
 pathway that controls fluid volume and the constriction of arteries to regulate
 blood pressure.
@@ -110,7 +110,7 @@ knitr::include_graphics(here::here("figures/01-nephrogenesis.png"))
 
 (ref:scap-nephrogenesis) Diagram of the stages of nephron maturation.
 
-(ref:cap-nephrogenesis) Diagram of the stages of nephron maturation. The nephron begins as a pretubular aggregate (PA) which forms a renal vesicle (RV), comma-shaped body (CSB), S-shaped body (SSB), capillary loop nephron and mature nephron. The connection between the forming nephron and the lumen of the adjacent ureteric epithelium forms at late renal vesicle stage. Adapted from Little _"Improving our resolution of kidney morphogenesis across time and space"_ [@Little2015-wm].
+(ref:cap-nephrogenesis) Diagram of the stages of nephron maturation. The nephron begins as a pretubular aggregate (PA) which forms a renal vesicle (RV), comma-shaped body (CSB), S-shaped body (SSB), capillary loop nephron and mature nephron. The connection between the forming nephron and the lumen of the adjacent ureteric epithelium forms at late renal vesicle stage. Adapted from Little "Improving our resolution of kidney morphogenesis across time and space" [@Little2015-wm].
 
 Most of our understanding of kidney development comes from studies using mouse
 models and other model species. While these have greatly added to our knowledge
@@ -144,14 +144,14 @@ knitr::include_graphics(here::here("figures/01-organoids.png"))
 
 (ref:scap-organoids) Diagram of the Takasato et al. kidney organoid protocol.
 
-(ref:cap-organoids) Diagram of the Takasato et al. kidney organoid protocol. iPSCs are cultured on a plate in the presence of CHIR followed by FGF9. After about a week cells are formed into three-dimensional pellets and a short CHIR pulse is applied. The pellets continue to be cultured in FGF9 for a further 10 days before all growth factors are removed. The organoids now contain tubular structures replicating human nephrons. Adapted from Takasato et al. _"Kidney organoids from human iPS cells contain multiple lineages and model human nephrogenesis"_ [@Takasato2015-zn].
+(ref:cap-organoids) Diagram of the Takasato et al. kidney organoid protocol. iPSCs are cultured on a plate in the presence of CHIR followed by FGF9. After about a week cells are formed into three-dimensional pellets and a short CHIR pulse is applied. The pellets continue to be cultured in FGF9 for a further 10 days before all growth factors are removed. The organoids now contain tubular structures replicating human nephrons. Adapted from Takasato et al. "Kidney organoids from human iPS cells contain multiple lineages and model human nephrogenesis" [@Takasato2015-zn].
 
-Using this protocol, iPSCs are first grown on a plate where Wnt signaling is
+Using this protocol, iPSCs are first grown on a plate where Wnt signalling is
 induced by the presence of CHIR, an inhibitor of glycogen kinase synthase 3.
 After several days of growth the growth factor FGF9 is added which is required
 to form the intermediate mesoderm. Following several more days of growth the
 cells are removed from the plate and formed into three dimensional pellets. A
-short pulse of CHIR is added to again induce Wnt signaling and the pellets
+short pulse of CHIR is added to again induce Wnt signalling and the pellets
 continue to be cultured in the presence of FGF9. Growth factors are removed
 after about five days of 3D culture and the organoids continue to grow for a
 further two weeks, at which point tubular structures have formed. These kidney
@@ -161,7 +161,7 @@ tubules are segmented and express markers of podocytes, proximal tubule, distal
 tubule and collecting duct, however individual tubules are not connected in the
 same way they would be in a real kidney. By comparing RNA-seq profiles with
 those from a range of developing tissues, the organoids from this protocol were
-found to be most similar to trimester one and two fetal kidney
+found to be most similar to trimester one and two foetal kidney
 [@Takasato2015-zn]. While the bulk transcriptional profiles may be similar,
 this analysis does not confirm that individual cells types are the same between
 lab-grown kidney organoids and the true developing kidney. Further studies

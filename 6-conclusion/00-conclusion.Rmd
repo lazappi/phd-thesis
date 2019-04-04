@@ -107,7 +107,7 @@ organoids from the same batch. In a second publication, for which I performed
 the computational analysis, this dataset was profiled more thoroughly and the
 cell types present were identified. These included many of the cell types
 expected in the developing kidney as well as some off-target populations. To
-confirm these cell types we integrated the organoid data with a human fetal
+confirm these cell types we integrated the organoid data with a human foetal
 kidney dataset and found that many of the cell types were consistent. In
 **Chapter \@ref(analysis) - [Analysis of kidney organoid scRNA-seq data]** I
 re-analysed this dataset to demonstrate some alternative tools that we could

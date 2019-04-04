@@ -87,7 +87,7 @@ knitr::include_graphics(here::here("figures/01-sequencing.png"))
 
 (ref:scap-sequencing) The Illumina Sequencing by Synthesis process.
 
-(ref:cap-sequencing) The Illumina Sequencing by Synthesis process. Nucleotide fragments bind to a flow cell and clusters are formed through bridge amplification. Strands are primed and nucleotides tagged with fluorescent labels are added to the flow cell along with a DNA polymerase enzyme. The lanes of the flow cell are then scanned to produce an image. The fluorescent tags are cleaved and 3’-OH blocking groups are added, preparing the strands for another round of nucleotide incorporation. Image adapted from Mardis, _"Next-Generation DNA Sequencing Methods"_ [@Mardis2008-ju].
+(ref:cap-sequencing) The Illumina Sequencing by Synthesis process. Nucleotide fragments bind to a flow cell and clusters are formed through bridge amplification. Strands are primed and nucleotides tagged with fluorescent labels are added to the flow cell along with a DNA polymerase enzyme. The lanes of the flow cell are then scanned to produce an image. The fluorescent tags are cleaved and 3’-OH blocking groups are added, preparing the strands for another round of nucleotide incorporation. Image adapted from Mardis, "Next-Generation DNA Sequencing Methods" [@Mardis2008-ju].
 
 The sequencing process now begins. Nucleotides tagged with fluorescent markers
 are added and can bind to the next available position on a fragment if they are
@@ -132,7 +132,7 @@ knitr::include_graphics(here::here("figures/01-RNA-seq.png"))
 At this stage the result is a matrix of counts, known as an expression matrix,
 where the rows are features (usually genes), the columns are samples and the
 values show the expression level of a particular feature in a sample. As these
-counts result from a sampling process they can be modeled using common
+counts result from a sampling process they can be modelled using common
 statistical distributions. One option is the Poisson distribution which
 describes the probability of a given number of events happening in a fixed
 amount of time, however this distribution assumes that the mean and variance of

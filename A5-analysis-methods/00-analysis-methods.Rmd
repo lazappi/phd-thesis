@@ -23,8 +23,8 @@ The droplet selection method in this version of Cell Ranger identified
 `r params$pre$n_cellranger` cell containing droplets. This is more than the
 traditional Cell Ranger approach based on a simple threshold on total counts
 which identified `r params$pre$n_default` cells. The EmptyDrops method
-[@Lun2019-wp] available in the DropletUtils package (v`r
-versions$DropletUtils`) was also applied. Droplets with less than
+[@Lun2019-wp] available in the DropletUtils package
+(v`r versions$DropletUtils`) was also applied. Droplets with less than
 `r params$pre$empty_thresh` total counts were used to construct the ambient RNA
 profile and an FDR threshold of less than `r params$pre$emp_fdr` was used to
 select `r params$pre$n_empdrops` droplets. The droplets selected by either the
@@ -104,7 +104,7 @@ fitted to the dataset using a design matrix that included the detection rate
 (scaled proportion of genes expressed in each cell). The quasi-likelihood F-test
 was used to test cells in one cluster against all other cells. Genes were
 considered significant markers for a cluster if they had an FDR less than
-`r params$markers$fdr_thresh` and a log foldchange greater than
+`r params$markers$fdr_thresh` and a log fold change greater than
 `r params$markers$logFC_thresh`. Identities were assigned to each cluster by
 comparing the detected genes to previously published lists of cell type markers.
 

@@ -1,8 +1,8 @@
-## Single-cell RNA-sequencing {#intro-scRNAseq}
+## Single-cell RNA sequencing {#intro-scRNAseq}
 
 Traditional bulk RNA-seq experiments average the transcriptome across the
 millions of cells in a sample. Recently it has become possible to perform
-single-cell RNA-sequencing (scRNA-seq) and investigate the transcriptome at the
+single-cell RNA sequencing (scRNA-seq) and investigate the transcriptome at the
 resolution of individual cells. There are many situations where it is important
 to understand how specific cell types react to development or perturbations.
 This is often hindered in bulk analyses which may be affected by the unknown
@@ -57,7 +57,7 @@ knitr::include_graphics(here::here("figures/01-technologies.jpg"))
 
 (ref:scap-technologies) Exponential increase in the scale of scRNA-seq experiments.
 
-(ref:cap-technologies) Exponential increase in the scale of scRNA-seq experiments. (a) Key jumps in scRNA-seq capture technologies including manual handling, plate-based microfluidic capture and droplet-based capture. (b) Cell numbers in representative studies using key technologies by publication date. Image from Svensson, Vento-Tormo and Teichmann _"Exponential scaling of single-cell RNA-seq in the past decade"_ [@Svensson2018-dx].
+(ref:cap-technologies) Exponential increase in the scale of scRNA-seq experiments. (a) Key jumps in scRNA-seq capture technologies including manual handling, plate-based microfluidic capture and droplet-based capture. (b) Cell numbers in representative studies using key technologies by publication date. Image from Svensson, Vento-Tormo and Teichmann "Exponential scaling of single-cell RNA-seq in the past decade" [@Svensson2018-dx].
 
 ### Droplet-based cell capture
 
@@ -195,7 +195,7 @@ knitr::include_graphics(here::here("figures/01-multimodal.png"))
 
 (ref:scap-multimodal) The range of multimodal scRNA-seq technologies.
 
-(ref:cap-multimodal) The range of multimodal scRNA-seq technologies. Many protocols have been developed to enable multiple measurements from the same individual cells with a selection shown here. These other measurements (shaded colours) include genotype (rose bud), methylation (cornsilk), chromatin state (muted lime), transcription factor binding (periwinkle), protein expression (jade lime), activation or repression (cabbage), lineage tracing (aquamarine blue), spatial location (light sky blue) or electrophysiology (cotton candy). Image from https://github.com/arnavm/multimodal-scRNA-seq available under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license [@Arnavm_undated-nd].
+(ref:cap-multimodal) The range of multimodal scRNA-seq technologies. Many protocols have been developed to enable multiple measurements from the same individual cells with a selection shown here. These other measurements (shaded colours) include genotype (rose bud), methylation (cornsilk), chromatin state (muted lime), transcription factor binding (periwinkle), protein expression (jade lime), activation or repression (cabbage), lineage tracing (aquamarine blue), spatial location (light sky blue) or electrophysiology (cotton candy). Image from https://github.com/arnavm/multimodal-scRNA-seq available under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license [@Moudgil2019-bl].
 
 ```{r CITE-seq, fig.cap = "(ref:cap-CITE-seq)", fig.scap = "(ref:scap-CITE-seq)", out.width = "100%"}
 knitr::include_graphics(here::here("figures/01-CITE-seq.png"))

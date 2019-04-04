@@ -2,7 +2,142 @@
 
 \clearpage
 
-Packages used in building this document.
+## Important packages
+
+Details of the main packages used to build this thesis.
+
+```{r packages, results = "asis"}
+packages <- list(
+    list(
+        name = "bookdown",
+        use = "writing complex documents using RMarkdown",
+        key = "@R-bookdown; @Xie2016-do"
+    ),
+    list(
+        name = "clustree",
+        use = "producing clustering tree visualisations",
+        key = "@R-clustree; @Zappia2018-lz"
+    ),
+    list(
+        name = "cowplot",
+        use = "constructing complex panel figures",
+        key = "@R-cowplot"
+    ),
+    list(
+        name = "dplyr",
+        use = "manipulation of data frames",
+        key = "@R-dplyr"
+    ),
+    list(
+        name = "forcats",
+        use = "manipulation of factors",
+        key = "@R-forcats"
+    ),
+    list(
+        name = "ggplot2",
+        use = "data visualiastion",
+        key = "@R-ggplot2; @Wickham2010-zq"
+    ),
+    list(
+        name = "glue",
+        use = "complex joining of strings",
+        key = "@R-glue"
+    ),
+    list(
+        name = "googleAnalyticsR",
+        use = "downloading Google Analytics data",
+        key = "@R-googleAnalyticsR"
+    ),
+    list(
+        name = "googleAuthR",
+        use = "Google API authentication",
+        key = "@R-googleAuthR"
+    ),
+    list(
+        name = "here",
+        use = "locating files",
+        key = "@R-here"
+    ),
+    list(
+        name = "jsonlite",
+        use = "reading JSON files",
+        key = "@R-jsonlite; @Ooms2014-ay"
+    ),
+    list(
+        name = "knitr",
+        use = "generating dynamic reports using R",
+        key = "@R-knitr; @Xie2016-ct; @Xie2014-ha"
+    ),
+    list(
+        name = "lubridate",
+        use = "manipulation of dates",
+        key = "@R-lubridate; @Grolemund2011-qn"
+    ),
+    list(
+        name = "magrittr",
+        use = "piping between functions",
+        key = "@R-magrittr"
+    ),
+    list(
+        name = "packrat",
+        use = "management of package dependencies",
+        key = "@R-packrat"
+    ),
+    list(
+        name = "purrr",
+        use = "functional programming for lists",
+        key = "@R-purrr"
+    ),
+    list(
+        name = "RColorBrewer",
+        use = "ColorBrewer colour palettes",
+        key = "@R-RColorBrewer"
+    ),
+    list(
+        name = "readr",
+        use = "input of data files",
+        key = "@R-readr"
+    ),
+    list(
+        name = "remotes",
+        use = "installation of packages from GitHub",
+        key = "@R-remotes"
+    ),
+    list(
+        name = "rmarkdown",
+        use = "dynamic documents for R",
+        key = "@R-rmarkdown"
+    ),
+    list(
+        name = "stringr",
+        use = "manipulation of strings",
+        key = "@R-stringr"
+    ),
+    list(
+        name = "tidyr",
+        use = "tidying of data",
+        key = "@R-tidyr"
+    ),
+    list(
+        name = "viridis",
+        use = "viridis colour palettes",
+        key = "@R-viridis"
+    )
+)
+
+knitr::write_bib(
+    purrr::map_chr(packages, function(pkg) {pkg$name}),
+    file = here::here("bib/packages.bib")
+)
+
+purrr::map_chr(packages, function(pkg) {
+    version <- packageVersion(pkg$name)
+    glue::glue("* {pkg$name} (v{version}) -- {pkg$use} [{pkg$key}]")
+}) %>%
+    glue::glue_collapse(sep = "\n")
+```
+
+## Full session information
 
 ```{r session-info, message = TRUE}
 devtools::session_info()

@@ -63,7 +63,7 @@ genes is selected they are used to perform a PCA and a set of principal
 components is selected. Distances are then calculated between cells in this PCA
 space and the nearest neighbours for each cell are identified. By comparing the
 sets of neighbours for two cells and computing the Jaccard index, a shared
-nearest-neighbour graph can be constructed where each node is a cell and the
+nearest neighbour graph can be constructed where each node is a cell and the
 edges are the overlap in their neighbourhoods. A graph modularity optimisation
 algorithm such as Louvain modularity optimisation [@Blondel2008-ym] can then be
 used to partition the graph and form clusters of cells. This graph-based
@@ -114,7 +114,7 @@ knitr::include_graphics(here::here("figures/05-cluster-validation.png"))
 
 (ref:scap-cluster-validation) Validation of identified clusters.
 
-(ref:cap-cluster-validation) Validation of identified clusters. (A) Scatter plot of cells in UMAP space coloured by assigned cluster. (B) Bar chart of the number of cells in each cluster. (C) Stacked bar chart showing the proportion of cells in each cluster identified by each droplet selection method, Cell Ranger v3 only (blue), EmptyDrops only (green) or both (pink). (D) Stacked bar chart showing the proportion of cells in each cluster assigned to the G1 (pink), G2M (blue) or S (green) phases of the cell cycle. (E) SinaPlot showing the total number of counts per cell in each cluster. (F) SinaPlot showing the percentage of counts assigned to mitochondrial genes per cell in each cluster.
+(ref:cap-cluster-validation) Validation of identified clusters. (A) Scatter plot of cells in UMAP space coloured by assigned cluster. (B) Bar chart of the number of cells in each cluster. (C) Stacked bar chart showing the proportion of cells in each cluster identified by each droplet selection method, Cell Ranger v3 only (blue), EmptyDrops only (green) or both (pink). (D) Stacked bar chart showing the proportion of cells in each cluster assigned to the G1 (pink), G2M (blue) or S (green) phases of the cell cycle. (E) SinaPlot [@Sidiropoulos2018-ll] showing the total number of counts per cell in each cluster. (F) SinaPlot showing the percentage of counts assigned to mitochondrial genes per cell in each cluster.
 
 Figure \@ref(fig:cluster-validation)C shows the proportion of cells in each
 cluster that were identified by the two droplet selection methods I used, Cell

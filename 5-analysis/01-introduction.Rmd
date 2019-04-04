@@ -37,7 +37,7 @@ morphology resembles real tissues. However, using immunofluorescence relies on
 prior knowledge about which proteins are important, as well as antibodies for
 those proteins being available. Typically only four or five colour channels are
 available for immunofluorescence imaging, limiting the number of proteins that
-can be shown at once. Bulk RNA-sequencing has also been used to characterise
+can be shown at once. Bulk RNA sequencing has also been used to characterise
 kidney organoids. While this approach is less biased and measures expression
 across the transcriptome, it only provides a global average of expression
 across an organoid and cannot show exactly which cell types are present or

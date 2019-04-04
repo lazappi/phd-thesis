@@ -87,13 +87,13 @@ are too severe it is possible to remove interesting populations of cells that
 differ from the majority of the dataset, such as a rare cell type that is
 smaller and therefore has less RNA. One way to do this is to look at
 differences in expression between the cells that have been removed and those
-that have been kept. Here I have calculated the predicted log foldchange using
+that have been kept. Here I have calculated the predicted log fold change using
 the predFC function in the edgeR package and plotted it against the average
 expression for each gene (Figure \@ref(fig:qc-validation)A). Seeing a set of
-interesting genes (in this case known kidney marker genes) with positive
-foldchanges in the removed cells would suggest that the selected thresholds are
-too stringent. That is not the case here as can be seen from the 15 genes with
-greatest foldchange shown in Figure \@ref(fig:qc-validation)B.
+interesting genes (in this case known kidney marker genes) with positive fold
+changes in the removed cells would suggest that the selected thresholds are too
+stringent. That is not the case here as can be seen from the 15 genes with
+greatest fold change shown in Figure \@ref(fig:qc-validation)B.
 
 ```{r qc-validation, fig.cap = "(ref:cap-qc-validation)", fig.scap = "(ref:scap-qc-validation)", out.width = "100%"}
 knitr::include_graphics(here::here("figures/05-qc-validation.png"))
@@ -101,7 +101,7 @@ knitr::include_graphics(here::here("figures/05-qc-validation.png"))
 
 (ref:scap-qc-validation) Validation of quality control.
 
-(ref:cap-qc-validation) Validation of quality control. (A) Scatter plot of genes showing average expression against predicted foldchange for removed cells compared to kept cells. Points are coloured according to the difference in proportion of cells that express each gene between removed and kept cells. (B) Top 15 genes when sorted by positive foldchange in removed cells. (C) t-SNE plots of cells coloured by various technical factors including sample, droplet selection method, assigned cell cycle stage, total counts, total features and percentage mitochondrial counts.
+(ref:cap-qc-validation) Validation of quality control. (A) Scatter plot of genes showing average expression against predicted fold change for removed cells compared to kept cells. Points are coloured according to the difference in proportion of cells that express each gene between removed and kept cells. (B) Top 15 genes when sorted by positive fold change in removed cells. (C) t-SNE plots of cells coloured by various technical factors including sample, droplet selection method, assigned cell cycle stage, total counts, total features and percentage mitochondrial counts.
 
 On the other hand if the selected thresholds are not strict enough we will have
 retained a set of low-quality cells. One way to identify these is to look at

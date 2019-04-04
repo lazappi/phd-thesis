@@ -39,8 +39,9 @@ existing methods to be violated.
 One approach to tackling the problem of too many zeros is to use zero-inflated
 versions of common distributions [@Pierson2015-qp; @Risso2018-dg;
 @Van_den_Berge2018-ip; @Miao2018-ft]. However, it is still debatable whether
-scRNA-seq datasets are truly zero inflated or if the additional zeros are
-better modeled with standard distributions with lower means. Another approach
+scRNA-seq datasets, particularly those from droplet-based capture protocols
+[@Svensson2019-el], are truly zero inflated or if the additional zeros are
+better modelled with standard distributions with lower means. Another approach
 to analysis is to impute some of the zeros, replacing them with estimates of
 how expressed those genes truly are based on their expression in similar cells
 using methods such as MAGIC [@Van_Dijk2018-dk], SAVER [@Huang2018-ef;
@@ -255,17 +256,20 @@ developed including TSCAN [@Ji2016-ws], SLICER [@Welch2016-cw], CellTree
 [@Street2018-sc]. In their review of trajectory inference methods, Cannoodt,
 Saelens and Saeys break the process into two steps (Figure
 \@ref(fig:trajectory-inference)) [@Cannoodt2016-iv]. In the first step,
-dimensionality reduction techniques such as PCA, t-SNE [@Maaten2008-ne] or UMAP
+dimensionality reduction techniques such as principal component analysis (PCA)
+[@Pearson1901-gm], t-distributed stochastic neighbourhood embedding (t-SNE)
+[@Maaten2008-ne] or uniform manifold approximation and projection (UMAP)
 [@McInnes2018-ul] are used to project cells into lower dimensions where the
 cells are clustered or a graph constructed between them. The trajectory is then
 created by finding a path through the cells and ordering the cells along it.
 The same group of authors have conducted a comprehensive comparison of ordering
 methods evaluating their performance on a range of real and synthetic datasets
-[@Saelens2018-sf]. To do so the authors had to develop metrics for comparing
+[@Saelens2019-rs]. To do so the authors had to develop metrics for comparing
 trajectories from different methods and built a comprehensive infrastructure
-for running and evaluating software tools. They found that Slingshot, Monocle
-and TSCAN performed well in many situations but that other methods could be
-effective in specific cases.
+for running and evaluating software tools. They found that the performance of
+methods depended on the underlying topology of the data and that multiple
+complementary trajectory inference approaches should be used to better what is
+occurring.
 
 ```{r trajectory-inference, fig.cap = "(ref:cap-trajectory-inference)", fig.scap = "(ref:scap-trajectory-inference)", out.width = "100%"}
 knitr::include_graphics(here::here("figures/01-trajectory-inference.jpg"))
@@ -273,7 +277,7 @@ knitr::include_graphics(here::here("figures/01-trajectory-inference.jpg"))
 
 (ref:scap-trajectory-inference) Trajectory inference framework as described by Cannoodt, Saelens and Saeys.
 
-(ref:cap-trajectory-inference) Trajectory inference framework as described by Cannoodt, Saelens and Saeys. In the first stage, dimensionality reduction is used to convert the data to a simpler representation. In the second stage a trajectory is identified and the cells ordered. Image from Cannoodt, Saelens and Saeys _"Computational methods for trajectory inference from single-cell transcriptomics"_ [@Cannoodt2016-iv].
+(ref:cap-trajectory-inference) Trajectory inference framework as described by Cannoodt, Saelens and Saeys. In the first stage, dimensionality reduction is used to convert the data to a simpler representation. In the second stage a trajectory is identified and the cells ordered. Image from Cannoodt, Saelens and Saeys "Computational methods for trajectory inference from single-cell transcriptomics" [@Cannoodt2016-iv].
 
 An alternative continuous approach is the cell velocity technique
 [@Svensson2018-lu] introduced for scRNA-seq data in the velocyto package
@@ -394,6 +398,6 @@ datasets can be extremely useful but are difficult, time-consuming and
 expensive to produce and can only reproduce a limited set of scenarios.
 Comprehensive evaluations of methods have already been conducted for some
 aspects of scRNA-seq analysis including clustering [@Duo2018-qb;
-@Freytag2018-ic], trajectory inference [@Saelens2018-sf] and differential
+@Freytag2018-ic], trajectory inference [@Saelens2019-rs] and differential
 expression testing [@Soneson2018-fb] but these will need to continue to be
 performed and updated as the field matures and new methods are developed.

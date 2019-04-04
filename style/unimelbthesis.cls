@@ -51,6 +51,7 @@
 % *============================================================================*
 
 \renewcommand{\title}[1]{\def\@title{#1}}
+\newcommand{\letters}[1]{\def\@letters{#1}}
 \newcommand{\orcid}[1]{\def\@orcid{#1}}
 \newcommand{\degree}[1]{\def\@degree{#1}}
 \newcommand{\submissionmonth}[1]{\def\@submissionmonth{#1}}
@@ -353,8 +354,9 @@
 	\vspace{5cm}
 	% Ideally, this length should be changed so the line
 	% is symmetrically spaced with the text beneath it.
-	\underline{\hspace{7.52cm}} \par
-	{\@author}, {\@submissionmonth} {\@submissionyear} \par
+	%\underline{\hspace{7.52cm}} \par
+	{\textbf{\@author}} {\@letters} \par
+	{\@submissionmonth} {\@submissionyear} \par
 	\vfill\null
 }
 

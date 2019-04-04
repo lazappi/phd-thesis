@@ -31,6 +31,7 @@ title: "Tools and techniques for single-cell RNA sequencing data"
 
 # +-----Author-----------------------------------------------------------------+
 author: "Luke Zappia"
+letters: "B.Sc, M.Sc"
 orcid: "0000-0001-7744-8565"
 
 # +-----Degree-----------------------------------------------------------------+
@@ -120,6 +121,7 @@ copyrightlist: |
 
 bibliography:
   - "bib/references.bib"
+  - "bib/packages.bib"
   - "bib/analysis-references.bib"
   - "bib/analysis-packages.bib"
 

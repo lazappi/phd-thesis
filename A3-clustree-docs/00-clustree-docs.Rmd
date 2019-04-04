@@ -1,4 +1,4 @@
-# clustree documentation
+# clustree documentation {#clustree-docs}
 
 ## clustree vignette {#clustree-vignette}
 

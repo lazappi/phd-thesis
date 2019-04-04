@@ -75,7 +75,7 @@ knitr::include_graphics(here::here("figures/05-selection-comparison.png"))
 
 (ref:scap-selection-comparison) UpSet plot comparing droplet selection methods.
 
-(ref:cap-selection-comparison) UpSet plot comparing droplet selection methods. Cell Ranger v3 and EmptyDrops identify significantly more cells than the traditional Cell Ranger approach. My use of EmptyDrops also identifies a set of cells that are overlooked by the automated Cell Ranger v3 procedure.
+(ref:cap-selection-comparison) UpSet plot [@Lex2014-hy] comparing droplet selection methods. Cell Ranger v3 and EmptyDrops identify significantly more cells than the traditional Cell Ranger approach. My use of EmptyDrops also identifies a set of cells that are overlooked by the automated Cell Ranger v3 procedure.
 
 It is difficult to evaluate if the extra cells identified by EmptyDrops are
 real cells, or if the algorithm has been too permissive and selected droplets

@@ -10,12 +10,23 @@ sequencing data" included in **[Chapter 3](#simulation)** is held by the
 authors including myself under a Creative Commons Attribution License (CC BY
 4.0).
 
+The copyright of the Splatter R software package and the documentation included
+in **[Appendix 1](#splatter-docs)** is held by the authors including myself
+under a GNU General Public License v3.0 (GPL-3) license
+(https://choosealicense.com/licenses/gpl-3.0/). This license allows me to
+reproduce the documentation in both print and electronics versions of this
+thesis.
+
 The copyright of the publication "Clustering trees: a visualization for
 evaluating clusterings at multiple resolutions" included in
 **[Chapter 4](#clust-trees)** is held by the authors including myself under a
 Creative Commons Attribution License (CC BY 4.0).
 
+The copyright of the clustree R software package and the documentation included
+in **[Appendix 3](#clustree-docs)** is held by the authors including myself
+under a GNU General Public License v3.0 (GPL-3) license.
+
 The copyright of the publication "Single-cell analysis reveals congruence
-between kidney organoids and human fetal kidney" included in **Appendix
-\@ref(organoid-paper)** is held by the authors including myself under a
-Creative Commons Attribution License (CC BY 4.0).
+between kidney organoids and human fetal kidney" included in
+**[Appendix 4](#organoid-paper)** is held by the authors including myself under
+a Creative Commons Attribution License (CC BY 4.0).

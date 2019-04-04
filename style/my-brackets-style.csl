@@ -97,6 +97,16 @@
       </if>
     </choose>
   </macro>
+  <macro name="note">
+    <choose>
+      <if match="all" variable="note">
+        <group>
+          <text value=""/>
+          <text variable="note" suffix=" "/>
+        </group>
+      </if>
+    </choose>
+  </macro>
   <macro name="accessed-date">
     <choose>
       <if variable="URL">
@@ -111,7 +121,7 @@
     <choose>
       <if type="article-journal article-magazine chapter paper-conference article-newspaper" match="any">
         <group suffix="." delimiter=" ">
-          <text variable="container-title" text-case="title"/>
+          <text variable="container-title" text-case="title" font-style="italic"/>
         </group>
         <text macro="edition" prefix=" "/>
       </if>
@@ -128,12 +138,12 @@
         </group>
       </else-if>
       <else>
-        <text variable="container-title" suffix="." form="short"/>
+        <text variable="container-title" suffix="." form="short" font-style="italic"/>
       </else>
     </choose>
   </macro>
   <macro name="title">
-    <text variable="title" quotes="false" font-style="italic"/>
+    <text variable="title" quotes="true"/>
     <choose>
       <if type="article-journal article-magazine chapter paper-conference article-newspaper" match="none">
         <choose>
@@ -278,6 +288,7 @@
       <text macro="access"/>
       <text macro="DOI"/>
       <text macro="ISBN"/>
+      <text macro="note"/>
     </layout>
   </bibliography>
 </style>

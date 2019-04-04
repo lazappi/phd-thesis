@@ -10,8 +10,8 @@ an Illumina HiSeq using 100 base pair paired-end reads at the Australian Genome
 Research Facility. The organoid differentiation and cell isolation was
 performed by Pei Xuan Er and Alex Combes.
 
-This dataset was first introduced in _"Evaluation of variability in human
-kidney organoids"_ [@Phipson2019-er]. This study investigated the robustness
+This dataset was first introduced in "Evaluation of variability in human
+kidney organoids" [@Phipson2019-er]. This study investigated the robustness
 and repeatability of the organoid differentiation protocol by comparing RNA-seq
 data from multiple batches, cell lines and time points. We found that organoids
 from the same batch had highly correlated expression profiles but that there
@@ -39,8 +39,8 @@ data using Cell Ranger and some of the early analysis.
 While this study made use of kidney organoid scRNA-seq data it didn't fully
 profile the cell types present. To better understand what cell populations are
 present in these organoids and detectable using scRNA-seq, we performed a
-reanalysis of this data that was published as _"Single-cell analysis reveals
-congruence between kidney organoids and human fetal kidney"_ [@Combes2019-uv].
+reanalysis of this data that was published as "Single-cell analysis reveals
+congruence between kidney organoids and human fetal kidney" [@Combes2019-uv].
 This study was lead by Alex Combes who performed much of the lab work and
 interpretation of results while I performed all the computational analysis.
 Details of this analysis are presented online at
@@ -91,8 +91,8 @@ been labelled as the same cell type. Doing this revealed an overall stress or
 heatshock signature in the foetal kidney data that is most likely the result of
 the tissue being exposed to suboptimal conditions and made it difficult to see
 smaller differences. However, we were able to identify some differences,
-including in signaling pathways, that may suggest further avenues for directing
-kidney organoid differentiation.
+including in signalling pathways, that may suggest further avenues for
+directing kidney organoid differentiation.
 
 Overall our analyses of this dataset support the presence of important kidney
 cell types in kidney organoids and builds confidence for their usefulness for

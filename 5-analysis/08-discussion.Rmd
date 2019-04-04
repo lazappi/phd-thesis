@@ -78,7 +78,7 @@ showed up-regulation of endothelial markers, while the other EmptyDrops cluster
 had significant results for markers from various cell types including several
 genes associated with immune cells. Although not an expected part of the kidney
 organoid differentiation process, there is a plausible pathway by which immune
-cells could emerge, and when this dataset was combined with a human fetal
+cells could emerge, and when this dataset was combined with a human foetal
 kidney dataset we saw a small number of cells that clustered with immune cells
 and seemed to share similar expression. However, a significant amount of
 additional validation would be required to confirm that immune cells are
