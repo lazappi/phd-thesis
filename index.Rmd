@@ -270,7 +270,7 @@ cat_counts <- tools %>%
     mutate(Category = ifelse(Category == "U M Is", "UMIs", Category)) %>%
     mutate(Category = factor(Category, levels = Category))
 
-tools_date    <- "06 March 2019"
+tools_date    <- "5 April 2019"
 n_tools       <- nrow(tools)
 n_tools_new   <- n_tools - 232
 n_tools_floor <- floor(n_tools / 10) * 10

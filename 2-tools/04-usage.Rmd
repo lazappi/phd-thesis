@@ -1,6 +1,6 @@
 ---
 output: html_document
-editor_options: 
+editor_options:
   chunk_output_type: console
 ---
 ## Usage of the scRNA-tools website {#tools-usage}
@@ -72,7 +72,7 @@ plot_data <- tools_countries %>%
     mutate(Country = forcats::fct_rev(Country)) %>%
     mutate(Label = paste0(Country, " ",
                           chrRound(Users / sum(Users) * 100, 1), "%")) %>%
-    mutate(TooLow = if_else((Users - 0.3 * max(Users)) < 0,
+    mutate(TooLow = if_else((Users - 0.4 * max(Users)) < 0,
                              TRUE, FALSE)) %>%
     mutate(Colour = if_else(TooLow, "grey40", "white")) %>%
     mutate(hjust = if_else(TooLow, -0.1, 1.1))

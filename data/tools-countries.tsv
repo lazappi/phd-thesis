@@ -1,87 +1,88 @@
 Country	Continent	Subcontinent	Users
-(not set)	(not set)	(not set)	52
+(not set)	(not set)	(not set)	54
 Algeria	Africa	Northern Africa	1
 Angola	Africa	Middle Africa	1
 Argentina	Americas	South America	5
-Australia	Oceania	Australasia	478
-Austria	Europe	Western Europe	33
+Australia	Oceania	Australasia	495
+Austria	Europe	Western Europe	40
 Bangladesh	Asia	Southern Asia	2
-Belgium	Europe	Western Europe	87
+Belgium	Europe	Western Europe	95
 Bolivia	Americas	South America	1
-Brazil	Americas	South America	114
+Brazil	Americas	South America	122
 Bulgaria	Europe	Eastern Europe	3
 Burkina Faso	Africa	Western Africa	1
-Canada	Americas	Northern America	223
-Chile	Americas	South America	6
-China	Asia	Eastern Asia	1033
+Canada	Americas	Northern America	235
+Chile	Americas	South America	7
+China	Asia	Eastern Asia	1182
 Colombia	Americas	South America	2
 Croatia	Europe	Southern Europe	3
 Cyprus	Asia	Western Asia	2
-Czechia	Europe	Eastern Europe	11
-Denmark	Europe	Northern Europe	37
+Czechia	Europe	Eastern Europe	13
+Denmark	Europe	Northern Europe	43
 Ecuador	Americas	South America	1
-Egypt	Africa	Northern Africa	10
-Estonia	Europe	Northern Europe	4
-Finland	Europe	Northern Europe	41
-France	Europe	Western Europe	447
-Germany	Europe	Western Europe	510
-Greece	Europe	Southern Europe	19
-Hong Kong	Asia	Eastern Asia	101
-Hungary	Europe	Eastern Europe	6
+Egypt	Africa	Northern Africa	11
+Estonia	Europe	Northern Europe	5
+Finland	Europe	Northern Europe	45
+France	Europe	Western Europe	462
+Germany	Europe	Western Europe	559
+Greece	Europe	Southern Europe	21
+Hong Kong	Asia	Eastern Asia	115
+Hungary	Europe	Eastern Europe	7
 Iceland	Europe	Northern Europe	6
-India	Asia	Southern Asia	122
+India	Asia	Southern Asia	135
 Indonesia	Asia	Southeast Asia	5
-Iran	Asia	Southern Asia	8
+Iran	Asia	Southern Asia	9
 Iraq	Asia	Western Asia	36
-Ireland	Europe	Northern Europe	9
-Israel	Asia	Western Asia	63
-Italy	Europe	Southern Europe	140
-Japan	Asia	Eastern Asia	328
+Ireland	Europe	Northern Europe	11
+Israel	Asia	Western Asia	70
+Italy	Europe	Southern Europe	146
+Japan	Asia	Eastern Asia	379
 Jordan	Asia	Western Asia	1
 Kenya	Africa	Eastern Africa	2
 Kuwait	Asia	Western Asia	1
 Latvia	Europe	Northern Europe	1
 Lebanon	Asia	Western Asia	2
-Luxembourg	Europe	Western Europe	17
+Lithuania	Europe	Northern Europe	1
+Luxembourg	Europe	Western Europe	20
 Macau	Asia	Eastern Asia	9
 Macedonia (FYROM)	Europe	Southern Europe	3
 Malaysia	Asia	Southeast Asia	7
-Mexico	Americas	Central America	12
-Morocco	Africa	Northern Africa	1
+Mexico	Americas	Central America	14
+Morocco	Africa	Northern Africa	2
 Mozambique	Africa	Eastern Africa	1
 Namibia	Africa	Southern Africa	1
-Netherlands	Europe	Western Europe	99
-New Zealand	Oceania	Australasia	17
+Netherlands	Europe	Western Europe	112
+New Zealand	Oceania	Australasia	18
 Nigeria	Africa	Western Africa	2
-Norway	Europe	Northern Europe	28
-Pakistan	Asia	Southern Asia	5
+Norway	Europe	Northern Europe	31
+Pakistan	Asia	Southern Asia	7
 Palestine	Asia	Western Asia	1
 Panama	Americas	Central America	1
 Peru	Americas	South America	15
-Philippines	Asia	Southeast Asia	10
-Poland	Europe	Eastern Europe	54
-Portugal	Europe	Southern Europe	18
+Philippines	Asia	Southeast Asia	11
+Poland	Europe	Eastern Europe	56
+Portugal	Europe	Southern Europe	19
 Puerto Rico	Americas	Caribbean	1
 Qatar	Asia	Western Asia	3
-Romania	Europe	Eastern Europe	10
-Russia	Europe	Eastern Europe	75
-Saudi Arabia	Asia	Western Asia	8
-Serbia	Europe	Southern Europe	7
-Singapore	Asia	Southeast Asia	75
-Slovakia	Europe	Eastern Europe	3
-Slovenia	Europe	Southern Europe	3
+Romania	Europe	Eastern Europe	11
+Russia	Europe	Eastern Europe	79
+Saudi Arabia	Asia	Western Asia	10
+Serbia	Europe	Southern Europe	8
+Singapore	Asia	Southeast Asia	79
+Slovakia	Europe	Eastern Europe	4
+Slovenia	Europe	Southern Europe	6
 South Africa	Africa	Southern Africa	16
-South Korea	Asia	Eastern Asia	364
-Spain	Europe	Southern Europe	78
-Sweden	Europe	Northern Europe	82
-Switzerland	Europe	Western Europe	142
-Taiwan	Asia	Eastern Asia	44
-Thailand	Asia	Southeast Asia	14
-Tunisia	Africa	Northern Africa	1
+South Korea	Asia	Eastern Asia	375
+Spain	Europe	Southern Europe	87
+Sweden	Europe	Northern Europe	88
+Switzerland	Europe	Western Europe	158
+Taiwan	Asia	Eastern Asia	52
+Thailand	Asia	Southeast Asia	17
+Tunisia	Africa	Northern Africa	2
 Turkey	Asia	Western Asia	13
 Ukraine	Europe	Eastern Europe	10
-United Arab Emirates	Asia	Western Asia	5
-United Kingdom	Europe	Northern Europe	451
-United States	Americas	Northern America	3516
+United Arab Emirates	Asia	Western Asia	6
+United Kingdom	Europe	Northern Europe	481
+United States	Americas	Northern America	3849
 Uruguay	Americas	South America	1
-Vietnam	Asia	Southeast Asia	8
+Vietnam	Asia	Southeast Asia	9
