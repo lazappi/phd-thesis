@@ -110,7 +110,7 @@ knitr::include_graphics(here::here("figures/01-nephrogenesis.png"))
 
 (ref:scap-nephrogenesis) Diagram of the stages of nephron maturation.
 
-(ref:cap-nephrogenesis) Diagram of the stages of nephron maturation. The nephron begins as a pretubular aggregate (PA) which forms a renal vesicle (RV), comma-shaped body (CSB), S-shaped body (SSB), capillary loop nephron and mature nephron. The connection between the forming nephron and the lumen of the adjacent ureteric epithelium forms at late renal vesicle stage. Adapted from Little "Improving our resolution of kidney morphogenesis across time and space" [@Little2015-wm].
+(ref:cap-nephrogenesis) Diagram of the stages of nephron maturation. The nephron begins as a pre-tubular aggregate (PA) which forms a renal vesicle (RV), comma-shaped body (CSB), S-shaped body (SSB), capillary loop nephron and mature nephron. The connection between the forming nephron and the lumen of the adjacent ureteric epithelium forms at late renal vesicle stage. Adapted from Little "Improving our resolution of kidney morphogenesis across time and space" [@Little2015-wm].
 
 Most of our understanding of kidney development comes from studies using mouse
 models and other model species. While these have greatly added to our knowledge
@@ -172,7 +172,7 @@ differences in the rate at which they develop [@Phipson2019-er].
 
 While they are not a perfect model of a developing human kidney, organoids have
 several advantages over other models [@Little2019-hf]. In particular, they have
-great potential for uses in the modeling of developmental kidney diseases
+great potential for uses in the modelling of developmental kidney diseases
 [@Bartfeld2017-uo]. Cells from a patient with a particular mutation can be
 reprogrammed and used to grow organoids that can then be used for functional
 studies or drug screening. Alternatively, gene editing techniques can be used

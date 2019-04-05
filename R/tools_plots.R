@@ -45,7 +45,7 @@ plotPublication <- function(tools, pal) {
                        aes(x = Type, y = Count, fill = Type)) +
         geom_col() +
         geom_text(aes(label = Label, colour = Colour, vjust = vjust),
-                  size = 4) +
+                  size = 3.5) +
         scale_fill_manual(values = unname(pal)) +
         scale_colour_identity() +
         scale_y_continuous(expand = expand_scale(mult = c(0, 0))) +

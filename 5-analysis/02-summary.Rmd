@@ -96,7 +96,7 @@ directing kidney organoid differentiation.
 
 Overall our analyses of this dataset support the presence of important kidney
 cell types in kidney organoids and builds confidence for their usefulness for
-disease modeling and drug screening studies. While we have followed a
+disease modelling and drug screening studies. While we have followed a
 well-established workflow in producing these results, there were still many
 decisions we had to make about which analysis tools and parameters to use. For
 the remainder of this chapter I will explore some of the alternative analytical

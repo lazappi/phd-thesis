@@ -35,7 +35,7 @@ packages <- list(
     ),
     list(
         name = "ggplot2",
-        use = "data visualiastion",
+        use = "data visualisation",
         key = "@R-ggplot2; @Wickham2010-zq"
     ),
     list(

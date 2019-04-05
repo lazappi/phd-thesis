@@ -21,14 +21,15 @@ factors. Understanding kidney development and structure is key to understanding
 these diseases and developing treatments for them.
 
 One way to investigate kidney development is to grow kidney tissue from stem
-cells. By providing the correct growth factors and conditions, stem cells which
-could become any cell type can be directed to differentiate into kidney tissue.
-Part of this process involves transferring the cells from growing in a flat,
-two-dimensional layer on a plate to a three-dimensional environment, where
-different types of cells can interact with each other and form structures that
-replicate a nephron. These tissues are known as kidney organoids and can be
-used to model various aspects of kidney development, but the extent to which
-organoids are useful depends on how well they replicate real kidney cell types.
+cells [@Tian2019-rv; @Little2019-hf]. By providing the correct growth factors
+and conditions, stem cells which could become any cell type can be directed to
+differentiate into kidney tissue. Part of this process involves transferring
+the cells from growing in a flat, two-dimensional layer on a plate to a
+three-dimensional environment, where different types of cells can interact with
+each other and form structures that replicate a nephron. These tissues are
+known as kidney organoids and can be used to model various aspects of kidney
+development, but the extent to which organoids are useful depends on how well
+they replicate real kidney cell types.
 
 Organoids have typically been characterised by immunofluorescence imaging using
 antibodies for known markers of nephron segments and cell types. This approach

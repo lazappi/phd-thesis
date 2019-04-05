@@ -76,18 +76,17 @@ p2 <- plot_grid(overlay, p1, nrow = 1,
 
 panel <- plot_grid(p2, legend, ncol = 1, rel_heights = c(1, 0.1))
 
-
 ggsave(here("figures/04-clustree-overlay.pdf"), panel,
-       height = 6, width = 8, scale = 2)
+       height = 6.5, width = 8, scale = 2)
 ggsave(here("figures/04-clustree-overlay.png"), panel,
-       height = 6, width = 8, scale = 2)
+       height = 6.5, width = 8, scale = 2)
 
 knitr::include_graphics(here::here("figures/04-clustree-overlay.png"))
 ```
 
 (ref:scap-clustree-overlay) Clustering tree of the iris dataset overlaid on a PCA plot.
 
-(ref:cap-clustree-overlay) Clustering tree of the iris dataset overlaid on a PCA plot. (A) A PCA plot of the samples in the iris dataset coloured by cluster at $k = 5$ overlaid with a clustering tree showing clustering resolutions from $k = 1$ to $k = 5$. (B) The same plot shown from the direction of the x-axis (PC1), the y-axis now shows the clustering resolution and samples are jittered along the x-axis. (C) Same as (B) but from the direction of PC2.
+(ref:cap-clustree-overlay) Clustering tree of the iris dataset overlaid on a PCA plot. (A) A PCA plot of the samples in the iris dataset coloured by cluster at $k = 5$ overlaid with a clustering tree showing clustering resolutions from $k = 1$ to $k = 5$. (B) The same plot shown from the direction of the x-axis (PC1), the y-axis now shows the clustering resolution and samples are jittered along the x-axis. (C) Same as (B) but from the direction of the y-axis (PC2).
 
 Here instead of using a tree layout algorithm to decide where the cluster nodes
 are placed, we place them in the low-dimensional space at the mean position of

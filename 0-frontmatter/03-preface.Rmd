@@ -14,7 +14,7 @@ sequencing data." _Genome Biology._ 2017. DOI:
 [10.1186/s13059-017-1305-0](https://doi.org/10.1186/s13059-017-1305-0)
 
 **Zappia L**, Oshlack A. "Clustering trees: a visualization for evaluating
-clusterings at multiple resolutions." _Gigascience._ 2018. DOI:
+clusterings at multiple resolutions." _GigaScience._ 2018. DOI:
 [10.1093/gigascience/giy083](https://doi.org/10.1093/gigascience/giy083)
 
 These publications are included as they appear online and are designed to be

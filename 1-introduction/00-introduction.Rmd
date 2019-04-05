@@ -38,7 +38,9 @@ studied using stem cell technologies. This section provides background for
 **Chapter \@ref(analysis)** where I describe an analysis of a dataset from
 developing kidney organoids. My introduction ends with **Section
 \@ref(intro-overview) - [Thesis overview and aims]** which presents an overview
-of my thesis aims and how I have completed them in the following chapters.
+of my thesis aims and how I have completed them in the following chapters. An
+online version of this thesis is available at
+https://lazappi.github.io/phd-thesis/.
 
 ```{r introduction-sections, child = c("1-introduction/01-central-dogma.Rmd", "1-introduction/02-RNAseq.Rmd", "1-introduction/03-scRNAseq.Rmd", "1-introduction/04-analysis.Rmd", "1-introduction/05-kidney.Rmd", "1-introduction/06-overview.Rmd")}
 ```

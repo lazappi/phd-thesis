@@ -61,7 +61,7 @@ knitr::include_graphics(here::here("figures/01-technologies.jpg"))
 
 ### Droplet-based cell capture
 
-An alternative to using microfludics to capture cells in wells is to capture
+An alternative to using microfluidics to capture cells in wells is to capture
 them in nano-droplets. In this process a dissociated cell mixture is fed into a
 microfluidic device, while beads coated in primers enter at another input. The
 device is designed to form aqueous droplets within mineral oil and the inputs

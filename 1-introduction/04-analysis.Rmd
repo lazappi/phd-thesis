@@ -303,7 +303,7 @@ what these groups represent. For clustered datasets this is usually done by
 identifying genes that are differentially expressed across the groups or marker
 genes that are expressed in a single cluster. Many methods have been suggested
 for testing differential expression, some of which take in to account the
-unique features of scRNA-seq data, for example D3E [@Delmans2016-bp], DESingle
+unique features of scRNA-seq data, for example D3E [@Delmans2016-bp], DEsingle
 [@Miao2018-ft], MAST [@Finak2015-ow], scDD [@Korthauer2016-yq] and SCDE
 [@Kharchenko2014-tb]. The large number of cells in scRNA-seq datasets means
 that some of the problems that made standard statistical tests unsuitable for

@@ -1,3 +1,8 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 ## Usage of the scRNA-tools website {#tools-usage}
 
 Since it was launched in July 2017 the scRNA-tools website has been used by
@@ -20,6 +25,21 @@ users <- tools_users %>%
                          levels = c("Users1Day", "Users7Day", "Users30Day"),
                          labels = c("1 Day", "7 Days", "30 Days"))) %>%
     ggplot(aes(x = Date, y = Users, colour = Type)) +
+    geom_vline(xintercept = as.Date("2017-11-01"), colour = pal["grey"]) +
+    annotate("text", label = "Genome Informatics\npresentation",
+             x = as.Date("2017-11-01"), y = Inf,
+             angle = 90, hjust = 1, vjust = -0.5,
+             size = 4, colour = pal["grey"]) +
+    geom_vline(xintercept = as.Date("2018-03-23"), colour = pal["grey"]) +
+    annotate("text", label = "bioRxiv preprint",
+             x = as.Date("2018-03-23"), y = Inf,
+             angle = 90, hjust = 1, vjust = -1,
+             size = 4, colour = pal["grey"]) +
+    geom_vline(xintercept = as.Date("2018-06-25"), colour = pal["grey"]) +
+    annotate("text", label = "Publication",
+             x = as.Date("2018-06-25"), y = Inf,
+             angle = 90, hjust = 1, vjust = -1,
+             size = 4, colour = pal["grey"]) +
     geom_line(size = 2) +
     scale_color_manual(values = unname(pal)) +
     scale_x_date(breaks = scales::pretty_breaks(n = 10),
@@ -60,7 +80,7 @@ plot_data <- tools_countries %>%
 countries <- ggplot(plot_data, aes(x = Country, y = Users, fill = Country)) +
     geom_col() +
     geom_text(aes(label = Label, colour = Colour, hjust = hjust),
-                  size = 4) +
+                  size = 3.5) +
     scale_fill_manual(values = unname(c(pal["grey"],
                                         rep(pal["purple"], 10)))) +
     scale_colour_identity() +
@@ -122,7 +142,7 @@ knitr::include_graphics(here::here("figures/02-analytics.png"))
 
 (ref:scap-analytics) Usage of the scRNA-tools website.
 
-(ref:cap-analytics) Usage of the scRNA-tools website. (A) Usage over time showing the number of users per day (pink), week (blue) or 30 days (green). (B) World map coloured according to number of users from low (blue) to high (yellow). (C) Number of users from the top 10 most common countries. (D) Number of users by continent.
+(ref:cap-analytics) Usage of the scRNA-tools website. (A) Usage over time showing the number of users per day (pink), week (blue) or 30 days (green). Labelled vertical lines indicate events that may have influenced traffic. (B) World map coloured according to number of users from low (blue) to high (yellow). (C) Number of users from the top 10 most common countries. (D) Number of users by continent.
 
 Although these figures may not seem large when compared to an average website,
 they represent a significant part of the scRNA-seq community. Seeing usage of

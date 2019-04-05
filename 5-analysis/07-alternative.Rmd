@@ -85,7 +85,7 @@ dimensional space by looking at a correlation-based transition matrix on a
 nearest neighbour graph in that space. When there are more than a few hundred
 cells it is difficult to look at the velocity for each individual cell, so it
 can be useful to summarise them in some way. By forming a regular grid of
-points and using gaussian smoothing to calculate an average of the nearby cells
+points and using Gaussian smoothing to calculate an average of the nearby cells
 velocyto calculates a velocity field across the whole dataset, indicating the
 overall velocity of an area (Figure \@ref(fig:cell-velocity)).
 
