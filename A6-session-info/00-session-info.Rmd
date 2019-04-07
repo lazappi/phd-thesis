@@ -10,7 +10,7 @@ Details of the main packages used to build this thesis.
 packages <- list(
     list(
         name = "bookdown",
-        use = "writing complex documents using RMarkdown",
+        use = "writing complex documents using R Markdown",
         key = "@R-bookdown; @Xie2016-do"
     ),
     list(

@@ -82,7 +82,7 @@ cells with similar transcriptional protocols. These approaches could be
 assessed using simulations and each method will have some parameters that
 affect how many clusters are produced. The number of clusters used in an
 analysis can affect how the results are interpreted but choosing these
-parameters is difficult. In **Chapter \@ref(simulation) - [Visualising
+parameters is difficult. In **Chapter \@ref(clust-trees) - [Visualising
 clustering across resolutions]** I introduce clustering trees, an alternative,
 visualisation-based approach for selecting parameters that affect cluster
 number. For this approach a dataset is clustered multiple times at different
