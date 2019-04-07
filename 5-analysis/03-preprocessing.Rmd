@@ -1,4 +1,4 @@
-## Preprocessing
+## Pre-processing
 
 The first stage in any analysis of sequencing data is to convert the files
 returned by the sequencing machine to a format suitable for analysis. For
@@ -11,7 +11,7 @@ overlapping annotated genes, separating cells by barcode, and deduplicating
 UMIs. Some of these stages are performed by other tools such as Illumina's
 bcl2fastq software and the STAR splice-aware aligner [@Dobin2013-gx] but with
 wrappers designed to handle specific features of 10x libraries. For the
-analysis presented here I have performed preprocessing of the first batch of
+analysis presented here I have performed pre-processing of the first batch of
 three organoid samples using Cell Ranger (v3.0.1) with the GRCh38 reference
 genome provided by 10x Genomics (v3.0.0) based on the ENSEMBL gene annotation
 (v93). Each sample was processed separately to produce an expression matrix and
@@ -19,7 +19,7 @@ then these were aggregated without any normalisation to form a single dataset.
 
 ### Droplet selection
 
-One of the final steps in preprocessing a dataset from a droplet-based cell
+One of the final steps in pre-processing a dataset from a droplet-based cell
 capture method is to select droplets that contain cells. Many droplets are
 produced during the cell capture process but most of these will not contain
 cells and any reads associated with them will be the result of ambient RNA

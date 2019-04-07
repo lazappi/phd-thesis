@@ -125,10 +125,10 @@ packages <- list(
     )
 )
 
-knitr::write_bib(
-    purrr::map_chr(packages, function(pkg) {pkg$name}),
-    file = here::here("bib/packages.bib")
-)
+#knitr::write_bib(
+#    purrr::map_chr(packages, function(pkg) {pkg$name}),
+#    file = here::here("bib/packages.bib")
+#)
 
 purrr::map_chr(packages, function(pkg) {
     version <- packageVersion(pkg$name)

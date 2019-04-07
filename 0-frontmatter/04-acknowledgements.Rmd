@@ -12,12 +12,15 @@ to all of them for making me feel a part of their group and sharing their
 knowledge, particularly Alex Combes who it has been fantastic to work closely
 with.
 
-Outside my work a big part of my PhD has been involvement with COMBINE. Thank
-you to everyone who has contributed to building and continuing to develop the
-organisation, particularly Leah Roberts who has guided me through everything.
-The Australian bioinformatics student community is extremely fortunate to have
-such as an organisation and I hope students and supervisors continue to support
-COMBINE and make it even better.
+I would also like to thank the member of my advisory committee Andrew Pask,
+Christine Wells and Edmund Crampin for their advice and encouragement.
+
+Outside my work a big part of my PhD has been my involvement with COMBINE.
+Thank you to everyone who has contributed to building and continuing to develop
+the organisation, particularly Leah Roberts who has guided me through
+everything. The Australian bioinformatics student community is extremely
+fortunate to have such an organisation and I hope students and supervisors
+continue to support COMBINE and make it even better.
 
 Thank you to my friends and family for the support you have provided outside my
 PhD, it's important to have other things going on in the rest of my life. The

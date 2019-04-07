@@ -91,6 +91,6 @@ assignments <- read_tsv(here("data/assignments.tsv"),
                             .default = col_character()
                         ))
 
-kable(assignments, booktabs = TRUE,
+kable(assignments, booktabs = TRUE, linesep = "",
       caption = "Cluster assignments based on detected marker genes")
 ```

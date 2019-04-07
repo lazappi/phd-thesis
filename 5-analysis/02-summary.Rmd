@@ -10,9 +10,9 @@ an Illumina HiSeq using 100 base pair paired-end reads at the Australian Genome
 Research Facility. The organoid differentiation and cell isolation was
 performed by Pei Xuan Er and Alex Combes.
 
-This dataset was first introduced in "Evaluation of variability in human
-kidney organoids" [@Phipson2019-er]. This study investigated the robustness
-and repeatability of the organoid differentiation protocol by comparing RNA-seq
+This dataset was first introduced in "Evaluation of variability in human kidney
+organoids" [@Phipson2019-er]. This study investigated the robustness and
+repeatability of the organoid differentiation protocol by comparing RNA-seq
 data from multiple batches, cell lines and time points. We found that organoids
 from the same batch had highly correlated expression profiles but that there
 could be significant differences between batches. The genes that were
@@ -33,13 +33,13 @@ lower expression of mature podocyte genes. While this result reinforces the
 findings from the bulk RNA-seq data, it is difficult to say what might be the
 effect of different patterning, dissociation and cell capture rather than
 organoid maturation. The computational and statistical analysis for this study
-was performed by Belinda Phipson. I performed preprocessing of the single-cell
+was performed by Belinda Phipson. I performed pre-processing of the single-cell
 data using Cell Ranger and some of the early analysis.
 
 While this study made use of kidney organoid scRNA-seq data it didn't fully
 profile the cell types present. To better understand what cell populations are
 present in these organoids and detectable using scRNA-seq, we performed a
-reanalysis of this data that was published as "Single-cell analysis reveals
+re-analysis of this data that was published as "Single-cell analysis reveals
 congruence between kidney organoids and human fetal kidney" [@Combes2019-uv].
 This study was lead by Alex Combes who performed much of the lab work and
 interpretation of results while I performed all the computational analysis.

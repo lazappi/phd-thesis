@@ -28,7 +28,7 @@ users <- tools_users %>%
     geom_vline(xintercept = as.Date("2017-11-01"), colour = pal["grey"]) +
     annotate("text", label = "Genome Informatics\npresentation",
              x = as.Date("2017-11-01"), y = Inf,
-             angle = 90, hjust = 1, vjust = -0.5,
+             angle = 90, hjust = 1, vjust = -0.4,
              size = 4, colour = pal["grey"]) +
     geom_vline(xintercept = as.Date("2018-03-23"), colour = pal["grey"]) +
     annotate("text", label = "bioRxiv preprint",
@@ -131,11 +131,11 @@ p1 <- plot_grid(map, countries, continents,
                            "C - Top 10 countries",
                            "D - Users by continent"))
 panel <- plot_grid(users, p1,
-                   ncol = 1, rel_heights = c(0.9, 1), hjust = 0,
+                   ncol = 1, rel_heights = c(1.2, 1), hjust = 0,
                    labels = c("A - Users over time", ""))
 
-ggsave(here("figures/02-analytics.pdf"), panel, height = 6, width = 8)
-ggsave(here("figures/02-analytics.png"), panel, height = 6, width = 8)
+ggsave(here("figures/02-analytics.pdf"), panel, height = 7, width = 8)
+ggsave(here("figures/02-analytics.png"), panel, height = 7, width = 8)
 
 knitr::include_graphics(here::here("figures/02-analytics.png"))
 ```

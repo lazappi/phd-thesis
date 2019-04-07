@@ -54,7 +54,7 @@ which stimulates red blood cell production, and renin, which is part of the
 pathway that controls fluid volume and the constriction of arteries to regulate
 blood pressure.
 
-```{r kidney, fig.cap = "(ref:cap-kidney)", fig.scap = "(ref:scap-kidney)", out.width = "100%"}
+```{r kidney, fig.cap = "(ref:cap-kidney)", fig.scap = "(ref:scap-kidney)", out.width = "90%"}
 knitr::include_graphics(here::here("figures/01-kidney.png"))
 ```
 
@@ -104,7 +104,7 @@ cell--cell interactions are involved in this process, including Notch
 signalling. While all nephrons form before birth they continue to elongate and
 mature postnatally.
 
-```{r nephrogenesis, fig.cap = "(ref:cap-nephrogenesis)", fig.scap = "(ref:scap-nephrogenesis)", out.width = "80%"}
+```{r nephrogenesis, fig.cap = "(ref:cap-nephrogenesis)", fig.scap = "(ref:scap-nephrogenesis)", out.width = "70%"}
 knitr::include_graphics(here::here("figures/01-nephrogenesis.png"))
 ```
 

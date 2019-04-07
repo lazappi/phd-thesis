@@ -47,7 +47,7 @@ submissionyear: "`r format(Sys.Date(), '%Y')`"
 
 # +-----Institute--------------------------------------------------------------+
 #  Whatever is in the `department` field is placed first with the `university`
-#  below it. If you are assoicated with multiple departments/institutes you
+#  below it. If you are associated with multiple departments/institutes you
 #  might need to adjust the format or consider how to include your information.
 # +----------------------------------------------------------------------------+
 

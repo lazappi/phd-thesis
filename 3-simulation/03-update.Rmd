@@ -65,6 +65,8 @@ associated publications and package documentation.
 
 ### Performance of current simulations
 
+\FloatBarrier
+
 To demonstrate the performance of the current simulation models I have repeated
 some of the analysis from the publication using the Tung dataset
 [@Tung2017-ry]. Parameters for each of the models were estimated from a sample

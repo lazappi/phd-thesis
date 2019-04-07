@@ -30,6 +30,14 @@ different clusters to the number that would be expected if edges were assigned
 randomly. This connectivity can be interpreted as the confidence in the
 presence of an actual connection between clusters.
 
+```{r paga-results, fig.cap = "(ref:cap-paga-results)", fig.scap = "(ref:scap-paga-results)", out.width = "100%"}
+knitr::include_graphics(here::here("figures/05-paga-results.png"))
+```
+
+(ref:scap-paga-results) Results of partition-based graph abstraction (PAGA).
+
+(ref:cap-paga-results) Results of partition-based graph abstraction (PAGA). (A) The cluster connectivity graph produced by PAGA. Each node represents a cluster and edges show the connectivity between clusters. The size of nodes indicates the number of cells in each cluster and the edge colour and transparency show the connectivity from low (blue) to high (yellow). (B). The underlying cell shared nearest neighbour graph. Nodes are cells coloured by cluster and edge weight indicates connectivity.
+
 The results for the organoid dataset show high connectivity between the various
 stromal clusters that make up the majority of cells. Connectivity between some
 of the other clusters also confirms what we would expect. For example the
@@ -41,14 +49,6 @@ strongly with the other clusters they would be expected to be related to,
 particularly between the two endothelial clusters. A possible explanation for
 this are technical features shared by these two clusters but not the clusters
 they are biologically similar to.
-
-```{r paga-results, fig.cap = "(ref:cap-paga-results)", fig.scap = "(ref:scap-paga-results)", out.width = "100%"}
-knitr::include_graphics(here::here("figures/05-paga-results.png"))
-```
-
-(ref:scap-paga-results) Results of partition-based graph abstraction (PAGA).
-
-(ref:cap-paga-results) Results of partition-based graph abstraction (PAGA). (A) The cluster connectivity graph produced by PAGA. Each node represents a cluster and edges show the connectivity between clusters. The size of nodes indicates the number of cells in each cluster and the edge colour and transparency show the connectivity from low (blue) to high (yellow). (B). The underlying cell shared nearest neighbour graph. Nodes are cells coloured by cluster and edge weight indicates connectivity.
 
 In some ways the graph produced by PAGA is similar but complementary to a
 clustering tree. The PAGA graph considers connectivity between clusters at the
@@ -65,6 +65,8 @@ perform a random walk on the cell graph to calculate a diffusion pseudotime
 across the dataset. However, this approach requires manually defining a root
 cell to use. An alternative approach for assigning directionality to cells
 involves looking at the splicing information available in the reads themselves.
+
+\FloatBarrier
 
 ### Cell velocity
 

@@ -320,7 +320,7 @@
 				{\Huge\bfseries {\@title} \par}
 					\vspace{2cm}
 				{\Large \@author} \par
-        ORCID ID: {\@orcid} \par
+                ORCID ID: {\@orcid} \par
 					\vspace{3cm}
         {\LARGE \@degree} \par
           \vspace{4cm}
@@ -351,7 +351,7 @@
 \newenvironment{declaration}{
 	\chapter*{Declaration}
 }{
-	\vspace{5cm}
+	\vspace{3cm}
 	% Ideally, this length should be changed so the line
 	% is symmetrically spaced with the text beneath it.
 	%\underline{\hspace{7.52cm}} \par
@@ -375,6 +375,10 @@
 }{%
 	\vfill\null
 }
+
+% +-----Table of contents------------------------------------------------------+
+
+\renewcommand{\contentsname}{Table of Contents}
 
 % +-----List of copyright------------------------------------------------------+
 %  This may need to be adjusted depending on what you want to show in here

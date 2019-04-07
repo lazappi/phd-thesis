@@ -44,7 +44,8 @@ to mitochondrial genes (Figure \@ref(fig:qc-thresholds)B). A high proportion of
 mitochondrial expression is a sign of distress and can indicate that cells have
 become damaged during processing. Once most of the low-quality cells have been
 removed it becomes possible to check for doublets. Here I have used a
-simulation-based approach implemented in scran. This method creates synthetic
+simulation-based approach implemented in scran. This method is similar to the
+one suggested by DoubletFinder [@McGinnis2018-ec] and creates synthetic
 doublets by combining counts from randomly selected cells. The density of
 simulated doublets in the neighbourhood of each cell in PCA space is then used
 to calculate a doublet score to which a cutoff can be applied (Figure

@@ -16,7 +16,7 @@ of integration between analysis tools. As I wanted to demonstrate a range of
 tools here I have chosen to work with a single dataset, but how best to combine
 datasets is worthy of further consideration.
 
-My investigation of different methods started at the preprocessing stage,
+My investigation of different methods started at the pre-processing stage,
 particularly looking at how to separate empty droplets captured by the 10x
 Genomics Chromium platform from those that contain cells. I compared the
 threshold-based approach traditionally used by the Cell Ranger pipeline to the

@@ -63,7 +63,7 @@ attempting to produce a reference of the transcriptional profiles of all the
 cell types in the human body [@Regev2017-tz]. Similar projects exist for other
 species and specific tissues [@Cao2017-ig; @Tabula_Muris_Consortium2018-pb;
 @Wu2018-xd; @Han2018-kp; @Saunders2018-ut; @Plass2018-sa; @Bhaduri2018-nt;
-@Yuan2018-qu; @Davie2018-eo].
+@Yuan2018-qu; @Davie2018-eo; @Taylor2019-hy].
 
 As scRNA-seq datasets have become more widely available, a standard analysis
 workflow has developed which can be applied to many experiments [@Lun2016-lp;
@@ -271,7 +271,7 @@ methods depended on the underlying topology of the data and that multiple
 complementary trajectory inference approaches should be used to better what is
 occurring.
 
-```{r trajectory-inference, fig.cap = "(ref:cap-trajectory-inference)", fig.scap = "(ref:scap-trajectory-inference)", out.width = "100%"}
+```{r trajectory-inference, fig.cap = "(ref:cap-trajectory-inference)", fig.scap = "(ref:scap-trajectory-inference)", out.width = "90%"}
 knitr::include_graphics(here::here("figures/01-trajectory-inference.jpg"))
 ```
 

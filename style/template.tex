@@ -52,6 +52,7 @@
 \usepackage{caption}   % Caption formatting
 \usepackage{xcolor}    % Coloured text
 \usepackage{csquotes}  % Fancy quotes
+\usepackage{flafter}
 
 \usepackage[utf8]{inputenc}       % UTF-8 input encoding
 \usepackage[T1]{fontenc}          % Use 8-bit fonts
@@ -105,6 +106,14 @@
 
 % Figure captions
 \captionsetup{labelfont=bf, font=small, margin=10pt}
+
+% +-----verbatimfont-----------------------------------------------------------+
+%  Control the font for verbatim environments (used for code)
+% +----------------------------------------------------------------------------+
+
+\makeatletter
+\newcommand{\verbatimfont}[1]{\renewcommand{\verbatim@font}{\ttfamily#1}}
+\makeatother
 
 % +-----Parameters-------------------------------------------------------------+
 %  Set parameters for the document. To convert from YAML to LaTeX we need to add
@@ -162,6 +171,8 @@ $endif$
 \begin{document}
 
 \urlstyle{same}
+
+\verbatimfont{\scriptsize}
 
 \begin{frontmatter}
 
