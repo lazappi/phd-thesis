@@ -85,9 +85,7 @@ sim_summary <- read_tsv(here("data/simulation-summary.tsv"),
                             .default = col_double(),
                             Dataset = col_character(),
                             Statistic = col_character()
-                        ))
-
-sim_summary <- sim_summary %>%
+                        )) %>%
     mutate(Statistic = factor(
         Statistic,
         levels = rev(c("Mean", "Variance", "MeanVar", "LibSize", "ZerosCell",

@@ -209,6 +209,7 @@ library("tidyr")
 
 ```{r source}
 source("R/tools_plots.R")
+source("R/analytics_plots.R")
 source("R/utils.R")
 ```
 
@@ -247,64 +248,10 @@ tools <- read_json(tools_path, simplifyVector = TRUE) %>%
     mutate(Added = as.Date(Added),
            Updated = as.Date(Updated))
 
-tools_date_counts <- tools %>%
-    select(Date = Added) %>%
-    group_by(Date = as.Date(Date)) %>%
-    summarise(Count = n()) %>%
-    complete(Date = full_seq(Date, 1), fill = list(Count = 0)) %>%
-    mutate(Total = cumsum(Count))
-
-cats <- read_json("data/cat-descriptions.json", simplifyVector = TRUE) %>%
-    mutate(Phase = factor(Phase,
-                          levels = c("Phase 1", "Phase 2", "Phase 3", "Phase 4",
-                                     "Multiple", "Other")))
-
-cat_counts <- tools %>%
-    summarise_at(7:38, sum) %>%
-    gather(key = Category, value = Count) %>%
-    arrange(-Count, Category) %>%
-    mutate(Prop = Count / nrow(tools)) %>%
-    left_join(cats, by = "Category") %>%
-    mutate(Category = str_replace_all(Category, "([[:upper:]])", " \\1")) %>%
-    mutate(Category = str_trim(Category)) %>%
-    mutate(Category = ifelse(Category == "U M Is", "UMIs", Category)) %>%
-    mutate(Category = factor(Category, levels = Category))
-
 tools_date    <- "5 April 2019"
 n_tools       <- nrow(tools)
 n_tools_new   <- n_tools - 232
 n_tools_floor <- floor(n_tools / 10) * 10
-```
-
-```{r load-tools-analytics}
-tools_users <- read_tsv(here("data/tools-users.tsv"),
-                        col_types = cols(
-                            .default = col_double(),
-                            Date = col_date(format = "")
-                        ))
-
-tools_countries <- read_tsv(here("data/tools-countries.tsv"),
-                            col_types = cols(
-                                .default = col_character(),
-                                Users = col_double()
-                            )) %>%
-    mutate(Country = case_when(
-        Country == "Czechia"           ~ "Czech Republic",
-        Country == "Macedonia (FYROM)" ~ "Macedonia",
-        Country == "United Kingdom"    ~ "UK",
-        Country == "United States"     ~ "USA",
-        TRUE                           ~ Country
-    ))
-
-n_countries <- length(unique(tools_countries$Country))
-```
-
-```{r load-analysis-data}
-params_path <- here("data/analysis-parameters.json")
-versions_path <- here("data/analysis-versions.json")
-
-params <- read_json(params_path, simplifyVector = TRUE)
-versions <- read_json(versions_path, simplifyVector = TRUE)
 ```
 
 `r if(html) '# Front matter {-}'`
