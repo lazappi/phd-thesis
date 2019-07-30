@@ -177,3 +177,13 @@ consideration is that the comparison shown here is based on a single dataset.
 As we showed in the publication, different datasets have different biological
 and technical features which may be reproduced more accurately by alternative
 simulation models.
+
+Comparing simulations and real datasets is a difficult task. For the
+comparisons in the Splatter publication we focused on simple summary statistics
+such as mean gene expression or percentage of zeros per cell and the
+relationships between them. However, there are other measures that could be
+considered such as correlation between features or estimated dispersions.
+Statistical tests can also be used to formally evaluate the similarity of
+datasets. The countsimQC package [@Soneson2017-yt] can be used to produce a
+comprehensive report comparing count datasets in a variety of ways and could be
+a useful tool for any future evaluations of simulation models.

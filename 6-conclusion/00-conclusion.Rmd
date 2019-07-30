@@ -123,8 +123,8 @@ presence in the published analysis. My re-analysis also showed robustness of
 the clustering methods used to how genes were selected and the presence of the
 additional cells. For both the published analysis and the analysis in this
 thesis chapter I have followed a reproducible analysis workflow, including
-producing websites to display the analysis code and results and the version
-controlled code publicly available.
+producing websites to display the analysis code and results and making the
+version controlled code publicly available.
 
 The rise of single-cell technologies has been staggering and over the course of
 my PhD the field has moved from exploratory studies with a few hundred cells to

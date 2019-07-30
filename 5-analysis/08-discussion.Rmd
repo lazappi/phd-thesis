@@ -6,75 +6,63 @@ focusing on decisions made during analysis and how these decisions affect the
 results. The dataset is a subset of the data presented in two previous
 publications where we investigated variability in the kidney organoid
 differentiation protocol and profiled the cell types that are present in these
-organoids. I chose to use just the first batch of data we analysed previously,
-which contains cells from three organoids, and ignore a second batch which
-contains a fourth organoid, in order to avoid the problem of integrating
-datasets. Data integration is an important area of research that has resulted
-in a range of methods produced recently, but it is still unclear which
+organoids. Our previous analysis included data from two batches of organoids as
+well as integration with a published human foetal kidney dataset but for this
+chapter I chose to use just the first batch of data which contains cells from
+three organoids. Data integration is an important area of research that has
+resulted in a range of methods produced recently, but it is still unclear which
 approaches are most effective. It can also be difficult to transfer the results
 of integration between analysis tools. As I wanted to demonstrate a range of
 tools here I have chosen to work with a single dataset, but how best to combine
 datasets is worthy of further consideration.
 
-My investigation of different methods started at the pre-processing stage,
-particularly looking at how to separate empty droplets captured by the 10x
-Genomics Chromium platform from those that contain cells. I compared the
-threshold-based approach traditionally used by the Cell Ranger pipeline to the
-EmptyDrops method, which tests for differences from the ambient RNA profile,
-and the method in the more recent Cell Ranger v3, which combines the two
-approaches. The testing-based methods found significantly more cells than the
-thresholding approach, with many of those only being identified by EmptyDrops.
-However, many of these additional cells had relatively low total counts,
-suggesting they may have been incorrectly selected. At this stage I chose to
-keep any droplet that was identified by either the Cell Ranger v3 or EmptyDrops
-methods, giving a dataset of `r params$pre$n_cells` cells. To remove any
-low-quality cells I next performed quality control of the dataset. I used a
-data-driven approach to select filtering thresholds for the total counts per
-cell, total expressed features per cell and the percentage of counts assigned
-to mitochondrial genes, which is a proxy for the health of a cell. These
-thresholds removed `r params$pre$n_cells - params$qc$n_cells` cells leaving
-`r params$qc$n_cells`. I compared this manual approach to an automated approach
-by performing PCA on a set of quality control metrics and detecting outliers,
-but found that this method didn't identify as many low-quality cells and was
-difficult to interpret.
+The most significant difference in my new analysis comes from one of the
+earliest steps. During the pre-processing stage of analysing droplet-based
+scRNA-seq data empty droplets must be separated from those that contain cells.
+While this step can have a significant impact on the results of an analysis it
+is often overlooked. I found that methods such as EmptyDrops that test for
+differences from the ambient RNA profile identified many more cells than the
+thresholding approach traditionally used in the Cell Ranger pipeline. Retaining
+cells that were identified by EmptyDrops or the more recent Cell Ranger v3
+which implements a similar approach produced a dataset of `r params$pre$n_cells`
+cells. There are two possible explanations for the additional cells identified
+by these approaches. Either they are more sensitive at correctly selecting
+cell-containing droplets or they are more permissive and have incorrectly
+selected empty droplets. Quality control of the selected cells can help to
+determine which of these is true.
 
-A key step in any scRNA-seq analysis is grouping cells in some way. I chose to
-perform unsupervised clustering using the graph-based method available in the
-Seurat package that has been shown to perform well in comparison studies. The
-Seurat procedure consists of several steps: selecting a set of genes to use,
-performing PCA on those genes and selecting a set of principal components,
-building a shared nearest neighbour graph in PCA space, and using a modularity
-optimisation algorithm to partition the graph into clusters. The standard
-method suggested by Seurat for selecting genes is based on thresholds on gene
-expression level and variability. I compared genes selected in this way to
-those selected by the M3Drops method, which tests for genes with a greater
-number of zero counts than would be expected under a negative binomial model.
-There were significant differences between the two sets, but it is difficult to
-say which better captures the differences between cells in the dataset. I chose
-to use the M3Drop genes to see what effect they might have on the clustering
-compared to the published results. The graph-based clustering used by Seurat
-doesn't require a number of clusters to be selected, but it does have a
-resolution parameter that controls the number of clusters that are produced. To
-select this parameter I used clustering tree visualisations displaying the
-expression of previously identified marker genes and chose a value of
-`r params$clust$res`.
+Typically, low-quality cells are removed from a dataset by setting thresholds
+on quantities that indicate that a cell is damaged or otherwise uninformative.
+I used a data-driven approach to select filtering thresholds that were a given
+number of MADs for the median for the total counts per cell, total expressed
+features per cell and the percentage of counts assigned to mitochondrial genes
+(which is a proxy for the health of a cell). These thresholds removed
+`r params$pre$n_cells - params$qc$n_cells` cells leaving `r params$qc$n_cells`,
+including many of the additional cells identified by EmptyDrops. The fact that
+these cells were retained suggests that they are not obviously empty droplets
+and are likely to contain biologically relevant information. Using a statistical
+approach to select thresholds means that they can be automatically adapted to
+different datasets but it does assume that most cells are high-quality. For this
+reason it is still important to visualise distributions and where the thresholds
+lie. When I compared the the thresholding approach to a fully-automated approach
+based on performing a PCA on a set of quality control metrics and detecting
+outliers I found that thresholding identified many more low-quality cells and
+was much easier to interpret.
 
-This resolution produced `r params$clust$n_clusts` clusters. Looking at the
-overlap of cells between these clusters and the clusters we published
-previously shows that many of them correspond with a previously described cell
-type. Most of the additional cells identified by EmptyDrops belong to two
-clusters, but because these cells weren't present in the published analysis
-there is no clear overlap to associate them with a published cell type. To
-better interpret all the clusters I performed differential gene expression
-testing using edgeR, testing the cells in each cluster against the other cells
-in the dataset and looking for marker genes that are more highly expressed in a
-single cluster. These results largely confirmed what was seen by looking at the
-overlap with the published analysis. I assigned clusters to several kidney cell
-types, including several types of stroma, epithelium, mature podocytes and
-endothelium. I also observed several small off-target populations that were
-described previously, including neural progenitors, glial cells and muscle
-progenitors. One of the clusters containing cells identified only by EmptyDrops
-showed up-regulation of endothelial markers, while the other EmptyDrops cluster
+The additional cells identified by EmptyDrops passed quality control but their
+biological significance does not become clear until later on in the analysis.
+Similar to the previously published analysis I used the graph-based clustering
+method in the Seurat package to form groups of cells with similar expression
+profiles. By using the clustering tree visualisation presented in chapter
+**Chapter \@ref(clust-trees)** I chose a resolution of `r params$clust$res`
+which produced `r params$clust$n_clusts` clusters. Most of the additional cells
+identified by EmptyDrops belong to two clusters (Cluster 4 and Cluster 6), but
+because these cells weren't present in the published analysis there is no clear
+overlap to associate them with a published cell type. To better interpret all
+the clusters I performed differential gene expression testing using edgeR,
+testing the cells in each cluster against the other cells in the dataset and
+looking for marker genes that are more highly expressed in a single cluster.
+Cluster 4 showed clear up-regulation of endothelial markers, while Cluster 6
 had significant results for markers from various cell types including several
 genes associated with immune cells. Although not an expected part of the kidney
 organoid differentiation process, there is a plausible pathway by which immune
@@ -83,7 +71,30 @@ kidney dataset we saw a small number of cells that clustered with immune cells
 and seemed to share similar expression. However, a significant amount of
 additional validation would be required to confirm that immune cells are
 present and that this apparent population isn't just the result of technical
-artifacts associated with the lower number of counts per cell.
+artifacts associated with the lower number of counts per cell. The other
+clusters were consistent with the previously published analysis and I assigned
+them to several kidney cell types, including several types of stroma,
+epithelium, mature podocytes and endothelium. I also observed several small
+off-target populations that were described previously, including neural
+progenitors, glial cells and muscle progenitors.
+
+The Seurat procedure has been shown to perform well in comparison and consists
+of several steps: selecting a set of genes to use, performing PCA on those
+genes and selecting a set of principal components, building a shared nearest
+neighbour graph in PCA space, and using a modularity optimisation algorithm to
+partition the graph into clusters. For the published analysis we selected genes
+using the standard Seurat method which sets thresholds on gene expression level
+and variability. I compared genes selected in this way to
+those selected by the M3Drop method, which tests for genes with a greater
+number of zero counts than would be expected under a negative binomial model.
+Despite the significant differences between the two sets of genes the clusters
+identified by Seurat using the M3Drop genes were very similar to those in the
+published analysis. This suggests that graph-based clustering is fairly robust
+to exactly which genes are selected, as long as they capture enough of the
+variability in the dataset. The obvious difference between the two clusterings
+is the clusters containing the EmptyDrops cells but it is reassuring that
+including these cells did not affect the other clusters and suggests that Seurat
+is also robust to the presence of some low-quality cells.
 
 A standard analysis of an scRNA-seq dataset often ends here, but I also wanted
 to demonstrate how some newly developed methods can provide additional context
@@ -93,16 +104,16 @@ When applied here I saw a high amount of connectivity amongst stromal clusters,
 and some of the expected developmental trajectories were also highly connected.
 Other clusters that we would expect to be similar, such as the two endothelial
 clusters, were not so related. Overall PAGA was not particularly effective when
-used on this dataset but I believe that is more likely to be a result of how I
-used it rather than the approach itself. Another approach which gives
-additional context to a dataset is calculating cell velocity, which provides a
-transcriptional direction for each cell. Averaged across the dataset it can
-reveal where populations are headed or which populations are transcriptionally
-stable. The cell velocity field also highlighted some expected differentiation
-processes and showed cells in the possible immune cell population trending in
-opposite directions, suggesting that this cluster might contain
-sub-populations. Potentially this cluster may contain a mixture of immune
-cells, other cell types and low-quality cells.
+used on this dataset but I believe that is more likely to be a result of this
+specific dataset or the parameters selected rather than the approach itself.
+Another approach which gives additional context to a dataset is calculating
+cell velocity, which provides a transcriptional direction for each cell.
+Averaged across the dataset it can reveal where populations are headed or which
+populations are transcriptionally stable. The cell velocity field also
+highlighted some expected differentiation processes and showed cells in the
+possible immune cell population trending in opposite directions, suggesting
+that this cluster might contain sub-populations. Potentially this cluster may
+contain a mixture of immune cells, other cell types and low-quality cells.
 
 Overall this new analysis is broadly consistent with the results we previously
 published, despite using different tools at several stages and making different
