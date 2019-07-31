@@ -92,26 +92,7 @@ heatshock signature in the foetal kidney data that is most likely the result of
 the tissue being exposed to suboptimal conditions and made it difficult to see
 smaller differences. However, we were able to identify some differences,
 including in signalling pathways, that may suggest further avenues for
-directing kidney organoid differentiation.
-
-Overall our analyses of this dataset support the presence of important kidney
-cell types in kidney organoids and builds confidence for their usefulness for
-disease modelling and drug screening studies. While we have followed a
-well-established workflow in producing these results, there were still many
-decisions we had to make about which analysis tools and parameters to use. For
-the remainder of this chapter I will explore some of the alternative analytical
-choices we could have made and approaches we could have used, and what
-difference they may have made to our interpretation of this data. An outline of
-the analysis I have performed and where it will be discussed in this chapter is
-shown in Figure \@ref(fig:workflow). Details of the analysis including the code
-used and exploratory visualisations are displayed on a website at
-https://lazappi.github.io/phd-thesis-analysis/ [@Zappia2019-kh] and the
-analysis methods used are provided in Appendix \@ref(analysis-methods).
-
-```{r workflow, fig.cap = "(ref:cap-workflow)", fig.scap = "(ref:scap-workflow)", out.width = "100%"}
-knitr::include_graphics(here::here("figures/05-workflow.png"))
-```
-
-(ref:scap-workflow) Outline of analysis of the kidney organoid dataset.
-
-(ref:cap-workflow) Outline of analysis of the kidney organoid dataset. Filled coloured boxes indicate stages of the analysis. Purple stages contribute to the final results shown here while blue stages were performed as a comparison. Grey stages were performed in the published analysis but are not shown here. The main analysis workflow is indicated with black arrows and comparison stages with pointed grey arrows. The published workflow is shown using smaller open grey arrows with dotted lines. Green shaded boxes show the software tools used and pink shaded boxes indicate the sections of this chapter that discuss the results of those stages.
+directing kidney organoid differentiation. Overall our analyses of this dataset
+support the presence of important kidney cell types in kidney organoids and
+builds confidence in their usefulness for disease modelling and drug screening
+studies.

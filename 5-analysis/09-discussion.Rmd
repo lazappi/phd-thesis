@@ -53,9 +53,9 @@ The additional cells identified by EmptyDrops passed quality control but their
 biological significance does not become clear until later on in the analysis.
 Similar to the previously published analysis I used the graph-based clustering
 method in the Seurat package to form groups of cells with similar expression
-profiles. By using the clustering tree visualisation presented in chapter
-**Chapter \@ref(clust-trees)** I chose a resolution of `r params$clust$res`
-which produced `r params$clust$n_clusts` clusters. Most of the additional cells
+profiles. By using the clustering tree visualisation presented in **Chapter
+\@ref(clust-trees)** I chose a resolution of `r params$clust$res` which
+produced `r params$clust$n_clusts` clusters. Most of the additional cells
 identified by EmptyDrops belong to two clusters (Cluster 4 and Cluster 6), but
 because these cells weren't present in the published analysis there is no clear
 overlap to associate them with a published cell type. To better interpret all
