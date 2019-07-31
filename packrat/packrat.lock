@@ -1,6 +1,6 @@
 PackratFormat: 1.4
 PackratVersion: 0.4.9.3
-RVersion: 3.5.2
+RVersion: 3.6.0
 Repos: CRAN=https://cran.rstudio.com/
 
 Package: BH
@@ -192,15 +192,11 @@ Hash: 770f3834b97a2c429bdecb7a5f27eb25
 Requires: magrittr, rlang, tibble
 
 Package: ggforce
-Source: github
-Version: 0.1.1
-Hash: 909bef04e36a6e4915ccaae297489ed3
-Requires: Rcpp, RcppEigen, concaveman, deldir, dplyr, ggplot2, gtable,
-    lazyeval, plyr, polyclip, scales, tweenr
-GithubRepo: ggforce
-GithubUsername: thomasp85
-GithubRef: master
-GithubSha1: 9ce6079d906e5810c91b71ccfe7a4aad8909e0b5
+Source: CRAN
+Version: 0.2.2
+Hash: dab99b7e1abac32cb43f8e4b57f19db3
+Requires: Rcpp, RcppEigen, ggplot2, gtable, polyclip, rlang, scales,
+    tweenr
 
 Package: ggplot2
 Source: CRAN
@@ -507,8 +503,8 @@ GithubSha1: 911d04789fa5c8eebc77e7207d66e389e192b7fc
 
 Package: units
 Source: CRAN
-Version: 0.6-2
-Hash: b28570948f456e10ee358d5b4d514ef4
+Version: 0.6-3
+Hash: f457a7cfc2e344dc641c5bc838ee90c5
 Requires: Rcpp
 
 Package: utf8
