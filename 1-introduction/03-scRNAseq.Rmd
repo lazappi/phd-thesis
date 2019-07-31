@@ -217,7 +217,7 @@ subject the cells to some stimulus then perform single-cell RNA sequencing. The
 introduced mutation can then be linked to the response of the cells to the
 stimulus and the associated broader changes in gene expression. More recently
 it has been proposed that CITE-seq can be combined with CRISPR-based approaches
-[@Mimitou2018-pn]. Another approach is CellTagging which introduces a barcoded
+[@Mimitou2019-ju]. Another approach is CellTagging which introduces a barcoded
 lentiviral construct into cells [@Biddy2018-uz]. A unique combination of
 barcodes is then passed on to daughter cells and can be used to trace the
 lineage of a cell population.

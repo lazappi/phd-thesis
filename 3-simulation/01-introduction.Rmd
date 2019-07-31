@@ -8,7 +8,7 @@ such gold standard datasets are not available. This is particularly true for
 genomic data where it is difficult to know what the truth is or the known truth
 is limited to only small sections of the genome. It is possible to create some
 genomic datasets where the truth is known, for example through carefully
-performed mixing experiments [@Tian2018-ok], but these often do not capture the
+performed mixing experiments [@Tian2019-wl], but these often do not capture the
 true biological complexity. In many cases the most effective way to evaluate an
 analysis method during development is by testing it on simulated datasets.
 Simulations have the additional advantage of being relatively cheap and easy to

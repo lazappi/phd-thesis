@@ -13,20 +13,21 @@ could have used in our analysis of the kidney organoid dataset, and what
 difference they may have made to our interpretation of this data. I have
 selected these methods to look at because they either do something
 significantly different to what we used in our previous analysis or they have
-been shown to be effective in comparison studies. An outline of the analysis I
-have performed and where it will be discussed in this chapter is shown in
-Figure \@ref(fig:workflow). I begin by looking at some of the pre-processing
-steps that are often overlooked, particularly methods for selecting
-cell-containing droplets. I also compare the alignment-based quantification
-produced by the standard pre-processing pipeline to a pseudoalignment
-quantification. The next section explores some of the choices that can be made
-when performing quality control to select high-quality cells. The main aim of
-this analysis is to identify the cell types present in kidney organoids which
-requires clustering together similar cells. Clustering methods often require a
-set of genes to be chosen and here I have trialled an alternative gene
-selection method and compared the resulting clusters to the previously
-published analysis. In the final section of this chapter I apply two newly
-developed analysis approaches to this dataset to see what additional
+been shown to be effective in comparison studies. This chapter also provides an
+illustration of some of the thought processes involved in an analysis project.
+An outline of the analysis I have performed and where it will be discussed in
+this chapter is shown in Figure \@ref(fig:workflow). I begin by looking at some
+of the pre-processing steps that are often overlooked, particularly methods for
+selecting cell-containing droplets. I also compare the alignment-based
+quantification produced by the standard pre-processing pipeline to a
+pseudoalignment quantification. The next section explores some of the choices
+that can be made when performing quality control to select high-quality cells.
+The main aim of this analysis is to identify the cell types present in kidney
+organoids which requires clustering together similar cells. Clustering methods
+often require a set of genes to be chosen and here I have trialled an
+alternative gene selection method and compared the resulting clusters to the
+previously published analysis. In the final section of this chapter I apply two
+newly developed analysis approaches to this dataset to see what additional
 information they can add. Details of the analysis including the code used and
 exploratory visualisations are displayed on a website at
 https://lazappi.github.io/phd-thesis-analysis/ [@Zappia2019-kh] and the
