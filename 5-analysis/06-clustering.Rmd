@@ -71,8 +71,8 @@ clustering approach has been shown to be effective in comparisons of scRNA-seq
 clustering methods [@Duo2018-qb; @Freytag2018-ic]. One of the decisions that
 needs to be made during this procedure is the value of the resolution parameter
 to use, which affects the number of clusters that are produced. As I have
-discussed in Chapter \@ref(simulation), clustering trees are one tool that can
-be helpful in making this decision. Figure \@ref(fig:resolution-selection)A
+discussed in **Chapter \@ref(simulation)**, clustering trees are one tool that
+can be helpful in making this decision. Figure \@ref(fig:resolution-selection)A
 shows a clustering tree for this dataset with resolutions between zero and one.
 
 ```{r resolution-selection, fig.cap = "(ref:cap-resolution-selection)", fig.scap = "(ref:scap-resolution-selection)", out.width = "100%"}
@@ -128,7 +128,7 @@ from the dataset. However, a large proportion of the cells in those clusters
 were also identified by Cell Ranger v3 and an alternative hypothesis is that
 these additional cells belong to a cell type that is smaller or contains less
 RNA for some other reason. Looking at the marker genes associated with those
-clusters can help to answer that question (Section \@ref(marker-genes)).
+clusters can help to answer that question (**Section \@ref(marker-genes)**).
 
 ### Comparison to published clusters
 

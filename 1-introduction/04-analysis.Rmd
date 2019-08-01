@@ -77,7 +77,7 @@ Within each phase a range of processes may be used and there are now many tools
 available for completing each of them, with over `r 10 * floor(n_tools / 10)`
 tools currently available. An introduction to the phases of scRNA-seq analysis
 is provided here but the analysis tools landscape is more fully explored in
-Chapter \@ref(tools).
+**Chapter \@ref(tools)**.
 
 ```{r phases, fig.cap = "(ref:cap-phases)", fig.scap = "(ref:scap-phases)", out.width = "100%"}
 knitr::include_graphics(here::here("figures/01-phases.png"))
@@ -224,7 +224,7 @@ is run on the graph with a resolution parameter that controls the number of
 clusters that are produced. Selecting this parameter and similar parameters in
 other methods is difficult but important as the number of clusters selected can
 affect the interpretation of results. I address this problem with a
-visualisation-based approach in Chapter \@ref(clust-trees).
+visualisation-based approach in **Chapter \@ref(clust-trees)**.
 
 For tissue types that are well understood or where comprehensive references are
 available an alternative to unsupervised clustering is to directly classify
@@ -389,7 +389,7 @@ performing that task leads to biological insights. Answering the first question
 is difficult using real datasets as often the underlying truth is not known.
 For this reason simulation techniques are commonly used to produce synthetic
 datasets in order to evaluate methods. I present a software package for
-simulating scRNA-seq data in Chapter \@ref(simulation). Simulation is an
+simulating scRNA-seq data in **Chapter \@ref(simulation)**. Simulation is an
 efficient and flexible approach for producing gold standard datasets but
 synthetic data can never fully reproduce a real dataset. An alternative
 approach is to carefully construct a gold standard biological dataset by

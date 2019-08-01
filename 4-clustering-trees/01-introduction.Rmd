@@ -41,7 +41,7 @@ achieved by trading individual information about each sample for summarised
 information about clusters and adding a resolution dimension. Overlaying
 important domain knowledge (such as the expression of known marker genes) onto
 these visualisations can be particularly informative and we also demonstrate
-this in our paper (Section \@ref(clustree-publication)). Section
+this in our paper (**Section \@ref(clustree-publication)**). Section
 \@ref(clustree-overlay) demonstrates how clustering trees can be combined with
 other visualisations of scRNA-seq data.
 
@@ -49,5 +49,5 @@ Clustering trees can be produced using the clustree R package which is built on
 the tidygraph [@Pedersen2018-ly], igraph [@Csardi2006-ce] and ggraph
 [@Pedersen2018-ie] packages and is available from CRAN
 (https://cran.r-project.org/package=clustree). The clustree vignette is
-included as Appendix \@ref(clustree-manual) and the manual as Appendix
-\@ref(clustree-manual).
+included as **Appendix \@ref(clustree-manual)** and the manual as **Appendix
+\@ref(clustree-manual)**.

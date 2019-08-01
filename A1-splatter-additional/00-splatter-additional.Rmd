@@ -1,0 +1,33 @@
+# Splatter additional files {#splatter-additional}
+
+## Additional figures
+
+```{r splatter-figures, results = "asis"}
+name <- "Splatter publication additional figures"
+pdf <- "figures/A1-splatter-figures-cropped"
+pages <- 1:17
+link <- "https://genomebiology.biomedcentral.com/articles/10.1186/s13059-017-1305-0#Sec23"
+
+if (tex) {
+    glue::glue("\\frame{\\includegraphics[page=<pages>, width=\\textwidth]{<pdf>}}\\clearpage",
+               .open = "<", .close = ">")
+} else {
+    glue::glue("You can see the {name} [here]({link}).")
+}
+```
+
+## Session information
+
+```{r splatter-session, results = "asis"}
+name <- "Splatter publication session information"
+pdf <- "figures/A1-splatter-session-cropped"
+pages <- 1:6
+link <- "https://genomebiology.biomedcentral.com/articles/10.1186/s13059-017-1305-0#Sec23"
+
+if (tex) {
+    glue::glue("\\frame{\\includegraphics[page=<pages>, width=\\textwidth]{<pdf>}}\\clearpage",
+               .open = "<", .close = ">")
+} else {
+    glue::glue("You can see the {name} [here]({link}).")
+}
+```

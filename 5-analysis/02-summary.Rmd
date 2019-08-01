@@ -45,7 +45,7 @@ This study was lead by Alex Combes who performed much of the lab work and
 interpretation of results while I performed all the computational analysis.
 Details of this analysis are presented online at
 http://oshlacklab.com/combes-organoid-paper/ [@Zappia2019-dy]. The full text of
-this publication is included in Appendix \@ref(organoid-paper) but I will
+this publication is included in **Appendix \@ref(organoid-paper)** but I will
 summarise the results here. Using a similar workflow based around the Seurat
 package we identified 13 clusters including clusters that were labelled as
 covering kidney stroma, podocytes, epithelium and endothelium, based on the

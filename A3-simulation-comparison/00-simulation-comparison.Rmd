@@ -1,0 +1,49 @@
+# Simulation comparison
+
+## Timings {#sim-timings}
+
+```{r sim-timings, out.width = "100%"}
+timings <- read_tsv(here("data/simulation-timings.tsv"),
+                    col_types = cols(
+                        Model = col_character(),
+                        Estimation = col_double(),
+                        Simulation = col_double()
+                    ))
+
+plot_data <- timings %>%
+    gather(key = "Type", value = "Time", -Model) %>%
+    filter(!(Model == "SplatDrop" & Type == "Estimation")) %>%
+    filter(!(Model == "Lun2ZINB" & Type == "Estimation")) %>%
+    mutate(Model = factor(
+        Model,
+        levels = c("Splat", "SplatDrop", "Simple", "BASiCS", "Lun", "Lun2",
+                   "Lun2ZINB", "mfa", "PhenoPath", "scDD", "SparseDC",
+                   "ZINBWaVE"),
+        labels = c("Splat", "Splat (Drop)", "Simple", "BASiCS", "Lun", "Lun2",
+                   "Lun2 (ZINB)", "mfa", "PhenoPath", "scDD", "SparseDC",
+                   "ZINB-WaVE")
+    ))
+
+p1 <- ggplot(plot_data, aes(x = Model, y = Time, colour = Model)) +
+    geom_point(size = 3) +
+    scale_y_log10(labels = c("1 sec", "1 min", "1 hour", "1 day"),
+                  breaks = c(1, 60, 60 * 60, 24 * 60 * 60)) +
+    facet_wrap(~ Type, nrow = 2, scale = "free") +
+    ggtitle("Processing times") +
+    theme_minimal() +
+    theme(axis.title = element_blank(),
+          axis.text.x = element_text(angle = 90, hjust = 1, vjust = 0.5),
+          legend.position = "none")
+
+ggsave(here("figures/A3-sim-timings.pdf"), p1, height = 6, width = 8)
+ggsave(here("figures/A3-sim-timings.png"), p1, height = 6, width = 8)
+
+knitr::include_graphics(here::here("figures/A3-sim-timings.png"))
+```
+
+## Package versions {#sim-packages}
+
+Versions of simulation packages used for the comparison.
+
+```{r sim-packages, child = here("data/simulation-packages.md")}
+```

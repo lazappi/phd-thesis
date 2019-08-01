@@ -1,0 +1,156 @@
+# Analysis methods {#analysis-methods}
+
+## Pre-processing
+
+The Cell Ranger pipeline (v`r versions$cellranger`) [@Zheng2017-mm] was used to
+perform sample demultiplexing, barcode processing and single-cell gene counting.
+Briefly,samples were demultiplexed to produce a pair of FASTQ files for each
+sample. Reads containing sequence information were aligned using the reference
+provided with Cell Ranger (v`r versions$cellranger_ref`) based on the GRCh38
+reference genome and ENSEMBL gene annotation (v`r versions$ensembl`). PCR
+duplicates were removed by selecting unique combinations of cell barcodes,
+unique molecular  identifiers and gene ids with the final results being a gene
+expression matrix that was used for further analysis. The three samples were
+aggregated using Cell Ranger with no normalisation and treated as a single
+dataset containing  `r params$pre$n_droplets` droplets. The R statistical
+programming language (v`r versions$R`) [@R-base] was used for further analysis.
+Count data  was read  into R and used to construct a SingleCellExperiment object
+(v`r versions$SCE`) [@R-SingleCellExperiment].
+
+### Droplet selection
+
+The droplet selection method in this version of Cell Ranger identified
+`r params$pre$n_cellranger` cell containing droplets. This is more than the
+traditional Cell Ranger approach based on a simple threshold on total counts
+which identified `r params$pre$n_default` cells. The EmptyDrops method
+[@Lun2019-wp] available in the DropletUtils package
+(v`r versions$DropletUtils`) was also applied. Droplets with less than
+`r params$pre$empty_thresh` total counts were used to construct the ambient RNA
+profile and an FDR threshold of less than `r params$pre$emp_fdr` was used to
+select `r params$pre$n_empdrops` droplets. The droplets selected by either the
+Cell Ranger v3 method or EmptyDrops were kept giving a dataset with
+`r params$pre$n_cells` cells. Gene annotation information was added from BioMart
+[@Smedley2015-an] using the biomaRt package (v`r versions$biomaRt`)
+[@Durinck2005-zb] and cells were assigned cell cycle scores using the cyclone
+[@Scialdone2015-rp] function in the scran package (v`r versions$scran`)
+[@Lun2016-mq].
+
+### Alevin
+
+An alternative quantification was performed using the alevin method
+[@Srivastava2019-ce] available as part of the salmon software package
+(v`r versions$salmon`) [@Patro2017-ka]. This produced a dataset with
+`r params$alevin$n_cells` cells and `r params$alevin$n_genes` genes.
+
+## Quality control
+
+The scater package (v`r versions$scater`) [@McCarthy2017-ql] was used to produce
+a series of diagnostic quality control plots and select thresholds for
+filtering. Cells were removed from the dataset if they had $\log_{10}$ total
+counts less than `r params$qc$counts_thresh` (`r params$qc$counts_mads` MADs
+from the median), $\log_{10}$ total features expressed less than
+`r params$qc$features_thresh` (`r params$qc$features_mads` MADs) or more than
+`r params$qc$mt_thresh` percent of counts (`r params$qc$mt_mads` MADs) assigned
+to mitochondrial genes. An automated filtering method method available in scater
+that detects outliers in a PCA of cells based on technical factors was also
+performed for comparison but not used for filtering. After filtering doublet
+scores for each cell were calculated using the simulation-based method available
+in scran and cells with a score greater than `r params$qc$doublet_thresh` were
+removed. A minimal filter was used to remove genes that did not have at least
+`r params$qc$min_count` count in at least `r params$qc$min_cells` cells. After
+quality control the dataset had `r params$qc$n_cells` cells and
+`r params$qc$n_genes` genes with a median of `r params$qc$median_counts` counts
+per cell and a median of `r params$qc$median_genes` genes expressed.
+
+## Clustering
+
+### Gene selection
+
+Two methods were used to select genes to use for clustering. The default
+selection method in the Seurat package (v`r versions$Seurat`) [@Satija2015-or]
+uses thresholds on mean expression (between `r params$clust$seurat_thresh[1]`
+and `r params$clust$seurat_thresh[2]`) and dispersion (greater than
+`r params$clust$seurat_thresh[3]`), which selected `r params$clust$sel_seurat`
+genes. The M3Drop (v`r versions$M3Drop`) [@Andrews2018-xa] method was also used
+to test for genes with significantly more zero counts than expected and
+`r params$clust$sel_m3drop` genes with an adjusted p-value less than
+`r params$clust$m3drop_thresh` were selected. Following comparisons between
+these two methods the genes identified by M3Drop were used for clustering.
+
+### Graph-based clustering
+
+Seurat was used to perform graph-based clustering. PCA was performed using the
+selected genes and the first `r params$clust$n_pcs` principal components were
+used to construct a shared nearest neighbour graph using the overlap between
+the `r params$clust$knn` nearest neighbours of each cell. Louvain modularity
+optimisation [@Blondel2008-ym] was used to partition this graph with a
+resolution parameter between `r min(params$clust$resolutions)` and
+`r max(params$clust$resolutions)`. Clustering tree visualisations
+[@Zappia2018-lz] were produced using the clustree package
+(v`r versions$clustree`) showing the expression of previously identified
+marker genes. By inspecting these trees a resolution of `r params$clust$res`
+which chosen which produced `r params$clust$n_clusts` clusters. To compare these
+cluster to those that had been previously published the Jaccard index was
+calculated between pairs of clusters from each analysis and visualised as a
+heatmap.
+
+## Marker genes
+
+Marker genes for each cluster were identified using edgeR (v`r versions$edgeR`)
+[@Robinson2010-pt; @McCarthy2012-gc]. Additional filtering was performed to
+remove genes with a $\log_{10}$ maximum average counts in any cluster less than
+`r params$markers$maxmean_thresh`. The edgeR negative binomial model was then
+fitted to the dataset using a design matrix that included the detection rate
+(scaled proportion of genes expressed in each cell). The quasi-likelihood F-test
+was used to test cells in one cluster against all other cells. Genes were
+considered significant markers for a cluster if they had an FDR less than
+`r params$markers$fdr_thresh` and a log fold change greater than
+`r params$markers$logFC_thresh`. Identities were assigned to each cluster by
+comparing the detected genes to previously published lists of cell type markers.
+
+## Partition-based graph abstraction (PAGA)
+
+Partition-based graph abstraction (PAGA) [@Wolf2019-fo] was performed using the
+scanpy library (v`r versions$scanpy`) [@Wolf2018-na] for the Python programming
+language (v`r versions$python`). A shared nearest neighbour graph was built
+using the same parameters as were used by Seurat and connectivity between the
+Seurat clusters was calculated using the PAGA algorithm. A ForceAtlas2
+[@Jacomy2014-um] layout of the cell graph was calculated based on the PAGA
+cluster graph. The results of the PAGA analysis were read into R for
+visualisation.
+
+## Cell velocity
+
+The velocyto (v`r versions$velocyto.py`) [@La_Manno2018-tv] Python program was
+used to calculate spliced and unspliced count matrices from the aligned reads.
+The resulting Loom files for each sample were then read into R and merged. The
+remaining analysis was performed using the velocyto R package
+(v`r versions$velocyto.R`). Genes were removed from the spliced matrix if they
+had did not have a mean expression greater than
+`r params$velocyto$spliced_minmax` in at least one cluster or from the
+unspliced matrix if they did not have a mean expression greater than
+`r params$velocyto$unspliced_minmax` in at least one cluster. Relative velocity
+estimates were then calculated for each cell and projected onto reduced
+dimensional spaces for visualisation.
+
+## Other packages
+
+Visualisations and figures were primarily created using the
+ggplot2 (v`r versions$ggplot2`) [@Wickham2010-zq] and cowplot
+(v`r versions$cowplot`) [@R-cowplot] packages using the viridis colour palette
+(v`r versions$viridis`) for continuous data. UpSet plots [@Lex2014-hy] were
+produced using the UpSetR package (v`r versions$UpSetR`) [@R-UpSetR] with help
+from the gridExtra package (v`r versions$gridExtra`) [@R-gridExtra] and
+SinaPlots [@Sidiropoulos2018-ll] using the ggforce package
+(v`r versions$ggforce`) [@R-ggforce]. Data manipulation was performed using
+other packages in the tidyverse (v`r versions$tidyverse`) [@R-tidyverse]
+particularly dplyr (v`r versions$dplyr`) [@R-dplyr], tidyr (v`r versions$dplyr`)
+[@R-tidyr] and purrr (v`r versions$purrr`) [@R-purrr]. Loom files were exported
+from R using the LoomExperiment package (v`r versions$LoomExperiment`)
+[@R-LoomExperiment]. The analysis project was managed using the workflowr
+(v`r versions$workflowr`) [@R-workflowr] package which was also used to produce
+the publicly available website displaying the analysis code, results and output.
+Reproducible reports were produced using knitr (v`r versions$knitr`)
+[@Xie2014-ha; @Xie2016-ct; @R-knitr] and R Markdown (v`r versions$rmarkdown`)
+[@Xie2018-tw; @R-rmarkdown] and converted to HTML using Pandoc
+(v`r versions$pandoc`).

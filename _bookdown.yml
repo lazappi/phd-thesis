@@ -10,12 +10,13 @@ rmd_files:
     - "5-analysis/00-analysis.Rmd"
     - "6-conclusion/00-conclusion.Rmd"
     - "9-references/00-references.Rmd"
-    - "A1-splatter-docs/00-splatter-docs.Rmd"
-    - "A2-simulation-comparison/00-simulation-comparison.Rmd"
-    - "A3-clustree-docs/00-clustree-docs.Rmd"
-    - "A4-organoid-publication/00-organoid-publication.Rmd"
-    - "A5-analysis-methods/00-analysis-methods.Rmd"
-    - "A6-session-info/00-session-info.Rmd"
+    - "A1-splatter-additional/00-splatter-additional.Rmd"
+    - "A2-splatter-docs/00-splatter-docs.Rmd"
+    - "A3-simulation-comparison/00-simulation-comparison.Rmd"
+    - "A4-clustree-docs/00-clustree-docs.Rmd"
+    - "A5-organoid-publication/00-organoid-publication.Rmd"
+    - "A6-analysis-methods/00-analysis-methods.Rmd"
+    - "A7-session-info/00-session-info.Rmd"
 download:
     - ["thesis.pdf", "PDF"]
     - ["thesis.docx", "Word"]

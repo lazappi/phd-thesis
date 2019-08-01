@@ -35,5 +35,5 @@ early adopters a chance to contribute to their development.
 
 Sections at the end of this chapter present a version of some the analysis
 presented in the paper based on the most recent version of the database
-(Section \@ref(tools-current)), as well as details about the usage of the
-scRNA-tools website over time (Section \@ref(tools-usage)).
+(**Section \@ref(tools-current)**), as well as details about the usage of the
+scRNA-tools website over time (**Section \@ref(tools-usage)**).
