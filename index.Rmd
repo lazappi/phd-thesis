@@ -248,7 +248,7 @@ tools <- read_json(tools_path, simplifyVector = TRUE) %>%
     mutate(Added = as.Date(Added),
            Updated = as.Date(Updated))
 
-tools_date    <- "5 April 2019"
+tools_date    <- "1 August 2019"
 n_tools       <- nrow(tools)
 n_tools_new   <- n_tools - 232
 n_tools_floor <- floor(n_tools / 10) * 10

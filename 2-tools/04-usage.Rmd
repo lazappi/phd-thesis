@@ -8,12 +8,12 @@ editor_options:
 Since it was launched in July 2017 the scRNA-tools website has been used by
 people from around the world (Figure \@ref(fig:tools-analytics-plot)). Usage
 has increased since release of the publication and the website now receives an
-average of around 750 visitors per month (Figure
+average of over 1000 visitors per month (Figure
 \@ref(fig:tools-analytics-plot)A). These users come from over
 `r 10 * floor(n_countries / 10)` countries around the world (Figure
 \@ref(fig:tools-analytics-plot)B) with the USA being by far the most common
-location, followed by China, Australia, the United Kingdom and countries in
-Western Europe (Figure \@ref(fig:tools-analytics-plot)C). Aggregating by
+location, followed by China, Japan, Australia, the United Kingdom and countries
+in Western Europe (Figure \@ref(fig:tools-analytics-plot)C). Aggregating by
 continent (Figure \@ref(fig:tools-analytics-plot)D) better reflects population
 size and the size of academic communities, with the Americas responsible for
 the majority of traffic followed by Europe and Asia.

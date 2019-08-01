@@ -47,7 +47,8 @@ plotUsersMap <- function(tools_countries) {
         theme(axis.title = element_blank(),
               axis.text = element_blank(),
               panel.grid = element_blank(),
-              legend.position = "bottom")
+              legend.position = "bottom",
+              legend.key.width = unit(1, "cm"))
 
     return(map)
 }

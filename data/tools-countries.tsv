@@ -1,88 +1,92 @@
 Country	Continent	Subcontinent	Users
-(not set)	(not set)	(not set)	54
+(not set)	(not set)	(not set)	74
 Algeria	Africa	Northern Africa	1
 Angola	Africa	Middle Africa	1
-Argentina	Americas	South America	5
-Australia	Oceania	Australasia	495
-Austria	Europe	Western Europe	40
-Bangladesh	Asia	Southern Asia	2
-Belgium	Europe	Western Europe	95
+Argentina	Americas	South America	9
+Australia	Oceania	Australasia	619
+Austria	Europe	Western Europe	63
+Bangladesh	Asia	Southern Asia	3
+Belgium	Europe	Western Europe	125
 Bolivia	Americas	South America	1
-Brazil	Americas	South America	122
-Bulgaria	Europe	Eastern Europe	3
+Brazil	Americas	South America	143
+Bulgaria	Europe	Eastern Europe	5
 Burkina Faso	Africa	Western Africa	1
-Canada	Americas	Northern America	235
-Chile	Americas	South America	7
-China	Asia	Eastern Asia	1182
+Canada	Americas	Northern America	318
+Chile	Americas	South America	14
+China	Asia	Eastern Asia	1654
 Colombia	Americas	South America	2
-Croatia	Europe	Southern Europe	3
-Cyprus	Asia	Western Asia	2
-Czechia	Europe	Eastern Europe	13
-Denmark	Europe	Northern Europe	43
-Ecuador	Americas	South America	1
-Egypt	Africa	Northern Africa	11
-Estonia	Europe	Northern Europe	5
-Finland	Europe	Northern Europe	45
-France	Europe	Western Europe	462
-Germany	Europe	Western Europe	559
-Greece	Europe	Southern Europe	21
-Hong Kong	Asia	Eastern Asia	115
-Hungary	Europe	Eastern Europe	7
-Iceland	Europe	Northern Europe	6
-India	Asia	Southern Asia	135
-Indonesia	Asia	Southeast Asia	5
-Iran	Asia	Southern Asia	9
-Iraq	Asia	Western Asia	36
-Ireland	Europe	Northern Europe	11
-Israel	Asia	Western Asia	70
-Italy	Europe	Southern Europe	146
-Japan	Asia	Eastern Asia	379
+Croatia	Europe	Southern Europe	4
+Cyprus	Asia	Western Asia	3
+Czechia	Europe	Eastern Europe	23
+Denmark	Europe	Northern Europe	61
+Ecuador	Americas	South America	2
+Egypt	Africa	Northern Africa	13
+Estonia	Europe	Northern Europe	6
+Finland	Europe	Northern Europe	77
+France	Europe	Western Europe	579
+Germany	Europe	Western Europe	740
+Greece	Europe	Southern Europe	30
+Hong Kong	Asia	Eastern Asia	167
+Hungary	Europe	Eastern Europe	9
+Iceland	Europe	Northern Europe	7
+India	Asia	Southern Asia	186
+Indonesia	Asia	Southeast Asia	7
+Iran	Asia	Southern Asia	16
+Iraq	Asia	Western Asia	38
+Ireland	Europe	Northern Europe	19
+Israel	Asia	Western Asia	87
+Italy	Europe	Southern Europe	198
+Japan	Asia	Eastern Asia	669
 Jordan	Asia	Western Asia	1
-Kenya	Africa	Eastern Africa	2
+Kenya	Africa	Eastern Africa	3
 Kuwait	Asia	Western Asia	1
-Latvia	Europe	Northern Europe	1
+Latvia	Europe	Northern Europe	2
 Lebanon	Asia	Western Asia	2
 Lithuania	Europe	Northern Europe	1
-Luxembourg	Europe	Western Europe	20
-Macau	Asia	Eastern Asia	9
-Macedonia (FYROM)	Europe	Southern Europe	3
-Malaysia	Asia	Southeast Asia	7
-Mexico	Americas	Central America	14
-Morocco	Africa	Northern Africa	2
+Luxembourg	Europe	Western Europe	26
+Macao	Asia	Eastern Asia	11
+Madagascar	Africa	Eastern Africa	1
+Malaysia	Asia	Southeast Asia	11
+Mauritius	Africa	Eastern Africa	1
+Mexico	Americas	Central America	19
+Morocco	Africa	Northern Africa	3
 Mozambique	Africa	Eastern Africa	1
 Namibia	Africa	Southern Africa	1
-Netherlands	Europe	Western Europe	112
-New Zealand	Oceania	Australasia	18
-Nigeria	Africa	Western Africa	2
-Norway	Europe	Northern Europe	31
-Pakistan	Asia	Southern Asia	7
+Netherlands	Europe	Western Europe	148
+New Zealand	Oceania	Australasia	20
+Nigeria	Africa	Western Africa	6
+North Macedonia	Europe	Southern Europe	3
+Norway	Europe	Northern Europe	41
+Oman	Asia	Western Asia	1
+Pakistan	Asia	Southern Asia	9
 Palestine	Asia	Western Asia	1
 Panama	Americas	Central America	1
-Peru	Americas	South America	15
-Philippines	Asia	Southeast Asia	11
-Poland	Europe	Eastern Europe	56
-Portugal	Europe	Southern Europe	19
-Puerto Rico	Americas	Caribbean	1
-Qatar	Asia	Western Asia	3
+Peru	Americas	South America	17
+Philippines	Asia	Southeast Asia	14
+Poland	Europe	Eastern Europe	63
+Portugal	Europe	Southern Europe	29
+Puerto Rico	Americas	Caribbean	2
+Qatar	Asia	Western Asia	4
 Romania	Europe	Eastern Europe	11
-Russia	Europe	Eastern Europe	79
-Saudi Arabia	Asia	Western Asia	10
-Serbia	Europe	Southern Europe	8
-Singapore	Asia	Southeast Asia	79
-Slovakia	Europe	Eastern Europe	4
-Slovenia	Europe	Southern Europe	6
-South Africa	Africa	Southern Africa	16
-South Korea	Asia	Eastern Asia	375
-Spain	Europe	Southern Europe	87
-Sweden	Europe	Northern Europe	88
-Switzerland	Europe	Western Europe	158
-Taiwan	Asia	Eastern Asia	52
-Thailand	Asia	Southeast Asia	17
-Tunisia	Africa	Northern Africa	2
-Turkey	Asia	Western Asia	13
-Ukraine	Europe	Eastern Europe	10
-United Arab Emirates	Asia	Western Asia	6
-United Kingdom	Europe	Northern Europe	481
-United States	Americas	Northern America	3849
-Uruguay	Americas	South America	1
-Vietnam	Asia	Southeast Asia	9
+Russia	Europe	Eastern Europe	94
+Saudi Arabia	Asia	Western Asia	13
+Serbia	Europe	Southern Europe	9
+Singapore	Asia	Southeast Asia	114
+Slovakia	Europe	Eastern Europe	5
+Slovenia	Europe	Southern Europe	7
+South Africa	Africa	Southern Africa	18
+South Korea	Asia	Eastern Asia	458
+Spain	Europe	Southern Europe	116
+Sweden	Europe	Northern Europe	120
+Switzerland	Europe	Western Europe	212
+Taiwan	Asia	Eastern Asia	86
+Thailand	Asia	Southeast Asia	19
+Tunisia	Africa	Northern Africa	3
+Turkey	Asia	Western Asia	21
+Ukraine	Europe	Eastern Europe	11
+United Arab Emirates	Asia	Western Asia	8
+United Kingdom	Europe	Northern Europe	605
+United States	Americas	Northern America	5177
+Uruguay	Americas	South America	3
+Vietnam	Asia	Southeast Asia	12
+Yemen	Asia	Western Asia	1
