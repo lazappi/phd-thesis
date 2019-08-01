@@ -5,7 +5,23 @@
 ```{r splatter-vignette, results = "asis"}
 name <- "Splatter vignette"
 pdf <- "figures/A2-splatter-vignette-cropped"
-pages <- 1:26
+pages <- 1:23
+link <- "http://bioconductor.org/packages/splatter/"
+
+if (tex) {
+    glue::glue("\\frame{\\includegraphics[page=<pages>, width=\\textwidth]{<pdf>}}\\clearpage",
+               .open = "<", .close = ">")
+} else {
+    glue::glue("You can read the {name} [here]({link}).")
+}
+```
+
+## Splat parameters vignette {#splat-params-vignette}
+
+```{r splat-params-vignette, results = "asis"}
+name <- "Splat parameters vignette"
+pdf <- "figures/A2-splatter-parameters-cropped"
+pages <- 1:20
 link <- "http://bioconductor.org/packages/splatter/"
 
 if (tex) {
@@ -21,7 +37,7 @@ if (tex) {
 ```{r splatter-manual, results = "asis"}
 name <- "Splatter manual"
 pdf <- "figures/A2-splatter-manual-cropped"
-pages <- 1:57
+pages <- 1:58
 link <- "http://bioconductor.org/packages/splatter/"
 
 if (tex) {

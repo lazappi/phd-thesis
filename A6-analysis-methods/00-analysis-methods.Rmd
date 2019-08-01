@@ -1,5 +1,7 @@
 # Analysis methods {#analysis-methods}
 
+\clearpage
+
 ## Pre-processing
 
 The Cell Ranger pipeline (v`r versions$cellranger`) [@Zheng2017-mm] was used to

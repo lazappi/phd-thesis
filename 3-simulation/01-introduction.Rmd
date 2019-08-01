@@ -48,6 +48,8 @@ package is available for download from Bioconductor
 publication are provided in **Appendix \@ref(splatter-additional)**. Following
 the publication (**Section \@ref(splatter-publication)**) I discuss updates to
 the software package and provide an updated comparison of the current
-simulation models (**Section \@ref(splatter-update)**). A vignette describing
-the use of Splatter is included as **Appendix \@ref(splatter-vignette)** and
-the full manual in **Appendix \@ref(splatter-manual)**.
+simulation models (**Section \@ref(splatter-update)**). Vignettes describing
+the use of Splatter (**Appendix \@ref(splatter-vignette)**) and the parameters
+of the Splat model (**Appendix \@ref(splat-params-vignette)**) are included as
+appendices, as is the full Splatter manual (**Appendix
+\@ref(splatter-manual)**).

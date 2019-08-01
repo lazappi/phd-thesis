@@ -5,7 +5,7 @@
 ```{r clustree-vignette, results = "asis"}
 name <- "clustree vignette"
 pdf <- "figures/A4-clustree-vignette-cropped"
-pages <- 1:21
+pages <- 1:23
 link <- "https://CRAN.R-project.org/package=clustree"
 
 if (tex) {
@@ -21,7 +21,7 @@ if (tex) {
 ```{r clustree-manual, results = "asis"}
 name <- "clustree manual"
 pdf <- "figures/A4-clustree-manual-cropped"
-pages <- 1:20
+pages <- 1:21
 link <- "https://CRAN.R-project.org/package=clustree"
 
 if (tex) {
