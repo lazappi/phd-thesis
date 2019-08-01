@@ -48,7 +48,9 @@ EmptyDrops cells is less clear with connections seen between them, but not as
 strongly with the other clusters they would be expected to be related to,
 particularly between the two endothelial clusters. A possible explanation for
 this are technical features shared by these two clusters but not the clusters
-they are biologically similar to.
+they are biologically similar to. The PAGA method does not give any estimate of
+the stability or variability of the connectivity between clusters but this would
+be a meaningful area for future research.
 
 In some ways the graph produced by PAGA is similar but complementary to a
 clustering tree. The PAGA graph considers connectivity between clusters at the

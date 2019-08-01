@@ -160,17 +160,17 @@ each cluster from the previously published analysis and each cluster from the
 analysis presented here (Figure \@ref(fig:cluster-comparison)B). Some of the
 clusters (such as Cluster 5) very clearly match up with a published cluster
 while others have overlaps with multiple similar clusters. For example, Cluster
-2 which of cells from the two cell cycle clusters in the published analysis.
-There are four stromal clusters in both analyses but for two of them (Cluster 0
-and Cluster 3) the cells are divided differently. The differences in clustering
-are the result of all the decisions made to this stage of the analysis
-including which cells and genes have been selected. Without a known truth it is
-difficult to determine which is better or more correct or if they simply
-provide different views of the same data with emphasis on different features
-and it is possible that both sets of clusters are biologically meaningful. The
-two EmptyDrops clusters do not show obvious signals but they do have some
-overlap with the published endothelial clusters which suggests that that they
-may be a previously overlooked endothelial population. To confirm if this is
-the case we need to check whether they express known endothelial markers.
-Identifying marker genes for each cluster through differential expression
-testing can show us which genes are unique to each cluster.
+2 which consists of cells from the two cell cycle clusters in the published
+analysis. There are four stromal clusters in both analyses but for two of them
+(Cluster 0 and Cluster 3) the cells are divided differently. The differences in
+clustering are the result of all the decisions made to this stage of the
+analysis including which cells and genes have been selected. Without a known
+truth it is difficult to determine which is better or more correct or if they
+simply provide different views of the same data with emphasis on different
+features and it is possible that both sets of clusters are biologically
+meaningful. The two EmptyDrops clusters do not show obvious signals but they do
+have some overlap with the published endothelial clusters which suggests that
+that they may be a previously overlooked endothelial population. To confirm if
+this is the case we need to check whether they express known endothelial
+markers. Identifying marker genes for each cluster through differential
+expression testing can show us which genes are unique to each cluster.

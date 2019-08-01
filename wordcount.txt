@@ -3848,3 +3848,92 @@ Date	Time	Name	Level	Text	Headers	Captions	Total
 2019-08-01	12:10:10	Session information	Chapter	0	7	168	175
 2019-08-01	12:10:10	Important packages	Section	0	2	168	170
 2019-08-01	12:10:10	Full session information	Section	0	3	0	3
+2019-08-01	16:04:06	docs/thesis.tex	Document	25796	229	14026	40051
+2019-08-01	16:04:06	Introduction	Chapter	10280	75	1034	11389
+2019-08-01	16:04:06	The central dogma	Section	596	3	57	656
+2019-08-01	16:04:06	RNA sequencing	Section	1643	10	228	1881
+2019-08-01	16:04:06	Library preparation	Subsection	450	2	66	518
+2019-08-01	16:04:06	High-throughput sequencing	Subsection	246	2	84	332
+2019-08-01	16:04:06	Analysis of RNA-seq data	Subsection	739	4	78	821
+2019-08-01	16:04:06	Single-cell RNA sequencing	Section	1938	18	376	2332
+2019-08-01	16:04:06	Early single-cell capture technologies	Subsection	369	4	52	425
+2019-08-01	16:04:06	Droplet-based cell capture	Subsection	355	3	88	446
+2019-08-01	16:04:06	Unique Molecular Identifiers	Subsection	395	3	61	459
+2019-08-01	16:04:06	Recent advances in scRNA-seq protocols	Subsection	662	5	175	842
+2019-08-01	16:04:06	Analysing scRNA-seq data	Section	3782	25	114	3921
+2019-08-01	16:04:06	Pre-processing and quality control	Subsection	551	4	0	555
+2019-08-01	16:04:06	Normalisation and integration	Subsection	516	3	0	519
+2019-08-01	16:04:06	Grouping cells	Subsection	481	2	0	483
+2019-08-01	16:04:06	Ordering cells	Subsection	435	2	53	490
+2019-08-01	16:04:06	Gene detection and interpretation	Subsection	628	4	0	632
+2019-08-01	16:04:06	Alternative analyses	Subsection	131	2	0	133
+2019-08-01	16:04:06	Evaluation of scRNA-seq analysis methods	Subsection	262	5	0	267
+2019-08-01	16:04:06	Kidney development	Section	1934	14	235	2183
+2019-08-01	16:04:06	Structure and function	Subsection	573	3	81	657
+2019-08-01	16:04:06	Stages of development	Subsection	384	3	67	454
+2019-08-01	16:04:06	Growing kidney organoids	Subsection	615	3	87	705
+2019-08-01	16:04:06	Kidney scRNA-seq studies	Subsection	237	3	0	240
+2019-08-01	16:04:06	Thesis overview and aims	Section	164	4	0	168
+2019-08-01	16:04:06	The scRNA-seq tools landscape	Chapter	1190	16	212	1418
+2019-08-01	16:04:06	Introduction	Section	397	1	0	398
+2019-08-01	16:04:06	scRNA-tools publication	Section	0	2	0	2
+2019-08-01	16:04:06	The current scRNA-tools database	Section	601	4	100	705
+2019-08-01	16:04:06	Usage of the scRNA-tools website	Section	192	5	65	262
+2019-08-01	16:04:06	Simulating scRNA-seq data	Chapter	1775	13	86	1874
+2019-08-01	16:04:06	Introduction	Section	543	1	0	544
+2019-08-01	16:04:06	Splatter publication	Section	0	2	0	2
+2019-08-01	16:04:06	Updates to Splatter	Section	1232	7	72	1311
+2019-08-01	16:04:06	Performance of current simulations	Subsection	652	4	72	728
+2019-08-01	16:04:06	Visualising clustering across resolutions	Chapter	889	11	79	979
+2019-08-01	16:04:06	Introduction	Section	515	1	0	516
+2019-08-01	16:04:06	Clustering trees publication	Section	0	3	0	3
+2019-08-01	16:04:06	Overlaying clustering trees	Section	374	3	74	451
+2019-08-01	16:04:06	Analysis of kidney organoid scRNA-seq data	Chapter	9718	43	1148	10909
+2019-08-01	16:04:06	Introduction	Section	648	1	0	649
+2019-08-01	16:04:06	Summary of published work	Section	1024	4	0	1028
+2019-08-01	16:04:06	Outline and motivation	Section	369	3	100	472
+2019-08-01	16:04:06	Pre-processing	Section	1609	5	208	1822
+2019-08-01	16:04:06	Droplet selection	Subsection	571	2	89	662
+2019-08-01	16:04:06	Alevin comparison	Subsection	854	2	119	975
+2019-08-01	16:04:06	Quality control	Section	1148	2	186	1336
+2019-08-01	16:04:06	Clustering	Section	1447	11	338	1796
+2019-08-01	16:04:06	Gene selection	Subsection	385	2	122	509
+2019-08-01	16:04:06	Resolution selection	Subsection	312	2	41	355
+2019-08-01	16:04:06	Cluster validation	Subsection	257	2	113	372
+2019-08-01	16:04:06	Comparison to published clusters	Subsection	390	4	62	456
+2019-08-01	16:04:06	Marker gene detection	Section	866	3	194	1063
+2019-08-01	16:04:06	Connecting clusters	Section	1049	7	118	1174
+2019-08-01	16:04:06	Partition-based graph abstraction	Subsection	452	3	72	527
+2019-08-01	16:04:06	Cell velocity	Subsection	420	2	46	468
+2019-08-01	16:04:06	Discussion	Section	1558	1	0	1559
+2019-08-01	16:04:06	Conclusion	Chapter	1944	1	8	1953
+2019-08-01	16:04:06	References	Chapter	0	1	8137	8138
+2019-08-01	16:04:06	Splatter additional files	Chapter	0	7	0	7
+2019-08-01	16:04:06	Additional figures	Section	0	2	0	2
+2019-08-01	16:04:06	Session information	Section	0	2	0	2
+2019-08-01	16:04:06	Splatter documentation	Chapter	0	9	0	9
+2019-08-01	16:04:06	Splatter vignette	Section	0	2	0	2
+2019-08-01	16:04:06	Splat parameters vignette	Section	0	3	0	3
+2019-08-01	16:04:06	Splatter manual	Section	0	2	0	2
+2019-08-01	16:04:06	Simulation comparison	Chapter	0	5	38	43
+2019-08-01	16:04:06	Timings	Section	0	1	0	1
+2019-08-01	16:04:06	Package versions	Section	0	2	38	40
+2019-08-01	16:04:06	clustree documentation	Chapter	0	6	0	6
+2019-08-01	16:04:06	clustree vignette	Section	0	2	0	2
+2019-08-01	16:04:06	clustree manual	Section	0	2	0	2
+2019-08-01	16:04:06	Kidney organoid publication	Chapter	0	3	0	3
+2019-08-01	16:04:06	Analysis methods	Chapter	0	23	1099	1122
+2019-08-01	16:04:06	Pre-processing	Section	0	4	296	300
+2019-08-01	16:04:06	Droplet selection	Subsection	0	2	130	132
+2019-08-01	16:04:06	Alevin	Subsection	0	1	30	31
+2019-08-01	16:04:06	Quality control	Section	0	2	164	166
+2019-08-01	16:04:06	Clustering	Section	0	5	204	209
+2019-08-01	16:04:06	Gene selection	Subsection	0	2	85	87
+2019-08-01	16:04:06	Graph-based clustering	Subsection	0	2	119	121
+2019-08-01	16:04:06	Marker genes	Section	0	2	116	118
+2019-08-01	16:04:06	Partition-based graph abstraction (PAGA)	Section	0	4	75	79
+2019-08-01	16:04:06	Cell velocity	Section	0	2	106	108
+2019-08-01	16:04:06	Other packages	Section	0	2	138	140
+2019-08-01	16:04:06	Session information	Chapter	0	7	168	175
+2019-08-01	16:04:06	Important packages	Section	0	2	168	170
+2019-08-01	16:04:06	Full session information	Section	0	3	0	3
