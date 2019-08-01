@@ -171,4 +171,10 @@ suspension culture as a scalable source of human pluripotent stem cell-derived
 kidney cells." _Development._ 2019. DOI:
 [10.1242/dev.172361](http://doi.org/10.1242/dev.172361)
 
+Combes AN, Phipson B, Lawlor KT, Dorison A, Patrick R, **Zappia L**, Harvey RP,
+Oshlack, A, Little MH. "Single cell analysis of the developing mouse kidney
+provides deeper insight into marker gene expression and ligand-receptor
+crosstalk." _Development._  2019. DOI:
+[10.1242/dev.178673](http://doi.org/10.1242/dev.178673)
+
 ^+^ _Authors contributed equally._
