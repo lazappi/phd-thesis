@@ -3,7 +3,7 @@
 [![Travis-CI Build Status](https://travis-ci.com/lazappi/phd-thesis.svg?branch=master)](https://travis-ci.com/lazappi/phd-thesis)
 [![DOI](https://zenodo.org/badge/153196642.svg)](https://zenodo.org/badge/latestdoi/153196642)
 
-![figures/cover.png](Cover page)
+![Cover image](/figures/cover.png)
 
 This repository contains my PhD thesis _"Tools and techniques for single-cell
 RNA sequencing data"_. The HTML version is available at
