@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Tools and techniques for single-cell RNA sequencing data</title>
+  <meta name="description" content="Tools and techniques for single-cell RNA sequencing data">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Tools and techniques for single-cell RNA sequencing data" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Tools and techniques for single-cell RNA sequencing data" />
+  
+  
+  
+
+<meta name="author" content="Luke Zappia">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="1-introduction.html">
+<link rel="next" href="3-simulation.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"></a></li>
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Front matter</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#abstract"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#declaration"><i class="fa fa-check"></i>Declaration</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#preface"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#list-of-copyright"><i class="fa fa-check"></i>List of copyright</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="1-introduction.html"><a href="1-introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="1-introduction.html"><a href="1-introduction.html#intro-dogma"><i class="fa fa-check"></i><b>1.1</b> The central dogma</a></li>
+<li class="chapter" data-level="1.2" data-path="1-introduction.html"><a href="1-introduction.html#intro-RNAseq"><i class="fa fa-check"></i><b>1.2</b> RNA sequencing</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="1-introduction.html"><a href="1-introduction.html#library-preparation"><i class="fa fa-check"></i><b>1.2.1</b> Library preparation</a></li>
+<li class="chapter" data-level="1.2.2" data-path="1-introduction.html"><a href="1-introduction.html#high-throughput-sequencing"><i class="fa fa-check"></i><b>1.2.2</b> High-throughput sequencing</a></li>
+<li class="chapter" data-level="1.2.3" data-path="1-introduction.html"><a href="1-introduction.html#analysis-of-rna-seq-data"><i class="fa fa-check"></i><b>1.2.3</b> Analysis of RNA-seq data</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="1-introduction.html"><a href="1-introduction.html#intro-scRNAseq"><i class="fa fa-check"></i><b>1.3</b> Single-cell RNA sequencing</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="1-introduction.html"><a href="1-introduction.html#early-single-cell-capture-technologies"><i class="fa fa-check"></i><b>1.3.1</b> Early single-cell capture technologies</a></li>
+<li class="chapter" data-level="1.3.2" data-path="1-introduction.html"><a href="1-introduction.html#droplet-based-cell-capture"><i class="fa fa-check"></i><b>1.3.2</b> Droplet-based cell capture</a></li>
+<li class="chapter" data-level="1.3.3" data-path="1-introduction.html"><a href="1-introduction.html#unique-molecular-identifiers"><i class="fa fa-check"></i><b>1.3.3</b> Unique Molecular Identifiers</a></li>
+<li class="chapter" data-level="1.3.4" data-path="1-introduction.html"><a href="1-introduction.html#recent-advances-in-scrna-seq-protocols"><i class="fa fa-check"></i><b>1.3.4</b> Recent advances in scRNA-seq protocols</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="1-introduction.html"><a href="1-introduction.html#intro-analysis"><i class="fa fa-check"></i><b>1.4</b> Analysing scRNA-seq data</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="1-introduction.html"><a href="1-introduction.html#pre-processing-and-quality-control"><i class="fa fa-check"></i><b>1.4.1</b> Pre-processing and quality control</a></li>
+<li class="chapter" data-level="1.4.2" data-path="1-introduction.html"><a href="1-introduction.html#normalisation-and-integration"><i class="fa fa-check"></i><b>1.4.2</b> Normalisation and integration</a></li>
+<li class="chapter" data-level="1.4.3" data-path="1-introduction.html"><a href="1-introduction.html#grouping-cells"><i class="fa fa-check"></i><b>1.4.3</b> Grouping cells</a></li>
+<li class="chapter" data-level="1.4.4" data-path="1-introduction.html"><a href="1-introduction.html#ordering-cells"><i class="fa fa-check"></i><b>1.4.4</b> Ordering cells</a></li>
+<li class="chapter" data-level="1.4.5" data-path="1-introduction.html"><a href="1-introduction.html#gene-detection-and-interpretation"><i class="fa fa-check"></i><b>1.4.5</b> Gene detection and interpretation</a></li>
+<li class="chapter" data-level="1.4.6" data-path="1-introduction.html"><a href="1-introduction.html#alternative-analyses"><i class="fa fa-check"></i><b>1.4.6</b> Alternative analyses</a></li>
+<li class="chapter" data-level="1.4.7" data-path="1-introduction.html"><a href="1-introduction.html#evaluation-of-scrna-seq-analysis-methods"><i class="fa fa-check"></i><b>1.4.7</b> Evaluation of scRNA-seq analysis methods</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="1-introduction.html"><a href="1-introduction.html#intro-kidney"><i class="fa fa-check"></i><b>1.5</b> Kidney development</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="1-introduction.html"><a href="1-introduction.html#structure-and-function"><i class="fa fa-check"></i><b>1.5.1</b> Structure and function</a></li>
+<li class="chapter" data-level="1.5.2" data-path="1-introduction.html"><a href="1-introduction.html#stages-of-development"><i class="fa fa-check"></i><b>1.5.2</b> Stages of development</a></li>
+<li class="chapter" data-level="1.5.3" data-path="1-introduction.html"><a href="1-introduction.html#growing-kidney-organoids"><i class="fa fa-check"></i><b>1.5.3</b> Growing kidney organoids</a></li>
+<li class="chapter" data-level="1.5.4" data-path="1-introduction.html"><a href="1-introduction.html#kidney-scrna-seq-studies"><i class="fa fa-check"></i><b>1.5.4</b> Kidney scRNA-seq studies</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="1-introduction.html"><a href="1-introduction.html#intro-overview"><i class="fa fa-check"></i><b>1.6</b> Thesis overview and aims</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="2-tools.html"><a href="2-tools.html"><i class="fa fa-check"></i><b>2</b> The scRNA-seq tools landscape</a><ul>
+<li class="chapter" data-level="2.1" data-path="2-tools.html"><a href="2-tools.html#introduction-1"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="2-tools.html"><a href="2-tools.html#scrna-tools-publication"><i class="fa fa-check"></i><b>2.2</b> scRNA-tools publication</a></li>
+<li class="chapter" data-level="2.3" data-path="2-tools.html"><a href="2-tools.html#tools-current"><i class="fa fa-check"></i><b>2.3</b> The current scRNA-tools database</a></li>
+<li class="chapter" data-level="2.4" data-path="2-tools.html"><a href="2-tools.html#tools-usage"><i class="fa fa-check"></i><b>2.4</b> Usage of the scRNA-tools website</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="3-simulation.html"><a href="3-simulation.html"><i class="fa fa-check"></i><b>3</b> Simulating scRNA-seq data</a><ul>
+<li class="chapter" data-level="3.1" data-path="3-simulation.html"><a href="3-simulation.html#introduction-2"><i class="fa fa-check"></i><b>3.1</b> Introduction</a></li>
+<li class="chapter" data-level="3.2" data-path="3-simulation.html"><a href="3-simulation.html#splatter-publication"><i class="fa fa-check"></i><b>3.2</b> Splatter publication</a></li>
+<li class="chapter" data-level="3.3" data-path="3-simulation.html"><a href="3-simulation.html#splatter-update"><i class="fa fa-check"></i><b>3.3</b> Updates to Splatter</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="3-simulation.html"><a href="3-simulation.html#performance-of-current-simulations"><i class="fa fa-check"></i><b>3.3.1</b> Performance of current simulations</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="4-clust-trees.html"><a href="4-clust-trees.html"><i class="fa fa-check"></i><b>4</b> Visualising clustering across resolutions</a><ul>
+<li class="chapter" data-level="4.1" data-path="4-clust-trees.html"><a href="4-clust-trees.html#introduction-3"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="4-clust-trees.html"><a href="4-clust-trees.html#clustree-publication"><i class="fa fa-check"></i><b>4.2</b> Clustering trees publication</a></li>
+<li class="chapter" data-level="4.3" data-path="4-clust-trees.html"><a href="4-clust-trees.html#clustree-overlay"><i class="fa fa-check"></i><b>4.3</b> Overlaying clustering trees</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="5-analysis.html"><a href="5-analysis.html"><i class="fa fa-check"></i><b>5</b> Analysis of kidney organoid scRNA-seq data</a><ul>
+<li class="chapter" data-level="5.1" data-path="5-analysis.html"><a href="5-analysis.html#introduction-4"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="5-analysis.html"><a href="5-analysis.html#summary-of-published-work"><i class="fa fa-check"></i><b>5.2</b> Summary of published work</a></li>
+<li class="chapter" data-level="5.3" data-path="5-analysis.html"><a href="5-analysis.html#outline-and-motivation"><i class="fa fa-check"></i><b>5.3</b> Outline and motivation</a></li>
+<li class="chapter" data-level="5.4" data-path="5-analysis.html"><a href="5-analysis.html#pre-processing"><i class="fa fa-check"></i><b>5.4</b> Pre-processing</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="5-analysis.html"><a href="5-analysis.html#droplet-selection"><i class="fa fa-check"></i><b>5.4.1</b> Droplet selection</a></li>
+<li class="chapter" data-level="5.4.2" data-path="5-analysis.html"><a href="5-analysis.html#alevin-comparison"><i class="fa fa-check"></i><b>5.4.2</b> Alevin comparison</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="5-analysis.html"><a href="5-analysis.html#quality-control"><i class="fa fa-check"></i><b>5.5</b> Quality control</a></li>
+<li class="chapter" data-level="5.6" data-path="5-analysis.html"><a href="5-analysis.html#clustering"><i class="fa fa-check"></i><b>5.6</b> Clustering</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="5-analysis.html"><a href="5-analysis.html#gene-selection"><i class="fa fa-check"></i><b>5.6.1</b> Gene selection</a></li>
+<li class="chapter" data-level="5.6.2" data-path="5-analysis.html"><a href="5-analysis.html#resolution-selection"><i class="fa fa-check"></i><b>5.6.2</b> Resolution selection</a></li>
+<li class="chapter" data-level="5.6.3" data-path="5-analysis.html"><a href="5-analysis.html#cluster-validation"><i class="fa fa-check"></i><b>5.6.3</b> Cluster validation</a></li>
+<li class="chapter" data-level="5.6.4" data-path="5-analysis.html"><a href="5-analysis.html#comparison-to-published-clusters"><i class="fa fa-check"></i><b>5.6.4</b> Comparison to published clusters</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="5-analysis.html"><a href="5-analysis.html#marker-genes"><i class="fa fa-check"></i><b>5.7</b> Marker gene detection</a></li>
+<li class="chapter" data-level="5.8" data-path="5-analysis.html"><a href="5-analysis.html#connecting-clusters"><i class="fa fa-check"></i><b>5.8</b> Connecting clusters</a><ul>
+<li class="chapter" data-level="5.8.1" data-path="5-analysis.html"><a href="5-analysis.html#partition-based-graph-abstraction"><i class="fa fa-check"></i><b>5.8.1</b> Partition-based graph abstraction</a></li>
+<li class="chapter" data-level="5.8.2" data-path="5-analysis.html"><a href="5-analysis.html#cell-velocity"><i class="fa fa-check"></i><b>5.8.2</b> Cell velocity</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="5-analysis.html"><a href="5-analysis.html#discussion"><i class="fa fa-check"></i><b>5.9</b> Discussion</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="6-conclusion.html"><a href="6-conclusion.html"><i class="fa fa-check"></i><b>6</b> Conclusion</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="A-splatter-additional.html"><a href="A-splatter-additional.html"><i class="fa fa-check"></i><b>A</b> Splatter additional files</a><ul>
+<li class="chapter" data-level="A.1" data-path="A-splatter-additional.html"><a href="A-splatter-additional.html#additional-figures"><i class="fa fa-check"></i><b>A.1</b> Additional figures</a></li>
+<li class="chapter" data-level="A.2" data-path="A-splatter-additional.html"><a href="A-splatter-additional.html#session-information"><i class="fa fa-check"></i><b>A.2</b> Session information</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="B-splatter-docs.html"><a href="B-splatter-docs.html"><i class="fa fa-check"></i><b>B</b> Splatter documentation</a><ul>
+<li class="chapter" data-level="B.1" data-path="B-splatter-docs.html"><a href="B-splatter-docs.html#splatter-vignette"><i class="fa fa-check"></i><b>B.1</b> Splatter vignette</a></li>
+<li class="chapter" data-level="B.2" data-path="B-splatter-docs.html"><a href="B-splatter-docs.html#splat-params-vignette"><i class="fa fa-check"></i><b>B.2</b> Splat parameters vignette</a></li>
+<li class="chapter" data-level="B.3" data-path="B-splatter-docs.html"><a href="B-splatter-docs.html#splatter-manual"><i class="fa fa-check"></i><b>B.3</b> Splatter manual</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="C-simulation-comparison.html"><a href="C-simulation-comparison.html"><i class="fa fa-check"></i><b>C</b> Simulation comparison</a><ul>
+<li class="chapter" data-level="C.1" data-path="C-simulation-comparison.html"><a href="C-simulation-comparison.html#sim-timings"><i class="fa fa-check"></i><b>C.1</b> Timings</a></li>
+<li class="chapter" data-level="C.2" data-path="C-simulation-comparison.html"><a href="C-simulation-comparison.html#sim-packages"><i class="fa fa-check"></i><b>C.2</b> Package versions</a></li>
+</ul></li>
+<li class="chapter" data-level="D" data-path="D-clustree-docs.html"><a href="D-clustree-docs.html"><i class="fa fa-check"></i><b>D</b> clustree documentation</a><ul>
+<li class="chapter" data-level="D.1" data-path="D-clustree-docs.html"><a href="D-clustree-docs.html#clustree-vignette"><i class="fa fa-check"></i><b>D.1</b> clustree vignette</a></li>
+<li class="chapter" data-level="D.2" data-path="D-clustree-docs.html"><a href="D-clustree-docs.html#clustree-manual"><i class="fa fa-check"></i><b>D.2</b> clustree manual</a></li>
+</ul></li>
+<li class="chapter" data-level="E" data-path="E-organoid-paper.html"><a href="E-organoid-paper.html"><i class="fa fa-check"></i><b>E</b> Kidney organoid publication</a></li>
+<li class="chapter" data-level="F" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html"><i class="fa fa-check"></i><b>F</b> Analysis methods</a><ul>
+<li class="chapter" data-level="F.1" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#pre-processing-1"><i class="fa fa-check"></i><b>F.1</b> Pre-processing</a><ul>
+<li class="chapter" data-level="F.1.1" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#droplet-selection-1"><i class="fa fa-check"></i><b>F.1.1</b> Droplet selection</a></li>
+<li class="chapter" data-level="F.1.2" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#alevin"><i class="fa fa-check"></i><b>F.1.2</b> Alevin</a></li>
+</ul></li>
+<li class="chapter" data-level="F.2" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#quality-control-1"><i class="fa fa-check"></i><b>F.2</b> Quality control</a></li>
+<li class="chapter" data-level="F.3" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#clustering-1"><i class="fa fa-check"></i><b>F.3</b> Clustering</a><ul>
+<li class="chapter" data-level="F.3.1" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#gene-selection-1"><i class="fa fa-check"></i><b>F.3.1</b> Gene selection</a></li>
+<li class="chapter" data-level="F.3.2" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#graph-based-clustering"><i class="fa fa-check"></i><b>F.3.2</b> Graph-based clustering</a></li>
+</ul></li>
+<li class="chapter" data-level="F.4" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#marker-genes-1"><i class="fa fa-check"></i><b>F.4</b> Marker genes</a></li>
+<li class="chapter" data-level="F.5" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#partition-based-graph-abstraction-paga"><i class="fa fa-check"></i><b>F.5</b> Partition-based graph abstraction (PAGA)</a></li>
+<li class="chapter" data-level="F.6" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#cell-velocity-1"><i class="fa fa-check"></i><b>F.6</b> Cell velocity</a></li>
+<li class="chapter" data-level="F.7" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#other-packages"><i class="fa fa-check"></i><b>F.7</b> Other packages</a></li>
+</ul></li>
+<li class="chapter" data-level="G" data-path="G-session-information-1.html"><a href="G-session-information-1.html"><i class="fa fa-check"></i><b>G</b> Session information</a><ul>
+<li class="chapter" data-level="G.1" data-path="G-session-information-1.html"><a href="G-session-information-1.html#important-packages"><i class="fa fa-check"></i><b>G.1</b> Important packages</a></li>
+<li class="chapter" data-level="G.2" data-path="G-session-information-1.html"><a href="G-session-information-1.html#full-session-information"><i class="fa fa-check"></i><b>G.2</b> Full session information</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Tools and techniques for single-cell RNA sequencing data</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="tools" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> The scRNA-seq tools landscape</h1>
+<blockquote>
+<p><strong>Have you ever seen a sound</strong></p>
+<p><strong>Have you listened to an image</strong></p>
+<p><strong>Have you ever touched a thought</strong></p>
+<p><strong>Have you ever tasted nothing</strong></p>
+<p><strong>Have you ever told a lie</strong></p>
+<p><strong>That was true more than truth</strong></p>
+<p><strong>Because truth it had lied</strong></p>
+<p><strong>All its life when it spoke to you?</strong></p>
+<p>— The Cat Empire</p>
+<p><em>Miserere</em>, 2005</p>
+</blockquote>
+<p><img src="figures/02-tools-sketch.png" width="100%" style="display: block; margin: auto;" /></p>
+<div id="introduction-1" class="section level2">
+<h2><span class="header-section-number">2.1</span> Introduction</h2>
+<p>When I began my PhD in early 2016, single-cell RNA sequencing technologies were
+just beginning to become widely available. Since then there has been a rapid
+uptake of the technologies and there are now many studies using this approach.
+Along with the growth in the adoption of scRNA-seq technologies, there has been
+an explosion in the number of software tools for analysing these datasets. This
+chapter charts the growth in the scRNA-seq analysis landscape over time.</p>
+<p>In 2016 there were relatively few analysis methods available and to answer
+questions like how many tools perform a particular task, which areas are
+developers focusing on or is there a tool for doing a particular task, I began
+to record details about them. Inspired by similar projects such as Sean Davis’s
+Awesome Single Cell page <span class="citation">[197]</span> I decided to make this collection
+public. This turned out to be useful to other researchers and over time a
+simple spreadsheet became the scRNA-tools database and website
+(<a href="https://scRNA-tools.org" class="uri">https://scRNA-tools.org</a>). Our paper published in <em>PLoS Computational Biology</em>
+describing this resource forms the main part of this chapter <span class="citation">[198]</span>.</p>
+<p>By having access to details about existing analysis tools we were able to
+explore how the field has developed. We found that computational researchers
+had focused their efforts on analysis tasks specific to scRNA-seq data, such as
+clustering and ordering of cells or handling the larger numbers of zero counts.
+We also saw that many of the tools performed tasks common to several stages of
+analysis, including various approaches to dimensionality reduction and
+visualisation of data and results. Details recorded in the database show that
+developers of scRNA-seq analysis tools tend to embrace an open-source and
+open-science approach, for example most tools are developed on GitHub where
+others can ask questions and submit improvements. The majority of tools are
+also available under open-source licenses allowing their code to be reused for
+other purposes, although there is also a significant proportion that do not
+have any associated license. Tools are commonly made public by releasing a
+preprint publication, making them quickly available to the community and giving
+early adopters a chance to contribute to their development.</p>
+<p>Sections at the end of this chapter present a version of some the analysis
+presented in the paper based on the most recent version of the database
+(<strong>Section <a href="2-tools.html#tools-current">2.3</a></strong>), as well as details about the usage of the
+scRNA-tools website over time (<strong>Section <a href="2-tools.html#tools-usage">2.4</a></strong>).</p>
+</div>
+<div id="scrna-tools-publication" class="section level2">
+<h2><span class="header-section-number">2.2</span> scRNA-tools publication</h2>
+<p>You can read the scRNA-tools paper <a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006245">here</a>.</p>
+</div>
+<div id="tools-current" class="section level2">
+<h2><span class="header-section-number">2.3</span> The current scRNA-tools database</h2>
+<p>Since the paper was published in June 2018, 227 tools have been
+added to the scRNA-tools database, taking the total to 459. Figure
+<a href="2-tools.html#fig:tools-plot">2.1</a> shows an overview of the current database as of
+1 August 2019. Overall the analysis landscape has not changed significantly
+over the last few months.</p>
+<div class="figure" style="text-align: center"><span id="fig:tools-plot"></span>
+<img src="figures/02-tools.png" alt="Current state of the scRNA-tools database. (A) Size of the database over time. (B) Publication status of tools in the database. Most tools are published as either peer-reviewed publications or preprints. (C) Associated software licenses. Most tools are covered by open-source licenses but around a quarter of tools still have no license. (D) Software platforms used by tools, some tools use more than one language. R is the most common programming language followed by Python. (E) Number of tools that complete each analysis task. Tasks associated with multiple analysis phases are the most common, along with those that assign cells." width="100%" />
+<p class="caption">
+Figure 2.1: Current state of the scRNA-tools database. (A) Size of the database over time. (B) Publication status of tools in the database. Most tools are published as either peer-reviewed publications or preprints. (C) Associated software licenses. Most tools are covered by open-source licenses but around a quarter of tools still have no license. (D) Software platforms used by tools, some tools use more than one language. R is the most common programming language followed by Python. (E) Number of tools that complete each analysis task. Tasks associated with multiple analysis phases are the most common, along with those that assign cells.
+</p>
+</div>
+
+
+<p>Over half of tools are still associated with a peer-reviewed publication with
+another third described in preprints (Figure <a href="2-tools.html#fig:tools-plot">2.1</a>B). Versions
+of the GNU Public License (GPL) continue to be the most common license for
+scRNA-seq software tools, followed by the more permissive MIT license (Figure
+<a href="2-tools.html#fig:tools-plot">2.1</a>C). The use of preprints to quickly share methods and
+observations and open-source licenses which allow code to be reused and adapted
+reflects the general willingness to share that I have observed in the scRNA-seq
+bioinformatics community during my PhD. Unfortunately, around a quarter of
+tools do not have associated licenses, which can limit their usefulness for
+other developers. I believe that in most cases this is not an attempt by
+authors to restrict how their work is used, but a lack of awareness about the
+importance of clear licensing. By displaying licenses on the scRNA-tools
+website I hope to encourage developers to consider how they license their work
+in the future.</p>
+<p>R continues to be the most popular programming platform and is used in some way
+by around two thirds of scRNA-seq analysis tools (Figure
+<a href="2-tools.html#fig:tools-plot">2.1</a>D). Around a third of tools are built using Python which
+is the next most common programming language, followed by C++ and MATLAB which
+are each used by just under 10 percent of tools. The dominance of R reflects
+the statistical nature of many of the tasks involved in analysing scRNA-seq
+data as well as the historical usage of the platform for bulk RNA-seq and other
+genomic data types. The Bioconductor project <span class="citation">[199]</span> has been integral
+to promoting the use of R for analysing genomic data and already includes a
+range of tools for scRNA-seq analysis <span class="citation">[200]</span>. However, as the size
+of scRNA-seq datasets continues to increase and approaches to analysis change
+to include more machine learning methods I expect the platforms used to change
+to some degree. In particular we will see more use of compiled languages like
+C++, Swift, Julia and Go used for their improved performance. While MATLAB is
+commonly used within a small section of the academic community, it is
+proprietary software that requires a paid license and tools developed in MATLAB
+cannot be used by the majority of scRNA-seq analysts.</p>
+<p>The analysis tasks that tools perform reflect the advantages and uses of
+scRNA-seq data (Figure <a href="2-tools.html#fig:tools-plot">2.1</a>E). The most common categories
+include those that are associated with multiple phases of analysis,
+particularly visualisation, for displaying results and checking distributions,
+and dimensionality reduction. The dimensionality reduction category includes
+tools that make use of a lower dimensional space as part of their analysis
+approach, as well as several techniques that have been specifically developed
+for projecting scRNA-seq data. Clustering and ordering of cells, which are
+tasks specific to scRNA-seq analysis, are also common categories. I expect
+these tasks to continue to be included in new software tools as they are
+important steps in scRNA-seq analysis, however I hope that the focus turns from
+developing new clustering and ordering methods to identifying those that are
+consistently effective and developing robust, easy to use and well-documented
+software tools that implement them. The availability of reliable and complete
+reference datasets should lead to the development of more that make use of
+references such as the classification of cells, and developers will continue to
+push the boundaries of what is possible using scRNA-seq data.</p>
+</div>
+<div id="tools-usage" class="section level2">
+<h2><span class="header-section-number">2.4</span> Usage of the scRNA-tools website</h2>
+<p>Since it was launched in July 2017 the scRNA-tools website has been used by
+people from around the world (Figure <a href="2-tools.html#fig:tools-analytics-plot">2.2</a>). Usage
+has increased since release of the publication and the website now receives an
+average of over 1000 visitors per month (Figure
+<a href="2-tools.html#fig:tools-analytics-plot">2.2</a>A). These users come from over
+90 countries around the world (Figure
+<a href="2-tools.html#fig:tools-analytics-plot">2.2</a>B) with the USA being by far the most common
+location, followed by China, Japan, Australia, the United Kingdom and countries
+in Western Europe (Figure <a href="2-tools.html#fig:tools-analytics-plot">2.2</a>C). Aggregating by
+continent (Figure <a href="2-tools.html#fig:tools-analytics-plot">2.2</a>D) better reflects population
+size and the size of academic communities, with the Americas responsible for
+the majority of traffic followed by Europe and Asia.</p>
+<div class="figure" style="text-align: center"><span id="fig:tools-analytics-plot"></span>
+<img src="figures/02-analytics.png" alt="Usage of the scRNA-tools website. (A) Usage over time showing the number of users per day (pink), week (blue) or 30 days (green). Labelled vertical lines indicate events that may have influenced traffic. (B) World map coloured according to number of users from low (blue) to high (yellow). (C) Number of users from the top 10 most common countries. (D) Number of users by continent." width="100%" />
+<p class="caption">
+Figure 2.2: Usage of the scRNA-tools website. (A) Usage over time showing the number of users per day (pink), week (blue) or 30 days (green). Labelled vertical lines indicate events that may have influenced traffic. (B) World map coloured according to number of users from low (blue) to high (yellow). (C) Number of users from the top 10 most common countries. (D) Number of users by continent.
+</p>
+</div>
+
+
+<p>Although these figures may not seem large when compared to an average website,
+they represent a significant part of the scRNA-seq community. Seeing usage of
+the website from so many countries sustained over this period of time suggests
+that the database is a useful resource. I intend to continue maintain and grow
+the resource by adding new tools and updating those in the database. I hope to
+encourage contributions from the community who can easily submit changes via a
+form on the website.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="1-introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="3-simulation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": [["thesis.pdf", "PDF"], ["thesis.docx", "Word"]],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Tools and techniques for single-cell RNA sequencing data</title>
+  <meta name="description" content="Tools and techniques for single-cell RNA sequencing data">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Tools and techniques for single-cell RNA sequencing data" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Tools and techniques for single-cell RNA sequencing data" />
+  
+  
+  
+
+<meta name="author" content="Luke Zappia">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="index.html">
+<link rel="next" href="2-tools.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"></a></li>
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Front matter</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#abstract"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#declaration"><i class="fa fa-check"></i>Declaration</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#preface"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#list-of-copyright"><i class="fa fa-check"></i>List of copyright</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="1-introduction.html"><a href="1-introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="1-introduction.html"><a href="1-introduction.html#intro-dogma"><i class="fa fa-check"></i><b>1.1</b> The central dogma</a></li>
+<li class="chapter" data-level="1.2" data-path="1-introduction.html"><a href="1-introduction.html#intro-RNAseq"><i class="fa fa-check"></i><b>1.2</b> RNA sequencing</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="1-introduction.html"><a href="1-introduction.html#library-preparation"><i class="fa fa-check"></i><b>1.2.1</b> Library preparation</a></li>
+<li class="chapter" data-level="1.2.2" data-path="1-introduction.html"><a href="1-introduction.html#high-throughput-sequencing"><i class="fa fa-check"></i><b>1.2.2</b> High-throughput sequencing</a></li>
+<li class="chapter" data-level="1.2.3" data-path="1-introduction.html"><a href="1-introduction.html#analysis-of-rna-seq-data"><i class="fa fa-check"></i><b>1.2.3</b> Analysis of RNA-seq data</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="1-introduction.html"><a href="1-introduction.html#intro-scRNAseq"><i class="fa fa-check"></i><b>1.3</b> Single-cell RNA sequencing</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="1-introduction.html"><a href="1-introduction.html#early-single-cell-capture-technologies"><i class="fa fa-check"></i><b>1.3.1</b> Early single-cell capture technologies</a></li>
+<li class="chapter" data-level="1.3.2" data-path="1-introduction.html"><a href="1-introduction.html#droplet-based-cell-capture"><i class="fa fa-check"></i><b>1.3.2</b> Droplet-based cell capture</a></li>
+<li class="chapter" data-level="1.3.3" data-path="1-introduction.html"><a href="1-introduction.html#unique-molecular-identifiers"><i class="fa fa-check"></i><b>1.3.3</b> Unique Molecular Identifiers</a></li>
+<li class="chapter" data-level="1.3.4" data-path="1-introduction.html"><a href="1-introduction.html#recent-advances-in-scrna-seq-protocols"><i class="fa fa-check"></i><b>1.3.4</b> Recent advances in scRNA-seq protocols</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="1-introduction.html"><a href="1-introduction.html#intro-analysis"><i class="fa fa-check"></i><b>1.4</b> Analysing scRNA-seq data</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="1-introduction.html"><a href="1-introduction.html#pre-processing-and-quality-control"><i class="fa fa-check"></i><b>1.4.1</b> Pre-processing and quality control</a></li>
+<li class="chapter" data-level="1.4.2" data-path="1-introduction.html"><a href="1-introduction.html#normalisation-and-integration"><i class="fa fa-check"></i><b>1.4.2</b> Normalisation and integration</a></li>
+<li class="chapter" data-level="1.4.3" data-path="1-introduction.html"><a href="1-introduction.html#grouping-cells"><i class="fa fa-check"></i><b>1.4.3</b> Grouping cells</a></li>
+<li class="chapter" data-level="1.4.4" data-path="1-introduction.html"><a href="1-introduction.html#ordering-cells"><i class="fa fa-check"></i><b>1.4.4</b> Ordering cells</a></li>
+<li class="chapter" data-level="1.4.5" data-path="1-introduction.html"><a href="1-introduction.html#gene-detection-and-interpretation"><i class="fa fa-check"></i><b>1.4.5</b> Gene detection and interpretation</a></li>
+<li class="chapter" data-level="1.4.6" data-path="1-introduction.html"><a href="1-introduction.html#alternative-analyses"><i class="fa fa-check"></i><b>1.4.6</b> Alternative analyses</a></li>
+<li class="chapter" data-level="1.4.7" data-path="1-introduction.html"><a href="1-introduction.html#evaluation-of-scrna-seq-analysis-methods"><i class="fa fa-check"></i><b>1.4.7</b> Evaluation of scRNA-seq analysis methods</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="1-introduction.html"><a href="1-introduction.html#intro-kidney"><i class="fa fa-check"></i><b>1.5</b> Kidney development</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="1-introduction.html"><a href="1-introduction.html#structure-and-function"><i class="fa fa-check"></i><b>1.5.1</b> Structure and function</a></li>
+<li class="chapter" data-level="1.5.2" data-path="1-introduction.html"><a href="1-introduction.html#stages-of-development"><i class="fa fa-check"></i><b>1.5.2</b> Stages of development</a></li>
+<li class="chapter" data-level="1.5.3" data-path="1-introduction.html"><a href="1-introduction.html#growing-kidney-organoids"><i class="fa fa-check"></i><b>1.5.3</b> Growing kidney organoids</a></li>
+<li class="chapter" data-level="1.5.4" data-path="1-introduction.html"><a href="1-introduction.html#kidney-scrna-seq-studies"><i class="fa fa-check"></i><b>1.5.4</b> Kidney scRNA-seq studies</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="1-introduction.html"><a href="1-introduction.html#intro-overview"><i class="fa fa-check"></i><b>1.6</b> Thesis overview and aims</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="2-tools.html"><a href="2-tools.html"><i class="fa fa-check"></i><b>2</b> The scRNA-seq tools landscape</a><ul>
+<li class="chapter" data-level="2.1" data-path="2-tools.html"><a href="2-tools.html#introduction-1"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="2-tools.html"><a href="2-tools.html#scrna-tools-publication"><i class="fa fa-check"></i><b>2.2</b> scRNA-tools publication</a></li>
+<li class="chapter" data-level="2.3" data-path="2-tools.html"><a href="2-tools.html#tools-current"><i class="fa fa-check"></i><b>2.3</b> The current scRNA-tools database</a></li>
+<li class="chapter" data-level="2.4" data-path="2-tools.html"><a href="2-tools.html#tools-usage"><i class="fa fa-check"></i><b>2.4</b> Usage of the scRNA-tools website</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="3-simulation.html"><a href="3-simulation.html"><i class="fa fa-check"></i><b>3</b> Simulating scRNA-seq data</a><ul>
+<li class="chapter" data-level="3.1" data-path="3-simulation.html"><a href="3-simulation.html#introduction-2"><i class="fa fa-check"></i><b>3.1</b> Introduction</a></li>
+<li class="chapter" data-level="3.2" data-path="3-simulation.html"><a href="3-simulation.html#splatter-publication"><i class="fa fa-check"></i><b>3.2</b> Splatter publication</a></li>
+<li class="chapter" data-level="3.3" data-path="3-simulation.html"><a href="3-simulation.html#splatter-update"><i class="fa fa-check"></i><b>3.3</b> Updates to Splatter</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="3-simulation.html"><a href="3-simulation.html#performance-of-current-simulations"><i class="fa fa-check"></i><b>3.3.1</b> Performance of current simulations</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="4-clust-trees.html"><a href="4-clust-trees.html"><i class="fa fa-check"></i><b>4</b> Visualising clustering across resolutions</a><ul>
+<li class="chapter" data-level="4.1" data-path="4-clust-trees.html"><a href="4-clust-trees.html#introduction-3"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="4-clust-trees.html"><a href="4-clust-trees.html#clustree-publication"><i class="fa fa-check"></i><b>4.2</b> Clustering trees publication</a></li>
+<li class="chapter" data-level="4.3" data-path="4-clust-trees.html"><a href="4-clust-trees.html#clustree-overlay"><i class="fa fa-check"></i><b>4.3</b> Overlaying clustering trees</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="5-analysis.html"><a href="5-analysis.html"><i class="fa fa-check"></i><b>5</b> Analysis of kidney organoid scRNA-seq data</a><ul>
+<li class="chapter" data-level="5.1" data-path="5-analysis.html"><a href="5-analysis.html#introduction-4"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="5-analysis.html"><a href="5-analysis.html#summary-of-published-work"><i class="fa fa-check"></i><b>5.2</b> Summary of published work</a></li>
+<li class="chapter" data-level="5.3" data-path="5-analysis.html"><a href="5-analysis.html#outline-and-motivation"><i class="fa fa-check"></i><b>5.3</b> Outline and motivation</a></li>
+<li class="chapter" data-level="5.4" data-path="5-analysis.html"><a href="5-analysis.html#pre-processing"><i class="fa fa-check"></i><b>5.4</b> Pre-processing</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="5-analysis.html"><a href="5-analysis.html#droplet-selection"><i class="fa fa-check"></i><b>5.4.1</b> Droplet selection</a></li>
+<li class="chapter" data-level="5.4.2" data-path="5-analysis.html"><a href="5-analysis.html#alevin-comparison"><i class="fa fa-check"></i><b>5.4.2</b> Alevin comparison</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="5-analysis.html"><a href="5-analysis.html#quality-control"><i class="fa fa-check"></i><b>5.5</b> Quality control</a></li>
+<li class="chapter" data-level="5.6" data-path="5-analysis.html"><a href="5-analysis.html#clustering"><i class="fa fa-check"></i><b>5.6</b> Clustering</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="5-analysis.html"><a href="5-analysis.html#gene-selection"><i class="fa fa-check"></i><b>5.6.1</b> Gene selection</a></li>
+<li class="chapter" data-level="5.6.2" data-path="5-analysis.html"><a href="5-analysis.html#resolution-selection"><i class="fa fa-check"></i><b>5.6.2</b> Resolution selection</a></li>
+<li class="chapter" data-level="5.6.3" data-path="5-analysis.html"><a href="5-analysis.html#cluster-validation"><i class="fa fa-check"></i><b>5.6.3</b> Cluster validation</a></li>
+<li class="chapter" data-level="5.6.4" data-path="5-analysis.html"><a href="5-analysis.html#comparison-to-published-clusters"><i class="fa fa-check"></i><b>5.6.4</b> Comparison to published clusters</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="5-analysis.html"><a href="5-analysis.html#marker-genes"><i class="fa fa-check"></i><b>5.7</b> Marker gene detection</a></li>
+<li class="chapter" data-level="5.8" data-path="5-analysis.html"><a href="5-analysis.html#connecting-clusters"><i class="fa fa-check"></i><b>5.8</b> Connecting clusters</a><ul>
+<li class="chapter" data-level="5.8.1" data-path="5-analysis.html"><a href="5-analysis.html#partition-based-graph-abstraction"><i class="fa fa-check"></i><b>5.8.1</b> Partition-based graph abstraction</a></li>
+<li class="chapter" data-level="5.8.2" data-path="5-analysis.html"><a href="5-analysis.html#cell-velocity"><i class="fa fa-check"></i><b>5.8.2</b> Cell velocity</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="5-analysis.html"><a href="5-analysis.html#discussion"><i class="fa fa-check"></i><b>5.9</b> Discussion</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="6-conclusion.html"><a href="6-conclusion.html"><i class="fa fa-check"></i><b>6</b> Conclusion</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="A-splatter-additional.html"><a href="A-splatter-additional.html"><i class="fa fa-check"></i><b>A</b> Splatter additional files</a><ul>
+<li class="chapter" data-level="A.1" data-path="A-splatter-additional.html"><a href="A-splatter-additional.html#additional-figures"><i class="fa fa-check"></i><b>A.1</b> Additional figures</a></li>
+<li class="chapter" data-level="A.2" data-path="A-splatter-additional.html"><a href="A-splatter-additional.html#session-information"><i class="fa fa-check"></i><b>A.2</b> Session information</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="B-splatter-docs.html"><a href="B-splatter-docs.html"><i class="fa fa-check"></i><b>B</b> Splatter documentation</a><ul>
+<li class="chapter" data-level="B.1" data-path="B-splatter-docs.html"><a href="B-splatter-docs.html#splatter-vignette"><i class="fa fa-check"></i><b>B.1</b> Splatter vignette</a></li>
+<li class="chapter" data-level="B.2" data-path="B-splatter-docs.html"><a href="B-splatter-docs.html#splat-params-vignette"><i class="fa fa-check"></i><b>B.2</b> Splat parameters vignette</a></li>
+<li class="chapter" data-level="B.3" data-path="B-splatter-docs.html"><a href="B-splatter-docs.html#splatter-manual"><i class="fa fa-check"></i><b>B.3</b> Splatter manual</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="C-simulation-comparison.html"><a href="C-simulation-comparison.html"><i class="fa fa-check"></i><b>C</b> Simulation comparison</a><ul>
+<li class="chapter" data-level="C.1" data-path="C-simulation-comparison.html"><a href="C-simulation-comparison.html#sim-timings"><i class="fa fa-check"></i><b>C.1</b> Timings</a></li>
+<li class="chapter" data-level="C.2" data-path="C-simulation-comparison.html"><a href="C-simulation-comparison.html#sim-packages"><i class="fa fa-check"></i><b>C.2</b> Package versions</a></li>
+</ul></li>
+<li class="chapter" data-level="D" data-path="D-clustree-docs.html"><a href="D-clustree-docs.html"><i class="fa fa-check"></i><b>D</b> clustree documentation</a><ul>
+<li class="chapter" data-level="D.1" data-path="D-clustree-docs.html"><a href="D-clustree-docs.html#clustree-vignette"><i class="fa fa-check"></i><b>D.1</b> clustree vignette</a></li>
+<li class="chapter" data-level="D.2" data-path="D-clustree-docs.html"><a href="D-clustree-docs.html#clustree-manual"><i class="fa fa-check"></i><b>D.2</b> clustree manual</a></li>
+</ul></li>
+<li class="chapter" data-level="E" data-path="E-organoid-paper.html"><a href="E-organoid-paper.html"><i class="fa fa-check"></i><b>E</b> Kidney organoid publication</a></li>
+<li class="chapter" data-level="F" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html"><i class="fa fa-check"></i><b>F</b> Analysis methods</a><ul>
+<li class="chapter" data-level="F.1" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#pre-processing-1"><i class="fa fa-check"></i><b>F.1</b> Pre-processing</a><ul>
+<li class="chapter" data-level="F.1.1" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#droplet-selection-1"><i class="fa fa-check"></i><b>F.1.1</b> Droplet selection</a></li>
+<li class="chapter" data-level="F.1.2" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#alevin"><i class="fa fa-check"></i><b>F.1.2</b> Alevin</a></li>
+</ul></li>
+<li class="chapter" data-level="F.2" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#quality-control-1"><i class="fa fa-check"></i><b>F.2</b> Quality control</a></li>
+<li class="chapter" data-level="F.3" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#clustering-1"><i class="fa fa-check"></i><b>F.3</b> Clustering</a><ul>
+<li class="chapter" data-level="F.3.1" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#gene-selection-1"><i class="fa fa-check"></i><b>F.3.1</b> Gene selection</a></li>
+<li class="chapter" data-level="F.3.2" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#graph-based-clustering"><i class="fa fa-check"></i><b>F.3.2</b> Graph-based clustering</a></li>
+</ul></li>
+<li class="chapter" data-level="F.4" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#marker-genes-1"><i class="fa fa-check"></i><b>F.4</b> Marker genes</a></li>
+<li class="chapter" data-level="F.5" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#partition-based-graph-abstraction-paga"><i class="fa fa-check"></i><b>F.5</b> Partition-based graph abstraction (PAGA)</a></li>
+<li class="chapter" data-level="F.6" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#cell-velocity-1"><i class="fa fa-check"></i><b>F.6</b> Cell velocity</a></li>
+<li class="chapter" data-level="F.7" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#other-packages"><i class="fa fa-check"></i><b>F.7</b> Other packages</a></li>
+</ul></li>
+<li class="chapter" data-level="G" data-path="G-session-information-1.html"><a href="G-session-information-1.html"><i class="fa fa-check"></i><b>G</b> Session information</a><ul>
+<li class="chapter" data-level="G.1" data-path="G-session-information-1.html"><a href="G-session-information-1.html#important-packages"><i class="fa fa-check"></i><b>G.1</b> Important packages</a></li>
+<li class="chapter" data-level="G.2" data-path="G-session-information-1.html"><a href="G-session-information-1.html#full-session-information"><i class="fa fa-check"></i><b>G.2</b> Full session information</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Tools and techniques for single-cell RNA sequencing data</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduction" class="section level1">
+<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
+<blockquote>
+<p><strong>See, people they don’t understand</strong></p>
+<p><strong>No, girlfriends, they can’t understand</strong></p>
+<p><strong>Your grandsons, they won’t understand</strong></p>
+<p><strong>On top of this, I ain’t ever gonna understand…</strong></p>
+<p>— The Strokes</p>
+<p><em>Last Nite</em>, 2001</p>
+</blockquote>
+<p><img src="figures/01-introduction.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>This introduction chapter provides the background and overview necessary for
+understanding my work in this thesis, including an introduction to basic cell
+biology and kidney development, the technologies we use to measure those
+processes in the cell and the computational methods we use to analyse the data
+these technologies produce. <strong>Section <a href="1-introduction.html#intro-dogma">1.1</a> - <a href="1-introduction.html#intro-dogma">The central
+dogma</a></strong> describes how information flows within a cell and the molecules
+involved in these processes. <strong>Section <a href="1-introduction.html#intro-RNAseq">1.2</a> - <a href="1-introduction.html#intro-RNAseq">RNA sequencing</a></strong>
+covers the technologies used to measure the dynamic changes in some of these
+molecules and the established computational methods that are commonly used to
+extract meaning from this kind of data. In <strong>Section <a href="1-introduction.html#intro-scRNAseq">1.3</a> -
+<a href="1-introduction.html#intro-scRNAseq">Single-cell RNA sequencing</a></strong> I discuss new technologies that have enabled
+measurements on the level of individual cells while <strong>Section
+<a href="1-introduction.html#intro-analysis">1.4</a> - <a href="1-introduction.html#intro-analysis">Analysing scRNA-seq data</a></strong> outlines the types of
+analysis that can be performed on this data and the tools and methods that
+perform them. <strong>Section <a href="1-introduction.html#intro-kidney">1.5</a> - <a href="1-introduction.html#intro-kidney">Kidney development</a></strong> provides a
+brief introduction to kidney structure and development and how it can be
+studied using stem cell technologies. This section provides background for
+<strong>Chapter <a href="5-analysis.html#analysis">5</a></strong> where I describe an analysis of a dataset from
+developing kidney organoids. My introduction ends with <strong>Section
+<a href="1-introduction.html#intro-overview">1.6</a> - <a href="1-introduction.html#intro-overview">Thesis overview and aims</a></strong> which presents an overview
+of my thesis aims and how I have completed them in the following chapters. An
+online version of this thesis is available at
+<a href="https://lazappi.github.io/phd-thesis/" class="uri">https://lazappi.github.io/phd-thesis/</a>.</p>
+<div id="intro-dogma" class="section level2">
+<h2><span class="header-section-number">1.1</span> The central dogma</h2>
+<p>The central dogma of molecular biology describes the flow of information within
+a cell, from DNA to RNA to protein (Figure <a href="1-introduction.html#fig:central-dogma">1.1</a>).
+Deoxyribonucleic acid (DNA) is the long-term data storage of the cell and has a
+well-known double helix structure <span class="citation">[1–3]</span>. Each strand of the double helix consists of a series of
+nucleotide molecules linked by phosphate groups. These nucleotides are made of
+three subunits: a nitrogenous base, a deoxyribose sugar and a phosphate group.
+DNA nucleotides come in four species, adenine, cytosine, thymine and guanine,
+which have different base subunits. The sugar and phosphate groups form the
+backbone of each DNA strand and the two strands are bound together through
+hydrogen bonds between matching nucleotides known as base pairs. Guanine forms
+three hydrogen bonds with cytosine and adenine forms two with thymine. In
+computing terms DNA is similar to a hard drive in that it provides stable,
+consistent storage of important information.</p>
+<div class="figure" style="text-align: center"><span id="fig:central-dogma"></span>
+<img src="figures/01-central-dogma.png" alt="The central dogma of molecular biology. Deoxyribonucleic acid (DNA) is the long-term data storage of the cell. To use this information a ribonucleic acid (RNA) molecule is produced through a process called transcription. A mature messenger RNA (mRNA) requires splicing and addition of a ploy(A) tail. Proteins are created from mRNA through translation in the ribosome." width="100%" />
+<p class="caption">
+Figure 1.1: The central dogma of molecular biology. Deoxyribonucleic acid (DNA) is the long-term data storage of the cell. To use this information a ribonucleic acid (RNA) molecule is produced through a process called transcription. A mature messenger RNA (mRNA) requires splicing and addition of a ploy(A) tail. Proteins are created from mRNA through translation in the ribosome.
+</p>
+</div>
+
+
+<p>When the cell wants to use some of this information it produces a copy of it in
+the form of a ribonucleic acid (RNA) molecule through a process known as
+transcription, similar to a computer loading information it wants to use into
+its random access memory. Sections of DNA that encode functional information
+are called genes. RNA is similar to a single strand of DNA except that the
+deoxyribose sugar is replaced with ribose and the thymine nucleotide is
+replaced with another nucleotide called uracil. Because it is single-stranded,
+RNA does not have a double helix structure but it can form complex shapes by
+binding to itself. A cell is able to create many copies of the same RNA
+molecule and this is referred to as the expression level. By varying RNA
+expression the activity of processes within a cell can be regulated. There are
+several different types of RNA that serve different purposes. RNA molecules
+that are transcribed from protein-coding genes are known as messenger RNA
+(mRNA). Other types of RNA include ribosomal RNA (rRNA) which forms part of the
+ribosome (the molecular machinery that manufactures proteins), transfer RNA
+(tRNA) which carries amino acids to the ribosome, micro RNA (miRNA) which have
+a role in regulating gene expression and long non-coding RNA (lncRNA) which are
+also involved in regulation among other processes. Genes are made up of regions
+that encode information (known as exons) that alternate with much larger
+non-coding regions (introns).</p>
+<p>When an mRNA molecule is transcribed it initially contains the intronic
+sequences but these are removed through a process known as RNA splicing and a
+sequence of adenine nucleotides (a poly(A) tail) is added where transcription
+ends (the 3’ end) to mark a mature mRNA molecule. This splicing process allows
+multiple forms of a protein to be produced from a single gene by selecting
+which exons are retained or removed. A mature mRNA transcript is converted to a
+protein in a complex structure called the ribosome which is made up of
+specialised RNA and proteins. The conversion process is known as translation
+because the information encoded by nucleic acids in RNA is translated to
+information stored as amino acids in the protein. Proteins complete most of the
+work required to keep a cell functioning and can be compared to the programs
+running on a computer. These functions require complex three dimensional
+structures and include tasks such as sensing things in the external
+environment, transporting nutrients into the cell, regulating the expression of
+genes, constructing new proteins, recycling molecules and facilitating
+metabolism. Understanding the molecules involved in the central dogma is
+central to our understanding of how a cell works.</p>
+</div>
+<div id="intro-RNAseq" class="section level2">
+<h2><span class="header-section-number">1.2</span> RNA sequencing</h2>
+<p>By looking at DNA we can see what versions of genes are present in a cell but
+we cannot tell which of them are active and what processes they might be
+involved in. To do that we need to inspect the parts of the system that change
+dynamically. Ideally we might want to interrogate the proteins that are
+present, as they provide most of the functionality. However, while it is
+possible to do this using technologies such as mass spectrometry the readout
+produced is more difficult to interpret and the encoding is much more complex
+as there are 20 different amino acids compared to only four nucleotides. In
+contrast, RNA molecules are much easier to measure. High-throughput RNA
+sequencing (RNA-seq) provides a reliable method for high-quality measurement of
+RNA expression levels. RNA is isolated from a biological sample, converted to
+complementary DNA (cDNA) and provided as input to a sequencing machine. The
+output of an RNA-seq experiment is millions of short nucleotide sequences
+originating from the RNA transcripts present in the sample. Compared to older
+techniques for measuring RNA, such as probe-based microarrays, RNA-seq requires
+no prior knowledge of existing sequences in order to measure a sample and is
+effective over a much greater range of expression levels.</p>
+<div id="library-preparation" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> Library preparation</h3>
+<p>The first step in preparing a sample for RNA-seq is to chemically lyse the
+cells, disrupting the structure of the cell wall and releasing the molecules
+inside. RNA molecules can then be isolated, typically using a chemical process
+called phenol/chloroform extraction, although this can also be done by
+physically separating different types of molecules by passing the sample
+through a silica column. The majority of the RNA in a cell is ribosomal RNA,
+usually more than 80 percent <span class="citation">[4]</span>. Most of the time this type of RNA
+is not of interest and because the total amount of sequencing in an experiment
+is limited sequencing rRNA would reduce the ability to detect less abundant
+species. To select mature mRNA transcripts, oligonucleotide probes that bind to
+the poly(A) tail can be used, but a downside of this approach is that it won’t
+capture immature mRNA or other types of RNA molecules. An alternative method is
+ribosomal RNA depletion where a different kind of probe specific to each
+species is used that binds to the rRNA allowing it to be removed. The choice of
+selection method has been shown to introduce different biases into the
+resulting data <span class="citation">[5]</span>.</p>
+<p>The Illumina sequencing typically used for RNA-seq experiments can only read
+short sequences of nucleotides of approximately 40–400 base pairs. Most mRNA
+molecules are longer than this so to read the full length of a transcript it
+must first be fragmented into smaller parts. Most sequencing machines also only
+work with DNA, not directly with RNA, so the sample must first be
+reverse-transcribed using a retroviral enzyme to produce a single strand of
+cDNA. Many protocols have been designed for this step with each requiring a
+specific primer sequence to be joined to the RNA molecules. The complementary
+strand of cDNA is produced using a second enzyme that is usually involved in
+copying DNA for cell division. For some protocols fragmentation is performed
+after conversion to cDNA rather than at the RNA stage.</p>
+<p>Once the cDNA has been produced it is usually necessary to attach adaptor
+sequences that are used to bind the molecules and initiate sequencing (Figure
+<a href="1-introduction.html#fig:adaptors">1.2</a>). These adaptors may also contain multiplexing barcodes
+that tag all the molecules in a sample and allow multiple samples to be
+sequenced at once. It has become standard practice to perform paired-end
+sequencing, where a section of nucleotides is read from one end of a fragment
+before it is flipped and the other end read, and this process requires an
+additional set of adaptors. At each of the stages of library preparation there
+are quality control steps to be performed to make sure a high-quality cDNA
+sample is loaded on to the sequencing machine.</p>
+<div class="figure" style="text-align: center"><span id="fig:adaptors"></span>
+<img src="figures/01-adaptors.png" alt="Illustration of adapter arrangements for the Illumina platform ((A) minimal adapter components, (B) “in-line” barcode configuration for paired-end sequencing, (C) index configuration for paired-end sequencing). Sequencing primers SP1 (primary) and SP2 (paired-end) allow initiation of synthesis of the insert sequence. Index or barcode sequences allow multiplexing of multiple samples with the index being sequenced from a separate index primer (IP). (Image adapted from RNA-seqlopedia, http://rnaseq.uoregon.edu [6])." width="100%" />
+<p class="caption">
+Figure 1.2: Illustration of adapter arrangements for the Illumina platform ((A) minimal adapter components, (B) “in-line” barcode configuration for paired-end sequencing, (C) index configuration for paired-end sequencing). Sequencing primers SP1 (primary) and SP2 (paired-end) allow initiation of synthesis of the insert sequence. Index or barcode sequences allow multiplexing of multiple samples with the index being sequenced from a separate index primer (IP). (Image adapted from RNA-seqlopedia, <a href="http://rnaseq.uoregon.edu" class="uri">http://rnaseq.uoregon.edu</a> <span class="citation">[6]</span>).
+</p>
+</div>
+
+
+</div>
+<div id="high-throughput-sequencing" class="section level3">
+<h3><span class="header-section-number">1.2.2</span> High-throughput sequencing</h3>
+<p>Most RNA-seq experiments are sequenced on an Illumina machine using their
+Sequence by Synthesis technology (Figure <a href="1-introduction.html#fig:sequencing">1.3</a>). In this
+process the two strands of cDNA fragments are separated and the adaptors bind
+to oligonucleotides probes coating a flow cell. The other end of the fragment
+can bind to a second oligonucleotide forming a bridge structure where an enzyme
+synthesises the complementary DNA strand. This process of separation of strands
+and synthesis of new complementary strands is repeated until clusters of DNA
+fragments with the same sequence are formed. Once the clusters contain enough
+fragments the adaptor at one end of each fragment is cleaved leaving
+single-stranded DNA attached to the flow cell at one end.</p>
+<div class="figure" style="text-align: center"><span id="fig:sequencing"></span>
+<img src="figures/01-sequencing.png" alt="The Illumina Sequencing by Synthesis process. Nucleotide fragments bind to a flow cell and clusters are formed through bridge amplification. Strands are primed and nucleotides tagged with fluorescent labels are added to the flow cell along with a DNA polymerase enzyme. The lanes of the flow cell are then scanned to produce an image. The fluorescent tags are cleaved and 3’-OH blocking groups are added, preparing the strands for another round of nucleotide incorporation. Image adapted from Mardis, “Next-Generation DNA Sequencing Methods” [7]." width="80%" />
+<p class="caption">
+Figure 1.3: The Illumina Sequencing by Synthesis process. Nucleotide fragments bind to a flow cell and clusters are formed through bridge amplification. Strands are primed and nucleotides tagged with fluorescent labels are added to the flow cell along with a DNA polymerase enzyme. The lanes of the flow cell are then scanned to produce an image. The fluorescent tags are cleaved and 3’-OH blocking groups are added, preparing the strands for another round of nucleotide incorporation. Image adapted from Mardis, “Next-Generation DNA Sequencing Methods” <span class="citation">[7]</span>.
+</p>
+</div>
+
+
+<p>The sequencing process now begins. Nucleotides tagged with fluorescent markers
+are added and can bind to the next available position on a fragment if they are
+complementary. By adding all four nucleotides at once they compete for each
+position, reducing the chance of an incorrect match. Any unbound nucleotides
+are washed away before a laser excites the fluorescent tags and an image is
+taken. Each nucleotide is tagged with a different colour and the order of
+colours produced by a cluster shows the sequence of nucleotides in a fragment.
+For paired-end sequencing the fragments can be flipped and the sequencing
+process repeated at the other end. The images from the sequencing machine are
+processed to produce millions of short nucleotide sequences known as reads that
+are the starting point for computational analysis.</p>
+</div>
+<div id="analysis-of-rna-seq-data" class="section level3">
+<h3><span class="header-section-number">1.2.3</span> Analysis of RNA-seq data</h3>
+<p>Many types of analyses can be performed using RNA-seq data, such as
+identification of variants in the genetic sequence or detection of previously
+unannotated transcripts, but the most common kind of analysis is to look for
+differences in the expression level of genes between groups of samples (Figure
+<a href="1-introduction.html#fig:RNA-seq">1.4</a>). To do this, reads are first aligned to a reference genome
+and the number of reads overlapping each gene is counted. In contrast to
+aligners designed for DNA sequencing, RNA-seq aligners such as STAR
+<span class="citation">[8]</span>, HISAT2 <span class="citation">[9]</span> and subread <span class="citation">[10]</span> must take into
+account the splicing structure of mRNA transcripts which causes parts of some
+reads to align in different locations in the genome. The alignment step is
+computationally intensive and can take a significant amount of time. More
+recently tools such as kallisto <span class="citation">[11]</span> and Salmon <span class="citation">[12]</span> have
+been developed which attempt to directly quantify expression by estimating the
+probability that a read comes from a particular annotated transcript. These
+approaches are orders of magnitude faster than true genome alignment and
+potentially produce more accurate quantification, at the cost of having an
+exact genomic position for each read.</p>
+<div class="figure" style="text-align: center"><span id="fig:RNA-seq"></span>
+<img src="figures/01-RNA-seq.png" alt="A typical RNA-seq differential expression testing workflow. An expression matrix is created from raw reads either by aligning them to a reference genome and counting those that overlap annotated genes or by alignment-free quantification (pink). Data analysis (blue) consists of several steps including quality control of samples and features, normalisation to remove technical differences between samples, testing for differential expression, gene set testing to identify enriched signatures, and visualisation. Results must be carefully interpreted (green) to extract meaning." width="100%" />
+<p class="caption">
+Figure 1.4: A typical RNA-seq differential expression testing workflow. An expression matrix is created from raw reads either by aligning them to a reference genome and counting those that overlap annotated genes or by alignment-free quantification (pink). Data analysis (blue) consists of several steps including quality control of samples and features, normalisation to remove technical differences between samples, testing for differential expression, gene set testing to identify enriched signatures, and visualisation. Results must be carefully interpreted (green) to extract meaning.
+</p>
+</div>
+
+
+<p>At this stage the result is a matrix of counts, known as an expression matrix,
+where the rows are features (usually genes), the columns are samples and the
+values show the expression level of a particular feature in a sample. As these
+counts result from a sampling process they can be modelled using common
+statistical distributions. One option is the Poisson distribution which
+describes the probability of a given number of events happening in a fixed
+amount of time, however this distribution assumes that the mean and variance of
+each feature is equal. This can be true for replicates of the same RNA-seq
+sample but does not represent the extra biological variability between
+different samples <span class="citation">[13]</span>. A better fit is the negative binomial (or
+Gamma-Poisson) distribution which includes an over-dispersion parameter,
+allowing the variance in expression to be larger than the mean. While each
+feature is quantified for each sample, the observed expression levels are
+related to the total number of reads and the expression level of other
+features. For example, if a gene is highly expressed in a particular sample it
+will soak up a large proportion of the available reads, while in another sample
+where it is less expressed those reads are more likely to be sampled from other
+genes. Another complication of RNA-seq data is that the number of features
+(tens of thousands) is much larger than the number of samples (usually only a
+few per group) which violates the assumptions of many traditional statistical
+techniques. Technical variation is another well-known problem in
+high-throughput genomics studies, for example it has been estimated that only
+17.8 percent of allele-specific expression is due to biological variation with
+the rest being technical noise <span class="citation">[14]</span>.</p>
+<p>Both the edgeR <span class="citation">[15,16]</span> and DESeq <span class="citation">[17]</span>
+(and later the DESeq2 <span class="citation">[18]</span>) packages model RNA-seq data using the
+negative binomial distribution, but before differences in expression levels are tested the technical differences between samples should be removed through
+normalisation. Early approaches include simple transformations like Reads (or
+Fragments) Per Kilobase per Million (RPKM/FPKM) <span class="citation">[19]</span> or
+Transcripts Per Million (TPM) <span class="citation">[20]</span> which correct for the total
+number of reads per cell and gene length. The edgeR package uses the
+Trimmed-Mean of M values (TMM) method where a scaling factor for each sample is
+produced using the weighted mean of log ratios between samples for each gene,
+after excluding the highest expressed genes and those with the largest log
+ratio <span class="citation">[13]</span>. DESeq has a similar method that uses the median of
+the ratio of the expression of each gene to the geometric mean expression
+across all samples. The limma package <span class="citation">[21]</span> uses an alternative
+approach where a method called voom transforms the data so that it is suitable
+for linear modelling methods originally designed for RNA microarray technology
+<span class="citation">[22]</span>. When an experiment has been conducted in multiple batches and
+there are significant differences between them, alternative normalisation
+methods such as Remove Unwanted Variation (RUV) may be required
+<span class="citation">[23]</span>. RUV estimates unknown factors of unwanted variation using
+negative control genes (genes that are expected to be consistent between
+samples). These factors can then be included in the generalised linear
+modelling frameworks used for testing differential expression. Over time the
+methods in these packages have been refined and new tests developed allowing
+for the routine analysis of many RNA-seq experiments.</p>
+</div>
+</div>
+<div id="intro-scRNAseq" class="section level2">
+<h2><span class="header-section-number">1.3</span> Single-cell RNA sequencing</h2>
+<p>Traditional bulk RNA-seq experiments average the transcriptome across the
+millions of cells in a sample. Recently it has become possible to perform
+single-cell RNA sequencing (scRNA-seq) and investigate the transcriptome at the
+resolution of individual cells. There are many situations where it is important
+to understand how specific cell types react to development or perturbations.
+This is often hindered in bulk analyses which may be affected by the unknown
+proportions of cell types in a sample. Studies into gene expression in specific
+cell types previously required selecting and isolating the cells of interest,
+which separates them from the other cell types they are usually associated with
+and makes it impossible to investigate interactions between them. With
+scRNA-seq technologies it is now possible to look at the transcriptome of all
+the cell types in a tissue simultaneously, which has led to a better
+understanding of what makes cell types distinct and the discovery of previously
+unknown cell types.</p>
+<div id="early-single-cell-capture-technologies" class="section level3">
+<h3><span class="header-section-number">1.3.1</span> Early single-cell capture technologies</h3>
+<p>The first scRNA-seq protocol was published in 2009 <span class="citation">[24]</span>, just a year
+after the first bulk RNA-seq publication <span class="citation">[19]</span>. While this
+approach allowed measurements of the transcriptome in individual cells it
+required manual manipulation and was restricted to inspecting a few precious
+cells. Further studies quickly showed that cell types could be identified
+without sorting cells and approaches were developed to allow unbiased capture
+of the whole transcriptome. Since then, many scRNA-seq protocols have been
+developed (including CEL-Seq <span class="citation">[25]</span>, CEL-Seq2
+<span class="citation">[26]</span>, Quartz-Seq <span class="citation">[27]</span>, Quartz-Seq2
+<span class="citation">[28]</span> and Smart-seq2 <span class="citation">[29]</span>) and the number of cells in
+scRNA-seq experiments has scaled exponentially (Figure <a href="1-introduction.html#fig:technologies">1.5</a>)
+<span class="citation">[30]</span>. The first commercially available cell capture platform was
+the Fluidigm C1. This system uses microfluidics to passively separate cells
+into individual wells on a plate where they are lysed, reverse transcribed and
+the collected cDNA is PCR amplified. After this stage the product is extracted
+from the plate and libraries prepared for Illumina sequencing. Most C1 data has
+been produced using a 96 well plate but more recently an 800 well plate has
+become available, greatly increasing the number of cells that can be captured
+at a time. One of the disadvantages of microfluidic plate-based cell capture
+technologies is that the chips used have a fixed size window, meaning that only
+cells of a particular sizes can be captured in a single run. However, as cells
+are captured in individual wells they can be imaged before lysis, potentially
+identifying damaged or broken cells, empty wells or wells containing more than
+one cell. Capturing multiple cells is a known issue, with Macosko et
+al. finding that when preparing a mixture of mouse and human cells, 30 percent of
+the resulting libraries contained transcripts from both species but only about
+a third of these doublets were visible in microscopy images <span class="citation">[31]</span>.
+The newer Polaris system from Fluidigm also uses microfluidics to capture cells
+but can select particular cells based on staining or fluorescent reporter
+expression and then hold them for up to 24 hours while introducing various
+stimuli. The cells can be imaged during this time before being lysed and
+prepared for RNA sequencing. This platform provides opportunities for a range
+of experiments that aren’t possible using other capture technologies.</p>
+<div class="figure" style="text-align: center"><span id="fig:technologies"></span>
+<img src="figures/01-technologies.jpg" alt="Exponential increase in the scale of scRNA-seq experiments. (a) Key jumps in scRNA-seq capture technologies including manual handling, plate-based microfluidic capture and droplet-based capture. (b) Cell numbers in representative studies using key technologies by publication date. Image from Svensson, Vento-Tormo and Teichmann “Exponential scaling of single-cell RNA-seq in the past decade” [30]." width="100%" />
+<p class="caption">
+Figure 1.5: Exponential increase in the scale of scRNA-seq experiments. (a) Key jumps in scRNA-seq capture technologies including manual handling, plate-based microfluidic capture and droplet-based capture. (b) Cell numbers in representative studies using key technologies by publication date. Image from Svensson, Vento-Tormo and Teichmann “Exponential scaling of single-cell RNA-seq in the past decade” <span class="citation">[30]</span>.
+</p>
+</div>
+
+
+</div>
+<div id="droplet-based-cell-capture" class="section level3">
+<h3><span class="header-section-number">1.3.2</span> Droplet-based cell capture</h3>
+<p>An alternative to using microfluidics to capture cells in wells is to capture
+them in nano-droplets. In this process a dissociated cell mixture is fed into a
+microfluidic device, while beads coated in primers enter at another input. The
+device is designed to form aqueous droplets within mineral oil and the inputs
+are arranged so that cells and beads can be simultaneously captured within a
+droplet. When this happens the reagents carried along with the bead lyse the
+cell and any poly(A) tagged RNA molecules present can bind to the capture
+probes on the bead. Reverse transcription and PCR amplification then begins and
+an individual cDNA library is produced for each cell, tagged with the unique
+barcode sequence present on the bead. The main advantage of droplet-based
+capture technologies is the ability to capture many more cells at one time, up
+to tens of thousands. These approaches are also less selective about cell size
+and produce fewer doublets. As a result they are much cheaper per cell,
+although as sequencing costs are fixed studies using droplet-based captures
+typically sequence individual cells at a much lower depth.</p>
+<p>Droplet-based capture was popularised by the publication of the Drop-seq
+<span class="citation">[31]</span> and InDrop <span class="citation">[32]</span> platforms in 2015 and the updated
+InDrops in 2017 <span class="citation">[33]</span>. These are both DIY systems and although
+they differ in how the beads are produced, when the droplets are broken and in
+some aspects of the chemistry they can both be constructed on a lab bench from
+syringes, automatic plungers, a microscope and a small custom-made microfluidic
+chip. A similar commercially available platform is the 10x Genomics Chromium
+device which automates and streamlines much of the process (Figure
+<a href="1-introduction.html#fig:10xChromium">1.6</a>) <span class="citation">[34]</span>. This device uses droplet-based
+technologies for a range of applications including capture of cells for
+scRNA-seq. More specialised captures, such as those aimed at profiling immune
+cell receptors, are also possible and the company has recently announced kits
+for single-cell Assay for Transposase-Accessible Chromatin using sequencing
+(scATAC-seq) capture. A recent review has suggested that the 10x Chromium
+provides the most appropriate droplet-based capture for most experiments that
+aren’t cost sensitive or require custom protocols <span class="citation">[35]</span>.</p>
+<div class="figure" style="text-align: center"><span id="fig:10xChromium"></span>
+<img src="figures/01-10xChromium.png" alt="Diagram of the 10x Genomics Chromium cell capture process. (A) Steps in the cell capture process. Barcoded gel beads are passed into a microfluidic device along with dissociated cells where they are captured in aqueous droplets in an oil solution. Cells are lysed within the droplets and mRNA is reverse transcribed to produced barcoded cDNA. Droplets are then broken and the cDNA collected for sequencing. (B) Structure of the gel bead capture probe including adaptor, cell barcode, UMI and poly(T) tail. Adapted using images from 10x Genomics." width="100%" />
+<p class="caption">
+Figure 1.6: Diagram of the 10x Genomics Chromium cell capture process. (A) Steps in the cell capture process. Barcoded gel beads are passed into a microfluidic device along with dissociated cells where they are captured in aqueous droplets in an oil solution. Cells are lysed within the droplets and mRNA is reverse transcribed to produced barcoded cDNA. Droplets are then broken and the cDNA collected for sequencing. (B) Structure of the gel bead capture probe including adaptor, cell barcode, UMI and poly(T) tail. Adapted using images from 10x Genomics.
+</p>
+</div>
+
+
+</div>
+<div id="unique-molecular-identifiers" class="section level3">
+<h3><span class="header-section-number">1.3.3</span> Unique Molecular Identifiers</h3>
+<p>In contrast to plate-based capture methods, which usually provide reads along
+the length of RNA transcripts, droplet-based capture methods typically employ
+protocols which include short random nucleotide sequences known as Unique
+Molecular Identifiers (UMIs) <span class="citation">[36]</span>. Individual cells contain very
+small amounts of RNA (around 10–30 pg, less than 5 percent of which is mRNA)
+and to obtain enough cDNA for sequencing a PCR amplification step is necessary.
+Depending on their nucleotide sequence different transcripts may be amplified
+at different rates which can distort their relative proportions within a
+library. UMIs attempt to improve the quantification of gene expression by
+allowing the removal of PCR duplicates produced during amplification (Figure
+<a href="1-introduction.html#fig:UMIs">1.7</a>) <span class="citation">[37]</span>. The nucleotide probes used in droplet-based
+capture protocols include a poly(T) sequence which binds to mature mRNA
+molecules, a barcode sequence which is the same for every probe on a bead and
+8–10 bases of UMI sequence which is unique to each probe. The UMI sequences are
+long enough that the probability of capturing two copies of a transcript on two
+probes with the same UMI is extremely low. After reverse transcription,
+amplification, sequencing and alignment, de-duplication can be performed by
+identifying reads with the same UMI that align to the same position and
+therefore should be PCR duplicates rather than truly expressed copies of a
+transcript.</p>
+<div class="figure" style="text-align: center"><span id="fig:UMIs"></span>
+<img src="figures/01-UMIs.png" alt="Unique Molecular Identifiers (UMIs) can improve scRNA-seq quantification. (A) UMIs are random 8–10 base pair sequences included as part of the mRNA capture probe along with the cell barcode (BC) and PCR handle. (B) The mRNA sequence can be aligned to a reference genome. (C) Each UMI is only counted once at each location, removing PCR duplicates and improving quantification." width="100%" />
+<p class="caption">
+Figure 1.7: Unique Molecular Identifiers (UMIs) can improve scRNA-seq quantification. (A) UMIs are random 8–10 base pair sequences included as part of the mRNA capture probe along with the cell barcode (BC) and PCR handle. (B) The mRNA sequence can be aligned to a reference genome. (C) Each UMI is only counted once at each location, removing PCR duplicates and improving quantification.
+</p>
+</div>
+
+
+<p>For this method to be effective each read must be associated with a UMI which
+means that only a small section at the 3’ end of each transcript is sequenced.
+This has the side effect of reducing the amount of cDNA that needs to be
+sequenced and therefore increasing the number of cells that can be sequenced at
+a time. While the improvement in quantification of gene expression levels is
+useful for many downstream analyses, it comes at the cost of coverage across
+the length of a transcript, which is required for applications such as variant
+detection and de-novo assembly. However, reads along the length of genes have
+been observed in UMI datasets and are believed to come from unannotated
+transcription start sites or regions that contain enough adenine nucleotides to
+bind to the capture probes. Datasets with UMIs need extra processing steps
+which can be complicated by the possibility of sequencing errors in the UMI
+itself. Statistical methods designed for full-length data may also be affected
+by the different properties of a UMI dataset.</p>
+</div>
+<div id="recent-advances-in-scrna-seq-protocols" class="section level3">
+<h3><span class="header-section-number">1.3.4</span> Recent advances in scRNA-seq protocols</h3>
+<p>Although droplet-based techniques are currently the most commonly used cell
+capture technologies, other approaches have been proposed that promise to
+capture even more cells at a lower cost per cell. These include approaches
+based around sub-nanolitre sized wells, for example the Seq-Well protocol
+<span class="citation">[38]</span>. A simple flow cell is constructed with an array of
+microwells made from polydimethylsiloxane (PDMS), a silicone rubber. A solution
+containing dissociated cells is flowed over the array and cells are captured in
+the wells by gravity. This is repeated to capture barcoded beads before adding
+reagents and sealing the wells. Once reactions are complete the beads can be
+retrieved and processed in a similar way to droplet-based capture
+<span class="citation">[39]</span>. Some cell types are difficult to capture due to their size,
+shape or other properties, and in some cases, particularly in tissues such as
+the brain, it has been suggested that single-nucleus rather than single-cell
+RNA-seq may be more effective <span class="citation">[40–43]</span>. In these protocols Nuclei are captured and processed in a similar
+way to cells, however the RNA within them is immature and unspliced so
+different reference annotations are required during analysis.</p>
+<p>Extensions to the standard protocols have also been proposed that allow
+multiple measurements from the same cell (Figure <a href="1-introduction.html#fig:multimodal">1.8</a>). One
+such protocol is CITE-seq which enables measurement of the levels of selected
+proteins at the same time as the whole transcriptome (Figure
+<a href="1-introduction.html#fig:CITE-seq">1.9</a>A) <span class="citation">[44]</span>. Antibodies for the proteins of
+interest are labelled with short nucleotide sequences. These antibodies can
+then be applied to the dissociated cells and any that remain unbound are washed
+away before cell capture. The antibody labels are then captured along with mRNA
+transcripts and a size selection step is applied to separate them before
+library preparation. Similar antibodies can be used to allow multiplexing of
+samples through a process known as cell hashing (Figure <a href="1-introduction.html#fig:CITE-seq">1.9</a>B)
+<span class="citation">[45]</span>. In a typical scRNA-seq experiment each batch corresponds
+to a single sample. This complicates analysis as it is impossible to tell what
+is noise due to cells being processed in the same way and what is true
+biological signal. Cell hashing uses an antibody to a ubiquitously expressed
+protein but with a different nucleotide sequence for each sample. The samples
+can then be mixed, processed in batches and then the cells computationally
+separated based on which sequence they are associated with. An added benefit of
+this approach is the simple detection of doublets containing cells from
+different samples.</p>
+<div class="figure" style="text-align: center"><span id="fig:multimodal"></span>
+<img src="figures/01-multimodal.png" alt="The range of multimodal scRNA-seq technologies. Many protocols have been developed to enable multiple measurements from the same individual cells with a selection shown here. These other measurements (shaded colours) include genotype (rose bud), methylation (cornsilk), chromatin state (muted lime), transcription factor binding (periwinkle), protein expression (jade lime), activation or repression (cabbage), lineage tracing (aquamarine blue), spatial location (light sky blue) or electrophysiology (cotton candy). Image from https://github.com/arnavm/multimodal-scRNA-seq available under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license [46]." width="100%" />
+<p class="caption">
+Figure 1.8: The range of multimodal scRNA-seq technologies. Many protocols have been developed to enable multiple measurements from the same individual cells with a selection shown here. These other measurements (shaded colours) include genotype (rose bud), methylation (cornsilk), chromatin state (muted lime), transcription factor binding (periwinkle), protein expression (jade lime), activation or repression (cabbage), lineage tracing (aquamarine blue), spatial location (light sky blue) or electrophysiology (cotton candy). Image from <a href="https://github.com/arnavm/multimodal-scRNA-seq" class="uri">https://github.com/arnavm/multimodal-scRNA-seq</a> available under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license <span class="citation">[46]</span>.
+</p>
+</div>
+
+
+<div class="figure" style="text-align: center"><span id="fig:CITE-seq"></span>
+<img src="figures/01-CITE-seq.png" alt="Extensions to droplet-based capture protocols using nucleotide tagged antibodies. (A) CITE-seq allows measurement of selected cell surface markers along with the transcriptome. Nucleotide tagged antibodies are applied to cells before droplet-based capture and processing. A size selection step is used to separate antibody nucleotides before library preparation. (B) Cell hashing allows multiplexing of samples. Ubiquitous antibodies are used to tag cells in each sample with a hashtag oligonucleotide. The cells are then mixed for cell capture and processing and the hashtags used to computationally identify the origin of each cell. Images from https://cite-seq.com [47]." width="100%" />
+<p class="caption">
+Figure 1.9: Extensions to droplet-based capture protocols using nucleotide tagged antibodies. (A) CITE-seq allows measurement of selected cell surface markers along with the transcriptome. Nucleotide tagged antibodies are applied to cells before droplet-based capture and processing. A size selection step is used to separate antibody nucleotides before library preparation. (B) Cell hashing allows multiplexing of samples. Ubiquitous antibodies are used to tag cells in each sample with a hashtag oligonucleotide. The cells are then mixed for cell capture and processing and the hashtags used to computationally identify the origin of each cell. Images from <a href="https://cite-seq.com" class="uri">https://cite-seq.com</a> <span class="citation">[47]</span>.
+</p>
+</div>
+
+
+<p>CRISPR-Cas9 gene editing has also been developed as an extension to scRNA-seq
+protocols. One possibility is to introduce a mutation at a known location that
+can then be used to demultiplex samples processed together <span class="citation">[48]</span>.
+It is possible to do this with samples from different individuals or cell lines
+but the advantage of a gene editing based approach is that the genetic
+background remains similar between samples. It is also possible to investigate
+the effects of introducing a mutation. Protocols like Perturb-Seq
+<span class="citation">[49]</span> introduce a range of guide RNA molecules to a cell culture,
+subject the cells to some stimulus then perform single-cell RNA sequencing. The
+introduced mutation can then be linked to the response of the cells to the
+stimulus and the associated broader changes in gene expression. More recently
+it has been proposed that CITE-seq can be combined with CRISPR-based approaches
+<span class="citation">[50]</span>. Another approach is CellTagging which introduces a barcoded
+lentiviral construct into cells <span class="citation">[51]</span>. A unique combination of
+barcodes is then passed on to daughter cells and can be used to trace the
+lineage of a cell population.</p>
+<p>Other approaches that allow multiple measurements from the same individual
+cells include G&amp;T-seq <span class="citation">[52]</span> and SIDR <span class="citation">[53]</span> which measure
+RNA and genomic DNA, similar approaches which measure the exome (or
+protein-coding part of the genome) along with the transcriptome <span class="citation">[54]</span>,
+scMT-seq which measures RNA and DNA methylation <span class="citation">[55]</span>, Patch-seq which
+combines patch-clamp recording to measure the electrophysiology of neurons with
+scRNA-seq <span class="citation">[56]</span> and scTrio-seq which is able to measure the genome,
+transcriptome and methylome simultaneously <span class="citation">[57]</span>.</p>
+</div>
+</div>
+<div id="intro-analysis" class="section level2">
+<h2><span class="header-section-number">1.4</span> Analysing scRNA-seq data</h2>
+<p>Cell capture technologies and scRNA-seq protocols have developed rapidly but
+the data they produce still presents a number of challenges. Existing
+approaches are inefficient, capturing around 10 percent of transcripts in a
+cell <span class="citation">[58]</span>. When combined with the low sequencing depth per cell this
+results in a limited sensitivity and an inability to detect lowly expressed
+transcripts. The small amount of starting material also contributes to high
+levels of technical noise, complicating downstream analysis and making it
+difficult to detect biological differences <span class="citation">[59]</span>. In order to capture
+cells they must first be dissociated into single-cell suspensions but this step
+can be non-trivial. Some tissues or cell types may be more difficult to
+separate than others and the treatments required to break them apart may affect
+the health of the cells and their transcriptional profiles. It has been
+suggested that damage caused by dissociation can be minimised by using a
+cold-active protease to separate cells <span class="citation">[60]</span>. Other cell types may be
+too big or have other characteristics that prevent them being captured.
+Multiple cells may be captured together or empty wells or droplets sequenced
+making quality control of datasets an important consideration.</p>
+<p>As well as increasing technical noise the small amounts of starting material
+and low sequencing depth mean there are many occasions where zero counts are
+recorded, indicating no measured expression for a particular gene in a
+particular cell. These zero counts often represent the true biological state we
+are interested in as we that different genes will be expressed by different
+cell types. However, zeros can also be the result of confounding biological
+factors such as stage in the cell cycle, transcriptional bursting and
+environmental interactions which cause genuine changes in expression but that
+might not be of interest to a particular study. On top of this there are
+effects that are purely technical factors. In particular, sampling effects,
+which can result in “dropout” events where a transcript is truly expressed in a
+sample but is not observed in the sequencing data <span class="citation">[61]</span>. In bulk
+experiments these effects are limited by averaging across the cells in a sample
+and by the greater sequencing depth, but for single-cell experiments they can
+present a significant challenge for analysis as methods must account for the
+missing information and the large number of zeros may cause the assumptions of
+existing methods to be violated.</p>
+<p>One approach to tackling the problem of too many zeros is to use zero-inflated
+versions of common distributions <span class="citation">[62–65]</span>. However, it is still debatable whether
+scRNA-seq datasets, particularly those from droplet-based capture protocols
+<span class="citation">[66]</span>, are truly zero inflated or if the additional zeros are
+better modelled with standard distributions with lower means. Another approach
+to analysis is to impute some of the zeros, replacing them with estimates of
+how expressed those genes truly are based on their expression in similar cells
+using methods such as MAGIC <span class="citation">[67]</span>, SAVER <span class="citation">[68,69]</span> or scImpute <span class="citation">[70]</span>. However, imputation comes with the risk
+of introducing false structure that is not actually present in the samples
+<span class="citation">[71]</span>.</p>
+<p>Bulk RNA-seq experiments usually involve predefined groups of samples, for
+example cancer cells and normal tissue, different tissue types or treatment and
+control groups. It is possible to design scRNA-seq experiments in the same way
+by sorting cells into known groups based on surface markers, sampling them at a
+series of time points or comparing treatment groups, but often single-cell
+experiments are more exploratory. Many of the single-cell studies to date have
+sampled developing or mature tissues and attempted to profile the cell types
+that are present <span class="citation">[32,72–77]</span>. This
+approach is best exemplified by the Human Cell Atlas project which is
+attempting to produce a reference of the transcriptional profiles of all the
+cell types in the human body <span class="citation">[78]</span>. Similar projects exist for other
+species and specific tissues <span class="citation">[79–88]</span>.</p>
+<p>As scRNA-seq datasets have become more widely available, a standard analysis
+workflow has developed which can be applied to many experiments <span class="citation">[89,90]</span>. This workflow can be divided into four phases shown in
+Figure <a href="1-introduction.html#fig:phases">1.10</a>: 1) Data acquisition, pre-processing of samples to
+produce a cell by gene expression matrix, 2) Data cleaning, quality control to
+refine the dataset used for analysis, 3) Cell assignment, grouping or ordering
+of cells based on their transcriptional profile, and 4) Gene identification to
+find genes that represent particular groups and can be used to interpret them.
+Within each phase a range of processes may be used and there are now many tools
+available for completing each of them, with over 450
+tools currently available. An introduction to the phases of scRNA-seq analysis
+is provided here but the analysis tools landscape is more fully explored in
+<strong>Chapter <a href="2-tools.html#tools">2</a></strong>.</p>
+<div class="figure" style="text-align: center"><span id="fig:phases"></span>
+<img src="figures/01-phases.png" alt="Phases of a standard scRNA-seq analysis workflow. In Phase 1 (Data acquisition) samples are pre-processed to produce an expression matrix that undergoes quality control and filtering in Phase 2 (Data cleaning). Phase 3 (Cell assignment) groups or orders cells according to their transcriptional profile and in Phase 4 (Gene identification) genes describing those groups are discovered and used to interpret them." width="100%" />
+<p class="caption">
+Figure 1.10: Phases of a standard scRNA-seq analysis workflow. In Phase 1 (Data acquisition) samples are pre-processed to produce an expression matrix that undergoes quality control and filtering in Phase 2 (Data cleaning). Phase 3 (Cell assignment) groups or orders cells according to their transcriptional profile and in Phase 4 (Gene identification) genes describing those groups are discovered and used to interpret them.
+</p>
+</div>
+
+
+<div id="pre-processing-and-quality-control" class="section level3">
+<h3><span class="header-section-number">1.4.1</span> Pre-processing and quality control</h3>
+<p>The result of a sequencing experiment is typically a set of image files from
+the sequencer or a FASTQ file containing nucleotide reads but for most analyses
+we use an expression matrix where each column is a cell, each row is a feature
+and the values indicate expression levels. To produce this matrix there is a
+series of pre-processing steps, typically beginning will some quality control
+of the raw reads. Reads are then aligned to a reference genome and the number
+of reads overlapping annotated features (genes or transcripts) is counted.
+Probabilistic quantification methods can be applied to full-length scRNA-seq
+datasets but have required adaptations such as the alevin method for UMI-based
+datasets <span class="citation">[91]</span> in the Salmon package. When using conventional
+alignment, UMI samples need extra processing with tools like UMI-tools
+<span class="citation">[92]</span>, umis <span class="citation">[93]</span> or zUMIs <span class="citation">[94]</span> in order to
+assign cell barcodes and deduplicate UMIs. For datasets produced using the 10x
+Chromium platform the company provides the Cell Ranger software which is a
+complete pre-processing pipeline that also includes an automated downstream
+analysis. Other packages such as scPipe <span class="citation">[95]</span> also aim to streamline
+this process with some such as Falco <span class="citation">[96]</span> designed to work on
+scalable cloud-based infrastructure which may be required as bigger datasets
+continue to be produced.</p>
+<p>Quality control of individual cells is important as experiments will contain
+low-quality cells that can be uninformative or lead to misleading results.
+Particular types of cells that are commonly removed include damaged cells,
+doublets where multiple cells have been captured together <span class="citation">[97,98]</span> and empty droplets or wells that have been sequenced but do
+not contain a cell <span class="citation">[99]</span>. Quality control can be performed on various
+levels including the quality scores of the reads themselves and how or where
+they align to features of the expression matrix. The Cellity package attempts
+to automate this process by inspecting a series of biological and technical
+features and using machine learning methods to distinguish between high and
+low-quality cells <span class="citation">[100]</span>. However, the authors found that many of the
+features were cell type specific and more work needs to be done to make this
+approach more generally applicable. The scater package <span class="citation">[101]</span>
+emphasises a more exploratory approach to quality control at the expression
+matrix level by providing a series of functions for visualising various
+features of a dataset. These plots can then be used for selecting thresholds
+for removing cells. Plate-based capture platforms can produce additional biases
+based on the location of individual wells, a problem which is addressed by the
+OEFinder package which attempts to identify and visualise these “ordering
+effects”<span class="citation">[102]</span>.</p>
+<p>Filtering and selection of features also deserves attention. Genes or
+transcripts that are lowly expressed are typically removed from datasets in
+order to reduce computational time and the effect of multiple-testing
+correction but it is unclear how many counts indicate that a gene is truly
+“expressed”. Many downstream analyses operate on a selected subset of genes and
+how they are selected can have a dramatic effect on their results
+<span class="citation">[103]</span>. These features are often selected based on how variable they
+are across the dataset but this may be a result of noise rather than biological
+importance. Alternative selection methods have been proposed such as M3Drop
+which identifies genes that have more zeros than would be expected based on
+their mean expression <span class="citation">[104]</span>.</p>
+</div>
+<div id="normalisation-and-integration" class="section level3">
+<h3><span class="header-section-number">1.4.2</span> Normalisation and integration</h3>
+<p>Effective normalisation is just as crucial for single-cell experiments as it is
+for bulk RNA-seq datasets. FPKM or TPM transformations can be used, but for UMI
+data the gene length correction is not required as reads only come from the
+ends of transcripts <span class="citation">[105]</span>. Normalisation methods designed for
+detecting differential expression between bulk samples such as TMM or the DESeq
+method can be applied, but it is unclear how suitable they in the single-cell
+context. Many of the early normalisation methods developed specifically for
+scRNA-seq data made use of spike-ins. These are synthetic RNA sequences added
+to cells in known quantities such as the External RNA Controls Consortium
+(ERCC) control mixes, a set of 92 transcripts from 250 to 2000 base pairs long
+based on bacterial plasmids. Brennecke et al. <span class="citation">[106]</span>, Ding et al.
+<span class="citation">[107]</span> and Grün, Kester and van Oudenaarden <span class="citation">[58]</span> all propose
+methods for estimating technical variance using spike-ins, as does Bayesian
+Analysis of Single-Cell Sequencing data (BASiCS) <span class="citation">[108]</span>. Using
+spike-ins for normalisation assumes that they properly capture the dynamics of
+the underlying dataset and even if this is the case it is restricted to
+protocols where they can be added which does not include droplet-based capture
+techniques. The scran package implements a method that doesn’t rely on
+spike-ins, instead using a pooling approach to compensate for the large number
+of zero counts where expression levels are summed across similar cells before
+calculating size factors that are deconvolved back to the original cells
+<span class="citation">[109]</span>. The BASiCS method has also been adapted to experiments without
+spike-ins by integrating data replicated across batches <span class="citation">[110]</span>, but
+only for designed experiments where groups are known in advance.</p>
+<p>Early scRNA-seq studies often made use of only a single sample but as
+technologies have become cheaper and more widely available it is common to see
+studies with multiple batches or making use of publicly available data produced
+by other groups. While this expands the potential insights to be gained it
+presents a problem as to how to integrate these datasets <span class="citation">[111]</span>. A
+range of computational approaches for performing integration have been
+developed including bbknn <span class="citation">[112]</span>, ClusterMap <span class="citation">[113]</span>, kBET
+<span class="citation">[114]</span>, LIGER <span class="citation">[115]</span>, matchSCore <span class="citation">[116]</span>, Scanorama
+<span class="citation">[117]</span> and scMerge <span class="citation">[118]</span>. The alignment approach in the Seurat
+package <span class="citation">[119]</span> uses Canonical Correlation Analysis (CCA)
+<span class="citation">[120]</span> to identify a multi-dimensional subspace
+that is consistent between datasets. Dynamic Time Warping (DTW)
+<span class="citation">[122]</span> is then used to stretch and align these dimensions so that the
+datasets are similarly spread along them. Some tasks can be performed using
+these aligned dimensions, but as the original expression matrix is unchanged
+the integration is not used for other tasks such as differential expression
+testing. The authors of scran use a Mutual Nearest Neighbours (MNN) approach
+that calculates a cosine distance between cells in different datasets then
+identifies those that share a neighbourhood <span class="citation">[123]</span>. Batch
+correction vectors can then be calculated and subtracted from one dataset to
+overlay them. A recent update to the Seurat method combines these approaches by
+applying CCA before using the MNN approach to identify “anchor” cells that have
+common features in the different datasets <span class="citation">[124]</span>.</p>
+</div>
+<div id="grouping-cells" class="section level3">
+<h3><span class="header-section-number">1.4.3</span> Grouping cells</h3>
+<p>Grouping similar cells is a key step in analysing scRNA-seq datasets that is
+not usually required for bulk experiments and as such it has been a key focus
+of methods development. Over one hundred tools have been released for
+clustering cells which attempt to address a range of technical and biological
+challenges <span class="citation">[125]</span>. Some of these methods include SINgle CEll RNA-seq
+profiling Analysis (SINCERA) <span class="citation">[126]</span>, Single-Cell Consensus Clustering
+(SC3) <span class="citation">[127]</span>, single-cell latent variable model (scLVM)
+<span class="citation">[76]</span> and Spanning-tree Progression Analysis of Density-normalised
+Events (SPADE) <span class="citation">[128]</span>, as well as BackSPIN which was used to
+identify nine cell types and 47 distinct subclasses in the mouse cortex and
+hippocampus in one of the earliest studies to demonstrate the possibilities of
+scRNA-seq <span class="citation">[72]</span>. All of these tools attempt to cluster similar cells
+together based on their expression profiles, forming groups of cells of the
+same type. The clustering method in the Seurat package <span class="citation">[129]</span> has
+become particularly popular and has been shown to perform well, particularly on
+UMI datasets <span class="citation">[130,131]</span>. This method begins by selecting a
+set of highly variable genes then performing PCA on them. A set of dimensions
+is then selected that contains most of the variation in the dataset.
+Alternatively, if Seurat’s alignment method has been used to integrate datasets
+the aligned CCA dimensions are used instead. Next, a Shared Nearest Neighbours
+(SNN) graph is constructed by considering the distance between cells in this
+multidimensional space and the overlap between shared neighbourhoods. Seurat
+uses a Euclidean distance but it has been suggested that correlations can
+provide better results <span class="citation">[132]</span>. In order to separate cells into clusters,
+a community detection algorithm such as Louvain optimisation <span class="citation">[133]</span>
+is run on the graph with a resolution parameter that controls the number of
+clusters that are produced. Selecting this parameter and similar parameters in
+other methods is difficult but important as the number of clusters selected can
+affect the interpretation of results. I address this problem with a
+visualisation-based approach in <strong>Chapter <a href="4-clust-trees.html#clust-trees">4</a></strong>.</p>
+<p>For tissue types that are well understood or where comprehensive references are
+available an alternative to unsupervised clustering is to directly classify
+cells. This can be done using a gating approach based on the expression of
+known marker genes similar to that commonly used for flow cytometry
+experiments. Alternatively, machine learning algorithms can be used to perform
+classification based on the overall expression profile. Methods such as scmap
+<span class="citation">[134]</span>, scPred <span class="citation">[135]</span>, CaSTLe
+<span class="citation">[136]</span> and Moana <span class="citation">[137]</span> take this approach.
+Classification has the advantage of making use of existing knowledge and avoids
+manual annotation and interpretation of clusters which can often be difficult
+and time consuming. However, it is biased by what is present in the reference
+datasets used and typically cannot reveal previously unknown cell types or
+states. As projects like the Human Cell Atlas produce well-annotated references
+based on scRNA-seq data the viability of classification and other
+reference-based methods will improve.</p>
+</div>
+<div id="ordering-cells" class="section level3">
+<h3><span class="header-section-number">1.4.4</span> Ordering cells</h3>
+<p>In some studies, for example in development where stem cells are
+differentiating into mature cell types, it may make sense to order cells along
+a continuous trajectory from one cell type to another instead of assigning them
+to distinct groups. Trajectory analysis was pioneered by the Monocle package
+which used dimensionality reduction and computation of a minimum spanning tree
+to explore a model of skeletal muscle differentiation <span class="citation">[77]</span>. Since
+then the Monocle algorithm has been updated <span class="citation">[138]</span> and a range of others
+developed including TSCAN <span class="citation">[139]</span>, SLICER <span class="citation">[140]</span>, CellTree
+<span class="citation">[141]</span>, Sincell <span class="citation">[142]</span>, Mpath <span class="citation">[143]</span> and Slingshot
+<span class="citation">[144]</span>. In their review of trajectory inference methods, Cannoodt,
+Saelens and Saeys break the process into two steps (Figure
+<a href="1-introduction.html#fig:trajectory-inference">1.11</a>) <span class="citation">[145]</span>. In the first step,
+dimensionality reduction techniques such as principal component analysis (PCA)
+<span class="citation">[146]</span>, t-distributed stochastic neighbourhood embedding (t-SNE)
+<span class="citation">[147]</span> or uniform manifold approximation and projection (UMAP)
+<span class="citation">[148]</span> are used to project cells into lower dimensions where the
+cells are clustered or a graph constructed between them. The trajectory is then
+created by finding a path through the cells and ordering the cells along it.
+The same group of authors have conducted a comprehensive comparison of ordering
+methods evaluating their performance on a range of real and synthetic datasets
+<span class="citation">[149]</span>. To do so the authors had to develop metrics for comparing
+trajectories from different methods and built a comprehensive infrastructure
+for running and evaluating software tools. They found that the performance of
+methods depended on the underlying topology of the data and that multiple
+complementary trajectory inference approaches should be used to better what is
+occurring.</p>
+<div class="figure" style="text-align: center"><span id="fig:trajectory-inference"></span>
+<img src="figures/01-trajectory-inference.jpg" alt="Trajectory inference framework as described by Cannoodt, Saelens and Saeys. In the first stage, dimensionality reduction is used to convert the data to a simpler representation. In the second stage a trajectory is identified and the cells ordered. Image from Cannoodt, Saelens and Saeys “Computational methods for trajectory inference from single-cell transcriptomics” [145]." width="90%" />
+<p class="caption">
+Figure 1.11: Trajectory inference framework as described by Cannoodt, Saelens and Saeys. In the first stage, dimensionality reduction is used to convert the data to a simpler representation. In the second stage a trajectory is identified and the cells ordered. Image from Cannoodt, Saelens and Saeys “Computational methods for trajectory inference from single-cell transcriptomics” <span class="citation">[145]</span>.
+</p>
+</div>
+
+
+<p>An alternative continuous approach is the cell velocity technique
+<span class="citation">[150]</span> introduced for scRNA-seq data in the velocyto package
+<span class="citation">[151]</span>. RNA-seq studies typically focus on the expression of mature
+mRNA molecules but a sample will also contain immature mRNA that are yet to be
+spliced. Examining the reads assigned to introns can indicate newly transcribed
+mRNA molecules and therefore which genes are currently active. Instead of
+assigning cells to discrete groups or along a continuous path velocyto uses
+reads from unspliced regions to place them in a space and create a vector
+indicating the direction in which the transcriptional profile is heading. This
+vector can show that a cell is differentiating in a particular way or that a
+specific transcriptional program has been activated.</p>
+<p>Deciding on which cell assignment approach to use depends on the source of the
+data, the goals of the study and the questions that are being asked. Both
+grouping and ordering can be informative and it is often useful to attempt both
+on a dataset and see how they compare.</p>
+</div>
+<div id="gene-detection-and-interpretation" class="section level3">
+<h3><span class="header-section-number">1.4.5</span> Gene detection and interpretation</h3>
+<p>Once cells are assigned by clustering or ordering the problem is to interpret
+what these groups represent. For clustered datasets this is usually done by
+identifying genes that are differentially expressed across the groups or marker
+genes that are expressed in a single cluster. Many methods have been suggested
+for testing differential expression, some of which take in to account the
+unique features of scRNA-seq data, for example D3E <span class="citation">[152]</span>, DEsingle
+<span class="citation">[65]</span>, MAST <span class="citation">[153]</span>, scDD <span class="citation">[154]</span> and SCDE
+<span class="citation">[155]</span>. The large number of cells in scRNA-seq datasets means
+that some of the problems that made standard statistical tests unsuitable for
+bulk RNA-seq experiments do not apply. Simple methods like the unpaired
+Wilcoxon rank-sum test (or Mann-Whitney U test), Student’s t-test or logistic
+regression may give reasonable results in this setting. Methods originally
+developed for bulk experiments have also been applied to scRNA-seq datasets but
+the assumptions they make may not be appropriate for single-cell data. Methods
+such as ZINB-WaVe <span class="citation">[64]</span> may be required to transform the data
+so that bulk testing methods are appropriate. A comprehensive evaluation of 36
+differential expression testing approaches found that methods developed for
+bulk RNA-seq did not perform worse than scRNA-seq specific methods, however,
+the performance of bulk methods depended on how lowly-expressed genes were
+filtered <span class="citation">[156]</span>. The authors also observed that some methods were
+biased in the types of features they tended to detect as differentially
+expressed. Often the goal is not to find all the genes that are differentially
+expressed between groups but to identify genes which uniquely mark particular
+clusters. This goal is open to alternative approaches, such as the Gini
+coefficient which measures unequal distribution across a population. Another
+approach is to construct machine learning classifiers for each gene to
+distinguish between one group and all other cells. Genes that give good
+classification performance should be good indicators of what is specific to
+that cluster. It is also possible to identify genes that might have the same
+mean between groups but differ in variance or other characteristics of their
+expression distribution.</p>
+<p>When cells have been ordered along a continuous trajectory the task is slightly
+different. Instead of testing for a difference in means between two groups, the
+goal is to find genes that have a relationship between expression and
+pseudotime. This can be accomplished by fitting splines to the relationship
+between pseudotime and expression and testing the fitting coefficients. For
+more complex trajectories it can also be useful to find genes that are
+differently expressed along each side of a branch point. Monocle’s BEAM (Branch
+Expression Analysis Modelling) method does this using a likelihood ratio test
+between splines where the branch assignments are known or unknown
+<span class="citation">[157]</span>. Genes that are associated with a trajectory are important in
+their own right as they describe the biology along a path but they can also be
+used to identify cell types at end points.</p>
+<p>Interpreting the meaning of detected marker genes is a difficult task and is
+likely to remain so. Some methods have been developed for this task such as
+celaref which suggests cluster labels based on similarity of marker genes to an
+already characterised reference dataset. Gene set testing to identify related
+categories such as Gene Ontology terms can also help but often it is necessary
+to rely on the results of previous functional studies. Ultimately this can only
+be reliably done by working closely with experts who have significant domain
+knowledge in the cell types being studied. An additional concern for
+unsupervised scRNA-seq studies is that the same genes are used for clustering
+or ordering and determining what those clusters or trajectories mean. This is a
+problem addressed by Zhang, Kamath and Tse who suggest a differential
+expression test using a long-tailed distribution for testing genes following
+clustering <span class="citation">[158]</span>.</p>
+</div>
+<div id="alternative-analyses" class="section level3">
+<h3><span class="header-section-number">1.4.6</span> Alternative analyses</h3>
+<p>Some uses of scRNA-seq data fall outside the most common workflow and methods
+have been developed for a range of other purposes. For example, methods have
+been designed for assigning haplotypes to cells <span class="citation">[159]</span>, detecting
+allele-specific expression <span class="citation">[160–162]</span>,
+identifying alternative splicing <span class="citation">[163–165]</span>
+or calling single nucleotide or complex genomic variants <span class="citation">[166–168]</span>. Other methods have been designed for specific
+cell types or tissues such as reconstructing immune cell receptors on B-cells
+(BraCeR <span class="citation">[169]</span>, BRAPeS <span class="citation">[170]</span>, VDJPuzzle
+<span class="citation">[171]</span>) or T-cells (TraCeR <span class="citation">[172]</span>, TRAPeS
+<span class="citation">[173]</span>) or interrogating the development of cancer samples (HoneyBADGER
+<span class="citation">[174]</span>, SSrGE <span class="citation">[166]</span>). Most future studies can be expected to
+continue to follow common practice but it is also expected that researchers
+will continue to push the boundaries of what it is possible to study using
+scRNA-seq technologies.</p>
+</div>
+<div id="evaluation-of-scrna-seq-analysis-methods" class="section level3">
+<h3><span class="header-section-number">1.4.7</span> Evaluation of scRNA-seq analysis methods</h3>
+<p>Although the analysis for many scRNA-seq studies follow a standard workflow
+there is wide variation in the tools that are used. We are now at the
+stage where there are multiple software packages for completing every stage of
+analysis. Deciding which tools to use can be difficult and depends on a number
+of factors including effectiveness, robustness, scalability, availability, ease
+of use and quality of documentation. In terms of effectiveness, publications
+describing analysis methods should demonstrate two things: 1) they can perform
+the task they are designed for (at least as well as existing methods) and 2)
+performing that task leads to biological insights. Answering the first question
+is difficult using real datasets as often the underlying truth is not known.
+For this reason simulation techniques are commonly used to produce synthetic
+datasets in order to evaluate methods. I present a software package for
+simulating scRNA-seq data in <strong>Chapter <a href="3-simulation.html#simulation">3</a></strong>. Simulation is an
+efficient and flexible approach for producing gold standard datasets but
+synthetic data can never fully reproduce a real dataset. An alternative
+approach is to carefully construct a gold standard biological dataset by
+combining samples where the true differences are known <span class="citation">[175]</span>. These
+datasets can be extremely useful but are difficult, time-consuming and
+expensive to produce and can only reproduce a limited set of scenarios.
+Comprehensive evaluations of methods have already been conducted for some
+aspects of scRNA-seq analysis including clustering <span class="citation">[130,131]</span>, trajectory inference <span class="citation">[149]</span> and differential
+expression testing <span class="citation">[156]</span> but these will need to continue to be
+performed and updated as the field matures and new methods are developed.</p>
+</div>
+</div>
+<div id="intro-kidney" class="section level2">
+<h2><span class="header-section-number">1.5</span> Kidney development</h2>
+<p>One area that has particularly benefitted from the possibilities created by
+scRNA-seq technology is developmental biology. Although the genes involved in
+the development of many organs are now well understood, arriving at this
+knowledge has required many painstaking experiments to investigate a single
+gene at a time. During development cells are participating in a continuous
+dynamic process involving the maturation from one cell type to another and the
+creation of new cell types. Single-cell RNA-seq captures a snapshot of the
+expression of all the genes involved in this process, allowing the
+transcriptome of intermediate and mature cells to be studied. This has revealed
+that some of the genes thought to be markers of specific cell types are more
+widely expressed or involved in other processes.</p>
+<div id="structure-and-function" class="section level3">
+<h3><span class="header-section-number">1.5.1</span> Structure and function</h3>
+<p>The kidney is the organ responsible for filtering the blood in order to remove
+waste products. In humans, kidneys grow as a pair of functional organs with
+each being around the size of an adult fist and weighing about 150 grams. Blood
+flows into the kidney via the renal artery and the blood vessels form a
+tree-like branching structure with ever smaller capillaries (Figure
+<a href="1-introduction.html#fig:kidney">1.12</a>A). At the end of these branches are nephrons, the functional
+filtration unit of the kidney (Figure <a href="1-introduction.html#fig:kidney">1.12</a>B). Humans can have
+around 1 million nephrons <span class="citation">[176]</span> that are formed during development
+and just after birth, however they cannot be regenerated during adulthood. A
+capillary loop is formed inside a structure at the end of the nephron called a
+glomerulus and surrounded by Bowman’s capsule. Here specialised cells called
+podocytes create a structure called the slit diaphragm that allows water, metal
+ions and small molecules to be filtered while keeping blood cells and larger
+species such as proteins trapped within the bloodstream. The rest of the
+nephron is divided into segments that are responsible for different processes
+involved in balancing the concentration of these species in the filtrate
+(Figure <a href="1-introduction.html#fig:kidney">1.12</a>C). The tubular segments of the nephron are surrounded
+by capillaries, allowing molecules to be transferred between the filtrate and
+blood as required. The first segment of the nephron is the proximal tubule.
+Here common biomolecules such as glucose, amino acids and bicarbonate are
+reabsorbed into the bloodstream, as is most of the water present. Other
+molecules including urea and ammonium ions are secreted from the blood into the
+filtrate at his stage. The proximal tubule is followed by the loop of Henle and
+the distal tubule where ions are reabsorbed including potassium, chlorine,
+magnesium and calcium. The final segment is the collecting duct where salt
+concentrations are balanced by exchanging sodium in the filtrate for potassium
+in the bloodstream using a process controlled by the hormone aldosterone. The
+remaining filtrate is then passed to the ureter where it is carried to the
+bladder and collected as urine while the blood leaves via the renal vein. In
+order to perform this complex series of reabsorption and secretion steps, each
+segment of the nephron is made up specialised cell types with their own sets of
+signalling and transporter proteins. The filtration process is repeated about
+12 times every hour with around 200 litres of blood being filtered during a
+day. Aside from removing waste and maintaining the balance of molecular species
+in the bloodstream, the kidneys also play a role in the activation of vitamin
+D. Other important functions include synthesising the hormones erythropoietin,
+which stimulates red blood cell production, and renin, which is part of the
+pathway that controls fluid volume and the constriction of arteries to regulate
+blood pressure.</p>
+<div class="figure" style="text-align: center"><span id="fig:kidney"></span>
+<img src="figures/01-kidney.png" alt="Structure of the kidney and nephron. (A) Blood flows into the kidney via the renal artery which branches into ever smaller capillaries. (B) At the end of these capillaries is the nephron, the functional filtration unit of the kidney, which is surrounded by a capillary network. (C) Different segments of the kidney are responsible for transferring specific molecular species between the bloodstream and the filtrate. Figure adapted using images from OpenStax College via Wikimedia Commons under a CC BY 3.0 license." width="90%" />
+<p class="caption">
+Figure 1.12: Structure of the kidney and nephron. (A) Blood flows into the kidney via the renal artery which branches into ever smaller capillaries. (B) At the end of these capillaries is the nephron, the functional filtration unit of the kidney, which is surrounded by a capillary network. (C) Different segments of the kidney are responsible for transferring specific molecular species between the bloodstream and the filtrate. Figure adapted using images from OpenStax College via Wikimedia Commons under a CC BY 3.0 license.
+</p>
+</div>
+
+
+<p>Chronic kidney disease is a major health problem in Australia with 1 percent of
+the population (237800 people) diagnosed with it in 2017
+<span class="citation">[177]</span> and it being considered a
+contributory factor for 13 percent of deaths
+<span class="citation">[178]</span>. Early stages of the disease can be
+managed but once it becomes severe the only treatment options are dialysis,
+which is expensive, time consuming and unpleasant, or a kidney transplant.
+There are also a range of genetic developmental kidney disorders that have
+limited treatment options and can profoundly affect quality of life.
+Understanding how the kidney grows and develops is key to developing new
+treatments that may improve kidney function or repair damage.</p>
+</div>
+<div id="stages-of-development" class="section level3">
+<h3><span class="header-section-number">1.5.2</span> Stages of development</h3>
+<p>The kidney develops from a region of the early embryo called the intermediate
+mesoderm and occurs in three phases with a specific spatial and temporal order
+<span class="citation">[179]</span>. The first phase results in the pronephros which consists of
+6–10 pairs of tubules that forms the mature kidney in most primitive
+vertebrates such as hagfish. By about the fourth week of human embryonic
+development this structure dies off and is replaced by the mesonephros, which
+is the form of kidney present in most fish and amphibians. The mesonephros is
+functional during weeks 4–8 of human embryonic development before
+degenerating, although parts of its duct system go on to form part of the male
+reproductive system. The final phase of human kidney development results in the
+metanephros which begins developing at around five weeks and continues to
+around week 36 to become the permanent and functional kidney <span class="citation">[180]</span>.
+Individual nephrons grow in a similar series of stages. Cells from the duct
+that will become the ureter begin to invade the surrounding metanephric
+mesenchyme forming a ureteric bud. Interactions between these cell types,
+including Wnt signalling, cause mesenchymal cells to condense around the
+ureteric bud forming a stem cell population known as the cap mesenchyme, which
+expresses genes such as Six2 and Cited1. Cells from the cap mesenchyme first
+form a renal vesicle, a primitive structure with a lumen, which extends to form
+an S-shaped body (Figure <a href="1-introduction.html#fig:nephrogenesis">1.13</a>). By this stage the lumen has
+joined with the ureteric bud to form a continuous tubule. The s-shaped body
+continues to elongate with podocytes beginning to develop and form a glomerulus
+at one end and other specialised cells arising along the length of the tubule
+to form the various nephron segments. Several signalling pathways and
+cell–cell interactions are involved in this process, including Notch
+signalling. While all nephrons form before birth they continue to elongate and
+mature postnatally.</p>
+<div class="figure" style="text-align: center"><span id="fig:nephrogenesis"></span>
+<img src="figures/01-nephrogenesis.png" alt="Diagram of the stages of nephron maturation. The nephron begins as a pre-tubular aggregate (PA) which forms a renal vesicle (RV), comma-shaped body (CSB), S-shaped body (SSB), capillary loop nephron and mature nephron. The connection between the forming nephron and the lumen of the adjacent ureteric epithelium forms at late renal vesicle stage. Adapted from Little “Improving our resolution of kidney morphogenesis across time and space” [180]." width="70%" />
+<p class="caption">
+Figure 1.13: Diagram of the stages of nephron maturation. The nephron begins as a pre-tubular aggregate (PA) which forms a renal vesicle (RV), comma-shaped body (CSB), S-shaped body (SSB), capillary loop nephron and mature nephron. The connection between the forming nephron and the lumen of the adjacent ureteric epithelium forms at late renal vesicle stage. Adapted from Little “Improving our resolution of kidney morphogenesis across time and space” <span class="citation">[180]</span>.
+</p>
+</div>
+
+
+<p>Most of our understanding of kidney development comes from studies using mouse
+models and other model species. While these have greatly added to our knowledge
+they do not completely replicate human kidney development and there are known
+to be significant differences in the developmental timeline, signalling
+pathways and gene expression between species <span class="citation">[181]</span>. To better
+understand human kidney development we need models that reproduce the human
+version of this process.</p>
+</div>
+<div id="growing-kidney-organoids" class="section level3">
+<h3><span class="header-section-number">1.5.3</span> Growing kidney organoids</h3>
+<p>One alternative model of human kidney development is to grow miniature organs
+in a lab. Known as organoids, these tissues are grown from pluripotent stem
+cells provided with the right sequence of conditions and growth factors
+<span class="citation">[182]</span>. Naturally occurring embryonic stem cells can be used but a more
+feasible approach is to reprogram mature cell types (typically fibroblasts from
+skin samples) using a method discovered by Takahashi and Yamanaka
+<span class="citation">[183,184]</span>. Under this protocol, cells are supplied
+with the transcription factors Oct3/4, Sox2 and Klf4 using retroviral
+transduction. The resulting cells have the ability to differentiate into any
+cell type and are known as induced pluripotent stem cells (iPSCs). By culturing
+iPSCs under the right conditions the course of differentiation can be directed,
+and protocols for growing a range of tissues have been developed including
+stomach, intestine, liver, lung and brain <span class="citation">[185]</span>. The first
+protocol for growing kidney organoids was published in 2015 by Takasato et al.
+(Figure <a href="1-introduction.html#fig:organoids">1.14</a>) <span class="citation">[186]</span>.</p>
+<div class="figure" style="text-align: center"><span id="fig:organoids"></span>
+<img src="figures/01-organoids.png" alt="Diagram of the Takasato et al. kidney organoid protocol. iPSCs are cultured on a plate in the presence of CHIR followed by FGF9. After about a week cells are formed into three-dimensional pellets and a short CHIR pulse is applied. The pellets continue to be cultured in FGF9 for a further 10 days before all growth factors are removed. The organoids now contain tubular structures replicating human nephrons. Adapted from Takasato et al. “Kidney organoids from human iPS cells contain multiple lineages and model human nephrogenesis” [186]." width="100%" />
+<p class="caption">
+Figure 1.14: Diagram of the Takasato et al. kidney organoid protocol. iPSCs are cultured on a plate in the presence of CHIR followed by FGF9. After about a week cells are formed into three-dimensional pellets and a short CHIR pulse is applied. The pellets continue to be cultured in FGF9 for a further 10 days before all growth factors are removed. The organoids now contain tubular structures replicating human nephrons. Adapted from Takasato et al. “Kidney organoids from human iPS cells contain multiple lineages and model human nephrogenesis” <span class="citation">[186]</span>.
+</p>
+</div>
+
+
+<p>Using this protocol, iPSCs are first grown on a plate where Wnt signalling is
+induced by the presence of CHIR, an inhibitor of glycogen kinase synthase 3.
+After several days of growth the growth factor FGF9 is added which is required
+to form the intermediate mesoderm. Following several more days of growth the
+cells are removed from the plate and formed into three dimensional pellets. A
+short pulse of CHIR is added to again induce Wnt signalling and the pellets
+continue to be cultured in the presence of FGF9. Growth factors are removed
+after about five days of 3D culture and the organoids continue to grow for a
+further two weeks, at which point tubular structures have formed. These kidney
+organoids have been extensively characterised using both immunofluorescence
+imaging and transcriptional profiling by RNA-seq. Imaging showed that the
+tubules are segmented and express markers of podocytes, proximal tubule, distal
+tubule and collecting duct, however individual tubules are not connected in the
+same way they would be in a real kidney. By comparing RNA-seq profiles with
+those from a range of developing tissues, the organoids from this protocol were
+found to be most similar to trimester one and two foetal kidney
+<span class="citation">[186]</span>. While the bulk transcriptional profiles may be similar,
+this analysis does not confirm that individual cells types are the same between
+lab-grown kidney organoids and the true developing kidney. Further studies
+using this protocol have shown that it is reproducible with organoids grown at
+the same time having very similar transcriptional profiles, but organoids from
+different batches can be significantly different, potentially due to
+differences in the rate at which they develop <span class="citation">[187]</span>.</p>
+<p>While they are not a perfect model of a developing human kidney, organoids have
+several advantages over other models <span class="citation">[188]</span>. In particular, they have
+great potential for uses in the modelling of developmental kidney diseases
+<span class="citation">[189]</span>. Cells from a patient with a particular mutation can be
+reprogrammed and used to grow organoids that can then be used for functional
+studies or drug screening. Alternatively, gene editing techniques can be used
+to insert the mutation into an existing cell line or correct the mutation in
+the patient line, allowing comparisons on the same genetic background. Modified
+versions of the protocol that can produce much larger numbers of organoids, for
+example by growing them in swirler cultures <span class="citation">[190]</span>, could potentially
+be used to produce cells in sufficient numbers for cellular therapies.
+Extensive work has been done to improve the protocol in other ways as well,
+such as improving the maturation of the organoids or directing them more
+towards particular segments. Overall, kidney organoids open up many
+possibilities for studies to better understand kidney development and
+potentially help develop new treatments for kidney disease.</p>
+</div>
+<div id="kidney-scrna-seq-studies" class="section level3">
+<h3><span class="header-section-number">1.5.4</span> Kidney scRNA-seq studies</h3>
+<p>Several analyses of scRNA-seq from kidney tissues have already been performed,
+including of developing and adult organs from human and mouse as well as kidney
+organoids and specific kidney cell types <span class="citation">[191,192]</span>.
+Park et al. analysed almost 58000 cells from mouse kidneys and found
+that disease-causing genetic mutations with similar phenotypes arise in the
+same cell types <span class="citation">[193]</span>. They also identified a new transitional cell
+type in the collecting duct. Young et al. compared human foetal, paediatric and
+adult kidney cells to cells from renal cancers and identified links to specific
+cells types, including that Wilms tumours are similar to specific foetal cell
+types and that adult renal cell carcinoma is related to a little-known proximal
+tubule cell type <span class="citation">[194]</span>. Lindström et al. focused on the developing
+mouse and human kidney <span class="citation">[195]</span> while Wu et al. examine kidney
+organoids <span class="citation">[196]</span>. They found that organoid protocols produced a range of
+cell types but that those cells were immature and 10–20 percent of cells came
+from non-kidney lineages. Many of these were neuronal and their formation could
+be limited by inhibiting the BDNF/NTRK2 pathway. In <strong>Chapter <a href="5-analysis.html#analysis">5</a></strong>
+I analyse another organoid dataset generated by collaborators using the
+Takasato protocol for the purposes of profiling the cell types present. I
+demonstrate a range of analysis tools, focusing on the decisions that need to
+be made during the analysis and the effects they might have on the results.</p>
+</div>
+</div>
+<div id="intro-overview" class="section level2">
+<h2><span class="header-section-number">1.6</span> Thesis overview and aims</h2>
+<p>The tools and techniques for analysing scRNA-seq data have developed rapidly
+along with the technology. My thesis aims to chart the progress of these
+methods over the last few years, contribute to the development in the field and
+apply those methods to a scRNA-seq dataset to better understand the cellular
+composition of kidney organoids. I have completed these aims in the following
+ways:</p>
+<ol style="list-style-type: decimal">
+<li><p>Construction and maintenance of a database recording the development of
+scRNA-seq analysis methods and analysis of its contents
+(<strong>Chapter <a href="2-tools.html#tools">2</a></strong>).</p></li>
+<li><p>Development of a software package and method for easily simulating realistic
+scRNA-seq datasets that can be used for the evaluation and development of
+analysis methods (<strong>Chapter <a href="3-simulation.html#simulation">3</a></strong>).</p></li>
+<li><p>Development of an algorithm for visualising clustering results at multiple
+resolutions that can be used to select clustering parameters and a software
+package that implements it (<strong>Chapter <a href="4-clust-trees.html#clust-trees">4</a></strong>).</p></li>
+<li><p>Application of scRNA-seq analysis methods to a kidney organoid dataset in
+order to uncover and better understand the cells types that are present and
+demonstrate differences between approaches (<strong>Chapter <a href="5-analysis.html#analysis">5</a></strong>).</p></li>
+</ol>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="2-tools.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": [["thesis.pdf", "PDF"], ["thesis.docx", "Word"]],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

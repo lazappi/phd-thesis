@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Tools and techniques for single-cell RNA sequencing data</title>
+  <meta name="description" content="Tools and techniques for single-cell RNA sequencing data">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Tools and techniques for single-cell RNA sequencing data" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Tools and techniques for single-cell RNA sequencing data" />
+  
+  
+  
+
+<meta name="author" content="Luke Zappia">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="3-simulation.html">
+<link rel="next" href="5-analysis.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"></a></li>
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Front matter</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#abstract"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#declaration"><i class="fa fa-check"></i>Declaration</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#preface"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#list-of-copyright"><i class="fa fa-check"></i>List of copyright</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="1-introduction.html"><a href="1-introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="1-introduction.html"><a href="1-introduction.html#intro-dogma"><i class="fa fa-check"></i><b>1.1</b> The central dogma</a></li>
+<li class="chapter" data-level="1.2" data-path="1-introduction.html"><a href="1-introduction.html#intro-RNAseq"><i class="fa fa-check"></i><b>1.2</b> RNA sequencing</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="1-introduction.html"><a href="1-introduction.html#library-preparation"><i class="fa fa-check"></i><b>1.2.1</b> Library preparation</a></li>
+<li class="chapter" data-level="1.2.2" data-path="1-introduction.html"><a href="1-introduction.html#high-throughput-sequencing"><i class="fa fa-check"></i><b>1.2.2</b> High-throughput sequencing</a></li>
+<li class="chapter" data-level="1.2.3" data-path="1-introduction.html"><a href="1-introduction.html#analysis-of-rna-seq-data"><i class="fa fa-check"></i><b>1.2.3</b> Analysis of RNA-seq data</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="1-introduction.html"><a href="1-introduction.html#intro-scRNAseq"><i class="fa fa-check"></i><b>1.3</b> Single-cell RNA sequencing</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="1-introduction.html"><a href="1-introduction.html#early-single-cell-capture-technologies"><i class="fa fa-check"></i><b>1.3.1</b> Early single-cell capture technologies</a></li>
+<li class="chapter" data-level="1.3.2" data-path="1-introduction.html"><a href="1-introduction.html#droplet-based-cell-capture"><i class="fa fa-check"></i><b>1.3.2</b> Droplet-based cell capture</a></li>
+<li class="chapter" data-level="1.3.3" data-path="1-introduction.html"><a href="1-introduction.html#unique-molecular-identifiers"><i class="fa fa-check"></i><b>1.3.3</b> Unique Molecular Identifiers</a></li>
+<li class="chapter" data-level="1.3.4" data-path="1-introduction.html"><a href="1-introduction.html#recent-advances-in-scrna-seq-protocols"><i class="fa fa-check"></i><b>1.3.4</b> Recent advances in scRNA-seq protocols</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="1-introduction.html"><a href="1-introduction.html#intro-analysis"><i class="fa fa-check"></i><b>1.4</b> Analysing scRNA-seq data</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="1-introduction.html"><a href="1-introduction.html#pre-processing-and-quality-control"><i class="fa fa-check"></i><b>1.4.1</b> Pre-processing and quality control</a></li>
+<li class="chapter" data-level="1.4.2" data-path="1-introduction.html"><a href="1-introduction.html#normalisation-and-integration"><i class="fa fa-check"></i><b>1.4.2</b> Normalisation and integration</a></li>
+<li class="chapter" data-level="1.4.3" data-path="1-introduction.html"><a href="1-introduction.html#grouping-cells"><i class="fa fa-check"></i><b>1.4.3</b> Grouping cells</a></li>
+<li class="chapter" data-level="1.4.4" data-path="1-introduction.html"><a href="1-introduction.html#ordering-cells"><i class="fa fa-check"></i><b>1.4.4</b> Ordering cells</a></li>
+<li class="chapter" data-level="1.4.5" data-path="1-introduction.html"><a href="1-introduction.html#gene-detection-and-interpretation"><i class="fa fa-check"></i><b>1.4.5</b> Gene detection and interpretation</a></li>
+<li class="chapter" data-level="1.4.6" data-path="1-introduction.html"><a href="1-introduction.html#alternative-analyses"><i class="fa fa-check"></i><b>1.4.6</b> Alternative analyses</a></li>
+<li class="chapter" data-level="1.4.7" data-path="1-introduction.html"><a href="1-introduction.html#evaluation-of-scrna-seq-analysis-methods"><i class="fa fa-check"></i><b>1.4.7</b> Evaluation of scRNA-seq analysis methods</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="1-introduction.html"><a href="1-introduction.html#intro-kidney"><i class="fa fa-check"></i><b>1.5</b> Kidney development</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="1-introduction.html"><a href="1-introduction.html#structure-and-function"><i class="fa fa-check"></i><b>1.5.1</b> Structure and function</a></li>
+<li class="chapter" data-level="1.5.2" data-path="1-introduction.html"><a href="1-introduction.html#stages-of-development"><i class="fa fa-check"></i><b>1.5.2</b> Stages of development</a></li>
+<li class="chapter" data-level="1.5.3" data-path="1-introduction.html"><a href="1-introduction.html#growing-kidney-organoids"><i class="fa fa-check"></i><b>1.5.3</b> Growing kidney organoids</a></li>
+<li class="chapter" data-level="1.5.4" data-path="1-introduction.html"><a href="1-introduction.html#kidney-scrna-seq-studies"><i class="fa fa-check"></i><b>1.5.4</b> Kidney scRNA-seq studies</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="1-introduction.html"><a href="1-introduction.html#intro-overview"><i class="fa fa-check"></i><b>1.6</b> Thesis overview and aims</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="2-tools.html"><a href="2-tools.html"><i class="fa fa-check"></i><b>2</b> The scRNA-seq tools landscape</a><ul>
+<li class="chapter" data-level="2.1" data-path="2-tools.html"><a href="2-tools.html#introduction-1"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="2-tools.html"><a href="2-tools.html#scrna-tools-publication"><i class="fa fa-check"></i><b>2.2</b> scRNA-tools publication</a></li>
+<li class="chapter" data-level="2.3" data-path="2-tools.html"><a href="2-tools.html#tools-current"><i class="fa fa-check"></i><b>2.3</b> The current scRNA-tools database</a></li>
+<li class="chapter" data-level="2.4" data-path="2-tools.html"><a href="2-tools.html#tools-usage"><i class="fa fa-check"></i><b>2.4</b> Usage of the scRNA-tools website</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="3-simulation.html"><a href="3-simulation.html"><i class="fa fa-check"></i><b>3</b> Simulating scRNA-seq data</a><ul>
+<li class="chapter" data-level="3.1" data-path="3-simulation.html"><a href="3-simulation.html#introduction-2"><i class="fa fa-check"></i><b>3.1</b> Introduction</a></li>
+<li class="chapter" data-level="3.2" data-path="3-simulation.html"><a href="3-simulation.html#splatter-publication"><i class="fa fa-check"></i><b>3.2</b> Splatter publication</a></li>
+<li class="chapter" data-level="3.3" data-path="3-simulation.html"><a href="3-simulation.html#splatter-update"><i class="fa fa-check"></i><b>3.3</b> Updates to Splatter</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="3-simulation.html"><a href="3-simulation.html#performance-of-current-simulations"><i class="fa fa-check"></i><b>3.3.1</b> Performance of current simulations</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="4-clust-trees.html"><a href="4-clust-trees.html"><i class="fa fa-check"></i><b>4</b> Visualising clustering across resolutions</a><ul>
+<li class="chapter" data-level="4.1" data-path="4-clust-trees.html"><a href="4-clust-trees.html#introduction-3"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="4-clust-trees.html"><a href="4-clust-trees.html#clustree-publication"><i class="fa fa-check"></i><b>4.2</b> Clustering trees publication</a></li>
+<li class="chapter" data-level="4.3" data-path="4-clust-trees.html"><a href="4-clust-trees.html#clustree-overlay"><i class="fa fa-check"></i><b>4.3</b> Overlaying clustering trees</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="5-analysis.html"><a href="5-analysis.html"><i class="fa fa-check"></i><b>5</b> Analysis of kidney organoid scRNA-seq data</a><ul>
+<li class="chapter" data-level="5.1" data-path="5-analysis.html"><a href="5-analysis.html#introduction-4"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="5-analysis.html"><a href="5-analysis.html#summary-of-published-work"><i class="fa fa-check"></i><b>5.2</b> Summary of published work</a></li>
+<li class="chapter" data-level="5.3" data-path="5-analysis.html"><a href="5-analysis.html#outline-and-motivation"><i class="fa fa-check"></i><b>5.3</b> Outline and motivation</a></li>
+<li class="chapter" data-level="5.4" data-path="5-analysis.html"><a href="5-analysis.html#pre-processing"><i class="fa fa-check"></i><b>5.4</b> Pre-processing</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="5-analysis.html"><a href="5-analysis.html#droplet-selection"><i class="fa fa-check"></i><b>5.4.1</b> Droplet selection</a></li>
+<li class="chapter" data-level="5.4.2" data-path="5-analysis.html"><a href="5-analysis.html#alevin-comparison"><i class="fa fa-check"></i><b>5.4.2</b> Alevin comparison</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="5-analysis.html"><a href="5-analysis.html#quality-control"><i class="fa fa-check"></i><b>5.5</b> Quality control</a></li>
+<li class="chapter" data-level="5.6" data-path="5-analysis.html"><a href="5-analysis.html#clustering"><i class="fa fa-check"></i><b>5.6</b> Clustering</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="5-analysis.html"><a href="5-analysis.html#gene-selection"><i class="fa fa-check"></i><b>5.6.1</b> Gene selection</a></li>
+<li class="chapter" data-level="5.6.2" data-path="5-analysis.html"><a href="5-analysis.html#resolution-selection"><i class="fa fa-check"></i><b>5.6.2</b> Resolution selection</a></li>
+<li class="chapter" data-level="5.6.3" data-path="5-analysis.html"><a href="5-analysis.html#cluster-validation"><i class="fa fa-check"></i><b>5.6.3</b> Cluster validation</a></li>
+<li class="chapter" data-level="5.6.4" data-path="5-analysis.html"><a href="5-analysis.html#comparison-to-published-clusters"><i class="fa fa-check"></i><b>5.6.4</b> Comparison to published clusters</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="5-analysis.html"><a href="5-analysis.html#marker-genes"><i class="fa fa-check"></i><b>5.7</b> Marker gene detection</a></li>
+<li class="chapter" data-level="5.8" data-path="5-analysis.html"><a href="5-analysis.html#connecting-clusters"><i class="fa fa-check"></i><b>5.8</b> Connecting clusters</a><ul>
+<li class="chapter" data-level="5.8.1" data-path="5-analysis.html"><a href="5-analysis.html#partition-based-graph-abstraction"><i class="fa fa-check"></i><b>5.8.1</b> Partition-based graph abstraction</a></li>
+<li class="chapter" data-level="5.8.2" data-path="5-analysis.html"><a href="5-analysis.html#cell-velocity"><i class="fa fa-check"></i><b>5.8.2</b> Cell velocity</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="5-analysis.html"><a href="5-analysis.html#discussion"><i class="fa fa-check"></i><b>5.9</b> Discussion</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="6-conclusion.html"><a href="6-conclusion.html"><i class="fa fa-check"></i><b>6</b> Conclusion</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="A-splatter-additional.html"><a href="A-splatter-additional.html"><i class="fa fa-check"></i><b>A</b> Splatter additional files</a><ul>
+<li class="chapter" data-level="A.1" data-path="A-splatter-additional.html"><a href="A-splatter-additional.html#additional-figures"><i class="fa fa-check"></i><b>A.1</b> Additional figures</a></li>
+<li class="chapter" data-level="A.2" data-path="A-splatter-additional.html"><a href="A-splatter-additional.html#session-information"><i class="fa fa-check"></i><b>A.2</b> Session information</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="B-splatter-docs.html"><a href="B-splatter-docs.html"><i class="fa fa-check"></i><b>B</b> Splatter documentation</a><ul>
+<li class="chapter" data-level="B.1" data-path="B-splatter-docs.html"><a href="B-splatter-docs.html#splatter-vignette"><i class="fa fa-check"></i><b>B.1</b> Splatter vignette</a></li>
+<li class="chapter" data-level="B.2" data-path="B-splatter-docs.html"><a href="B-splatter-docs.html#splat-params-vignette"><i class="fa fa-check"></i><b>B.2</b> Splat parameters vignette</a></li>
+<li class="chapter" data-level="B.3" data-path="B-splatter-docs.html"><a href="B-splatter-docs.html#splatter-manual"><i class="fa fa-check"></i><b>B.3</b> Splatter manual</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="C-simulation-comparison.html"><a href="C-simulation-comparison.html"><i class="fa fa-check"></i><b>C</b> Simulation comparison</a><ul>
+<li class="chapter" data-level="C.1" data-path="C-simulation-comparison.html"><a href="C-simulation-comparison.html#sim-timings"><i class="fa fa-check"></i><b>C.1</b> Timings</a></li>
+<li class="chapter" data-level="C.2" data-path="C-simulation-comparison.html"><a href="C-simulation-comparison.html#sim-packages"><i class="fa fa-check"></i><b>C.2</b> Package versions</a></li>
+</ul></li>
+<li class="chapter" data-level="D" data-path="D-clustree-docs.html"><a href="D-clustree-docs.html"><i class="fa fa-check"></i><b>D</b> clustree documentation</a><ul>
+<li class="chapter" data-level="D.1" data-path="D-clustree-docs.html"><a href="D-clustree-docs.html#clustree-vignette"><i class="fa fa-check"></i><b>D.1</b> clustree vignette</a></li>
+<li class="chapter" data-level="D.2" data-path="D-clustree-docs.html"><a href="D-clustree-docs.html#clustree-manual"><i class="fa fa-check"></i><b>D.2</b> clustree manual</a></li>
+</ul></li>
+<li class="chapter" data-level="E" data-path="E-organoid-paper.html"><a href="E-organoid-paper.html"><i class="fa fa-check"></i><b>E</b> Kidney organoid publication</a></li>
+<li class="chapter" data-level="F" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html"><i class="fa fa-check"></i><b>F</b> Analysis methods</a><ul>
+<li class="chapter" data-level="F.1" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#pre-processing-1"><i class="fa fa-check"></i><b>F.1</b> Pre-processing</a><ul>
+<li class="chapter" data-level="F.1.1" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#droplet-selection-1"><i class="fa fa-check"></i><b>F.1.1</b> Droplet selection</a></li>
+<li class="chapter" data-level="F.1.2" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#alevin"><i class="fa fa-check"></i><b>F.1.2</b> Alevin</a></li>
+</ul></li>
+<li class="chapter" data-level="F.2" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#quality-control-1"><i class="fa fa-check"></i><b>F.2</b> Quality control</a></li>
+<li class="chapter" data-level="F.3" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#clustering-1"><i class="fa fa-check"></i><b>F.3</b> Clustering</a><ul>
+<li class="chapter" data-level="F.3.1" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#gene-selection-1"><i class="fa fa-check"></i><b>F.3.1</b> Gene selection</a></li>
+<li class="chapter" data-level="F.3.2" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#graph-based-clustering"><i class="fa fa-check"></i><b>F.3.2</b> Graph-based clustering</a></li>
+</ul></li>
+<li class="chapter" data-level="F.4" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#marker-genes-1"><i class="fa fa-check"></i><b>F.4</b> Marker genes</a></li>
+<li class="chapter" data-level="F.5" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#partition-based-graph-abstraction-paga"><i class="fa fa-check"></i><b>F.5</b> Partition-based graph abstraction (PAGA)</a></li>
+<li class="chapter" data-level="F.6" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#cell-velocity-1"><i class="fa fa-check"></i><b>F.6</b> Cell velocity</a></li>
+<li class="chapter" data-level="F.7" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#other-packages"><i class="fa fa-check"></i><b>F.7</b> Other packages</a></li>
+</ul></li>
+<li class="chapter" data-level="G" data-path="G-session-information-1.html"><a href="G-session-information-1.html"><i class="fa fa-check"></i><b>G</b> Session information</a><ul>
+<li class="chapter" data-level="G.1" data-path="G-session-information-1.html"><a href="G-session-information-1.html#important-packages"><i class="fa fa-check"></i><b>G.1</b> Important packages</a></li>
+<li class="chapter" data-level="G.2" data-path="G-session-information-1.html"><a href="G-session-information-1.html#full-session-information"><i class="fa fa-check"></i><b>G.2</b> Full session information</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Tools and techniques for single-cell RNA sequencing data</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="clust-trees" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Visualising clustering across resolutions</h1>
+<blockquote>
+<p><strong>“Don’t do what you can’t undo, until you’ve considered what you can’t do
+once you’ve done it.”</strong></p>
+<p>— Robin Hobb</p>
+<p><em>Assassin’s Apprentice</em>, 1995</p>
+</blockquote>
+<p><img src="figures/04-clustering-trees.png" width="100%" style="display: block; margin: auto;" /></p>
+<div id="introduction-3" class="section level2">
+<h2><span class="header-section-number">4.1</span> Introduction</h2>
+<p>Clustering of cells to form groups is a common task when analysing scRNA-seq
+data. This is different from analysis of bulk RNA-seq datasets where the groups
+are usually known in advance and clustering isn’t required. Because clustering
+is a new step in analysis of scRNA-seq dat it has received a lot of attention
+from scRNA-seq methods developers. The need to group samples is not unique to
+genomic data and clustering techniques are used in many other fields for a wide
+variety of purposes. Whatever kind of data is of interest, and whatever
+clustering method is being used, a question that commonly comes up is how many
+clusters do we want to have? Depending on the clustering method, the number of
+clusters can be controlled by setting an exact value or by changing a parameter
+that controls the clustering resolution. The number of clusters can also be
+indirectly affected by the values of related parameters. The number of clusters
+that are used in an analysis can often have a profound affect on how the
+results are interpreted. Existing measures of clustering typically only
+consider a single clustering resolution at a time or require multiple rounds of
+permutations and clustering which can be infeasible for large datasets. In this
+chapter I propose an alternative, visualisation-based aid for deciding which
+clustering resolution to use.</p>
+<p>Clusterings of the same dataset at different resolutions are often related and
+it is common for new clusters formed at higher resolutions to form by splitting
+existing clusters. However, when comparing clusterings it is not always clear
+what those relationships are and how significant they might be. The method I
+describe here was published in <em>GigaScience</em> and proposes clustering datasets
+at multiple resolutions and considering the overlap in samples between clusters
+at neighbouring resolutions <span class="citation">[208]</span>. By doing this we can build a
+graph structure we call a “clustering tree”. Visualising this tree allows us to
+see where new clusters form, how they are related and the stability of
+particular clustering resolutions. In the publication we demonstrate this
+approach using simulated datasets, a simple dataset commonly used as an example
+for machine learning techniques and a complex scRNA-seq dataset from blood.</p>
+<p>While the structure of clustering trees can help choose a clustering resolution
+to use for an analysis, clustering trees are more generally a compact,
+information-dense visualisation that can show information across clustering
+resolutions. This is something that is not possible with traditional
+visualisations used for clustering results such as t-SNE projections, and is
+achieved by trading individual information about each sample for summarised
+information about clusters and adding a resolution dimension. Overlaying
+important domain knowledge (such as the expression of known marker genes) onto
+these visualisations can be particularly informative and we also demonstrate
+this in our paper (<strong>Section <a href="4-clust-trees.html#clustree-publication">4.2</a></strong>). Section
+<a href="4-clust-trees.html#clustree-overlay">4.3</a> demonstrates how clustering trees can be combined with
+other visualisations of scRNA-seq data.</p>
+<p>Clustering trees can be produced using the clustree R package which is built on
+the tidygraph <span class="citation">[209]</span>, igraph <span class="citation">[210]</span> and ggraph
+<span class="citation">[211]</span> packages and is available from CRAN
+(<a href="https://cran.r-project.org/package=clustree" class="uri">https://cran.r-project.org/package=clustree</a>). The clustree vignette is
+included as <strong>Appendix <a href="D-clustree-docs.html#clustree-manual">D.2</a></strong> and the manual as <strong>Appendix
+<a href="D-clustree-docs.html#clustree-manual">D.2</a></strong>.</p>
+</div>
+<div id="clustree-publication" class="section level2">
+<h2><span class="header-section-number">4.2</span> Clustering trees publication</h2>
+<p>You can read the clustering trees paper <a href="https://academic.oup.com/gigascience/article/7/7/giy083/5052205">here</a>.</p>
+</div>
+<div id="clustree-overlay" class="section level2">
+<h2><span class="header-section-number">4.3</span> Overlaying clustering trees</h2>
+<p>In the clustering trees publication we focused on the use of the visualisation
+as a tool for selecting a clustering resolution, but more generally the
+clustering tree structure can be used to display information across the
+resolution dimension. The visualisation that is most commonly used to display
+scRNA-seq data is the dimensionality reduction plot produced using methods such
+as PCA, t-SNE <span class="citation">[147]</span> or UMAP <span class="citation">[148]</span>. In this visualisation
+each point is a cell placed in a two-dimensional space and coloured using
+factors such as the assigned cluster or the expression level of a gene. The two
+visualisations display complementary information. The dimensionality reduction
+plot shows the location of each individual sample in a low-dimensional space,
+while the clustering tree trades that sample level resolution for a summarised
+view of each cluster and swaps the spatial information for a new resolution
+dimension. It is possible to combine these two approaches by overlaying a
+clustering tree onto a dimensionality reduction plot. Figure
+<a href="4-clust-trees.html#fig:clustree-overlay">4.1</a> shows an example of this using the iris dataset
+<span class="citation">[212,213]</span>.</p>
+<div class="figure" style="text-align: center"><span id="fig:clustree-overlay"></span>
+<img src="figures/04-clustree-overlay.png" alt="Clustering tree of the iris dataset overlaid on a PCA plot. (A) A PCA plot of the samples in the iris dataset coloured by cluster at \(k = 5\) overlaid with a clustering tree showing clustering resolutions from \(k = 1\) to \(k = 5\). (B) The same plot shown from the direction of the x-axis (PC1), the y-axis now shows the clustering resolution and samples are jittered along the x-axis. (C) Same as (B) but from the direction of the y-axis (PC2)." width="100%" />
+<p class="caption">
+Figure 4.1: Clustering tree of the iris dataset overlaid on a PCA plot. (A) A PCA plot of the samples in the iris dataset coloured by cluster at <span class="math inline">\(k = 5\)</span> overlaid with a clustering tree showing clustering resolutions from <span class="math inline">\(k = 1\)</span> to <span class="math inline">\(k = 5\)</span>. (B) The same plot shown from the direction of the x-axis (PC1), the y-axis now shows the clustering resolution and samples are jittered along the x-axis. (C) Same as (B) but from the direction of the y-axis (PC2).
+</p>
+</div>
+
+
+<p>Here instead of using a tree layout algorithm to decide where the cluster nodes
+are placed, we place them in the low-dimensional space at the mean position of
+the samples in each cluster. The easiest way to view this overlaid plot (Figure
+<a href="4-clust-trees.html#fig:clustree-overlay">4.1</a>A) is to imagine looking down on a landscape from
+above. On the ground we have the individual sample points (here coloured by
+their highest resolution cluster) and rising up from that we have the
+clustering tree with the highest resolutions placed closest to the ground and
+the lowest resolution at the top. As we step down the clustering tree we can
+see where in this space new clusters are formed. Figures
+<a href="4-clust-trees.html#fig:clustree-overlay">4.1</a> B and C show this same view but from a different
+perspective. Here imagine standing on the ground at the same level as the
+samples and looking towards the clustering tree. Now the x-axis shows one of
+the reduced dimensions (PC1 or PC2) and the y-axis show the resolution
+dimension. Looking at a clustering tree in this way provides an alternative
+view where the focus is less on the structure of the tree itself and more on
+how it fits into a space that researchers are more familiar with.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="3-simulation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="5-analysis.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": [["thesis.pdf", "PDF"], ["thesis.docx", "Word"]],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

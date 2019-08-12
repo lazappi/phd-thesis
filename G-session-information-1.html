@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Tools and techniques for single-cell RNA sequencing data</title>
+  <meta name="description" content="Tools and techniques for single-cell RNA sequencing data">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Tools and techniques for single-cell RNA sequencing data" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Tools and techniques for single-cell RNA sequencing data" />
+  
+  
+  
+
+<meta name="author" content="Luke Zappia">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="F-analysis-methods.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"></a></li>
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Front matter</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#abstract"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#declaration"><i class="fa fa-check"></i>Declaration</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#preface"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#list-of-copyright"><i class="fa fa-check"></i>List of copyright</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="1-introduction.html"><a href="1-introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="1-introduction.html"><a href="1-introduction.html#intro-dogma"><i class="fa fa-check"></i><b>1.1</b> The central dogma</a></li>
+<li class="chapter" data-level="1.2" data-path="1-introduction.html"><a href="1-introduction.html#intro-RNAseq"><i class="fa fa-check"></i><b>1.2</b> RNA sequencing</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="1-introduction.html"><a href="1-introduction.html#library-preparation"><i class="fa fa-check"></i><b>1.2.1</b> Library preparation</a></li>
+<li class="chapter" data-level="1.2.2" data-path="1-introduction.html"><a href="1-introduction.html#high-throughput-sequencing"><i class="fa fa-check"></i><b>1.2.2</b> High-throughput sequencing</a></li>
+<li class="chapter" data-level="1.2.3" data-path="1-introduction.html"><a href="1-introduction.html#analysis-of-rna-seq-data"><i class="fa fa-check"></i><b>1.2.3</b> Analysis of RNA-seq data</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="1-introduction.html"><a href="1-introduction.html#intro-scRNAseq"><i class="fa fa-check"></i><b>1.3</b> Single-cell RNA sequencing</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="1-introduction.html"><a href="1-introduction.html#early-single-cell-capture-technologies"><i class="fa fa-check"></i><b>1.3.1</b> Early single-cell capture technologies</a></li>
+<li class="chapter" data-level="1.3.2" data-path="1-introduction.html"><a href="1-introduction.html#droplet-based-cell-capture"><i class="fa fa-check"></i><b>1.3.2</b> Droplet-based cell capture</a></li>
+<li class="chapter" data-level="1.3.3" data-path="1-introduction.html"><a href="1-introduction.html#unique-molecular-identifiers"><i class="fa fa-check"></i><b>1.3.3</b> Unique Molecular Identifiers</a></li>
+<li class="chapter" data-level="1.3.4" data-path="1-introduction.html"><a href="1-introduction.html#recent-advances-in-scrna-seq-protocols"><i class="fa fa-check"></i><b>1.3.4</b> Recent advances in scRNA-seq protocols</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="1-introduction.html"><a href="1-introduction.html#intro-analysis"><i class="fa fa-check"></i><b>1.4</b> Analysing scRNA-seq data</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="1-introduction.html"><a href="1-introduction.html#pre-processing-and-quality-control"><i class="fa fa-check"></i><b>1.4.1</b> Pre-processing and quality control</a></li>
+<li class="chapter" data-level="1.4.2" data-path="1-introduction.html"><a href="1-introduction.html#normalisation-and-integration"><i class="fa fa-check"></i><b>1.4.2</b> Normalisation and integration</a></li>
+<li class="chapter" data-level="1.4.3" data-path="1-introduction.html"><a href="1-introduction.html#grouping-cells"><i class="fa fa-check"></i><b>1.4.3</b> Grouping cells</a></li>
+<li class="chapter" data-level="1.4.4" data-path="1-introduction.html"><a href="1-introduction.html#ordering-cells"><i class="fa fa-check"></i><b>1.4.4</b> Ordering cells</a></li>
+<li class="chapter" data-level="1.4.5" data-path="1-introduction.html"><a href="1-introduction.html#gene-detection-and-interpretation"><i class="fa fa-check"></i><b>1.4.5</b> Gene detection and interpretation</a></li>
+<li class="chapter" data-level="1.4.6" data-path="1-introduction.html"><a href="1-introduction.html#alternative-analyses"><i class="fa fa-check"></i><b>1.4.6</b> Alternative analyses</a></li>
+<li class="chapter" data-level="1.4.7" data-path="1-introduction.html"><a href="1-introduction.html#evaluation-of-scrna-seq-analysis-methods"><i class="fa fa-check"></i><b>1.4.7</b> Evaluation of scRNA-seq analysis methods</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="1-introduction.html"><a href="1-introduction.html#intro-kidney"><i class="fa fa-check"></i><b>1.5</b> Kidney development</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="1-introduction.html"><a href="1-introduction.html#structure-and-function"><i class="fa fa-check"></i><b>1.5.1</b> Structure and function</a></li>
+<li class="chapter" data-level="1.5.2" data-path="1-introduction.html"><a href="1-introduction.html#stages-of-development"><i class="fa fa-check"></i><b>1.5.2</b> Stages of development</a></li>
+<li class="chapter" data-level="1.5.3" data-path="1-introduction.html"><a href="1-introduction.html#growing-kidney-organoids"><i class="fa fa-check"></i><b>1.5.3</b> Growing kidney organoids</a></li>
+<li class="chapter" data-level="1.5.4" data-path="1-introduction.html"><a href="1-introduction.html#kidney-scrna-seq-studies"><i class="fa fa-check"></i><b>1.5.4</b> Kidney scRNA-seq studies</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="1-introduction.html"><a href="1-introduction.html#intro-overview"><i class="fa fa-check"></i><b>1.6</b> Thesis overview and aims</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="2-tools.html"><a href="2-tools.html"><i class="fa fa-check"></i><b>2</b> The scRNA-seq tools landscape</a><ul>
+<li class="chapter" data-level="2.1" data-path="2-tools.html"><a href="2-tools.html#introduction-1"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="2-tools.html"><a href="2-tools.html#scrna-tools-publication"><i class="fa fa-check"></i><b>2.2</b> scRNA-tools publication</a></li>
+<li class="chapter" data-level="2.3" data-path="2-tools.html"><a href="2-tools.html#tools-current"><i class="fa fa-check"></i><b>2.3</b> The current scRNA-tools database</a></li>
+<li class="chapter" data-level="2.4" data-path="2-tools.html"><a href="2-tools.html#tools-usage"><i class="fa fa-check"></i><b>2.4</b> Usage of the scRNA-tools website</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="3-simulation.html"><a href="3-simulation.html"><i class="fa fa-check"></i><b>3</b> Simulating scRNA-seq data</a><ul>
+<li class="chapter" data-level="3.1" data-path="3-simulation.html"><a href="3-simulation.html#introduction-2"><i class="fa fa-check"></i><b>3.1</b> Introduction</a></li>
+<li class="chapter" data-level="3.2" data-path="3-simulation.html"><a href="3-simulation.html#splatter-publication"><i class="fa fa-check"></i><b>3.2</b> Splatter publication</a></li>
+<li class="chapter" data-level="3.3" data-path="3-simulation.html"><a href="3-simulation.html#splatter-update"><i class="fa fa-check"></i><b>3.3</b> Updates to Splatter</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="3-simulation.html"><a href="3-simulation.html#performance-of-current-simulations"><i class="fa fa-check"></i><b>3.3.1</b> Performance of current simulations</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="4-clust-trees.html"><a href="4-clust-trees.html"><i class="fa fa-check"></i><b>4</b> Visualising clustering across resolutions</a><ul>
+<li class="chapter" data-level="4.1" data-path="4-clust-trees.html"><a href="4-clust-trees.html#introduction-3"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="4-clust-trees.html"><a href="4-clust-trees.html#clustree-publication"><i class="fa fa-check"></i><b>4.2</b> Clustering trees publication</a></li>
+<li class="chapter" data-level="4.3" data-path="4-clust-trees.html"><a href="4-clust-trees.html#clustree-overlay"><i class="fa fa-check"></i><b>4.3</b> Overlaying clustering trees</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="5-analysis.html"><a href="5-analysis.html"><i class="fa fa-check"></i><b>5</b> Analysis of kidney organoid scRNA-seq data</a><ul>
+<li class="chapter" data-level="5.1" data-path="5-analysis.html"><a href="5-analysis.html#introduction-4"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="5-analysis.html"><a href="5-analysis.html#summary-of-published-work"><i class="fa fa-check"></i><b>5.2</b> Summary of published work</a></li>
+<li class="chapter" data-level="5.3" data-path="5-analysis.html"><a href="5-analysis.html#outline-and-motivation"><i class="fa fa-check"></i><b>5.3</b> Outline and motivation</a></li>
+<li class="chapter" data-level="5.4" data-path="5-analysis.html"><a href="5-analysis.html#pre-processing"><i class="fa fa-check"></i><b>5.4</b> Pre-processing</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="5-analysis.html"><a href="5-analysis.html#droplet-selection"><i class="fa fa-check"></i><b>5.4.1</b> Droplet selection</a></li>
+<li class="chapter" data-level="5.4.2" data-path="5-analysis.html"><a href="5-analysis.html#alevin-comparison"><i class="fa fa-check"></i><b>5.4.2</b> Alevin comparison</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="5-analysis.html"><a href="5-analysis.html#quality-control"><i class="fa fa-check"></i><b>5.5</b> Quality control</a></li>
+<li class="chapter" data-level="5.6" data-path="5-analysis.html"><a href="5-analysis.html#clustering"><i class="fa fa-check"></i><b>5.6</b> Clustering</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="5-analysis.html"><a href="5-analysis.html#gene-selection"><i class="fa fa-check"></i><b>5.6.1</b> Gene selection</a></li>
+<li class="chapter" data-level="5.6.2" data-path="5-analysis.html"><a href="5-analysis.html#resolution-selection"><i class="fa fa-check"></i><b>5.6.2</b> Resolution selection</a></li>
+<li class="chapter" data-level="5.6.3" data-path="5-analysis.html"><a href="5-analysis.html#cluster-validation"><i class="fa fa-check"></i><b>5.6.3</b> Cluster validation</a></li>
+<li class="chapter" data-level="5.6.4" data-path="5-analysis.html"><a href="5-analysis.html#comparison-to-published-clusters"><i class="fa fa-check"></i><b>5.6.4</b> Comparison to published clusters</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="5-analysis.html"><a href="5-analysis.html#marker-genes"><i class="fa fa-check"></i><b>5.7</b> Marker gene detection</a></li>
+<li class="chapter" data-level="5.8" data-path="5-analysis.html"><a href="5-analysis.html#connecting-clusters"><i class="fa fa-check"></i><b>5.8</b> Connecting clusters</a><ul>
+<li class="chapter" data-level="5.8.1" data-path="5-analysis.html"><a href="5-analysis.html#partition-based-graph-abstraction"><i class="fa fa-check"></i><b>5.8.1</b> Partition-based graph abstraction</a></li>
+<li class="chapter" data-level="5.8.2" data-path="5-analysis.html"><a href="5-analysis.html#cell-velocity"><i class="fa fa-check"></i><b>5.8.2</b> Cell velocity</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="5-analysis.html"><a href="5-analysis.html#discussion"><i class="fa fa-check"></i><b>5.9</b> Discussion</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="6-conclusion.html"><a href="6-conclusion.html"><i class="fa fa-check"></i><b>6</b> Conclusion</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="A-splatter-additional.html"><a href="A-splatter-additional.html"><i class="fa fa-check"></i><b>A</b> Splatter additional files</a><ul>
+<li class="chapter" data-level="A.1" data-path="A-splatter-additional.html"><a href="A-splatter-additional.html#additional-figures"><i class="fa fa-check"></i><b>A.1</b> Additional figures</a></li>
+<li class="chapter" data-level="A.2" data-path="A-splatter-additional.html"><a href="A-splatter-additional.html#session-information"><i class="fa fa-check"></i><b>A.2</b> Session information</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="B-splatter-docs.html"><a href="B-splatter-docs.html"><i class="fa fa-check"></i><b>B</b> Splatter documentation</a><ul>
+<li class="chapter" data-level="B.1" data-path="B-splatter-docs.html"><a href="B-splatter-docs.html#splatter-vignette"><i class="fa fa-check"></i><b>B.1</b> Splatter vignette</a></li>
+<li class="chapter" data-level="B.2" data-path="B-splatter-docs.html"><a href="B-splatter-docs.html#splat-params-vignette"><i class="fa fa-check"></i><b>B.2</b> Splat parameters vignette</a></li>
+<li class="chapter" data-level="B.3" data-path="B-splatter-docs.html"><a href="B-splatter-docs.html#splatter-manual"><i class="fa fa-check"></i><b>B.3</b> Splatter manual</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="C-simulation-comparison.html"><a href="C-simulation-comparison.html"><i class="fa fa-check"></i><b>C</b> Simulation comparison</a><ul>
+<li class="chapter" data-level="C.1" data-path="C-simulation-comparison.html"><a href="C-simulation-comparison.html#sim-timings"><i class="fa fa-check"></i><b>C.1</b> Timings</a></li>
+<li class="chapter" data-level="C.2" data-path="C-simulation-comparison.html"><a href="C-simulation-comparison.html#sim-packages"><i class="fa fa-check"></i><b>C.2</b> Package versions</a></li>
+</ul></li>
+<li class="chapter" data-level="D" data-path="D-clustree-docs.html"><a href="D-clustree-docs.html"><i class="fa fa-check"></i><b>D</b> clustree documentation</a><ul>
+<li class="chapter" data-level="D.1" data-path="D-clustree-docs.html"><a href="D-clustree-docs.html#clustree-vignette"><i class="fa fa-check"></i><b>D.1</b> clustree vignette</a></li>
+<li class="chapter" data-level="D.2" data-path="D-clustree-docs.html"><a href="D-clustree-docs.html#clustree-manual"><i class="fa fa-check"></i><b>D.2</b> clustree manual</a></li>
+</ul></li>
+<li class="chapter" data-level="E" data-path="E-organoid-paper.html"><a href="E-organoid-paper.html"><i class="fa fa-check"></i><b>E</b> Kidney organoid publication</a></li>
+<li class="chapter" data-level="F" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html"><i class="fa fa-check"></i><b>F</b> Analysis methods</a><ul>
+<li class="chapter" data-level="F.1" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#pre-processing-1"><i class="fa fa-check"></i><b>F.1</b> Pre-processing</a><ul>
+<li class="chapter" data-level="F.1.1" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#droplet-selection-1"><i class="fa fa-check"></i><b>F.1.1</b> Droplet selection</a></li>
+<li class="chapter" data-level="F.1.2" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#alevin"><i class="fa fa-check"></i><b>F.1.2</b> Alevin</a></li>
+</ul></li>
+<li class="chapter" data-level="F.2" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#quality-control-1"><i class="fa fa-check"></i><b>F.2</b> Quality control</a></li>
+<li class="chapter" data-level="F.3" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#clustering-1"><i class="fa fa-check"></i><b>F.3</b> Clustering</a><ul>
+<li class="chapter" data-level="F.3.1" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#gene-selection-1"><i class="fa fa-check"></i><b>F.3.1</b> Gene selection</a></li>
+<li class="chapter" data-level="F.3.2" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#graph-based-clustering"><i class="fa fa-check"></i><b>F.3.2</b> Graph-based clustering</a></li>
+</ul></li>
+<li class="chapter" data-level="F.4" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#marker-genes-1"><i class="fa fa-check"></i><b>F.4</b> Marker genes</a></li>
+<li class="chapter" data-level="F.5" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#partition-based-graph-abstraction-paga"><i class="fa fa-check"></i><b>F.5</b> Partition-based graph abstraction (PAGA)</a></li>
+<li class="chapter" data-level="F.6" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#cell-velocity-1"><i class="fa fa-check"></i><b>F.6</b> Cell velocity</a></li>
+<li class="chapter" data-level="F.7" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#other-packages"><i class="fa fa-check"></i><b>F.7</b> Other packages</a></li>
+</ul></li>
+<li class="chapter" data-level="G" data-path="G-session-information-1.html"><a href="G-session-information-1.html"><i class="fa fa-check"></i><b>G</b> Session information</a><ul>
+<li class="chapter" data-level="G.1" data-path="G-session-information-1.html"><a href="G-session-information-1.html#important-packages"><i class="fa fa-check"></i><b>G.1</b> Important packages</a></li>
+<li class="chapter" data-level="G.2" data-path="G-session-information-1.html"><a href="G-session-information-1.html#full-session-information"><i class="fa fa-check"></i><b>G.2</b> Full session information</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Tools and techniques for single-cell RNA sequencing data</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="session-information-1" class="section level1">
+<h1><span class="header-section-number">G</span> Session information</h1>
+
+<div id="important-packages" class="section level2">
+<h2><span class="header-section-number">G.1</span> Important packages</h2>
+<p>Details of the main packages used to build this thesis.</p>
+<ul>
+<li>bookdown (v0.7) – writing complex documents using R Markdown <span class="citation">[247,248]</span></li>
+<li>clustree (v0.3.0) – producing clustering tree visualisations <span class="citation">[208,249]</span></li>
+<li>cowplot (v0.9.3) – constructing complex panel figures <span class="citation">[232]</span></li>
+<li>dplyr (v0.7.8) – manipulation of data frames <span class="citation">[237]</span></li>
+<li>forcats (v0.3.0) – manipulation of factors <span class="citation">[250]</span></li>
+<li>ggplot2 (v3.1.0) – data visualisation <span class="citation">[231,251]</span></li>
+<li>glue (v1.3.0) – complex joining of strings <span class="citation">[252]</span></li>
+<li>googleAnalyticsR (v0.6.0) – downloading Google Analytics data <span class="citation">[253]</span></li>
+<li>googleAuthR (v0.7.0) – Google API authentication <span class="citation">[254]</span></li>
+<li>here (v0.1) – locating files <span class="citation">[255]</span></li>
+<li>jsonlite (v1.6) – reading JSON files <span class="citation">[256,257]</span></li>
+<li>knitr (v1.20) – generating dynamic reports using R <span class="citation">[242–244]</span></li>
+<li>lubridate (v1.7.4) – manipulation of dates <span class="citation">[258,259]</span></li>
+<li>magrittr (v1.5) – piping between functions <span class="citation">[260]</span></li>
+<li>packrat (v0.4.9.3) – management of package dependencies <span class="citation">[261]</span></li>
+<li>purrr (v0.2.5) – functional programming for lists <span class="citation">[239]</span></li>
+<li>RColorBrewer (v1.1.2) – ColorBrewer colour palettes <span class="citation">[262]</span></li>
+<li>readr (v1.3.1) – input of data files <span class="citation">[263]</span></li>
+<li>remotes (v2.0.0) – installation of packages from GitHub <span class="citation">[264]</span></li>
+<li>rmarkdown (v1.10) – dynamic documents for R <span class="citation">[246]</span></li>
+<li>stringr (v1.3.1) – manipulation of strings <span class="citation">[265]</span></li>
+<li>tidyr (v0.8.2) – tidying of data <span class="citation">[238]</span></li>
+<li>viridis (v0.5.1) – viridis colour palettes <span class="citation">[266]</span></li>
+</ul>
+</div>
+<div id="full-session-information" class="section level2">
+<h2><span class="header-section-number">G.2</span> Full session information</h2>
+<pre><code>Session info -------------------------------------------------------------</code></pre>
+<pre><code> setting  value                       
+ version  R version 3.6.1 (2017-01-27)
+ system   x86_64, linux-gnu           
+ ui       X11                         
+ language en_US.UTF-8                 
+ collate  en_US.UTF-8                 
+ tz       UTC                         
+ date     2019-08-12                  </code></pre>
+<pre><code>Packages -----------------------------------------------------------------</code></pre>
+<pre><code> package      * version    date       source                              
+ assertthat     0.2.0      2017-04-11 CRAN (R 3.6.1)                      
+ backports      1.1.2      2017-12-13 CRAN (R 3.6.1)                      
+ base         * 3.6.1      2019-07-22 local                               
+ bindr          0.1.1      2018-03-13 CRAN (R 3.6.1)                      
+ bindrcpp     * 0.2.2      2018-03-29 CRAN (R 3.6.1)                      
+ bookdown       0.7        2018-02-18 CRAN (R 3.6.1)                      
+ checkmate      1.9.1      2019-01-15 CRAN (R 3.6.1)                      
+ clustree     * 0.3.0      2019-02-24 CRAN (R 3.6.1)                      
+ colorspace     1.3-2      2016-12-14 CRAN (R 3.6.1)                      
+ compiler       3.6.1      2019-07-22 local                               
+ cowplot      * 0.9.3      2018-07-15 CRAN (R 3.6.1)                      
+ crayon         1.3.4      2017-09-16 CRAN (R 3.6.1)                      
+ datasets     * 3.6.1      2019-07-22 local                               
+ devtools       1.13.6     2018-06-27 CRAN (R 3.6.1)                      
+ digest         0.6.18     2018-10-10 CRAN (R 3.6.1)                      
+ dplyr        * 0.7.8      2018-11-10 CRAN (R 3.6.1)                      
+ evaluate       0.12       2018-10-09 CRAN (R 3.6.1)                      
+ farver         1.1.0      2018-11-20 CRAN (R 3.6.1)                      
+ forcats        0.3.0      2018-02-19 CRAN (R 3.6.1)                      
+ ggforce        0.2.2      2019-04-23 CRAN (R 3.6.1)                      
+ ggplot2      * 3.1.0      2018-10-25 CRAN (R 3.6.1)                      
+ ggraph       * 1.0.2      2018-07-07 CRAN (R 3.6.1)                      
+ ggrepel        0.8.0      2018-05-09 CRAN (R 3.6.1)                      
+ glue           1.3.0      2018-07-17 CRAN (R 3.6.1)                      
+ graphics     * 3.6.1      2019-07-22 local                               
+ grDevices    * 3.6.1      2019-07-22 local                               
+ grid           3.6.1      2019-07-22 local                               
+ gridExtra      2.3        2017-09-09 CRAN (R 3.6.1)                      
+ gtable         0.2.0      2016-02-26 CRAN (R 3.6.1)                      
+ here         * 0.1        2017-05-28 CRAN (R 3.6.1)                      
+ highr          0.7        2018-06-09 CRAN (R 3.6.1)                      
+ hms            0.4.2      2018-03-10 CRAN (R 3.6.1)                      
+ htmltools      0.3.6      2017-04-28 CRAN (R 3.6.1)                      
+ igraph         1.2.2      2018-07-27 CRAN (R 3.6.1)                      
+ jsonlite     * 1.6        2018-12-07 CRAN (R 3.6.1)                      
+ knitr        * 1.20       2018-02-20 CRAN (R 3.6.1)                      
+ labeling       0.3        2014-08-23 CRAN (R 3.6.1)                      
+ lazyeval       0.2.1      2017-10-29 CRAN (R 3.6.1)                      
+ magrittr       1.5        2014-11-22 CRAN (R 3.6.1)                      
+ maps         * 3.3.0      2018-04-03 CRAN (R 3.6.1)                      
+ MASS           7.3-51.4   2019-03-31 CRAN (R 3.6.1)                      
+ memoise        1.1.0      2017-04-21 CRAN (R 3.6.1)                      
+ methods      * 3.6.1      2019-07-22 local                               
+ munsell        0.5.0      2018-06-12 CRAN (R 3.6.1)                      
+ packrat        0.4.9-3    2018-06-01 CRAN (R 3.6.1)                      
+ pillar         1.3.0      2018-07-14 CRAN (R 3.6.1)                      
+ pkgconfig      2.0.2      2018-08-16 CRAN (R 3.6.1)                      
+ plyr           1.8.4      2016-06-08 CRAN (R 3.6.1)                      
+ polyclip       1.9-1      2018-07-27 CRAN (R 3.6.1)                      
+ purrr          0.2.5      2018-05-29 CRAN (R 3.6.1)                      
+ R6             2.3.0      2018-10-04 CRAN (R 3.6.1)                      
+ RColorBrewer * 1.1-2      2014-12-07 CRAN (R 3.6.1)                      
+ Rcpp           1.0.0      2018-11-07 CRAN (R 3.6.1)                      
+ readr        * 1.3.1      2018-12-21 CRAN (R 3.6.1)                      
+ rlang          0.3.0.1    2018-10-25 CRAN (R 3.6.1)                      
+ rmarkdown      1.10       2018-06-11 CRAN (R 3.6.1)                      
+ rprojroot      1.3-2      2018-01-03 CRAN (R 3.6.1)                      
+ rstudioapi     0.8        2018-10-02 CRAN (R 3.6.1)                      
+ scales         1.0.0      2018-08-09 CRAN (R 3.6.1)                      
+ stats        * 3.6.1      2019-07-22 local                               
+ stringi        1.2.4      2018-07-20 CRAN (R 3.6.1)                      
+ stringr      * 1.3.1      2018-05-10 CRAN (R 3.6.1)                      
+ tibble         1.4.2      2018-01-22 CRAN (R 3.6.1)                      
+ tidygraph      1.1.1      2018-11-20 CRAN (R 3.6.1)                      
+ tidyr        * 0.8.2      2018-10-28 CRAN (R 3.6.1)                      
+ tidyselect     0.2.5      2018-10-11 CRAN (R 3.6.1)                      
+ tools          3.6.1      2019-07-22 local                               
+ tweenr         1.0.1      2018-12-14 CRAN (R 3.6.1)                      
+ unimelbdown    0.0.0.9002 2019-07-31 Github (lazappi/unimelbdown@911d047)
+ utils        * 3.6.1      2019-07-22 local                               
+ viridis        0.5.1      2018-03-29 CRAN (R 3.6.1)                      
+ viridisLite    0.3.0      2018-02-01 CRAN (R 3.6.1)                      
+ withr          2.1.2      2018-03-15 CRAN (R 3.6.1)                      
+ xfun           0.3        2018-07-06 CRAN (R 3.6.1)                      
+ yaml           2.2.0      2018-07-25 CRAN (R 3.6.1)                      </code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="F-analysis-methods.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": [["thesis.pdf", "PDF"], ["thesis.docx", "Word"]],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

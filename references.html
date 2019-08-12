@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Tools and techniques for single-cell RNA sequencing data</title>
+  <meta name="description" content="Tools and techniques for single-cell RNA sequencing data">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Tools and techniques for single-cell RNA sequencing data" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Tools and techniques for single-cell RNA sequencing data" />
+  
+  
+  
+
+<meta name="author" content="Luke Zappia">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="6-conclusion.html">
+<link rel="next" href="A-splatter-additional.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"></a></li>
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Front matter</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#abstract"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#declaration"><i class="fa fa-check"></i>Declaration</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#preface"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#list-of-copyright"><i class="fa fa-check"></i>List of copyright</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="1-introduction.html"><a href="1-introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="1-introduction.html"><a href="1-introduction.html#intro-dogma"><i class="fa fa-check"></i><b>1.1</b> The central dogma</a></li>
+<li class="chapter" data-level="1.2" data-path="1-introduction.html"><a href="1-introduction.html#intro-RNAseq"><i class="fa fa-check"></i><b>1.2</b> RNA sequencing</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="1-introduction.html"><a href="1-introduction.html#library-preparation"><i class="fa fa-check"></i><b>1.2.1</b> Library preparation</a></li>
+<li class="chapter" data-level="1.2.2" data-path="1-introduction.html"><a href="1-introduction.html#high-throughput-sequencing"><i class="fa fa-check"></i><b>1.2.2</b> High-throughput sequencing</a></li>
+<li class="chapter" data-level="1.2.3" data-path="1-introduction.html"><a href="1-introduction.html#analysis-of-rna-seq-data"><i class="fa fa-check"></i><b>1.2.3</b> Analysis of RNA-seq data</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="1-introduction.html"><a href="1-introduction.html#intro-scRNAseq"><i class="fa fa-check"></i><b>1.3</b> Single-cell RNA sequencing</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="1-introduction.html"><a href="1-introduction.html#early-single-cell-capture-technologies"><i class="fa fa-check"></i><b>1.3.1</b> Early single-cell capture technologies</a></li>
+<li class="chapter" data-level="1.3.2" data-path="1-introduction.html"><a href="1-introduction.html#droplet-based-cell-capture"><i class="fa fa-check"></i><b>1.3.2</b> Droplet-based cell capture</a></li>
+<li class="chapter" data-level="1.3.3" data-path="1-introduction.html"><a href="1-introduction.html#unique-molecular-identifiers"><i class="fa fa-check"></i><b>1.3.3</b> Unique Molecular Identifiers</a></li>
+<li class="chapter" data-level="1.3.4" data-path="1-introduction.html"><a href="1-introduction.html#recent-advances-in-scrna-seq-protocols"><i class="fa fa-check"></i><b>1.3.4</b> Recent advances in scRNA-seq protocols</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="1-introduction.html"><a href="1-introduction.html#intro-analysis"><i class="fa fa-check"></i><b>1.4</b> Analysing scRNA-seq data</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="1-introduction.html"><a href="1-introduction.html#pre-processing-and-quality-control"><i class="fa fa-check"></i><b>1.4.1</b> Pre-processing and quality control</a></li>
+<li class="chapter" data-level="1.4.2" data-path="1-introduction.html"><a href="1-introduction.html#normalisation-and-integration"><i class="fa fa-check"></i><b>1.4.2</b> Normalisation and integration</a></li>
+<li class="chapter" data-level="1.4.3" data-path="1-introduction.html"><a href="1-introduction.html#grouping-cells"><i class="fa fa-check"></i><b>1.4.3</b> Grouping cells</a></li>
+<li class="chapter" data-level="1.4.4" data-path="1-introduction.html"><a href="1-introduction.html#ordering-cells"><i class="fa fa-check"></i><b>1.4.4</b> Ordering cells</a></li>
+<li class="chapter" data-level="1.4.5" data-path="1-introduction.html"><a href="1-introduction.html#gene-detection-and-interpretation"><i class="fa fa-check"></i><b>1.4.5</b> Gene detection and interpretation</a></li>
+<li class="chapter" data-level="1.4.6" data-path="1-introduction.html"><a href="1-introduction.html#alternative-analyses"><i class="fa fa-check"></i><b>1.4.6</b> Alternative analyses</a></li>
+<li class="chapter" data-level="1.4.7" data-path="1-introduction.html"><a href="1-introduction.html#evaluation-of-scrna-seq-analysis-methods"><i class="fa fa-check"></i><b>1.4.7</b> Evaluation of scRNA-seq analysis methods</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="1-introduction.html"><a href="1-introduction.html#intro-kidney"><i class="fa fa-check"></i><b>1.5</b> Kidney development</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="1-introduction.html"><a href="1-introduction.html#structure-and-function"><i class="fa fa-check"></i><b>1.5.1</b> Structure and function</a></li>
+<li class="chapter" data-level="1.5.2" data-path="1-introduction.html"><a href="1-introduction.html#stages-of-development"><i class="fa fa-check"></i><b>1.5.2</b> Stages of development</a></li>
+<li class="chapter" data-level="1.5.3" data-path="1-introduction.html"><a href="1-introduction.html#growing-kidney-organoids"><i class="fa fa-check"></i><b>1.5.3</b> Growing kidney organoids</a></li>
+<li class="chapter" data-level="1.5.4" data-path="1-introduction.html"><a href="1-introduction.html#kidney-scrna-seq-studies"><i class="fa fa-check"></i><b>1.5.4</b> Kidney scRNA-seq studies</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="1-introduction.html"><a href="1-introduction.html#intro-overview"><i class="fa fa-check"></i><b>1.6</b> Thesis overview and aims</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="2-tools.html"><a href="2-tools.html"><i class="fa fa-check"></i><b>2</b> The scRNA-seq tools landscape</a><ul>
+<li class="chapter" data-level="2.1" data-path="2-tools.html"><a href="2-tools.html#introduction-1"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="2-tools.html"><a href="2-tools.html#scrna-tools-publication"><i class="fa fa-check"></i><b>2.2</b> scRNA-tools publication</a></li>
+<li class="chapter" data-level="2.3" data-path="2-tools.html"><a href="2-tools.html#tools-current"><i class="fa fa-check"></i><b>2.3</b> The current scRNA-tools database</a></li>
+<li class="chapter" data-level="2.4" data-path="2-tools.html"><a href="2-tools.html#tools-usage"><i class="fa fa-check"></i><b>2.4</b> Usage of the scRNA-tools website</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="3-simulation.html"><a href="3-simulation.html"><i class="fa fa-check"></i><b>3</b> Simulating scRNA-seq data</a><ul>
+<li class="chapter" data-level="3.1" data-path="3-simulation.html"><a href="3-simulation.html#introduction-2"><i class="fa fa-check"></i><b>3.1</b> Introduction</a></li>
+<li class="chapter" data-level="3.2" data-path="3-simulation.html"><a href="3-simulation.html#splatter-publication"><i class="fa fa-check"></i><b>3.2</b> Splatter publication</a></li>
+<li class="chapter" data-level="3.3" data-path="3-simulation.html"><a href="3-simulation.html#splatter-update"><i class="fa fa-check"></i><b>3.3</b> Updates to Splatter</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="3-simulation.html"><a href="3-simulation.html#performance-of-current-simulations"><i class="fa fa-check"></i><b>3.3.1</b> Performance of current simulations</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="4-clust-trees.html"><a href="4-clust-trees.html"><i class="fa fa-check"></i><b>4</b> Visualising clustering across resolutions</a><ul>
+<li class="chapter" data-level="4.1" data-path="4-clust-trees.html"><a href="4-clust-trees.html#introduction-3"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="4-clust-trees.html"><a href="4-clust-trees.html#clustree-publication"><i class="fa fa-check"></i><b>4.2</b> Clustering trees publication</a></li>
+<li class="chapter" data-level="4.3" data-path="4-clust-trees.html"><a href="4-clust-trees.html#clustree-overlay"><i class="fa fa-check"></i><b>4.3</b> Overlaying clustering trees</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="5-analysis.html"><a href="5-analysis.html"><i class="fa fa-check"></i><b>5</b> Analysis of kidney organoid scRNA-seq data</a><ul>
+<li class="chapter" data-level="5.1" data-path="5-analysis.html"><a href="5-analysis.html#introduction-4"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="5-analysis.html"><a href="5-analysis.html#summary-of-published-work"><i class="fa fa-check"></i><b>5.2</b> Summary of published work</a></li>
+<li class="chapter" data-level="5.3" data-path="5-analysis.html"><a href="5-analysis.html#outline-and-motivation"><i class="fa fa-check"></i><b>5.3</b> Outline and motivation</a></li>
+<li class="chapter" data-level="5.4" data-path="5-analysis.html"><a href="5-analysis.html#pre-processing"><i class="fa fa-check"></i><b>5.4</b> Pre-processing</a><ul>
+<li class="chapter" data-level="5.4.1" data-path="5-analysis.html"><a href="5-analysis.html#droplet-selection"><i class="fa fa-check"></i><b>5.4.1</b> Droplet selection</a></li>
+<li class="chapter" data-level="5.4.2" data-path="5-analysis.html"><a href="5-analysis.html#alevin-comparison"><i class="fa fa-check"></i><b>5.4.2</b> Alevin comparison</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="5-analysis.html"><a href="5-analysis.html#quality-control"><i class="fa fa-check"></i><b>5.5</b> Quality control</a></li>
+<li class="chapter" data-level="5.6" data-path="5-analysis.html"><a href="5-analysis.html#clustering"><i class="fa fa-check"></i><b>5.6</b> Clustering</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="5-analysis.html"><a href="5-analysis.html#gene-selection"><i class="fa fa-check"></i><b>5.6.1</b> Gene selection</a></li>
+<li class="chapter" data-level="5.6.2" data-path="5-analysis.html"><a href="5-analysis.html#resolution-selection"><i class="fa fa-check"></i><b>5.6.2</b> Resolution selection</a></li>
+<li class="chapter" data-level="5.6.3" data-path="5-analysis.html"><a href="5-analysis.html#cluster-validation"><i class="fa fa-check"></i><b>5.6.3</b> Cluster validation</a></li>
+<li class="chapter" data-level="5.6.4" data-path="5-analysis.html"><a href="5-analysis.html#comparison-to-published-clusters"><i class="fa fa-check"></i><b>5.6.4</b> Comparison to published clusters</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="5-analysis.html"><a href="5-analysis.html#marker-genes"><i class="fa fa-check"></i><b>5.7</b> Marker gene detection</a></li>
+<li class="chapter" data-level="5.8" data-path="5-analysis.html"><a href="5-analysis.html#connecting-clusters"><i class="fa fa-check"></i><b>5.8</b> Connecting clusters</a><ul>
+<li class="chapter" data-level="5.8.1" data-path="5-analysis.html"><a href="5-analysis.html#partition-based-graph-abstraction"><i class="fa fa-check"></i><b>5.8.1</b> Partition-based graph abstraction</a></li>
+<li class="chapter" data-level="5.8.2" data-path="5-analysis.html"><a href="5-analysis.html#cell-velocity"><i class="fa fa-check"></i><b>5.8.2</b> Cell velocity</a></li>
+</ul></li>
+<li class="chapter" data-level="5.9" data-path="5-analysis.html"><a href="5-analysis.html#discussion"><i class="fa fa-check"></i><b>5.9</b> Discussion</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="6-conclusion.html"><a href="6-conclusion.html"><i class="fa fa-check"></i><b>6</b> Conclusion</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="A-splatter-additional.html"><a href="A-splatter-additional.html"><i class="fa fa-check"></i><b>A</b> Splatter additional files</a><ul>
+<li class="chapter" data-level="A.1" data-path="A-splatter-additional.html"><a href="A-splatter-additional.html#additional-figures"><i class="fa fa-check"></i><b>A.1</b> Additional figures</a></li>
+<li class="chapter" data-level="A.2" data-path="A-splatter-additional.html"><a href="A-splatter-additional.html#session-information"><i class="fa fa-check"></i><b>A.2</b> Session information</a></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="B-splatter-docs.html"><a href="B-splatter-docs.html"><i class="fa fa-check"></i><b>B</b> Splatter documentation</a><ul>
+<li class="chapter" data-level="B.1" data-path="B-splatter-docs.html"><a href="B-splatter-docs.html#splatter-vignette"><i class="fa fa-check"></i><b>B.1</b> Splatter vignette</a></li>
+<li class="chapter" data-level="B.2" data-path="B-splatter-docs.html"><a href="B-splatter-docs.html#splat-params-vignette"><i class="fa fa-check"></i><b>B.2</b> Splat parameters vignette</a></li>
+<li class="chapter" data-level="B.3" data-path="B-splatter-docs.html"><a href="B-splatter-docs.html#splatter-manual"><i class="fa fa-check"></i><b>B.3</b> Splatter manual</a></li>
+</ul></li>
+<li class="chapter" data-level="C" data-path="C-simulation-comparison.html"><a href="C-simulation-comparison.html"><i class="fa fa-check"></i><b>C</b> Simulation comparison</a><ul>
+<li class="chapter" data-level="C.1" data-path="C-simulation-comparison.html"><a href="C-simulation-comparison.html#sim-timings"><i class="fa fa-check"></i><b>C.1</b> Timings</a></li>
+<li class="chapter" data-level="C.2" data-path="C-simulation-comparison.html"><a href="C-simulation-comparison.html#sim-packages"><i class="fa fa-check"></i><b>C.2</b> Package versions</a></li>
+</ul></li>
+<li class="chapter" data-level="D" data-path="D-clustree-docs.html"><a href="D-clustree-docs.html"><i class="fa fa-check"></i><b>D</b> clustree documentation</a><ul>
+<li class="chapter" data-level="D.1" data-path="D-clustree-docs.html"><a href="D-clustree-docs.html#clustree-vignette"><i class="fa fa-check"></i><b>D.1</b> clustree vignette</a></li>
+<li class="chapter" data-level="D.2" data-path="D-clustree-docs.html"><a href="D-clustree-docs.html#clustree-manual"><i class="fa fa-check"></i><b>D.2</b> clustree manual</a></li>
+</ul></li>
+<li class="chapter" data-level="E" data-path="E-organoid-paper.html"><a href="E-organoid-paper.html"><i class="fa fa-check"></i><b>E</b> Kidney organoid publication</a></li>
+<li class="chapter" data-level="F" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html"><i class="fa fa-check"></i><b>F</b> Analysis methods</a><ul>
+<li class="chapter" data-level="F.1" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#pre-processing-1"><i class="fa fa-check"></i><b>F.1</b> Pre-processing</a><ul>
+<li class="chapter" data-level="F.1.1" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#droplet-selection-1"><i class="fa fa-check"></i><b>F.1.1</b> Droplet selection</a></li>
+<li class="chapter" data-level="F.1.2" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#alevin"><i class="fa fa-check"></i><b>F.1.2</b> Alevin</a></li>
+</ul></li>
+<li class="chapter" data-level="F.2" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#quality-control-1"><i class="fa fa-check"></i><b>F.2</b> Quality control</a></li>
+<li class="chapter" data-level="F.3" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#clustering-1"><i class="fa fa-check"></i><b>F.3</b> Clustering</a><ul>
+<li class="chapter" data-level="F.3.1" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#gene-selection-1"><i class="fa fa-check"></i><b>F.3.1</b> Gene selection</a></li>
+<li class="chapter" data-level="F.3.2" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#graph-based-clustering"><i class="fa fa-check"></i><b>F.3.2</b> Graph-based clustering</a></li>
+</ul></li>
+<li class="chapter" data-level="F.4" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#marker-genes-1"><i class="fa fa-check"></i><b>F.4</b> Marker genes</a></li>
+<li class="chapter" data-level="F.5" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#partition-based-graph-abstraction-paga"><i class="fa fa-check"></i><b>F.5</b> Partition-based graph abstraction (PAGA)</a></li>
+<li class="chapter" data-level="F.6" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#cell-velocity-1"><i class="fa fa-check"></i><b>F.6</b> Cell velocity</a></li>
+<li class="chapter" data-level="F.7" data-path="F-analysis-methods.html"><a href="F-analysis-methods.html#other-packages"><i class="fa fa-check"></i><b>F.7</b> Other packages</a></li>
+</ul></li>
+<li class="chapter" data-level="G" data-path="G-session-information-1.html"><a href="G-session-information-1.html"><i class="fa fa-check"></i><b>G</b> Session information</a><ul>
+<li class="chapter" data-level="G.1" data-path="G-session-information-1.html"><a href="G-session-information-1.html#important-packages"><i class="fa fa-check"></i><b>G.1</b> Important packages</a></li>
+<li class="chapter" data-level="G.2" data-path="G-session-information-1.html"><a href="G-session-information-1.html#full-session-information"><i class="fa fa-check"></i><b>G.2</b> Full session information</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Tools and techniques for single-cell RNA sequencing data</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="references" class="section level1 unnumbered">
+<h1>References</h1>
+
+<!-- This line tells Pandoc to put the references here -->
+<div id="refs">
+<div id="ref-Watson1953-fx">
+<p>1. Watson JD, Crick FH. “Molecular structure of nucleic acids; a structure for deoxyribose nucleic acid.” <em>Nature</em>. 1953;171:737–8. DOI: <a href="https://doi.org/10.1038/171737a0">10.1038/171737a0</a> </p>
+</div>
+<div id="ref-Wilkins1953-ik">
+<p>2. Wilkins MHF, Stokes AR, Wilson HR. “Molecular structure of deoxypentose nucleic acids.” <em>Nature</em>. 1953;171:738–40. DOI: <a href="https://doi.org/10.1038/171738a0">10.1038/171738a0</a> </p>
+</div>
+<div id="ref-Franklin1953-pe">
+<p>3. Franklin RE, Gosling RG. “Molecular configuration in sodium thymonucleate.” <em>Nature</em>. 1953;171:740–1. DOI: <a href="https://doi.org/10.1038/171740a0">10.1038/171740a0</a> </p>
+</div>
+<div id="ref-Raz2011-kn">
+<p>4. Raz T, Kapranov P, Lipson D, Letovsky S, Milos PM, Thompson JF. “Protocol dependence of sequencing-based gene expression measurements.” <em>PloS One</em>. 2011;6:e19287. DOI: <a href="https://doi.org/10.1371/journal.pone.0019287">10.1371/journal.pone.0019287</a> </p>
+</div>
+<div id="ref-Sultan2014-xh">
+<p>5. Sultan M, Amstislavskiy V, Risch T, Schuette M, Dökel S, Ralser M, Balzereit D, Lehrach H, Yaspo M-L. “Influence of RNA extraction methods and library selection schemes on RNA-seq data.” <em>BMC Genomics</em>. 2014;15:675. DOI: <a href="https://doi.org/10.1186/1471-2164-15-675">10.1186/1471-2164-15-675</a> </p>
+</div>
+<div id="ref-Voelker_undated-ze">
+<p>6. Voelker R, Small C, Bassham S, Catchen J, Sydes J, Cresko B. “RNA-seqlopedia.” Available from: <a href="https://web.archive.org/web/20181218043831/https://rnaseq.uoregon.edu/" class="uri">https://web.archive.org/web/20181218043831/https://rnaseq.uoregon.edu/</a> Accessed: 2018-12-18 </p>
+</div>
+<div id="ref-Mardis2008-ju">
+<p>7. Mardis ER. “Next-generation DNA sequencing methods.” <em>Annual Review of Genomics and Human Genetics</em>. 2008;9:387–402. DOI: <a href="https://doi.org/10.1146/annurev.genom.9.081307.164359">10.1146/annurev.genom.9.081307.164359</a> </p>
+</div>
+<div id="ref-Dobin2013-gx">
+<p>8. Dobin A, Davis CA, Schlesinger F, Drenkow J, Zaleski C, Jha S, Batut P, Chaisson M, Gingeras TR. “STAR: ultrafast universal RNA-seq aligner.” <em>Bioinformatics</em>. 2013;29:15–21. DOI: <a href="https://doi.org/10.1093/bioinformatics/bts635">10.1093/bioinformatics/bts635</a> </p>
+</div>
+<div id="ref-Kim2015-ys">
+<p>9. Kim D, Langmead B, Salzberg SL. “HISAT: a fast spliced aligner with low memory requirements.” <em>Nature Methods</em>. 2015;12:357–60. DOI: <a href="https://doi.org/10.1038/nmeth.3317">10.1038/nmeth.3317</a> </p>
+</div>
+<div id="ref-Liao2013-id">
+<p>10. Liao Y, Smyth GK, Shi W. “The Subread aligner: fast, accurate and scalable read mapping by seed-and-vote.” <em>Nucleic Acids Research</em>. 2013;41:e108. DOI: <a href="https://doi.org/10.1093/nar/gkt214">10.1093/nar/gkt214</a> </p>
+</div>
+<div id="ref-Bray2016-tm">
+<p>11. Bray NL, Pimentel H, Melsted P, Pachter L. “Near-optimal probabilistic RNA-seq quantification.” <em>Nature Biotechnology</em>. 2016;34:525–7. DOI: <a href="https://doi.org/10.1038/nbt.3519">10.1038/nbt.3519</a> </p>
+</div>
+<div id="ref-Patro2017-ka">
+<p>12. Patro R, Duggal G, Love MI, Irizarry RA, Kingsford C. “Salmon provides fast and bias-aware quantification of transcript expression.” <em>Nature Methods</em>. 2017;14:417–9. DOI: <a href="https://doi.org/10.1038/nmeth.4197">10.1038/nmeth.4197</a> </p>
+</div>
+<div id="ref-Robinson2010-ll">
+<p>13. Robinson MD, Oshlack A. “A scaling normalization method for differential expression analysis of RNA-seq data.” <em>Genome Biology</em>. 2010;11:R25. DOI: <a href="https://doi.org/10.1186/gb-2010-11-3-r25">10.1186/gb-2010-11-3-r25</a> </p>
+</div>
+<div id="ref-Kim2015-mo">
+<p>14. Kim JK, Kolodziejczyk AA, Illicic T, Teichmann SA, Marioni JC. “Characterizing noise structure in single-cell RNA-seq distinguishes genuine from technical stochastic allelic expression.” <em>Nature Communications</em>. 2015;6:8687. DOI: <a href="https://doi.org/10.1038/ncomms9687">10.1038/ncomms9687</a> </p>
+</div>
+<div id="ref-Robinson2010-pt">
+<p>15. Robinson MD, McCarthy DJ, Smyth GK. “edgeR: a Bioconductor package for differential expression analysis of digital gene expression data.” <em>Bioinformatics</em>. 2010;26:139–40. DOI: <a href="https://doi.org/10.1093/bioinformatics/btp616">10.1093/bioinformatics/btp616</a> </p>
+</div>
+<div id="ref-McCarthy2012-gc">
+<p>16. McCarthy DJ, Chen Y, Smyth GK. “Differential expression analysis of multifactor RNA-Seq experiments with respect to biological variation.” <em>Nucleic Acids Research</em>. 2012;40:4288–97. DOI: <a href="https://doi.org/10.1093/nar/gks042">10.1093/nar/gks042</a> </p>
+</div>
+<div id="ref-Anders2010-pq">
+<p>17. Anders S, Huber W. “Differential expression analysis for sequence count data.” <em>Genome Biology</em>. 2010;11:R106. DOI: <a href="https://doi.org/10.1186/gb-2010-11-10-r106">10.1186/gb-2010-11-10-r106</a> </p>
+</div>
+<div id="ref-Love2014-tw">
+<p>18. Love MI, Huber W, Anders S. “Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2.” <em>Genome Biology</em>. 2014;15:550. DOI: <a href="https://doi.org/10.1186/s13059-014-0550-8">10.1186/s13059-014-0550-8</a> </p>
+</div>
+<div id="ref-Mortazavi2008-vu">
+<p>19. Mortazavi A, Williams BA, McCue K, Schaeffer L, Wold B. “Mapping and quantifying mammalian transcriptomes by RNA-Seq.” <em>Nature Methods</em>. 2008;5:621–8. DOI: <a href="https://doi.org/10.1038/nmeth.1226">10.1038/nmeth.1226</a> </p>
+</div>
+<div id="ref-Wagner2012-qf">
+<p>20. Wagner GP, Kin K, Lynch VJ. “Measurement of mRNA abundance using RNA-seq data: RPKM measure is inconsistent among samples.” <em>Theory in Biosciences</em>. 2012;131:281–5. DOI: <a href="https://doi.org/10.1007/s12064-012-0162-3">10.1007/s12064-012-0162-3</a> </p>
+</div>
+<div id="ref-Ritchie2015-te">
+<p>21. Ritchie ME, Phipson B, Wu D, Hu Y, Law CW, Shi W, Smyth GK. “limma powers differential expression analyses for RNA-sequencing and microarray studies.” <em>Nucleic Acids Research</em>. 2015;43:e47. DOI: <a href="https://doi.org/10.1093/nar/gkv007">10.1093/nar/gkv007</a> </p>
+</div>
+<div id="ref-Law2014-nq">
+<p>22. Law CW, Chen Y, Shi W, Smyth GK. “voom: Precision weights unlock linear model analysis tools for RNA-seq read counts.” <em>Genome Biology</em>. 2014;15:R29. DOI: <a href="https://doi.org/10.1186/gb-2014-15-2-r29">10.1186/gb-2014-15-2-r29</a> </p>
+</div>
+<div id="ref-Risso2014-zw">
+<p>23. Risso D, Ngai J, Speed TP, Dudoit S. “Normalization of RNA-seq data using factor analysis of control genes or samples.” <em>Nature Biotechnology</em>. 2014;32:896–902. DOI: <a href="https://doi.org/10.1038/nbt.2931">10.1038/nbt.2931</a> </p>
+</div>
+<div id="ref-Tang2009-jd">
+<p>24. Tang F, Barbacioru C, Wang Y, Nordman E, Lee C, Xu N, Wang X, Bodeau J, Tuch BB, Siddiqui A, Lao K, Surani MA. “mRNA-Seq whole-transcriptome analysis of a single cell.” <em>Nature Methods</em>. 2009;6:377–82. DOI: <a href="https://doi.org/10.1038/nmeth.1315">10.1038/nmeth.1315</a> </p>
+</div>
+<div id="ref-Hashimshony2012-dh">
+<p>25. Hashimshony T, Wagner F, Sher N, Yanai I. “CEL-Seq: single-cell RNA-Seq by multiplexed linear amplification.” <em>Cell Reports</em>. 2012;2:666–73. DOI: <a href="https://doi.org/10.1016/j.celrep.2012.08.003">10.1016/j.celrep.2012.08.003</a> </p>
+</div>
+<div id="ref-Hashimshony2016-yi">
+<p>26. Hashimshony T, Senderovich N, Avital G, Klochendler A, Leeuw Y de, Anavy L, Gennert D, Li S, Livak KJ, Rozenblatt-Rosen O, Dor Y, Regev A, Yanai I. “CEL-Seq2: sensitive highly-multiplexed single-cell RNA-Seq.” <em>Genome Biology</em>. 2016;17:77. DOI: <a href="https://doi.org/10.1186/s13059-016-0938-8">10.1186/s13059-016-0938-8</a> </p>
+</div>
+<div id="ref-Sasagawa2013-uc">
+<p>27. Sasagawa Y, Nikaido I, Hayashi T, Danno H, Uno KD, Imai T, Ueda HR. “Quartz-Seq: a highly reproducible and sensitive single-cell RNA sequencing method, reveals non-genetic gene-expression heterogeneity.” <em>Genome Biology</em>. 2013;14:R31. DOI: <a href="https://doi.org/10.1186/gb-2013-14-4-r31">10.1186/gb-2013-14-4-r31</a> </p>
+</div>
+<div id="ref-Sasagawa2018-ox">
+<p>28. Sasagawa Y, Danno H, Takada H, Ebisawa M, Tanaka K, Hayashi T, Kurisaki A, Nikaido I. “Quartz-Seq2: a high-throughput single-cell RNA-sequencing method that effectively uses limited sequence reads.” <em>Genome Biology</em>. 2018;19:29. DOI: <a href="https://doi.org/10.1186/s13059-018-1407-3">10.1186/s13059-018-1407-3</a> </p>
+</div>
+<div id="ref-Picelli2013-or">
+<p>29. Picelli S, Björklund ÅK, Faridani OR, Sagasser S, Winberg G, Sandberg R. “Smart-seq2 for sensitive full-length transcriptome profiling in single cells.” <em>Nature Methods</em>. 2013;10:1096–8. DOI: <a href="https://doi.org/10.1038/nmeth.2639">10.1038/nmeth.2639</a> </p>
+</div>
+<div id="ref-Svensson2018-dx">
+<p>30. Svensson V, Vento-Tormo R, Teichmann SA. “Exponential scaling of single-cell RNA-seq in the past decade.” <em>Nature Protocols</em>. 2018;13:599. DOI: <a href="https://doi.org/10.1038/nprot.2017.149">10.1038/nprot.2017.149</a> </p>
+</div>
+<div id="ref-Macosko2015-rl">
+<p>31. Macosko EZ, Basu A, Satija R, Nemesh J, Shekhar K, Goldman M, Tirosh I, Bialas AR, Kamitaki N, Martersteck EM, Trombetta JJ, Weitz DA, Sanes JR, Shalek AK, Regev A, McCarroll SA. “Highly parallel genome-wide expression profiling of individual cells using nanoliter droplets.” <em>Cell</em>. 2015;161:1202–14. DOI: <a href="https://doi.org/10.1016/j.cell.2015.05.002">10.1016/j.cell.2015.05.002</a> </p>
+</div>
+<div id="ref-Klein2015-iw">
+<p>32. Klein AM, Mazutis L, Akartuna I, Tallapragada N, Veres A, Li V, Peshkin L, Weitz DA, Kirschner MW. “Droplet barcoding for single-cell transcriptomics applied to embryonic stem cells.” <em>Cell</em>. 2015;161:1187–201. DOI: <a href="https://doi.org/10.1016/j.cell.2015.04.044">10.1016/j.cell.2015.04.044</a> </p>
+</div>
+<div id="ref-Zilionis2017-gu">
+<p>33. Zilionis R, Nainys J, Veres A, Savova V, Zemmour D, Klein AM, Mazutis L. “Single-cell barcoding and sequencing using droplet microfluidics.” <em>Nature Protocols</em>. 2017;12:44–73. DOI: <a href="https://doi.org/10.1038/nprot.2016.154">10.1038/nprot.2016.154</a> </p>
+</div>
+<div id="ref-Zheng2017-mm">
+<p>34. Zheng GXY, Terry JM, Belgrader P, Ryvkin P, Bent ZW, Wilson R, Ziraldo SB, Wheeler TD, McDermott GP, Zhu J, Gregory MT, Shuga J, Montesclaros L, Underwood JG, Masquelier DA, Nishimura SY, Schnall-Levin M, Wyatt PW, et al. “Massively parallel digital transcriptional profiling of single cells.” <em>Nature Communications</em>. 2017;8:14049. DOI: <a href="https://doi.org/10.1038/ncomms14049">10.1038/ncomms14049</a> </p>
+</div>
+<div id="ref-Zhang2019-vw">
+<p>35. Zhang X, Li T, Liu F, Chen Y, Yao J, Li Z, Huang Y, Wang J. “Comparative Analysis of Droplet-Based Ultra-High-Throughput Single-Cell RNA-Seq Systems.” <em>Molecular Cell</em>. 2019;73:130–142.e5. DOI: <a href="https://doi.org/10.1016/j.molcel.2018.10.020">10.1016/j.molcel.2018.10.020</a> </p>
+</div>
+<div id="ref-Kivioja2012-bq">
+<p>36. Kivioja T, Vähärautio A, Karlsson K, Bonke M, Enge M, Linnarsson S, Taipale J. “Counting absolute numbers of molecules using unique molecular identifiers.” <em>Nature Methods</em>. 2012;9:72–4. DOI: <a href="https://doi.org/10.1038/nmeth.1778">10.1038/nmeth.1778</a> </p>
+</div>
+<div id="ref-Islam2014-gq">
+<p>37. Islam S, Zeisel A, Joost S, La Manno G, Zajac P, Kasper M, Lönnerberg P, Linnarsson S. “Quantitative single-cell RNA-seq with unique molecular identifiers.” <em>Nature Methods</em>. 2014;11:163–6. DOI: <a href="https://doi.org/10.1038/nmeth.2772">10.1038/nmeth.2772</a> </p>
+</div>
+<div id="ref-Gierahn2017-kr">
+<p>38. Gierahn TM, Wadsworth MH 2nd, Hughes TK, Bryson BD, Butler A, Satija R, Fortune S, Love JC, Shalek AK. “Seq-Well: portable, low-cost RNA sequencing of single cells at high throughput.” <em>Nature Methods</em>. 2017;14:395–8. DOI: <a href="https://doi.org/10.1038/nmeth.4179">10.1038/nmeth.4179</a> </p>
+</div>
+<div id="ref-Bose2015-vn">
+<p>39. Bose S, Wan Z, Carr A, Rizvi AH, Vieira G, Pe’er D, Sims PA. “Scalable microfluidics for single-cell RNA printing and sequencing.” <em>Genome Biology</em>. 2015;16:120. DOI: <a href="https://doi.org/10.1186/s13059-015-0684-3">10.1186/s13059-015-0684-3</a> </p>
+</div>
+<div id="ref-Hu2017-jm">
+<p>40. Hu P, Fabyanic E, Kwon DY, Tang S, Zhou Z, Wu H. “Dissecting Cell-Type Composition and Activity-Dependent Transcriptional State in Mammalian Brains by Massively Parallel Single-Nucleus RNA-Seq.” <em>Molecular Cell</em>. 2017;68:1006–1015.e7. DOI: <a href="https://doi.org/10.1016/j.molcel.2017.11.017">10.1016/j.molcel.2017.11.017</a> </p>
+</div>
+<div id="ref-Gao2017-tq">
+<p>41. Gao R, Kim C, Sei E, Foukakis T, Crosetto N, Chan L-K, Srinivasan M, Zhang H, Meric-Bernstam F, Navin N. “Nanogrid single-nucleus RNA sequencing reveals phenotypic diversity in breast cancer.” <em>Nature Communications</em>. 2017;8:228. DOI: <a href="https://doi.org/10.1038/s41467-017-00244-w">10.1038/s41467-017-00244-w</a> </p>
+</div>
+<div id="ref-Habib2017-uh">
+<p>42. Habib N, Avraham-Davidi I, Basu A, Burks T, Shekhar K, Hofree M, Choudhury SR, Aguet F, Gelfand E, Ardlie K, Weitz DA, Rozenblatt-Rosen O, Zhang F, Regev A. “Massively parallel single-nucleus RNA-seq with DroNc-seq.” <em>Nature Methods</em>. 2017;14:955–8. DOI: <a href="https://doi.org/10.1038/nmeth.4407">10.1038/nmeth.4407</a> </p>
+</div>
+<div id="ref-Wu2018-xf">
+<p>43. Wu H, Kirita Y, Donnelly EL, Humphreys BD. “Advantages of Single-Nucleus over Single-Cell RNA Sequencing of Adult Kidney: Rare Cell Types and Novel Cell States Revealed in Fibrosis.” <em>Journal of the American Society of Nephrology: JASN</em>. 2018;30:23–32. DOI: <a href="https://doi.org/10.1681/ASN.2018090912">10.1681/ASN.2018090912</a> </p>
+</div>
+<div id="ref-Stoeckius2017-wm">
+<p>44. Stoeckius M, Hafemeister C, Stephenson W, Houck-Loomis B, Chattopadhyay PK, Swerdlow H, Satija R, Smibert P. “Simultaneous epitope and transcriptome measurement in single cells.” <em>Nature Methods</em>. 2017;14:865–8. DOI: <a href="https://doi.org/10.1038/nmeth.4380">10.1038/nmeth.4380</a> </p>
+</div>
+<div id="ref-Stoeckius2018-ij">
+<p>45. Stoeckius M, Zheng S, Houck-Loomis B, Hao S, Yeung BZ, Mauck WM 3rd, Smibert P, Satija R. “Cell Hashing with barcoded antibodies enables multiplexing and doublet detection for single cell genomics.” <em>Genome Biology</em>. 2018;19:224. DOI: <a href="https://doi.org/10.1186/s13059-018-1603-1">10.1186/s13059-018-1603-1</a> </p>
+</div>
+<div id="ref-Moudgil2019-bl">
+<p>46. Moudgil A. “Multimodal scRNA-seq.” 2019. DOI: <a href="https://doi.org/10.5281/zenodo.2628012">10.5281/zenodo.2628012</a> </p>
+</div>
+<div id="ref-CITEseq_web">
+<p>47. Technology Innovation Lab, New York Genome Center. “cite-seq.com.” Available from: <a href="https://web.archive.org/web/20181218054100/https://cite-seq.com/" class="uri">https://web.archive.org/web/20181218054100/https://cite-seq.com/</a> Accessed: 2018-12-18 </p>
+</div>
+<div id="ref-Spanjaard2018-gn">
+<p>48. Spanjaard B, Hu B, Mitic N, Olivares-Chauvet P, Janjuha S, Ninov N, Junker JP. “Simultaneous lineage tracing and cell-type identification using CRISPR-Cas9-induced genetic scars.” <em>Nature Biotechnology</em>. 2018;36:469–73. DOI: <a href="https://doi.org/10.1038/nbt.4124">10.1038/nbt.4124</a> </p>
+</div>
+<div id="ref-Dixit2016-wp">
+<p>49. Dixit A, Parnas O, Li B, Chen J, Fulco CP, Jerby-Arnon L, Marjanovic ND, Dionne D, Burks T, Raychowdhury R, Adamson B, Norman TM, Lander ES, Weissman JS, Friedman N, Regev A. “Perturb-Seq: Dissecting Molecular Circuits with Scalable Single-Cell RNA Profiling of Pooled Genetic Screens.” <em>Cell</em>. 2016;167:1853–1866.e17. DOI: <a href="https://doi.org/10.1016/j.cell.2016.11.038">10.1016/j.cell.2016.11.038</a> </p>
+</div>
+<div id="ref-Mimitou2019-ju">
+<p>50. Mimitou EP, Cheng A, Montalbano A, Hao S, Stoeckius M, Legut M, Roush T, Herrera A, Papalexi E, Ouyang Z, Satija R, Sanjana NE, Koralov SB, Smibert P. “Multiplexed detection of proteins, transcriptomes, clonotypes and CRISPR perturbations in single cells.” <em>Nature Methods</em>. 2019;16:409–12. DOI: <a href="https://doi.org/10.1038/s41592-019-0392-0">10.1038/s41592-019-0392-0</a> </p>
+</div>
+<div id="ref-Biddy2018-uz">
+<p>51. Biddy BA, Kong W, Kamimoto K, Guo C, Waye SE, Sun T, Morris SA. “Single-cell mapping of lineage and identity in direct reprogramming.” <em>Nature</em>. 2018;564:219–24. DOI: <a href="https://doi.org/10.1038/s41586-018-0744-4">10.1038/s41586-018-0744-4</a> </p>
+</div>
+<div id="ref-Macaulay2015-dp">
+<p>52. Macaulay IC, Haerty W, Kumar P, Li YI, Hu TX, Teng MJ, Goolam M, Saurat N, Coupland P, Shirley LM, Smith M, Van der Aa N, Banerjee R, Ellis PD, Quail MA, Swerdlow HP, Zernicka-Goetz M, Livesey FJ, et al. “G&amp;T-seq: parallel sequencing of single-cell genomes and transcriptomes.” <em>Nature Methods</em>. 2015;12:519–22. DOI: <a href="https://doi.org/10.1038/nmeth.3370">10.1038/nmeth.3370</a> </p>
+</div>
+<div id="ref-Han2017-sc">
+<p>53. Han KY, Kim K-T, Joung J-G, Son D-S, Kim YJ, Jo A, Jeon H-J, Moon H-S, Yoo CE, Chung W, Eum HH, Kim S, Kim HK, Lee JE, Ahn M-J, Lee H-O, Park D, Park W-Y. “SIDR: simultaneous isolation and parallel sequencing of genomic DNA and total RNA from single cells.” <em>Genome Research</em>. 2017; DOI: <a href="https://doi.org/10.1101/gr.223263.117">10.1101/gr.223263.117</a> </p>
+</div>
+<div id="ref-Wang2018-xp">
+<p>54. Wang LY, Guo J, Cao W, Zhang M, He J, Li Z. “Integrated sequencing of exome and mRNA of large-sized single cells.” <em>Scientific Reports</em>. 2018;8:384. DOI: <a href="https://doi.org/10.1038/s41598-017-18730-y">10.1038/s41598-017-18730-y</a> </p>
+</div>
+<div id="ref-Hu2016-il">
+<p>55. Hu Y, Huang K, An Q, Du G, Hu G, Xue J, Zhu X, Wang C-Y, Xue Z, Fan G. “Simultaneous profiling of transcriptome and DNA methylome from a single cell.” <em>Genome Biology</em>. 2016;17:88. DOI: <a href="https://doi.org/10.1186/s13059-016-0950-z">10.1186/s13059-016-0950-z</a> </p>
+</div>
+<div id="ref-Cadwell2017-wu">
+<p>56. Cadwell CR, Scala F, Li S, Livrizzi G, Shen S, Sandberg R, Jiang X, Tolias AS. “Multimodal profiling of single-cell morphology, electrophysiology, and gene expression using Patch-seq.” <em>Nature Protocols</em>. 2017;12:2531. DOI: <a href="https://doi.org/10.1038/nprot.2017.120">10.1038/nprot.2017.120</a> </p>
+</div>
+<div id="ref-Bian2018-rt">
+<p>57. Bian S, Hou Y, Zhou X, Li X, Yong J, Wang Y, Wang W, Yan J, Hu B, Guo H, Wang J, Gao S, Mao Y, Dong J, Zhu P, Xiu D, Yan L, Wen L, et al. “Single-cell multiomics sequencing and analyses of human colorectal cancer.” <em>Science</em>. 2018;362:1060–3. DOI: <a href="https://doi.org/10.1126/science.aao3791">10.1126/science.aao3791</a> </p>
+</div>
+<div id="ref-Grun2014-zn">
+<p>58. Grün D, Kester L, Oudenaarden A van. “Validation of noise models for single-cell transcriptomics.” <em>Nature Methods</em>. 2014;11:637–40. DOI: <a href="https://doi.org/10.1038/nmeth.2930">10.1038/nmeth.2930</a> </p>
+</div>
+<div id="ref-Liu2016-wq">
+<p>59. Liu S, Trapnell C. “Single-cell transcriptome sequencing: recent advances and remaining challenges.” <em>F1000Research</em>. 2016;5. DOI: <a href="https://doi.org/10.12688/f1000research.7223.1">10.12688/f1000research.7223.1</a> </p>
+</div>
+<div id="ref-Adam2017-zl">
+<p>60. Adam M, Potter AS, Potter SS. “Psychrophilic proteases dramatically reduce single cell RNA-seq artifacts: A molecular atlas of kidney development.” <em>Development</em>. 2017;144:3625–32. DOI: <a href="https://doi.org/10.1242/dev.151142">10.1242/dev.151142</a> </p>
+</div>
+<div id="ref-Hicks2017-ut">
+<p>61. Hicks SC, Townes FW, Teng M, Irizarry RA. “Missing data and technical variability in single-cell RNA-sequencing experiments.” <em>Biostatistics</em>. 2017; DOI: <a href="https://doi.org/10.1093/biostatistics/kxx053">10.1093/biostatistics/kxx053</a> </p>
+</div>
+<div id="ref-Pierson2015-qp">
+<p>62. Pierson E, Yau C. “ZIFA: Dimensionality reduction for zero-inflated single-cell gene expression analysis.” <em>Genome Biology</em>. 2015;16:241. DOI: <a href="https://doi.org/10.1186/s13059-015-0805-z">10.1186/s13059-015-0805-z</a> </p>
+</div>
+<div id="ref-Risso2018-dg">
+<p>63. Risso D, Perraudeau F, Gribkova S, Dudoit S, Vert J-P. “A general and flexible method for signal extraction from single-cell RNA-seq data.” <em>Nature Communications</em>. 2018;9:284. DOI: <a href="https://doi.org/10.1038/s41467-017-02554-5">10.1038/s41467-017-02554-5</a> </p>
+</div>
+<div id="ref-Van_den_Berge2018-ip">
+<p>64. Van den Berge K, Perraudeau F, Soneson C, Love MI, Risso D, Vert J-P, Robinson MD, Dudoit S, Clement L. “Observation weights unlock bulk RNA-seq tools for zero inflation and single-cell applications.” <em>Genome Biology</em>. 2018;19:24. DOI: <a href="https://doi.org/10.1186/s13059-018-1406-4">10.1186/s13059-018-1406-4</a> </p>
+</div>
+<div id="ref-Miao2018-ft">
+<p>65. Miao Z, Deng K, Wang X, Zhang X. “DEsingle for detecting three types of differential expression in single-cell RNA-seq data.” <em>Bioinformatics</em>. 2018; DOI: <a href="https://doi.org/10.1093/bioinformatics/bty332">10.1093/bioinformatics/bty332</a> </p>
+</div>
+<div id="ref-Svensson2019-el">
+<p>66. Svensson V. “Droplet scRNA-seq is not zero-inflated.” <em>bioRxiv</em>. 2019. p. 582064. DOI: <a href="https://doi.org/10.1101/582064">10.1101/582064</a> </p>
+</div>
+<div id="ref-Van_Dijk2018-dk">
+<p>67. Dijk D van, Sharma R, Nainys J, Yim K, Kathail P, Carr AJ, Burdziak C, Moon KR, Chaffer CL, Pattabiraman D, Bierie B, Mazutis L, Wolf G, Krishnaswamy S, Pe’er D. “Recovering Gene Interactions from Single-Cell Data Using Data Diffusion.” <em>Cell</em>. 2018;174:P716–729.E27. DOI: <a href="https://doi.org/10.1016/j.cell.2018.05.061">10.1016/j.cell.2018.05.061</a> </p>
+</div>
+<div id="ref-Huang2018-ef">
+<p>68. Huang M, Wang J, Torre E, Dueck H, Shaffer S, Bonasio R, Murray JI, Raj A, Li M, Zhang NR. “SAVER: gene expression recovery for single-cell RNA sequencing.” <em>Nature Methods</em>. 2018;15:539–42. DOI: <a href="https://doi.org/10.1038/s41592-018-0033-z">10.1038/s41592-018-0033-z</a> </p>
+</div>
+<div id="ref-Wang2018-av">
+<p>69. Wang J, Agarwal D, Huang M, Hu G, Zhou Z, Conley VB, MacMullan H, Zhang NR. “Transfer learning in single-cell transcriptomics improves data denoising and pattern discovery.” <em>bioRxiv</em>. 2018. p. 457879. DOI: <a href="https://doi.org/10.1101/457879">10.1101/457879</a> </p>
+</div>
+<div id="ref-Li2018-gx">
+<p>70. Li WV, Li JJ. “An accurate and robust imputation method scImpute for single-cell RNA-seq data.” <em>Nature Communications</em>. 2018;9:997. DOI: <a href="https://doi.org/10.1038/s41467-018-03405-7">10.1038/s41467-018-03405-7</a> </p>
+</div>
+<div id="ref-Andrews2018-li">
+<p>71. Andrews TS, Hemberg M. “False signals induced by single-cell imputation.” <em>F1000Research</em>. 2018;7. DOI: <a href="https://doi.org/10.12688/f1000research.16613.1">10.12688/f1000research.16613.1</a> </p>
+</div>
+<div id="ref-Zeisel2015-rd">
+<p>72. Zeisel A, Muñoz-Manchado AB, Codeluppi S, Lönnerberg P, La Manno G, Juréus A, Marques S, Munguba H, He L, Betsholtz C, Rolny C, Castelo-Branco G, Hjerling-Leffler J, Linnarsson S. “Brain structure. Cell types in the mouse cortex and hippocampus revealed by single-cell RNA-seq.” <em>Science</em>. 2015;347:1138–42. DOI: <a href="https://doi.org/10.1126/science.aaa1934">10.1126/science.aaa1934</a> </p>
+</div>
+<div id="ref-Patel2014-bl">
+<p>73. Patel AP, Tirosh I, Trombetta JJ, Shalek AK, Gillespie SM, Wakimoto H, Cahill DP, Nahed BV, Curry WT, Martuza RL, Louis DN, Rozenblatt-Rosen O, Suvà ML, Regev A, Bernstein BE. “Single-cell RNA-seq highlights intratumoral heterogeneity in primary glioblastoma.” <em>Science</em>. 2014;344:1396–401. DOI: <a href="https://doi.org/10.1126/science.1254257">10.1126/science.1254257</a> </p>
+</div>
+<div id="ref-Treutlein2014-wd">
+<p>74. Treutlein B, Brownfield DG, Wu AR, Neff NF, Mantalas GL, Espinoza FH, Desai TJ, Krasnow MA, Quake SR. “Reconstructing lineage hierarchies of the distal lung epithelium using single-cell RNA-seq.” <em>Nature</em>. 2014;509:371–5. DOI: <a href="https://doi.org/10.1038/nature13173">10.1038/nature13173</a> </p>
+</div>
+<div id="ref-Usoskin2015-fz">
+<p>75. Usoskin D, Furlan A, Islam S, Abdo H, Lönnerberg P, Lou D, Hjerling-Leffler J, Haeggström J, Kharchenko O, Kharchenko PV, Linnarsson S, Ernfors P. “Unbiased classification of sensory neuron types by large-scale single-cell RNA sequencing.” <em>Nature Neuroscience</em>. 2015;18:145–53. DOI: <a href="https://doi.org/10.1038/nn.3881">10.1038/nn.3881</a> </p>
+</div>
+<div id="ref-Buettner2015-rq">
+<p>76. Buettner F, Natarajan KN, Casale FP, Proserpio V, Scialdone A, Theis FJ, Teichmann SA, Marioni JC, Stegle O. “Computational analysis of cell-to-cell heterogeneity in single-cell RNA-sequencing data reveals hidden subpopulations of cells.” <em>Nature Biotechnology</em>. 2015;33:155–60. DOI: <a href="https://doi.org/10.1038/nbt.3102">10.1038/nbt.3102</a> </p>
+</div>
+<div id="ref-Trapnell2014-he">
+<p>77. Trapnell C, Cacchiarelli D, Grimsby J, Pokharel P, Li S, Morse M, Lennon NJ, Livak KJ, Mikkelsen TS, Rinn JL. “The dynamics and regulators of cell fate decisions are revealed by pseudotemporal ordering of single cells.” <em>Nature Biotechnology</em>. 2014;32:381–6. DOI: <a href="https://doi.org/10.1038/nbt.2859">10.1038/nbt.2859</a> </p>
+</div>
+<div id="ref-Regev2017-tz">
+<p>78. Regev A, Teichmann SA, Lander ES, Amit I, Benoist C, Birney E, Bodenmiller B, Campbell P, Carninci P, Clatworthy M, Clevers H, Deplancke B, Dunham I, Eberwine J, Eils R, Enard W, Farmer A, Fugger L, et al. “The Human Cell Atlas.” <em>eLife</em>. 2017;6. DOI: <a href="https://doi.org/10.7554/eLife.27041">10.7554/eLife.27041</a> </p>
+</div>
+<div id="ref-Cao2017-ig">
+<p>79. Cao J, Packer JS, Ramani V, Cusanovich DA, Huynh C, Daza R, Qiu X, Lee C, Furlan SN, Steemers FJ, Adey A, Waterston RH, Trapnell C, Shendure J. “Comprehensive single-cell transcriptional profiling of a multicellular organism.” <em>Science</em>. 2017;357:661–7. DOI: <a href="https://doi.org/10.1126/science.aam8940">10.1126/science.aam8940</a> </p>
+</div>
+<div id="ref-Tabula_Muris_Consortium2018-pb">
+<p>80. Tabula Muris Consortium, Overall coordination, Logistical coordination, Organ collection and processing, Library preparation and sequencing, Computational data analysis, Cell type annotation, Writing group, Supplemental text writing group, Principal investigators. “Single-cell transcriptomics of 20 mouse organs creates a Tabula Muris.” <em>Nature</em>. 2018;562:367–72. DOI: <a href="https://doi.org/10.1038/s41586-018-0590-4">10.1038/s41586-018-0590-4</a> </p>
+</div>
+<div id="ref-Wu2018-xd">
+<p>81. Wu B, Li Y, Liu Y, Jin K, Zhao K, An C, Li Q, Gong L, Zhao W, Hu J, Qian J, Ouyang H, Zou X. “Cell atlas of human uterus.” <em>bioRxiv</em>. 2018. p. 267849. DOI: <a href="https://doi.org/10.1101/267849">10.1101/267849</a> </p>
+</div>
+<div id="ref-Han2018-kp">
+<p>82. Han X, Wang R, Zhou Y, Fei L, Sun H, Lai S, Saadatpour A, Zhou Z, Chen H, Ye F, Huang D, Xu Y, Huang W, Jiang M, Jiang X, Mao J, Chen Y, Lu C, et al. “Mapping the Mouse Cell Atlas by Microwell-Seq.” <em>Cell</em>. 2018;172:1091–1107.e17. DOI: <a href="https://doi.org/10.1016/j.cell.2018.02.001">10.1016/j.cell.2018.02.001</a> </p>
+</div>
+<div id="ref-Saunders2018-ut">
+<p>83. Saunders A, Macosko E, Wysoker A, Goldman M, Krienen F, Rivera H de, Bien E, Baum M, Wang S, Goeva A, Nemesh J, Kamitaki N, Brumbaugh S, Kulp D, McCarroll SA. “A Single-Cell Atlas of Cell Types, States, and Other Transcriptional Patterns from Nine Regions of the Adult Mouse Brain.” <em>bioRxiv</em>. 2018. p. 299081. DOI: <a href="https://doi.org/10.1101/299081">10.1101/299081</a> </p>
+</div>
+<div id="ref-Plass2018-sa">
+<p>84. Plass M, Solana J, Wolf FA, Ayoub S, Misios A, Glažar P, Obermayer B, Theis FJ, Kocks C, Rajewsky N. “Cell type atlas and lineage tree of a whole complex animal by single-cell transcriptomics.” <em>Science</em>. 2018;360. DOI: <a href="https://doi.org/10.1126/science.aaq1723">10.1126/science.aaq1723</a> </p>
+</div>
+<div id="ref-Bhaduri2018-nt">
+<p>85. Bhaduri A, Nowakowski TJ, Pollen AA, Kriegstein AR. “Identification of cell types in a mouse brain single-cell atlas using low sampling coverage.” <em>BMC Biology</em>. 2018;16:113. DOI: <a href="https://doi.org/10.1186/s12915-018-0580-x">10.1186/s12915-018-0580-x</a> </p>
+</div>
+<div id="ref-Yuan2018-qu">
+<p>86. Yuan H, Yan M, Zhang G, Liu W, Deng C, Liao G, Xu L, Luo T, Yan H, Long Z, Shi A, Zhao T, Xiao Y, Li X. “CancerSEA: a cancer single-cell state atlas.” <em>Nucleic Acids Research</em>. 2018;47:D900–8. DOI: <a href="https://doi.org/10.1093/nar/gky939">10.1093/nar/gky939</a> </p>
+</div>
+<div id="ref-Davie2018-eo">
+<p>87. Davie K, Janssens J, Koldere D, De Waegeneer M, Pech U, Kreft Ł, Aibar S, Makhzami S, Christiaens V, Bravo González-Blas C, Poovathingal S, Hulselmans G, Spanier KI, Moerman T, Vanspauwen B, Geurs S, Voet T, Lammertyn J, et al. “A Single-Cell Transcriptome Atlas of the Aging Drosophila Brain.” <em>Cell</em>. 2018;174:982–998.e20. DOI: <a href="https://doi.org/10.1016/j.cell.2018.05.057">10.1016/j.cell.2018.05.057</a> </p>
+</div>
+<div id="ref-Taylor2019-hy">
+<p>88. Taylor DM, Aronow BJ, Tan K, Bernt K, Salomonis N, Greene CS, Frolova A, Henrickson SE, Wells A, Pei L, Jaiswal JK, Whitsett J, Hamilton KE, MacParland SA, Kelsen J, Heuckeroth RO, Potter SS, Vella LA, et al. “The Pediatric Cell Atlas: Defining the Growth Phase of Human Development at Single-Cell Resolution.” <em>Developmental Cell</em>. 2019; DOI: <a href="https://doi.org/10.1016/j.devcel.2019.03.001">10.1016/j.devcel.2019.03.001</a> </p>
+</div>
+<div id="ref-Lun2016-lp">
+<p>89. Lun ATL, McCarthy DJ, Marioni JC. “A step-by-step workflow for low-level analysis of single-cell RNA-seq data with Bioconductor.” <em>F1000Research</em>. 2016;5:2122. DOI: <a href="https://doi.org/10.12688/f1000research.9501.2">10.12688/f1000research.9501.2</a> </p>
+</div>
+<div id="ref-Perraudeau2017-ii">
+<p>90. Perraudeau F, Risso D, Street K, Purdom E, Dudoit S. “Bioconductor workflow for single-cell RNA sequencing: Normalization, dimensionality reduction, clustering, and lineage inference.” <em>F1000Research</em>. 2017;6. DOI: <a href="https://doi.org/10.12688/f1000research.12122.1">10.12688/f1000research.12122.1</a> </p>
+</div>
+<div id="ref-Srivastava2019-ce">
+<p>91. Srivastava A, Malik L, Smith T, Sudbery I, Patro R. “Alevin efficiently estimates accurate gene abundances from dscRNA-seq data.” <em>Genome Biology</em>. 2019;20:65. DOI: <a href="https://doi.org/10.1186/s13059-019-1670-y">10.1186/s13059-019-1670-y</a> </p>
+</div>
+<div id="ref-Smith2017-nz">
+<p>92. Smith T, Heger A, Sudbery I. “UMI-tools: modeling sequencing errors in Unique Molecular Identifiers to improve quantification accuracy.” <em>Genome Research</em>. 2017;27:491–9. DOI: <a href="https://doi.org/10.1101/gr.209601.116">10.1101/gr.209601.116</a> </p>
+</div>
+<div id="ref-Svensson2017-zo">
+<p>93. Svensson V, Natarajan KN, Ly L-H, Miragaia RJ, Labalette C, Macaulay IC, Cvejic A, Teichmann SA. “Power analysis of single-cell RNA-sequencing experiments.” <em>Nature Methods</em>. 2017;14:381–7. DOI: <a href="https://doi.org/10.1038/nmeth.4220">10.1038/nmeth.4220</a> </p>
+</div>
+<div id="ref-Parekh2018-ug">
+<p>94. Parekh S, Ziegenhain C, Vieth B, Enard W, Hellmann I. “zUMIs - A fast and flexible pipeline to process RNA sequencing data with UMIs.” <em>GigaScience</em>. 2018;7. DOI: <a href="https://doi.org/10.1093/gigascience/giy059">10.1093/gigascience/giy059</a> </p>
+</div>
+<div id="ref-Tian2018-ub">
+<p>95. Tian L, Su S, Dong X, Amann-Zalcenstein D, Biben C, Seidi A, Hilton DJ, Naik SH, Ritchie ME. “scPipe: A flexible R/Bioconductor preprocessing pipeline for single-cell RNA-sequencing data.” <em>PLoS Computational Biology</em>. 2018;14:e1006361. DOI: <a href="https://doi.org/10.1371/journal.pcbi.1006361">10.1371/journal.pcbi.1006361</a> </p>
+</div>
+<div id="ref-Yang2017-yz">
+<p>96. Yang A, Troup M, Lin P, Ho JWK. “Falco: a quick and flexible single-cell RNA-seq processing framework on the cloud.” <em>Bioinformatics</em>. 2017;33:767–9. DOI: <a href="https://doi.org/10.1093/bioinformatics/btw732">10.1093/bioinformatics/btw732</a> </p>
+</div>
+<div id="ref-DePasquale2018-ct">
+<p>97. DePasquale EAK, Schnell DJ, Valiente I, Blaxall BC, Grimes HL, Singh H, Salomonis N. “DoubletDecon: Cell-State Aware Removal of Single-Cell RNA-Seq Doublets.” <em>bioRxiv</em>. 2018. p. 364810. DOI: <a href="https://doi.org/10.1101/364810">10.1101/364810</a> </p>
+</div>
+<div id="ref-McGinnis2019-at">
+<p>98. McGinnis CS, Murrow LM, Gartner ZJ. “DoubletFinder: Doublet Detection in Single-Cell RNA Sequencing Data Using Artificial Nearest Neighbors.” <em>Cell Systems</em>. 2019;8:329–337.e4. DOI: <a href="https://doi.org/10.1016/j.cels.2019.03.003">10.1016/j.cels.2019.03.003</a> </p>
+</div>
+<div id="ref-Lun2019-wp">
+<p>99. Lun ATL, Riesenfeld S, Andrews T, Dao TP, Gomes T, participants in the 1st Human Cell Atlas Jamboree, Marioni JC. “EmptyDrops: distinguishing cells from empty droplets in droplet-based single-cell RNA sequencing data.” <em>Genome Biology</em>. 2019;20:63. DOI: <a href="https://doi.org/10.1186/s13059-019-1662-y">10.1186/s13059-019-1662-y</a> </p>
+</div>
+<div id="ref-Ilicic2016-wy">
+<p>100. Ilicic T, Kim JK, Kolodziejczyk AA, Bagger FO, McCarthy DJ, Marioni JC, Teichmann SA. “Classification of low quality cells from single-cell RNA-seq data.” <em>Genome Biology</em>. 2016;17:29. DOI: <a href="https://doi.org/10.1186/s13059-016-0888-1">10.1186/s13059-016-0888-1</a> </p>
+</div>
+<div id="ref-McCarthy2017-ql">
+<p>101. McCarthy DJ, Campbell KR, Lun ATL, Wills QF. “Scater: pre-processing, quality control, normalization and visualization of single-cell RNA-seq data in R.” <em>Bioinformatics</em>. 2017;33:1179–86. DOI: <a href="https://doi.org/10.1093/bioinformatics/btw777">10.1093/bioinformatics/btw777</a> </p>
+</div>
+<div id="ref-Leng2016-it">
+<p>102. Leng N, Choi J, Chu L-F, Thomson JA, Kendziorski C, Stewart R. “OEFinder: a user interface to identify and visualize ordering effects in single-cell RNA-seq data.” <em>Bioinformatics</em>. 2016; DOI: <a href="https://doi.org/10.1093/bioinformatics/btw004">10.1093/bioinformatics/btw004</a> </p>
+</div>
+<div id="ref-Chen2018-ug">
+<p>103. Chen B, Herring CA, Lau KS. “pyNVR: Investigating factors affecting feature selection from scRNA-seq data for lineage reconstruction.” <em>Bioinformatics</em>. 2018; DOI: <a href="https://doi.org/10.1093/bioinformatics/bty950">10.1093/bioinformatics/bty950</a> </p>
+</div>
+<div id="ref-Andrews2018-xa">
+<p>104. Andrews TS, Hemberg M. “M3Drop: Dropout-based feature selection for scRNASeq.” <em>Bioinformatics</em>. 2018; DOI: <a href="https://doi.org/10.1093/bioinformatics/bty1044">10.1093/bioinformatics/bty1044</a> </p>
+</div>
+<div id="ref-Phipson2017-qt">
+<p>105. Phipson B, Zappia L, Oshlack A. “Gene length and detection bias in single cell RNA sequencing protocols.” <em>F1000Research</em>. 2017;6. DOI: <a href="https://doi.org/10.12688/f1000research.11290.1">10.12688/f1000research.11290.1</a> </p>
+</div>
+<div id="ref-Brennecke2013-pt">
+<p>106. Brennecke P, Anders S, Kim JK, Kołodziejczyk AA, Zhang X, Proserpio V, Baying B, Benes V, Teichmann SA, Marioni JC, Heisler MG. “Accounting for technical noise in single-cell RNA-seq experiments.” <em>Nature Methods</em>. 2013;10:1093–5. DOI: <a href="https://doi.org/10.1038/nmeth.2645">10.1038/nmeth.2645</a> </p>
+</div>
+<div id="ref-Ding2015-ht">
+<p>107. Ding B, Zheng L, Zhu Y, Li N, Jia H, Ai R, Wildberg A, Wang W. “Normalization and noise reduction for single cell RNA-seq experiments.” <em>Bioinformatics</em>. 2015;31:2225–7. DOI: <a href="https://doi.org/10.1093/bioinformatics/btv122">10.1093/bioinformatics/btv122</a> </p>
+</div>
+<div id="ref-Vallejos2015-ef">
+<p>108. Vallejos CA, Marioni JC, Richardson S. “BASiCS: Bayesian Analysis of Single-Cell Sequencing data.” <em>PLoS Computational Biology</em>. 2015;11:e1004333. DOI: <a href="https://doi.org/10.1371/journal.pcbi.1004333">10.1371/journal.pcbi.1004333</a> </p>
+</div>
+<div id="ref-Lun2016-mq">
+<p>109. Lun ATL, Bach K, Marioni JC. “Pooling across cells to normalize single-cell RNA sequencing data with many zero counts.” <em>Genome Biology</em>. 2016;17:1–14. DOI: <a href="https://doi.org/10.1186/s13059-016-0947-7">10.1186/s13059-016-0947-7</a> </p>
+</div>
+<div id="ref-Eling2018-lp">
+<p>110. Eling N, Richard AC, Richardson S, Marioni JC, Vallejos CA. “Correcting the Mean-Variance Dependency for Differential Variability Testing Using Single-Cell RNA Sequencing Data.” <em>Cell Systems</em>. 2018;0. DOI: <a href="https://doi.org/10.1016/j.cels.2018.06.011">10.1016/j.cels.2018.06.011</a> </p>
+</div>
+<div id="ref-Stuart2019-ua">
+<p>111. Stuart T, Satija R. “Integrative single-cell analysis.” <em>Nature Reviews. Genetics</em>. 2019; DOI: <a href="https://doi.org/10.1038/s41576-019-0093-7">10.1038/s41576-019-0093-7</a> </p>
+</div>
+<div id="ref-Park2018-ri">
+<p>112. Park J-E, Polanski K, Meyer K, Teichmann SA. “Fast Batch Alignment of Single Cell Transcriptomes Unifies Multiple Mouse Cell Atlases into an Integrated Landscape.” <em>bioRxiv</em>. 2018. p. 397042. DOI: <a href="https://doi.org/10.1101/397042">10.1101/397042</a> </p>
+</div>
+<div id="ref-Gao2019-ir">
+<p>113. Gao X, Hu D, Gogol M, Li H. “ClusterMap: Compare multiple Single Cell RNA-Seq datasets across different experimental conditions.” <em>Bioinformatics</em>. 2019; DOI: <a href="https://doi.org/10.1093/bioinformatics/btz024">10.1093/bioinformatics/btz024</a> </p>
+</div>
+<div id="ref-Buttner2019-yl">
+<p>114. Büttner M, Miao Z, Wolf FA, Teichmann SA, Theis FJ. “A test metric for assessing single-cell RNA-seq batch correction.” <em>Nature Methods</em>. 2019;16:43–9. DOI: <a href="https://doi.org/10.1038/s41592-018-0254-1">10.1038/s41592-018-0254-1</a> </p>
+</div>
+<div id="ref-Welch2018-gb">
+<p>115. Welch J, Kozareva V, Ferreira A, Vanderburg C, Martin C, Macosko E. “Integrative inference of brain cell similarities and differences from single-cell genomics.” <em>bioRxiv</em>. 2018. p. 459891. DOI: <a href="https://doi.org/10.1101/459891">10.1101/459891</a> </p>
+</div>
+<div id="ref-Mereu2018-bx">
+<p>116. Mereu E, Iacono G, Guillaumet-Adkins A, Moutinho C, Lunazzi G, Santos C, Miguel-Escalada I, Ferrer J, Real FX, Gut I, Heyn H. “matchSCore: Matching Single-Cell Phenotypes Across Tools and Experiments.” <em>bioRxiv</em>. 2018. p. 314831. DOI: <a href="https://doi.org/10.1101/314831">10.1101/314831</a> </p>
+</div>
+<div id="ref-Hie2019-er">
+<p>117. Hie B, Bryson B, Berger B. “Efficient integration of heterogeneous single-cell transcriptomes using Scanorama.” <em>Nature Biotechnology</em>. 2019; DOI: <a href="https://doi.org/10.1038/s41587-019-0113-3">10.1038/s41587-019-0113-3</a> </p>
+</div>
+<div id="ref-Lin2019-lk">
+<p>118. Lin Y, Ghazanfar S, Wang KYX, Gagnon-Bartsch JA, Lo KK, Su X, Han Z-G, Ormerod JT, Speed TP, Yang P, Yang JYH. “scMerge leverages factor analysis, stable expression, and pseudoreplication to merge multiple single-cell RNA-seq datasets.” <em>Proceedings of the National Academy of Sciences of the United States of America</em>. 2019; DOI: <a href="https://doi.org/10.1073/pnas.1820006116">10.1073/pnas.1820006116</a> </p>
+</div>
+<div id="ref-Butler2018-js">
+<p>119. Butler A, Hoffman P, Smibert P, Papalexi E, Satija R. “Integrating single-cell transcriptomic data across different conditions, technologies, and species.” <em>Nature Biotechnology</em>. 2018; DOI: <a href="https://doi.org/10.1038/nbt.4096">10.1038/nbt.4096</a> </p>
+</div>
+<div id="ref-Hotelling1936-ni">
+<p>120. Hotelling H. “RELATIONS BETWEEN TWO SETS OF VARIATES.” <em>Biometrika</em>. 1936;28:321–77. DOI: <a href="https://doi.org/10.1093/biomet/28.3-4.321">10.1093/biomet/28.3-4.321</a> </p>
+</div>
+<div id="ref-Hardoon2004-ev">
+<p>121. Hardoon DR, Szedmak S, Shawe-Taylor J. “Canonical correlation analysis: an overview with application to learning methods.” <em>Neural Computation</em>. 2004;16:2639–64. DOI: <a href="https://doi.org/10.1162/0899766042321814">10.1162/0899766042321814</a> </p>
+</div>
+<div id="ref-Berndt1994-lh">
+<p>122. Berndt DJ, Clifford J. “Using Dynamic Time Warping to Find Patterns in Time Series.” <em>Proceedings of the 3rd International Conference on Knowledge Discovery and Data Mining</em>. Seattle, WA; 1994. pp. 359–70. Available from: <a href="http://dl.acm.org/citation.cfm?id=3000850.3000887" class="uri">http://dl.acm.org/citation.cfm?id=3000850.3000887</a> </p>
+</div>
+<div id="ref-Haghverdi2018-bd">
+<p>123. Haghverdi L, Lun ATL, Morgan MD, Marioni JC. “Batch effects in single-cell RNA-sequencing data are corrected by matching mutual nearest neighbors.” <em>Nature Biotechnology</em>. 2018; DOI: <a href="https://doi.org/10.1038/nbt.4091">10.1038/nbt.4091</a> </p>
+</div>
+<div id="ref-Stuart2019-lq">
+<p>124. Stuart T, Butler A, Hoffman P, Hafemeister C, Papalexi E, Mauck WM 3rd, Hao Y, Stoeckius M, Smibert P, Satija R. “Comprehensive Integration of Single-Cell Data.” <em>Cell</em>. 2019;177:1888–1902.e21. DOI: <a href="https://doi.org/10.1016/j.cell.2019.05.031">10.1016/j.cell.2019.05.031</a> </p>
+</div>
+<div id="ref-Kiselev2019-mg">
+<p>125. Kiselev VY, Andrews TS, Hemberg M. “Challenges in unsupervised clustering of single-cell RNA-seq data.” <em>Nature Reviews. Genetics</em>. 2019; DOI: <a href="https://doi.org/10.1038/s41576-018-0088-9">10.1038/s41576-018-0088-9</a> </p>
+</div>
+<div id="ref-Guo2015-mf">
+<p>126. Guo M, Wang H, Potter SS, Whitsett JA, Xu Y. “SINCERA: a pipeline for single-cell RNA-seq profiling analysis.” <em>PLoS Computational Biology</em>. 2015;11:e1004575. DOI: <a href="https://doi.org/10.1371/journal.pcbi.1004575">10.1371/journal.pcbi.1004575</a> </p>
+</div>
+<div id="ref-Kiselev2017-an">
+<p>127. Kiselev VY, Kirschner K, Schaub MT, Andrews T, Yiu A, Chandra T, Natarajan KN, Reik W, Barahona M, Green AR, Hemberg M. “SC3: consensus clustering of single-cell RNA-seq data.” <em>Nature Methods</em>. 2017;14:483–6. DOI: <a href="https://doi.org/10.1038/nmeth.4236">10.1038/nmeth.4236</a> </p>
+</div>
+<div id="ref-Anchang2016-vo">
+<p>128. Anchang B, Hart TDP, Bendall SC, Qiu P, Bjornson Z, Linderman M, Nolan GP, Plevritis SK. “Visualization and cellular hierarchy inference of single-cell data using SPADE.” <em>Nature Protocols</em>. 2016;11:1264–79. DOI: <a href="https://doi.org/10.1038/nprot.2016.066">10.1038/nprot.2016.066</a> </p>
+</div>
+<div id="ref-Satija2015-or">
+<p>129. Satija R, Farrell JA, Gennert D, Schier AF, Regev A. “Spatial reconstruction of single-cell gene expression data.” <em>Nature Biotechnology</em>. 2015;33:495–502. DOI: <a href="https://doi.org/10.1038/nbt.3192">10.1038/nbt.3192</a> </p>
+</div>
+<div id="ref-Duo2018-qb">
+<p>130. Duò A, Robinson MD, Soneson C. “A systematic performance evaluation of clustering methods for single-cell RNA-seq data.” <em>F1000Research</em>. 2018;7. DOI: <a href="https://doi.org/10.12688/f1000research.15666.1">10.12688/f1000research.15666.1</a> </p>
+</div>
+<div id="ref-Freytag2018-ic">
+<p>131. Freytag S, Tian L, Lönnstedt I, Ng M, Bahlo M. “Comparison of clustering tools in R for medium-sized 10x Genomics single-cell RNA-sequencing data.” <em>F1000Research</em>. 2018;7. DOI: <a href="https://doi.org/10.12688/f1000research.15809.1">10.12688/f1000research.15809.1</a> </p>
+</div>
+<div id="ref-Kim2018-xn">
+<p>132. Kim T, Chen IR, Lin Y, Wang AY-Y, Yang JYH, Yang P. “Impact of similarity metrics on single-cell RNA-seq data clustering.” <em>Briefings in Bioinformatics</em>. 2018; DOI: <a href="https://doi.org/10.1093/bib/bby076">10.1093/bib/bby076</a> </p>
+</div>
+<div id="ref-Blondel2008-ym">
+<p>133. Blondel VD, Guillaume J-L, Lambiotte R, Lefebvre E. “Fast unfolding of communities in large networks.” <em>Journal of Statistical Mechanics</em>. 2008;2008:P10008. DOI: <a href="https://doi.org/10.1088/1742-5468/2008/10/P10008">10.1088/1742-5468/2008/10/P10008</a> </p>
+</div>
+<div id="ref-Kiselev2018-nu">
+<p>134. Kiselev VY, Yiu A, Hemberg M. “scmap: projection of single-cell RNA-seq data across data sets.” <em>Nature Methods</em>. 2018; DOI: <a href="https://doi.org/10.1038/nmeth.4644">10.1038/nmeth.4644</a> </p>
+</div>
+<div id="ref-Alquicira-Hernandez2018-qx">
+<p>135. Alquicira-Hernández J, Sathe A, Ji HP, Nguyen Q, Powell JE. “scPred: Cell type prediction at single-cell resolution.” <em>bioRxiv</em>. 2018. p. 369538. DOI: <a href="https://doi.org/10.1101/369538">10.1101/369538</a> </p>
+</div>
+<div id="ref-Lieberman2018-zg">
+<p>136. Lieberman Y, Rokach L, Shay T. “CaSTLe - Classification of single cells by transfer learning: Harnessing the power of publicly available single cell RNA sequencing experiments to annotate new experiments.” <em>PloS One</em>. 2018;13:e0205499. DOI: <a href="https://doi.org/10.1371/journal.pone.0205499">10.1371/journal.pone.0205499</a> </p>
+</div>
+<div id="ref-Wagner2018-xl">
+<p>137. Wagner F, Yanai I. “Moana: A robust and scalable cell type classification framework for single-cell RNA-Seq data.” <em>bioRxiv</em>. 2018. p. 456129. DOI: <a href="https://doi.org/10.1101/456129">10.1101/456129</a> </p>
+</div>
+<div id="ref-Qiu2017-mq">
+<p>138. Qiu X, Mao Q, Tang Y, Wang L, Chawla R, Pliner HA, Trapnell C. “Reversed graph embedding resolves complex single-cell trajectories.” <em>Nature Methods</em>. 2017;14:979–82. DOI: <a href="https://doi.org/10.1038/nmeth.4402">10.1038/nmeth.4402</a> </p>
+</div>
+<div id="ref-Ji2016-ws">
+<p>139. Ji Z, Ji H. “TSCAN: Pseudo-time reconstruction and evaluation in single-cell RNA-seq analysis.” <em>Nucleic Acids Research</em>. 2016; DOI: <a href="https://doi.org/10.1093/nar/gkw430">10.1093/nar/gkw430</a> </p>
+</div>
+<div id="ref-Welch2016-cw">
+<p>140. Welch JD, Hartemink AJ, Prins JF. “SLICER: inferring branched, nonlinear cellular trajectories from single cell RNA-seq data.” <em>Genome Biology</em>. 2016;17:106. DOI: <a href="https://doi.org/10.1186/s13059-016-0975-3">10.1186/s13059-016-0975-3</a> </p>
+</div>
+<div id="ref-DuVerle2016-ni">
+<p>141. duVerle DA, Yotsukura S, Nomura S, Aburatani H, Tsuda K. “CellTree: an R/bioconductor package to infer the hierarchical structure of cell populations from single-cell RNA-seq data.” <em>BMC Bioinformatics</em>. 2016;17:363. DOI: <a href="https://doi.org/10.1186/s12859-016-1175-6">10.1186/s12859-016-1175-6</a> </p>
+</div>
+<div id="ref-Julia2015-fz">
+<p>142. Juliá M, Telenti A, Rausell A. “Sincell: an R/Bioconductor package for statistical assessment of cell-state hierarchies from single-cell RNA-seq.” <em>Bioinformatics</em>. 2015;31:3380–2. DOI: <a href="https://doi.org/10.1093/bioinformatics/btv368">10.1093/bioinformatics/btv368</a> </p>
+</div>
+<div id="ref-Chen2016-kx">
+<p>143. Chen J, Schlitzer A, Chakarov S, Ginhoux F, Poidinger M. “Mpath maps multi-branching single-cell trajectories revealing progenitor cell progression during development.” <em>Nature Communications</em>. 2016;7:11988. DOI: <a href="https://doi.org/10.1038/ncomms11988">10.1038/ncomms11988</a> </p>
+</div>
+<div id="ref-Street2018-sc">
+<p>144. Street K, Risso D, Fletcher RB, Das D, Ngai J, Yosef N, Purdom E, Dudoit S. “Slingshot: cell lineage and pseudotime inference for single-cell transcriptomics.” <em>BMC Genomics</em>. 2018;19:477. DOI: <a href="https://doi.org/10.1186/s12864-018-4772-0">10.1186/s12864-018-4772-0</a> </p>
+</div>
+<div id="ref-Cannoodt2016-iv">
+<p>145. Cannoodt R, Saelens W, Yvan S. “Computational methods for trajectory inference from single-cell transcriptomics.” <em>European Journal of Immunology</em>. 2016;46:2496–506. DOI: <a href="https://doi.org/10.1002/eji.201646347">10.1002/eji.201646347</a> </p>
+</div>
+<div id="ref-Pearson1901-gm">
+<p>146. Pearson K. “On lines and planes of closest fit to systems of points in space.” <em>The London, Edinburgh, and Dublin Philosophical Magazine and Journal of Science</em>. 1901;2:559–72. DOI: <a href="https://doi.org/10.1080/14786440109462720">10.1080/14786440109462720</a> </p>
+</div>
+<div id="ref-Maaten2008-ne">
+<p>147. Maaten L van der, Hinton G. “Visualizing Data using t-SNE.” <em>Journal of Machine Learning Research</em>. 2008;9:2579–605. Available from: <a href="http://www.jmlr.org/papers/v9/vandermaaten08a.html" class="uri">http://www.jmlr.org/papers/v9/vandermaaten08a.html</a> </p>
+</div>
+<div id="ref-McInnes2018-ul">
+<p>148. McInnes L, Healy J. “UMAP: Uniform Manifold Approximation and Projection for Dimension Reduction.” 2018; Available from: <a href="http://arxiv.org/abs/1802.03426" class="uri">http://arxiv.org/abs/1802.03426</a> </p>
+</div>
+<div id="ref-Saelens2019-rs">
+<p>149. Saelens W, Cannoodt R, Todorov H, Saeys Y. “A comparison of single-cell trajectory inference methods.” <em>Nature Biotechnology</em>. 2019; DOI: <a href="https://doi.org/10.1038/s41587-019-0071-9">10.1038/s41587-019-0071-9</a> </p>
+</div>
+<div id="ref-Svensson2018-lu">
+<p>150. Svensson V, Pachter L. “RNA Velocity: Molecular Kinetics from Single-Cell RNA-Seq.” <em>Molecular Cell</em>. 2018;72:7–9. DOI: <a href="https://doi.org/10.1016/j.molcel.2018.09.026">10.1016/j.molcel.2018.09.026</a> </p>
+</div>
+<div id="ref-La_Manno2018-tv">
+<p>151. La Manno G, Soldatov R, Zeisel A, Braun E, Hochgerner H, Petukhov V, Lidschreiber K, Kastriti ME, Lönnerberg P, Furlan A, Fan J, Borm LE, Liu Z, Bruggen D van, Guo J, He X, Barker R, Sundström E, et al. “RNA velocity of single cells.” <em>Nature</em>. 2018;560:494–8. DOI: <a href="https://doi.org/10.1038/s41586-018-0414-6">10.1038/s41586-018-0414-6</a> </p>
+</div>
+<div id="ref-Delmans2016-bp">
+<p>152. Delmans M, Hemberg M. “Discrete distributional differential expression (D3E)–a tool for gene expression analysis of single-cell RNA-seq data.” <em>BMC Bioinformatics</em>. 2016;17:110. DOI: <a href="https://doi.org/10.1186/s12859-016-0944-6">10.1186/s12859-016-0944-6</a> </p>
+</div>
+<div id="ref-Finak2015-ow">
+<p>153. Finak G, McDavid A, Yajima M, Deng J, Gersuk V, Shalek AK, Slichter CK, Miller HW, McElrath MJ, Prlic M, Linsley PS, Gottardo R. “MAST: a flexible statistical framework for assessing transcriptional changes and characterizing heterogeneity in single-cell RNA sequencing data.” <em>Genome Biology</em>. 2015;16:278. DOI: <a href="https://doi.org/10.1186/s13059-015-0844-5">10.1186/s13059-015-0844-5</a> </p>
+</div>
+<div id="ref-Korthauer2016-yq">
+<p>154. Korthauer KD, Chu L-F, Newton MA, Li Y, Thomson J, Stewart R, Kendziorski C. “A statistical approach for identifying differential distributions in single-cell RNA-seq experiments.” <em>Genome Biology</em>. 2016;17:222. DOI: <a href="https://doi.org/10.1186/s13059-016-1077-y">10.1186/s13059-016-1077-y</a> </p>
+</div>
+<div id="ref-Kharchenko2014-tb">
+<p>155. Kharchenko PV, Silberstein L, Scadden DT. “Bayesian approach to single-cell differential expression analysis.” <em>Nature Methods</em>. 2014;11:740–2. DOI: <a href="https://doi.org/10.1038/nmeth.2967">10.1038/nmeth.2967</a> </p>
+</div>
+<div id="ref-Soneson2018-fb">
+<p>156. Soneson C, Robinson MD. “Bias, robustness and scalability in single-cell differential expression analysis.” <em>Nature Methods</em>. 2018;15:255–61. DOI: <a href="https://doi.org/10.1038/nmeth.4612">10.1038/nmeth.4612</a> </p>
+</div>
+<div id="ref-Qiu2017-bi">
+<p>157. Qiu X, Hill A, Packer J, Lin D, Ma Y-A, Trapnell C. “Single-cell mRNA quantification and differential analysis with Census.” <em>Nature Methods</em>. 2017;14:309–15. DOI: <a href="https://doi.org/10.1038/nmeth.4150">10.1038/nmeth.4150</a> </p>
+</div>
+<div id="ref-Zhang2019-rv">
+<p>158. Zhang JM, Kamath GM, Tse DN. “Valid post-clustering differential analysis for single-cell RNA-Seq.” <em>bioRxiv</em>. 2019. p. 463265. DOI: <a href="https://doi.org/10.1101/463265">10.1101/463265</a> </p>
+</div>
+<div id="ref-Edsgard2016-bn">
+<p>159. Edsgärd D, Reinius B, Sandberg R. “scphaser: haplotype inference using single-cell RNA-seq data.” <em>Bioinformatics</em>. 2016; DOI: <a href="https://doi.org/10.1093/bioinformatics/btw484">10.1093/bioinformatics/btw484</a> </p>
+</div>
+<div id="ref-Reinius2016-hu">
+<p>160. Reinius B, Mold JE, Ramsköld D, Deng Q, Johnsson P, Michaëlsson J, Frisén J, Sandberg R. “Analysis of allelic expression patterns in clonal somatic cells by single-cell RNA-seq.” <em>Nature Genetics</em>. 2016;48:1430–5. DOI: <a href="https://doi.org/10.1038/ng.3678">10.1038/ng.3678</a> </p>
+</div>
+<div id="ref-Jiang2017-sb">
+<p>161. Jiang Y, Zhang NR, Li M. “SCALE: modeling allele-specific gene expression by single-cell RNA sequencing.” <em>Genome Biology</em>. 2017;18:74. DOI: <a href="https://doi.org/10.1186/s13059-017-1200-8">10.1186/s13059-017-1200-8</a> </p>
+</div>
+<div id="ref-Choi2019-gt">
+<p>162. Choi K, Raghupathy N, Churchill GA. “scBASE: A Bayesian mixture model for the analysis of allelic expression in single cells.” <em>bioRxiv</em>. 2019. p. 383224. DOI: <a href="https://doi.org/10.1101/383224">10.1101/383224</a> </p>
+</div>
+<div id="ref-Welch2016-dv">
+<p>163. Welch JD, Hu Y, Prins JF. “Robust detection of alternative splicing in a population of single cells.” <em>Nucleic Acids Research</em>. 2016;44:e73. DOI: <a href="https://doi.org/10.1093/nar/gkv1525">10.1093/nar/gkv1525</a> </p>
+</div>
+<div id="ref-Huang2017-lp">
+<p>164. Huang Y, Sanguinetti G. “BRIE: transcriptome-wide splicing quantification in single cells.” <em>Genome Biology</em>. 2017;18:123. DOI: <a href="https://doi.org/10.1186/s13059-017-1248-5">10.1186/s13059-017-1248-5</a> </p>
+</div>
+<div id="ref-Song2017-ym">
+<p>165. Song Y, Botvinnik OB, Lovci MT, Kakaradov B, Liu P, Xu JL, Yeo GW. “Single-cell alternative splicing analysis with Expedition reveals splicing dynamics during neuron differentiation.” <em>Molecular Cell</em>. 2017;67:148–161.e5. DOI: <a href="https://doi.org/10.1016/j.molcel.2017.06.003">10.1016/j.molcel.2017.06.003</a> </p>
+</div>
+<div id="ref-Poirion2018-mc">
+<p>166. Poirion O, Zhu X, Ching T, Garmire LX. “Using single nucleotide variations in single-cell RNA-seq to identify subpopulations and genotype-phenotype linkage.” <em>Nature Communications</em>. 2018;9:4892. DOI: <a href="https://doi.org/10.1038/s41467-018-07170-5">10.1038/s41467-018-07170-5</a> </p>
+</div>
+<div id="ref-Ding2019-kx">
+<p>167. Ding J, Lin C, Bar-Joseph Z. “Cell lineage inference from SNP and scRNA-Seq data.” <em>Nucleic Acids Research</em>. 2019; DOI: <a href="https://doi.org/10.1093/nar/gkz146">10.1093/nar/gkz146</a> </p>
+</div>
+<div id="ref-Petti2018-bj">
+<p>168. Petti AA, Williams SR, Miller CA, Fiddes IT, Srivatsan SN, Chen DY, Fronick CC, Fulton RS, Church DM, Ley TJ. “Mutation detection in thousands of acute myeloid leukemia cells using single cell RNA-sequencing.” <em>bioRxiv</em>. 2018. p. 434746. DOI: <a href="https://doi.org/10.1101/434746">10.1101/434746</a> </p>
+</div>
+<div id="ref-Lindeman2018-bk">
+<p>169. Lindeman I, Emerton G, Mamanova L, Snir O, Polanski K, Qiao S-W, Sollid LM, Teichmann SA, Stubbington MJT. “BraCeR: B-cell-receptor reconstruction and clonality inference from single-cell RNA-seq.” <em>Nature Methods</em>. 2018;15:563–5. DOI: <a href="https://doi.org/10.1038/s41592-018-0082-3">10.1038/s41592-018-0082-3</a> </p>
+</div>
+<div id="ref-Afik2018-zl">
+<p>170. Afik S, Raulet G, Yosef N. “Reconstructing B cell receptor sequences from short-read single cell RNA-sequencir with BRAPeS.” <em>Bioinformatics</em>. bioRxiv; 2018. p. e148. </p>
+</div>
+<div id="ref-Rizzetto2018-ev">
+<p>171. Rizzetto S, Koppstein DNP, Samir J, Singh M, Reed JH, Cai CH, Lloyd AR, Eltahla AA, Goodnow CC, Luciani F. “B-cell receptor reconstruction from single-cell RNA-seq with VDJPuzzle.” <em>Bioinformatics</em>. 2018;34:2846–7. DOI: <a href="https://doi.org/10.1093/bioinformatics/bty203">10.1093/bioinformatics/bty203</a> </p>
+</div>
+<div id="ref-Stubbington2016-xw">
+<p>172. Stubbington MJT, Lönnberg T, Proserpio V, Clare S, Speak AO, Dougan G, Teichmann SA. “T cell fate and clonality inference from single-cell transcriptomes.” <em>Nature Methods</em>. 2016;13:329–32. DOI: <a href="https://doi.org/10.1038/nmeth.3800">10.1038/nmeth.3800</a> </p>
+</div>
+<div id="ref-Afik2017-qw">
+<p>173. Afik S, Yates KB, Bi K, Darko S, Godec J, Gerdemann U, Swadling L, Douek DC, Klenerman P, Barnes EJ, Sharpe AH, Haining WN, Yosef N. “Targeted reconstruction of T cell receptor sequence from single cell RNA-seq links CDR3 length to T cell differentiation state.” <em>Nucleic Acids Research</em>. 2017;45:e148. DOI: <a href="https://doi.org/10.1093/nar/gkx615">10.1093/nar/gkx615</a> </p>
+</div>
+<div id="ref-Fan2018-ki">
+<p>174. Fan J, Lee H-O, Lee S, Ryu D-E, Lee S, Xue C, Kim SJ, Kim K, Barkas N, Park PJ, Park W-Y, Kharchenko PV. “Linking transcriptional and genetic tumor heterogeneity through allele analysis of single-cell RNA-seq data.” <em>Genome Research</em>. 2018;28:1217–27. DOI: <a href="https://doi.org/10.1101/gr.228080.117">10.1101/gr.228080.117</a> </p>
+</div>
+<div id="ref-Tian2019-wl">
+<p>175. Tian L, Dong X, Freytag S, Lê Cao K-A, Su S, JalalAbadi A, Amann-Zalcenstein D, Weber TS, Seidi A, Jabbari JS, Naik SH, Ritchie ME. “Benchmarking single cell RNA-sequencing analysis pipelines using mixture control experiments.” <em>Nature Methods</em>. 2019; DOI: <a href="https://doi.org/10.1038/s41592-019-0425-8">10.1038/s41592-019-0425-8</a> </p>
+</div>
+<div id="ref-Bertram2011-kk">
+<p>176. Bertram JF, Douglas-Denton RN, Diouf B, Hughson MD, Hoy WE. “Human nephron number: implications for health and disease.” <em>Pediatric Nephrology</em>. 2011;26:1529–33. DOI: <a href="https://doi.org/10.1007/s00467-011-1843-8">10.1007/s00467-011-1843-8</a> </p>
+</div>
+<div id="ref-Australian_Bureau_of_Statistics2018-uz">
+<p>177. Australian Bureau of Statistics. “National Health Survey: First Results, 2017-18.” Commonwealth of Australia; Commonwealth of Australia; 2018 Dec. Available from: <a href="http://www.abs.gov.au/ausstats/abs@.nsf/Lookup/by%20Subject/4364.0.55.001~2017-18~Main%20Features~Kidney%20disease~65">http://www.abs.gov.au/ausstats/abs@.nsf/Lookup/by%20Subject/4364.0.55.001~2017-18~Main%20Features~Kidney%20disease~65</a> </p>
+</div>
+<div id="ref-Australian_Bureau_of_Statistics2018-ms">
+<p>178. Australian Bureau of Statistics. “Causes of Death, Australia, 2017.” Commonwealth of Australia; Commonwealth of Australia; 2018 Sep. Available from: <a href="http://www.abs.gov.au/AUSSTATS/abs@.nsf/Lookup/3303.0Main+Features12017?OpenDocument" class="uri">http://www.abs.gov.au/AUSSTATS/abs@.nsf/Lookup/3303.0Main+Features12017?OpenDocument</a> </p>
+</div>
+<div id="ref-Patel2013-vh">
+<p>179. Patel SR, Dressler GR. “The genetics and epigenetics of kidney development.” <em>Seminars in Nephrology</em>. 2013;33:314–26. DOI: <a href="https://doi.org/10.1016/j.semnephrol.2013.05.004">10.1016/j.semnephrol.2013.05.004</a> </p>
+</div>
+<div id="ref-Little2015-wm">
+<p>180. Little MH. “Improving our resolution of kidney morphogenesis across time and space.” <em>Current Opinion in Genetics &amp; Development</em>. 2015;32:135–43. DOI: <a href="https://doi.org/10.1016/j.gde.2015.03.001">10.1016/j.gde.2015.03.001</a> </p>
+</div>
+<div id="ref-Lindstrom2018-tj">
+<p>181. Lindström NO, McMahon JA, Guo J, Tran T, Guo Q, Rutledge E, Parvez RK, Saribekyan G, Schuler RE, Liao C, Kim AD, Abdelhalim A, Ruffins SW, Thornton ME, Baskin L, Grubbs B, Kesselman C, McMahon AP. “Conserved and Divergent Features of Human and Mouse Kidney Organogenesis.” <em>Journal of the American Society of Nephrology: JASN</em>. 2018;29:785–805. DOI: <a href="https://doi.org/10.1681/ASN.2017080887">10.1681/ASN.2017080887</a> </p>
+</div>
+<div id="ref-Tian2019-rv">
+<p>182. Tian P, Lennon R. “The myriad possibility of kidney organoids.” <em>Current Opinion in Nephrology and Hypertension</em>. 2019;28:211–8. DOI: <a href="https://doi.org/10.1097/MNH.0000000000000498">10.1097/MNH.0000000000000498</a> </p>
+</div>
+<div id="ref-Takahashi2006-ho">
+<p>183. Takahashi K, Yamanaka S. “Induction of pluripotent stem cells from mouse embryonic and adult fibroblast cultures by defined factors.” <em>Cell</em>. 2006;126:663–76. DOI: <a href="https://doi.org/10.1016/j.cell.2006.07.024">10.1016/j.cell.2006.07.024</a> </p>
+</div>
+<div id="ref-Nakagawa2008-bx">
+<p>184. Nakagawa M, Koyanagi M, Tanabe K, Takahashi K, Ichisaka T, Aoi T, Okita K, Mochiduki Y, Takizawa N, Yamanaka S. “Generation of induced pluripotent stem cells without Myc from mouse and human fibroblasts.” <em>Nature Biotechnology</em>. 2008;26:101–6. DOI: <a href="https://doi.org/10.1038/nbt1374">10.1038/nbt1374</a> </p>
+</div>
+<div id="ref-Fatehullah2016-qw">
+<p>185. Fatehullah A, Tan SH, Barker N. “Organoids as an in vitro model of human development and disease.” <em>Nature Cell Biology</em>. 2016;18:246–54. DOI: <a href="https://doi.org/10.1038/ncb3312">10.1038/ncb3312</a> </p>
+</div>
+<div id="ref-Takasato2015-zn">
+<p>186. Takasato M, Er PX, Chiu HS, Maier B, Baillie GJ, Ferguson C, Parton RG, Wolvetang EJ, Roost MS, Chuva de Sousa Lopes SM, Little MH. “Kidney organoids from human iPS cells contain multiple lineages and model human nephrogenesis.” <em>Nature</em>. 2015;526:564–8. DOI: <a href="https://doi.org/10.1038/nature15695">10.1038/nature15695</a> </p>
+</div>
+<div id="ref-Phipson2019-er">
+<p>187. Phipson B, Er PX, Combes AN, Forbes TA, Howden SE, Zappia L, Yen H-J, Lawlor KT, Hale LJ, Sun J, Wolvetang E, Takasato M, Oshlack A, Little MH. “Evaluation of variability in human kidney organoids.” <em>Nature Methods</em>. 2019;16:79–87. DOI: <a href="https://doi.org/10.1038/s41592-018-0253-2">10.1038/s41592-018-0253-2</a> </p>
+</div>
+<div id="ref-Little2019-hf">
+<p>188. Little MH, Hale LJ, Howden SE, Kumar SV. “Generating Kidney from Stem Cells.” <em>Annual Review of Physiology</em>. 2019;81:335–57. DOI: <a href="https://doi.org/10.1146/annurev-physiol-020518-114331">10.1146/annurev-physiol-020518-114331</a> </p>
+</div>
+<div id="ref-Bartfeld2017-uo">
+<p>189. Bartfeld S, Clevers H. “Stem cell-derived organoids and their application for medical research and patient treatment.” <em>Journal of Molecular Medicine</em>. 2017;95:729–38. DOI: <a href="https://doi.org/10.1007/s00109-017-1531-7">10.1007/s00109-017-1531-7</a> </p>
+</div>
+<div id="ref-Kumar2019-tz">
+<p>190. Kumar SV, Er PX, Lawlor KT, Motazedian A, Scurr M, Ghobrial I, Combes AN, Zappia L, Oshlack A, Stanley EG, Little MH. “Kidney micro-organoids in suspension culture as a scalable source of human pluripotent stem cell-derived kidney cells.” <em>Development</em>. 2019;146. DOI: <a href="https://doi.org/10.1242/dev.172361">10.1242/dev.172361</a> </p>
+</div>
+<div id="ref-Wilson2019-mw">
+<p>191. Wilson PC, Humphreys BD. “Kidney and organoid single-cell transcriptomics: the end of the beginning.” <em>Pediatric Nephrology</em>. 2019;1–7. DOI: <a href="https://doi.org/10.1007/s00467-018-4177-y">10.1007/s00467-018-4177-y</a> </p>
+</div>
+<div id="ref-Brazovskaja2018-fj">
+<p>192. Brazovskaja A, Treutlein B, Camp JG. “High-throughput single-cell transcriptomics on organoids.” <em>Current Opinion in Biotechnology</em>. 2018;55:167–71. DOI: <a href="https://doi.org/10.1016/j.copbio.2018.11.002">10.1016/j.copbio.2018.11.002</a> </p>
+</div>
+<div id="ref-Park2018-ub">
+<p>193. Park J, Shrestha R, Qiu C, Kondo A, Huang S, Werth M, Li M, Barasch J, Suszták K. “Single-cell transcriptomics of the mouse kidney reveals potential cellular targets of kidney disease.” <em>Science</em>. 2018;360:758–63. DOI: <a href="https://doi.org/10.1126/science.aar2131">10.1126/science.aar2131</a> </p>
+</div>
+<div id="ref-Young2018-qd">
+<p>194. Young MD, Mitchell TJ, Vieira Braga FA, Tran MGB, Stewart BJ, Ferdinand JR, Collord G, Botting RA, Popescu D-M, Loudon KW, Vento-Tormo R, Stephenson E, Cagan A, Farndon SJ, Del Castillo Velasco-Herrera M, Guzzo C, Richoz N, Mamanova L, et al. “Single-cell transcriptomes from human kidneys reveal the cellular identity of renal tumors.” <em>Science</em>. 2018;361:594–9. DOI: <a href="https://doi.org/10.1126/science.aat1699">10.1126/science.aat1699</a> </p>
+</div>
+<div id="ref-Lindstrom2018-mo">
+<p>195. Lindström NO, Guo J, Kim AD, Tran T, Guo Q, De Sena Brandine G, Ransick A, Parvez RK, Thornton ME, Basking L, Grubbs B, McMahon JA, Smith AD, McMahon AP. “Conserved and Divergent Features of Mesenchymal Progenitor Cell Types within the Cortical Nephrogenic Niche of the Human and Mouse Kidney.” <em>Journal of the American Society of Nephrology: JASN</em>. 2018;29:806–24. DOI: <a href="https://doi.org/10.1681/ASN.2017080890">10.1681/ASN.2017080890</a> </p>
+</div>
+<div id="ref-Wu2018-qi">
+<p>196. Wu H, Uchimura K, Donnelly EL, Kirita Y, Morris SA, Humphreys BD. “Comparative Analysis and Refinement of Human PSC-Derived Kidney Organoid Differentiation with Single-Cell Transcriptomics.” <em>Cell Stem Cell</em>. 2018;23:869–881.e8. DOI: <a href="https://doi.org/10.1016/j.stem.2018.10.010">10.1016/j.stem.2018.10.010</a> </p>
+</div>
+<div id="ref-Davis_undated-gy">
+<p>197. Davis S, Kutum R, Zappia L, Sorenson J, Kiselev V, Olivier P, Botvinnik O, Korthauer K, Gitter A, Campbell KR, Hickey P, Tuncel MA, MikeDMorgan, markrobinsonuzh, Vallejos C, Wang Z, Salomonis N, dyl4nm4rsh4ll, et al. “Awesome Single Cell.” DOI: <a href="https://doi.org/10.5281/zenodo.1294021">10.5281/zenodo.1294021</a> </p>
+</div>
+<div id="ref-Zappia2018-ph">
+<p>198. Zappia L, Phipson B, Oshlack A. “Exploring the single-cell RNA-seq analysis landscape with the scRNA-tools database.” <em>PLoS Computational Biology</em>. 2018;14:e1006245. DOI: <a href="https://doi.org/10.1371/journal.pcbi.1006245">10.1371/journal.pcbi.1006245</a> </p>
+</div>
+<div id="ref-Huber2015-lz">
+<p>199. Huber W, Carey VJ, Gentleman R, Anders S, Carlson M, Carvalho BS, Bravo HC, Davis S, Gatto L, Girke T, Gottardo R, Hahne F, Hansen KD, Irizarry RA, Lawrence M, Love MI, MacDonald J, Obenchain V, et al. “Orchestrating high-throughput genomic analysis with Bioconductor.” <em>Nature Methods</em>. 2015;12:115–21. DOI: <a href="https://doi.org/10.1038/nmeth.3252">10.1038/nmeth.3252</a> </p>
+</div>
+<div id="ref-Amezquita2019-id">
+<p>200. Amezquita RA, Carey VJ, Carpp LN, Geistlinger L, Lun ATL, Marini F, Rue-Albrecht K, Risso D, Soneson C, Waldron L, Pagès H, Smith M, Huber W, Morgan M, Gottardo R, Hicks SC. “Orchestrating Single-Cell Analysis with Bioconductor.” <em>bioRxiv</em>. 2019. p. 590562. DOI: <a href="https://doi.org/10.1101/590562">10.1101/590562</a> </p>
+</div>
+<div id="ref-Zappia2017-sg">
+<p>201. Zappia L, Phipson B, Oshlack A. “Splatter: simulation of single-cell RNA sequencing data.” <em>Genome Biology</em>. 2017;18:174. DOI: <a href="https://doi.org/10.1186/s13059-017-1305-0">10.1186/s13059-017-1305-0</a> </p>
+</div>
+<div id="ref-Lun2017-jj">
+<p>202. Lun A, Risso D. “SingleCellExperiment: S4 Classes for Single Cell Data.” 2017. Available from: <a href="http://bioconductor.org/packages/SingleCellExperiment/" class="uri">http://bioconductor.org/packages/SingleCellExperiment/</a> </p>
+</div>
+<div id="ref-Campbell2017-yh">
+<p>203. Campbell KR, Yau C. “Probabilistic modeling of bifurcations in single-cell gene expression data using a Bayesian mixture of factor analyzers.” <em>Wellcome Open Research</em>. 2017;2:19. DOI: <a href="https://doi.org/10.12688/wellcomeopenres.11087.1">10.12688/wellcomeopenres.11087.1</a> </p>
+</div>
+<div id="ref-Campbell2018-dz">
+<p>204. Campbell KR, Yau C. “Uncovering pseudotemporal trajectories with covariates from single cell and bulk expression data.” <em>Nature Communications</em>. 2018;9:2442. DOI: <a href="https://doi.org/10.1038/s41467-018-04696-6">10.1038/s41467-018-04696-6</a> </p>
+</div>
+<div id="ref-Barron2017-nd">
+<p>205. Barron M, Zhang S, Li J. “A sparse differential clustering algorithm for tracing cell type changes via single-cell RNA-sequencing data.” <em>Nucleic Acids Research</em>. 2017;46:e14. DOI: <a href="https://doi.org/10.1093/nar/gkx1113">10.1093/nar/gkx1113</a> </p>
+</div>
+<div id="ref-Tung2017-ry">
+<p>206. Tung P-Y, Blischak JD, Hsiao CJ, Knowles DA, Burnett JE, Pritchard JK, Gilad Y. “Batch effects and the effective design of single-cell gene expression studies.” <em>Scientific Reports</em>. 2017;7:39921. DOI: <a href="https://doi.org/10.1038/srep39921">10.1038/srep39921</a> </p>
+</div>
+<div id="ref-Soneson2017-yt">
+<p>207. Soneson C, Robinson MD. “Towards unified quality verification of synthetic count data with countsimQC.” <em>Bioinformatics</em>. 2017; DOI: <a href="https://doi.org/10.1093/bioinformatics/btx631">10.1093/bioinformatics/btx631</a> </p>
+</div>
+<div id="ref-Zappia2018-lz">
+<p>208. Zappia L, Oshlack A. “Clustering trees: a visualization for evaluating clusterings at multiple resolutions.” <em>GigaScience</em>. 2018;7. DOI: <a href="https://doi.org/10.1093/gigascience/giy083">10.1093/gigascience/giy083</a> </p>
+</div>
+<div id="ref-Pedersen2018-ly">
+<p>209. Pedersen TL. “tidygraph: A Tidy API for Graph Manipulation.” 2018. Available from: <a href="https://CRAN.R-project.org/package=tidygraph" class="uri">https://CRAN.R-project.org/package=tidygraph</a> </p>
+</div>
+<div id="ref-Csardi2006-ce">
+<p>210. Csardi G, Nepusz T. “The igraph software package for complex network research.” <em>InterJournal, Complex Systems</em>. 2006;1695:1–9. </p>
+</div>
+<div id="ref-Pedersen2018-ie">
+<p>211. Pedersen TL. “ggraph: An Implementation of Grammar of Graphics for Graphs and Networks.” 2018. Available from: <a href="https://CRAN.R-project.org/package=ggraph" class="uri">https://CRAN.R-project.org/package=ggraph</a> </p>
+</div>
+<div id="ref-Anderson1935-mt">
+<p>212. Anderson E. “The Irises of the Gaspe Peninsula.” <em>Bulletin of the American Iris Society</em>. 1935;59:2–5. </p>
+</div>
+<div id="ref-Fisher1936-wt">
+<p>213. Fisher RA. “The use of multiple measurements in taxonomic problems.” <em>Annals of Eugenics</em>. 1936;7:179–88. DOI: <a href="https://doi.org/10.1111/j.1469-1809.1936.tb02137.x">10.1111/j.1469-1809.1936.tb02137.x</a> </p>
+</div>
+<div id="ref-Combes2019-uv">
+<p>214. Combes AN, Zappia L, Er PX, Oshlack A, Little MH. “Single-cell analysis reveals congruence between kidney organoids and human fetal kidney.” <em>Genome Medicine</em>. 2019;11:3. DOI: <a href="https://doi.org/10.1186/s13073-019-0615-0">10.1186/s13073-019-0615-0</a> </p>
+</div>
+<div id="ref-Lawlor2019-iw">
+<p>215. Lawlor KT, Zappia L, Lefevre J, Park J-S, Hamilton NA, Oshlack A, Little MH, Combes AN. “Nephron progenitor commitment is a stochastic process influenced by cell migration.” <em>eLife</em>. 2019;8:e41156. DOI: <a href="https://doi.org/10.7554/eLife.41156">10.7554/eLife.41156</a> </p>
+</div>
+<div id="ref-Zappia2019-dy">
+<p>216. Zappia L, Combes AN, Er PX, Oshlack A, Little MH. “Combes organoid paper analysis code.” 2019. DOI: <a href="https://doi.org/10.5281/zenodo.2548990">10.5281/zenodo.2548990</a> </p>
+</div>
+<div id="ref-Zappia2019-kh">
+<p>217. Zappia L. “PhD thesis analysis.” 2019. DOI: <a href="https://doi.org/10.5281/zenodo.2622384">10.5281/zenodo.2622384</a> </p>
+</div>
+<div id="ref-Lex2014-hy">
+<p>218. Lex A, Gehlenborg N, Strobelt H, Vuillemot R, Pfister H. “UpSet: Visualization of Intersecting Sets.” <em>IEEE Transactions on Visualization and Computer Graphics</em>. 2014;20:1983–92. DOI: <a href="https://doi.org/10.1109/TVCG.2014.2346248">10.1109/TVCG.2014.2346248</a> </p>
+</div>
+<div id="ref-Levenshtein1966-fq">
+<p>219. Levenshtein VI. “Binary codes capable of correcting deletions, insertions, and reversals.” <em>Soviet physics doklady</em>. 1966. pp. 707–10. </p>
+</div>
+<div id="ref-Smedley2015-an">
+<p>220. Smedley D, Haider S, Durinck S, Pandini L, Provero P, Allen J, Arnaiz O, Awedh MH, Baldock R, Barbiera G, Bardou P, Beck T, Blake A, Bonierbale M, Brookes AJ, Bucci G, Buetti I, Burge S, et al. “The BioMart community portal: an innovative alternative to large, centralized data repositories.” <em>Nucleic Acids Research</em>. 2015;43:W589–98. DOI: <a href="https://doi.org/10.1093/nar/gkv350">10.1093/nar/gkv350</a> </p>
+</div>
+<div id="ref-Durinck2005-zb">
+<p>221. Durinck S, Moreau Y, Kasprzyk A, Davis S, De Moor B, Brazma A, Huber W. “BioMart and Bioconductor: a powerful link between biological databases and microarray data analysis.” <em>Bioinformatics</em>. 2005;21:3439–40. DOI: <a href="https://doi.org/10.1093/bioinformatics/bti525">10.1093/bioinformatics/bti525</a> </p>
+</div>
+<div id="ref-Scialdone2015-rp">
+<p>222. Scialdone A, Natarajan KN, Saraiva LR, Proserpio V, Teichmann SA, Stegle O, Marioni JC, Buettner F. “Computational assignment of cell-cycle stage from single-cell transcriptome data.” <em>Methods</em>. 2015;85:54–61. DOI: <a href="https://doi.org/10.1016/j.ymeth.2015.06.021">10.1016/j.ymeth.2015.06.021</a> </p>
+</div>
+<div id="ref-Becht2018-zh">
+<p>223. Becht E, McInnes L, Healy J, Dutertre C-A, Kwok IWH, Ng LG, Ginhoux F, Newell EW. “Dimensionality reduction for visualizing single-cell data using UMAP.” <em>Nature Biotechnology</em>. 2018; DOI: <a href="https://doi.org/10.1038/nbt.4314">10.1038/nbt.4314</a> </p>
+</div>
+<div id="ref-Sidiropoulos2018-ll">
+<p>224. Sidiropoulos N, Sohi SH, Pedersen TL, Porse BT, Winther O, Rapin N, Bagger FO. “SinaPlot: An Enhanced Chart for Simple and Truthful Representation of Single Observations Over Multiple Classes.” <em>Journal of Computational and Graphical Statistics: A Joint Publication of American Statistical Association, Institute of Mathematical Statistics, Interface Foundation of North America</em>. 2018;27:673–6. DOI: <a href="https://doi.org/10.1080/10618600.2017.1366914">10.1080/10618600.2017.1366914</a> </p>
+</div>
+<div id="ref-Jaakkola2016-ko">
+<p>225. Jaakkola MK, Seyednasrollah F, Mehmood A, Elo LL. “Comparison of methods to detect differentially expressed genes between single-cell populations.” <em>Briefings in Bioinformatics</em>. 2016; DOI: <a href="https://doi.org/10.1093/bib/bbw057">10.1093/bib/bbw057</a> </p>
+</div>
+<div id="ref-Wolf2019-fo">
+<p>226. Wolf FA, Hamey FK, Plass M, Solana J, Dahlin JS, Göttgens B, Rajewsky N, Simon L, Theis FJ. “PAGA: graph abstraction reconciles clustering with trajectory inference through a topology preserving map of single cells.” <em>Genome Biology</em>. 2019;20:59. DOI: <a href="https://doi.org/10.1186/s13059-019-1663-x">10.1186/s13059-019-1663-x</a> </p>
+</div>
+<div id="ref-Wolf2018-na">
+<p>227. Wolf FA, Angerer P, Theis FJ. “SCANPY: large-scale single-cell gene expression data analysis.” <em>Genome Biology</em>. 2018;19:15. DOI: <a href="https://doi.org/10.1186/s13059-017-1382-0">10.1186/s13059-017-1382-0</a> </p>
+</div>
+<div id="ref-R-base">
+<p>228. R Core Team. “R: A language and environment for statistical computing.” Vienna, Austria: R Foundation for Statistical Computing; 2018. </p>
+</div>
+<div id="ref-R-SingleCellExperiment">
+<p>229. Lun A, Risso D. “SingleCellExperiment: S4 classes for single cell data.” 2019. R package version 1.4.1 </p>
+</div>
+<div id="ref-Jacomy2014-um">
+<p>230. Jacomy M, Venturini T, Heymann S, Bastian M. “ForceAtlas2, a continuous graph layout algorithm for handy network visualization designed for the Gephi software.” <em>PloS One</em>. 2014;9:e98679. DOI: <a href="https://doi.org/10.1371/journal.pone.0098679">10.1371/journal.pone.0098679</a> </p>
+</div>
+<div id="ref-Wickham2010-zq">
+<p>231. Wickham H. “ggplot2: Elegant Graphics for Data Analysis.” Springer New York; 2010. ISBN: <a href="https://worldcat.org/isbn/9780387981406">9780387981406</a> </p>
+</div>
+<div id="ref-R-cowplot">
+<p>232. Wilke CO. “cowplot: Streamlined plot theme and plot annotations for ’ggplot2’.” 2018. R package version 0.9.3 </p>
+</div>
+<div id="ref-R-UpSetR">
+<p>233. Gehlenborg N. “UpSetR: A more scalable alternative to Venn and Euler diagrams for visualizing intersecting sets.” 2017. R package version 1.3.3 </p>
+</div>
+<div id="ref-R-gridExtra">
+<p>234. Auguie B. “GridExtra: Miscellaneous functions for &quot;grid&quot; graphics.” 2017. R package version 2.3 </p>
+</div>
+<div id="ref-R-ggforce">
+<p>235. Pedersen TL. “ggforce: Accelerating ’ggplot2’.” 2018. R package version 0.1.3 </p>
+</div>
+<div id="ref-R-tidyverse">
+<p>236. Wickham H. “tidyverse: Easily install and load the ’tidyverse’.” 2017. R package version 1.2.1 </p>
+</div>
+<div id="ref-R-dplyr">
+<p>237. Wickham H, François R, Henry L, Müller K. “dplyr: A grammar of data manipulation.” 2018. R package version 0.7.8 </p>
+</div>
+<div id="ref-R-tidyr">
+<p>238. Wickham H, Henry L. “tidyr: Easily tidy data with ’spread()’ and ’gather()’ functions.” 2018. R package version 0.8.2 </p>
+</div>
+<div id="ref-R-purrr">
+<p>239. Henry L, Wickham H. “purrr: Functional programming tools.” 2018. R package version 0.2.5 </p>
+</div>
+<div id="ref-R-LoomExperiment">
+<p>240. Morgan M, Van Twisk D. “LoomExperiment: LoomExperiment container.” 2019. R package version 1.0.2 </p>
+</div>
+<div id="ref-R-workflowr">
+<p>241. Blischak J, Carbonetto P, Stephens M. “workflowr: A framework for reproducible and collaborative data science.” 2018. R package version 1.1.1 </p>
+</div>
+<div id="ref-Xie2014-ha">
+<p>242. Xie Y. “knitr: A Comprehensive Tool for Reproducible Research in R.” In: Stodden V, Leisch F, Peng RD, editors. <em>Implementing Reproducible Research</em>. CRC Press; 2014. ISBN: <a href="https://worldcat.org/isbn/9781466561595">9781466561595</a> </p>
+</div>
+<div id="ref-Xie2016-ct">
+<p>243. Xie Y. “Dynamic Documents with R and knitr.” CRC Press; 2016. DOI: <a href="https://doi.org/10.1201/b15166">10.1201/b15166</a> ISBN: <a href="https://worldcat.org/isbn/9781482203547">9781482203547</a> </p>
+</div>
+<div id="ref-R-knitr">
+<p>244. Xie Y. “knitr: A general-purpose package for dynamic report generation in R.” 2018. R package version 1.20 </p>
+</div>
+<div id="ref-Xie2018-tw">
+<p>245. Xie Y, Allaire JJ, Grolemund G. “R Markdown: The Definitive Guide.” CRC Press LLC; 2018. ISBN: <a href="https://worldcat.org/isbn/9781138359338">9781138359338</a> </p>
+</div>
+<div id="ref-R-rmarkdown">
+<p>246. Allaire J, Xie Y, McPherson J, Luraschi J, Ushey K, Atkins A, Wickham H, Cheng J, Chang W. “rmarkdown: Dynamic documents for R.” 2018. R package version 1.10 </p>
+</div>
+<div id="ref-R-bookdown">
+<p>247. Xie Y. “bookdown: Authoring books and technical documents with R Markdown.” 2018. R package version 0.7 </p>
+</div>
+<div id="ref-Xie2016-do">
+<p>248. Xie Y. “Bookdown: Authoring Books and Technical Documents with R Markdown.” CRC Press; 2016. ISBN: <a href="https://worldcat.org/isbn/9781138700109">9781138700109</a> </p>
+</div>
+<div id="ref-R-clustree">
+<p>249. Zappia L, Oshlack A. “clustree: Visualise clusterings at different resolutions.” 2019. R package version 0.3.0 </p>
+</div>
+<div id="ref-R-forcats">
+<p>250. Wickham H. “forcats: Tools for working with categorical variables (factors).” 2018. R package version 0.3.0 </p>
+</div>
+<div id="ref-R-ggplot2">
+<p>251. Wickham H, Chang W, Henry L, Pedersen TL, Takahashi K, Wilke C, Woo K. “ggplot2: Create elegant data visualisations using the grammar of graphics.” 2018. R package version 3.1.0 </p>
+</div>
+<div id="ref-R-glue">
+<p>252. Hester J. “glue: Interpreted string literals.” 2018. R package version 1.3.0 </p>
+</div>
+<div id="ref-R-googleAnalyticsR">
+<p>253. Edmondson M. “googleAnalyticsR: Google Analytics API into R.” 2018. R package version 0.6.0 </p>
+</div>
+<div id="ref-R-googleAuthR">
+<p>254. Edmondson M. “googleAuthR: Authenticate and create Google APIs.” 2018. R package version 0.7.0 </p>
+</div>
+<div id="ref-R-here">
+<p>255. Müller K. “here: A simpler way to find your files.” 2017. R package version 0.1 </p>
+</div>
+<div id="ref-R-jsonlite">
+<p>256. Ooms J, Temple Lang D, Hilaiel L. “jsonlite: A robust, high performance JSON parser and generator for R.” 2018. R package version 1.6 </p>
+</div>
+<div id="ref-Ooms2014-ay">
+<p>257. Ooms J. “The jsonlite Package: A Practical and Consistent Mapping Between JSON Data and R Objects.” 2014; Available from: <a href="http://arxiv.org/abs/1403.2805" class="uri">http://arxiv.org/abs/1403.2805</a> </p>
+</div>
+<div id="ref-R-lubridate">
+<p>258. Spinu V, Grolemund G, Wickham H. “lubridate: Make dealing with dates a little easier.” 2018. R package version 1.7.4 </p>
+</div>
+<div id="ref-Grolemund2011-qn">
+<p>259. Grolemund G, Wickham H. “Dates and Times Made Easy with lubridate.” <em>Journal of Statistical Software, Articles</em>. 2011;40:1–25. DOI: <a href="https://doi.org/10.18637/jss.v040.i03">10.18637/jss.v040.i03</a> </p>
+</div>
+<div id="ref-R-magrittr">
+<p>260. Bache SM, Wickham H. “magrittr: A forward-pipe operator for R.” 2014. R package version 1.5 </p>
+</div>
+<div id="ref-R-packrat">
+<p>261. Ushey K, McPherson J, Cheng J, Atkins A, Allaire J. “packrat: A dependency management system for projects and their R package dependencies.” 2018. R package version 0.4.9-3 </p>
+</div>
+<div id="ref-R-RColorBrewer">
+<p>262. Neuwirth E. “RColorBrewer: ColorBrewer palettes.” 2014. R package version 1.1-2 </p>
+</div>
+<div id="ref-R-readr">
+<p>263. Wickham H, Hester J, Francois R. “readr: Read rectangular text data.” 2018. R package version 1.3.1 </p>
+</div>
+<div id="ref-R-remotes">
+<p>264. Csárdi G, Wickham H, Chang W, Hester J, Morgan M, Tenenbaum D. “remotes: R package installation from remote repositories, including ’GitHub’.” 2018. R package version 2.0.0 </p>
+</div>
+<div id="ref-R-stringr">
+<p>265. Wickham H. “stringr: Simple, consistent wrappers for common string operations.” 2018. R package version 1.3.1 </p>
+</div>
+<div id="ref-R-viridis">
+<p>266. Garnier S. “viridis: Default color maps from ’matplotlib’.” 2018. R package version 0.5.1 </p>
+</div>
+</div>
+<!-- These lines tell the templates that we are about to start the appendices.
+They should appear before the start of your first appendix.-->
+</div>
+
+
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="6-conclusion.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="A-splatter-additional.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": [["thesis.pdf", "PDF"], ["thesis.docx", "Word"]],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
