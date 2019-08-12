@@ -54,7 +54,7 @@ dataset.
   ([Website](https://oshlacklab.com/combes-organoid-paper/),
   [GitHub](https://github.com/Oshlack/combes-organoid-paper),
   [Publication](https://doi.org/10.1186/s13073-019-0615-0))
-**PhD analysis** - Re-analysis of the Combes organoid data to explore the effect
+* **PhD analysis** - Re-analysis of the Combes organoid data to explore the effect
   of different tool and parameter choices during analysis
   ([Website](https://lazappi.github.io/phd-thesis-analysis/),
   [GitHub](https://github.com/lazappi/phd-thesis-analysis))
